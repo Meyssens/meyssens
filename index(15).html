@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meyssens – Digitale Bürgerbeteiligung für Schweizer Gemeinden</title>
+<meta name="keywords" content="digitale Bürgerbeteiligung Schweiz, Bürgerbeteiligungsplattform Gemeinde, Decidim Schweiz, Online Bürgerbeteiligung, partizipatives Budget Gemeinde, digitale Partizipation Schweizer Gemeinden, E-Participation Schweiz">
+<meta name="description" content="Meyssens bietet Schweizer Gemeinden eine digitale Bürgerbeteiligungsplattform auf Basis von Decidim – Direktbeschaffung unter 150k CHF, in 2–4 Wochen live, DSGVO-konform, Hosting in der Schweiz.">
+<meta property="og:title" content="Meyssens – Digitale Bürgerbeteiligung für Schweizer Gemeinden">
+<meta property="og:description" content="Fertig eingerichtete Bürgerbeteiligungs-Plattform für Schweizer Gemeinden. In 2–4 Wochen live.">
+<meta property="og:url" content="https://meyssens.ch">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+<link rel="canonical" href="https://meyssens.ch">
+<link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
+<meta property="og:image" content="https://meyssens.ch/logo.png">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Meyssens">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Meyssens",
+  "url": "https://meyssens.ch",
+  "description": "Fertig eingerichtete Bürgerbeteiligungs-Plattform für Schweizer Gemeinden. Basierend auf Decidim. In 2–4 Wochen live.",
+  "applicationCategory": "GovernmentApplication",
+  "operatingSystem": "Web",
+  "offers": [
+    {"@type":"Offer","name":"Kleine Gemeinde","price":"890","priceCurrency":"CHF","priceSpecification":{"@type":"UnitPriceSpecification","billingIncrement":1,"unitCode":"MON"}},
+    {"@type":"Offer","name":"Mittlere Gemeinde","price":"1490","priceCurrency":"CHF","priceSpecification":{"@type":"UnitPriceSpecification","billingIncrement":1,"unitCode":"MON"}},
+    {"@type":"Offer","name":"Stadt & Kanton","price":"4990","priceCurrency":"CHF","priceSpecification":{"@type":"UnitPriceSpecification","billingIncrement":1,"unitCode":"MON"}}
+  ],
+  "provider": {"@type":"LocalBusiness","name":"Meyssens","url":"https://meyssens.ch","email":"lionel@meyssens.ch","address":{"@type":"PostalAddress","addressCountry":"CH"},"areaServed":{"@type":"Country","name":"Schweiz"}}
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JNHXZ1TZ4K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  window.meyssensEnableAnalytics = function(){
+    gtag('config', 'G-JNHXZ1TZ4K');
+  };
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+:root{
+  --blue:#0000ff;--blue-h:#0000cc;--blue-5:rgba(0,0,255,.05);--blue-8:rgba(0,0,255,.08);--blue-12:rgba(0,0,255,.12);--blue-20:rgba(0,0,255,.20);--blue-35:rgba(0,0,255,.35);
+  --ink:#07071a;--ink2:#3c3c60;--ink3:#6b6b94;--ink4:#7a7a9e;
+  --white:#ffffff;--surface:#f8f8fd;--surface2:#f2f2fa;--surface3:#eaeaf5;
+  --line:rgba(0,0,0,.07);--line2:rgba(0,0,255,.10);
+  --r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:24px;
+  --shadow-sm:0 2px 8px rgba(0,0,100,.06);--shadow-md:0 8px 32px rgba(0,0,100,.08);--shadow-lg:0 20px 60px rgba(0,0,100,.10);
+}
+body{background:var(--white);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
+.section-inner,nav>*,.hero{max-width:1440px;margin-left:auto;margin-right:auto;}
+section{max-width:100%;}
+.hero{max-width:100%;padding-left:max(5%,calc((100vw - 1440px) / 2 + 5%));padding-right:max(5%,calc((100vw - 1440px) / 2 + 5%));}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:rgba(255,255,255,.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--line);transition:box-shadow .3s;}
+nav.scrolled{box-shadow:var(--shadow-sm)}
+.logo img{height:24px;display:block}
+.nav-items{list-style:none;display:flex;align-items:center;gap:2rem}
+.nav-items a{color:var(--ink3);font-size:.85rem;font-weight:400;text-decoration:none;transition:color .2s;position:relative;}
+.nav-items a:hover{color:var(--ink)}
+.nav-items a.active{color:var(--blue)}
+.nav-items a.active::after{content:'';position:absolute;bottom:-20px;left:0;right:0;height:2px;background:var(--blue);border-radius:1px;}
+.nav-btn{background:var(--blue)!important;color:#fff!important;padding:.5rem 1.25rem!important;border-radius:var(--r-sm)!important;font-weight:500!important;transition:background .2s!important;}
+.nav-btn:hover{background:var(--blue-h)!important;color:#fff!important}
+.hero{min-height:100vh;padding:calc(60px + 5rem) 5% 5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:0;right:0;width:60%;height:100%;background:var(--surface);clip-path:polygon(8% 0,100% 0,100% 100%,0 100%);z-index:0;}
+.hero-l,.hero-r{position:relative;z-index:1}
+.chip{display:inline-flex;align-items:center;gap:7px;padding:.35rem .9rem;border-radius:100px;border:1px solid var(--blue-20);background:var(--blue-5);font-size:.72rem;font-weight:500;color:var(--blue);letter-spacing:.04em;margin-bottom:2rem;}
+.chip-dot{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:pulse 2.5s ease infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,5.5vw,5.2rem);font-weight:800;line-height:1.04;letter-spacing:-.04em;color:var(--ink);margin-bottom:1.5rem;overflow-wrap:break-word;word-break:break-word;max-width:100%;}
+h1 .hl{background:linear-gradient(90deg,#0000ff 0%,#4444ff 40%,#0000ff 80%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s linear infinite;}
+@keyframes shimmer{to{background-position:200% center}}
+.lead{font-size:1.05rem;color:var(--ink3);line-height:1.8;max-width:480px;margin-bottom:2.5rem;overflow-wrap:break-word;word-break:break-word;}
+.btns{display:flex;gap:.875rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:.875rem 1.75rem;border-radius:var(--r-sm);font-size:.9rem;font-weight:500;text-decoration:none;border:none;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s,transform .15s;}
+.btn-p:hover{background:var(--blue-h);transform:translateY(-1px)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);border:1px solid var(--line);padding:.875rem 1.75rem;border-radius:var(--r-sm);font-size:.9rem;font-weight:400;text-decoration:none;transition:border-color .2s,color .2s,transform .15s;}
+.btn-s:hover{border-color:var(--blue-20);color:var(--blue);transform:translateY(-1px)}
+.proof{display:flex;align-items:center;gap:10px}
+.proof-avatars{display:flex}
+.av{width:28px;height:28px;border-radius:50%;border:2px solid white;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:.6rem;font-weight:800;color:white;margin-left:-7px;}
+.av:first-child{margin-left:0}
+.av-1{background:var(--blue)}.av-2{background:#1a1aff}.av-3{background:#3333ff}
+.proof-text{font-size:.78rem;color:var(--ink3)}
+.hero-cards{display:flex;flex-direction:column;gap:.875rem}
+.hcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:1.5rem;transition:box-shadow .25s,transform .25s;}
+.hcard:hover{box-shadow:var(--shadow-md);transform:translateY(-6px)}
+.hcard.blue{background:var(--blue);border-color:var(--blue);color:white}
+.hcard-row{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
+.hcard-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:.4rem;}
+.hcard.blue .hcard-label{color:rgba(255,255,255,.55)}
+.hcard-val{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;line-height:1;letter-spacing:-.04em;color:var(--ink);}
+.hcard.blue .hcard-val{color:white}
+.hcard-sub{font-size:.78rem;color:var(--ink3);margin-top:.2rem}
+.hcard.blue .hcard-sub{color:rgba(255,255,255,.6)}
+.hcard-bar{height:3px;background:rgba(255,255,255,.2);border-radius:2px;margin-top:1rem;overflow:hidden;}
+.hcard-bar-fill{height:100%;background:rgba(255,255,255,.6);border-radius:2px;width:80%}
+.bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);padding:1.5rem 5%;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.bar-label{font-size:.7rem;color:var(--ink4);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+.bar-tag{font-size:.78rem;font-weight:500;padding:.3rem .875rem;border-radius:var(--r-sm);border:1px solid var(--line);color:var(--ink2);background:var(--white);white-space:nowrap;}
+section{padding:6rem max(5%,calc((100vw - 1440px) / 2 + 5%))}
+.s-label{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:600;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.875rem;}
+.s-label::before{content:'';width:18px;height:2px;background:var(--blue);border-radius:1px}
+h2{font-family:'Syne',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--ink);margin-bottom:1rem;}
+.s-lead{font-size:.975rem;color:var(--ink3);max-width:480px;line-height:1.8;margin-bottom:3.5rem;}
+#funktionen{background:var(--surface)}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.feat{background:var(--white);padding:2rem;position:relative;border-radius:var(--r-xl);border:1px solid var(--line);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease;overflow:hidden;cursor:default;display:flex;flex-direction:column;}
+.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#4444ff);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.feat:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,255,.09);border-color:var(--blue-20);background:var(--surface);}
+.feat:hover::before{transform:scaleX(1)}
+.feat.wide{grid-column:span 3}
+.feat-icon-box{width:48px;height:48px;border-radius:var(--r-md);background:var(--blue-8);border:1px solid var(--blue-12);display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:1.25rem;transition:background .3s,border-color .3s,transform .3s;position:relative;}
+.feat:hover .feat-icon-box{background:var(--blue);border-color:var(--blue);color:white;transform:scale(1.1);}
+.feat-tag-row{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:.625rem;opacity:.6}
+.feat h3{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em;position:relative}
+.feat p{font-size:.85rem;color:var(--ink3);line-height:1.75;position:relative;flex:1}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:1rem}
+.tag{font-size:.65rem;font-weight:500;padding:.2rem .6rem;border-radius:4px;background:var(--blue-8);color:var(--blue);border:1px solid var(--blue-12);}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.steps-line{position:absolute;top:28px;left:calc(12.5%);right:calc(12.5%);height:2px;background:var(--line2);z-index:0;}
+.steps-line-fill{height:100%;background:linear-gradient(90deg,var(--blue),#4444ff);width:0%;border-radius:2px;transition:width 1.2s cubic-bezier(.4,0,.2,1);}
+.steps-line-fill.on{width:100%}
+.step{position:relative;padding:0 1.5rem;text-align:center;z-index:1;cursor:default;}
+.step-dot{width:56px;height:56px;border-radius:50%;border:2px solid var(--blue-20);background:var(--white);color:var(--blue);font-family:'Syne',sans-serif;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1.75rem;position:relative;z-index:1;transition:background .3s,border-color .3s,color .3s,transform .3s,box-shadow .3s;box-shadow:0 0 0 6px var(--white);}
+.step:hover .step-dot{background:var(--blue);border-color:var(--blue);color:white;transform:scale(1.15);box-shadow:0 0 0 6px var(--white),0 8px 24px rgba(0,0,255,.25);}
+.step-body{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:1.5rem;text-align:left;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease;overflow:hidden;position:relative;}
+.step-body::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--blue-5) 0%,transparent 60%);opacity:0;transition:opacity .3s ease;}
+.step:hover .step-body{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,255,.08);border-color:var(--blue-20);}
+.step:hover .step-body::before{opacity:1}
+.step h3{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;letter-spacing:-.01em;position:relative}
+.step p{font-size:.82rem;color:var(--ink3);line-height:1.7;position:relative}
+.step-tag{display:inline-block;margin-top:.875rem;font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .65rem;border-radius:4px;background:var(--blue-8);color:var(--blue);border:1px solid var(--blue-12);position:relative;}
+#preise{background:var(--surface)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.pcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r-xl);padding:2.25rem;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;}
+.pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.pcard.top{border-color:var(--blue);border-width:1.5px}
+.pcard.top::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--blue);}
+.pbadge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .7rem;border-radius:4px;background:var(--blue-8);color:var(--blue);border:1px solid var(--blue-12);margin-bottom:1.5rem;}
+.ptier{font-size:.65rem;color:var(--ink4);text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:.3rem}
+.ptitle{font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;color:var(--ink);margin-bottom:.4rem;letter-spacing:-.02em}
+.pdesc{font-size:.82rem;color:var(--ink3);line-height:1.6;margin-bottom:1.75rem}
+.psetup{display:flex;justify-content:space-between;background:var(--surface2);border:1px solid var(--line);border-radius:var(--r-sm);padding:.5rem .875rem;font-size:.78rem;color:var(--ink3);margin-bottom:1.25rem;}
+.psetup strong{color:var(--blue);font-weight:600}
+.pamount{display:flex;align-items:baseline;gap:4px;margin-bottom:.2rem}
+.pnum{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1;}
+.punit{font-size:.8rem;color:var(--ink3)}
+.pannual{font-size:.73rem;color:var(--ink4);margin-bottom:1.75rem}
+.phr{border:none;border-top:1px solid var(--line);margin:1.25rem 0}
+.plist{list-style:none}
+.plist li{display:flex;align-items:flex-start;gap:9px;font-size:.85rem;color:var(--ink3);padding:.38rem 0;}
+.pcheck{width:16px;height:16px;border-radius:50%;background:var(--blue-8);border:1px solid var(--blue-12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.pcheck svg{display:block}
+.pcta{display:block;width:100%;margin-top:1.75rem;padding:.8rem;border-radius:var(--r-sm);text-align:center;font-size:.875rem;font-weight:500;text-decoration:none;cursor:pointer;font-family:'Inter',sans-serif;border:none;transition:all .2s;}
+.pcta-out{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.pcta-out:hover{border-color:var(--blue-20);color:var(--blue)}
+.pcta-on-blue:hover{border-color:rgba(255,255,255,.6)!important;color:white!important}
+.ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.rcard{padding:2rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--white);transition:border-color .25s,transform .25s,box-shadow .25s;}
+.rcard:hover{border-color:var(--blue-20);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.rstars{display:flex;gap:3px;margin-bottom:1rem;}
+.rstar{width:14px;height:14px;background:var(--blue);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);}
+.rquote{font-size:.875rem;color:var(--ink3);line-height:1.75;font-style:italic;margin-bottom:1.5rem}
+.rauthor{display:flex;align-items:center;gap:10px}
+.rav{width:34px;height:34px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:.68rem;font-weight:800;color:white;flex-shrink:0;}
+.rname{font-size:.85rem;font-weight:500;color:var(--ink)}
+.rorg{font-size:.75rem;color:var(--ink3)}
+#ueber-uns{background:var(--surface)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-quote{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;line-height:1.55;letter-spacing:-.015em;border-left:2px solid var(--blue);padding-left:1.25rem;margin:2rem 0;color:var(--ink);}
+.acard{background:var(--white);border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;}
+.acard-top{background:var(--blue);padding:1.75rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.astat-label{font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.3rem}
+.astat-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:white;letter-spacing:-.04em;line-height:1}
+.astat-sub{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.2rem}
+.acard-body{padding:1.75rem}
+.tech-row{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--line);}
+.tech-row:first-child{padding-top:0}
+.tech-row:last-child{border-bottom:none;padding-bottom:0}
+.tech-name{font-size:.875rem;color:var(--ink)}
+.tech-pill{font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .65rem;border-radius:4px;background:var(--blue-8);color:var(--blue);border:1px solid var(--blue-12);}
+.cta-strip{background:var(--blue);padding:4.5rem 5%;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden;}
+.cta-strip::after{content:'';position:absolute;right:-5%;top:-50%;width:400px;height:400px;border-radius:50%;background:rgba(255,255,255,.03);pointer-events:none;}
+.cta-h{font-family:'Syne',sans-serif;font-size:clamp(1.5rem,2.5vw,2.25rem);font-weight:800;letter-spacing:-.03em;color:white;margin-bottom:.5rem;}
+.cta-sub{font-size:.9rem;color:rgba(255,255,255,.65)}
+.cta-btns{display:flex;gap:.875rem;flex-wrap:wrap;position:relative;z-index:1}
+.btn-w{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--blue);padding:.875rem 1.75rem;border-radius:var(--r-sm);font-size:.875rem;font-weight:600;text-decoration:none;transition:opacity .2s,transform .15s;}
+.btn-w:hover{opacity:.92;transform:translateY(-1px)}
+.btn-wg{display:inline-flex;align-items:center;gap:8px;background:transparent;color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.3);padding:.875rem 1.75rem;border-radius:var(--r-sm);font-size:.875rem;font-weight:400;text-decoration:none;transition:border-color .2s,transform .15s;}
+.btn-wg:hover{border-color:rgba(255,255,255,.65);transform:translateY(-1px)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.ccard{background:var(--white);border:1px solid var(--line);border-radius:var(--r-xl);padding:2.25rem;}
+.fgrp{margin-bottom:1.125rem}
+.flabel{display:block;font-size:.75rem;color:var(--ink3);margin-bottom:.4rem}
+.finput,.fselect,.ftextarea{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-sm);padding:.75rem 1rem;color:var(--ink);font-family:'Inter',sans-serif;font-size:.875rem;font-weight:300;outline:none;transition:border-color .2s,background .2s;-webkit-appearance:none;}
+.finput:focus,.fselect:focus,.ftextarea:focus{border-color:var(--blue-35);background:var(--white);}
+.ftextarea{resize:vertical;min-height:110px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cinfo-item{display:flex;align-items:flex-start;gap:1rem;margin-bottom:2rem}
+.cicon{width:40px;height:40px;border-radius:var(--r-sm);background:var(--blue-8);border:1px solid var(--blue-12);display:flex;align-items:center;justify-content:center;color:var(--blue);flex-shrink:0;}
+.clabel{font-size:.68rem;color:var(--ink4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.cval{font-size:.9rem;color:var(--ink);font-weight:400}
+footer{background:var(--ink);padding:4rem 5% 2rem;}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.08);}
+.footer-brand p{font-size:.82rem;color:rgba(255,255,255,.35);line-height:1.75;margin-top:.875rem;max-width:260px;}
+.footer-brand a{display:inline-flex;align-items:center;gap:6px;margin-top:1.25rem;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s;}
+.footer-brand a:hover{color:white}
+.footer-col h3{font-family:'Syne',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1rem;}
+.footer-col a{display:block;font-size:.82rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.6rem;transition:color .2s;}
+.footer-col a:hover{color:white}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.75rem;flex-wrap:wrap;gap:1rem;}
+.flogo img{height:20px;filter:brightness(0) invert(1)}
+footer .fcopy{color:rgba(255,255,255,.2);font-size:.75rem}
+.footer-legal{display:flex;gap:1.5rem}
+.footer-legal a{font-size:.75rem;color:rgba(255,255,255,.2);text-decoration:none;transition:color .2s;}
+.footer-legal a:hover{color:rgba(255,255,255,.6)}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr;gap:2rem}.footer-bottom{flex-direction:column;align-items:flex-start}}
+.r{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.r.on{opacity:1;transform:none}
+.r.d1{transition-delay:.1s}.r.d2{transition-delay:.2s}.r.d3{transition-delay:.3s}
+.hero-l{animation:up .75s ease both}
+.hero-r{animation:up .75s .12s ease both}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;border:none;background:none;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--line);padding:1.5rem 5%;flex-direction:column;gap:1rem;z-index:99;box-shadow:var(--shadow-md);}
+.mobile-nav.open{display:flex}
+.mobile-nav a{color:var(--ink2);font-size:1rem;font-weight:400;text-decoration:none;padding:.5rem 0;border-bottom:1px solid var(--line);}
+.mobile-nav a:last-child{border-bottom:none}
+.mobile-nav .nav-btn{background:var(--blue)!important;color:#fff!important;padding:.75rem 1.25rem!important;border-radius:var(--r-sm)!important;text-align:center;margin-top:.5rem;}
+.logo-banner{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;}
+.logo-item{display:flex;flex-direction:column;align-items:center;gap:.5rem;text-decoration:none;transition:transform .2s;}
+.logo-item:hover{transform:translateY(-3px)}
+.logo-av{width:52px;height:52px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:800;color:white;box-shadow:0 4px 16px rgba(0,0,255,.15);}
+.logo-item span{font-size:.72rem;font-weight:500;color:var(--ink3);letter-spacing:.02em;white-space:nowrap;}
+.logo-item-more .logo-av{font-size:.65rem;}
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;padding:calc(60px + 4rem) 5% 4rem}
+  .hero-r{display:block;margin-top:2rem}
+  .hero-cards{flex-direction:row;flex-wrap:wrap}
+  .hcard-row{grid-template-columns:1fr 1fr}
+  .hcard{flex:1;min-width:140px}
+  .feat-grid{grid-template-columns:1fr 1fr}
+  .feat.wide{grid-column:1/-1}
+  .cards{grid-template-columns:1fr;max-width:420px}
+  .steps{grid-template-columns:1fr 1fr}
+  .steps-line{display:none}
+  .ref-grid{grid-template-columns:1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:3rem}
+  .cta-strip{flex-direction:column;align-items:flex-start}
+  .frow{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  nav{padding:0 1.5rem}
+  .nav-items{display:none}
+  .hamburger{display:flex}
+  section{padding:4rem 5%;width:100%;box-sizing:border-box}
+  .feat-grid{grid-template-columns:1fr;width:100%;box-sizing:border-box}
+  .feat{width:100%;box-sizing:border-box;min-width:0}
+  .feat.wide{grid-column:1}
+  .steps{grid-template-columns:1fr}
+  .bar{padding:1.25rem 5%}
+  .hero{padding:calc(60px + 3rem) 5% 3rem;overflow:hidden;box-sizing:border-box}
+  .hero-l{order:1;min-width:0}
+  .hero-r{order:2;margin-top:2rem;width:100%;box-sizing:border-box}
+  .hero-cards{flex-direction:column;gap:.75rem;width:100%}
+  .hcard-row{grid-template-columns:1fr 1fr;gap:.75rem;width:100%;box-sizing:border-box}
+  .hcard{min-width:0;padding:1.25rem;box-sizing:border-box}
+  h1{font-size:clamp(2.2rem,9.5vw,3rem);letter-spacing:-.025em;overflow-wrap:break-word;word-break:break-word}
+  .lead{font-size:1rem;max-width:100%}
+  .btns{flex-direction:column}
+  .btns .btn-p,.btns .btn-s{width:100%;justify-content:center}
+  .proof{flex-wrap:wrap;gap:.5rem}
+  .logo-banner{gap:1.25rem}
+  .logo-av{width:44px;height:44px}
+  h2{font-size:clamp(1.6rem,7vw,2.2rem)}
+  .s-lead{font-size:.9rem;max-width:100%}
+  .about-grid .about-text{font-size:.9rem}
+  .contact-grid{gap:2rem}
+  .frow{gap:1.5rem}
+  .faq-list{width:100%;box-sizing:border-box}
+  .ref-grid{width:100%;box-sizing:border-box}
+}
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item:first-child{border-top:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.25rem 0;font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);cursor:pointer;text-align:left;transition:color .2s;}
+.faq-q:hover{color:var(--blue)}
+.faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--blue-10);display:flex;align-items:center;justify-content:center;transition:transform .3s,background .2s;}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue)}
+.faq-item.open .faq-icon svg{stroke:#fff}
+.faq-icon svg{transition:stroke .2s}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .35s ease;}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding-bottom:1.25rem;font-size:.88rem;color:var(--ink3);line-height:1.8;}
+
+.lang-switch{display:flex;align-items:center;gap:2px;background:var(--surface2);border-radius:100px;padding:3px;margin-right:.5rem}
+.lang-btn{border:none;background:none;font-size:.72rem;font-weight:600;color:var(--ink3);padding:.3rem .6rem;border-radius:100px;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s,color .2s}
+.lang-btn.active{background:var(--blue);color:#fff}
+.lang-btn:hover:not(.active){color:var(--ink)}
+.mobile-lang-switch{display:flex;gap:6px;padding:.5rem 5% 1rem}
+.mobile-lang-switch .lang-btn{flex:1;padding:.6rem;border:1px solid var(--line)}
+
+.cookie-banner{position:fixed;right:20px;bottom:20px;z-index:300;background:var(--white);color:var(--ink);width:380px;max-width:calc(100vw - 40px);border-radius:var(--r-lg);border:1px solid var(--line);box-shadow:var(--shadow-lg);padding:1.5rem;animation:cookieIn .4s cubic-bezier(.16,1,.3,1);}
+@keyframes cookieIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.cookie-banner.hidden{display:none}
+.cookie-icon{width:34px;height:34px;border-radius:50%;background:var(--blue-8);display:flex;align-items:center;justify-content:center;margin-bottom:.9rem}
+.cookie-title{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;color:var(--ink);margin-bottom:.5rem}
+.cookie-text{font-size:.82rem;line-height:1.65;color:var(--ink3);margin-bottom:1.1rem}
+.cookie-text a{color:var(--blue);text-decoration:none;font-weight:500}
+.cookie-text a:hover{text-decoration:underline}
+.cookie-actions{display:flex;gap:.6rem}
+.cookie-btn{border:none;padding:.65rem 1rem;border-radius:var(--r-sm);font-size:.82rem;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s,border-color .2s,color .2s;flex:1;}
+.cookie-accept{background:var(--blue);color:#fff}
+.cookie-accept:hover{background:var(--blue-h)}
+.cookie-decline{background:transparent;color:var(--ink3);border:1px solid var(--line)}
+.cookie-decline:hover{border-color:var(--ink4);color:var(--ink)}
+@media (max-width:640px){.cookie-banner{left:16px;right:16px;bottom:16px;width:auto;max-width:none;padding:1.25rem}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Brauchen wir eine eigene IT-Infrastruktur?","acceptedAnswer":{"@type":"Answer","text":"Nein. Meyssens ist ein vollständig verwalteter Dienst. Wir kümmern uns um Hosting, Updates, Backups und Sicherheit."}},
+    {"@type":"Question","name":"Ist eine öffentliche Ausschreibung (BöB) nötig?","acceptedAnswer":{"@type":"Answer","text":"Nein. Die Jahreskosten liegen unter dem Schwellenwert von 150'000 CHF für die Direktbeschaffung."}},
+    {"@type":"Question","name":"Was ist Decidim?","acceptedAnswer":{"@type":"Answer","text":"Decidim ist eine quelloffene Plattform für digitale Demokratie, entwickelt von der Stadt Barcelona und weltweit von über 400 Organisationen eingesetzt."}},
+    {"@type":"Question","name":"Wie lange dauert die Einrichtung?","acceptedAnswer":{"@type":"Answer","text":"In der Regel 2–4 Wochen."}},
+    {"@type":"Question","name":"Welche Sprachen werden unterstützt?","acceptedAnswer":{"@type":"Answer","text":"Deutsch, Französisch und Italienisch."}},
+    {"@type":"Question","name":"Wie sicher sind die Daten?","acceptedAnswer":{"@type":"Answer","text":"Das Hosting erfolgt ausschliesslich in der Schweiz. Die Plattform ist DSGVO-konform und entspricht dem Schweizer Datenschutzgesetz."}},
+    {"@type":"Question","name":"Was passiert mit unseren Daten bei einer Kündigung?","acceptedAnswer":{"@type":"Answer","text":"Sie erhalten alle Ihre Daten in einem standardisierten Format. Es gibt keinen Lock-in."}},
+    {"@type":"Question","name":"Für wie viele Einwohner ist die Plattform geeignet?","acceptedAnswer":{"@type":"Answer","text":"Für Gemeinden jeder Grösse – von unter 5'000 bis zu Städten und Kantonen."}}
+  ]
+}
+</script>
+</head>
+<body>
+<nav id="nav">
+  <a href="#" class="logo"><img src="logo.png" alt="Meyssens – Digitale Bürgerbeteiligung für Schweizer Gemeinden"></a>
+  <ul class="nav-items">
+    <li><a href="#funktionen" data-i18n="nav.funktionen">Funktionen</a></li>
+    <li><a href="#ablauf" data-i18n="nav.ablauf">Ablauf</a></li>
+    <li><a href="#preise" data-i18n="nav.preise">Preise</a></li>
+    <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+    <li><a href="#ueber-uns" data-i18n="nav.ueberuns">Über uns</a></li>
+    <li><a href="#kontakt" class="nav-btn" data-i18n="nav.demo">Demo anfragen</a></li>
+  </ul>
+  <div class="lang-switch" id="lang-switch-desktop">
+    <button class="lang-btn active" data-lang="de">DE</button>
+    <button class="lang-btn" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="it">IT</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-lang-switch" id="lang-switch-mobile">
+    <button class="lang-btn active" data-lang="de">DE</button>
+    <button class="lang-btn" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="it">IT</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <a href="#funktionen" onclick="closeMobileNav()" data-i18n="nav.funktionen">Funktionen</a>
+  <a href="#ablauf" onclick="closeMobileNav()" data-i18n="nav.ablauf">Ablauf</a>
+  <a href="#preise" onclick="closeMobileNav()" data-i18n="nav.preise">Preise</a>
+  <a href="#faq" onclick="closeMobileNav()" data-i18n="nav.faq">FAQ</a>
+  <a href="#ueber-uns" onclick="closeMobileNav()" data-i18n="nav.ueberuns">Über uns</a>
+  <a href="#kontakt" class="nav-btn" onclick="closeMobileNav()" data-i18n="nav.demo">Demo anfragen</a>
+</div>
+
+<main>
+<section class="hero">
+  <div class="hero-l">
+    <div class="chip"><span class="chip-dot"></span><span data-i18n="hero.chip">Jetzt verfügbar für Schweizer Gemeinden</span></div>
+    <h1 data-i18n-html="hero.title">Digitale Beteiligung<br>für <span class="hl">Ihre Gemeinde.</span></h1>
+    <p class="lead" data-i18n="hero.lead">Meyssens bringt Schweizer Gemeinden eine fertig eingerichtete Bürgerbeteiligungs-Plattform — in 2–4 Wochen live, persönlich begleitet, fair bepreist.</p>
+    <div class="btns">
+      <a href="https://demo.meyssens.ch" target="_blank" class="btn-p">
+        <span data-i18n="hero.btn1">Live-Demo ansehen</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#kontakt" class="btn-s" data-i18n="hero.btn2">Gespräch anfragen</a>
+    </div>
+    <div class="proof">
+      <div class="proof-avatars">
+        <div class="av av-1">LU</div>
+        <div class="av av-2">ZH</div>
+        <div class="av av-3">LS</div>
+      </div>
+      <span class="proof-text" data-i18n="hero.proof">Vertrauen Sie auf bewährte Open-Source-Technologie aus der Schweiz</span>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hero-cards">
+      <div class="hcard-row">
+        <div class="hcard blue">
+          <div class="hcard-label" data-i18n="hero.card1.label">Direktbeschaffung</div>
+          <div class="hcard-val" data-val="150" data-suffix="k">150k</div>
+          <div class="hcard-sub" data-i18n="hero.card1.sub">CHF Limite — keine Ausschreibung nötig</div>
+          <div class="hcard-bar"><div class="hcard-bar-fill"></div></div>
+        </div>
+        <div class="hcard">
+          <div class="hcard-label" data-i18n="hero.card2.label">Einrichtung</div>
+          <div class="hcard-val" style="color:var(--blue)">2–4</div>
+          <div class="hcard-sub" data-i18n="hero.card2.sub">Wochen bis Launch</div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div><div class="hcard-label" data-i18n="hero.hosting.label">Hosting</div><div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);line-height:1">100%</div><div class="hcard-sub" data-i18n="hero.hosting.sub">Schweiz</div></div>
+          <div><div class="hcard-label" data-i18n="hero.cancel.label">Kündigung</div><div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);line-height:1" data-i18n="hero.cancel.val">Monatlich</div><div class="hcard-sub" data-i18n="hero.cancel.sub">kein Risiko</div></div>
+          <div><div class="hcard-label" data-i18n="hero.support.label">Support</div><div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);line-height:1" data-i18n="hero.support.val">Persönlich</div><div class="hcard-sub" data-i18n="hero.support.sub">direkter Kontakt</div></div>
+          <div><div class="hcard-label" data-i18n="hero.langs.label">Sprachen</div><div style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);line-height:1">DE/FR/IT</div><div class="hcard-sub" data-i18n="hero.langs.sub">mehrsprachig</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="funktionen" style="overflow:hidden">
+  <div class="r">
+    <span class="s-label" data-i18n="funk.label">Funktionen</span>
+    <h2 data-i18n="funk.title">Alles was Ihre Gemeinde braucht</h2>
+    <p class="s-lead" data-i18n="funk.lead">Eine Plattform für alle Beteiligungsprozesse — von Vorschlägen bis zum partizipativen Budget.</p>
+  </div>
+  <div class="feat-grid r">
+    <div class="feat">
+      <div class="feat-tag-row" data-i18n="funk.f1.tag">Kern</div>
+      <div class="feat-icon-box"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="14" height="14" rx="2"/><path d="M6 6h6M6 9h6M6 12h4"/></svg></div>
+      <h3 data-i18n="funk.f1.h">Beteiligungsprozesse</h3>
+      <p data-i18n="funk.f1.p">Strukturierte Prozesse zu Stadtentwicklung, Mobilität oder Wohnen — mit klaren Phasen und Timelines.</p>
+      <div class="tag-row"><span class="tag" data-i18n="funk.f1.t1">Informell</span><span class="tag" data-i18n="funk.f1.t2">Formell</span><span class="tag" data-i18n="funk.f1.t3">Mehrstufig</span></div>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row" data-i18n="funk.f2.tag">Abstimmung</div>
+      <div class="feat-icon-box"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M6.5 9l2 2 3.5-3.5"/></svg></div>
+      <h3 data-i18n="funk.f2.h">Vorschläge &amp; Abstimmung</h3>
+      <p data-i18n="funk.f2.p">Bürgerinnen und Bürger reichen Ideen ein, kommentieren und stimmen direkt auf der Plattform ab.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row" data-i18n="funk.f3.tag">Budget</div>
+      <div class="feat-icon-box"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="16" height="10" rx="2"/><path d="M1 8h16"/><circle cx="9" cy="12" r="1.5"/></svg></div>
+      <h3 data-i18n="funk.f3.h">Partizipatives Budget</h3>
+      <p data-i18n="funk.f3.p">Die Bevölkerung entscheidet mit, wofür das Gemeindebudget eingesetzt wird — transparent und nachvollziehbar.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row" data-i18n="funk.f4.tag">Events</div>
+      <div class="feat-icon-box"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="14" height="13" rx="2"/><path d="M2 8h14M6 1v4M12 1v4"/></svg></div>
+      <h3 data-i18n="funk.f4.h">Veranstaltungen</h3>
+      <p data-i18n="funk.f4.p">Gemeindeversammlungen, Foren und Events direkt auf der Plattform publizieren und verwalten.</p>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row" data-i18n="funk.f5.tag">Schaden melden</div>
+      <div class="feat-icon-box"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2L2 15h14L9 2z"/><path d="M9 8v3M9 13h.01"/></svg></div>
+      <h3 data-i18n="funk.f5.h">Schaden melden</h3>
+      <p data-i18n="funk.f5.p">Bürgerinnen und Bürger melden Schäden im öffentlichen Raum direkt per Foto und GPS-Standort — die Gemeinde reagiert transparent.</p>
+      <div class="tag-row"><span class="tag" data-i18n="funk.f5.t1">Foto-Upload</span><span class="tag">GPS</span><span class="tag" data-i18n="funk.f5.t3">Kategorien</span></div>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row" data-i18n="funk.f6.tag">Initiativen</div>
+      <div class="feat-icon-box"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1l2.5 5 5.5.8-4 3.9.9 5.5L9 13.5 4.1 16.2l.9-5.5L1 6.8l5.5-.8z"/></svg></div>
+      <h3 data-i18n="funk.f6.h">Bürgerinitiativen</h3>
+      <p data-i18n="funk.f6.p">Bürgerinnen und Bürger lancieren eigene Initiativen, sammeln Unterschriften und bringen Anliegen offiziell ein.</p>
+      <div class="tag-row"><span class="tag" data-i18n="funk.f6.t1">Unterschriften</span><span class="tag" data-i18n="funk.f6.t2">Fristen</span><span class="tag" data-i18n="funk.f6.t3">Offiziell</span></div>
+    </div>
+    <div class="feat wide">
+      <div class="feat-tag-row" data-i18n="funk.f7.tag">Datenschutz &amp; Sicherheit</div>
+      <div class="feat-icon-box"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 1.5L15.5 4v5c0 4-3 6.5-6.5 7.5C5.5 15.5 2.5 13 2.5 9V4L9 1.5z"/><path d="M6.5 9l2 2 3.5-3.5"/></svg></div>
+      <h3 data-i18n="funk.f7.h">Open-Source · DSGVO-konform · Hosting in der Schweiz</h3>
+      <p data-i18n-html="funk.f7.p">Meyssens basiert auf <a href="https://decidim.org" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:500">Decidim</a> — quelloffen, geprüft und im Einklang mit der <a href="https://digital.swiss/de/" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:500">Strategie Digitale Schweiz 2026</a> des Bundesrats, die Open-Source-Software in der Verwaltung explizit fördert.</p>
+      <div class="tag-row"><span class="tag">Open-Source</span><span class="tag">DSGVO</span><span class="tag">Schweizer Hosting</span><span class="tag">Strategie Digitale CH 2026</span></div>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row" data-i18n="funk.f8.tag">Support</div>
+      <div class="feat-icon-box"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="9" r="7"/><path d="M9 6v4M9 13h.01"/></svg></div>
+      <h3 data-i18n="funk.f8.h">Persönlicher Ansprechpartner</h3>
+      <p data-i18n="funk.f8.p">Kein Ticketsystem, keine anonyme Hotline — Sie erreichen uns direkt. Schnelle Antworten, persönliche Begleitung.</p>
+      <div class="tag-row"><span class="tag" data-i18n="funk.f8.t1">Direkt erreichbar</span><span class="tag" data-i18n="funk.f8.t2">Schweizerdeutsch</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="ablauf">
+  <div class="r">
+    <span class="s-label" data-i18n="ablauf.label">Ablauf</span>
+    <h2 data-i18n="ablauf.title">In 4 Schritten live</h2>
+    <p class="s-lead" data-i18n="ablauf.lead">Von der ersten Kontaktaufnahme bis zum Launch — schnell, unkompliziert, persönlich begleitet.</p>
+  </div>
+  <div class="steps" id="steps-container">
+    <div class="steps-line"><div class="steps-line-fill" id="steps-line-fill"></div></div>
+    <div class="step r"><div class="step-dot">01</div><div class="step-body"><h3 data-i18n="ablauf.s1.h">Beratungsgespräch</h3><p data-i18n="ablauf.s1.p">Wir analysieren die Bedürfnisse Ihrer Gemeinde und zeigen Ihnen die Demo live.</p><span class="step-tag" data-i18n="ablauf.s1.tag">Kostenlos</span></div></div>
+    <div class="step r d1"><div class="step-dot">02</div><div class="step-body"><h3 data-i18n="ablauf.s2.h">Konfiguration</h3><p data-i18n="ablauf.s2.p">Wir richten die Plattform mit Ihrem Logo, Themen und Inhalten in 2–4 Wochen ein.</p><span class="step-tag" data-i18n="ablauf.s2.tag">2–4 Wochen</span></div></div>
+    <div class="step r d2"><div class="step-dot">03</div><div class="step-body"><h3 data-i18n="ablauf.s3.h">Schulung &amp; Launch</h3><p data-i18n="ablauf.s3.p">Ihr Team wird geschult, die Plattform freigeschaltet und wir begleiten Sie beim Start.</p><span class="step-tag">Go Live</span></div></div>
+    <div class="step r d3"><div class="step-dot">04</div><div class="step-body"><h3 data-i18n="ablauf.s4.h">Laufender Betrieb</h3><p data-i18n="ablauf.s4.p">Wir übernehmen Hosting, Updates und Support — Sie fokussieren sich auf die Inhalte.</p><span class="step-tag" data-i18n="ablauf.s4.tag">Dauerhaft</span></div></div>
+  </div>
+</section>
+
+<section id="preise">
+  <div class="r">
+    <span class="s-label" data-i18n="preise.label">Preise</span>
+    <h2 data-i18n="preise.title">Transparent. Fair. Skalierbar.</h2>
+    <p class="s-lead" data-i18n="preise.lead">Alle Pakete beinhalten Hosting, Updates und persönlichen Support. Keine versteckten Kosten.</p>
+  </div>
+  <div class="cards">
+    <div class="pcard r">
+      <div class="ptier" style="color:var(--ink3)" data-i18n="preise.c1.tier">Bis 5'000 Einwohner</div>
+      <div class="ptitle" data-i18n="preise.c1.title">Kleine Gemeinde</div>
+      <div class="pdesc" data-i18n="preise.c1.desc">Einfacher Einstieg in die digitale Bürgerbeteiligung — ohne Risiko, ohne Ausschreibung.</div>
+      <div class="psetup"><span data-i18n="preise.setup">Einrichtung</span> <strong>1'490 CHF</strong></div>
+      <div class="pamount"><span class="pnum">890</span><span class="punit">CHF / Monat</span></div>
+      <div class="pannual"><span data-i18n="preise.perjahr">10'680 CHF pro Jahr</span> · <span data-i18n="preise.direkt">Direktbeschaffung möglich</span></div>
+      <hr class="phr">
+      <ul class="plist">
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c1.li1">Bis 5'000 Einwohner</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c1.li2">Unlimitierte Beteiligungsprozesse</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c1.li3">Vorschläge &amp; Abstimmung</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c1.li4">Schaden melden mit GPS &amp; Foto</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c1.li5">Veranstaltungskalender</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c1.li6">Hosting, Updates &amp; E-Mail Support</span></li>
+      </ul>
+      <a href="#kontakt" class="pcta pcta-out" data-i18n="preise.cta">Anfrage stellen</a>
+    </div>
+    <div class="pcard r d1" style="background:var(--blue);border-color:var(--blue)">
+      <div class="ptier" style="color:rgba(255,255,255,.65)" data-i18n="preise.c2.tier">5'000–20'000 Einwohner</div>
+      <div class="ptitle" style="color:white" data-i18n="preise.c2.title">Mittlere Gemeinde</div>
+      <div class="pdesc" style="color:rgba(255,255,255,.65)" data-i18n="preise.c2.desc">Voller Funktionsumfang für aktive Bürgerbeteiligung — der ideale Einstieg für wachsende Gemeinden.</div>
+      <div class="psetup" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85)"><span data-i18n="preise.setup">Einrichtung</span> <strong style="color:white">2'490 CHF</strong></div>
+      <div class="pamount"><span class="pnum" style="color:white">1'490</span><span class="punit" style="color:rgba(255,255,255,.65)">CHF / Monat</span></div>
+      <div class="pannual" style="color:rgba(255,255,255,.65)"><span data-i18n="preise.c2.perjahr">17'880 CHF pro Jahr</span> · <span data-i18n="preise.direkt">Direktbeschaffung möglich</span></div>
+      <hr class="phr" style="border-color:rgba(255,255,255,.2)">
+      <ul class="plist">
+        <li style="color:rgba(255,255,255,.85)"><span class="pcheck" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c2.li1">5'000–20'000 Einwohner</span></li>
+        <li style="color:rgba(255,255,255,.85)"><span class="pcheck" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c2.li2">Unbegrenzte Beteiligungsprozesse</span></li>
+        <li style="color:rgba(255,255,255,.85)"><span class="pcheck" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c2.li3">Partizipatives Budget</span></li>
+        <li style="color:rgba(255,255,255,.85)"><span class="pcheck" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c2.li4">Schaden melden mit GPS &amp; Foto</span></li>
+        <li style="color:rgba(255,255,255,.85)"><span class="pcheck" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c2.li5">Interaktive Karten &amp; Bürgerinitiativen</span></li>
+        <li style="color:rgba(255,255,255,.85)"><span class="pcheck" style="background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2)"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c2.li6">Hosting, Updates &amp; Prioritäts-Support</span></li>
+      </ul>
+      <a href="#kontakt" class="pcta pcta-out pcta-on-blue" style="border-color:rgba(255,255,255,.3);color:white" data-i18n="preise.cta">Anfrage stellen</a>
+    </div>
+    <div class="pcard r d2">
+      <div class="ptier" style="color:var(--ink3)" data-i18n="preise.c3.tier">Über 20'000 Einwohner</div>
+      <div class="ptitle" data-i18n="preise.c3.title">Stadt &amp; Kanton</div>
+      <div class="pdesc" data-i18n="preise.c3.desc">Maximale Anpassung, dediziertes Hosting und persönliche Begleitung für grosse Verwaltungen.</div>
+      <div class="psetup"><span data-i18n="preise.setup">Einrichtung</span> <strong>6'990 CHF</strong></div>
+      <div class="pamount"><span class="pnum">4'990</span><span class="punit">CHF / Monat</span></div>
+      <div class="pannual" data-i18n="preise.c3.perjahr">59'880 CHF pro Jahr</div>
+      <hr class="phr">
+      <ul class="plist">
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c3.li1">Über 20'000 Einwohner</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c3.li2">Unlimitierte Beteiligungsprozesse</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c3.li3">Individuelle Anpassungen &amp; Branding</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c3.li4">Schulungen vor Ort</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c3.li5">Dediziertes Schweizer Hosting</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c3.li6">SLA-Garantie &amp; Verfügbarkeit</span></li>
+        <li><span class="pcheck"><svg width="8" height="8" viewBox="0 0 8 8" fill="none"><path d="M1.5 4l2 2 3-3" stroke="#0000ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="preise.c3.li7">24/7 Support &amp; direkter Ansprechpartner</span></li>
+      </ul>
+      <a href="#kontakt" class="pcta pcta-out" data-i18n="preise.cta">Anfrage stellen</a>
+    </div>
+  </div>
+</section>
+
+<section id="referenzen" style="background:var(--surface);padding-top:4rem;padding-bottom:4rem">
+  <div class="r" style="text-align:center;margin-bottom:2.5rem">
+    <span class="s-label" style="justify-content:center" data-i18n="ref.label">Technologie im Einsatz</span>
+    <p style="font-size:.875rem;color:var(--ink3);margin-top:.5rem" data-i18n-html="ref.lead">Decidim — die Basis von Meyssens — wird weltweit in über 400 Städten und Organisationen eingesetzt</p>
+  </div>
+  <div class="logo-banner r">
+    <a href="https://www.dialog.stadtluzern.ch" target="_blank" class="logo-item"><div class="logo-av">LU</div><span data-i18n="ref.lu">Stadt Luzern</span></a>
+    <a href="https://mitwirken.stadt-zuerich.ch" target="_blank" class="logo-item"><div class="logo-av" style="background:#1a1aff">ZH</div><span data-i18n="ref.zh">Stadt Zürich</span></a>
+    <a href="https://lausanneensemble.lausanne.ch" target="_blank" class="logo-item"><div class="logo-av" style="background:#3333ff">LS</div><span data-i18n="ref.ls">Stadt Lausanne</span></a>
+    <a href="https://ge.ch" target="_blank" class="logo-item"><div class="logo-av" style="background:#4444ff">GE</div><span data-i18n="ref.ge">Kanton Genf</span></a>
+    <a href="https://futureu.europa.eu" target="_blank" class="logo-item"><div class="logo-av" style="background:#0000cc">EU</div><span data-i18n="ref.eu">EU-Kommission</span></a>
+    <div class="logo-item logo-item-more"><div class="logo-av" style="background:var(--surface3);color:var(--blue)">400+</div><span data-i18n="ref.more">weitere Städte</span></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="s-label r" data-i18n="faq.label">FAQ</div>
+  <h2 class="r d1" data-i18n="faq.title">Häufige Fragen</h2>
+  <p class="s-lead r d2" style="margin:0 auto 3rem;text-align:center" data-i18n="faq.lead">Antworten auf die wichtigsten Fragen rund um Meyssens und digitale Bürgerbeteiligung.</p>
+  <div class="faq-list">
+    <div class="faq-item r d1"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q1">Brauchen wir eine eigene IT-Infrastruktur?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a1">Nein. Meyssens ist ein vollständig verwalteter Dienst (Managed Service). Wir kümmern uns um Hosting, Updates, Backups und Sicherheit. Ihre Gemeinde braucht keine eigene Server-Infrastruktur und kein internes IT-Know-how.</p></div></div>
+    <div class="faq-item r d2"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q2">Ist eine öffentliche Ausschreibung (BöB) nötig?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a2">Nein, in der Regel nicht. Die Jahreskosten liegen bei allen Paketen unter dem Schwellenwert von 150'000 CHF für die Direktbeschaffung. Gemeinden können Meyssens also ohne aufwändiges Vergabeverfahren beschaffen.</p></div></div>
+    <div class="faq-item r d3"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q3">Was ist Decidim und warum setzt Meyssens darauf?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a3">Decidim ist eine quelloffene (Open-Source) Plattform für digitale Demokratie, die von der Stadt Barcelona entwickelt wurde. Sie wird heute von über 400 Organisationen weltweit eingesetzt – darunter Zürich, Luzern, Lausanne und Genf.</p></div></div>
+    <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q4">Wie lange dauert die Einrichtung?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a4">In der Regel 2–4 Wochen. Nach einem Beratungsgespräch richten wir die Plattform mit Ihrem Logo, Ihren Farben und Inhalten ein. Anschliessend schulen wir Ihr Team und begleiten Sie beim offiziellen Start.</p></div></div>
+    <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q5">Welche Sprachen werden unterstützt?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a5">Die Plattform unterstützt Deutsch, Französisch und Italienisch. Mehrsprachige Gemeinden können die Plattform vollständig in mehreren Sprachen betreiben.</p></div></div>
+    <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q6">Wie sicher sind die Daten unserer Einwohnerinnen und Einwohner?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a6">Das Hosting erfolgt ausschliesslich in der Schweiz. Die Plattform ist DSGVO-konform und entspricht dem Schweizer Datenschutzgesetz (DSG). Daten werden nie an Dritte weitergegeben oder für Werbezwecke genutzt.</p></div></div>
+    <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q7">Was passiert mit unseren Daten bei einer Kündigung?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a7">Sie erhalten alle Ihre Daten in einem standardisierten Format (Export). Da Decidim Open Source ist, können Sie die Plattform jederzeit selbst weiterbetreiben oder zu einem anderen Anbieter wechseln. Es gibt keinen Lock-in.</p></div></div>
+    <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q8">Für wie viele Einwohnerinnen und Einwohner ist die Plattform geeignet?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a8">Meyssens ist für Gemeinden jeder Grösse geeignet – von kleinen Gemeinden mit unter 5'000 Einwohnern bis hin zu Städten und Kantonen.</p></div></div>
+  </div>
+</section>
+
+<section id="ueber-uns">
+  <div class="about-grid">
+    <div class="r">
+      <span class="s-label" data-i18n="about.label">Über uns</span>
+      <h2 data-i18n="about.title">Ihr Schweizer Partner für digitale Partizipation</h2>
+      <div style="background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:1.5rem;margin-bottom:1.5rem;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:1rem;">
+          <div style="width:52px;height:52px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:.75rem;font-weight:800;color:white;flex-shrink:0;">LN</div>
+          <div>
+            <p style="font-size:.95rem;font-weight:500;color:var(--ink);margin:0;">Lionel Nickelsen</p>
+            <p style="font-size:.8rem;color:var(--ink3);margin:0;" data-i18n="about.role">Gründer, Meyssens</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--line);padding-top:1rem;">
+          <p style="font-size:.875rem;color:var(--ink3);line-height:1.8;margin:0;" data-i18n="about.card">Meyssens wurde mit einer klaren Mission gegründet: Schweizer Gemeinden den Zugang zu moderner, digitaler Bürgerbeteiligung zu ermöglichen — ohne grossen technischen Aufwand und zu fairen Preisen.</p>
+        </div>
+      </div>
+      <p style="color:var(--ink3);line-height:1.8;margin-bottom:1.25rem;font-size:.975rem" data-i18n-html="about.body">Wir setzen auf <a href="https://decidim.org" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:500">Decidim</a>, die bewährte Open-Source-Plattform, die weltweit in über 400 Städten eingesetzt wird. Als lokaler Anbieter aus der Schweiz kennen wir die Besonderheiten der Schweizer Verwaltung.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:1.5rem;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5C5.51 1.5 3.5 3.51 3.5 6c0 3.75 4.5 8.5 4.5 8.5S12.5 9.75 12.5 6c0-2.49-2.01-4.5-4.5-4.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
+          <span style="font-size:.85rem;color:var(--ink3);">Lausen, Basel-Landschaft, Schweiz</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 5.5l7 4.5 7-4.5"/></svg>
+          <span style="font-size:.85rem;color:var(--blue);">lionel@meyssens.ch</span>
+        </div>
+      </div>
+    </div>
+    <div class="r d1">
+      <div class="acard">
+        <div class="acard-top">
+          <div><div class="astat-label" data-i18n="about.stat1.label">Einrichtung</div><div class="astat-val">2–4 Wo.</div><div class="astat-sub" data-i18n="about.stat1.sub">bis zum Launch</div></div>
+          <div><div class="astat-label" data-i18n="about.stat2.label">Hosting</div><div class="astat-val">100%</div><div class="astat-sub" data-i18n="about.stat2.sub">Schweiz</div></div>
+        </div>
+        <div class="acard-body">
+          <div class="tech-row"><span class="tech-name"><a href="https://decidim.org" target="_blank" style="color:var(--ink);text-decoration:none">Decidim (Open-Source)</a></span><span class="tech-pill" data-i18n="about.tech.decidim.pill">Basis</span></div>
+          <div class="tech-row"><span class="tech-name" data-i18n="about.tech.dsgvo">DSGVO-konform</span><span class="tech-pill" data-i18n="about.tech.dsgvo.pill">Datenschutz</span></div>
+          <div class="tech-row"><span class="tech-name"><a href="https://digital.swiss/de/" target="_blank" style="color:var(--ink);text-decoration:none">Strategie Digitale CH 2026</a></span><span class="tech-pill" data-i18n="about.tech.strategie.pill">Konform</span></div>
+          <div class="tech-row"><span class="tech-name" data-i18n="about.tech.hosting">Hosting in der Schweiz</span><span class="tech-pill" data-i18n="about.tech.hosting.pill">Infrastruktur</span></div>
+          <div class="tech-row"><span class="tech-name" data-i18n="about.tech.langs">Mehrsprachig DE / FR / IT</span><span class="tech-pill" data-i18n="about.tech.langs.pill">Sprachen</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="background:var(--surface)">
+  <div class="contact-grid">
+    <div class="r">
+      <span class="s-label" data-i18n="contact.label">Kontakt</span>
+      <h2 data-i18n="contact.title">Bereit für den nächsten Schritt?</h2>
+      <p style="color:var(--ink3);margin-bottom:3rem;line-height:1.8;font-size:.975rem" data-i18n="contact.lead">Schreiben Sie uns oder vereinbaren Sie direkt eine kostenlose Demo-Präsentation für Ihre Gemeinde.</p>
+      <div class="cinfo-item">
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="14" height="10" rx="2"/><path d="M1.5 6l7 4.5 7-4.5"/></svg></div>
+        <div><div class="clabel" data-i18n="contact.email.label">E-Mail</div><div class="cval"><span style="color:var(--blue);font-weight:500">lionel@meyssens.ch</span></div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="7"/><path d="M8.5 5v4l2.5 2"/></svg></div>
+        <div><div class="clabel" data-i18n="contact.demo.label">Demo-Plattform</div><div class="cval"><a href="https://demo.meyssens.ch" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:500" data-i18n="contact.demo.link">Demo ansehen →</a></div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 1.5C5.74 1.5 3.5 3.74 3.5 6.5c0 4 5 9 5 9s5-5 5-9c0-2.76-2.24-5-5-5z"/><circle cx="8.5" cy="6.5" r="1.5"/></svg></div>
+        <div><div class="clabel" data-i18n="contact.loc.label">Standort</div><div class="cval"><a href="https://maps.google.com/?q=Lausen,+Basel-Landschaft,+Schweiz" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:500">Lausen, Basel-Landschaft, Schweiz</a></div></div>
+      </div>
+    </div>
+    <div class="ccard r d1">
+      <form action="https://formspree.io/f/xlgpzzew" method="POST">
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" data-i18n="contact.form.vorname">Vorname</label><input class="finput" type="text" placeholder="Max" required></div>
+          <div class="fgrp"><label class="flabel" data-i18n="contact.form.nachname">Nachname</label><input class="finput" type="text" placeholder="Muster" required></div>
+        </div>
+        <div class="fgrp"><label class="flabel" data-i18n="contact.form.gemeinde">Gemeinde / Organisation</label><input class="finput" type="text" placeholder="Gemeinde Musterstadt" required></div>
+        <div class="fgrp"><label class="flabel" data-i18n="contact.email.label">E-Mail</label><input class="finput" type="email" placeholder="max.muster@gemeinde.ch" required></div>
+        <div class="fgrp">
+          <label class="flabel" for="paket-select" data-i18n="contact.form.paket">Paket-Interesse</label>
+          <select class="fselect" id="paket-select" name="paket-interesse">
+            <option data-i18n="contact.form.opt1">Kleine Gemeinde – bis 5'000 EW (890 CHF/Mo.)</option>
+            <option data-i18n="contact.form.opt2">Mittlere Gemeinde – 5'000–20'000 EW (1'490 CHF/Mo.)</option>
+            <option data-i18n="contact.form.opt3">Stadt &amp; Kanton – über 20'000 EW (4'990 CHF/Mo.)</option>
+            <option data-i18n="contact.form.opt4">Noch nicht sicher</option>
+          </select>
+        </div>
+        <div class="fgrp"><label class="flabel" data-i18n="contact.form.nachricht">Nachricht (optional)</label><textarea class="ftextarea" placeholder="Ihre Fragen oder Wünsche..." data-i18n-placeholder="contact.form.nachricht.ph"></textarea></div>
+        <button type="submit" class="btn-p" id="sbtn" style="width:100%;justify-content:center;border-radius:var(--r-sm)">
+          <span data-i18n="contact.form.submit">Anfrage senden</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="flogo"><img src="logo.png" alt="Meyssens – Digitale Bürgerbeteiligung für Schweizer Gemeinden"></a>
+      <p data-i18n="hero.lead">Digitale Bürgerbeteiligung für Schweizer Gemeinden — fair bepreist, persönlich begleitet, in 2–4 Wochen live.</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:.85rem;margin-top:.5rem">lionel@meyssens.ch</p>
+    </div>
+    <div class="footer-col">
+      <h3 data-i18n="footer.platform">Plattform</h3>
+      <a href="#funktionen" data-i18n="nav.funktionen">Funktionen</a>
+      <a href="#ablauf" data-i18n="nav.ablauf">Ablauf</a>
+      <a href="#preise" data-i18n="nav.preise">Preise</a>
+      <a href="#ueber-uns" data-i18n="nav.ueberuns">Über uns</a>
+      <a href="#kontakt" data-i18n="footer.kontakt">Kontakt</a>
+    </div>
+    <div class="footer-col">
+      <h3 data-i18n="footer.links">Links</h3>
+      <a href="https://demo.meyssens.ch" target="_blank" data-i18n="footer.demo">Live-Demo ansehen →</a>
+      <a href="https://decidim.org" target="_blank">Decidim Open-Source</a>
+      <a href="https://digital.swiss/de/" target="_blank" data-i18n="footer.strategie">Strategie Digitale CH</a>
+      <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'" data-i18n="footer.impressum">Impressum</a>
+      <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" data-i18n="footer.datenschutz">Datenschutz</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="#" class="flogo"><img src="logo.png" alt="Meyssens – Digitale Bürgerbeteiligung für Schweizer Gemeinden"></a>
+    <p class="fcopy" data-i18n="footer.copy">© 2026 Meyssens · Lausen, Basel-Landschaft · Schweiz</p>
+    <div class="footer-legal">
+      <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'" data-i18n="footer.impressum">Impressum</a>
+      <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" data-i18n="footer.datenschutz">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',scrollY>40)
+  const sections=['funktionen','ablauf','preise','faq','ueber-uns','kontakt']
+  const links=document.querySelectorAll('.nav-items a:not(.nav-btn)')
+  let current=''
+  sections.forEach(id=>{const el=document.getElementById(id);if(el&&scrollY>=el.offsetTop-100)current=id})
+  links.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+current)a.classList.add('active')})
+})
+const io=new IntersectionObserver(e=>e.forEach(x=>{
+  if(x.isIntersecting){
+    x.target.classList.add('on')
+    const children=x.target.querySelectorAll('.feat,.pcard,.rcard,.step')
+    children.forEach((c,i)=>{c.style.transitionDelay=`${i*0.08}s`;c.style.opacity='0';c.style.transform='translateY(20px)';setTimeout(()=>{c.style.transition='opacity .5s ease, transform .5s ease';c.style.opacity='1';c.style.transform='translateY(0)'},i*80)})
+    io.unobserve(x.target)
+  }
+}),{threshold:.08})
+document.querySelectorAll('.r').forEach(el=>io.observe(el))
+function animateCounter(el,target,suffix=''){const duration=1800;const start=performance.now();const update=(now)=>{const progress=Math.min((now-start)/duration,1);const ease=1-Math.pow(1-progress,3);el.textContent=Math.round(ease*target)+suffix;if(progress<1)requestAnimationFrame(update)};requestAnimationFrame(update)}
+const counterObs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){const val=x.target.dataset.val;const suffix=x.target.dataset.suffix||'';if(val)animateCounter(x.target,parseInt(val),suffix);counterObs.unobserve(x.target)}}),{threshold:.5})
+document.querySelectorAll('[data-val]').forEach(el=>counterObs.observe(el))
+const hamburger=document.getElementById('hamburger')
+const mobileNav=document.getElementById('mobile-nav')
+hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileNav.classList.toggle('open')})
+function closeMobileNav(){hamburger.classList.remove('open');mobileNav.classList.remove('open')}
+document.addEventListener('click',(e)=>{if(!hamburger.contains(e.target)&&!mobileNav.contains(e.target))closeMobileNav()})
+const lineObs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){document.getElementById('steps-line-fill').classList.add('on');lineObs.unobserve(x.target)}}),{threshold:.3})
+const stepsEl=document.getElementById('steps-container')
+if(stepsEl)lineObs.observe(stepsEl)
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true')}})})
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}}))
+</script>
+
+
+<div class="cookie-banner hidden" id="cookie-banner">
+  <div class="cookie-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="7"/><circle cx="6" cy="6.5" r=".6" fill="var(--blue)" stroke="none"/><circle cx="10.5" cy="6" r=".6" fill="var(--blue)" stroke="none"/><circle cx="6.5" cy="10.5" r=".6" fill="var(--blue)" stroke="none"/><circle cx="10" cy="10.5" r=".6" fill="var(--blue)" stroke="none"/></svg></div>
+  <div class="cookie-title" data-i18n="cookie.title">Ihre Privatsphäre ist uns wichtig</div>
+  <div class="cookie-text" data-i18n="cookie.text">Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Mehr erfahren</a></div>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-decline" id="cookie-decline" data-i18n="cookie.decline">Ablehnen</button>
+    <button class="cookie-btn cookie-accept" id="cookie-accept" data-i18n="cookie.accept">Akzeptieren</button>
+  </div>
+</div>
+
+<div id="impressum-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:1rem">
+  <div style="background:white;border-radius:16px;padding:2.5rem;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;position:relative">
+    <button onclick="document.getElementById('impressum-modal').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888">×</button>
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#07071a">Impressum</h3>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Einzelunternehmen</strong><br>Meyssens<br>Lausen, Basel-Landschaft<br>Schweiz</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Kontakt</strong><br>E-Mail: lionel@meyssens.ch</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Handelsregister</strong><br>Einzelfirma, eingetragen im Kanton Basel-Landschaft</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8"><strong>Haftungsausschluss</strong><br>Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.</p>
+  </div>
+</div>
+
+<div id="datenschutz-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:1rem">
+  <div style="background:white;border-radius:16px;padding:2.5rem;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;position:relative">
+    <button onclick="document.getElementById('datenschutz-modal').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888">×</button>
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#07071a">Datenschutzerklärung</h3>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Verantwortliche Stelle</strong><br>Meyssens, Lausen, Schweiz<br>E-Mail: lionel@meyssens.ch</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Datenerhebung</strong><br>Wir erheben nur die Daten, die für den Betrieb der Plattform notwendig sind. Das Hosting erfolgt ausschliesslich in der Schweiz.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Google Analytics</strong><br>Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. Sie können der Erfassung widersprechen.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8"><strong>Kontakt</strong><br>Bei Fragen zum Datenschutz: lionel@meyssens.ch</p>
+  </div>
+</div>
+
+
+<script>
+const I18N = {
+  en: {
+    "nav.funktionen":"Features","nav.ablauf":"Process","nav.preise":"Pricing","nav.faq":"FAQ","nav.ueberuns":"About us","nav.demo":"Request a demo",
+    "hero.chip":"Now available for Swiss municipalities",
+    "hero.title":"Digital participation<br>for <span class=\"hl\">your municipality.</span>",
+    "hero.lead":"Meyssens brings Swiss municipalities a ready-to-use civic participation platform — live in 2–4 weeks, personally supported, fairly priced.",
+    "hero.btn1":"Watch live demo","hero.btn2":"Request a call",
+    "hero.proof":"Trust proven open-source technology from Switzerland",
+    "hero.card1.label":"Direct procurement","hero.card1.sub":"CHF limit — no public tender required",
+    "hero.card2.label":"Setup","hero.card2.sub":"Weeks to launch",
+    "hero.hosting.label":"Hosting","hero.hosting.sub":"Switzerland",
+    "hero.cancel.label":"Cancellation","hero.cancel.val":"Monthly","hero.cancel.sub":"no risk",
+    "hero.support.label":"Support","hero.support.val":"Personal","hero.support.sub":"direct contact",
+    "hero.langs.label":"Languages","hero.langs.sub":"multilingual",
+    "funk.label":"Features","funk.title":"Everything your municipality needs",
+    "funk.lead":"One platform for all participation processes — from proposals to participatory budgeting.",
+    "funk.f1.tag":"Core","funk.f1.h":"Participation processes","funk.f1.p":"Structured processes on urban development, mobility or housing — with clear phases and timelines.","funk.f1.t1":"Informal","funk.f1.t2":"Formal","funk.f1.t3":"Multi-stage",
+    "funk.f2.tag":"Voting","funk.f2.h":"Proposals & voting","funk.f2.p":"Residents submit ideas, comment and vote directly on the platform.",
+    "funk.f3.tag":"Budget","funk.f3.h":"Participatory budget","funk.f3.p":"The population helps decide how the municipal budget is used — transparently and traceably.",
+    "funk.f4.tag":"Events","funk.f4.h":"Events","funk.f4.p":"Publish and manage town meetings, forums and events directly on the platform.",
+    "funk.f5.tag":"Report a problem","funk.f5.h":"Report a problem","funk.f5.p":"Residents report damage in public spaces directly via photo and GPS location — the municipality responds transparently.","funk.f5.t1":"Photo upload","funk.f5.t3":"Categories",
+    "funk.f6.tag":"Initiatives","funk.f6.h":"Citizen initiatives","funk.f6.p":"Residents launch their own initiatives, collect signatures and officially submit concerns.","funk.f6.t1":"Signatures","funk.f6.t2":"Deadlines","funk.f6.t3":"Official",
+    "funk.f7.tag":"Privacy & security","funk.f7.h":"Open source · GDPR-compliant · hosted in Switzerland",
+    "funk.f7.p":"Meyssens is built on <a href=\"https://decidim.org\" target=\"_blank\" style=\"color:var(--blue);text-decoration:none;font-weight:500\">Decidim</a> — open source, vetted and aligned with the Federal Council's <a href=\"https://digital.swiss/de/\" target=\"_blank\" style=\"color:var(--blue);text-decoration:none;font-weight:500\">Digital Switzerland 2026 Strategy</a>, which explicitly promotes open-source software in public administration.",
+    "funk.f8.tag":"Support","funk.f8.h":"Personal point of contact","funk.f8.p":"No ticket system, no anonymous hotline — you reach us directly. Fast answers, personal guidance.","funk.f8.t1":"Directly reachable","funk.f8.t2":"Swiss German",
+    "ablauf.label":"Process","ablauf.title":"Live in 4 steps","ablauf.lead":"From first contact to launch — fast, straightforward, personally guided.",
+    "ablauf.s1.h":"Consultation call","ablauf.s1.p":"We analyse your municipality's needs and show you the demo live.","ablauf.s1.tag":"Free",
+    "ablauf.s2.h":"Configuration","ablauf.s2.p":"We set up the platform with your logo, topics and content in 2–4 weeks.","ablauf.s2.tag":"2–4 weeks",
+    "ablauf.s3.h":"Training & launch","ablauf.s3.p":"Your team is trained, the platform is activated and we support you at launch.",
+    "ablauf.s4.h":"Ongoing operation","ablauf.s4.p":"We handle hosting, updates and support — you focus on the content.","ablauf.s4.tag":"Ongoing",
+    "preise.label":"Pricing","preise.title":"Transparent. Fair. Scalable.","preise.lead":"All packages include hosting, updates and personal support. No hidden costs.",
+    "preise.setup":"Setup","preise.perjahr":"CHF 10,680 per year","preise.direkt":"Direct procurement possible",
+    "preise.c1.tier":"Up to 5,000 residents","preise.c1.title":"Small municipality","preise.c1.desc":"A simple entry into digital civic participation — no risk, no tender.",
+    "preise.c1.li1":"Up to 5,000 residents","preise.c1.li2":"Unlimited participation processes","preise.c1.li3":"Proposals & voting","preise.c1.li4":"Report damage with GPS & photo","preise.c1.li5":"Events calendar","preise.c1.li6":"Hosting, updates & email support",
+    "preise.cta":"Submit inquiry",
+    "preise.c2.badge":"Recommended","preise.c2.tier":"5,000–20,000 residents","preise.c2.title":"Medium municipality","preise.c2.desc":"Full feature set for active civic participation — the ideal entry point for growing municipalities.",
+    "preise.c2.perjahr":"CHF 17,880 per year",
+    "preise.c2.li1":"5,000–20,000 residents","preise.c2.li2":"Unlimited participation processes","preise.c2.li3":"Participatory budget","preise.c2.li4":"Report damage with GPS & photo","preise.c2.li5":"Interactive maps & citizen initiatives","preise.c2.li6":"Hosting, updates & priority support",
+    "preise.c3.tier":"Over 20,000 residents","preise.c3.title":"City & canton","preise.c3.desc":"Maximum customisation, dedicated hosting and personal guidance for large administrations.",
+    "preise.c3.perjahr":"CHF 59,880 per year",
+    "preise.c3.li1":"Over 20,000 residents","preise.c3.li2":"Unlimited participation processes","preise.c3.li3":"Custom adjustments & branding","preise.c3.li4":"On-site training","preise.c3.li5":"Dedicated Swiss hosting","preise.c3.li6":"SLA guarantee & availability","preise.c3.li7":"24/7 support & direct point of contact",
+    "ref.label":"Technology in use","ref.lead":"Decidim — the foundation of Meyssens — is used by more than 400 cities and organisations worldwide",
+    "ref.lu":"City of Lucerne","ref.zh":"City of Zurich","ref.ls":"City of Lausanne","ref.ge":"Canton of Geneva","ref.eu":"European Commission","ref.more":"more cities",
+    "faq.label":"FAQ","faq.title":"Frequently asked questions","faq.lead":"Answers to the most important questions about Meyssens and digital civic participation.",
+    "faq.q1":"Do we need our own IT infrastructure?","faq.a1":"No. Meyssens is a fully managed service. We take care of hosting, updates, backups and security. Your municipality needs no server infrastructure of its own and no in-house IT expertise.",
+    "faq.q2":"Is a public tender required?","faq.a2":"Usually not. The annual cost of every package is below the CHF 150,000 threshold for direct procurement. Municipalities can therefore acquire Meyssens without a lengthy tender process.",
+    "faq.q3":"What is Decidim, and why does Meyssens build on it?","faq.a3":"Decidim is an open-source platform for digital democracy, developed by the City of Barcelona. It is used today by more than 400 organisations worldwide — including Zurich, Lucerne, Lausanne and Geneva.",
+    "faq.q4":"How long does setup take?","faq.a4":"Usually 2–4 weeks. After a consultation call, we set up the platform with your logo, colours and content. We then train your team and support you through the official launch.",
+    "faq.q5":"Which languages are supported?","faq.a5":"The platform supports German, French and Italian. Multilingual municipalities can run the platform entirely in several languages.",
+    "faq.q6":"How secure is our residents' data?","faq.a6":"Hosting takes place exclusively in Switzerland. The platform is GDPR-compliant and complies with the Swiss Data Protection Act (DSG). Data is never passed to third parties or used for advertising.",
+    "faq.q7":"What happens to our data if we cancel?","faq.a7":"You receive all your data in a standardised format (export). Since Decidim is open source, you can keep running the platform yourself or switch providers at any time. There is no lock-in.",
+    "faq.q8":"How many residents is the platform suitable for?","faq.a8":"Meyssens suits municipalities of any size — from small municipalities with under 5,000 residents to cities and cantons.",
+    "about.label":"About us","about.title":"Your Swiss partner for digital participation","about.role":"Founder, Meyssens",
+    "about.card":"Meyssens was founded with a clear mission: to give Swiss municipalities access to modern digital civic participation — without major technical overhead and at fair prices.",
+    "about.body":"We build on <a href=\"https://decidim.org\" target=\"_blank\" style=\"color:var(--blue);text-decoration:none;font-weight:500\">Decidim</a>, the proven open-source platform used in more than 400 cities worldwide. As a local Swiss provider, we know the particularities of Swiss public administration.",
+    "about.quote":"\u201cEvery municipality deserves a modern platform that truly involves its residents.\u201d",
+    "about.tech.dsgvo":"GDPR-compliant","about.tech.dsgvo.pill":"Data protection","about.tech.decidim.pill":"Foundation","about.tech.strategie.pill":"Compliant","about.tech.hosting":"Hosted in Switzerland","about.tech.hosting.pill":"Infrastructure","about.tech.langs":"Multilingual DE / FR / IT","about.tech.langs.pill":"Languages",
+    "about.stat1.label":"Setup","about.stat1.sub":"to launch","about.stat2.label":"Hosting","about.stat2.sub":"Switzerland",
+    "contact.label":"Contact","contact.title":"Ready for the next step?","contact.lead":"Write to us or schedule a free demo presentation for your municipality directly.",
+    "contact.email.label":"Email","contact.demo.label":"Demo platform","contact.demo.link":"View demo →","contact.loc.label":"Location",
+    "contact.form.vorname":"First name","contact.form.nachname":"Last name","contact.form.gemeinde":"Municipality / organisation","contact.form.paket":"Package of interest",
+    "contact.form.opt1":"Small municipality – up to 5,000 res. (CHF 890/mo.)","contact.form.opt2":"Medium municipality – 5,000–20,000 res. (CHF 1,490/mo.)","contact.form.opt3":"City & canton – over 20,000 res. (CHF 4,990/mo.)","contact.form.opt4":"Not sure yet",
+    "contact.form.nachricht":"Message (optional)","contact.form.nachricht.ph":"Your questions or requests...","contact.form.submit":"Send inquiry",
+    "footer.platform":"Platform","footer.kontakt":"Contact","footer.links":"Links","footer.demo":"Watch live demo →","footer.strategie":"Digital Switzerland Strategy","footer.impressum":"Legal notice","footer.datenschutz":"Privacy policy",
+    "footer.copy":"© 2026 Meyssens · Lausen, Basel-Landschaft · Switzerland"
+  },
+
+  fr: {
+    "nav.funktionen":"Fonctions","nav.ablauf":"Déroulement","nav.preise":"Tarifs","nav.faq":"FAQ","nav.ueberuns":"À propos","nav.demo":"Demander une démo",
+    "hero.chip":"Disponible pour les communes suisses",
+    "hero.title":"Participation numérique<br>pour <span class=\"hl\">votre commune.</span>",
+    "hero.lead":"Meyssens offre aux communes suisses une plateforme de participation citoyenne clé en main — en ligne en 2 à 4 semaines, accompagnement personnalisé, tarifs équitables.",
+    "hero.btn1":"Voir la démo live","hero.btn2":"Demander un entretien",
+    "hero.proof":"Faites confiance à une technologie open source suisse éprouvée",
+    "hero.card1.label":"Achat direct","hero.card1.sub":"Limite CHF — pas d'appel d'offres nécessaire",
+    "hero.card2.label":"Mise en place","hero.card2.sub":"Semaines jusqu'au lancement",
+    "hero.hosting.label":"Hébergement","hero.hosting.sub":"Suisse",
+    "hero.cancel.label":"Résiliation","hero.cancel.val":"Mensuelle","hero.cancel.sub":"sans risque",
+    "hero.support.label":"Support","hero.support.val":"Personnel","hero.support.sub":"contact direct",
+    "hero.langs.label":"Langues","hero.langs.sub":"multilingue",
+    "funk.label":"Fonctions","funk.title":"Tout ce dont votre commune a besoin",
+    "funk.lead":"Une plateforme pour tous les processus de participation — des propositions au budget participatif.",
+    "funk.f1.tag":"Cœur","funk.f1.h":"Processus de participation","funk.f1.p":"Processus structurés sur le développement urbain, la mobilité ou le logement — avec des phases et des échéances claires.","funk.f1.t1":"Informel","funk.f1.t2":"Formel","funk.f1.t3":"Multi-étapes",
+    "funk.f2.tag":"Vote","funk.f2.h":"Propositions & votes","funk.f2.p":"Les citoyennes et citoyens soumettent des idées, commentent et votent directement sur la plateforme.",
+    "funk.f3.tag":"Budget","funk.f3.h":"Budget participatif","funk.f3.p":"La population décide de l'utilisation du budget communal — de manière transparente et traçable.",
+    "funk.f4.tag":"Événements","funk.f4.h":"Événements","funk.f4.p":"Publiez et gérez assemblées communales, forums et événements directement sur la plateforme.",
+    "funk.f5.tag":"Signaler un dommage","funk.f5.h":"Signaler un dommage","funk.f5.p":"Les citoyennes et citoyens signalent les dommages dans l'espace public par photo et localisation GPS — la commune réagit de manière transparente.","funk.f5.t1":"Photo","funk.f5.t3":"Catégories",
+    "funk.f6.tag":"Initiatives","funk.f6.h":"Initiatives citoyennes","funk.f6.p":"Les citoyennes et citoyens lancent leurs propres initiatives, récoltent des signatures et déposent officiellement leurs demandes.","funk.f6.t1":"Signatures","funk.f6.t2":"Délais","funk.f6.t3":"Officiel",
+    "funk.f7.tag":"Protection des données & sécurité","funk.f7.h":"Open source · conforme RGPD · hébergement en Suisse",
+    "funk.f7.p":"Meyssens repose sur <a href=\"https://decidim.org\" target=\"_blank\" style=\"color:var(--blue);text-decoration:none;font-weight:500\">Decidim</a> — open source, vérifié et conforme à la <a href=\"https://digital.swiss/de/\" target=\"_blank\" style=\"color:var(--blue);text-decoration:none;font-weight:500\">Stratégie Suisse numérique 2026</a> du Conseil fédéral, qui encourage explicitement les logiciels open source dans l'administration.",
+    "funk.f8.tag":"Support","funk.f8.h":"Interlocuteur personnel","funk.f8.p":"Pas de système de tickets, pas de hotline anonyme — vous nous joignez directement. Réponses rapides, accompagnement personnalisé.","funk.f8.t1":"Joignable directement","funk.f8.t2":"Suisse allemand",
+    "ablauf.label":"Déroulement","ablauf.title":"En ligne en 4 étapes","ablauf.lead":"Du premier contact jusqu'au lancement — rapide, simple, accompagné personnellement.",
+    "ablauf.s1.h":"Entretien de conseil","ablauf.s1.p":"Nous analysons les besoins de votre commune et vous montrons la démo en direct.","ablauf.s1.tag":"Gratuit",
+    "ablauf.s2.h":"Configuration","ablauf.s2.p":"Nous configurons la plateforme avec votre logo, vos thèmes et vos contenus en 2 à 4 semaines.","ablauf.s2.tag":"2–4 semaines",
+    "ablauf.s3.h":"Formation & lancement","ablauf.s3.p":"Votre équipe est formée, la plateforme est activée et nous vous accompagnons au démarrage.",
+    "ablauf.s4.h":"Exploitation continue","ablauf.s4.p":"Nous assurons l'hébergement, les mises à jour et le support — vous vous concentrez sur les contenus.","ablauf.s4.tag":"Permanent",
+    "preise.label":"Tarifs","preise.title":"Transparent. Équitable. Évolutif.","preise.lead":"Tous les forfaits incluent l'hébergement, les mises à jour et un support personnalisé. Aucun coût caché.",
+    "preise.setup":"Mise en place","preise.perjahr":"10'680 CHF par an","preise.direkt":"Achat direct possible",
+    "preise.c1.tier":"Jusqu'à 5'000 habitants","preise.c1.title":"Petite commune","preise.c1.desc":"Entrée simple dans la participation citoyenne numérique — sans risque, sans appel d'offres.",
+    "preise.c1.li1":"Jusqu'à 5'000 habitants","preise.c1.li2":"Processus de participation illimités","preise.c1.li3":"Propositions & votes","preise.c1.li4":"Signaler un dommage avec GPS & photo","preise.c1.li5":"Calendrier d'événements","preise.c1.li6":"Hébergement, mises à jour & support e-mail",
+    "preise.cta":"Faire une demande",
+    "preise.c2.badge":"Recommandé","preise.c2.tier":"5'000–20'000 habitants","preise.c2.title":"Commune moyenne","preise.c2.desc":"Toutes les fonctionnalités pour une participation citoyenne active — l'entrée idéale pour les communes en croissance.",
+    "preise.c2.perjahr":"17'880 CHF par an",
+    "preise.c2.li1":"5'000–20'000 habitants","preise.c2.li2":"Processus de participation illimités","preise.c2.li3":"Budget participatif","preise.c2.li4":"Signaler un dommage avec GPS & photo","preise.c2.li5":"Cartes interactives & initiatives citoyennes","preise.c2.li6":"Hébergement, mises à jour & support prioritaire",
+    "preise.c3.tier":"Plus de 20'000 habitants","preise.c3.title":"Ville & canton","preise.c3.desc":"Personnalisation maximale, hébergement dédié et accompagnement personnalisé pour les grandes administrations.",
+    "preise.c3.perjahr":"59'880 CHF par an",
+    "preise.c3.li1":"Plus de 20'000 habitants","preise.c3.li2":"Processus de participation illimités","preise.c3.li3":"Personnalisations & image de marque","preise.c3.li4":"Formations sur site","preise.c3.li5":"Hébergement suisse dédié","preise.c3.li6":"Garantie SLA & disponibilité","preise.c3.li7":"Support 24/7 & interlocuteur direct",
+    "ref.label":"Technologie utilisée","ref.lead":"Decidim — la base de Meyssens — est utilisé dans plus de 400 villes et organisations à travers le monde",
+    "ref.lu":"Ville de Lucerne","ref.zh":"Ville de Zurich","ref.ls":"Ville de Lausanne","ref.ge":"Canton de Genève","ref.eu":"Commission européenne","ref.more":"autres villes",
+    "faq.label":"FAQ","faq.title":"Questions fréquentes","faq.lead":"Réponses aux questions les plus importantes sur Meyssens et la participation citoyenne numérique.",
+    "faq.q1":"Avons-nous besoin de notre propre infrastructure informatique ?","faq.a1":"Non. Meyssens est un service entièrement géré. Nous nous occupons de l'hébergement, des mises à jour, des sauvegardes et de la sécurité. Votre commune n'a besoin ni de sa propre infrastructure serveur ni de compétences informatiques internes.",
+    "faq.q2":"Un appel d'offres public est-il nécessaire ?","faq.a2":"Non, en général pas. Les coûts annuels de tous les forfaits se situent en dessous du seuil de 150'000 CHF pour l'achat direct. Les communes peuvent donc acquérir Meyssens sans procédure d'adjudication complexe.",
+    "faq.q3":"Qu'est-ce que Decidim et pourquoi Meyssens l'utilise-t-il ?","faq.a3":"Decidim est une plateforme open source pour la démocratie numérique, développée par la Ville de Barcelone. Elle est utilisée aujourd'hui par plus de 400 organisations dans le monde — dont Zurich, Lucerne, Lausanne et Genève.",
+    "faq.q4":"Combien de temps dure la mise en place ?","faq.a4":"En général 2 à 4 semaines. Après un entretien de conseil, nous configurons la plateforme avec votre logo, vos couleurs et vos contenus. Nous formons ensuite votre équipe et vous accompagnons lors du lancement officiel.",
+    "faq.q5":"Quelles langues sont prises en charge ?","faq.a5":"La plateforme prend en charge l'allemand, le français et l'italien. Les communes plurilingues peuvent exploiter la plateforme entièrement dans plusieurs langues.",
+    "faq.q6":"Quelle est la sécurité des données de nos habitantes et habitants ?","faq.a6":"L'hébergement se fait exclusivement en Suisse. La plateforme est conforme au RGPD et à la loi suisse sur la protection des données (LPD). Les données ne sont jamais transmises à des tiers ni utilisées à des fins publicitaires.",
+    "faq.q7":"Qu'advient-il de nos données en cas de résiliation ?","faq.a7":"Vous recevez toutes vos données dans un format standardisé (export). Decidim étant open source, vous pouvez continuer à exploiter la plateforme vous-même ou changer de prestataire à tout moment. Aucun verrouillage propriétaire.",
+    "faq.q8":"Pour combien d'habitants la plateforme convient-elle ?","faq.a8":"Meyssens convient aux communes de toutes tailles — des petites communes de moins de 5'000 habitants jusqu'aux villes et cantons.",
+    "about.label":"À propos","about.title":"Votre partenaire suisse pour la participation numérique","about.role":"Fondateur, Meyssens",
+    "about.card":"Meyssens a été fondé avec une mission claire : permettre aux communes suisses d'accéder à une participation citoyenne numérique moderne — sans lourdeur technique et à des prix équitables.",
+    "about.body":"Nous misons sur <a href=\"https://decidim.org\" target=\"_blank\" style=\"color:var(--blue);text-decoration:none;font-weight:500\">Decidim</a>, la plateforme open source éprouvée, utilisée dans plus de 400 villes à travers le monde. En tant que prestataire local suisse, nous connaissons les particularités de l'administration suisse.",
+    "about.quote":"« Chaque commune mérite une plateforme moderne qui implique réellement ses citoyennes et citoyens. »",
+    "about.tech.dsgvo":"Conforme RGPD","about.tech.dsgvo.pill":"Protection des données","about.tech.decidim.pill":"Base","about.tech.strategie.pill":"Conforme","about.tech.hosting":"Hébergement en Suisse","about.tech.hosting.pill":"Infrastructure","about.tech.langs":"Multilingue DE / FR / IT","about.tech.langs.pill":"Langues",
+    "about.stat1.label":"Mise en place","about.stat1.sub":"jusqu'au lancement","about.stat2.label":"Hébergement","about.stat2.sub":"Suisse",
+    "contact.label":"Contact","contact.title":"Prêt pour la prochaine étape ?","contact.lead":"Écrivez-nous ou convenez directement d'une présentation de démo gratuite pour votre commune.",
+    "contact.email.label":"E-mail","contact.demo.label":"Plateforme de démo","contact.demo.link":"Voir la démo →","contact.loc.label":"Lieu",
+    "contact.form.vorname":"Prénom","contact.form.nachname":"Nom","contact.form.gemeinde":"Commune / organisation","contact.form.paket":"Forfait souhaité",
+    "contact.form.opt1":"Petite commune – jusqu'à 5'000 hab. (890 CHF/mois)","contact.form.opt2":"Commune moyenne – 5'000–20'000 hab. (1'490 CHF/mois)","contact.form.opt3":"Ville & canton – plus de 20'000 hab. (4'990 CHF/mois)","contact.form.opt4":"Pas encore sûr",
+    "contact.form.nachricht":"Message (facultatif)","contact.form.nachricht.ph":"Vos questions ou souhaits...","contact.form.submit":"Envoyer la demande",
+    "footer.platform":"Plateforme","footer.kontakt":"Contact","footer.links":"Liens","footer.demo":"Voir la démo live →","footer.strategie":"Stratégie numérique CH","footer.impressum":"Mentions légales","footer.datenschutz":"Protection des données",
+    "footer.copy":"© 2026 Meyssens · Lausen, Bâle-Campagne · Suisse"
+  },
+  it: {
+    "nav.funktionen":"Funzioni","nav.ablauf":"Procedura","nav.preise":"Prezzi","nav.faq":"FAQ","nav.ueberuns":"Chi siamo","nav.demo":"Richiedi una demo",
+    "hero.chip":"Ora disponibile per i comuni svizzeri",
+    "hero.title":"Partecipazione digitale<br>per <span class=\"hl\">il vostro comune.</span>",
+    "hero.lead":"Meyssens offre ai comuni svizzeri una piattaforma di partecipazione civica pronta all'uso — online in 2–4 settimane, accompagnamento personale, prezzi equi.",
+    "hero.btn1":"Guarda la demo live","hero.btn2":"Richiedi un colloquio",
+    "hero.proof":"Affidatevi a una tecnologia open source svizzera collaudata",
+    "hero.card1.label":"Acquisto diretto","hero.card1.sub":"Limite CHF — nessun bando necessario",
+    "hero.card2.label":"Configurazione","hero.card2.sub":"Settimane fino al lancio",
+    "hero.hosting.label":"Hosting","hero.hosting.sub":"Svizzera",
+    "hero.cancel.label":"Disdetta","hero.cancel.val":"Mensile","hero.cancel.sub":"nessun rischio",
+    "hero.support.label":"Supporto","hero.support.val":"Personale","hero.support.sub":"contatto diretto",
+    "hero.langs.label":"Lingue","hero.langs.sub":"multilingue",
+    "funk.label":"Funzioni","funk.title":"Tutto ciò di cui il vostro comune ha bisogno",
+    "funk.lead":"Una piattaforma per tutti i processi di partecipazione — dalle proposte al bilancio partecipativo.",
+    "funk.f1.tag":"Base","funk.f1.h":"Processi di partecipazione","funk.f1.p":"Processi strutturati su sviluppo urbano, mobilità o abitazione — con fasi e tempistiche chiare.","funk.f1.t1":"Informale","funk.f1.t2":"Formale","funk.f1.t3":"Multi-fase",
+    "funk.f2.tag":"Votazione","funk.f2.h":"Proposte & votazione","funk.f2.p":"Cittadine e cittadini presentano idee, commentano e votano direttamente sulla piattaforma.",
+    "funk.f3.tag":"Bilancio","funk.f3.h":"Bilancio partecipativo","funk.f3.p":"La popolazione decide come utilizzare il bilancio comunale — in modo trasparente e tracciabile.",
+    "funk.f4.tag":"Eventi","funk.f4.h":"Eventi","funk.f4.p":"Pubblicate e gestite assemblee comunali, forum ed eventi direttamente sulla piattaforma.",
+    "funk.f5.tag":"Segnala un danno","funk.f5.h":"Segnala un danno","funk.f5.p":"Cittadine e cittadini segnalano danni nello spazio pubblico direttamente con foto e posizione GPS — il comune risponde in modo trasparente.","funk.f5.t1":"Foto","funk.f5.t3":"Categorie",
+    "funk.f6.tag":"Iniziative","funk.f6.h":"Iniziative popolari","funk.f6.p":"Cittadine e cittadini lanciano proprie iniziative, raccolgono firme e presentano ufficialmente le loro richieste.","funk.f6.t1":"Firme","funk.f6.t2":"Scadenze","funk.f6.t3":"Ufficiale",
+    "funk.f7.tag":"Protezione dei dati & sicurezza","funk.f7.h":"Open source · conforme RGPD · hosting in Svizzera",
+    "funk.f7.p":"Meyssens si basa su <a href=\"https://decidim.org\" target=\"_blank\" style=\"color:var(--blue);text-decoration:none;font-weight:500\">Decidim</a> — open source, verificato e in linea con la <a href=\"https://digital.swiss/de/\" target=\"_blank\" style=\"color:var(--blue);text-decoration:none;font-weight:500\">Strategia Svizzera digitale 2026</a> del Consiglio federale, che promuove esplicitamente il software open source nell'amministrazione.",
+    "funk.f8.tag":"Supporto","funk.f8.h":"Referente personale","funk.f8.p":"Nessun sistema di ticket, nessuna hotline anonima — ci contattate direttamente. Risposte rapide, accompagnamento personale.","funk.f8.t1":"Contatto diretto","funk.f8.t2":"Svizzero tedesco",
+    "ablauf.label":"Procedura","ablauf.title":"Online in 4 passi","ablauf.lead":"Dal primo contatto al lancio — veloce, semplice, con accompagnamento personale.",
+    "ablauf.s1.h":"Colloquio di consulenza","ablauf.s1.p":"Analizziamo le esigenze del vostro comune e vi mostriamo la demo dal vivo.","ablauf.s1.tag":"Gratuito",
+    "ablauf.s2.h":"Configurazione","ablauf.s2.p":"Configuriamo la piattaforma con il vostro logo, temi e contenuti in 2–4 settimane.","ablauf.s2.tag":"2–4 settimane",
+    "ablauf.s3.h":"Formazione & lancio","ablauf.s3.p":"Il vostro team viene formato, la piattaforma attivata e vi accompagniamo al lancio.",
+    "ablauf.s4.h":"Gestione continua","ablauf.s4.p":"Ci occupiamo di hosting, aggiornamenti e supporto — voi vi concentrate sui contenuti.","ablauf.s4.tag":"Permanente",
+    "preise.label":"Prezzi","preise.title":"Trasparente. Equo. Scalabile.","preise.lead":"Tutti i pacchetti includono hosting, aggiornamenti e supporto personale. Nessun costo nascosto.",
+    "preise.setup":"Configurazione","preise.perjahr":"10'680 CHF all'anno","preise.direkt":"Acquisto diretto possibile",
+    "preise.c1.tier":"Fino a 5'000 abitanti","preise.c1.title":"Comune piccolo","preise.c1.desc":"Ingresso semplice nella partecipazione civica digitale — senza rischi, senza bando.",
+    "preise.c1.li1":"Fino a 5'000 abitanti","preise.c1.li2":"Processi di partecipazione illimitati","preise.c1.li3":"Proposte & votazione","preise.c1.li4":"Segnala un danno con GPS & foto","preise.c1.li5":"Calendario eventi","preise.c1.li6":"Hosting, aggiornamenti & supporto e-mail",
+    "preise.cta":"Invia richiesta",
+    "preise.c2.badge":"Consigliato","preise.c2.tier":"5'000–20'000 abitanti","preise.c2.title":"Comune medio","preise.c2.desc":"Gamma completa di funzioni per una partecipazione civica attiva — l'ingresso ideale per i comuni in crescita.",
+    "preise.c2.perjahr":"17'880 CHF all'anno",
+    "preise.c2.li1":"5'000–20'000 abitanti","preise.c2.li2":"Processi di partecipazione illimitati","preise.c2.li3":"Bilancio partecipativo","preise.c2.li4":"Segnala un danno con GPS & foto","preise.c2.li5":"Mappe interattive & iniziative popolari","preise.c2.li6":"Hosting, aggiornamenti & supporto prioritario",
+    "preise.c3.tier":"Oltre 20'000 abitanti","preise.c3.title":"Città & cantone","preise.c3.desc":"Personalizzazione massima, hosting dedicato e accompagnamento personale per grandi amministrazioni.",
+    "preise.c3.perjahr":"59'880 CHF all'anno",
+    "preise.c3.li1":"Oltre 20'000 abitanti","preise.c3.li2":"Processi di partecipazione illimitati","preise.c3.li3":"Personalizzazioni & branding","preise.c3.li4":"Formazione in loco","preise.c3.li5":"Hosting svizzero dedicato","preise.c3.li6":"Garanzia SLA & disponibilità","preise.c3.li7":"Supporto 24/7 & referente diretto",
+    "ref.label":"Tecnologia utilizzata","ref.lead":"Decidim — la base di Meyssens — è utilizzato in oltre 400 città e organizzazioni nel mondo",
+    "ref.lu":"Città di Lucerna","ref.zh":"Città di Zurigo","ref.ls":"Città di Losanna","ref.ge":"Cantone di Ginevra","ref.eu":"Commissione europea","ref.more":"altre città",
+    "faq.label":"FAQ","faq.title":"Domande frequenti","faq.lead":"Risposte alle domande più importanti su Meyssens e la partecipazione civica digitale.",
+    "faq.q1":"Abbiamo bisogno di una nostra infrastruttura IT?","faq.a1":"No. Meyssens è un servizio interamente gestito. Ci occupiamo di hosting, aggiornamenti, backup e sicurezza. Il vostro comune non necessita di infrastruttura server propria né di competenze IT interne.",
+    "faq.q2":"È necessario un bando pubblico?","faq.a2":"No, generalmente no. I costi annuali di tutti i pacchetti sono inferiori alla soglia di 150'000 CHF per l'acquisto diretto. I comuni possono quindi acquisire Meyssens senza una procedura di appalto complessa.",
+    "faq.q3":"Che cos'è Decidim e perché Meyssens lo utilizza?","faq.a3":"Decidim è una piattaforma open source per la democrazia digitale, sviluppata dalla Città di Barcellona. Oggi è utilizzata da oltre 400 organizzazioni nel mondo — tra cui Zurigo, Lucerna, Losanna e Ginevra.",
+    "faq.q4":"Quanto dura la configurazione?","faq.a4":"Generalmente 2–4 settimane. Dopo un colloquio di consulenza, configuriamo la piattaforma con il vostro logo, i vostri colori e contenuti. Successivamente formiamo il vostro team e vi accompagniamo al lancio ufficiale.",
+    "faq.q5":"Quali lingue sono supportate?","faq.a5":"La piattaforma supporta tedesco, francese e italiano. I comuni plurilingue possono gestire la piattaforma interamente in più lingue.",
+    "faq.q6":"Quanto sono sicuri i dati delle nostre abitanti e dei nostri abitanti?","faq.a6":"L'hosting avviene esclusivamente in Svizzera. La piattaforma è conforme al RGPD e alla legge svizzera sulla protezione dei dati (LPD). I dati non vengono mai ceduti a terzi né utilizzati a fini pubblicitari.",
+    "faq.q7":"Cosa succede ai nostri dati in caso di disdetta?","faq.a7":"Ricevete tutti i vostri dati in un formato standardizzato (esportazione). Essendo Decidim open source, potete continuare a gestire la piattaforma autonomamente o cambiare fornitore in qualsiasi momento. Nessun vincolo.",
+    "faq.q8":"Per quanti abitanti è adatta la piattaforma?","faq.a8":"Meyssens è adatto a comuni di ogni dimensione — da piccoli comuni con meno di 5'000 abitanti fino a città e cantoni.",
+    "about.label":"Chi siamo","about.title":"Il vostro partner svizzero per la partecipazione digitale","about.role":"Fondatore, Meyssens",
+    "about.card":"Meyssens è stato fondato con una missione chiara: offrire ai comuni svizzeri l'accesso a una partecipazione civica digitale moderna — senza grandi oneri tecnici e a prezzi equi.",
+    "about.body":"Puntiamo su <a href=\"https://decidim.org\" target=\"_blank\" style=\"color:var(--blue);text-decoration:none;font-weight:500\">Decidim</a>, la collaudata piattaforma open source utilizzata in oltre 400 città nel mondo. Come fornitore locale svizzero, conosciamo le particolarità dell'amministrazione svizzera.",
+    "about.quote":"«Ogni comune merita una piattaforma moderna che coinvolga davvero le cittadine e i cittadini.»",
+    "about.tech.dsgvo":"Conforme RGPD","about.tech.dsgvo.pill":"Protezione dati","about.tech.decidim.pill":"Base","about.tech.strategie.pill":"Conforme","about.tech.hosting":"Hosting in Svizzera","about.tech.hosting.pill":"Infrastruttura","about.tech.langs":"Multilingue DE / FR / IT","about.tech.langs.pill":"Lingue",
+    "about.stat1.label":"Configurazione","about.stat1.sub":"fino al lancio","about.stat2.label":"Hosting","about.stat2.sub":"Svizzera",
+    "contact.label":"Contatto","contact.title":"Pronti per il prossimo passo?","contact.lead":"Scriveteci o fissate direttamente una presentazione demo gratuita per il vostro comune.",
+    "contact.email.label":"E-mail","contact.demo.label":"Piattaforma demo","contact.demo.link":"Guarda la demo →","contact.loc.label":"Sede",
+    "contact.form.vorname":"Nome","contact.form.nachname":"Cognome","contact.form.gemeinde":"Comune / organizzazione","contact.form.paket":"Pacchetto di interesse",
+    "contact.form.opt1":"Comune piccolo – fino a 5'000 ab. (890 CHF/mese)","contact.form.opt2":"Comune medio – 5'000–20'000 ab. (1'490 CHF/mese)","contact.form.opt3":"Città & cantone – oltre 20'000 ab. (4'990 CHF/mese)","contact.form.opt4":"Non ancora sicuro",
+    "contact.form.nachricht":"Messaggio (facoltativo)","contact.form.nachricht.ph":"Le vostre domande o richieste...","contact.form.submit":"Invia richiesta",
+    "footer.platform":"Piattaforma","footer.kontakt":"Contatto","footer.links":"Link","footer.demo":"Guarda la demo live →","footer.strategie":"Strategia digitale CH","footer.impressum":"Note legali","footer.datenschutz":"Protezione dei dati",
+    "footer.copy":"© 2026 Meyssens · Lausen, Basilea Campagna · Svizzera"
+  }
+};
+
+function applyLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+  if(lang==='de'){
+    document.querySelectorAll('[data-i18n-original]').forEach(el=>{
+      if(el.hasAttribute('data-i18n')) el.textContent = el.getAttribute('data-i18n-original');
+      if(el.hasAttribute('data-i18n-html')) el.innerHTML = el.getAttribute('data-i18n-original');
+    });
+    document.querySelectorAll('[data-i18n-ph-original]').forEach(el=>{ el.placeholder = el.getAttribute('data-i18n-ph-original'); });
+    localStorage.setItem('meyssens_lang','de');
+    updateCookieBannerLang('de');
+    return;
+  }
+  const dict = I18N[lang];
+  if(!dict) return;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(!el.hasAttribute('data-i18n-original')) el.setAttribute('data-i18n-original', el.textContent);
+    if(dict[key]) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-html');
+    if(!el.hasAttribute('data-i18n-original')) el.setAttribute('data-i18n-original', el.innerHTML);
+    if(dict[key]) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-placeholder');
+    if(!el.hasAttribute('data-i18n-ph-original')) el.setAttribute('data-i18n-ph-original', el.placeholder);
+    if(dict[key]) el.placeholder = dict[key];
+  });
+  localStorage.setItem('meyssens_lang', lang);
+  updateCookieBannerLang(lang);
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>applyLang(btn.dataset.lang));
+});
+
+// Default is always German on first visit; only restore a previous explicit choice
+const savedLang = localStorage.getItem('meyssens_lang');
+if(savedLang && savedLang !== 'de'){ applyLang(savedLang); }
+
+// --- Cookie consent for Google Analytics ---
+const COOKIE_I18N = {
+  de: {title:"Ihre Privatsphäre ist uns wichtig", accept:"Akzeptieren", decline:"Ablehnen", text:'Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Mehr erfahren</a>'},
+  fr: {title:"Votre vie privée compte pour nous", accept:"Accepter", decline:"Refuser", text:'Ce site utilise Google Analytics pour analyser de manière anonyme le comportement des utilisateurs. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">En savoir plus</a>'},
+  it: {title:"La vostra privacy è importante per noi", accept:"Accetta", decline:"Rifiuta", text:'Questo sito utilizza Google Analytics per analizzare in forma anonima il comportamento degli utenti. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Maggiori informazioni</a>'},
+  en: {title:"Your privacy matters to us", accept:"Accept", decline:"Decline", text:'This website uses Google Analytics to anonymously analyse visitor behaviour. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Learn more</a>'}
+};
+
+function updateCookieBannerLang(lang){
+  const t = COOKIE_I18N[lang] || COOKIE_I18N.de;
+  const banner = document.getElementById('cookie-banner');
+  if(!banner) return;
+  document.getElementById('cookie-accept').textContent = t.accept;
+  document.getElementById('cookie-decline').textContent = t.decline;
+  banner.querySelector('.cookie-title').textContent = t.title;
+  banner.querySelector('.cookie-text').innerHTML = t.text;
+}
+
+const cookieChoice = localStorage.getItem('meyssens_cookie_consent');
+if(cookieChoice === 'accepted' && typeof window.meyssensEnableAnalytics === 'function'){
+  window.meyssensEnableAnalytics();
+} else if(!cookieChoice){
+  const b = document.getElementById('cookie-banner');
+  if(b) b.classList.remove('hidden');
+}
+updateCookieBannerLang(localStorage.getItem('meyssens_lang') || 'de');
+
+const acceptBtn = document.getElementById('cookie-accept');
+const declineBtn = document.getElementById('cookie-decline');
+if(acceptBtn) acceptBtn.addEventListener('click', ()=>{
+  localStorage.setItem('meyssens_cookie_consent','accepted');
+  document.getElementById('cookie-banner').classList.add('hidden');
+  if(typeof window.meyssensEnableAnalytics === 'function') window.meyssensEnableAnalytics();
+});
+if(declineBtn) declineBtn.addEventListener('click', ()=>{
+  localStorage.setItem('meyssens_cookie_consent','declined');
+  document.getElementById('cookie-banner').classList.add('hidden');
+});
+
+</script>
+
+</body>
+</html>
