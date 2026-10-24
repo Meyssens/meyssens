@@ -1,0 +1,75 @@
+[
+  {
+    "slug": "umfragen-abstimmungen",
+    "name": "Umfragen & Abstimmungen",
+    "kurzbeschreibung": "Online-Umfragen und Abstimmungen für Vereine und Unternehmen. Sie erstellen Fragen, verschicken einen Link und sehen die Ergebnisse übersichtlich ausgewertet. Geeignet für Mitgliederbefragungen, Terminabfragen und Abstimmungen zwischen zwei Versammlungen.",
+    "problem": "Viele Entscheidungen in Vereinen und Teams werden per Rundmail, auf Papier oder per Handzeichen eingeholt. Rückmeldungen gehen verloren, Antworten müssen von Hand gezählt werden, und wer nicht anwesend ist, kann nicht mitreden. Allgemeine Umfragewerkzeuge sind für einfache Abstimmungen oft unübersichtlich oder überdimensioniert.",
+    "loesung": "Sie erstellen eine Umfrage oder Abstimmung in wenigen Schritten und verschicken den Link an Ihre Mitglieder oder Mitarbeitenden. Die Antworten werden automatisch gezählt und übersichtlich dargestellt. Sie legen fest, ob die Teilnahme anonym oder namentlich erfolgt und bis wann abgestimmt werden kann. Die Ergebnisse lassen sich exportieren und im Protokoll festhalten.",
+    "fuer_wen": "Für Vereine, Verbände und Genossenschaften, die ihre Mitglieder einfach befragen möchten. Für kleine und mittlere Unternehmen, die Meinungen im Team einholen. Für Vorstände, die zwischen Versammlungen Entscheidungen vorbereiten. Ob eine Online-Abstimmung für verbindliche Beschlüsse zulässig ist, richtet sich nach Ihren Statuten.",
+    "status": "In Vorbereitung, jetzt vormerken"
+  },
+  {
+    "slug": "newsletter",
+    "name": "Newsletter",
+    "kurzbeschreibung": "Ein schlankes Werkzeug, um Newsletter zu gestalten, zu versenden und die Empfängerliste zu verwalten. Es braucht keine Programmierkenntnisse, und die Anmeldung erfolgt über einen Bestätigungslink. Gedacht für Organisationen, die regelmässig informieren möchten, ohne ein grosses Marketing-System einzuführen.",
+    "problem": "Rundmails an lange Verteiler landen oft im Spam, Adressen sind in verschiedenen Listen verstreut, und Abmeldungen müssen von Hand nachgetragen werden. Grosse Marketing-Plattformen bieten viel, sind für kleine Organisationen aber aufwendig einzurichten. Häufig fehlt zudem ein sauberer Nachweis, wer sich wann angemeldet hat.",
+    "loesung": "Sie gestalten Ihren Newsletter mit einfachen Bausteinen für Text, Bilder und Links. Interessierte melden sich über ein Formular auf Ihrer Website an und bestätigen ihre Adresse per E-Mail. Abmeldungen werden automatisch berücksichtigt, und Sie sehen jederzeit, wer Ihren Newsletter erhält.",
+    "fuer_wen": "Für Vereine, die Mitglieder und Gönner auf dem Laufenden halten möchten. Für kleine Unternehmen, Läden und Praxen, die ihre Kundschaft regelmässig informieren. Für Organisationen, die bisher mit Rundmails aus dem eigenen Postfach arbeiten.",
+    "status": "In Vorbereitung, jetzt vormerken"
+  },
+  {
+    "slug": "website-fuer-vereine",
+    "name": "Website für Vereine",
+    "kurzbeschreibung": "Eine übersichtliche Vereinswebsite mit Anlässen, Neuigkeiten, Kontakt und Informationen für Mitglieder. Der Vorstand pflegt die Inhalte selbst, ohne technische Vorkenntnisse. Die Seite funktioniert auf dem Handy ebenso gut wie am Computer.",
+    "problem": "Viele Vereinswebsites sind veraltet, weil nur eine Person weiss, wie man sie aktualisiert. Wechselt der Vorstand, gehen Zugänge und Wissen verloren. Baukastensysteme sind oft unübersichtlich, deshalb werden Anlässe und Neuigkeiten gar nicht erst eingetragen.",
+    "loesung": "Sie erhalten eine fertig eingerichtete Website mit den Bereichen, die ein Verein typischerweise braucht: Startseite, Anlässe, Neuigkeiten, Vorstand und Kontakt. Mehrere Personen können Inhalte pflegen, und Zugänge lassen sich bei einem Vorstandswechsel einfach übergeben. Anlässe erscheinen automatisch in einer Übersicht, vergangene Termine verschwinden von selbst.",
+    "fuer_wen": "Für Sport-, Musik-, Kultur- und Quartiervereine jeder Grösse. Für Vereine, deren Website nicht mehr gepflegt wird oder die noch keine haben. Für Vorstände, die Inhalte gemeinsam und ohne Fachwissen aktuell halten möchten.",
+    "status": "In Vorbereitung, jetzt vormerken"
+  },
+  {
+    "slug": "mail-assistent",
+    "name": "Mail-Assistent",
+    "kurzbeschreibung": "Ein Assistent, der eingehende E-Mails sortiert und Antwortentwürfe vorbereitet. Sie prüfen jeden Entwurf, passen ihn bei Bedarf an und senden ihn selbst ab. So bleibt die Kontrolle bei Ihnen, und wiederkehrende Anfragen sind schneller beantwortet.",
+    "problem": "Im Postfach vieler Organisationen landen täglich ähnliche Fragen, etwa zu Öffnungszeiten, Anmeldungen oder Terminen. Das Beantworten kostet Zeit, die für die eigentliche Arbeit fehlt. Gleichzeitig gehen wichtige Nachrichten zwischen Routineanfragen leicht unter.",
+    "loesung": "Der Mail-Assistent liest neue Nachrichten, ordnet sie nach Thema und Dringlichkeit und schlägt passende Antworten vor. Die Vorschläge stützen sich auf Informationen, die Sie hinterlegen, zum Beispiel häufige Fragen, Abläufe oder Textbausteine. Es wird nichts automatisch versendet: Jede Antwort geht erst nach Ihrer Freigabe hinaus.",
+    "fuer_wen": "Für Geschäftsstellen von Vereinen und Verbänden mit vielen wiederkehrenden Anfragen. Für kleine Unternehmen, Praxen und Büros, in denen wenige Personen das Postfach betreuen. Für Organisationen, die schneller antworten möchten, ohne die Kontrolle über ihre Kommunikation abzugeben.",
+    "status": "In Vorbereitung, jetzt vormerken"
+  },
+  {
+    "slug": "website-chatbot",
+    "name": "Website-Chatbot",
+    "kurzbeschreibung": "Ein Chatbot für Ihre Website, der Fragen auf Grundlage Ihrer eigenen Inhalte beantwortet. Er verweist auf die passenden Seiten und nennt bei Bedarf Ihre Kontaktmöglichkeiten. Sie bestimmen, welche Inhalte er verwenden darf.",
+    "problem": "Besucherinnen und Besucher finden die gesuchte Information auf einer Website oft nicht und rufen deshalb an oder schreiben eine E-Mail. Viele dieser Fragen sind auf der Website beantwortet, nur schwer auffindbar. Ausserhalb der Bürozeiten bleiben sie ganz unbeantwortet.",
+    "loesung": "Der Chatbot greift auf die Inhalte Ihrer Website und auf Dokumente zurück, die Sie freigeben. Er beantwortet Fragen in natürlicher Sprache und nennt die Seite, auf der die Information steht. Kann er eine Frage nicht beantworten, sagt er das offen und verweist auf Ihre Kontaktmöglichkeiten.",
+    "fuer_wen": "Für Unternehmen und Vereine mit umfangreichen Websites und vielen wiederkehrenden Fragen. Für Organisationen, die auch ausserhalb der Bürozeiten Auskunft geben möchten. Für Teams, die Telefon und Postfach entlasten wollen.",
+    "status": "In Vorbereitung, jetzt vormerken"
+  },
+  {
+    "slug": "quartier-kasse",
+    "name": "Quartier-Kasse",
+    "kurzbeschreibung": "Eine übersichtliche Kasse für Quartier- und Nachbarschaftsprojekte: Beiträge, Einnahmen und Ausgaben an einem Ort, für alle Beteiligten nachvollziehbar. Noch ohne Zahlungsfunktion, in Planung. Zahlungen erfassen Sie vorerst selbst.",
+    "problem": "Bei Quartierfesten, gemeinsamen Anschaffungen oder Nachbarschaftsprojekten wird Geld oft bar, per Überweisung oder über private Konten gesammelt. Wer was bezahlt hat und wofür das Geld verwendet wurde, steht in Tabellen oder in Chatverläufen. Das erschwert die Abrechnung und führt leicht zu Missverständnissen.",
+    "loesung": "Die Quartier-Kasse zeigt für jedes Projekt, welche Beiträge eingegangen und welche Ausgaben angefallen sind. Belege können hinterlegt werden, und alle Beteiligten sehen denselben aktuellen Stand. Noch ohne Zahlungsfunktion, in Planung: Zahlungen werden vorerst von Hand erfasst, über die Kasse wird kein Geld bewegt.",
+    "fuer_wen": "Für Quartier- und Nachbarschaftsvereine, die gemeinsame Projekte finanzieren. Für Organisationsteams von Festen, Märkten und Anlässen. Für Gruppen, die gemeinsame Ausgaben transparent abrechnen möchten.",
+    "status": "In Vorbereitung, jetzt vormerken",
+    "hinweis": "Noch ohne Zahlungsfunktion, in Planung."
+  },
+  {
+    "slug": "waerme-interessenkarte",
+    "name": "Wärme-Interessenkarte",
+    "kurzbeschreibung": "Eine Online-Karte, auf der Eigentümerinnen und Eigentümer ihr Interesse an einem Wärmenetz eintragen. So wird sichtbar, in welchen Strassen und Quartieren sich ein Anschluss lohnen könnte. Die Karte eignet sich für Energieversorger, Genossenschaften und Initiativen.",
+    "problem": "Ob sich ein Wärmenetz lohnt, hängt stark davon ab, wie viele Gebäude sich anschliessen möchten. Diese Information wird bisher oft mit Papierfragebögen, Infoabenden oder Telefonaktionen gesammelt. Die Auswertung ist aufwendig, und der Überblick über einzelne Strassenzüge fehlt.",
+    "loesung": "Interessierte markieren ihr Gebäude auf einer Karte und machen einige Angaben, etwa zur heutigen Heizung und zum gewünschten Zeitpunkt. Die Rückmeldungen erscheinen übersichtlich auf der Karte und lassen sich nach Gebieten auswerten. So erkennen Sie früh, wo sich weitere Planungsschritte lohnen.",
+    "fuer_wen": "Für Energieversorger und Stadtwerke, die ein Wärmenetz planen oder erweitern. Für Energiegenossenschaften und Bürgerinitiativen, die Interesse in ihrem Quartier sammeln. Für Planungsbüros, die eine Grundlage für Machbarkeitsabklärungen benötigen.",
+    "status": "In Vorbereitung, jetzt vormerken"
+  },
+  {
+    "slug": "ausschreibungs-radar",
+    "name": "Ausschreibungs-Radar",
+    "kurzbeschreibung": "Ein Dienst, der öffentliche Ausschreibungen nach Ihren Stichworten und Regionen durchsucht und passende Treffer zusammenstellt. Sie erhalten eine übersichtliche Liste statt vieler einzelner Suchen. So entgehen Ihnen weniger Aufträge, die zu Ihrem Unternehmen passen.",
+    "problem": "Öffentliche Aufträge werden auf verschiedenen Plattformen veröffentlicht, oft mit unterschiedlichen Begriffen und Kategorien. Wer passende Ausschreibungen finden will, muss regelmässig mehrere Portale durchsuchen. Für kleine Unternehmen ist das zeitaufwendig, und Fristen werden leicht verpasst.",
+    "loesung": "Sie hinterlegen Stichworte, Fachgebiete und Regionen, die für Sie relevant sind. Das Ausschreibungs-Radar prüft neue Veröffentlichungen und stellt passende Treffer mit Frist und Link zur Originalquelle zusammen. Sie entscheiden selbst, auf welche Ausschreibungen Sie sich bewerben.",
+    "fuer_wen": "Für kleine und mittlere Unternehmen, die sich um öffentliche Aufträge bewerben. Für Handwerks-, Planungs- und Dienstleistungsbetriebe mit regionalem Schwerpunkt. Für Unternehmen, die bisher wenig Zeit für die Suche nach Ausschreibungen haben.",
+    "status": "In Vorbereitung, jetzt vormerken"
+  }
+]
