@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{titel}}</title>
+<meta name="description" content="{{beschreibung}}">
+<meta property="og:title" content="{{titel}}">
+<meta property="og:description" content="{{beschreibung}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://meyssens.ch/og-image.png">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Meyssens">
+<link rel="canonical" href="{{url}}">
+<link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
+{{head}}
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+{{kopf}}
+
+<main id="main">
+<section class="page-hero">
+  <div class="chip"><span class="chip-dot"></span><span>Alle Produkte in Vorbereitung</span></div>
+  <h1>Für Unternehmen <span class="hl">und Vereine.</span></h1>
+  <p class="lead">Digitale Werkzeuge für Kommunikation und Organisation, schlank und persönlich begleitet. Die Produkte sind in Vorbereitung. Merken Sie sich unverbindlich vor, was Sie interessiert.</p>
+</section>
+
+<section id="produkte">
+  <div class="feat-grid r">
+{{kacheln}}
+  </div>
+</section>
+</main>
+
+{{fuss}}
+
+{{rechtliches}}
+
+{{skripte}}
+</body>
+</html>

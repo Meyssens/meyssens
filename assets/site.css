@@ -317,3 +317,11 @@ footer .fcopy{color:rgba(255,255,255,.2);font-size:.75rem}
 .way.blue .way-go{color:#fff}
 @media(max-width:1024px){.ways{grid-template-columns:1fr}}
 @media(max-width:640px){.page-hero{padding:calc(60px + 3rem) 5% 3rem}.page-hero h1{font-size:clamp(1.8rem,8.5vw,2.5rem);hyphens:auto;-webkit-hyphens:auto}.way{padding:1.75rem}.way h2{font-size:1.45rem;hyphens:auto;-webkit-hyphens:auto}}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;color:var(--ink3);text-decoration:none;margin-bottom:1.5rem;transition:color .2s}
+.back-link:hover{color:var(--blue)}
+.page-hero .back-link{display:flex;width:fit-content}
+.status-chip{display:inline-block;align-self:flex-start;font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .65rem;border-radius:4px;background:var(--blue-8);color:var(--blue);border:1px solid var(--blue-12);margin-bottom:1rem}
+a.feat.tile{text-decoration:none;color:inherit;cursor:pointer}
+.tile p{margin-bottom:1.5rem}
+.note{border:1px solid var(--blue-20);background:var(--blue-5);border-radius:var(--r-lg);padding:1.1rem 1.4rem;color:var(--ink2);font-size:.9rem;line-height:1.7;margin-top:1.5rem;max-width:760px}
+.page-hero .note{margin-top:2rem}

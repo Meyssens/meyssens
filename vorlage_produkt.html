@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{titel}}</title>
+<meta name="description" content="{{beschreibung}}">
+<meta property="og:title" content="{{titel}}">
+<meta property="og:description" content="{{beschreibung}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://meyssens.ch/og-image.png">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Meyssens">
+<link rel="canonical" href="{{url}}">
+<link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
+{{head}}
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+{{kopf}}
+
+<main id="main">
+<section class="page-hero">
+  <a href="/unternehmen/" class="back-link">← Alle Produkte</a>
+  <div class="chip"><span class="chip-dot"></span><span>{{status}}</span></div>
+  <h1>{{name}}</h1>
+  <p class="lead">{{kurzbeschreibung}}</p>
+{{hinweis}}
+</section>
+
+<section id="details">
+  <div class="feat-grid r">
+    <div class="feat">
+      <div class="feat-tag-row">Problem</div>
+      <h3>Worum es geht</h3>
+      <p>{{problem}}</p>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row">Lösung</div>
+      <h3>Was es leistet</h3>
+      <p>{{loesung}}</p>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row">Für wen</div>
+      <h3>Für wen es gedacht ist</h3>
+      <p>{{fuer_wen}}</p>
+    </div>
+  </div>
+  <div class="note r"><strong>Status: {{status}}.</strong> {{name}} ist noch nicht verfügbar. Mit dem Formular unten merken Sie sich unverbindlich vor, und wir melden uns bei Ihnen, sobald es Neuigkeiten gibt.</div>
+</section>
+
+<section id="anfrage" style="background:var(--surface)">
+  <div class="contact-grid">
+    <div class="r">
+      <span class="s-label">Vormerken</span>
+      <h2>Interesse an {{name}}?</h2>
+      <p class="s-lead">Hinterlassen Sie uns Ihre Angaben. Die Anfrage ist unverbindlich und kostenlos.</p>
+      <a href="/unternehmen/" class="back-link">← Zurück zu allen Produkten</a>
+    </div>
+    <div class="ccard r">
+      <form action="{{formular_ziel}}" method="POST">
+        <input type="hidden" name="_subject" value="Produktanfrage über meyssens.ch: {{name}}">
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="vorname">Vorname</label><input class="finput" type="text" id="vorname" name="vorname" required></div>
+          <div class="fgrp"><label class="flabel" for="nachname">Nachname</label><input class="finput" type="text" id="nachname" name="nachname" required></div>
+        </div>
+        <div class="fgrp"><label class="flabel" for="organisation">Unternehmen / Verein / Organisation</label><input class="finput" type="text" id="organisation" name="organisation" required></div>
+        <div class="fgrp"><label class="flabel" for="email">E-Mail</label><input class="finput" type="email" id="email" name="email" required></div>
+        <div class="fgrp"><label class="flabel" for="produkt">Produkt</label><input class="finput" type="text" id="produkt" name="produkt" value="{{name}}" readonly></div>
+        <div class="fgrp"><label class="flabel" for="nachricht">Nachricht (optional)</label><textarea class="ftextarea" id="nachricht" name="nachricht" placeholder="Ihre Fragen oder Wünsche..."></textarea></div>
+        {{einwilligung}}
+        <button type="submit" class="btn-p" id="sbtn" style="width:100%;justify-content:center;border-radius:var(--r-sm)">
+          <span>Unverbindlich vormerken</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p id="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+{{fuss}}
+
+{{rechtliches}}
+
+{{skripte}}
+<script>
+{{formular_skript}}</script>
+</body>
+</html>
