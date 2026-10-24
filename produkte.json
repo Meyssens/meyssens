@@ -19,6 +19,11 @@
   },
   {
     "slug": "website-fuer-vereine",
+    "demo": {
+      "text": "Eine Vorschau der Möglichkeiten zeigt unsere Beispielplattform des erfundenen FC Rheinstadt Basel. Das Produkt selbst ist weiterhin in Planung.",
+      "url": "https://fc-rheinstadt.demo.meyssens.ch/",
+      "hinweis": "Frei erfundener Beispielverein. Alle Inhalte sind Beispiele und haben keinen Bezug zu bestehenden Vereinen."
+    },
     "name": "Website für Vereine",
     "kurzbeschreibung": "Eine übersichtliche Vereinswebsite mit Anlässen, Neuigkeiten, Kontakt und Informationen für Mitglieder. Der Vorstand pflegt die Inhalte selbst, ohne technische Vorkenntnisse. Die Seite funktioniert auf dem Handy ebenso gut wie am Computer.",
     "problem": "Viele Vereinswebsites sind veraltet, weil nur eine Person weiss, wie man sie aktualisiert. Wechselt der Vorstand, gehen Zugänge und Wissen verloren. Baukastensysteme sind oft unübersichtlich, deshalb werden Anlässe und Neuigkeiten gar nicht erst eingetragen.",

@@ -348,3 +348,14 @@ a.feat.tile{text-decoration:none;color:inherit;cursor:pointer}
 .branch-list a{display:inline-flex;align-items:center;gap:8px;padding:.7rem 1.1rem;border:1px solid var(--line);border-radius:var(--r-sm);background:var(--white);color:var(--ink);font-size:.9rem;text-decoration:none;transition:border-color .2s,color .2s}
 .branch-list a:hover{border-color:var(--blue-20);color:var(--blue)}
 @media(max-width:640px){.branche h1,.branche h2{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}}
+/* Verweis auf eine Beispielplattform (Feld "demo" in branchen.json und produkte.json) */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.demo-box{display:flex;align-items:center;gap:2rem;margin-top:1.5rem;background:var(--white);border:1px solid var(--blue-20);border-radius:var(--r-xl);padding:2rem}
+.demo-box h3{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em}
+.demo-box p{font-size:.9rem;color:var(--ink3);line-height:1.75;max-width:680px}
+.demo-box .demo-box__hinweis{margin-top:.875rem;padding:.6rem .9rem;border-radius:var(--r-sm);background:var(--blue-5);border:1px solid var(--blue-12);color:var(--ink2)}
+.demo-box .demo-box__hinweis strong{font-weight:600}
+.demo-box__aktion{flex:none;margin-left:auto}
+.btn-p[target="_blank"],.demo-note .btn-p{min-height:44px}
+.demo-note__aktion{margin-top:.875rem}
+@media(max-width:768px){.demo-box{flex-direction:column;align-items:stretch;gap:1.25rem;padding:1.5rem}.demo-box__aktion{margin-left:0}.demo-box__aktion .btn-p{width:100%;justify-content:center}}

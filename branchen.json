@@ -176,6 +176,12 @@
   },
   {
     "slug": "vereine",
+    "demo": {
+      "titel": "Beispielplattform ansehen",
+      "text": "Wie digitale Mitwirkung im Verein aussehen kann, zeigt unsere Beispielplattform des erfundenen FC Rheinstadt Basel: eine Ideenkarte für Anliegen rund um Platz und Clubhaus, eine Abstimmung zum Vereinsausflug, eine Übersicht der Anlässe und Helfereinsätze, für die sich Mitglieder eintragen können. Die Plattform ist eine Vorschau der Möglichkeiten, kein fertiges Produkt.",
+      "url": "https://fc-rheinstadt.demo.meyssens.ch/",
+      "hinweis": "Frei erfundener Beispielverein. Alle Inhalte sind Beispiele und haben keinen Bezug zu bestehenden Vereinen."
+    },
     "name": "Vereine",
     "fuer": "Vereine",
     "kurz": "Website, Mitgliederinformation und Umfragen für den Vereinsalltag.",

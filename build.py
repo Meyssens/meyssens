@@ -92,6 +92,31 @@ def karte(tag, titel, text):
             '    </div>' % ('      <div class="feat-tag-row">%s</div>\n' % tag if tag else "", html.escape(titel), html.escape(text)))
 
 
+def demo(d, art):
+    # Optionaler Verweis auf eine Beispielplattform (Feld "demo"), ohne Tracking, öffnet im neuen Tab.
+    # Seiten ohne Feld bleiben unverändert (leerer Platzhalter am Zeilenende).
+    if not d:
+        return ""
+    fehlt = [f for f in ("text", "url", "hinweis") if not str(d.get(f, "")).strip()]
+    if fehlt or not d["url"].startswith("https://") or (art == "branche" and not d.get("titel")):
+        raise SystemExit("Feld demo unvollständig: %s" % ", ".join(fehlt or ["url/titel"]))
+    e = {k: html.escape(str(v)) for k, v in d.items()}
+    knopf = ('<a href="%s" class="btn-p" target="_blank" rel="noopener">Beispielplattform öffnen %s'
+             '<span class="sr-only"> (öffnet in neuem Tab)</span></a>' % (e["url"], PFEIL))
+    if art == "branche":
+        return ('\n  <div class="demo-box r" id="beispielplattform">\n'
+                '    <div class="demo-box__text">\n'
+                '      <h3>%s</h3>\n'
+                '      <p>%s</p>\n'
+                '      <p class="demo-box__hinweis"><strong>%s</strong></p>\n'
+                '    </div>\n'
+                '    <div class="demo-box__aktion">%s</div>\n'
+                '  </div>' % (e["titel"], e["text"], e["hinweis"], knopf))
+    return ('\n  <div class="note demo-note">%s <strong>%s</strong>\n'
+            '    <div class="demo-note__aktion">%s</div>\n'
+            '  </div>' % (e["text"], e["hinweis"], knopf))
+
+
 def kurz(text, laenge=155):
     # Meta-Beschreibung: ganze Sätze bis zur Länge, mindestens der erste Satz
     saetze = re.split(r"(?<=[.!?])\s+", text)
@@ -168,6 +193,7 @@ def main():
             "loesung": e["loesung"],
             "fuer_wen": e["fuer_wen"],
             "hinweis": hinweis,
+            "demo": demo(p.get("demo"), "produkt"),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -187,6 +213,7 @@ def main():
             "intro": html.escape(b["intro"]),
             "probleme": "\n".join(karte("", x["titel"], x["text"]) for x in b["probleme"]),
             "szenarien": "\n".join(karte("Beispielszenario", x["titel"], x["text"]) for x in b["szenarien"]),
+            "demo": demo(b.get("demo"), "branche"),
             "besonderheit_titel": html.escape(b["besonderheit"]["titel"]),
             "besonderheit_text": html.escape(b["besonderheit"]["text"]),
             "produkte": "\n".join(kachel(nach_slug[s]) for s in b["produkte"]),
