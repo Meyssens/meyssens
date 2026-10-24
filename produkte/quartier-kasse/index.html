@@ -88,7 +88,7 @@
       <p>Für Quartier- und Nachbarschaftsvereine, die gemeinsame Projekte finanzieren. Für Organisationsteams von Festen, Märkten und Anlässen. Für Gruppen, die gemeinsame Ausgaben transparent abrechnen möchten.</p>
     </div>
   </div>
-  <div class="note r"><strong>Status: In Vorbereitung, jetzt vormerken.</strong> Quartier-Kasse ist noch nicht verfügbar. Mit dem Formular unten merken Sie sich unverbindlich vor, und wir melden uns bei Ihnen, sobald es Neuigkeiten gibt.</div>
+  <div class="note r">Dieses Produkt befindet sich in Vorbereitung. Mit Ihrer Anfrage merken wir Sie unverbindlich vor.</div>
 </section>
 
 <section id="anfrage" style="background:var(--surface)">
@@ -183,7 +183,7 @@
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Hosting dieser Website</strong><br>Diese Website wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Dabei werden technisch notwendige Verbindungsdaten wie die IP-Adresse verarbeitet.</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Schriftarten</strong><br>Zur Darstellung nutzt die Website Schriftarten von Google Fonts (Google Ireland Limited). Dabei wird Ihre IP-Adresse an Google übermittelt.</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Google Analytics</strong><br>Wir setzen Google Analytics (Google Ireland Limited, ggf. Google LLC, USA) nur mit Ihrer Einwilligung über das Cookie-Banner ein. Verarbeitet werden pseudonymisierte Nutzungsdaten wie besuchte Seiten, ungefähre Herkunft und Gerätetyp. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können sie jederzeit widerrufen, indem Sie die Website-Daten Ihres Browsers löschen und das Banner erneut mit «Ablehnen» beantworten.</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Kontaktformular</strong><br>Wenn Sie das Formular nutzen, verarbeiten wir Ihre Angaben (Name, Gemeinde, E-Mail, Land, Nachricht), um Ihre Anfrage zu beantworten. Das Formular wird über Formspree (Formspree, Inc., USA) als E-Mail an uns weitergeleitet. Rechtsgrundlage ist die Anbahnung eines Vertrags und unser berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO). Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Kontaktformular</strong><br>Wenn Sie das Formular nutzen, verarbeiten wir Ihre Angaben (Name, Gemeinde, E-Mail, Land, Nachricht), um Ihre Anfrage zu beantworten. Bei Produktanfragen erfassen wir zusätzlich Organisation und das gewünschte Produkt. Das Formular wird über Formspree (Formspree, Inc., USA) als E-Mail an uns weitergeleitet. Rechtsgrundlage ist die Anbahnung eines Vertrags und unser berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO). Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Ihre Rechte</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Schreiben Sie uns dazu an lionel@meyssens.ch. Sie können sich ausserdem bei der zuständigen Datenschutzbehörde beschweren (in der Schweiz der EDÖB, in Deutschland die Aufsichtsbehörde Ihres Bundeslandes).</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8"><strong>Kontakt</strong><br>Bei Fragen zum Datenschutz: lionel@meyssens.ch</p>
   </div>
@@ -224,7 +224,7 @@ if(cookieChoice === 'accepted' && typeof window.meyssensEnableAnalytics === 'fun
   const b = document.getElementById('cookie-banner');
   if(b) b.classList.remove('hidden');
 }
-updateCookieBannerLang(localStorage.getItem('meyssens_lang') || 'de');
+updateCookieBannerLang('de');
 
 const acceptBtn = document.getElementById('cookie-accept');
 const declineBtn = document.getElementById('cookie-decline');
