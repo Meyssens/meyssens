@@ -1,0 +1,412 @@
+[
+  {
+    "slug": "bauunternehmen",
+    "name": "Bauunternehmen",
+    "fuer": "Bauunternehmen",
+    "kurz": "Ausschreibungen im Blick behalten und Anfragen von Bauherrschaften schneller beantworten.",
+    "beschreibung": "Digitale Werkzeuge für Bauunternehmen: öffentliche Ausschreibungen finden und Anfragen geordnet beantworten. Mit Beispielszenarien und Fragen.",
+    "intro": "Im Bauunternehmen entscheidet sich viel auf der Baustelle, die Büroarbeit läuft oft nebenher. Ausschreibungen suchen, Offertanfragen beantworten und Rückfragen von Bauherrschaften klären kostet Zeit, die im Tagesgeschäft fehlt. Digitale Werkzeuge können hier entlasten, wenn sie einfach bleiben und in bestehende Abläufe passen. Entscheidend ist, dass am Ende immer ein Mensch prüft und entscheidet, ob eine Ausschreibung passt oder eine Antwort hinausgeht.",
+    "probleme": [
+      {
+        "titel": "Ausschreibungen gehen unter",
+        "text": "Öffentliche Aufträge werden auf mehreren Portalen und mit unterschiedlichen Begriffen veröffentlicht. Wer nicht regelmässig sucht, bemerkt passende Ausschreibungen oft erst kurz vor Ablauf der Frist oder gar nicht. Gerade kleinere Betriebe haben niemanden, der diese Suche fest übernimmt."
+      },
+      {
+        "titel": "Volles Postfach nach Feierabend",
+        "text": "Offertanfragen, Terminwünsche und Rückfragen zu laufenden Projekten kommen über den Tag verteilt per E-Mail. Beantwortet werden sie häufig erst abends, wenn die Bauleitung zurück im Büro ist. Bauherrschaften warten dann länger auf eine Antwort, als ihnen lieb ist."
+      },
+      {
+        "titel": "Wiederkehrende Fragen von Bauherrschaften",
+        "text": "Viele Anfragen drehen sich um ähnliche Themen, etwa den Ablauf einer Offerte, benötigte Unterlagen oder den nächsten Schritt im Projekt. Jede Antwort wird trotzdem neu formuliert. Das kostet Zeit, und die Antworten fallen je nach Person unterschiedlich aus."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Ausschreibungen zum Wochenbeginn",
+        "text": "Die Geschäftsleitung hinterlegt einmal ihre Fachgebiete, etwa Hoch- oder Tiefbau, und die Region, in der das Unternehmen tätig ist. Zu Wochenbeginn liegt eine Liste neuer passender Ausschreibungen mit Frist und Link zur Originalquelle bereit. Im Team wird entschieden, welche davon weiterverfolgt werden."
+      },
+      {
+        "titel": "Antwortentwürfe für Offertanfragen",
+        "text": "Eine Bauherrschaft fragt, welche Unterlagen für eine Offerte nötig sind. Der Assistent erkennt die Anfrage und schlägt eine Antwort auf Basis hinterlegter Textbausteine vor. Die zuständige Person prüft den Entwurf, ergänzt projektspezifische Angaben und sendet ihn selbst ab."
+      },
+      {
+        "titel": "Dringendes zuerst",
+        "text": "Zwischen Werbung und Lieferantenmails trifft eine Rückfrage zu einem laufenden Projekt ein. Der Assistent markiert sie als dringend, sodass sie am Abend nicht zwischen Routinemails übersehen wird."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Fristen und Formvorschriften bei öffentlichen Aufträgen",
+      "text": "Bei öffentlichen Ausschreibungen gelten feste Eingabefristen und formale Anforderungen, die je nach Auftraggeber und Verfahren unterschiedlich sind. Ein Suchdienst kann helfen, passende Verfahren früher zu finden, ersetzt aber nicht die sorgfältige Prüfung der Ausschreibungsunterlagen. Massgebend sind immer die Angaben in der Originalpublikation. Die Verantwortung für eine vollständige und fristgerechte Eingabe bleibt beim Unternehmen."
+    },
+    "faq": [
+      {
+        "frage": "Bewirbt sich das Ausschreibungs-Radar selbst auf Aufträge?",
+        "antwort": "Nein. Das Ausschreibungs-Radar soll passende Ausschreibungen finden und zusammenstellen. Ob und wie Sie sich bewerben, entscheiden Sie selbst. Das Produkt ist derzeit in Planung."
+      },
+      {
+        "frage": "Werden E-Mails automatisch an Bauherrschaften verschickt?",
+        "antwort": "Nein. Der Mail-Assistent ist so gedacht, dass er nur Entwürfe vorbereitet. Jede Antwort wird von Ihnen geprüft und selbst versendet."
+      },
+      {
+        "frage": "Müssen wir unsere bestehende Software ersetzen?",
+        "antwort": "Nein. Die Werkzeuge sind als Ergänzung gedacht. Welche Anbindung an bestehende Programme sinnvoll ist, klären wir gern im Gespräch."
+      }
+    ],
+    "produkte": [
+      "ausschreibungs-radar",
+      "mail-assistent"
+    ]
+  },
+  {
+    "slug": "elektro-handwerk",
+    "name": "Elektro-Handwerk",
+    "fuer": "das Elektro-Handwerk",
+    "kurz": "Kundenanfragen ordnen, Ausschreibungen finden und Fragen auf der Website beantworten.",
+    "beschreibung": "Digitale Werkzeuge für Elektro-Handwerksbetriebe: Anfragen ordnen, Ausschreibungen finden, Fragen auf der Website beantworten. Mit Beispielszenarien.",
+    "intro": "Elektro-Handwerksbetriebe sind vor allem bei Kundinnen und Kunden vor Ort unterwegs. Gleichzeitig kommen laufend Anfragen herein: zu Installationen, Reparaturen, Terminen oder Themen wie Ladestationen und Photovoltaik. Wer diese Anfragen schnell einordnet, kann besser planen und verliert weniger Aufträge. Dabei geht es nicht darum, den persönlichen Kontakt zu ersetzen, sondern Routinearbeit im Büro zu verringern.",
+    "probleme": [
+      {
+        "titel": "Alles im selben Postfach",
+        "text": "Terminwünsche, Offertanfragen, Lieferantenmails und Rückfragen zu Rechnungen landen ungeordnet im gleichen Postfach. Was dringend ist und was warten kann, ist auf den ersten Blick nicht erkennbar. Wichtiges wird dadurch manchmal erst spät bemerkt."
+      },
+      {
+        "titel": "Gleiche Fragen am Telefon",
+        "text": "Viele Anrufe drehen sich um Grundsätzliches, etwa um das Einzugsgebiet, die Erreichbarkeit oder die angebotenen Leistungen. Diese Gespräche unterbrechen die Arbeit auf der Baustelle oder in der Werkstatt. Oft stehen die Antworten bereits auf der eigenen Website, werden aber nicht gelesen."
+      },
+      {
+        "titel": "Öffentliche Aufträge nebenbei suchen",
+        "text": "Gemeinden und andere öffentliche Stellen schreiben auch Elektroarbeiten aus. Die Suche danach fällt im Alltag eines kleinen Betriebs oft weg. Passende Ausschreibungen werden deshalb häufig gar nicht erst entdeckt."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Fragen auf der Website beantworten",
+        "text": "Eine Besucherin möchte wissen, ob der Betrieb auch Ladestationen für Elektroautos installiert. Der Chatbot findet die Antwort auf der Leistungsseite der Website, nennt die Seite und verweist für eine Offerte auf das Kontaktformular."
+      },
+      {
+        "titel": "Postfach am Morgen geordnet",
+        "text": "Vor Arbeitsbeginn sind neue E-Mails nach Themen geordnet: Offertanfragen, Terminwünsche, Rechnungsfragen. Für einfache Anfragen liegen Antwortentwürfe bereit, die nur noch geprüft und abgeschickt werden."
+      },
+      {
+        "titel": "Ausschreibung aus der Region",
+        "text": "Eine Gemeinde schreibt die Erneuerung der Beleuchtung in einem Schulhaus aus. Die Ausschreibung erscheint in der Trefferliste des Betriebs, weil Stichworte und Region passen."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Störungen und Notfälle gehören nicht in die Warteschlange",
+      "text": "Meldet jemand eine Störung oder eine Gefahr, etwa einen Stromausfall oder Brandgeruch, muss das sofort bei einem Menschen ankommen. Digitale Helfer dürfen solche Meldungen nicht verzögern. Ein Chatbot sollte in diesen Fällen klar auf Ihre Notfallnummer verweisen, statt selbst eine Antwort zu geben. Welche Fälle als dringend gelten, legen Sie selbst fest."
+    },
+    "faq": [
+      {
+        "frage": "Kann der Chatbot Termine vergeben?",
+        "antwort": "Nein, das ist nicht vorgesehen. Der Website-Chatbot soll Fragen auf Grundlage Ihrer Website beantworten und auf die richtige Seite oder Kontaktmöglichkeit verweisen. Er befindet sich derzeit in der Pilotphase."
+      },
+      {
+        "frage": "Woher weiss der Chatbot, was er antworten darf?",
+        "antwort": "Er soll nur Inhalte verwenden, die Sie freigeben, zum Beispiel Ihre Website und ausgewählte Dokumente. Kann er eine Frage nicht beantworten, sagt er das und nennt Ihre Kontaktmöglichkeiten."
+      },
+      {
+        "frage": "Was bedeutet Pilotpartner?",
+        "antwort": "Für Produkte in der Pilotphase suchen wir Betriebe, die von Anfang an mitmachen. Pilotpartner erhalten die Einrichtung kostenlos und bringen ihre Erfahrungen in die Entwicklung ein."
+      }
+    ],
+    "produkte": [
+      "website-chatbot",
+      "mail-assistent",
+      "ausschreibungs-radar"
+    ]
+  },
+  {
+    "slug": "kindergaerten-schulen",
+    "name": "Kindergärten und Schulen",
+    "fuer": "Kindergärten und Schulen",
+    "kurz": "Eltern befragen und informieren, mit besonderer Sorgfalt beim Datenschutz.",
+    "beschreibung": "Digitale Werkzeuge für Kindergärten und Schulen: Eltern befragen und informieren, mit Sorgfalt beim Datenschutz von Kindern. Mit Beispielszenarien.",
+    "intro": "Kindergärten und Schulen stehen in ständigem Austausch mit Eltern: Elternabende, Ausflüge, Anlässe, Rückmeldungen. Dafür werden oft Zettel, Rundmails und verschiedene Apps gleichzeitig genutzt. Gerade hier ist Sorgfalt gefragt, denn es geht um Daten von Kindern. Digitale Werkzeuge können den Aufwand verringern, wenn sie wenige Daten benötigen und für Eltern einfach zu bedienen sind.",
+    "probleme": [
+      {
+        "titel": "Rücklaufzettel und Nachfragen",
+        "text": "Für Ausflüge, Anlässe oder Terminabfragen werden Zettel verteilt und wieder eingesammelt. Fehlende Rückmeldungen müssen einzeln nachgefragt werden. Das kostet Lehrpersonen Zeit, die im Unterricht fehlt."
+      },
+      {
+        "titel": "Informationen auf vielen Kanälen",
+        "text": "Eltern erhalten Informationen per Brief, E-Mail und Chat. Was wo stand, ist später schwer nachzuvollziehen, und nicht alle Familien werden gleich gut erreicht. Für Familien mit wenig Zeit oder anderen Sprachen ist das zusätzlich erschwert."
+      },
+      {
+        "titel": "Meinungen einholen ist aufwendig",
+        "text": "Wenn Schulleitung oder Elternrat wissen möchten, wie Eltern zu einem Thema stehen, etwa zu Betreuungszeiten, ist eine Befragung auf Papier mühsam auszuwerten. Deshalb wird oft gar nicht erst gefragt, obwohl die Rückmeldungen wertvoll wären."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Terminabfrage für den Elternabend",
+        "text": "Die Lehrperson verschickt einen Link mit mehreren möglichen Terminen. Die Eltern wählen online aus, die Auswertung entsteht automatisch, und niemand muss Zettel einsammeln. Namen der Kinder werden dafür nicht benötigt."
+      },
+      {
+        "titel": "Befragung zu den Betreuungszeiten",
+        "text": "Der Elternrat möchte wissen, ob Bedarf an längeren Betreuungszeiten besteht. Die Befragung läuft anonym, und das Ergebnis wird übersichtlich dargestellt, ohne dass einzelne Familien erkennbar sind. Die Fragen hat der Elternrat vorher mit der Schulleitung abgestimmt."
+      },
+      {
+        "titel": "Regelmässige Elterninformation",
+        "text": "Statt einzelner Rundmails erscheint ein Newsletter mit den wichtigsten Terminen und Hinweisen. Eltern melden sich mit ihrer E-Mail-Adresse an und können sich jederzeit wieder abmelden. Die Adressen werden nur für diesen Zweck verwendet."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Datenschutz bei Kindern",
+      "text": "Daten über Kinder verdienen besonderen Schutz. Für Befragungen und Mitteilungen sollten nur die Angaben erhoben werden, die wirklich nötig sind, und Namen oder Fotos von Kindern gehören nicht ohne Einwilligung der Eltern in digitale Werkzeuge. Welche Regeln im Einzelnen gelten, hängt vom Kanton oder Bundesland und von den Vorgaben des Schulträgers ab. Diese Vorgaben gehen jedem Werkzeug vor. Im Zweifel gilt: lieber eine Angabe weniger erheben."
+    },
+    "faq": [
+      {
+        "frage": "Können Befragungen anonym durchgeführt werden?",
+        "antwort": "Das ist so vorgesehen: Bei Umfragen & Abstimmungen soll sich festlegen lassen, ob die Teilnahme anonym oder namentlich erfolgt. Das Produkt befindet sich in der Pilotphase."
+      },
+      {
+        "frage": "Brauchen Kinder einen eigenen Zugang?",
+        "antwort": "Nein. Die beschriebenen Szenarien richten sich an Eltern, Lehrpersonen und Schulleitungen. Kinder müssen keine Daten eingeben."
+      },
+      {
+        "frage": "Dürfen wir das ohne Rücksprache mit dem Schulträger einsetzen?",
+        "antwort": "Das hängt von Ihren Vorgaben ab. Häufig ist vor dem Einsatz neuer digitaler Werkzeuge eine Abklärung mit dem Schulträger oder der zuständigen Stelle nötig. Wir unterstützen Sie gern mit Informationen für diese Abklärung."
+      }
+    ],
+    "produkte": [
+      "umfragen-abstimmungen",
+      "newsletter"
+    ]
+  },
+  {
+    "slug": "vereine",
+    "name": "Vereine",
+    "fuer": "Vereine",
+    "kurz": "Website, Mitgliederinformation und Umfragen für den Vereinsalltag.",
+    "beschreibung": "Digitale Werkzeuge für Vereine: Vereinswebsite, Newsletter für Mitglieder und Online-Umfragen. Mit Hinweisen zum Vereinsrecht und Beispielszenarien.",
+    "intro": "Vereine leben vom Engagement Freiwilliger. Vorstandsarbeit findet abends und am Wochenende statt, und die Zeit dafür ist knapp. Werkzeuge für Vereine müssen deshalb einfach zu bedienen sein und auch dann funktionieren, wenn der Vorstand wechselt. Wichtig ist auch, dass Mitglieder jeden Alters die Angebote ohne Hürden nutzen können.",
+    "probleme": [
+      {
+        "titel": "Die Website ist veraltet",
+        "text": "Oft weiss nur eine Person, wie die Vereinswebsite aktualisiert wird. Anlässe fehlen oder sind längst vorbei. Wer neu in den Verein kommt oder sich für eine Mitgliedschaft interessiert, findet so kaum aktuelle Informationen."
+      },
+      {
+        "titel": "Mitglieder sind schwer erreichbar",
+        "text": "Einladungen und Informationen gehen per Rundmail, Brief oder Chatgruppe hinaus. Nicht alle lesen alles, und die Adresslisten sind selten aktuell. Gerade jüngere Mitglieder fühlen sich von Briefen kaum angesprochen, ältere nicht von jeder App."
+      },
+      {
+        "titel": "Entscheidungen zwischen den Versammlungen",
+        "text": "Manche Fragen können nicht bis zur nächsten Versammlung warten, etwa ein Termin für einen Anlass oder die Wahl zwischen zwei Angeboten. Eine schnelle Umfrage per E-Mail endet oft in einem unübersichtlichen Antwortverlauf. Am Ende entscheidet dann doch der Vorstand allein, obwohl die Meinung der Mitglieder gefragt war."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Anlässe pflegen ohne Fachwissen",
+        "text": "Die Aktuarin trägt das Sommerfest auf der Vereinswebsite ein. Es erscheint automatisch in der Anlassübersicht und verschwindet nach dem Fest von selbst. Beim Vorstandswechsel wird der Zugang einfach weitergegeben. Wer den Zugang hat, legt der Vorstand fest."
+      },
+      {
+        "titel": "Umfrage zum Vereinsausflug",
+        "text": "Der Vorstand stellt mehrere Ziele zur Auswahl und verschickt den Link an alle Mitglieder. Nach Ablauf der Frist liegt das Ergebnis vor, ohne dass jemand Antworten zählen musste. Das Ergebnis dient dem Vorstand als Meinungsbild."
+      },
+      {
+        "titel": "Vereinsnachrichten statt Rundmail",
+        "text": "Regelmässig erscheint ein Newsletter mit Rückblick, Terminen und Hinweisen aus dem Vorstand. Neue Mitglieder melden sich über die Website an, Abmeldungen werden automatisch berücksichtigt. Der Vorstand entscheidet, was hineinkommt."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Vereinsrecht und Statuten",
+      "text": "Ob ein Verein Beschlüsse online fassen darf, ergibt sich aus seinen Statuten und dem anwendbaren Vereinsrecht. Eine Online-Umfrage eignet sich gut für Meinungsbilder und organisatorische Fragen. Für verbindliche Beschlüsse, etwa Wahlen oder Statutenänderungen, sollten Sie vorher prüfen, ob die Statuten eine schriftliche oder elektronische Beschlussfassung zulassen. Im Zweifel lohnt sich eine Rückfrage bei einer fachkundigen Stelle oder beim Dachverband."
+    },
+    "faq": [
+      {
+        "frage": "Ersetzt eine Online-Abstimmung die Mitgliederversammlung?",
+        "antwort": "Nicht automatisch, das hängt von Ihren Statuten ab. Für Meinungsbilder und organisatorische Fragen eignet sich eine Online-Umfrage gut. Für verbindliche Beschlüsse sollten Sie die Statuten prüfen."
+      },
+      {
+        "frage": "Wer kann die Vereinswebsite bearbeiten?",
+        "antwort": "Vorgesehen ist, dass mehrere Personen Inhalte pflegen können und Zugänge bei einem Vorstandswechsel einfach übergeben werden. Die Website für Vereine ist derzeit in Planung."
+      },
+      {
+        "frage": "Können wir Pilotpartner werden?",
+        "antwort": "Für Umfragen & Abstimmungen suchen wir derzeit Pilotpartner. Für die übrigen Produkte können Sie sich unverbindlich vormerken lassen."
+      }
+    ],
+    "produkte": [
+      "website-fuer-vereine",
+      "umfragen-abstimmungen",
+      "newsletter"
+    ]
+  },
+  {
+    "slug": "arztpraxen",
+    "name": "Arztpraxen",
+    "fuer": "Arztpraxen",
+    "kurz": "Allgemeine Fragen beantworten und das Praxisteam entlasten, ohne Patientendaten preiszugeben.",
+    "beschreibung": "Digitale Werkzeuge für Arztpraxen: allgemeine Fragen auf der Website beantworten und das Praxisteam entlasten, mit Rücksicht auf die Schweigepflicht.",
+    "intro": "In Arztpraxen ist das Telefon oft der Engpass. Das Praxisteam beantwortet zwischen Empfang, Terminen und Administration laufend dieselben allgemeinen Fragen. Digitale Werkzeuge können hier entlasten, aber nur dort, wo keine Gesundheitsdaten im Spiel sind. Wer digitale Helfer in der Praxis einsetzt, muss die Grenze zwischen allgemeiner Auskunft und medizinischer Beratung klar ziehen.",
+    "probleme": [
+      {
+        "titel": "Das Telefon steht nicht still",
+        "text": "Viele Anrufe betreffen Allgemeines: Öffnungszeiten, Ferienabwesenheiten, Anfahrt oder welche Unterlagen zum ersten Termin mitzubringen sind. Währenddessen warten Patientinnen und Patienten am Empfang. Jeder Anruf unterbricht zudem die Arbeit am Empfang."
+      },
+      {
+        "titel": "Informationen werden übersehen",
+        "text": "Die Antworten stehen oft bereits auf der Website, werden aber nicht gefunden. Also wird doch angerufen. Gerade bei Ferienabwesenheiten oder geänderten Öffnungszeiten häufen sich solche Anrufe."
+      },
+      {
+        "titel": "Organisatorische E-Mails bleiben liegen",
+        "text": "Neben medizinischen Anliegen kommen auch organisatorische E-Mails, etwa Fragen zu Rechnungen oder Bescheinigungen. Diese bleiben im Praxisalltag leicht liegen. Bis eine Antwort kommt, fragen Patientinnen und Patienten oft telefonisch nach."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Ferienabwesenheit auf einen Blick",
+        "text": "Ein Patient fragt im Chat auf der Website, ob die Praxis über die Feiertage geöffnet ist. Der Chatbot antwortet mit der Information von der Website und nennt die Seite mit den Vertretungsregelungen. Fragen, die über allgemeine Informationen hinausgehen, beantwortet er nicht."
+      },
+      {
+        "titel": "Klare Grenze bei medizinischen Fragen",
+        "text": "Eine Besucherin beschreibt Beschwerden und fragt, was sie tun soll. Der Chatbot gibt keine medizinische Auskunft, sondern verweist auf die Telefonnummer der Praxis und im Notfall auf die Notrufnummer. Die Grenze ist für alle klar erkennbar."
+      },
+      {
+        "titel": "Organisatorische E-Mails vorbereitet",
+        "text": "Fragen zu Rechnungen oder Bescheinigungen werden als solche erkannt und mit einem Antwortentwurf versehen. Das Praxisteam prüft und versendet die Antwort selbst. Medizinische Anfragen bleiben dabei ausdrücklich ausgenommen."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Schweigepflicht und Gesundheitsdaten",
+      "text": "Ärztinnen, Ärzte und ihr Praxisteam unterstehen dem Berufsgeheimnis, und Gesundheitsdaten gelten als besonders schützenswert. Digitale Helfer sollten deshalb so eingesetzt werden, dass keine Patientendaten an sie gelangen, oder nur nach sorgfältiger rechtlicher Prüfung. Ein Website-Chatbot eignet sich für allgemeine Praxisinformationen, nicht für medizinische Fragen oder Befunde. Im Zweifel sollte ein Werkzeug weniger können, dafür aber sicher eingesetzt werden."
+    },
+    "faq": [
+      {
+        "frage": "Gibt der Chatbot medizinische Auskünfte?",
+        "antwort": "Nein. Er ist für allgemeine Informationen gedacht, die ohnehin auf Ihrer Website stehen. Bei medizinischen Fragen verweist er auf die Praxis oder im Notfall auf die Notrufnummer."
+      },
+      {
+        "frage": "Eignet sich der Mail-Assistent für Patientenanfragen?",
+        "antwort": "Nur mit Vorsicht. E-Mails von Patientinnen und Patienten können Gesundheitsdaten enthalten. Ob ein solcher Einsatz mit der Schweigepflicht vereinbar ist, muss vorher geklärt werden. Für rein organisatorische Postfächer ist er eher geeignet."
+      },
+      {
+        "frage": "Können Patientinnen und Patienten über den Chatbot Termine buchen?",
+        "antwort": "Das ist nicht vorgesehen. Der Chatbot kann auf Ihr bestehendes Terminangebot oder Ihre Telefonnummer verweisen."
+      }
+    ],
+    "produkte": [
+      "website-chatbot",
+      "mail-assistent"
+    ]
+  },
+  {
+    "slug": "treuhaender",
+    "name": "Treuhandbüros",
+    "fuer": "Treuhandbüros",
+    "kurz": "Mandantenanfragen schneller beantworten und Mandanten regelmässig informieren.",
+    "beschreibung": "Digitale Werkzeuge für Treuhandbüros: Mandantenanfragen ordnen, wiederkehrende Fragen beantworten und Mandanten informieren, mit Blick auf Vertraulichkeit.",
+    "intro": "Treuhandbüros arbeiten mit Fristen, Unterlagen und vielen Rückfragen. Besonders in intensiven Phasen, etwa rund um Steuererklärungen und Jahresabschlüsse, wächst das Postfach schneller, als es abgearbeitet werden kann. Gleichzeitig ist Vertraulichkeit selbstverständlich. Digitale Helfer können Routinearbeit verringern, solange die fachliche Verantwortung beim Büro bleibt.",
+    "probleme": [
+      {
+        "titel": "Wiederkehrende Rückfragen",
+        "text": "Mandantinnen und Mandanten fragen oft nach denselben Dingen: welche Unterlagen benötigt werden, bis wann sie eingereicht werden müssen oder wie es mit ihrem Auftrag weitergeht. Die Antworten sind meist dieselben, werden aber jedes Mal neu geschrieben."
+      },
+      {
+        "titel": "Unterlagen und Fristen im Blick behalten",
+        "text": "Wenn Unterlagen fehlen, muss nachgefragt werden, oft mehrmals. Hinweise zu Fristen werden einzeln verschickt. Das bindet Zeit, die für die fachliche Arbeit fehlt."
+      },
+      {
+        "titel": "Informationen erreichen nicht alle",
+        "text": "Änderungen bei Abläufen oder wichtige Termine werden einzelnen Mandanten mitgeteilt, aber nicht allen gleichzeitig. Ein regelmässiger Informationsweg fehlt. Rückfragen zu bereits erklärten Punkten sind die Folge."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Checkliste per Antwortentwurf",
+        "text": "Ein Mandant fragt, welche Belege für seine Steuererklärung nötig sind. Der Assistent schlägt eine Antwort mit der hinterlegten Checkliste vor, die Sachbearbeiterin ergänzt Persönliches und versendet sie selbst. Ob die Checkliste vollständig ist, entscheidet weiterhin das Büro."
+      },
+      {
+        "titel": "Mandanteninformation vor der Steuersaison",
+        "text": "Ein Newsletter informiert alle angemeldeten Mandanten über die Abläufe der kommenden Steuersaison und darüber, wie Unterlagen eingereicht werden können. Alle erhalten dieselbe Information zur gleichen Zeit. Rückfragen beantwortet das Team wie gewohnt persönlich."
+      },
+      {
+        "titel": "Allgemeine Fragen auf der Website",
+        "text": "Eine Interessentin fragt im Chat, ob das Büro auch Lohnbuchhaltung für kleine Unternehmen anbietet. Der Chatbot beantwortet die Frage anhand der Leistungsseite und verweist für ein Gespräch auf die Kontaktmöglichkeiten. Fragen zu konkreten Mandaten beantwortet der Chatbot nicht."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Vertraulichkeit gegenüber Mandanten",
+      "text": "Treuhandbüros verarbeiten Finanz- und Personendaten ihrer Mandanten, die vertraulich behandelt werden müssen. Digitale Werkzeuge sollten nur mit den Daten arbeiten, die für ihre Aufgabe nötig sind. Vor dem Einsatz eines Assistenten im Mandantenpostfach sollte geklärt sein, wo die Daten verarbeitet werden und wer darauf zugreifen kann. Auch Entwürfe, die ein Assistent vorschlägt, werden vor dem Versand fachlich geprüft."
+    },
+    "faq": [
+      {
+        "frage": "Welche Daten sieht der Mail-Assistent?",
+        "antwort": "Vorgesehen ist, dass er eingehende E-Mails liest, um sie zu ordnen und Entwürfe vorzuschlagen. Welche Postfächer angebunden werden und wo die Daten verarbeitet werden, sollte vor dem Einsatz gemeinsam festgelegt werden. Das Produkt ist derzeit in Planung."
+      },
+      {
+        "frage": "Ersetzt der Chatbot die persönliche Beratung?",
+        "antwort": "Nein. Er ist für allgemeine Fragen zu Ihrem Angebot gedacht. Für Beratung verweist er auf Ihre Kontaktmöglichkeiten."
+      },
+      {
+        "frage": "Sehen wir, wer den Newsletter erhält?",
+        "antwort": "Vorgesehen ist, dass sich Empfängerinnen und Empfänger über einen Bestätigungslink anmelden und Sie jederzeit sehen, wer den Newsletter erhält. Der Newsletter ist derzeit in Planung."
+      }
+    ],
+    "produkte": [
+      "mail-assistent",
+      "website-chatbot",
+      "newsletter"
+    ]
+  },
+  {
+    "slug": "hotels-gastronomie",
+    "name": "Hotels und Gastronomie",
+    "fuer": "Hotels und Gastronomiebetriebe",
+    "kurz": "Gästefragen auf der Website beantworten, Anfragen ordnen und Stammgäste informieren.",
+    "beschreibung": "Digitale Werkzeuge für Hotels und Gastronomie: Gästefragen beantworten, Anfragen per E-Mail ordnen und Stammgäste per Newsletter informieren.",
+    "intro": "In Hotels und Restaurants kommen Fragen zu jeder Tageszeit: zu Öffnungszeiten, Parkplätzen, Allergien, Gruppenreservationen oder Anlässen. Das Team ist dann meist mit den Gästen vor Ort beschäftigt. Digitale Werkzeuge können einen Teil dieser Kommunikation abfangen, ohne den persönlichen Kontakt zu ersetzen. Gerade kleinere Betriebe ohne eigene Reservationsabteilung spüren diesen Aufwand im Alltag deutlich.",
+    "probleme": [
+      {
+        "titel": "Fragen zur Unzeit",
+        "text": "Anfragen kommen abends, nachts oder mitten im Service. Wer nicht bald eine Antwort erhält, fragt woanders. Besonders kleine Betriebe ohne Rezeption rund um die Uhr sind davon betroffen."
+      },
+      {
+        "titel": "Immer wieder dieselben Fragen",
+        "text": "Gäste fragen nach Anreise, Check-in, Parkmöglichkeiten oder Hunden im Haus, oft in verschiedenen Sprachen. Die Antworten stehen meist schon auf der Website. Trotzdem werden sie per Telefon und E-Mail immer wieder gestellt."
+      },
+      {
+        "titel": "Gruppen- und Eventanfragen bleiben liegen",
+        "text": "Anfragen für Feiern, Seminare oder Gruppen brauchen eine sorgfältige Antwort. Im Tagesgeschäft bleiben sie leicht liegen. Eine späte Antwort kann bedeuten, dass der Anlass anderswo stattfindet."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Antwort am späten Abend",
+        "text": "Ein Gast fragt spätabends im Chat, ob das Hotel Parkplätze hat und ob Hunde erlaubt sind. Der Chatbot antwortet anhand der Website und nennt die Seite mit den Details. Fragen, die die Website nicht beantwortet, leitet er an das Team weiter, indem er die Kontaktmöglichkeiten nennt."
+      },
+      {
+        "titel": "Eventanfrage mit Entwurf",
+        "text": "Eine Firma fragt per E-Mail nach einem Raum für ein Seminar. Der Assistent erkennt die Eventanfrage und schlägt eine Antwort mit den hinterlegten Informationen zu Räumen und Ablauf vor. Die Bankettverantwortliche ergänzt Verfügbarkeit und Angebot und versendet die Antwort selbst. Ob der gewünschte Termin frei ist, prüft das Team im eigenen System."
+      },
+      {
+        "titel": "Saisonstart für Stammgäste",
+        "text": "Vor Saisonbeginn erhalten angemeldete Gäste einen Newsletter mit den Öffnungszeiten und der neuen Karte. Wer keine Nachrichten mehr möchte, meldet sich mit einem Klick ab. Angemeldet sind nur Gäste, die dem Erhalt ausdrücklich zugestimmt haben."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Reservationen bleiben im bestehenden System",
+      "text": "Häufig ist bereits ein Reservations- oder Buchungssystem im Einsatz. Die hier beschriebenen Werkzeuge sind nicht als Ersatz dafür gedacht. Ein Chatbot kann auf Ihre Buchungsseite verweisen, nimmt aber selbst keine verbindlichen Reservationen entgegen. So bleibt klar, wo eine Reservation verbindlich bestätigt wird."
+    },
+    "faq": [
+      {
+        "frage": "Kann der Chatbot Fragen zu Allergenen beantworten?",
+        "antwort": "Nur allgemein und nur mit Inhalten, die Sie freigeben. Für verbindliche Auskünfte zu Allergenen sollte der Chatbot an Ihr Team verweisen, da sich Rezepte und Zutaten ändern können."
+      },
+      {
+        "frage": "Nimmt der Chatbot Reservationen entgegen?",
+        "antwort": "Nein, das ist nicht vorgesehen. Er verweist auf Ihre bestehende Buchungs- oder Reservationsmöglichkeit."
+      },
+      {
+        "frage": "Wer verschickt die Antworten auf E-Mails?",
+        "antwort": "Immer Sie selbst. Der Mail-Assistent ist so gedacht, dass er Entwürfe vorbereitet, die Ihr Team prüft und versendet. Das Produkt ist derzeit in Planung."
+      }
+    ],
+    "produkte": [
+      "website-chatbot",
+      "mail-assistent",
+      "newsletter"
+    ]
+  }
+]

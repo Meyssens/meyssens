@@ -6,6 +6,8 @@ Nur Python-Standardbibliothek.
 
 Quellen:
   produkte.json            Produktdaten
+  branchen.json            Branchendaten
+  vorlage_branche.html     Vorlage für branchen/<slug>/index.html
   vorlage_produkt.html     Vorlage für produkte/<slug>/index.html
   vorlage_unternehmen.html Vorlage für unternehmen/index.html
   index.html               Kopfbereich, Header, Footer, Cookie-Banner, Impressum, Datenschutz, Skripte
@@ -71,6 +73,25 @@ def schreibe(pfad, inhalt):
     print("geschrieben:", pfad)
 
 
+def kachel(p):
+    # Produktkachel mit Status-Badge, für die Unternehmen-Seite und die Branchenseiten
+    e = {k: html.escape(str(v)) for k, v in p.items()}
+    return ('    <a href="/produkte/%s/" class="feat tile">\n'
+            '      <span class="status-chip">%s</span>\n'
+            '      <h3>%s</h3>\n'
+            '      <p>%s</p>\n'
+            '      <span class="way-go">Mehr erfahren %s</span>\n'
+            '    </a>' % (p["slug"], html.escape(STUFEN[p["status"]]["badge"]), e["name"], e["kurzbeschreibung"], PFEIL))
+
+
+def karte(tag, titel, text):
+    return ('    <div class="feat">\n'
+            '%s'
+            '      <h3>%s</h3>\n'
+            '      <p>%s</p>\n'
+            '    </div>' % ('      <div class="feat-tag-row">%s</div>\n' % tag if tag else "", html.escape(titel), html.escape(text)))
+
+
 def kurz(text, laenge=155):
     # Meta-Beschreibung: ganze Sätze bis zur Länge, mindestens der erste Satz
     saetze = re.split(r"(?<=[.!?])\s+", text)
@@ -94,6 +115,25 @@ def main():
         if not re.fullmatch(r"[a-z0-9-]+", p["slug"]) or p["slug"] in slugs:
             raise SystemExit("Ungültiger oder doppelter Slug: %s" % p["slug"])
         slugs.add(p["slug"])
+    nach_slug = {p["slug"]: p for p in produkte}
+
+    branchen = json.loads(lies("branchen.json"))
+    bslugs = set()
+    for b in branchen:
+        fehlt = [f for f in ("slug", "name", "fuer", "kurz", "beschreibung", "intro", "besonderheit") if not b.get(f)]
+        for f, n in (("probleme", 3), ("szenarien", 3), ("faq", 3)):
+            if len(b.get(f, [])) != n:
+                fehlt.append("%s (genau %d)" % (f, n))
+        if not 2 <= len(b.get("produkte", [])) <= 3:
+            fehlt.append("produkte (2 bis 3)")
+        if fehlt:
+            raise SystemExit("Branche %s: %s" % (b.get("slug", "?"), ", ".join(fehlt)))
+        unbekannt = [s for s in b["produkte"] if s not in nach_slug]
+        if unbekannt:
+            raise SystemExit("Branche %s: unbekannte Produkte %s" % (b["slug"], ", ".join(unbekannt)))
+        if not re.fullmatch(r"[a-z0-9-]+", b["slug"]) or b["slug"] in bslugs:
+            raise SystemExit("Ungültiger oder doppelter Branchen-Slug: %s" % b["slug"])
+        bslugs.add(b["slug"])
 
     start = lies("index.html")
     gemeinden = lies("gemeinden/index.html")
@@ -133,13 +173,30 @@ def main():
             "formular_skript": formular_skript,
         })
         schreibe("produkte/%s/index.html" % p["slug"], fuelle(vorlage_produkt, werte))
-        kacheln.append(
-            '    <a href="/produkte/%s/" class="feat tile">\n'
-            '      <span class="status-chip">%s</span>\n'
-            '      <h3>%s</h3>\n'
-            '      <p>%s</p>\n'
-            '      <span class="way-go">Mehr erfahren %s</span>\n'
-            '    </a>' % (p["slug"], stufe["badge"], e["name"], e["kurzbeschreibung"], PFEIL))
+        kacheln.append(kachel(p))
+
+    vorlage_branche = lies("vorlage_branche.html")
+    for b in branchen:
+        fuer = b["fuer"]
+        werte = dict(gemeinsam, **{
+            "titel": html.escape("Digitale Infrastruktur für %s – Meyssens" % fuer),
+            "beschreibung": html.escape(b["beschreibung"]),
+            "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),
+            "name": html.escape(b["name"]),
+            "fuer": html.escape(fuer),
+            "intro": html.escape(b["intro"]),
+            "probleme": "\n".join(karte("", x["titel"], x["text"]) for x in b["probleme"]),
+            "szenarien": "\n".join(karte("Beispielszenario", x["titel"], x["text"]) for x in b["szenarien"]),
+            "besonderheit_titel": html.escape(b["besonderheit"]["titel"]),
+            "besonderheit_text": html.escape(b["besonderheit"]["text"]),
+            "produkte": "\n".join(kachel(nach_slug[s]) for s in b["produkte"]),
+            "faq": "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
+                             % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in b["faq"]),
+            "formular_ziel": formular_ziel,
+            "einwilligung": einwilligung,
+            "formular_skript": formular_skript,
+        })
+        schreibe("branchen/%s/index.html" % b["slug"], fuelle(vorlage_branche, werte))
 
     werte = dict(gemeinsam, **{
         "titel": "Für Unternehmen und Vereine – Meyssens",
@@ -147,17 +204,21 @@ def main():
                                     "Vereinswebsite, Mail-Assistent und mehr. Jetzt Pilotpartner werden."),
         "url": DOMAIN + "/unternehmen/",
         "kacheln": "\n".join(kacheln),
+        "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
+                               for b in branchen),
     })
     schreibe("unternehmen/index.html", fuelle(lies("vorlage_unternehmen.html"), werte))
 
-    # Verwaiste Produktordner nur melden, nicht löschen
-    for d in sorted((ROOT / "produkte").iterdir()):
-        if d.is_dir() and d.name not in slugs:
-            print("Hinweis: produkte/%s steht nicht in produkte.json" % d.name)
+    # Verwaiste Ordner nur melden, nicht löschen
+    for ordner, bekannt, quelle in (("produkte", slugs, "produkte.json"), ("branchen", bslugs, "branchen.json")):
+        for d in sorted((ROOT / ordner).iterdir()):
+            if d.is_dir() and d.name not in bekannt:
+                print("Hinweis: %s/%s steht nicht in %s" % (ordner, d.name, quelle))
 
     heute = datetime.date.today().isoformat()
     seiten = [("/", "1.0"), ("/gemeinden/", "0.9"), ("/unternehmen/", "0.8")]
     seiten += [("/produkte/%s/" % p["slug"], "0.6") for p in produkte]
+    seiten += [("/branchen/%s/" % b["slug"], "0.6") for b in branchen]
     zeilen = ["  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>"
               % (DOMAIN, pfad, heute, prio) for pfad, prio in seiten]
     schreibe("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
