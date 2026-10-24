@@ -21,6 +21,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://meyssens.ch"
 FELDER = ("slug", "name", "kurzbeschreibung", "problem", "loesung", "fuer_wen", "status")
+# Status-Stufen: Badge, Hinweistext und Formularknopf
+STUFEN = {
+    "Pilotphase": {
+        "badge": "Pilotphase, Pilotpartner gesucht",
+        "text": "Wir starten jetzt mit der Umsetzung und suchen drei Pilotpartner. "
+                "Sie erhalten die Einrichtung kostenlos und gestalten das Produkt mit.",
+        "knopf": "Pilotpartner werden",
+    },
+    "In Planung": {
+        "badge": "In Planung",
+        "text": "Dieses Produkt ist in Planung. Mit Ihrer Anfrage merken wir Sie unverbindlich vor.",
+        "knopf": "Unverbindlich vormerken",
+    },
+}
 PFEIL = ('<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" '
          'stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
@@ -75,6 +89,8 @@ def main():
         fehlt = [f for f in FELDER if not str(p.get(f, "")).strip()]
         if fehlt:
             raise SystemExit("%s: Felder fehlen: %s" % (p.get("slug", "?"), ", ".join(fehlt)))
+        if p["status"] not in STUFEN:
+            raise SystemExit("%s: unbekannter Status %r (erlaubt: %s)" % (p["slug"], p["status"], ", ".join(STUFEN)))
         if not re.fullmatch(r"[a-z0-9-]+", p["slug"]) or p["slug"] in slugs:
             raise SystemExit("Ungültiger oder doppelter Slug: %s" % p["slug"])
         slugs.add(p["slug"])
@@ -94,6 +110,7 @@ def main():
     kacheln = []
     for p in produkte:
         e = {k: html.escape(str(v)) for k, v in p.items()}
+        stufe = {k: html.escape(v) for k, v in STUFEN[p["status"]].items()}
         url = "%s/produkte/%s/" % (DOMAIN, p["slug"])
         hinweis = ""
         if p.get("hinweis"):
@@ -103,7 +120,9 @@ def main():
             "beschreibung": html.escape(kurz(p["kurzbeschreibung"])),
             "url": url,
             "name": e["name"],
-            "status": e["status"],
+            "status_badge": stufe["badge"],
+            "status_text": stufe["text"],
+            "knopf": stufe["knopf"],
             "kurzbeschreibung": e["kurzbeschreibung"],
             "problem": e["problem"],
             "loesung": e["loesung"],
@@ -120,12 +139,12 @@ def main():
             '      <h3>%s</h3>\n'
             '      <p>%s</p>\n'
             '      <span class="way-go">Mehr erfahren %s</span>\n'
-            '    </a>' % (p["slug"], e["status"], e["name"], e["kurzbeschreibung"], PFEIL))
+            '    </a>' % (p["slug"], stufe["badge"], e["name"], e["kurzbeschreibung"], PFEIL))
 
     werte = dict(gemeinsam, **{
         "titel": "Für Unternehmen und Vereine – Meyssens",
         "beschreibung": html.escape("Digitale Werkzeuge für Unternehmen und Vereine: Umfragen, Newsletter, "
-                                    "Vereinswebsite, Mail-Assistent und mehr. In Vorbereitung, jetzt vormerken."),
+                                    "Vereinswebsite, Mail-Assistent und mehr. Jetzt Pilotpartner werden."),
         "url": DOMAIN + "/unternehmen/",
         "kacheln": "\n".join(kacheln),
     })

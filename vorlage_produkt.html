@@ -23,7 +23,7 @@
 <main id="main">
 <section class="page-hero">
   <a href="/unternehmen/" class="back-link">← Alle Produkte</a>
-  <div class="chip"><span class="chip-dot"></span><span>{{status}}</span></div>
+  <div class="chip"><span class="chip-dot"></span><span>{{status_badge}}</span></div>
   <h1>{{name}}</h1>
   <p class="lead">{{kurzbeschreibung}}</p>
 {{hinweis}}
@@ -47,13 +47,13 @@
       <p>{{fuer_wen}}</p>
     </div>
   </div>
-  <div class="note r">Dieses Produkt befindet sich in Vorbereitung. Mit Ihrer Anfrage merken wir Sie unverbindlich vor.</div>
+  <div class="note r">{{status_text}}</div>
 </section>
 
 <section id="anfrage" style="background:var(--surface)">
   <div class="contact-grid">
     <div class="r">
-      <span class="s-label">Vormerken</span>
+      <span class="s-label">{{status_badge}}</span>
       <h2>Interesse an {{name}}?</h2>
       <p class="s-lead">Hinterlassen Sie uns Ihre Angaben. Die Anfrage ist unverbindlich und kostenlos.</p>
       <a href="/unternehmen/" class="back-link">← Zurück zu allen Produkten</a>
@@ -71,7 +71,7 @@
         <div class="fgrp"><label class="flabel" for="nachricht">Nachricht (optional)</label><textarea class="ftextarea" id="nachricht" name="nachricht" placeholder="Ihre Fragen oder Wünsche..."></textarea></div>
         {{einwilligung}}
         <button type="submit" class="btn-p" id="sbtn" style="width:100%;justify-content:center;border-radius:var(--r-sm)">
-          <span>Unverbindlich vormerken</span>
+          <span>{{knopf}}</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <p id="form-msg" role="status" aria-live="polite"></p>
