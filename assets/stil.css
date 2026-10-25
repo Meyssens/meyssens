@@ -4,7 +4,10 @@
 @font-face{font-family:'Inter Ersatz';src:local('Arial'),local('Helvetica'),local('Liberation Sans'),local('Roboto');size-adjust:107%;ascent-override:90%;descent-override:22.4%;line-gap-override:0%}
 .stil,.stil .btn-p,.stil .pcta,.stil .finput,.stil .fselect,.stil .ftextarea,.stil .lang-btn,.stil .cookie-btn,.stil .chat-fragen button{font-family:'Inter','Inter Ersatz',sans-serif}
 .stil{--nacht:#07071a;--nacht2:#11112a;--hellblau:#a8a8ff;--grau:#f5f5f7;--rand:rgba(0,0,0,.08);--weich:cubic-bezier(.2,.7,.2,1)}
-.stil section{padding-top:clamp(4.5rem,9vw,8rem);padding-bottom:clamp(4.5rem,9vw,8rem)}
+.stil section{padding-top:clamp(2.75rem,5vw,4.5rem);padding-bottom:clamp(2.75rem,5vw,4.5rem)}
+/* Letztes Element eines Abschnitts ohne Aussenabstand nach unten, sonst addiert er sich zum Abschnittsabstand */
+.stil section > :last-child,.stil .artikel-text > :last-child,.stil .qa-list > :last-child{margin-bottom:0}
+.stil footer{padding-top:3rem}
 .stil h1 .hl{animation:none;background:linear-gradient(90deg,#0000ff,#3d3dff);-webkit-background-clip:text;background-clip:text}
 .stil h2{font-size:clamp(2rem,4.6vw,3.5rem);letter-spacing:-.035em;line-height:1.06}
 .stil .s-lead{font-size:clamp(1rem,1.4vw,1.15rem);max-width:600px}
@@ -15,9 +18,9 @@
 .js .stil .r.on{transform:none}
 
 /* Hero */
-.stil .page-hero{background:#fff;text-align:center;padding-top:calc(60px + clamp(4rem,9vw,8rem));padding-bottom:clamp(3rem,6vw,5rem)}
+.stil .page-hero{background:#fff;text-align:center;padding-top:calc(60px + clamp(3rem,7vw,6rem));padding-bottom:clamp(1.5rem,3vw,2.5rem)}
 .stil .page-hero h1{font-size:clamp(2.4rem,7vw,5.8rem);letter-spacing:-.045em;line-height:1.02;max-width:15ch;margin-left:auto;margin-right:auto}
-.stil.lang .page-hero h1{max-width:22ch;font-size:clamp(2.1rem,5.2vw,4.2rem)}
+.stil.lang .page-hero h1{max-width:22ch;font-size:clamp(2.1rem,5.2vw,4.2rem);hyphens:auto;-webkit-hyphens:auto}
 .stil .page-hero .lead{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:680px;margin:0 auto;color:var(--ink3)}
 .stil .page-hero .back-link{margin-left:auto;margin-right:auto}
 .stil .page-hero .note,.stil .page-hero .demo-note{margin-left:auto;margin-right:auto;text-align:left}
@@ -35,7 +38,7 @@
 .geraet-inhalt{padding:clamp(1rem,2.4vw,1.75rem)}
 
 /* Produktansicht unter dem Hero, scroll-getrieben über --p (0 bis 1) */
-.buehne-wrap{padding-top:0!important;padding-bottom:clamp(3rem,7vw,6rem)!important;background:#fff;overflow:hidden}
+.buehne-wrap{padding-top:0!important;padding-bottom:clamp(1.5rem,3vw,2.5rem)!important;background:#fff;overflow:hidden}
 .buehne{--p:1;max-width:1040px;margin:0 auto;perspective:1400px}
 .js .buehne{--p:0}
 .buehne .geraet{transform-origin:50% 0;transform:rotateX(calc((1 - var(--p)) * 22deg)) scale(calc(.86 + var(--p) * .14)) translateY(calc((1 - var(--p)) * 40px));will-change:transform}
@@ -209,7 +212,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .stil .feat p{font-size:.92rem}
 .stil .way{border-radius:28px;border-color:transparent;background:var(--grau);padding:clamp(1.75rem,4vw,3.25rem)}
 .stil .way.blue{background:var(--blue)}
-.stil .way h2{font-size:clamp(1.6rem,2.6vw,2.4rem);overflow-wrap:break-word}
+.stil .way h2{font-size:clamp(1.6rem,2.5vw,2.05rem);overflow-wrap:break-word}
 .stil .way::before{display:none}
 .stil .way:hover{transform:translateY(-3px);box-shadow:0 24px 60px -28px rgba(0,0,120,.35)}
 .stil .way-go svg{transition:transform .3s var(--weich)}
@@ -240,6 +243,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .scrolly.an .schritt-bild{grid-column:2;min-height:78vh;display:flex;align-items:center;opacity:.35;transform:scale(.96);transition:opacity .6s var(--weich),transform .6s var(--weich)}
   .scrolly.an .schritt.aktiv .schritt-bild{opacity:1;transform:none}
   .scrolly.an .schritt-bild{grid-row:var(--z)}
+  .scrolly.an .schritt:last-child .schritt-bild{min-height:0;padding-top:clamp(3rem,10vh,6rem)}
   .scrolly.an .schritt-bild .geraet{width:100%}
 }
 
@@ -281,12 +285,12 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .geraet-titel{text-align:left}
 }
 /* Gemeinden: Hero zentriert, Bühne mit Beispiel, Eckdaten als Reihe */
-.stil .hero{display:block;min-height:0;text-align:center;padding-top:calc(60px + clamp(4rem,9vw,8rem));padding-bottom:clamp(3rem,6vw,5rem);overflow:visible;background:#fff}
+.stil .hero{display:block;min-height:0;text-align:center;padding-top:calc(60px + clamp(3rem,7vw,6rem));padding-bottom:clamp(2rem,4vw,3rem);overflow:visible;background:#fff}
 .stil .hero::before{display:none}
 .stil .hero-l,.stil .hero-r{animation:none}
 .stil .hero h1{font-size:clamp(2.4rem,7vw,5.8rem);letter-spacing:-.045em;line-height:1.02;max-width:16ch;margin-left:auto;margin-right:auto}
-/* Mit Syne bricht der Titel in vier Zeilen um; die Höhe vorab reservieren, damit beim Laden der Schrift nichts springt */
-.stil .hero h1{min-height:4.08em}
+/* Bis 1440 px bricht der Titel mit Syne in vier Zeilen um (darüber in zwei); die Höhe vorab reservieren, damit beim Laden der Schrift nichts springt */
+@media(max-width:1440px){.stil .hero h1{min-height:4.08em}}
 .stil .hero .lead{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:680px;margin:0 auto;color:var(--ink3)}
 .stil .hero .btns{justify-content:center;margin:2.25rem 0 1.5rem}
 .stil .proof{justify-content:center}
@@ -301,12 +305,15 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .stil .hcard:hover{transform:translateY(-3px);box-shadow:0 20px 50px -24px rgba(10,10,80,.25)}
 .stil .lang-btn{min-height:24px}
 /* Gemeinden: sechs Menüpunkte und Sprachwahl passen erst ab 1101 px in die Leiste, darunter das Menü */
+/* Bis 640 px steht die Sprachwahl im Menü (dort grösser), damit Logo und Menüknopf Platz haben */
+@media(max-width:640px){.stil.gemeinden #lang-switch-desktop{display:none}}
 @media(min-width:641px) and (max-width:1100px){.stil.gemeinden .nav-items,.stil.gemeinden #lang-switch-desktop{display:none}.stil.gemeinden .hamburger{display:flex}.stil.gemeinden .mobile-nav{top:86px;left:14px;right:14px;border-radius:18px}}
 @media(max-width:900px){.stil .hero-cards{grid-template-columns:1fr 1fr}.stil .hero-cards>.hcard:last-child{grid-column:1 / -1}}
 .stil #ablauf .kopf-mitte{margin-bottom:clamp(2.5rem,5vw,4rem)}
 .stil #pilot.dunkel{background:var(--nacht)}
 .stil #ueber-uns{background:#fff}
 .stil .about-grid h2,.stil .contact-grid h2{font-size:clamp(1.8rem,3.4vw,2.8rem)}
+.stil .dunkel [style*="--ink3"],.stil .dunkel [style*="--ink2"]{color:rgba(255,255,255,.74)!important}
 .stil .dunkel .step-tag{background:rgba(168,168,255,.12);border-color:rgba(168,168,255,.3);color:#d4d4ff}
 .stil .dunkel .feat-icon-box{background:rgba(168,168,255,.14);color:#d4d4ff;border-color:rgba(168,168,255,.25)}
 .stil .faq-list{max-width:820px}
@@ -345,6 +352,10 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .mock-wappen{width:26px;height:30px;border-radius:4px 4px 13px 13px;background:linear-gradient(var(--blue) 50%,#d9d9ff 50%)}
 .mock-gemeinde b{font-family:'Syne',sans-serif;color:var(--ink);font-size:1rem}
 
+/* Kopfleiste: fast deckend weiss mit Unschärfe, Text darunter scheint nicht durch */
+.stil nav#nav,.stil nav#nav.scrolled{background:rgba(255,255,255,.97);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}
+.stil .mobile-nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
+
 /* Seiten-Navigationen (Sprungmarken, Inhaltsverzeichnis) nicht wie die Kopfzeile fixieren */
 .stil nav.sprung,.stil nav.toc{position:static;top:auto;left:auto;right:auto;z-index:auto;height:auto;border:0;border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;transition:none}
 .stil nav.sprung{background:none;padding:0}
@@ -372,7 +383,8 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .toc-mehr{display:none}
 @media(min-width:1100px){
   .lese-raster{display:grid;grid-template-columns:220px minmax(0,1fr);column-gap:4.5rem;align-items:start}
-  .stil nav.toc{position:sticky;top:100px;margin:0;padding:0;background:none;max-height:calc(100vh - 130px);overflow-y:auto}
+  .stil nav.toc{position:sticky;top:100px;margin:0;padding:0;background:none}
+  .stil nav.toc ol{max-height:calc(100vh - 330px);overflow-y:auto}
   .toc a{padding:.38rem 0 .38rem .9rem}
   .toc a.aktiv{border-left-color:var(--blue)}
   .toc-mehr{display:block;margin-top:.75rem!important;padding-top:.75rem!important;border-top:1px solid var(--rand)}
@@ -382,7 +394,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 #fragen,#weiterlesen,#quellen{scroll-margin-top:70px}
 
 /* Angebot im Gerätefenster-Stil (Branchen und Ratgeber) */
-.angebot-raster{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1.25rem;max-width:1180px;margin:clamp(2rem,4vw,3rem) auto 0}
+.angebot-raster{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:1.25rem;max-width:1180px;margin:clamp(2rem,4vw,3rem) auto 0}
 .angebot-karte{display:flex;flex-direction:column;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(0,0,0,.6);transition:transform .35s var(--weich),box-shadow .35s var(--weich)}
 .angebot-karte:hover{transform:translateY(-4px);box-shadow:0 36px 80px -36px rgba(0,0,0,.7)}
 .angebot-inhalt{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;flex:1;padding:clamp(1.25rem,2.4vw,1.75rem)}
