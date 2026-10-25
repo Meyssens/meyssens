@@ -1,0 +1,764 @@
+[
+ {
+  "slug": "zahnarztpraxen",
+  "art": "branche",
+  "name": "Zahnarztpraxen",
+  "kurz": "Berufsgeheimnis, nDSG und digitale Assistenz in der Zahnarztpraxis.",
+  "titel": "Digitale Assistenz für Zahnarztpraxen: Recht & Praxis",
+  "beschreibung": "Was Zahnarztpraxen bei Berufsgeheimnis und nDSG beachten müssen, wenn sie Chatbot, Mail-Assistent oder Newsletter nutzen. Mit Checkliste.",
+  "h1": "Digitale Assistenz in der Zahnarztpraxis: was rechtlich gilt und was praktisch hilft",
+  "lead": "Das Telefon klingelt, während am Stuhl behandelt wird. Im Postfach liegen Rechnungsfragen neben Laborpost und Werbung. Ein Chatbot oder ein Mail-Assistent klingt nach Entlastung, doch in der Zahnarztpraxis gelten Berufsgeheimnis und strenger Datenschutz. Dieser Text zeigt, was rechtlich gilt, wo digitale Bausteine sinnvoll sein könnten und wo ihre Grenzen liegen.",
+  "geprueft": "2026-10-25",
+  "produkte": [
+   "website-chatbot",
+   "mail-assistent",
+   "newsletter",
+   "umfragen-abstimmungen"
+  ],
+  "faq": [
+   {
+    "frage": "Gilt das Berufsgeheimnis auch für die Praxisassistenz?",
+    "antwort": "Ja. Art. 321 StGB erfasst neben Zahnärztinnen und Zahnärzten auch ihre Hilfspersonen. Dazu gehören Dentalassistenz, Sekretariat und Buchhaltung, soweit sie bei ihrer Arbeit von Patientengeheimnissen erfahren."
+   },
+   {
+    "frage": "Darf ich externe Dienstleister mit Patientendaten beauftragen?",
+    "antwort": "Nur unter Bedingungen. Auftragsbearbeitung ist nach Art. 9 DSG nur zulässig, wenn keine Geheimhaltungspflicht entgegensteht. Der FMH-Leitfaden verlangt einen Vertrag, der Hauptleistung, Datenarten und technische Massnahmen konkret regelt. Eine blosse Geheimhaltungsvereinbarung genügt nicht. Ob das Berufsgeheimnis eine bestimmte Auslagerung zulässt, sollte juristisch geprüft werden."
+   },
+   {
+    "frage": "Muss ein Chatbot sagen, dass er eine Maschine ist?",
+    "antwort": "Nach Auffassung des EDÖB ja. Das Datenschutzgesetz gilt direkt für KI-Anwendungen, und Nutzende sollen wissen, dass sie mit einer Maschine kommunizieren."
+   },
+   {
+    "frage": "Dürfen Daten in die USA oder in eine ausländische Cloud?",
+    "antwort": "Datenschutzrechtlich verlangt Art. 16 DSG einen angemessenen Schutz im Zielstaat oder geeignete Garantien. Für die USA gilt seit dem 15. September 2024 ein angemessener Schutz für Unternehmen, die nach dem Swiss-US Data Privacy Framework zertifiziert sind. Ob das Berufsgeheimnis eine Auslagerung ins Ausland zulässt, ist damit nicht beantwortet und muss separat juristisch geprüft werden."
+   },
+   {
+    "frage": "Was droht bei Verstössen?",
+    "antwort": "Eine Verletzung des Berufsgeheimnisses kann mit Freiheitsstrafe bis zu drei Jahren oder Geldstrafe bestraft werden, verfolgt wird sie nur auf Antrag. Vorsätzliche Verstösse gegen die Pflichten bei der Auftragsbearbeitung sind nach Art. 61 lit. b DSG auf Antrag mit Busse bis CHF 250'000 strafbar."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/produkte/website-chatbot/",
+    "titel": "Website-Chatbot",
+    "grund": "Wie ein Chatbot Allgemeinfragen zu Öffnungszeiten und Ablauf beantworten könnte, ohne Patientendaten zu berühren."
+   },
+   {
+    "url": "/produkte/mail-assistent/",
+    "titel": "Mail-Assistent",
+    "grund": "Antwortentwürfe für administrative Post, die ein Mensch prüft und selbst versendet."
+   },
+   {
+    "url": "/produkte/newsletter/",
+    "titel": "Newsletter",
+    "grund": "Praxisinformationen an Patientinnen und Patienten, die sich ausdrücklich angemeldet haben."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Datenschutzerklärung, Auftragsbearbeitung und Datenpannen im Überblick, als Grundlage für jede Praxis."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "FMH/SAMW, Rechtlicher Leitfaden, Kapitel 7.1 Berufsgeheimnis",
+    "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/7-berufsgeheimnis-datenschutz/71-berufsgeheimnis-arzt.pdf?c=46545"
+   },
+   {
+    "titel": "Kanton Solothurn, Leitfaden Entbindung vom Berufsgeheimnis (2023)",
+    "url": "https://so.ch/fileadmin/internet/ddi/ddi-gesa/PDF/Aufsicht_und_Bewilligungen/Aufsicht/2023-10-19_Leitfaden_Entbindung-Berufsgeheimnis.pdf"
+   },
+   {
+    "titel": "Kanton Basel-Stadt, Leitfaden zur beruflichen Schweigepflicht (Stand März 2023)",
+    "url": "https://media.bs.ch/dynamic/noop/b7762bed8f875fe6c02fec0c776c70d546649515/leitfaden-zur-beruflichen-schweigepflicht-stand-maerz-2023.pdf"
+   },
+   {
+    "titel": "Lexaris, DSG mit Art. 61 (Sekundärquelle)",
+    "url": "https://www.lexaris.de/book/version/documentflat/head/9572398"
+   },
+   {
+    "titel": "FMH, Leitfaden Geheimhaltungs- und Auftragsbearbeitungsvereinbarung",
+    "url": "https://fmh.ch/files/pdf29/leitfaden-geheimhaltungs--und-auftragsbearbeitungsvereinbarung.pdf"
+   },
+   {
+    "titel": "Bundesamt für Justiz, Staatenliste angemessener Datenschutz",
+    "url": "https://www.bj.admin.ch/de/schweizerische-anerkennung-von-staaten-die-einen-angemessenen-datenschutz-gewaehrleisten"
+   },
+   {
+    "titel": "Bundesrat, Medienmitteilung zum Swiss-US Data Privacy Framework",
+    "url": "https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen/bundesrat.msg-id-102054.html"
+   },
+   {
+    "titel": "EDÖB, AI and data protection",
+    "url": "https://www.edoeb.admin.ch/en/ai-and-data-protection"
+   },
+   {
+    "titel": "SRF (2018), Termine online buchen: Schweizer Ärzte verpassen den Trend",
+    "url": "https://www.srf.ch/wissen/gesundheit/termine-online-buchen-schweizer-aerzte-verpassen-den-trend"
+   },
+   {
+    "titel": "Blick (2025), Fachleute warnen: Jede dritte Zahnarztrechnung ist überhöht",
+    "url": "https://www.blick.ch/wirtschaft/fachleute-warnen-jede-dritte-zahnarztrechnung-ist-ueberhoeht-id20723422.html"
+   }
+  ]
+ },
+ {
+  "slug": "immobilienverwaltungen",
+  "art": "branche",
+  "name": "Immobilienverwaltungen",
+  "kurz": "Mieteranfragen, Schadenmeldungen und nDSG in der Verwaltung.",
+  "titel": "Immobilienverwaltung: Büroalltag entlasten | Meyssens",
+  "beschreibung": "Mieteranfragen, Schadenmeldungen, nDSG: was Immobilienverwaltungen in der Schweiz beachten müssen und wo digitale Bausteine entlasten können.",
+  "h1": "Digitale Unterstützung für Immobilienverwaltungen in der Schweiz",
+  "lead": "Ein Wasserschaden im dritten Stock, drei Anfragen zur Nebenkostenabrechnung, zwölf Bewerbungen für eine Wohnung und die Einladung zur Stockwerkeigentümerversammlung, alles in derselben Woche. In der Verwaltung kommt vieles gleichzeitig, und manches davon ist rechtlich streng geregelt. Dieser Text zeigt den rechtlichen Rahmen und wo digitale Bausteine entlasten könnten.",
+  "geprueft": "2026-10-25",
+  "produkte": [
+   "website-chatbot",
+   "mail-assistent",
+   "newsletter",
+   "umfragen-abstimmungen"
+  ],
+  "faq": [
+   {
+    "frage": "Was darf ich Mietinteressenten im Anmeldeformular fragen?",
+    "antwort": "Laut Merkblatt des EDÖB sind Angaben zu Identität, Aufenthaltsbewilligung, ungefährem Einkommen, Beruf, Betreibungsauszug, Personenzahl und Haustieren erlaubt. Nicht erlaubt sind Fragen nach Zivilstand, Konfession, aktueller Miete und Mietdauer. Bei der Nationalität sind sich EDÖB und SVIT nicht einig."
+   },
+   {
+    "frage": "Wie lange darf ich Unterlagen abgelehnter Bewerber aufbewahren?",
+    "antwort": "Nach EDÖB und SVIT sind die Unterlagen abgelehnter Bewerberinnen und Bewerber nach Abschluss des Vermietungsprozesses zu vernichten."
+   },
+   {
+    "frage": "Kann ich per E-Mail kündigen?",
+    "antwort": "Nein. Die Kündigung durch die Vermieterseite braucht das amtliche Formular und eine eigenhändige Unterschrift. Eine E-Mail genügt nicht, und ein Formverstoss führt zur Nichtigkeit (Art. 266l und 266o OR)."
+   },
+   {
+    "frage": "Was tun bei einer Datenpanne?",
+    "antwort": "Führt die Panne voraussichtlich zu einem hohen Risiko für die Betroffenen, muss sie dem EDÖB so rasch als möglich gemeldet werden (Art. 24 Abs. 1 DSG). Der EDÖB hat dazu einen Leitfaden veröffentlicht."
+   },
+   {
+    "frage": "Ist die Verwaltung Verantwortliche oder Auftragsbearbeiterin?",
+    "antwort": "In der Mustervorlage des SVIT ist der Eigentümer Verantwortlicher und die Verwaltung Auftragsbearbeiterin. Im Einzelfall kann das je nach Vertrag und Aufgaben abweichen."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/produkte/website-chatbot/",
+    "titel": "Website-Chatbot",
+    "grund": "Allgemeine Fragen beantworten und Schadenmeldungen vollständig abfragen, mit klarer Kennzeichnung als Maschine."
+   },
+   {
+    "url": "/produkte/mail-assistent/",
+    "titel": "Mail-Assistent",
+    "grund": "Eingehende Post nach Thema ordnen und Antwortentwürfe vorbereiten, die ein Mensch prüft."
+   },
+   {
+    "url": "/produkte/newsletter/",
+    "titel": "Newsletter",
+    "grund": "Mietende einer Liegenschaft über Arbeiten, Ablesetermine oder die Hausordnung informieren."
+   },
+   {
+    "url": "/produkte/umfragen-abstimmungen/",
+    "titel": "Umfragen und Abstimmungen",
+    "grund": "Stimmungsbilder einholen, etwa zur Gestaltung eines Innenhofs, ohne einen Versammlungsbeschluss zu ersetzen."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "EDÖB, Merkblatt zu Anmeldeformularen für Mietwohnungen (Juli 2025)",
+    "url": "https://www.edoeb.admin.ch/dam/en/sd-web/F7ojQw99LBH-/Merkblatt%20zu%20Anmeldeformularen%20f%C3%BCr%20Mietwohnungen%20DE_20250715.pdf"
+   },
+   {
+    "titel": "SVIT, Branchenempfehlung DSG, Anhang E",
+    "url": "https://svit.ch/sites/default/files/2024-07/svit_branchenempfehlung_dsg_anhangE_de_v1.1_2407.pdf"
+   },
+   {
+    "titel": "SVIT, Branchenempfehlung Auftragsbearbeitung kompakt",
+    "url": "https://www.svit.ch/sites/default/files/2026-08/svit_branchenempfehlung_adb-kompakt_de_1.0_2608.pdf"
+   },
+   {
+    "titel": "EDÖB, Leitfaden zur Meldung von Datensicherheitsverletzungen nach Art. 24 DSG",
+    "url": "https://www.edoeb.admin.ch/dam/de/sd-web/T64CAUyvAMcF/1_2%20Leitfaden%20des%20ED%C3%96B%20betreffend%20die%20Meldung%20von%20Datensicherheitsverletzungen%20und%20Information%20der%20Betroffenen%20nach%20Art.%2024%20DSG_DE.pdf"
+   },
+   {
+    "titel": "EDÖB, AI and data protection",
+    "url": "https://www.edoeb.admin.ch/en/ai-and-data-protection"
+   },
+   {
+    "titel": "Kanton Schwyz, Merkblatt Kündigung von Wohn- und Geschäftsräumen",
+    "url": "https://www.sz.ch/public/upload/assets/8301/Merkblatt_Kuendigung_von_Wohn-_und_Geschaeftsraeumen.pdf?fp=3"
+   },
+   {
+    "titel": "ch.ch, Lärm, Mängel, Mietzins",
+    "url": "https://ch.ch/de/wohnen/miete/larm--mangel--mietzins"
+   },
+   {
+    "titel": "WEKA, Stockwerkeigentümerversammlung: Voraussetzungen",
+    "url": "https://www.weka.ch/themen/bau-immobilien/immobilien/grund-und-wohneigentum/article/stockwerkeigentuemerversammlung-voraussetzungen-fuer-die-versammlung-der-stockwerkeigentuemer/"
+   }
+  ]
+ },
+ {
+  "slug": "architekturbueros",
+  "art": "branche",
+  "name": "Architekturbüros",
+  "kurz": "Ausschreibungen auf simap, Bauherrenfragen und nDSG im Architekturbüro.",
+  "titel": "Architekturbüros: Ausschreibungen und Bauherren | Meyssens",
+  "beschreibung": "Ausschreibungen auf simap finden, Bauherrenfragen bündeln, nDSG beachten: Überblick für Architekturbüros in der Schweiz mit Checkliste.",
+  "h1": "Digitale Unterstützung für Architekturbüros in der Schweiz",
+  "lead": "Eine Ausschreibung für ein Schulhaus erscheint auf simap, die Eingabefrist läuft, und gleichzeitig will die Bauherrschaft eines laufenden Projekts wissen, ob sich die Küche noch verschieben lässt. Im Architekturbüro konkurrieren Akquisition und Projektarbeit um dieselbe Zeit. Dieser Text zeigt den rechtlichen Rahmen bei öffentlichen Aufträgen und wo digitale Bausteine helfen könnten.",
+  "geprueft": "2026-10-25",
+  "produkte": [
+   "ausschreibungs-radar",
+   "mail-assistent",
+   "website-chatbot",
+   "newsletter"
+  ],
+  "faq": [
+   {
+    "frage": "Ab welchem Betrag muss ein Planerauftrag öffentlich ausgeschrieben werden?",
+    "antwort": "Für Dienstleistungen ausserhalb des Staatsvertragsbereichs ist ab CHF 250'000 (ohne MWST) ein offenes oder selektives Verfahren vorgesehen, darunter das Einladungsverfahren und unter CHF 150'000 das freihändige Verfahren. Im Staatsvertragsbereich liegt die Schwelle für Dienstleistungen bei den Kantonen bei CHF 350'000. Für Gemeinden sind die Quellen nicht eindeutig."
+   },
+   {
+    "frage": "Wie lange ist die Angebotsfrist?",
+    "antwort": "Als Faustregel nennt das KMU-Portal des Bundes 40 Tage im offenen und 25 Tage im selektiven Verfahren. Kantonale Regeln können abweichen. Massgeblich ist immer die Frist in der Ausschreibung."
+   },
+   {
+    "frage": "Wie kann ich einen Zuschlag anfechten?",
+    "antwort": "Bei Beschaffungen des Bundes kann innert 20 Tagen ab Eröffnung der Verfügung Beschwerde geführt werden, ohne Fristenstillstand (Art. 56 BöB). Für kantonale Verfahren gelten die kantonalen Regeln."
+   },
+   {
+    "frage": "Was ist bei einem Wettbewerb nach SIA 142 anders?",
+    "antwort": "Ein Wettbewerb nach SIA 142 sucht die beste Lösung, ohne dass der Preis bewertet wird. Der Sieger hat normalerweise Anspruch auf einen Folgeauftrag."
+   },
+   {
+    "frage": "Darf die Bauleitung die Bauherrschaft vertreten?",
+    "antwort": "Nach Art. 33 Abs. 2 SIA 118 darf der Unternehmer von der Vertretungsbefugnis der Bauleitung ausgehen. Die Honorarordnungen sehen eine solche Befugnis laut WEKA meist nicht vor. Die Frage sollte deshalb im Vertrag mit der Bauherrschaft geklärt werden."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/produkte/ausschreibungs-radar/",
+    "titel": "Ausschreibungs-Radar",
+    "grund": "Neue passende Ausschreibungen zu Wochenbeginn, mit Link zur Originalquelle. Der Teilnahmeentscheid bleibt beim Büro."
+   },
+   {
+    "url": "/produkte/mail-assistent/",
+    "titel": "Mail-Assistent",
+    "grund": "Bauherrenfragen nach Projekt ordnen und Entwürfe aus Textbausteinen vorbereiten."
+   },
+   {
+    "url": "/produkte/website-chatbot/",
+    "titel": "Website-Chatbot",
+    "grund": "Allgemeine Fragen zum Büro und zum Projektablauf beantworten, klar als Maschine gekennzeichnet."
+   },
+   {
+    "url": "/produkte/newsletter/",
+    "titel": "Newsletter",
+    "grund": "Über abgeschlossene Projekte und Wettbewerbe informieren, an Personen mit Anmeldung."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Kanton Wallis, Nationale Schwellenwerte",
+    "url": "https://www.vs.ch/de/web/marches-publics/nationale-schwellenwerte"
+   },
+   {
+    "titel": "Kanton Basel-Landschaft, Schwellenwerte 2026/27",
+    "url": "https://bl-api.webcloud7.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/generalsekretariat/oeffentliche-beschaffungen/downloads/schwellenwerte_2026-2027.pdf"
+   },
+   {
+    "titel": "KMU-Portal des Bundes, Teilnahme an einer Ausschreibung",
+    "url": "https://www.kmu.admin.ch/de/teilnahme-an-einer-ausschreibung"
+   },
+   {
+    "titel": "droit-bilingue.ch, Art. 56 ff. BöB (nicht rechtsverbindlich)",
+    "url": "https://www.droit-bilingue.ch/en-de/1/17/172.056.1-56-59.html"
+   },
+   {
+    "titel": "WEKA, Architekturwettbewerbe: Architektenvertrag und Wettbewerb",
+    "url": "https://www.weka.ch/themen/bau-immobilien/bau/bauprojekte/article/architekturwettbewerbe-architektenvertrag-und-wettbewerb/"
+   },
+   {
+    "titel": "WEKA, Bauherrschaft: ihre Rolle in der Bauausführung",
+    "url": "https://www.weka.ch/themen/bau-immobilien/bau/bauprojekte/article/bauherrschaft-ihre-rolle-in-der-bauausfuehrung/"
+   },
+   {
+    "titel": "EDÖB, AI and data protection",
+    "url": "https://www.edoeb.admin.ch/en/ai-and-data-protection"
+   }
+  ]
+ },
+ {
+  "slug": "pflegeheime-spitex",
+  "art": "branche",
+  "name": "Pflegeheime und Spitex",
+  "kurz": "Berufsgeheimnis, Angehörigenauskunft und nDSG in Heim und Spitex.",
+  "titel": "Pflegeheim & Spitex: Digitale Kommunikation und Recht",
+  "beschreibung": "Berufsgeheimnis, Angehörigenauskunft und nDSG: Was Pflegeheime und Spitex-Organisationen bei digitalen Assistenten beachten sollten. Mit Checkliste.",
+  "h1": "Digitale Kommunikation in Pflegeheim und Spitex: Recht, Alltag, Möglichkeiten",
+  "lead": "Eine Tochter ruft an und möchte wissen, wie es ihrer Mutter nach dem Sturz geht. Gleichzeitig fragt jemand per E-Mail nach freien Plätzen, und die Spitex-Tour beginnt in zehn Minuten. In der Langzeitpflege ist Kommunikation Alltag, und fast jede Auskunft berührt das Berufsgeheimnis. Dieser Text zeigt, was gilt und wo digitale Bausteine entlasten könnten, ohne Grenzen zu überschreiten.",
+  "geprueft": "2026-10-25",
+  "produkte": [
+   "website-chatbot",
+   "mail-assistent",
+   "umfragen-abstimmungen",
+   "website-fuer-vereine"
+  ],
+  "faq": [
+   {
+    "frage": "Dürfen wir Angehörigen Auskunft geben?",
+    "antwort": "Nur mit ausdrücklicher Einwilligung der Klientin oder des Klienten. Das halten das BAG und die Vorgaben des Kantons Aargau fest. Verwandtschaft allein berechtigt nicht zur Auskunft."
+   },
+   {
+    "frage": "Wer entscheidet, wenn eine Person nicht mehr urteilsfähig ist?",
+    "antwort": "Dann entscheidet die vertretungsberechtigte Person nach Art. 378 ZGB. Die Vertretung sollte dokumentiert sein, damit die Mitarbeitenden wissen, wer Auskunft erhalten darf."
+   },
+   {
+    "frage": "Gilt das Berufsgeheimnis auch für Betreuung und Administration?",
+    "antwort": "Art. 321 StGB erfasst Pflegefachpersonen und ihre Hilfspersonen. Dazu können auch Mitarbeitende in Betreuung und Administration gehören, die im Auftrag der Fachpersonen mit vertraulichen Informationen arbeiten. Im Kanton Aargau unterstehen Spitex-Mitarbeitende zudem einer besonderen beruflichen Schweigepflicht."
+   },
+   {
+    "frage": "Gilt für uns das Bundesrecht oder kantonales Datenschutzrecht?",
+    "antwort": "Das hängt von Kanton und Trägerschaft ab. Belegt ist für uns nur der Kanton Aargau: Dort gilt für Spitex-Organisationen mit öffentlicher Aufgabe das kantonale Gesetz neben dem DSG. Für andere Fälle klären Sie das mit der kantonalen Datenschutzstelle oder einer Fachperson."
+   },
+   {
+    "frage": "Wie lange müssen wir Unterlagen aufbewahren?",
+    "antwort": "Aufbewahrungsfristen sind kantonal geregelt und unterscheiden sich. Wir nennen deshalb bewusst keine allgemeine Frist. Massgeblich sind die Vorgaben Ihres Kantons."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/produkte/website-chatbot/",
+    "titel": "Website-Chatbot",
+    "grund": "Allgemeine Fragen zu Besuchszeiten, Aufnahme und Angeboten beantworten, ohne Auskunft zu Personen."
+   },
+   {
+    "url": "/produkte/mail-assistent/",
+    "titel": "Mail-Assistent",
+    "grund": "Administrative Post ordnen und Entwürfe vorbereiten. Post zu Bewohnenden bleibt ausgeklammert."
+   },
+   {
+    "url": "/produkte/umfragen-abstimmungen/",
+    "titel": "Umfragen und Abstimmungen",
+    "grund": "Anonyme Rückmeldungen von Angehörigen oder Mitgliedern eines Trägervereins einholen."
+   },
+   {
+    "url": "/produkte/website-fuer-vereine/",
+    "titel": "Website für Vereine",
+    "grund": "Für Trägervereine, etwa einen Spitex-Verein, mit Informationen zu Vorstand und Mitgliedschaft."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Kanton Basel-Stadt, Leitfaden zur beruflichen Schweigepflicht (Stand März 2023)",
+    "url": "https://media.bs.ch/dynamic/noop/b7762bed8f875fe6c02fec0c776c70d546649515/leitfaden-zur-beruflichen-schweigepflicht-stand-maerz-2023.pdf"
+   },
+   {
+    "titel": "Kanton Aargau, Merkblatt Datenschutz Klientinnen und Klienten Spitex (2026)",
+    "url": "https://www.ag.ch/media/kanton-aargau/dgs/dokumente/gesundheit/gesundheitsversorgung/pflegeheime-und-spitex/spitex/merkblatt-datenschutz-klienten-2026.pdf"
+   },
+   {
+    "titel": "BAG, Patientenwillen stärken: Vorgehen",
+    "url": "https://www.bag.admin.ch/de/patientenwillen-staerken-vorgehen"
+   },
+   {
+    "titel": "Kanton Aargau, Vorgaben Datenschutz Pflege",
+    "url": "https://www.ag.ch/media/kanton-aargau/dgs/dokumente/gesundheit/gesundheitsversorgung/pflege/vorgaben-datenschutz.pdf"
+   },
+   {
+    "titel": "Obsan Bulletin 05/2021",
+    "url": "https://www.obsan.admin.ch/sites/default/files/2021-10/Obsan_BULLETIN_2021-05_d.pdf"
+   },
+   {
+    "titel": "SRF, Neuer Rekord: Spitex-Dienste leisteten 2024 so viele Pflegestunden wie noch nie",
+    "url": "https://www.srf.ch/news/schweiz/neuer-rekord-spitex-dienste-leisteten-2024-so-viele-pflegestunden-wie-noch-nie"
+   },
+   {
+    "titel": "EDÖB, AI and data protection",
+    "url": "https://www.edoeb.admin.ch/en/ai-and-data-protection"
+   }
+  ]
+ },
+ {
+  "slug": "ndsg-kmu-checkliste",
+  "art": "ratgeber",
+  "name": "nDSG für KMU: Checkliste",
+  "titel": "nDSG für KMU: Checkliste mit 18 Punkten | Meyssens",
+  "beschreibung": "Was KMU nach dem Schweizer Datenschutzgesetz tun müssen: Datenschutzerklärung, Verzeichnis, Auftragsbearbeiter, Pannen, Bussen. Mit Checkliste.",
+  "h1": "nDSG für KMU: Die Checkliste für den Alltag",
+  "lead": "Ein Kontaktformular auf der Website, eine Kundenliste in der Buchhaltung, ein Newsletter an Stammkunden: Fast jedes KMU bearbeitet Personendaten. Seit September 2023 gilt dafür das revidierte Datenschutzgesetz. Dieser Ratgeber erklärt die wichtigsten Pflichten in verständlicher Sprache und schliesst mit einer Checkliste in 18 Punkten.",
+  "geprueft": "2026-10-25",
+  "produkte": [
+   "website-chatbot",
+   "mail-assistent"
+  ],
+  "faq": [
+   {
+    "frage": "Gilt das nDSG auch für Einzelunternehmen?",
+    "antwort": "Ja. Das Gesetz gilt für alle, die Personendaten natürlicher Personen bearbeiten, unabhängig von der Grösse oder Rechtsform des Unternehmens."
+   },
+   {
+    "frage": "Muss ich ein Bearbeitungsverzeichnis führen?",
+    "antwort": "Meist nicht. Unternehmen mit weniger als 250 Mitarbeitenden sind bei geringem Risiko befreit (Art. 24 DSV). Die Ausnahme gilt nicht bei umfangreicher Bearbeitung besonders schützenswerter Daten oder bei Profiling mit hohem Risiko. Freiwillig ist ein Verzeichnis trotzdem sinnvoll."
+   },
+   {
+    "frage": "Wann muss ich eine Datenpanne melden?",
+    "antwort": "Wenn sie voraussichtlich zu einem hohen Risiko für die betroffenen Personen führt. Die Meldung geht so rasch als möglich an den EDÖB, über dessen Meldeportal (Art. 24 DSG)."
+   },
+   {
+    "frage": "Wie schnell muss ich ein Auskunftsbegehren beantworten?",
+    "antwort": "In der Regel innert 30 Tagen. Die Auskunft ist grundsätzlich kostenlos (Art. 25 DSG)."
+   },
+   {
+    "frage": "Wer wird bei Verstössen gebüsst?",
+    "antwort": "Die verantwortlichen natürlichen Personen, nicht das Unternehmen. Die Busse beträgt bis CHF 250'000, strafbar ist nur Vorsatz. Verfolgt wird auf Antrag durch die Kantone, der EDÖB büsst nicht."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/ratgeber/website-chatbot-recht/",
+    "titel": "Website-Chatbot: was er darf und was nicht",
+    "grund": "Kennzeichnung, Nutzer-Eingaben und KI-Anbieter als Auftragsbearbeiter: das nDSG angewendet auf einen Chatbot."
+   },
+   {
+    "url": "/ratgeber/online-abstimmung-verein/",
+    "titel": "Online-Abstimmungen im Verein",
+    "grund": "Wie die Pflichten aus dem nDSG bei Mitgliederdaten und Online-Abstimmungen aussehen."
+   },
+   {
+    "url": "/branchen/zahnarztpraxen/",
+    "titel": "Zahnarztpraxen",
+    "grund": "Auftragsbearbeitung und Auslandtransfer, wenn besonders schützenswerte Gesundheitsdaten und das Berufsgeheimnis dazukommen."
+   },
+   {
+    "url": "/branchen/immobilienverwaltungen/",
+    "titel": "Immobilienverwaltungen",
+    "grund": "Bewerberdaten, Datenpannen und die Rollen von Eigentümer und Verwaltung als Praxisbeispiel."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "EDÖB, Geltendes DSG ist auf KI anwendbar (9.11.2023)",
+    "url": "https://www.edoeb.admin.ch/de/09112023-geltendes-dsg-ist-auf-ki-anwendbar"
+   },
+   {
+    "titel": "PwC, Inkrafttreten neues Datenschutzgesetz",
+    "url": "https://www.pwc.ch/de/insights/regulierung/inkrafttreten-neues-datenschutzgesetz-dsg.html"
+   },
+   {
+    "titel": "EDÖB, Das neue Datenschutzgesetz aus Sicht des EDÖB",
+    "url": "https://www.edoeb.admin.ch/de/das-neue-datenschutzgesetz-aus-sicht-des-edob"
+   },
+   {
+    "titel": "EDÖB, Datenschutzerklärungen im Internet",
+    "url": "https://www.edoeb.admin.ch/de/datenschutzerklaerungen-im-internet"
+   },
+   {
+    "titel": "Onlinekommentar, Art. 12 DSG",
+    "url": "https://onlinekommentar.ch/de/kommentare/dsg12/print"
+   },
+   {
+    "titel": "Bundesrat, Medienmitteilung zum Swiss-US Data Privacy Framework",
+    "url": "https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen/bundesrat.msg-id-102054.html"
+   },
+   {
+    "titel": "datenschutz.ch, Praxishilfe zum Angemessenheitsbeschluss USA",
+    "url": "https://docs.datenschutz.ch/u/d/publikationen/webartikel/240776INF-04-Webartikel-Umgang-mit-dem-Angemessenheitsbeschluss-USA.pdf"
+   },
+   {
+    "titel": "EDÖB, Leitfaden zur Meldung von Datensicherheitsverletzungen nach Art. 24 DSG",
+    "url": "https://www.edoeb.admin.ch/dam/de/sd-web/T64CAUyvAMcF/1_2%20Leitfaden%20des%20ED%C3%96B%20betreffend%20die%20Meldung%20von%20Datensicherheitsverletzungen%20und%20Information%20der%20Betroffenen%20nach%20Art.%2024%20DSG_DE.pdf"
+   },
+   {
+    "titel": "Onlinekommentar, Art. 25 DSG",
+    "url": "https://onlinekommentar.ch/de/kommentare/dsg25/print"
+   },
+   {
+    "titel": "EDÖB, Strafbestimmungen",
+    "url": "https://www.edoeb.admin.ch/de/strafbestimmungen"
+   },
+   {
+    "titel": "Parlament, Schlussabstimmungstext DSG (2020)",
+    "url": "https://www.parlament.ch/centers/eparl/curia/2017/20170059/Schluzssabstimmungstext%203%20NS%20D.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "offertanfragen-beantworten",
+  "art": "ratgeber",
+  "name": "Offertanfragen schneller beantworten",
+  "titel": "Offertanfragen schneller beantworten: Leitfaden Schweiz",
+  "beschreibung": "Was eine Offerte rechtlich bindet, welche Fristen gelten und wie Sie Anfragen schneller beantworten: mit Textbausteinen und Checkliste.",
+  "h1": "Offertanfragen schneller beantworten: Leitfaden für kleine Betriebe",
+  "lead": "Die Anfrage kam am Montag, die Offerte ist am Freitag noch nicht geschrieben, und am Telefon haben Sie schon einen Preis genannt. Gilt der jetzt? Dieser Leitfaden erklärt, wann eine Offerte nach Schweizer Recht bindet, wie Sie Fristen setzen und wie Sie Anfragen mit Textbausteinen schneller und sauberer beantworten.",
+  "geprueft": "2026-10-25",
+  "produkte": [
+   "mail-assistent"
+  ],
+  "faq": [
+   {
+    "frage": "Bin ich an meine Offerte gebunden?",
+    "antwort": "In der Regel ja. Mit Frist sind Sie bis zu deren Ablauf gebunden (Art. 3 OR). Ohne Frist hängt es davon ab, ob die Offerte unter Anwesenden (auch am Telefon) oder unter Abwesenden gemacht wurde (Art. 4 und 5 OR). Ein ausdrücklicher Vorbehalt wie «unverbindlich» hebt die Bindung auf (Art. 7 OR)."
+   },
+   {
+    "frage": "Wie lange gilt eine Offerte ohne Frist?",
+    "antwort": "Unter Anwesenden nur, wenn sie sogleich angenommen wird. Unter Abwesenden, etwa per E-Mail, bis Sie den Eingang einer rechtzeitig abgesandten Antwort erwarten dürfen. Weil das unscharf ist, lohnt sich immer ein Gültigkeitsdatum."
+   },
+   {
+    "frage": "Sind Preise auf meiner Website verbindlich?",
+    "antwort": "Preislisten und Tarife gelten nach Art. 7 OR an sich nicht als Antrag. Ob das für eine bestimmte Preisangabe auf Ihrer Website gleich gilt, haben wir nicht geprüft. Ein ausdrücklicher Vorbehalt schafft Klarheit."
+   },
+   {
+    "frage": "Was gilt, wenn die Kundin nach Ablauf der Frist annimmt?",
+    "antwort": "Nach Ablauf der Frist sind Sie nicht mehr gebunden (Art. 3 OR). Ob Sie zu den alten Bedingungen zusagen, entscheiden Sie neu."
+   },
+   {
+    "frage": "Was passiert, wenn ein ungefährer Preis deutlich überschritten wird?",
+    "antwort": "Wird ein ungefährer Kostenansatz unverhältnismässig überschritten, kann der Besteller vom Werkvertrag zurücktreten (Art. 375 OR). Informieren Sie deshalb früh, wenn die Kosten aus dem Rahmen laufen."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/produkte/mail-assistent/",
+    "titel": "Mail-Assistent mit Antwortentwürfen",
+    "grund": "Wie Entwürfe für Offertanfragen vorbereitet werden könnten, die ein Mensch prüft und selbst sendet."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Kundenanfragen enthalten Personendaten. Was das Datenschutzgesetz dafür verlangt."
+   },
+   {
+    "url": "/ratgeber/online-abstimmung-verein/",
+    "titel": "Online-Abstimmungen im Verein",
+    "grund": "Ein zweiter Ratgeber dieser Reihe, für alle, die neben dem Betrieb einen Verein führen."
+   },
+   {
+    "url": "/branchen/bauunternehmen/",
+    "titel": "Bauunternehmen",
+    "grund": "Offertanfragen von Bauherrschaften und Ausschreibungen aus Sicht eines Baubetriebs."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Omnilex, Kommentar zu Art. 3 OR",
+    "url": "https://app.omnilex.ai/de/sources/commentaries/ch-fedlex--220--3"
+   },
+   {
+    "titel": "droit-bilingue.ch, Art. 4 bis 7 OR",
+    "url": "https://www.droit-bilingue.ch/en-de/2/22/220-4-7.html"
+   },
+   {
+    "titel": "lawbrary.ch, Art. 5 OR (englische Fassung)",
+    "url": "https://lawbrary.ch/law/art/OR-v2023.09-en-art-5/print"
+   },
+   {
+    "titel": "WEKA, Invitatio ad offerendum: der Antrag ohne Verbindlichkeit (20.02.2025)",
+    "url": "https://www.weka.ch/themen/recht/allgemeines-privatrecht/vertragsabschluss/article/invitatio-ad-offerendum-der-antrag-ohne-verbindlichkeit/"
+   },
+   {
+    "titel": "droit-bilingue.ch, Art. 375 OR",
+    "url": "https://www.droit-bilingue.ch/de-en/2/22/220-375-560.html"
+   },
+   {
+    "titel": "WEKA, Offerte, Angebot und Annahme im Werkvertragsrecht (22.07.2025)",
+    "url": "https://www.weka.ch/themen/bau-immobilien/bau/bauprojekte/article/offerte-angebot-und-annahme-im-werkvertragsrecht/"
+   },
+   {
+    "titel": "UBS, Sind Handwerkerofferten verbindlich? (13.06.2024)",
+    "url": "https://www.ubs.com/ch/de/services/guide/mortgages-and-financing/articles/are-craftmens-offers-binding.html"
+   },
+   {
+    "titel": "Deutsche Handwerks Zeitung, Kundenanfragen schneller beantwortet (18.10.2024)",
+    "url": "https://www.deutsche-handwerks-zeitung.de/kundenanfragen-schneller-beantwortet-349790/"
+   }
+  ]
+ },
+ {
+  "slug": "online-abstimmung-verein",
+  "art": "ratgeber",
+  "name": "Online-Abstimmungen im Verein",
+  "titel": "Online-Abstimmung im Verein: rechtssicher nach ZGB",
+  "beschreibung": "Wann ist eine Online-Abstimmung im Schweizer Verein verbindlich? Statuten, Art. 66 ZGB, Datenschutz und Checkliste im Überblick.",
+  "h1": "Online-Abstimmungen im Verein rechtssicher durchführen",
+  "lead": "Die Generalversammlung ist schlecht besucht, der Vorstand möchte über das neue Jahresprogramm lieber online abstimmen lassen. Geht das, und ist das Ergebnis dann verbindlich? Die Antwort steht zum grössten Teil in Ihren Statuten. Dieser Ratgeber erklärt, was das ZGB verlangt, warum eine einzige Gegenstimme reichen kann und wie eine Statutenklausel aussehen könnte.",
+  "geprueft": "2026-10-25",
+  "produkte": [
+   "umfragen-abstimmungen",
+   "website-fuer-vereine"
+  ],
+  "faq": [
+   {
+    "frage": "Dürfen wir ohne Versammlung online abstimmen?",
+    "antwort": "Nur unter engen Voraussetzungen. Ohne Grundlage in den Statuten ersetzt eine schriftliche Abstimmung den Versammlungsbeschluss nur, wenn alle Mitglieder zustimmen (Art. 66 Abs. 2 ZGB, BGE 132 III 503). Sehen die Statuten elektronische Abstimmungen vor, gelten deren Regeln."
+   },
+   {
+    "frage": "Genügt eine Mehrheit bei einer schriftlichen Abstimmung?",
+    "antwort": "Ohne statutarische Grundlage nein. Nach BGE 132 III 503 braucht es Einstimmigkeit. Eine Nein-Stimme, eine Enthaltung oder eine ungültige Stimme lässt den Beschluss scheitern."
+   },
+   {
+    "frage": "Gilt die Corona-Regel für Vereine noch?",
+    "antwort": "Nein. Die Erleichterung nach Art. 27 COVID-19-Verordnung 3 war befristet und galt laut Bundesamt für Justiz längstens bis 31. Dezember 2023."
+   },
+   {
+    "frage": "Muss eine Online-Abstimmung geheim sein?",
+    "antwort": "Eine gesetzliche Regel zum Stimmgeheimnis im Verein konnten wir nicht belegen. Legen Sie in den Statuten oder einem Reglement fest, ob geheim oder offen abgestimmt wird."
+   },
+   {
+    "frage": "Wie lange kann ein Beschluss angefochten werden?",
+    "antwort": "Innert einem Monat ab Kenntnis (Art. 75 ZGB). Bewahren Sie deshalb das Protokoll und die Unterlagen zum Verfahren auf."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/produkte/website-fuer-vereine/",
+    "titel": "Website für Vereine",
+    "grund": "Statuten, Einladungen und Protokolle an einem Ort, für Mitglieder auffindbar."
+   },
+   {
+    "url": "/produkte/umfragen-abstimmungen/",
+    "titel": "Umfragen und Abstimmungen",
+    "grund": "Ein Werkzeug für Umfragen und Abstimmungen, das ein Verfahren nach Ihren Statuten unterstützen kann."
+   },
+   {
+    "url": "/ratgeber/offertanfragen-beantworten/",
+    "titel": "Offertanfragen schneller beantworten",
+    "grund": "Ein weiterer Ratgeber dieser Reihe, mit Textbausteinen für den Alltag im Betrieb."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Was das Datenschutzgesetz bei Mitgliederdaten verlangt, Schritt für Schritt."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "droit-bilingue.ch, Art. 64 ZGB",
+    "url": "https://droit-bilingue.ch/rs/lex/1907/00/19070042-a64-en-de.html"
+   },
+   {
+    "titel": "Fankhauser, Universität Basel: Der Verein in Zeiten von Corona",
+    "url": "https://ius.unibas.ch/fileadmin/user_upload/ius/07_Upload_News/Dokumente/Syposium_iuscoronae_-_FANKHAUSER_-_Der_Verein_in_Zeiten_von_Corona.pdf"
+   },
+   {
+    "titel": "BGE 132 III 503",
+    "url": "https://servat.unibe.ch/dfr/bge/c3132503.html"
+   },
+   {
+    "titel": "lawbrary.ch, Art. 67 ZGB (englische Fassung)",
+    "url": "https://lawbrary.ch/law/art/ZGB-v2021.01-en-art-67/print"
+   },
+   {
+    "titel": "droit-bilingue.ch, Art. 75 ZGB (englische Fassung)",
+    "url": "https://www.droit-bilingue.ch/en-fr/2/21/210-75-98.html"
+   },
+   {
+    "titel": "Kanton Zürich, Muster-Statuten Verein mit Kommentar",
+    "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/wirtschaft-arbeit/handelsregister/verein/verein_vorlage_statuten_kurz_mit_Kommentar.pdf"
+   },
+   {
+    "titel": "Bundesamt für Justiz, FAQ Generalversammlung COVID-19",
+    "url": "https://www.esbk.admin.ch/dam/bj/de/data/aktuell/coronavirus/faq-covid19-generalversammlung.pdf.download.pdf/faq-covid19-generalversammlung-d.pdf"
+   },
+   {
+    "titel": "Bundesamt für Justiz, Datenschutz",
+    "url": "https://www.bj.admin.ch/de/datenschutz"
+   },
+   {
+    "titel": "Frauenbund, nDSG-Checkliste für Vereine",
+    "url": "https://www.frauenbund.ch/frauenbund-dachverband/seiteninhalte/verbandsdienstleistungen/Vereinswissen/2023-05-17-nDSG-Checkliste.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "website-chatbot-recht",
+  "art": "ratgeber",
+  "name": "Website-Chatbot: was er darf und was nicht",
+  "titel": "Website-Chatbot Schweiz: Was er darf und was nicht",
+  "beschreibung": "KI-Chatbot auf der Firmenwebsite: Kennzeichnung, Datenschutz nach nDSG, US-Anbieter, Haftung und Grenzen. Mit Checkliste für den Start.",
+  "h1": "Website-Chatbot in der Schweiz: Was er darf und was nicht",
+  "lead": "Ein Chatbot auf der Website beantwortet Fragen auch am Sonntagabend und entlastet das Telefon. Doch was muss er offenlegen, was passiert mit den Eingaben, und wer haftet, wenn er Unsinn erzählt? Dieser Ratgeber fasst zusammen, was nach Schweizer Recht gilt, wo die Rechtslage offen ist und was Sie vor dem Start prüfen sollten.",
+  "geprueft": "2026-10-25",
+  "produkte": [
+   "website-chatbot"
+  ],
+  "faq": [
+   {
+    "frage": "Muss ich sagen, dass der Chatbot eine KI ist?",
+    "antwort": "Nach Auffassung des EDÖB ja. Nutzende haben das Recht zu erfahren, dass sie mit einer Maschine sprechen und ob ihre Eingaben weiterverwendet werden."
+   },
+   {
+    "frage": "Darf ich einen US-Anbieter nutzen?",
+    "antwort": "Ja, mit einem Vertrag zur Auftragsbearbeitung und einer Grundlage für den Auslandtransfer. Für die USA gilt seit dem 15. September 2024 ein angemessener Schutz bei Unternehmen, die nach dem Swiss-US Data Privacy Framework zertifiziert sind. Prüfen Sie die Zertifizierung des konkreten Anbieters."
+   },
+   {
+    "frage": "Wer haftet für falsche Antworten?",
+    "antwort": "In der Regel das Unternehmen, das den Chatbot einsetzt. Das ist eine Fachmeinung, ein Schweizer Urteil dazu gibt es nach unserer Recherche nicht."
+   },
+   {
+    "frage": "Haben Nutzende Anspruch auf Auskunft über ihre Eingaben?",
+    "antwort": "Ja. Nach Art. 25 DSG können sie Auskunft über ihre Daten verlangen, auch über gespeicherte Chat-Verläufe. Die Auskunft ist in der Regel innert 30 Tagen zu erteilen."
+   },
+   {
+    "frage": "Gilt die EU-KI-Verordnung für mich?",
+    "antwort": "Möglicherweise. Das hängt vom Einzelfall ab, etwa davon, ob Sie Kundschaft in der EU haben. Die Transparenzpflicht nach Art. 50 Abs. 1 trifft in erster Linie den Anbieter des KI-Systems."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Die Grundlagen hinter diesem Ratgeber: Datenschutzerklärung, Auftragsbearbeitung, Auslandtransfer und Pannen."
+   },
+   {
+    "url": "/produkte/website-chatbot/",
+    "titel": "Website-Chatbot von Meyssens",
+    "grund": "Unser Chatbot in der Pilotphase: was er können soll und wo wir Pilotpartner suchen."
+   },
+   {
+    "url": "/branchen/zahnarztpraxen/",
+    "titel": "Zahnarztpraxen",
+    "grund": "Ein Chatbot für Allgemeinfragen in einem Umfeld mit Berufsgeheimnis und Gesundheitsdaten."
+   },
+   {
+    "url": "/branchen/pflegeheime-spitex/",
+    "titel": "Pflegeheime und Spitex",
+    "grund": "Mit einem Vorschlag für einen Chatbot-Hinweistext, der vor der Eingabe von Namen und Gesundheitsdaten warnt."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Bundesamt für Justiz, Künstliche Intelligenz",
+    "url": "https://www.bj.admin.ch/de/kuenstliche-intelligenz"
+   },
+   {
+    "titel": "EDÖB, KI und Datenschutz",
+    "url": "https://www.edoeb.admin.ch/de/ki-und-datenschutz"
+   },
+   {
+    "titel": "EDÖB, Geltendes DSG ist auf KI anwendbar (9.11.2023)",
+    "url": "https://www.edoeb.admin.ch/de/09112023-geltendes-dsg-ist-auf-ki-anwendbar"
+   },
+   {
+    "titel": "Bundesrat, Medienmitteilung zum Swiss-US Data Privacy Framework",
+    "url": "https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen/bundesrat.msg-id-102054.html"
+   },
+   {
+    "titel": "Netzwoche, Wer haftet, wenn KI halluziniert? (27.8.2025)",
+    "url": "https://www.netzwoche.ch/news/2025-08-27/wer-haftet-wenn-ki-halluziniert"
+   },
+   {
+    "titel": "American Bar Association, BC Tribunal confirms companies remain liable for information provided by AI chatbot",
+    "url": "https://www.americanbar.org/groups/business_law/resources/business-law-today/2024-february/bc-tribunal-confirms-companies-remain-liable-information-provided-ai-chatbot/"
+   },
+   {
+    "titel": "McCann FitzGerald, EU AI Act transparency compliance",
+    "url": "https://www.mccannfitzgerald.com/knowledge/technology-and-innovation/one-month-to-go-eu-ai-act-transparency-compliance"
+   },
+   {
+    "titel": "AI Act Service Desk, Art. 2",
+    "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-2"
+   }
+  ]
+ }
+]
