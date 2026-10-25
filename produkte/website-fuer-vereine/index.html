@@ -49,9 +49,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/stil.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen und Vereine", "item": "https://meyssens.ch/unternehmen/"}, {"@type": "ListItem", "position": 3, "name": "Website für Vereine", "item": "https://meyssens.ch/produkte/website-fuer-vereine/"}]}]}</script>
 </head>
-<body>
+<body class="stil">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <nav id="nav">
   <a href="/" class="logo"><img src="/logo-web.png" width="701" height="96" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
@@ -80,7 +81,29 @@
   </div>
 </section>
 
-<section id="details">
+<section id="ansicht" class="ansicht-wrap">
+  <h2 class="sr-only">Beispiel</h2>
+<div class="r">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Website für Vereine</span><span class="beispiel">Beispielansicht</span></div>
+  <div class="geraet-inhalt">
+<div class="mock mock-verein">
+  <div class="mock-nav"><b>Beispielverein</b><span>Start</span><span>Anlässe</span><span>Neuigkeiten</span><span>Vorstand</span><span>Kontakt</span></div>
+  <div class="mock-banner"><p class="mock-h">Willkommen beim Beispielverein</p><i class="mock-zeile hell"></i></div>
+  <p class="mock-titel">Nächste Anlässe</p>
+  <ul class="mock-liste">
+    <li><b>Generalversammlung</b><span>Datum folgt</span></li>
+    <li><b>Sommerfest</b><span>Datum folgt</span></li>
+    <li><b>Helfereinsatz</b><span>Datum folgt</span></li>
+  </ul>
+</div>
+  </div>
+</figure>
+</div>
+<p class="ansicht-hinweis">Beispielansicht, wie das Produkt aussehen könnte. Das Produkt ist in Planung.</p>
+</section>
+
+<section id="details" class="dunkel">
   <h2 class="sr-only">Überblick</h2>
   <div class="feat-grid r">
     <div class="feat">
@@ -102,7 +125,7 @@
   <div class="note r">Dieses Produkt ist in Planung. Mit Ihrer Anfrage merken wir Sie unverbindlich vor.</div>
 </section>
 
-<section id="anfrage" style="background:var(--surface)">
+<section id="anfrage" class="flaeche">
   <div class="contact-grid">
     <div class="r">
       <span class="s-label">In Planung</span>
@@ -260,6 +283,7 @@ document.addEventListener('keydown', function(e){
 });
 
 </script>
+<script src="/assets/demos.js" defer></script>
 <script>
 // --- Kontaktformular ohne Seitenwechsel absenden ---
 const FORM_MSG = {

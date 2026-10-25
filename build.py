@@ -13,7 +13,10 @@ Quellen:
   vorlage_produkt.html     Vorlage für produkte/<slug>/index.html
   vorlage_unternehmen.html Vorlage für unternehmen/index.html
   index.html               Kopfbereich, Header, Footer, Cookie-Banner, Impressum, Datenschutz, Skripte
-                           (Abschnitte zwischen <!-- name:start --> und <!-- name:ende -->)
+                           (Abschnitte zwischen <!-- name:start --> und <!-- name:ende -->).
+                           Die Bereiche <!-- auto:name:start --> bis <!-- auto:name:ende --> der Startseite
+                           (Produktansicht, Demos, In Planung, Zahlen) schreibt build.py selbst neu.
+  ansichten.html           Demos (Pilotphase) und Beispielansichten (In Planung) im Gerätefenster
   gemeinden/index.html     Formspree-Ziel, Einwilligung und Formular-Skript des bestehenden Kontaktformulars
 """
 import datetime
@@ -52,6 +55,20 @@ def abschnitt(text, name):
     if not m:
         raise SystemExit("Abschnitt %s fehlt in index.html" % name)
     return m.group(1).rstrip("\n")
+
+
+def teil(text, name):
+    # Abschnitt aus ansichten.html oder None
+    m = re.search(r"<!-- %s:start -->\n(.*?)<!-- %s:ende -->" % (name, name), text, re.S)
+    return m.group(1).rstrip("\n") if m else None
+
+
+def setze_auto(text, name, inhalt):
+    # Ersetzt den Inhalt eines automatisch erzeugten Bereichs der Startseite
+    muster = re.compile(r"(<!-- auto:%s:start -->\n).*?(<!-- auto:%s:ende -->)" % (name, name), re.S)
+    if not muster.search(text):
+        raise SystemExit("Bereich auto:%s fehlt in index.html" % name)
+    return muster.sub(lambda m: m.group(1) + inhalt + "\n" + m.group(2), text)
 
 
 def zwischen(text, start, ende, mit_ende=False):
@@ -117,6 +134,79 @@ def demo(d, art):
     return ('\n  <div class="note demo-note">%s <strong>%s</strong>\n'
             '    <div class="demo-note__aktion">%s</div>\n'
             '  </div>' % (e["text"], e["hinweis"], knopf))
+
+
+def geraet(titel, inhalt, marke="Beispiel"):
+    # Gerätefenster mit sichtbarer Beschriftung "Beispiel"
+    return ('<figure class="geraet">\n'
+            '  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>'
+            '<span class="geraet-titel">%s</span><span class="beispiel">%s</span></div>\n'
+            '  <div class="geraet-inhalt">\n%s\n  </div>\n'
+            '</figure>' % (titel, marke, inhalt))
+
+
+def ansicht(ansichten, p):
+    # Pilotphase: interaktive Demo, sonst statische Beispielansicht
+    demo_teil = teil(ansichten, "demo-" + p["slug"])
+    inhalt = demo_teil or teil(ansichten, "ansicht-" + p["slug"])
+    if not inhalt:
+        raise SystemExit("ansichten.html: weder demo-%s noch ansicht-%s" % (p["slug"], p["slug"]))
+    return geraet(html.escape(p["name"]), inhalt, "Beispiel" if demo_teil else "Beispielansicht"), bool(demo_teil)
+
+
+def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
+    # Automatisch erzeugte Bereiche der Startseite aus produkte.json und ansichten.html
+    held = '<div class="buehne" data-buehne>\n%s\n</div>' % geraet("Meyssens", teil(ansichten, "held"))
+    demos = []
+    for p in (p for p in produkte if p["status"] == "Pilotphase"):
+        bild, _ = ansicht(ansichten, p)
+        demos.append('<article class="demo r">\n'
+                     '  <div class="demo-text">\n'
+                     '    <span class="status-chip">%s</span>\n'
+                     '    <h3>%s</h3>\n'
+                     '    <p>%s</p>\n'
+                     '    <a class="mehr" href="/produkte/%s/">Mehr erfahren %s</a>\n'
+                     '  </div>\n'
+                     '  <div class="demo-bild">\n%s\n  </div>\n'
+                     '</article>' % (html.escape(STUFEN[p["status"]]["badge"]), html.escape(p["name"]),
+                                     html.escape(p["kurzbeschreibung"]), p["slug"], PFEIL, bild))
+    geplant = [p for p in produkte if p["status"] == "In Planung"]
+    schritte = []
+    for i, p in enumerate(geplant, 1):
+        bild, _ = ansicht(ansichten, p)
+        schritte.append('  <div class="schritt%s">\n'
+                        '    <div class="schritt-text">\n'
+                        '      <span class="schritt-nr">%02d / %02d</span>\n'
+                        '      <span class="status-chip">%s</span>\n'
+                        '      <h3><a href="/produkte/%s/">%s</a></h3>\n'
+                        '      <p>%s</p>\n'
+                        '      <a class="mehr" href="/produkte/%s/#anfrage">%s %s</a>\n'
+                        '    </div>\n'
+                        '    <div class="schritt-bild">\n%s\n    </div>\n'
+                        '  </div>' % (" aktiv" if i == 1 else "", i, len(geplant), html.escape(STUFEN[p["status"]]["badge"]),
+                                      p["slug"], html.escape(p["name"]), html.escape(p["kurzbeschreibung"]),
+                                      p["slug"], STUFEN[p["status"]]["knopf"], PFEIL, bild))
+    planung = '<div class="scrolly" data-scrolly>\n%s\n</div>' % "\n".join(schritte)
+    zahlen = [(len(produkte), "Produkte"),
+              (sum(p["status"] == "Pilotphase" for p in produkte), "in der Pilotphase"),
+              (len(geplant), "in Planung"),
+              (anzahl_branchen, "Branchenseiten"),
+              (anzahl_ratgeber, "Ratgeber")]
+    zahlen = ('<div class="zahlen r">\n%s\n</div>\n'
+              '<p class="zahlen-hinweis">Gezählt aus den Angaben dieser Website. Meyssens ist ein Einzelunternehmen '
+              'in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen.</p>'
+              % "\n".join('  <div class="zahl"><strong>%d</strong><span>%s</span></div>' % z for z in zahlen))
+    for name, inhalt in (("held", held), ("demos", "\n".join(demos)), ("planung", planung), ("zahlen", zahlen)):
+        start = setze_auto(start, name, inhalt)
+    return start
+
+
+def produkt_ansicht(ansichten, p):
+    bild, interaktiv = ansicht(ansichten, p)
+    hinweis = ("Interaktives Beispiel mit erfundenen Inhalten. Das Produkt ist in der Pilotphase." if interaktiv else
+               "Beispielansicht, wie das Produkt aussehen könnte. Das Produkt ist %s." % (
+                   "in Planung" if p["status"] == "In Planung" else "in der Pilotphase"))
+    return '<div class="r">\n%s\n</div>\n<p class="ansicht-hinweis">%s</p>' % (bild, hinweis)
 
 
 def kurz(text, laenge=155, mindestens=120):
@@ -268,6 +358,7 @@ def main():
         raise SystemExit("Einwilligung im Gemeinden-Formular nicht gefunden")
     formular_skript = zwischen(gemeinden, "// --- Kontaktformular", "</script>")
 
+    ansichten = lies("ansichten.html")
     vorlage_produkt = lies("vorlage_produkt.html")
     kacheln = []
     for p in produkte:
@@ -291,6 +382,7 @@ def main():
             "fuer_wen": e["fuer_wen"],
             "hinweis": hinweis,
             "demo": demo(p.get("demo"), "produkt"),
+            "ansicht": produkt_ansicht(ansichten, p),
             "ld": ld(brotkrumen(START, UNTERNEHMEN, (p["name"], "/produkte/%s/" % p["slug"]))),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
@@ -407,6 +499,10 @@ def main():
                                for a in ratgeber),
     })
     schreibe("unternehmen/index.html", fuelle(lies("vorlage_unternehmen.html"), werte))
+
+    neu = startseite(start, ansichten, produkte, len(branchen) + len(artikel_branchen), len(ratgeber))
+    if neu != start:
+        schreibe("index.html", neu)
 
     # Verwaiste Ordner nur melden, nicht löschen
     bslugs_alle = bslugs | {a["slug"] for a in artikel_branchen}

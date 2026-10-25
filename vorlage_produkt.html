@@ -19,9 +19,10 @@
 <link rel="canonical" href="{{url}}">
 <link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
 {{head}}
+<link rel="stylesheet" href="/assets/stil.css">
 {{ld}}
 </head>
-<body>
+<body class="stil">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 {{kopf}}
 
@@ -34,7 +35,12 @@
 {{hinweis}}{{demo}}
 </section>
 
-<section id="details">
+<section id="ansicht" class="ansicht-wrap">
+  <h2 class="sr-only">Beispiel</h2>
+{{ansicht}}
+</section>
+
+<section id="details" class="dunkel">
   <h2 class="sr-only">Überblick</h2>
   <div class="feat-grid r">
     <div class="feat">
@@ -56,7 +62,7 @@
   <div class="note r">{{status_text}}</div>
 </section>
 
-<section id="anfrage" style="background:var(--surface)">
+<section id="anfrage" class="flaeche">
   <div class="contact-grid">
     <div class="r">
       <span class="s-label">{{status_badge}}</span>
@@ -92,6 +98,7 @@
 {{rechtliches}}
 
 {{skripte}}
+<script src="/assets/demos.js" defer></script>
 <script>
 {{formular_skript}}</script>
 </body>

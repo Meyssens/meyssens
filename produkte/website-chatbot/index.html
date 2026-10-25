@@ -49,9 +49,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/stil.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen und Vereine", "item": "https://meyssens.ch/unternehmen/"}, {"@type": "ListItem", "position": 3, "name": "Website-Chatbot", "item": "https://meyssens.ch/produkte/website-chatbot/"}]}]}</script>
 </head>
-<body>
+<body class="stil">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <nav id="nav">
   <a href="/" class="logo"><img src="/logo-web.png" width="701" height="96" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
@@ -77,7 +78,42 @@
 
 </section>
 
-<section id="details">
+<section id="ansicht" class="ansicht-wrap">
+  <h2 class="sr-only">Beispiel</h2>
+<div class="r">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Website-Chatbot</span><span class="beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<div class="chat" data-chat>
+  <div class="chat-verlauf" data-verlauf>
+    <p class="msg bot">Guten Tag. Ich beantworte Fragen zu Meyssens anhand der Inhalte dieser Website. Wählen Sie eine Frage.</p>
+  </div>
+  <p class="sr-only" data-ansage aria-live="polite"></p>
+  <div class="chat-fragen" role="group" aria-label="Beispielfragen">
+    <button type="button" data-frage="0">Welche Produkte sind in der Pilotphase?</button>
+    <button type="button" data-frage="1">Was erhalten Pilotpartner?</button>
+    <button type="button" data-frage="2">Wer steht hinter Meyssens?</button>
+    <button type="button" data-frage="3">Und wenn der Chatbot etwas nicht weiss?</button>
+  </div>
+  <dl class="chat-antworten">
+    <dt>Welche Produkte sind in der Pilotphase?</dt>
+    <dd><span>Drei Produkte: Umfragen &amp; Abstimmungen, der Website-Chatbot und die Wärme-Interessenkarte. Alle weiteren Produkte sind in Planung.</span> <a href="/unternehmen/#produkte">Quelle: Für Unternehmen und Vereine</a></dd>
+    <dt>Was erhalten Pilotpartner?</dt>
+    <dd><span>Pilotpartner erhalten die Einrichtung kostenlos und gestalten das Produkt mit. Für jedes Produkt in der Pilotphase suchen wir drei Pilotpartner.</span> <a href="/produkte/website-chatbot/#anfrage">Quelle: Website-Chatbot</a></dd>
+    <dt>Wer steht hinter Meyssens?</dt>
+    <dd><span>Meyssens ist ein Einzelunternehmen in Lausen (BL), gegründet von Lionel Nickelsen. Wir haben noch keine Kunden und keine Referenzen.</span> <a href="/ratgeber/website-chatbot-recht/#angebot">Quelle: Ratgeber Website-Chatbot</a></dd>
+    <dt>Und wenn der Chatbot etwas nicht weiss?</dt>
+    <dd><span>Dann sagt er das offen und verweist auf die Kontaktmöglichkeiten. Meyssens erreichen Sie per E-Mail an lionel@meyssens.ch.</span> <a href="/produkte/website-chatbot/#details">Quelle: Website-Chatbot</a></dd>
+  </dl>
+  <p class="demo-hinweis">Beispiel, vorgegebene Antworten. Es findet kein KI-Aufruf statt, und nichts wird gespeichert.</p>
+</div>
+  </div>
+</figure>
+</div>
+<p class="ansicht-hinweis">Interaktives Beispiel mit erfundenen Inhalten. Das Produkt ist in der Pilotphase.</p>
+</section>
+
+<section id="details" class="dunkel">
   <h2 class="sr-only">Überblick</h2>
   <div class="feat-grid r">
     <div class="feat">
@@ -99,7 +135,7 @@
   <div class="note r">Wir starten jetzt mit der Umsetzung und suchen drei Pilotpartner. Sie erhalten die Einrichtung kostenlos und gestalten das Produkt mit.</div>
 </section>
 
-<section id="anfrage" style="background:var(--surface)">
+<section id="anfrage" class="flaeche">
   <div class="contact-grid">
     <div class="r">
       <span class="s-label">Pilotphase, Pilotpartner gesucht</span>
@@ -257,6 +293,7 @@ document.addEventListener('keydown', function(e){
 });
 
 </script>
+<script src="/assets/demos.js" defer></script>
 <script>
 // --- Kontaktformular ohne Seitenwechsel absenden ---
 const FORM_MSG = {
