@@ -117,15 +117,45 @@ def demo(d, art):
             '  </div>' % (e["text"], e["hinweis"], knopf))
 
 
-def kurz(text, laenge=155):
-    # Meta-Beschreibung: ganze Sätze bis zur Länge, mindestens der erste Satz
+def kurz(text, laenge=155, mindestens=120):
+    # Meta-Beschreibung: ganze Sätze bis zur Länge, mindestens der erste Satz.
+    # Ist das Ergebnis kürzer als "mindestens", wird der nächste Satz wortweise mit "…" angehängt.
     saetze = re.split(r"(?<=[.!?])\s+", text)
     out = saetze[0]
-    for s in saetze[1:]:
+    for i, s in enumerate(saetze[1:], 1):
         if len(out) + 1 + len(s) > laenge:
+            if len(out) < mindestens:
+                teil = ""
+                for w in s.split():
+                    if len(out) + 1 + len(teil) + len(w) + 2 > laenge:
+                        break
+                    teil = (teil + " " + w).strip()
+                if teil:
+                    out += " " + teil.rstrip(",;:") + " …"
             break
         out += " " + s
     return out
+
+
+def titel_branche(b):
+    # Seitentitel höchstens ca. 60 Zeichen
+    t = "Digitale Infrastruktur für %s – Meyssens" % b["fuer"]
+    return t if len(t) <= 60 else "Digitale Lösungen für %s – Meyssens" % b["name"]
+
+
+def ld(*teile):
+    # Strukturierte Daten als JSON-LD (ein Block mit @graph)
+    return '<script type="application/ld+json">%s</script>' % json.dumps(
+        {"@context": "https://schema.org", "@graph": list(teile)}, ensure_ascii=False)
+
+
+def brotkrumen(*stufen):
+    return {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i, "name": n, "item": DOMAIN + u} for i, (n, u) in enumerate(stufen, 1)]}
+
+
+START = ("Startseite", "/")
+UNTERNEHMEN = ("Unternehmen und Vereine", "/unternehmen/")
 
 
 def main():
@@ -194,6 +224,7 @@ def main():
             "fuer_wen": e["fuer_wen"],
             "hinweis": hinweis,
             "demo": demo(p.get("demo"), "produkt"),
+            "ld": ld(brotkrumen(START, UNTERNEHMEN, (p["name"], "/produkte/%s/" % p["slug"]))),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -205,7 +236,7 @@ def main():
     for b in branchen:
         fuer = b["fuer"]
         werte = dict(gemeinsam, **{
-            "titel": html.escape("Digitale Infrastruktur für %s – Meyssens" % fuer),
+            "titel": html.escape(titel_branche(b)),
             "beschreibung": html.escape(b["beschreibung"]),
             "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),
             "name": html.escape(b["name"]),
@@ -214,6 +245,10 @@ def main():
             "probleme": "\n".join(karte("", x["titel"], x["text"]) for x in b["probleme"]),
             "szenarien": "\n".join(karte("Beispielszenario", x["titel"], x["text"]) for x in b["szenarien"]),
             "demo": demo(b.get("demo"), "branche"),
+            # FAQPage nur aus den sichtbaren Fragen der Seite
+            "ld": ld(brotkrumen(START, UNTERNEHMEN, (b["name"], "/branchen/%s/" % b["slug"])),
+                     {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
+                      "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in b["faq"]]}),
             "besonderheit_titel": html.escape(b["besonderheit"]["titel"]),
             "besonderheit_text": html.escape(b["besonderheit"]["text"]),
             "produkte": "\n".join(kachel(nach_slug[s]) for s in b["produkte"]),
@@ -231,6 +266,7 @@ def main():
                                     "Vereinswebsite, Mail-Assistent und mehr. Jetzt Pilotpartner werden."),
         "url": DOMAIN + "/unternehmen/",
         "kacheln": "\n".join(kacheln),
+        "ld": ld(brotkrumen(START, UNTERNEHMEN)),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
                                for b in branchen),
     })

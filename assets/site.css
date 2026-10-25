@@ -14,7 +14,7 @@ section{max-width:100%;}
 .hero{max-width:100%;padding-left:max(5%,calc((100vw - 1440px) / 2 + 5%));padding-right:max(5%,calc((100vw - 1440px) / 2 + 5%));}
 nav{position:fixed;top:0;left:0;right:0;z-index:100;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:rgba(255,255,255,.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--line);transition:box-shadow .3s;}
 nav.scrolled{box-shadow:var(--shadow-sm)}
-.logo img{height:24px;display:block}
+.logo img{height:24px;width:auto;display:block}
 .nav-items{list-style:none;display:flex;align-items:center;gap:2rem}
 .nav-items a{color:var(--ink3);font-size:.85rem;font-weight:400;text-decoration:none;transition:color .2s;position:relative;}
 .nav-items a:hover{color:var(--ink)}
@@ -172,7 +172,7 @@ footer{background:var(--ink);padding:4rem 5% 2rem;}
 .footer-col a{display:block;font-size:.82rem;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:.6rem;transition:color .2s;}
 .footer-col a:hover{color:white}
 .footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:1.75rem;flex-wrap:wrap;gap:1rem;}
-.flogo img{height:20px;filter:brightness(0) invert(1)}
+.flogo img{height:20px;width:auto;filter:brightness(0) invert(1)}
 footer .fcopy{color:rgba(255,255,255,.2);font-size:.75rem}
 .footer-legal{display:flex;gap:1.5rem}
 .footer-legal a{font-size:.75rem;color:rgba(255,255,255,.2);text-decoration:none;transition:color .2s;}
