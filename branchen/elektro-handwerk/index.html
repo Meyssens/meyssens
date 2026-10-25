@@ -49,9 +49,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/stil.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen und Vereine", "item": "https://meyssens.ch/unternehmen/"}, {"@type": "ListItem", "position": 3, "name": "Elektro-Handwerk", "item": "https://meyssens.ch/branchen/elektro-handwerk/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kann der Chatbot Termine vergeben?", "acceptedAnswer": {"@type": "Answer", "text": "Nein, das ist nicht vorgesehen. Der Website-Chatbot soll Fragen auf Grundlage Ihrer Website beantworten und auf die richtige Seite oder Kontaktmöglichkeit verweisen. Er befindet sich derzeit in der Pilotphase."}}, {"@type": "Question", "name": "Woher weiss der Chatbot, was er antworten darf?", "acceptedAnswer": {"@type": "Answer", "text": "Er soll nur Inhalte verwenden, die Sie freigeben, zum Beispiel Ihre Website und ausgewählte Dokumente. Kann er eine Frage nicht beantworten, sagt er das und nennt Ihre Kontaktmöglichkeiten."}}, {"@type": "Question", "name": "Was bedeutet Pilotpartner?", "acceptedAnswer": {"@type": "Answer", "text": "Für Produkte in der Pilotphase suchen wir Betriebe, die von Anfang an mitmachen. Pilotpartner erhalten die Einrichtung kostenlos und bringen ihre Erfahrungen in die Entwicklung ein."}}]}]}</script>
 </head>
-<body>
+<body class="stil lang">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <nav id="nav">
   <a href="/" class="logo"><img src="/logo-web.png" width="701" height="96" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
@@ -74,6 +75,9 @@
   <div class="chip"><span class="chip-dot"></span><span>Elektro-Handwerk</span></div>
   <h1>Digitale Infrastruktur für <span class="hl">das Elektro-Handwerk</span></h1>
   <p class="lead">Elektro-Handwerksbetriebe sind vor allem bei Kundinnen und Kunden vor Ort unterwegs. Gleichzeitig kommen laufend Anfragen herein: zu Installationen, Reparaturen, Terminen oder Themen wie Ladestationen und Photovoltaik. Wer diese Anfragen schnell einordnet, kann besser planen und verliert weniger Aufträge. Dabei geht es nicht darum, den persönlichen Kontakt zu ersetzen, sondern Routinearbeit im Büro zu verringern.</p>
+  <nav class="sprung" aria-label="Auf dieser Seite">
+    <a href="#alltag">Alltag</a><a href="#beispiele">Beispielszenarien</a><a href="#besonderheit">Besonderheit</a><a href="#fragen">Fragen</a><a href="#produkte">Passende Produkte</a><a href="#anfrage">Anfrage</a>
+  </nav>
 </section>
 
 <section id="alltag">
@@ -97,7 +101,7 @@
   </div>
 </section>
 
-<section id="beispiele" style="background:var(--surface)">
+<section id="beispiele" class="flaeche">
   <div class="r">
     <span class="s-label">Beispielszenarien</span>
     <h2>So könnte es aussehen</h2>
@@ -122,38 +126,11 @@
   </div>
 </section>
 
-<section id="besonderheit">
+<section id="besonderheit" class="dunkel">
   <div class="r">
     <span class="s-label">Besonderheit</span>
     <h2>Störungen und Notfälle gehören nicht in die Warteschlange</h2>
     <div class="note">Meldet jemand eine Störung oder eine Gefahr, etwa einen Stromausfall oder Brandgeruch, muss das sofort bei einem Menschen ankommen. Digitale Helfer dürfen solche Meldungen nicht verzögern. Ein Chatbot sollte in diesen Fällen klar auf Ihre Notfallnummer verweisen, statt selbst eine Antwort zu geben. Welche Fälle als dringend gelten, legen Sie selbst fest.</div>
-  </div>
-</section>
-
-<section id="produkte" style="background:var(--surface)">
-  <div class="r">
-    <span class="s-label">Passende Produkte</span>
-    <h2>Was dazu passt</h2>
-  </div>
-  <div class="feat-grid r">
-    <a href="/produkte/website-chatbot/" class="feat tile">
-      <span class="status-chip">Pilotphase, Pilotpartner gesucht</span>
-      <h3>Website-Chatbot</h3>
-      <p>Ein Chatbot für Ihre Website, der Fragen auf Grundlage Ihrer eigenen Inhalte beantwortet. Er verweist auf die passenden Seiten und nennt bei Bedarf Ihre Kontaktmöglichkeiten. Sie bestimmen, welche Inhalte er verwenden darf.</p>
-      <span class="way-go">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-    <a href="/produkte/mail-assistent/" class="feat tile">
-      <span class="status-chip">In Planung</span>
-      <h3>Mail-Assistent</h3>
-      <p>Ein Assistent, der eingehende E-Mails sortiert und Antwortentwürfe vorbereitet. Sie prüfen jeden Entwurf, passen ihn bei Bedarf an und senden ihn selbst ab. So bleibt die Kontrolle bei Ihnen, und wiederkehrende Anfragen sind schneller beantwortet.</p>
-      <span class="way-go">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-    <a href="/produkte/ausschreibungs-radar/" class="feat tile">
-      <span class="status-chip">In Planung</span>
-      <h3>Ausschreibungs-Radar</h3>
-      <p>Ein Dienst, der öffentliche Ausschreibungen nach Ihren Stichworten und Regionen durchsucht und passende Treffer zusammenstellt. Sie erhalten eine übersichtliche Liste statt vieler einzelner Suchen. So entgehen Ihnen weniger Aufträge, die zu Ihrem Unternehmen passen.</p>
-      <span class="way-go">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
   </div>
 </section>
 
@@ -178,7 +155,43 @@
   </div>
 </section>
 
-<section id="anfrage" style="background:var(--surface)">
+<section id="produkte" class="dunkel">
+  <div class="r">
+    <span class="s-label">Passende Produkte</span>
+    <h2>Was dazu passt</h2>
+  </div>
+  <div class="angebot-raster">
+    <article class="angebot-karte r">
+      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Website-Chatbot</span></div>
+      <div class="angebot-inhalt">
+        <span class="status-chip">Pilotphase, Pilotpartner gesucht</span>
+        <h3><a href="/produkte/website-chatbot/">Website-Chatbot</a></h3>
+        <p>Ein Chatbot für Ihre Website, der Fragen auf Grundlage Ihrer eigenen Inhalte beantwortet. Er verweist auf die passenden Seiten und nennt bei Bedarf Ihre Kontaktmöglichkeiten. Sie bestimmen, welche Inhalte er verwenden darf.</p>
+        <div class="angebot-links"><a class="mehr" href="/produkte/website-chatbot/">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/website-chatbot/#ansicht">Beispiel ausprobieren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/website-chatbot/#anfrage">Pilotpartner werden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </article>
+    <article class="angebot-karte r">
+      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Mail-Assistent</span></div>
+      <div class="angebot-inhalt">
+        <span class="status-chip">In Planung</span>
+        <h3><a href="/produkte/mail-assistent/">Mail-Assistent</a></h3>
+        <p>Ein Assistent, der eingehende E-Mails sortiert und Antwortentwürfe vorbereitet. Sie prüfen jeden Entwurf, passen ihn bei Bedarf an und senden ihn selbst ab. So bleibt die Kontrolle bei Ihnen, und wiederkehrende Anfragen sind schneller beantwortet.</p>
+        <div class="angebot-links"><a class="mehr" href="/produkte/mail-assistent/">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/mail-assistent/#ansicht">Beispielansicht <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/mail-assistent/#anfrage">Unverbindlich vormerken <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </article>
+    <article class="angebot-karte r">
+      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Ausschreibungs-Radar</span></div>
+      <div class="angebot-inhalt">
+        <span class="status-chip">In Planung</span>
+        <h3><a href="/produkte/ausschreibungs-radar/">Ausschreibungs-Radar</a></h3>
+        <p>Ein Dienst, der öffentliche Ausschreibungen nach Ihren Stichworten und Regionen durchsucht und passende Treffer zusammenstellt. Sie erhalten eine übersichtliche Liste statt vieler einzelner Suchen. So entgehen Ihnen weniger Aufträge, die zu Ihrem Unternehmen passen.</p>
+        <div class="angebot-links"><a class="mehr" href="/produkte/ausschreibungs-radar/">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/ausschreibungs-radar/#ansicht">Beispielansicht <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/ausschreibungs-radar/#anfrage">Unverbindlich vormerken <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="anfrage" class="flaeche">
   <div class="contact-grid">
     <div class="r">
       <span class="s-label">Anfrage</span>
@@ -336,6 +349,7 @@ document.addEventListener('keydown', function(e){
 });
 
 </script>
+<script src="/assets/demos.js" defer></script>
 <script>
 // --- Kontaktformular ohne Seitenwechsel absenden ---
 const FORM_MSG = {

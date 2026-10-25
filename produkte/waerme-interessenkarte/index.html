@@ -49,9 +49,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/stil.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen und Vereine", "item": "https://meyssens.ch/unternehmen/"}, {"@type": "ListItem", "position": 3, "name": "Wärme-Interessenkarte", "item": "https://meyssens.ch/produkte/waerme-interessenkarte/"}]}]}</script>
 </head>
-<body>
+<body class="stil">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <nav id="nav">
   <a href="/" class="logo"><img src="/logo-web.png" width="701" height="96" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
@@ -77,7 +78,59 @@
 
 </section>
 
-<section id="details">
+<section id="ansicht" class="ansicht-wrap">
+  <h2 class="sr-only">Beispiel</h2>
+<div class="r">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Wärme-Interessenkarte</span><span class="beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<div class="karte" data-karte>
+  <div class="plan-rahmen">
+    <svg class="plan" viewBox="0 0 480 300" role="img" aria-labelledby="plan-titel" focusable="false">
+    <title id="plan-titel">Fiktiver Beispielplan eines Dorfes mit Strassen, Häusern, Wald und Feldern</title>
+    <rect width="480" height="300" class="plan-land"/>
+    <path class="plan-wald" d="M0 0H138Q128 60 140 122Q80 130 0 118Z"/>
+    <g class="plan-baeume"><circle cx="95" cy="76" r="8"/><circle cx="107" cy="48" r="8"/><circle cx="82" cy="66" r="7"/><circle cx="46" cy="39" r="6"/><circle cx="97" cy="107" r="6"/><circle cx="18" cy="81" r="7"/><circle cx="75" cy="71" r="7"/><circle cx="101" cy="65" r="7"/><circle cx="85" cy="17" r="5"/><circle cx="73" cy="61" r="6"/><circle cx="104" cy="51" r="6"/><circle cx="70" cy="61" r="5"/><circle cx="93" cy="17" r="9"/><circle cx="81" cy="109" r="7"/><circle cx="51" cy="96" r="7"/><circle cx="84" cy="71" r="9"/><circle cx="110" cy="66" r="5"/><circle cx="115" cy="19" r="7"/><circle cx="68" cy="97" r="5"/><circle cx="15" cy="101" r="7"/><circle cx="90" cy="81" r="8"/><circle cx="44" cy="99" r="8"/><circle cx="121" cy="93" r="7"/><circle cx="10" cy="67" r="7"/><circle cx="29" cy="86" r="5"/><circle cx="71" cy="15" r="6"/><circle cx="106" cy="44" r="6"/><circle cx="102" cy="39" r="8"/><circle cx="58" cy="71" r="5"/><circle cx="29" cy="65" r="8"/><circle cx="78" cy="43" r="6"/><circle cx="112" cy="63" r="9"/><circle cx="43" cy="98" r="8"/><circle cx="53" cy="95" r="8"/><circle cx="37" cy="27" r="5"/><circle cx="30" cy="27" r="6"/><circle cx="92" cy="37" r="5"/><circle cx="70" cy="83" r="6"/></g>
+    <path class="plan-feld" d="M400 0H480V300H404Q396 150 400 0Z"/>
+    <path class="plan-feld" d="M0 205Q70 198 140 210V300H0Z"/>
+    <g class="plan-furchen"><path d="M410 20H476M410 40H476M410 60H476M410 80H476M410 100H476M410 120H476M410 140H476M410 160H476M410 180H476M410 200H476M410 220H476M410 240H476M410 260H476M410 280H476"/><path d="M10 225L130 228M10 245L134 247M10 265L136 266M10 285L136 286"/></g>
+    <path class="plan-bach" d="M0 176Q70 166 110 190T150 300"/>
+    <g class="plan-strasse"><path d="M0 155H480"/><path d="M254 20V290"/><path d="M254 100H392"/></g>
+    <g class="plan-name"><text x="300" y="157.5">Dorfstrasse</text><text x="256.2" y="278" transform="rotate(-90 256.2 278)">Schulweg</text><text x="18" y="60">Wald</text><text x="330" y="102.3">Kirchgasse</text><text x="420" y="295">Felder</text></g>
+    <g class="plan-haeuser"><rect class="haus haus-efh" data-haus="0" x="150" y="131" width="18" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="1" x="177" y="131" width="20" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="2" x="204" y="131" width="20" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="3" x="287" y="130" width="18" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="4" x="312" y="131" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="5" x="339" y="131" width="18" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="6" x="368" y="131" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="7" x="152" y="166" width="22" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="8" x="186" y="166" width="22" height="15" rx="1.5"/><rect class="haus haus-efh" data-haus="9" x="216" y="166" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="10" x="298" y="166" width="18" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="11" x="324" y="166" width="22" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="12" x="356" y="166" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="13" x="384" y="166" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="14" x="228" y="40" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="15" x="264" y="43" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="16" x="228" y="64" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="17" x="264" y="67" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="18" x="228" y="88" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="19" x="228" y="190" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="20" x="264" y="193" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="21" x="228" y="214" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="22" x="264" y="217" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="23" x="228" y="238" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="24" x="264" y="241" width="16" height="14" rx="1.5"/><rect class="haus haus-mfh" data-haus="25" x="300" y="70" width="34" height="22" rx="1.5"/><rect class="haus haus-gew" data-haus="26" x="170" y="210" width="40" height="26" rx="1.5"/></g>
+    </svg>
+    <button type="button" class="pin" data-haus="1" style="left:38.96%;top:45.83%" aria-expanded="false" aria-label="Beispieleintrag Dorfstrasse, Einfamilienhaus"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="25" style="left:66.04%;top:27%" aria-expanded="false" aria-label="Beispieleintrag Kirchgasse, Mehrfamilienhaus"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="11" style="left:69.79%;top:57.5%" aria-expanded="false" aria-label="Beispieleintrag Dorfstrasse, Einfamilienhaus mit Elektroheizung"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="17" style="left:56.67%;top:24.67%" aria-expanded="false" aria-label="Beispieleintrag Schulweg, Einfamilienhaus"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="26" style="left:39.58%;top:74.33%" aria-expanded="false" aria-label="Beispieleintrag Schulweg, Gewerbebau"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+  </div>
+  <div class="karte-info" data-info hidden>
+    <button type="button" class="karte-zu" data-zu aria-label="Eintrag schliessen">×</button>
+    <span class="karte-marke">Beispieleintrag</span>
+    <div data-info-text></div>
+  </div>
+  <div class="karte-fuss">
+    <p class="karte-stand" aria-live="polite"><span data-anzahl>5</span> Beispieleinträge auf dem Plan</p>
+    <button type="button" class="btn-s" data-markieren>Eigenes Gebäude markieren</button>
+  </div>
+  <ol class="karte-liste">
+    <li data-haus="1"><strong>Dorfstrasse, Einfamilienhaus</strong> Heute: Ölheizung. Anschluss an ein Wärmenetz gewünscht in 1 bis 3 Jahren.</li>
+    <li data-haus="25"><strong>Kirchgasse, Mehrfamilienhaus mit 6 Wohnungen</strong> Heute: Gasheizung. Interesse in 3 bis 5 Jahren, Entscheid gemeinsam mit der Eigentümerschaft.</li>
+    <li data-haus="11"><strong>Dorfstrasse, Einfamilienhaus</strong> Heute: Elektroheizung. Möchte zuerst wissen, mit welchen Anschlusskosten zu rechnen ist.</li>
+    <li data-haus="17"><strong>Schulweg, Einfamilienhaus</strong> Heute: neue Wärmepumpe. Kein Anschluss geplant, möchte aber informiert bleiben.</li>
+    <li data-haus="26"><strong>Schulweg, Gewerbebau</strong> Heute: Ölheizung mit hohem Wärmebedarf. Anschluss so bald wie möglich gewünscht.</li>
+  </ol>
+  <p class="karte-neu" data-neu hidden><strong>Ihr Beispieleintrag</strong> Gebäude markiert. In der echten Karte geben Sie jetzt die heutige Heizung und den gewünschten Zeitpunkt an. Hier wird nichts gespeichert.</p>
+  <p class="demo-hinweis">Fiktiver Beispielplan mit erfundenen Einträgen. Klicken Sie auf einen Pin oder auf ein Haus.</p>
+</div>
+  </div>
+</figure>
+</div>
+<p class="ansicht-hinweis">Interaktives Beispiel mit erfundenen Inhalten. Das Produkt ist in der Pilotphase.</p>
+</section>
+
+<section id="details" class="dunkel">
   <h2 class="sr-only">Überblick</h2>
   <div class="feat-grid r">
     <div class="feat">
@@ -99,7 +152,7 @@
   <div class="note r">Wir starten jetzt mit der Umsetzung und suchen drei Pilotpartner. Sie erhalten die Einrichtung kostenlos und gestalten das Produkt mit.</div>
 </section>
 
-<section id="anfrage" style="background:var(--surface)">
+<section id="anfrage" class="flaeche">
   <div class="contact-grid">
     <div class="r">
       <span class="s-label">Pilotphase, Pilotpartner gesucht</span>
@@ -257,6 +310,7 @@ document.addEventListener('keydown', function(e){
 });
 
 </script>
+<script src="/assets/demos.js" defer></script>
 <script>
 // --- Kontaktformular ohne Seitenwechsel absenden ---
 const FORM_MSG = {

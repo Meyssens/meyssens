@@ -52,9 +52,10 @@
 <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
 <!-- head:ende -->
+<link rel="stylesheet" href="/assets/stil.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@type": "Person", "name": "Lionel Nickelsen"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de", "publisher": {"@id": "https://meyssens.ch/#org"}}]}</script>
 </head>
-<body>
+<body class="stil">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <!-- kopf:start -->
 <nav id="nav">
@@ -74,10 +75,44 @@
 <!-- kopf:ende -->
 
 <main id="main">
-<section class="page-hero">
+<section class="page-hero held">
   <div class="chip"><span class="chip-dot"></span><span>Jetzt Pilotpartner werden</span></div>
   <h1>Digitale Infrastruktur<br>für <span class="hl">Organisationen.</span></h1>
   <p class="lead">Meyssens entwickelt digitale Werkzeuge, die den Alltag von Organisationen einfacher machen: Bürgerbeteiligung für Gemeinden und schlanke Lösungen für Unternehmen und Vereine. Persönlich begleitet, ohne unnötigen Aufwand.</p>
+  <div class="held-knoepfe">
+    <a href="#ausprobieren" class="btn-p">Ausprobieren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="#wege" class="btn-s">Bereiche ansehen</a>
+  </div>
+</section>
+
+<section class="buehne-wrap" aria-label="Produktansicht">
+<!-- auto:held:start -->
+<div class="buehne" data-buehne>
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Meyssens</span><span class="beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<div class="held-raster">
+  <div class="held-karte held-umfrage">
+    <p class="held-titel">Abstimmung</p>
+    <p class="held-frage">Soll das Vereinsfest am Samstag stattfinden?</p>
+    <div class="held-balken" style="--w:62"><span>Ja</span><b>62 %</b></div>
+    <div class="held-balken" style="--w:27"><span>Nein</span><b>27 %</b></div>
+    <div class="held-balken" style="--w:11"><span>Enthaltung</span><b>11 %</b></div>
+  </div>
+  <div class="held-karte held-plan">
+    <p class="held-titel">Wärme-Interessenkarte</p>
+    <svg viewBox="0 0 200 120" aria-hidden="true" focusable="false"><rect width="200" height="120" rx="8" class="plan-land"/><path class="plan-wald" d="M0 0H58Q50 30 60 52Q30 56 0 50Z"/><path class="plan-feld" d="M168 0H200V120H170Q164 60 168 0Z"/><g class="plan-strasse"><path d="M0 70H200"/><path d="M110 0V120"/></g><g class="plan-haeuser"><rect class="haus" x="70" y="54" width="12" height="10" rx="1"/><rect class="haus" x="88" y="54" width="12" height="10" rx="1"/><rect class="haus" x="122" y="54" width="12" height="10" rx="1"/><rect class="haus" x="140" y="54" width="12" height="10" rx="1"/><rect class="haus" x="72" y="77" width="14" height="10" rx="1"/><rect class="haus" x="124" y="77" width="12" height="10" rx="1"/><rect class="haus" x="142" y="77" width="14" height="10" rx="1"/><rect class="haus" x="94" y="20" width="10" height="10" rx="1"/><rect class="haus" x="116" y="22" width="10" height="10" rx="1"/><rect class="haus" x="94" y="96" width="10" height="10" rx="1"/></g><g class="held-pins"><path d="M94 59c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z" transform="translate(-5 -10)"/><path d="M94 59c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z" transform="translate(49 13)"/><path d="M94 59c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z" transform="translate(21 -42)"/></g></svg>
+  </div>
+  <div class="held-karte held-chat">
+    <p class="held-titel">Website-Chatbot</p>
+    <p class="msg ich">Welche Produkte sind in der Pilotphase?</p>
+    <p class="msg bot">Umfragen &amp; Abstimmungen, der Website-Chatbot und die Wärme-Interessenkarte.</p>
+  </div>
+</div>
+  </div>
+</figure>
+</div>
+<!-- auto:held:ende -->
 </section>
 
 <section id="wege">
@@ -95,6 +130,303 @@
       <span class="way-go">Zu den Produkten <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
   </div>
+</section>
+
+<section id="ausprobieren" class="flaeche">
+  <div class="kopf-mitte r">
+    <span class="s-label">Ausprobieren</span>
+    <h2>Ausprobieren statt lesen.</h2>
+    <p class="s-lead">Drei Produkte sind in der Pilotphase. Probieren Sie sie hier direkt aus. Alle Inhalte sind erfundene Beispiele, und nichts wird gespeichert.</p>
+  </div>
+<!-- auto:demos:start -->
+<article class="demo r">
+  <div class="demo-text">
+    <span class="status-chip">Pilotphase, Pilotpartner gesucht</span>
+    <h3>Umfragen &amp; Abstimmungen</h3>
+    <p>Online-Umfragen und Abstimmungen für Vereine und Unternehmen. Sie erstellen Fragen, verschicken einen Link und sehen die Ergebnisse übersichtlich ausgewertet. Geeignet für Mitgliederbefragungen, Terminabfragen und Abstimmungen zwischen zwei Versammlungen.</p>
+    <a class="mehr" href="/produkte/umfragen-abstimmungen/">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="demo-bild">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Umfragen &amp; Abstimmungen</span><span class="beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<div class="umfrage" data-umfrage>
+  <fieldset>
+    <legend>Wann soll das Vereinsfest stattfinden?</legend>
+    <label class="opt" data-n="9" style="--w:28"><input type="radio" name="umfrage-fest" value="freitag"><span class="opt-t">Freitagabend</span><span class="opt-z">28 %</span><span class="opt-bar"></span></label>
+    <label class="opt" data-n="17" style="--w:53"><input type="radio" name="umfrage-fest" value="samstag"><span class="opt-t">Samstagnachmittag</span><span class="opt-z">53 %</span><span class="opt-bar"></span></label>
+    <label class="opt" data-n="6" style="--w:19"><input type="radio" name="umfrage-fest" value="sonntag"><span class="opt-t">Sonntagmorgen</span><span class="opt-z">19 %</span><span class="opt-bar"></span></label>
+  </fieldset>
+  <div class="umfrage-fuss">
+    <button type="button" class="btn-p" data-abstimmen>Abstimmen</button>
+    <p class="umfrage-stand" data-stand aria-live="polite">32 Stimmen (erfundene Beispielstimmen)</p>
+  </div>
+  <p class="demo-hinweis">Beispiel mit erfundenen Stimmen. Ihre Stimme wird nirgends gespeichert.</p>
+</div>
+  </div>
+</figure>
+  </div>
+</article>
+<article class="demo r">
+  <div class="demo-text">
+    <span class="status-chip">Pilotphase, Pilotpartner gesucht</span>
+    <h3>Website-Chatbot</h3>
+    <p>Ein Chatbot für Ihre Website, der Fragen auf Grundlage Ihrer eigenen Inhalte beantwortet. Er verweist auf die passenden Seiten und nennt bei Bedarf Ihre Kontaktmöglichkeiten. Sie bestimmen, welche Inhalte er verwenden darf.</p>
+    <a class="mehr" href="/produkte/website-chatbot/">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="demo-bild">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Website-Chatbot</span><span class="beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<div class="chat" data-chat>
+  <div class="chat-verlauf" data-verlauf>
+    <p class="msg bot">Guten Tag. Ich beantworte Fragen zu Meyssens anhand der Inhalte dieser Website. Wählen Sie eine Frage.</p>
+  </div>
+  <p class="sr-only" data-ansage aria-live="polite"></p>
+  <div class="chat-fragen" role="group" aria-label="Beispielfragen">
+    <button type="button" data-frage="0">Welche Produkte sind in der Pilotphase?</button>
+    <button type="button" data-frage="1">Was erhalten Pilotpartner?</button>
+    <button type="button" data-frage="2">Wer steht hinter Meyssens?</button>
+    <button type="button" data-frage="3">Und wenn der Chatbot etwas nicht weiss?</button>
+  </div>
+  <dl class="chat-antworten">
+    <dt>Welche Produkte sind in der Pilotphase?</dt>
+    <dd><span>Drei Produkte: Umfragen &amp; Abstimmungen, der Website-Chatbot und die Wärme-Interessenkarte. Alle weiteren Produkte sind in Planung.</span> <a href="/unternehmen/#produkte">Quelle: Für Unternehmen und Vereine</a></dd>
+    <dt>Was erhalten Pilotpartner?</dt>
+    <dd><span>Pilotpartner erhalten die Einrichtung kostenlos und gestalten das Produkt mit. Für jedes Produkt in der Pilotphase suchen wir drei Pilotpartner.</span> <a href="/produkte/website-chatbot/#anfrage">Quelle: Website-Chatbot</a></dd>
+    <dt>Wer steht hinter Meyssens?</dt>
+    <dd><span>Meyssens ist ein Einzelunternehmen in Lausen (BL), gegründet von Lionel Nickelsen. Wir haben noch keine Kunden und keine Referenzen.</span> <a href="/ratgeber/website-chatbot-recht/#angebot">Quelle: Ratgeber Website-Chatbot</a></dd>
+    <dt>Und wenn der Chatbot etwas nicht weiss?</dt>
+    <dd><span>Dann sagt er das offen und verweist auf die Kontaktmöglichkeiten. Meyssens erreichen Sie per E-Mail an lionel@meyssens.ch.</span> <a href="/produkte/website-chatbot/#details">Quelle: Website-Chatbot</a></dd>
+  </dl>
+  <p class="demo-hinweis">Beispiel, vorgegebene Antworten. Es findet kein KI-Aufruf statt, und nichts wird gespeichert.</p>
+</div>
+  </div>
+</figure>
+  </div>
+</article>
+<article class="demo r">
+  <div class="demo-text">
+    <span class="status-chip">Pilotphase, Pilotpartner gesucht</span>
+    <h3>Wärme-Interessenkarte</h3>
+    <p>Eine Online-Karte, auf der Eigentümerinnen und Eigentümer ihr Interesse an einem Wärmenetz eintragen. So wird sichtbar, in welchen Strassen und Quartieren sich ein Anschluss lohnen könnte. Die Karte eignet sich für Energieversorger, Genossenschaften und Initiativen.</p>
+    <a class="mehr" href="/produkte/waerme-interessenkarte/">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="demo-bild">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Wärme-Interessenkarte</span><span class="beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<div class="karte" data-karte>
+  <div class="plan-rahmen">
+    <svg class="plan" viewBox="0 0 480 300" role="img" aria-labelledby="plan-titel" focusable="false">
+    <title id="plan-titel">Fiktiver Beispielplan eines Dorfes mit Strassen, Häusern, Wald und Feldern</title>
+    <rect width="480" height="300" class="plan-land"/>
+    <path class="plan-wald" d="M0 0H138Q128 60 140 122Q80 130 0 118Z"/>
+    <g class="plan-baeume"><circle cx="95" cy="76" r="8"/><circle cx="107" cy="48" r="8"/><circle cx="82" cy="66" r="7"/><circle cx="46" cy="39" r="6"/><circle cx="97" cy="107" r="6"/><circle cx="18" cy="81" r="7"/><circle cx="75" cy="71" r="7"/><circle cx="101" cy="65" r="7"/><circle cx="85" cy="17" r="5"/><circle cx="73" cy="61" r="6"/><circle cx="104" cy="51" r="6"/><circle cx="70" cy="61" r="5"/><circle cx="93" cy="17" r="9"/><circle cx="81" cy="109" r="7"/><circle cx="51" cy="96" r="7"/><circle cx="84" cy="71" r="9"/><circle cx="110" cy="66" r="5"/><circle cx="115" cy="19" r="7"/><circle cx="68" cy="97" r="5"/><circle cx="15" cy="101" r="7"/><circle cx="90" cy="81" r="8"/><circle cx="44" cy="99" r="8"/><circle cx="121" cy="93" r="7"/><circle cx="10" cy="67" r="7"/><circle cx="29" cy="86" r="5"/><circle cx="71" cy="15" r="6"/><circle cx="106" cy="44" r="6"/><circle cx="102" cy="39" r="8"/><circle cx="58" cy="71" r="5"/><circle cx="29" cy="65" r="8"/><circle cx="78" cy="43" r="6"/><circle cx="112" cy="63" r="9"/><circle cx="43" cy="98" r="8"/><circle cx="53" cy="95" r="8"/><circle cx="37" cy="27" r="5"/><circle cx="30" cy="27" r="6"/><circle cx="92" cy="37" r="5"/><circle cx="70" cy="83" r="6"/></g>
+    <path class="plan-feld" d="M400 0H480V300H404Q396 150 400 0Z"/>
+    <path class="plan-feld" d="M0 205Q70 198 140 210V300H0Z"/>
+    <g class="plan-furchen"><path d="M410 20H476M410 40H476M410 60H476M410 80H476M410 100H476M410 120H476M410 140H476M410 160H476M410 180H476M410 200H476M410 220H476M410 240H476M410 260H476M410 280H476"/><path d="M10 225L130 228M10 245L134 247M10 265L136 266M10 285L136 286"/></g>
+    <path class="plan-bach" d="M0 176Q70 166 110 190T150 300"/>
+    <g class="plan-strasse"><path d="M0 155H480"/><path d="M254 20V290"/><path d="M254 100H392"/></g>
+    <g class="plan-name"><text x="300" y="157.5">Dorfstrasse</text><text x="256.2" y="278" transform="rotate(-90 256.2 278)">Schulweg</text><text x="18" y="60">Wald</text><text x="330" y="102.3">Kirchgasse</text><text x="420" y="295">Felder</text></g>
+    <g class="plan-haeuser"><rect class="haus haus-efh" data-haus="0" x="150" y="131" width="18" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="1" x="177" y="131" width="20" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="2" x="204" y="131" width="20" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="3" x="287" y="130" width="18" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="4" x="312" y="131" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="5" x="339" y="131" width="18" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="6" x="368" y="131" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="7" x="152" y="166" width="22" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="8" x="186" y="166" width="22" height="15" rx="1.5"/><rect class="haus haus-efh" data-haus="9" x="216" y="166" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="10" x="298" y="166" width="18" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="11" x="324" y="166" width="22" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="12" x="356" y="166" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="13" x="384" y="166" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="14" x="228" y="40" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="15" x="264" y="43" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="16" x="228" y="64" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="17" x="264" y="67" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="18" x="228" y="88" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="19" x="228" y="190" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="20" x="264" y="193" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="21" x="228" y="214" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="22" x="264" y="217" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="23" x="228" y="238" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="24" x="264" y="241" width="16" height="14" rx="1.5"/><rect class="haus haus-mfh" data-haus="25" x="300" y="70" width="34" height="22" rx="1.5"/><rect class="haus haus-gew" data-haus="26" x="170" y="210" width="40" height="26" rx="1.5"/></g>
+    </svg>
+    <button type="button" class="pin" data-haus="1" style="left:38.96%;top:45.83%" aria-expanded="false" aria-label="Beispieleintrag Dorfstrasse, Einfamilienhaus"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="25" style="left:66.04%;top:27%" aria-expanded="false" aria-label="Beispieleintrag Kirchgasse, Mehrfamilienhaus"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="11" style="left:69.79%;top:57.5%" aria-expanded="false" aria-label="Beispieleintrag Dorfstrasse, Einfamilienhaus mit Elektroheizung"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="17" style="left:56.67%;top:24.67%" aria-expanded="false" aria-label="Beispieleintrag Schulweg, Einfamilienhaus"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="26" style="left:39.58%;top:74.33%" aria-expanded="false" aria-label="Beispieleintrag Schulweg, Gewerbebau"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+  </div>
+  <div class="karte-info" data-info hidden>
+    <button type="button" class="karte-zu" data-zu aria-label="Eintrag schliessen">×</button>
+    <span class="karte-marke">Beispieleintrag</span>
+    <div data-info-text></div>
+  </div>
+  <div class="karte-fuss">
+    <p class="karte-stand" aria-live="polite"><span data-anzahl>5</span> Beispieleinträge auf dem Plan</p>
+    <button type="button" class="btn-s" data-markieren>Eigenes Gebäude markieren</button>
+  </div>
+  <ol class="karte-liste">
+    <li data-haus="1"><strong>Dorfstrasse, Einfamilienhaus</strong> Heute: Ölheizung. Anschluss an ein Wärmenetz gewünscht in 1 bis 3 Jahren.</li>
+    <li data-haus="25"><strong>Kirchgasse, Mehrfamilienhaus mit 6 Wohnungen</strong> Heute: Gasheizung. Interesse in 3 bis 5 Jahren, Entscheid gemeinsam mit der Eigentümerschaft.</li>
+    <li data-haus="11"><strong>Dorfstrasse, Einfamilienhaus</strong> Heute: Elektroheizung. Möchte zuerst wissen, mit welchen Anschlusskosten zu rechnen ist.</li>
+    <li data-haus="17"><strong>Schulweg, Einfamilienhaus</strong> Heute: neue Wärmepumpe. Kein Anschluss geplant, möchte aber informiert bleiben.</li>
+    <li data-haus="26"><strong>Schulweg, Gewerbebau</strong> Heute: Ölheizung mit hohem Wärmebedarf. Anschluss so bald wie möglich gewünscht.</li>
+  </ol>
+  <p class="karte-neu" data-neu hidden><strong>Ihr Beispieleintrag</strong> Gebäude markiert. In der echten Karte geben Sie jetzt die heutige Heizung und den gewünschten Zeitpunkt an. Hier wird nichts gespeichert.</p>
+  <p class="demo-hinweis">Fiktiver Beispielplan mit erfundenen Einträgen. Klicken Sie auf einen Pin oder auf ein Haus.</p>
+</div>
+  </div>
+</figure>
+  </div>
+</article>
+<!-- auto:demos:ende -->
+</section>
+
+<section id="in-planung" class="dunkel">
+  <div class="kopf-mitte r">
+    <span class="s-label">In Planung</span>
+    <h2>Was als Nächstes kommt.</h2>
+    <p class="s-lead">Diese Produkte sind in Planung. Die Ansichten zeigen als Beispiel, wie sie aussehen könnten. Mit einer Anfrage merken wir Sie unverbindlich vor.</p>
+  </div>
+<!-- auto:planung:start -->
+<div class="scrolly" data-scrolly style="--n:5">
+  <div class="schritt aktiv">
+    <div class="schritt-text">
+      <span class="schritt-nr">01 / 05</span>
+      <span class="status-chip">In Planung</span>
+      <h3><a href="/produkte/newsletter/">Newsletter</a></h3>
+      <p>Ein schlankes Werkzeug, um Newsletter zu gestalten, zu versenden und die Empfängerliste zu verwalten. Es braucht keine Programmierkenntnisse, und die Anmeldung erfolgt über einen Bestätigungslink. Gedacht für Organisationen, die regelmässig informieren möchten, ohne ein grosses Marketing-System einzuführen.</p>
+      <a class="mehr" href="/produkte/newsletter/#anfrage">Unverbindlich vormerken <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="schritt-bild" style="--z:1">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Newsletter</span><span class="beispiel">Beispielansicht</span></div>
+  <div class="geraet-inhalt">
+<div class="mock mock-newsletter">
+  <div class="mock-spalte">
+    <p class="mock-titel">Bausteine</p>
+    <span class="mock-baustein">Text</span><span class="mock-baustein">Bild</span><span class="mock-baustein">Link</span>
+  </div>
+  <div class="mock-mail">
+    <p class="mock-klein">Betreff: Neuigkeiten aus dem Verein</p>
+    <div class="mock-bildfeld"></div>
+    <p class="mock-h">Rückblick und nächste Termine</p>
+    <i class="mock-zeile"></i><i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
+    <span class="mock-knopf">Weiterlesen</span>
+    <p class="mock-klein">Abmelden mit einem Klick</p>
+  </div>
+</div>
+  </div>
+</figure>
+    </div>
+  </div>
+  <div class="schritt">
+    <div class="schritt-text">
+      <span class="schritt-nr">02 / 05</span>
+      <span class="status-chip">In Planung</span>
+      <h3><a href="/produkte/website-fuer-vereine/">Website für Vereine</a></h3>
+      <p>Eine übersichtliche Vereinswebsite mit Anlässen, Neuigkeiten, Kontakt und Informationen für Mitglieder. Der Vorstand pflegt die Inhalte selbst, ohne technische Vorkenntnisse. Die Seite funktioniert auf dem Handy ebenso gut wie am Computer.</p>
+      <a class="mehr" href="/produkte/website-fuer-vereine/#anfrage">Unverbindlich vormerken <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="schritt-bild" style="--z:2">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Website für Vereine</span><span class="beispiel">Beispielansicht</span></div>
+  <div class="geraet-inhalt">
+<div class="mock mock-verein">
+  <div class="mock-nav"><b>Beispielverein</b><span>Start</span><span>Anlässe</span><span>Neuigkeiten</span><span>Vorstand</span><span>Kontakt</span></div>
+  <div class="mock-banner"><p class="mock-h">Willkommen beim Beispielverein</p><i class="mock-zeile hell"></i></div>
+  <p class="mock-titel">Nächste Anlässe</p>
+  <ul class="mock-liste">
+    <li><b>Generalversammlung</b><span>Datum folgt</span></li>
+    <li><b>Sommerfest</b><span>Datum folgt</span></li>
+    <li><b>Helfereinsatz</b><span>Datum folgt</span></li>
+  </ul>
+</div>
+  </div>
+</figure>
+    </div>
+  </div>
+  <div class="schritt">
+    <div class="schritt-text">
+      <span class="schritt-nr">03 / 05</span>
+      <span class="status-chip">In Planung</span>
+      <h3><a href="/produkte/mail-assistent/">Mail-Assistent</a></h3>
+      <p>Ein Assistent, der eingehende E-Mails sortiert und Antwortentwürfe vorbereitet. Sie prüfen jeden Entwurf, passen ihn bei Bedarf an und senden ihn selbst ab. So bleibt die Kontrolle bei Ihnen, und wiederkehrende Anfragen sind schneller beantwortet.</p>
+      <a class="mehr" href="/produkte/mail-assistent/#anfrage">Unverbindlich vormerken <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="schritt-bild" style="--z:3">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Mail-Assistent</span><span class="beispiel">Beispielansicht</span></div>
+  <div class="geraet-inhalt">
+<div class="mock mock-mail-assistent">
+  <ul class="mock-liste mock-posteingang">
+    <li class="aktiv"><b>Frage zur Mitgliedschaft</b><span class="mock-tag">Mitglieder</span></li>
+    <li><b>Rückfrage zu einer Rechnung</b><span class="mock-tag dringend">Dringend</span></li>
+    <li><b>Reservation Vereinslokal</b><span class="mock-tag">Termine</span></li>
+  </ul>
+  <div class="mock-entwurf">
+    <p class="mock-titel">Antwortentwurf</p>
+    <i class="mock-zeile"></i><i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
+    <div class="mock-knoepfe"><span class="mock-knopf hell">Bearbeiten</span><span class="mock-knopf">Prüfen und senden</span></div>
+    <p class="mock-klein">Nichts wird automatisch versendet.</p>
+  </div>
+</div>
+  </div>
+</figure>
+    </div>
+  </div>
+  <div class="schritt">
+    <div class="schritt-text">
+      <span class="schritt-nr">04 / 05</span>
+      <span class="status-chip">In Planung</span>
+      <h3><a href="/produkte/quartier-kasse/">Quartier-Kasse</a></h3>
+      <p>Eine übersichtliche Kasse für Quartier- und Nachbarschaftsprojekte: Beiträge, Einnahmen und Ausgaben an einem Ort, für alle Beteiligten nachvollziehbar. Noch ohne Zahlungsfunktion, in Planung. Zahlungen erfassen Sie vorerst selbst.</p>
+      <a class="mehr" href="/produkte/quartier-kasse/#anfrage">Unverbindlich vormerken <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="schritt-bild" style="--z:4">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Quartier-Kasse</span><span class="beispiel">Beispielansicht</span></div>
+  <div class="geraet-inhalt">
+<div class="mock mock-kasse">
+  <p class="mock-h">Projekt Quartierfest</p>
+  <ul class="mock-liste mock-buchungen">
+    <li><b>Beitrag Nachbarschaft</b><span class="plus">+ 300.00</span></li>
+    <li><b>Getränkeverkauf</b><span class="plus">+ 420.00</span></li>
+    <li><b>Miete Festbänke</b><span class="minus">− 180.00</span></li>
+    <li><b>Dekoration, Beleg hinterlegt</b><span class="minus">− 95.00</span></li>
+  </ul>
+  <p class="mock-stand"><span>Aktueller Stand</span><b>CHF 445.00</b></p>
+  <p class="mock-klein">Beträge von Hand erfasst. Noch ohne Zahlungsfunktion.</p>
+</div>
+  </div>
+</figure>
+    </div>
+  </div>
+  <div class="schritt">
+    <div class="schritt-text">
+      <span class="schritt-nr">05 / 05</span>
+      <span class="status-chip">In Planung</span>
+      <h3><a href="/produkte/ausschreibungs-radar/">Ausschreibungs-Radar</a></h3>
+      <p>Ein Dienst, der öffentliche Ausschreibungen nach Ihren Stichworten und Regionen durchsucht und passende Treffer zusammenstellt. Sie erhalten eine übersichtliche Liste statt vieler einzelner Suchen. So entgehen Ihnen weniger Aufträge, die zu Ihrem Unternehmen passen.</p>
+      <a class="mehr" href="/produkte/ausschreibungs-radar/#anfrage">Unverbindlich vormerken <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="schritt-bild" style="--z:5">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Ausschreibungs-Radar</span><span class="beispiel">Beispielansicht</span></div>
+  <div class="geraet-inhalt">
+<div class="mock mock-radar">
+  <div class="mock-chips"><span>Elektroinstallation</span><span>Beleuchtung</span><span>Region Nordwestschweiz</span></div>
+  <ul class="mock-liste mock-treffer">
+    <li><b>Erneuerung Beleuchtung Schulhaus</b><span>Frist in 18 Tagen · Originalquelle</span></li>
+    <li><b>Elektroinstallation Werkhof</b><span>Frist in 25 Tagen · Originalquelle</span></li>
+    <li><b>Unterhalt Strassenbeleuchtung</b><span>Frist in 31 Tagen · Originalquelle</span></li>
+  </ul>
+  <p class="mock-klein">Treffer nach Ihren Stichworten. Sie entscheiden, worauf Sie sich bewerben.</p>
+</div>
+  </div>
+</figure>
+    </div>
+  </div>
+</div>
+<!-- auto:planung:ende -->
+</section>
+
+<section id="zahlen">
+  <div class="kopf-mitte r">
+    <span class="s-label">Stand heute</span>
+    <h2>Ehrlich gezählt.</h2>
+  </div>
+<!-- auto:zahlen:start -->
+<div class="zahlen r">
+  <div class="zahl"><strong>8</strong><span>Produkte</span></div>
+  <div class="zahl"><strong>3</strong><span>in der Pilotphase</span></div>
+  <div class="zahl"><strong>5</strong><span>in Planung</span></div>
+  <div class="zahl"><strong>11</strong><span>Branchenseiten</span></div>
+  <div class="zahl"><strong>4</strong><span>Ratgeber</span></div>
+</div>
+<p class="zahlen-hinweis">Gezählt aus den Angaben dieser Website. Meyssens ist ein Einzelunternehmen in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen.</p>
+<!-- auto:zahlen:ende -->
 </section>
 </main>
 
@@ -231,5 +563,6 @@ document.addEventListener('keydown', function(e){
 
 </script>
 <!-- skripte:ende -->
+<script src="/assets/demos.js" defer></script>
 </body>
 </html>

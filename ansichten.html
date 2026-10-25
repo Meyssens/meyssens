@@ -1,0 +1,269 @@
+<!--
+Bausteine für Startseite und Produktseiten (build.py liest die Abschnitte zwischen den Markierungen name:start und name:ende).
+  held                     Produktansicht unter dem Hero der Startseite (scroll-getrieben, assets/demos.js)
+  demo-<slug>              Interaktive Mini-Demo für Produkte in der Pilotphase, fest vorgegebene Beispielinhalte
+  ansicht-<slug>           Statische Beispielansicht für Produkte in Planung
+  gemeinden-held           Interaktives Beispiel einer Beteiligungsplattform unter dem Hero der Gemeinden-Seite
+  gemeinden-ablauf-<n>     Beispielansichten im Sticky-Abschnitt "Ablauf" (mit -titel für das Gerätefenster)
+  Texte auf der Gemeinden-Seite tragen data-i18n; die Übersetzungen stehen im Skript von gemeinden/index.html.
+Alle Inhalte sind Beispiele. Keine echten Kunden, keine echten Daten, kein Aufruf externer Dienste.
+-->
+
+<!-- held:start -->
+<div class="held-raster">
+  <div class="held-karte held-umfrage">
+    <p class="held-titel">Abstimmung</p>
+    <p class="held-frage">Soll das Vereinsfest am Samstag stattfinden?</p>
+    <div class="held-balken" style="--w:62"><span>Ja</span><b>62 %</b></div>
+    <div class="held-balken" style="--w:27"><span>Nein</span><b>27 %</b></div>
+    <div class="held-balken" style="--w:11"><span>Enthaltung</span><b>11 %</b></div>
+  </div>
+  <div class="held-karte held-plan">
+    <p class="held-titel">Wärme-Interessenkarte</p>
+    <svg viewBox="0 0 200 120" aria-hidden="true" focusable="false"><rect width="200" height="120" rx="8" class="plan-land"/><path class="plan-wald" d="M0 0H58Q50 30 60 52Q30 56 0 50Z"/><path class="plan-feld" d="M168 0H200V120H170Q164 60 168 0Z"/><g class="plan-strasse"><path d="M0 70H200"/><path d="M110 0V120"/></g><g class="plan-haeuser"><rect class="haus" x="70" y="54" width="12" height="10" rx="1"/><rect class="haus" x="88" y="54" width="12" height="10" rx="1"/><rect class="haus" x="122" y="54" width="12" height="10" rx="1"/><rect class="haus" x="140" y="54" width="12" height="10" rx="1"/><rect class="haus" x="72" y="77" width="14" height="10" rx="1"/><rect class="haus" x="124" y="77" width="12" height="10" rx="1"/><rect class="haus" x="142" y="77" width="14" height="10" rx="1"/><rect class="haus" x="94" y="20" width="10" height="10" rx="1"/><rect class="haus" x="116" y="22" width="10" height="10" rx="1"/><rect class="haus" x="94" y="96" width="10" height="10" rx="1"/></g><g class="held-pins"><path d="M94 59c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z" transform="translate(-5 -10)"/><path d="M94 59c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z" transform="translate(49 13)"/><path d="M94 59c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z" transform="translate(21 -42)"/></g></svg>
+  </div>
+  <div class="held-karte held-chat">
+    <p class="held-titel">Website-Chatbot</p>
+    <p class="msg ich">Welche Produkte sind in der Pilotphase?</p>
+    <p class="msg bot">Umfragen &amp; Abstimmungen, der Website-Chatbot und die Wärme-Interessenkarte.</p>
+  </div>
+</div>
+<!-- held:ende -->
+
+<!-- demo-umfragen-abstimmungen:start -->
+<div class="umfrage" data-umfrage>
+  <fieldset>
+    <legend>Wann soll das Vereinsfest stattfinden?</legend>
+    <label class="opt" data-n="9" style="--w:28"><input type="radio" name="umfrage-fest" value="freitag"><span class="opt-t">Freitagabend</span><span class="opt-z">28 %</span><span class="opt-bar"></span></label>
+    <label class="opt" data-n="17" style="--w:53"><input type="radio" name="umfrage-fest" value="samstag"><span class="opt-t">Samstagnachmittag</span><span class="opt-z">53 %</span><span class="opt-bar"></span></label>
+    <label class="opt" data-n="6" style="--w:19"><input type="radio" name="umfrage-fest" value="sonntag"><span class="opt-t">Sonntagmorgen</span><span class="opt-z">19 %</span><span class="opt-bar"></span></label>
+  </fieldset>
+  <div class="umfrage-fuss">
+    <button type="button" class="btn-p" data-abstimmen>Abstimmen</button>
+    <p class="umfrage-stand" data-stand aria-live="polite">32 Stimmen (erfundene Beispielstimmen)</p>
+  </div>
+  <p class="demo-hinweis">Beispiel mit erfundenen Stimmen. Ihre Stimme wird nirgends gespeichert.</p>
+</div>
+<!-- demo-umfragen-abstimmungen:ende -->
+
+<!-- demo-waerme-interessenkarte:start -->
+<div class="karte" data-karte>
+  <div class="plan-rahmen">
+    <svg class="plan" viewBox="0 0 480 300" role="img" aria-labelledby="plan-titel" focusable="false">
+    <title id="plan-titel">Fiktiver Beispielplan eines Dorfes mit Strassen, Häusern, Wald und Feldern</title>
+    <rect width="480" height="300" class="plan-land"/>
+    <path class="plan-wald" d="M0 0H138Q128 60 140 122Q80 130 0 118Z"/>
+    <g class="plan-baeume"><circle cx="95" cy="76" r="8"/><circle cx="107" cy="48" r="8"/><circle cx="82" cy="66" r="7"/><circle cx="46" cy="39" r="6"/><circle cx="97" cy="107" r="6"/><circle cx="18" cy="81" r="7"/><circle cx="75" cy="71" r="7"/><circle cx="101" cy="65" r="7"/><circle cx="85" cy="17" r="5"/><circle cx="73" cy="61" r="6"/><circle cx="104" cy="51" r="6"/><circle cx="70" cy="61" r="5"/><circle cx="93" cy="17" r="9"/><circle cx="81" cy="109" r="7"/><circle cx="51" cy="96" r="7"/><circle cx="84" cy="71" r="9"/><circle cx="110" cy="66" r="5"/><circle cx="115" cy="19" r="7"/><circle cx="68" cy="97" r="5"/><circle cx="15" cy="101" r="7"/><circle cx="90" cy="81" r="8"/><circle cx="44" cy="99" r="8"/><circle cx="121" cy="93" r="7"/><circle cx="10" cy="67" r="7"/><circle cx="29" cy="86" r="5"/><circle cx="71" cy="15" r="6"/><circle cx="106" cy="44" r="6"/><circle cx="102" cy="39" r="8"/><circle cx="58" cy="71" r="5"/><circle cx="29" cy="65" r="8"/><circle cx="78" cy="43" r="6"/><circle cx="112" cy="63" r="9"/><circle cx="43" cy="98" r="8"/><circle cx="53" cy="95" r="8"/><circle cx="37" cy="27" r="5"/><circle cx="30" cy="27" r="6"/><circle cx="92" cy="37" r="5"/><circle cx="70" cy="83" r="6"/></g>
+    <path class="plan-feld" d="M400 0H480V300H404Q396 150 400 0Z"/>
+    <path class="plan-feld" d="M0 205Q70 198 140 210V300H0Z"/>
+    <g class="plan-furchen"><path d="M410 20H476M410 40H476M410 60H476M410 80H476M410 100H476M410 120H476M410 140H476M410 160H476M410 180H476M410 200H476M410 220H476M410 240H476M410 260H476M410 280H476"/><path d="M10 225L130 228M10 245L134 247M10 265L136 266M10 285L136 286"/></g>
+    <path class="plan-bach" d="M0 176Q70 166 110 190T150 300"/>
+    <g class="plan-strasse"><path d="M0 155H480"/><path d="M254 20V290"/><path d="M254 100H392"/></g>
+    <g class="plan-name"><text x="300" y="157.5">Dorfstrasse</text><text x="256.2" y="278" transform="rotate(-90 256.2 278)">Schulweg</text><text x="18" y="60">Wald</text><text x="330" y="102.3">Kirchgasse</text><text x="420" y="295">Felder</text></g>
+    <g class="plan-haeuser"><rect class="haus haus-efh" data-haus="0" x="150" y="131" width="18" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="1" x="177" y="131" width="20" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="2" x="204" y="131" width="20" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="3" x="287" y="130" width="18" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="4" x="312" y="131" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="5" x="339" y="131" width="18" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="6" x="368" y="131" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="7" x="152" y="166" width="22" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="8" x="186" y="166" width="22" height="15" rx="1.5"/><rect class="haus haus-efh" data-haus="9" x="216" y="166" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="10" x="298" y="166" width="18" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="11" x="324" y="166" width="22" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="12" x="356" y="166" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="13" x="384" y="166" width="16" height="13" rx="1.5"/><rect class="haus haus-efh" data-haus="14" x="228" y="40" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="15" x="264" y="43" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="16" x="228" y="64" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="17" x="264" y="67" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="18" x="228" y="88" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="19" x="228" y="190" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="20" x="264" y="193" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="21" x="228" y="214" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="22" x="264" y="217" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="23" x="228" y="238" width="16" height="14" rx="1.5"/><rect class="haus haus-efh" data-haus="24" x="264" y="241" width="16" height="14" rx="1.5"/><rect class="haus haus-mfh" data-haus="25" x="300" y="70" width="34" height="22" rx="1.5"/><rect class="haus haus-gew" data-haus="26" x="170" y="210" width="40" height="26" rx="1.5"/></g>
+    </svg>
+    <button type="button" class="pin" data-haus="1" style="left:38.96%;top:45.83%" aria-expanded="false" aria-label="Beispieleintrag Dorfstrasse, Einfamilienhaus"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="25" style="left:66.04%;top:27%" aria-expanded="false" aria-label="Beispieleintrag Kirchgasse, Mehrfamilienhaus"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="11" style="left:69.79%;top:57.5%" aria-expanded="false" aria-label="Beispieleintrag Dorfstrasse, Einfamilienhaus mit Elektroheizung"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="17" style="left:56.67%;top:24.67%" aria-expanded="false" aria-label="Beispieleintrag Schulweg, Einfamilienhaus"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+    <button type="button" class="pin" data-haus="26" style="left:39.58%;top:74.33%" aria-expanded="false" aria-label="Beispieleintrag Schulweg, Gewerbebau"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg></button>
+  </div>
+  <div class="karte-info" data-info hidden>
+    <button type="button" class="karte-zu" data-zu aria-label="Eintrag schliessen">×</button>
+    <span class="karte-marke">Beispieleintrag</span>
+    <div data-info-text></div>
+  </div>
+  <div class="karte-fuss">
+    <p class="karte-stand" aria-live="polite"><span data-anzahl>5</span> Beispieleinträge auf dem Plan</p>
+    <button type="button" class="btn-s" data-markieren>Eigenes Gebäude markieren</button>
+  </div>
+  <ol class="karte-liste">
+    <li data-haus="1"><strong>Dorfstrasse, Einfamilienhaus</strong> Heute: Ölheizung. Anschluss an ein Wärmenetz gewünscht in 1 bis 3 Jahren.</li>
+    <li data-haus="25"><strong>Kirchgasse, Mehrfamilienhaus mit 6 Wohnungen</strong> Heute: Gasheizung. Interesse in 3 bis 5 Jahren, Entscheid gemeinsam mit der Eigentümerschaft.</li>
+    <li data-haus="11"><strong>Dorfstrasse, Einfamilienhaus</strong> Heute: Elektroheizung. Möchte zuerst wissen, mit welchen Anschlusskosten zu rechnen ist.</li>
+    <li data-haus="17"><strong>Schulweg, Einfamilienhaus</strong> Heute: neue Wärmepumpe. Kein Anschluss geplant, möchte aber informiert bleiben.</li>
+    <li data-haus="26"><strong>Schulweg, Gewerbebau</strong> Heute: Ölheizung mit hohem Wärmebedarf. Anschluss so bald wie möglich gewünscht.</li>
+  </ol>
+  <p class="karte-neu" data-neu hidden><strong>Ihr Beispieleintrag</strong> Gebäude markiert. In der echten Karte geben Sie jetzt die heutige Heizung und den gewünschten Zeitpunkt an. Hier wird nichts gespeichert.</p>
+  <p class="demo-hinweis">Fiktiver Beispielplan mit erfundenen Einträgen. Klicken Sie auf einen Pin oder auf ein Haus.</p>
+</div>
+<!-- demo-waerme-interessenkarte:ende -->
+
+<!-- demo-website-chatbot:start -->
+<div class="chat" data-chat>
+  <div class="chat-verlauf" data-verlauf>
+    <p class="msg bot">Guten Tag. Ich beantworte Fragen zu Meyssens anhand der Inhalte dieser Website. Wählen Sie eine Frage.</p>
+  </div>
+  <p class="sr-only" data-ansage aria-live="polite"></p>
+  <div class="chat-fragen" role="group" aria-label="Beispielfragen">
+    <button type="button" data-frage="0">Welche Produkte sind in der Pilotphase?</button>
+    <button type="button" data-frage="1">Was erhalten Pilotpartner?</button>
+    <button type="button" data-frage="2">Wer steht hinter Meyssens?</button>
+    <button type="button" data-frage="3">Und wenn der Chatbot etwas nicht weiss?</button>
+  </div>
+  <dl class="chat-antworten">
+    <dt>Welche Produkte sind in der Pilotphase?</dt>
+    <dd><span>Drei Produkte: Umfragen &amp; Abstimmungen, der Website-Chatbot und die Wärme-Interessenkarte. Alle weiteren Produkte sind in Planung.</span> <a href="/unternehmen/#produkte">Quelle: Für Unternehmen und Vereine</a></dd>
+    <dt>Was erhalten Pilotpartner?</dt>
+    <dd><span>Pilotpartner erhalten die Einrichtung kostenlos und gestalten das Produkt mit. Für jedes Produkt in der Pilotphase suchen wir drei Pilotpartner.</span> <a href="/produkte/website-chatbot/#anfrage">Quelle: Website-Chatbot</a></dd>
+    <dt>Wer steht hinter Meyssens?</dt>
+    <dd><span>Meyssens ist ein Einzelunternehmen in Lausen (BL), gegründet von Lionel Nickelsen. Wir haben noch keine Kunden und keine Referenzen.</span> <a href="/ratgeber/website-chatbot-recht/#angebot">Quelle: Ratgeber Website-Chatbot</a></dd>
+    <dt>Und wenn der Chatbot etwas nicht weiss?</dt>
+    <dd><span>Dann sagt er das offen und verweist auf die Kontaktmöglichkeiten. Meyssens erreichen Sie per E-Mail an lionel@meyssens.ch.</span> <a href="/produkte/website-chatbot/#details">Quelle: Website-Chatbot</a></dd>
+  </dl>
+  <p class="demo-hinweis">Beispiel, vorgegebene Antworten. Es findet kein KI-Aufruf statt, und nichts wird gespeichert.</p>
+</div>
+<!-- demo-website-chatbot:ende -->
+
+<!-- ansicht-newsletter:start -->
+<div class="mock mock-newsletter">
+  <div class="mock-spalte">
+    <p class="mock-titel">Bausteine</p>
+    <span class="mock-baustein">Text</span><span class="mock-baustein">Bild</span><span class="mock-baustein">Link</span>
+  </div>
+  <div class="mock-mail">
+    <p class="mock-klein">Betreff: Neuigkeiten aus dem Verein</p>
+    <div class="mock-bildfeld"></div>
+    <p class="mock-h">Rückblick und nächste Termine</p>
+    <i class="mock-zeile"></i><i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
+    <span class="mock-knopf">Weiterlesen</span>
+    <p class="mock-klein">Abmelden mit einem Klick</p>
+  </div>
+</div>
+<!-- ansicht-newsletter:ende -->
+
+<!-- ansicht-website-fuer-vereine:start -->
+<div class="mock mock-verein">
+  <div class="mock-nav"><b>Beispielverein</b><span>Start</span><span>Anlässe</span><span>Neuigkeiten</span><span>Vorstand</span><span>Kontakt</span></div>
+  <div class="mock-banner"><p class="mock-h">Willkommen beim Beispielverein</p><i class="mock-zeile hell"></i></div>
+  <p class="mock-titel">Nächste Anlässe</p>
+  <ul class="mock-liste">
+    <li><b>Generalversammlung</b><span>Datum folgt</span></li>
+    <li><b>Sommerfest</b><span>Datum folgt</span></li>
+    <li><b>Helfereinsatz</b><span>Datum folgt</span></li>
+  </ul>
+</div>
+<!-- ansicht-website-fuer-vereine:ende -->
+
+<!-- ansicht-mail-assistent:start -->
+<div class="mock mock-mail-assistent">
+  <ul class="mock-liste mock-posteingang">
+    <li class="aktiv"><b>Frage zur Mitgliedschaft</b><span class="mock-tag">Mitglieder</span></li>
+    <li><b>Rückfrage zu einer Rechnung</b><span class="mock-tag dringend">Dringend</span></li>
+    <li><b>Reservation Vereinslokal</b><span class="mock-tag">Termine</span></li>
+  </ul>
+  <div class="mock-entwurf">
+    <p class="mock-titel">Antwortentwurf</p>
+    <i class="mock-zeile"></i><i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
+    <div class="mock-knoepfe"><span class="mock-knopf hell">Bearbeiten</span><span class="mock-knopf">Prüfen und senden</span></div>
+    <p class="mock-klein">Nichts wird automatisch versendet.</p>
+  </div>
+</div>
+<!-- ansicht-mail-assistent:ende -->
+
+<!-- ansicht-quartier-kasse:start -->
+<div class="mock mock-kasse">
+  <p class="mock-h">Projekt Quartierfest</p>
+  <ul class="mock-liste mock-buchungen">
+    <li><b>Beitrag Nachbarschaft</b><span class="plus">+ 300.00</span></li>
+    <li><b>Getränkeverkauf</b><span class="plus">+ 420.00</span></li>
+    <li><b>Miete Festbänke</b><span class="minus">− 180.00</span></li>
+    <li><b>Dekoration, Beleg hinterlegt</b><span class="minus">− 95.00</span></li>
+  </ul>
+  <p class="mock-stand"><span>Aktueller Stand</span><b>CHF 445.00</b></p>
+  <p class="mock-klein">Beträge von Hand erfasst. Noch ohne Zahlungsfunktion.</p>
+</div>
+<!-- ansicht-quartier-kasse:ende -->
+
+<!-- ansicht-ausschreibungs-radar:start -->
+<div class="mock mock-radar">
+  <div class="mock-chips"><span>Elektroinstallation</span><span>Beleuchtung</span><span>Region Nordwestschweiz</span></div>
+  <ul class="mock-liste mock-treffer">
+    <li><b>Erneuerung Beleuchtung Schulhaus</b><span>Frist in 18 Tagen · Originalquelle</span></li>
+    <li><b>Elektroinstallation Werkhof</b><span>Frist in 25 Tagen · Originalquelle</span></li>
+    <li><b>Unterhalt Strassenbeleuchtung</b><span>Frist in 31 Tagen · Originalquelle</span></li>
+  </ul>
+  <p class="mock-klein">Treffer nach Ihren Stichworten. Sie entscheiden, worauf Sie sich bewerben.</p>
+</div>
+<!-- ansicht-ausschreibungs-radar:ende -->
+
+<!-- gemeinden-held:start -->
+<div class="beteiligung" data-beteiligung>
+  <div class="bt-kopf">
+    <p class="held-titel" data-i18n="g.demo.prozess">Beteiligungsprozess</p>
+    <p class="bt-frage" data-i18n="g.demo.frage">Wie soll der Dorfplatz neu gestaltet werden?</p>
+    <ol class="bt-phasen"><li class="fertig" data-i18n="g.demo.ph1">Ideen sammeln</li><li class="jetzt" data-i18n="g.demo.ph2">Abstimmung</li><li data-i18n="g.demo.ph3">Umsetzung</li></ol>
+  </div>
+  <div class="bt-raster">
+  <div class="plan-rahmen bt-plan">
+    <svg class="plan" viewBox="0 0 320 200" aria-hidden="true" focusable="false"><rect width="320" height="200" class="plan-land"/><path class="plan-wald" d="M0 128H128Q134 165 124 200H0Z"/><g class="plan-baeume"><circle cx="24" cy="150" r="7"/><circle cx="52" cy="172" r="8"/><circle cx="88" cy="146" r="6"/><circle cx="100" cy="182" r="7"/><circle cx="18" cy="186" r="6"/></g><g class="plan-strasse"><path d="M0 110H320"/><path d="M160 0V110"/></g><rect class="plan-platz" x="182" y="124" width="74" height="50" rx="4"/><circle class="plan-brunnen" cx="219" cy="149" r="6"/><rect class="plan-halt" x="96" y="116" width="22" height="6" rx="1.5"/><rect class="haus" x="62" y="40" width="64" height="36" rx="2"/><g class="plan-haeuser"><rect class="haus" x="178" y="40" width="22" height="16" rx="1.5"/><rect class="haus" x="208" y="40" width="22" height="16" rx="1.5"/><rect class="haus" x="244" y="44" width="20" height="16" rx="1.5"/><rect class="haus" x="274" y="40" width="24" height="18" rx="1.5"/><rect class="haus" x="184" y="72" width="20" height="16" rx="1.5"/><rect class="haus" x="240" y="72" width="24" height="18" rx="1.5"/><rect class="haus" x="278" y="76" width="22" height="16" rx="1.5"/><rect class="haus" x="20" y="46" width="22" height="18" rx="1.5"/><rect class="haus" x="20" y="78" width="24" height="16" rx="1.5"/><rect class="haus" x="140" y="128" width="24" height="18" rx="1.5"/><rect class="haus" x="268" y="128" width="22" height="18" rx="1.5"/><rect class="haus" x="268" y="156" width="22" height="18" rx="1.5"/><rect class="haus" x="294" y="128" width="18" height="16" rx="1.5"/></g><g class="plan-name"><text x="94" y="33" text-anchor="middle" data-i18n="g.plan.schule">Schulhaus</text><text x="219" y="187" text-anchor="middle" data-i18n="g.plan.platz">Dorfplatz</text><text x="232" y="113" data-i18n="g.plan.strasse">Dorfstrasse</text></g></svg>
+    <button type="button" class="pin" data-vorschlag="0" style="left:68.44%;top:71.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v0">Mehr Sitzbänke beim Brunnen</span></button>
+    <button type="button" class="pin" data-vorschlag="1" style="left:29.38%;top:28.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v1">Veloständer beim Schulhaus</span></button>
+    <button type="button" class="pin" data-vorschlag="2" style="left:33.44%;top:59.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v2">Wartehäuschen an der Bushaltestelle</span></button>
+  </div>
+  <ul class="bt-liste">
+    <li data-vorschlag="0"><span class="bt-text"><strong data-i18n="g.demo.v0">Mehr Sitzbänke beim Brunnen</strong><span data-i18n="g.demo.o0">Dorfplatz</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="24"><span class="bt-zahl">24</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+    <li data-vorschlag="1"><span class="bt-text"><strong data-i18n="g.demo.v1">Veloständer beim Schulhaus</strong><span data-i18n="g.demo.o1">Schulhaus</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="17"><span class="bt-zahl">17</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+    <li data-vorschlag="2"><span class="bt-text"><strong data-i18n="g.demo.v2">Wartehäuschen an der Bushaltestelle</strong><span data-i18n="g.demo.o2">Bushaltestelle</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="31"><span class="bt-zahl">31</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+  </ul>
+  </div>
+  <p class="demo-hinweis" data-i18n="g.demo.hinweis">Beispiel mit erfundenen Inhalten. Klicken Sie auf einen Pin oder unterstützen Sie einen Vorschlag. Nichts wird gespeichert.</p>
+</div>
+<!-- gemeinden-held:ende -->
+
+<!-- gemeinden-ablauf-1-titel:start -->
+Gesprächsnotiz
+<!-- gemeinden-ablauf-1-titel:ende -->
+<!-- gemeinden-ablauf-1:start -->
+<div class="mock">
+  <p class="mock-titel" data-i18n="g.a1.kopf">Erstgespräch</p>
+  <ul class="mock-liste mock-check">
+    <li><b data-i18n="g.a1.p1">Bedürfnisse der Gemeinde</b><span class="mock-ok" aria-hidden="true">✓</span></li>
+    <li><b data-i18n="g.a1.p2">Demo live ansehen</b><span class="mock-ok" aria-hidden="true">✓</span></li>
+    <li><b data-i18n="g.a1.p3">Nächste Schritte festlegen</b><span class="mock-offen" aria-hidden="true"></span></li>
+  </ul>
+  <p class="mock-klein" data-i18n="g.a1.fuss">Kostenlos und unverbindlich</p>
+</div>
+<!-- gemeinden-ablauf-1:ende -->
+
+<!-- gemeinden-ablauf-2-titel:start -->
+Einrichtung
+<!-- gemeinden-ablauf-2-titel:ende -->
+<!-- gemeinden-ablauf-2:start -->
+<div class="mock">
+  <div class="mock-gemeinde"><span class="mock-wappen" aria-hidden="true"></span><b data-i18n="g.a2.name">Beispielgemeinde</b></div>
+  <p class="mock-titel" data-i18n="g.a2.themen">Themen</p>
+  <div class="mock-chips"><span data-i18n="g.a2.t1">Mobilität</span><span data-i18n="g.a2.t2">Wohnen</span><span data-i18n="g.a2.t3">Freiraum</span></div>
+  <p class="mock-titel" data-i18n="g.a2.inhalte">Inhalte</p>
+  <i class="mock-zeile"></i><i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
+  <p class="mock-klein" data-i18n="g.a2.fuss">Logo, Themen und Inhalte Ihrer Gemeinde</p>
+</div>
+<!-- gemeinden-ablauf-2:ende -->
+
+<!-- gemeinden-ablauf-3-titel:start -->
+Startseite der Plattform
+<!-- gemeinden-ablauf-3-titel:ende -->
+<!-- gemeinden-ablauf-3:start -->
+<div class="mock">
+  <div class="mock-banner"><p class="mock-h" data-i18n="g.demo.titel">Mitwirken in Beispielgemeinde</p><i class="mock-zeile hell"></i></div>
+  <ul class="mock-liste">
+    <li><b data-i18n="g.a3.p1">Neugestaltung Dorfplatz</b><span class="mock-tag" data-i18n="g.a3.offen">Offen</span></li>
+    <li><b data-i18n="g.a3.p2">Partizipatives Budget</b><span class="mock-tag" data-i18n="g.a3.bald">Demnächst</span></li>
+  </ul>
+  <p class="mock-klein" data-i18n="g.a3.fuss">Plattform freigeschaltet</p>
+</div>
+<!-- gemeinden-ablauf-3:ende -->
+
+<!-- gemeinden-ablauf-4-titel:start -->
+Betrieb
+<!-- gemeinden-ablauf-4-titel:ende -->
+<!-- gemeinden-ablauf-4:start -->
+<div class="mock">
+  <ul class="mock-liste mock-check">
+    <li><b>Hosting</b><span data-i18n="g.a4.s1">Schweiz</span></li>
+    <li><b>Updates</b><span data-i18n="g.a4.s2">laufend</span></li>
+    <li><b>Support</b><span data-i18n="g.a4.s3">persönlich</span></li>
+  </ul>
+  <p class="mock-klein" data-i18n="g.a4.fuss">Sie kümmern sich um die Inhalte.</p>
+</div>
+<!-- gemeinden-ablauf-4:ende -->

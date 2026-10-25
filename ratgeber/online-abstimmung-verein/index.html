@@ -49,9 +49,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/stil.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen und Vereine", "item": "https://meyssens.ch/unternehmen/"}, {"@type": "ListItem", "position": 3, "name": "Online-Abstimmungen im Verein", "item": "https://meyssens.ch/ratgeber/online-abstimmung-verein/"}]}, {"@type": "Article", "headline": "Online-Abstimmungen im Verein rechtssicher durchführen", "description": "Wann ist eine Online-Abstimmung im Schweizer Verein verbindlich? Statuten, Art. 66 ZGB, Datenschutz und Checkliste im Überblick.", "inLanguage": "de-CH", "dateModified": "2026-10-25", "mainEntityOfPage": "https://meyssens.ch/ratgeber/online-abstimmung-verein/", "author": {"@type": "Person", "name": "Lionel Nickelsen"}, "publisher": {"@id": "https://meyssens.ch/#org", "@type": "Organization", "name": "Meyssens", "logo": "https://meyssens.ch/logo.png"}, "image": "https://meyssens.ch/og-image.png"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Dürfen wir ohne Versammlung online abstimmen?", "acceptedAnswer": {"@type": "Answer", "text": "Nur unter engen Voraussetzungen. Ohne Grundlage in den Statuten ersetzt eine schriftliche Abstimmung den Versammlungsbeschluss nur, wenn alle Mitglieder zustimmen (Art. 66 Abs. 2 ZGB, BGE 132 III 503). Sehen die Statuten elektronische Abstimmungen vor, gelten deren Regeln."}}, {"@type": "Question", "name": "Genügt eine Mehrheit bei einer schriftlichen Abstimmung?", "acceptedAnswer": {"@type": "Answer", "text": "Ohne statutarische Grundlage nein. Nach BGE 132 III 503 braucht es Einstimmigkeit. Eine Nein-Stimme, eine Enthaltung oder eine ungültige Stimme lässt den Beschluss scheitern."}}, {"@type": "Question", "name": "Gilt die Corona-Regel für Vereine noch?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die Erleichterung nach Art. 27 COVID-19-Verordnung 3 war befristet und galt laut Bundesamt für Justiz längstens bis 31. Dezember 2023."}}, {"@type": "Question", "name": "Muss eine Online-Abstimmung geheim sein?", "acceptedAnswer": {"@type": "Answer", "text": "Eine gesetzliche Regel zum Stimmgeheimnis im Verein konnten wir nicht belegen. Legen Sie in den Statuten oder einem Reglement fest, ob geheim oder offen abgestimmt wird."}}, {"@type": "Question", "name": "Wie lange kann ein Beschluss angefochten werden?", "acceptedAnswer": {"@type": "Answer", "text": "Innert einem Monat ab Kenntnis (Art. 75 ZGB). Bewahren Sie deshalb das Protokoll und die Unterlagen zum Verfahren auf."}}]}]}</script>
 </head>
-<body>
+<body class="stil lang">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <nav id="nav">
   <a href="/" class="logo"><img src="/logo-web.png" width="701" height="96" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
@@ -78,7 +79,28 @@
 </section>
 
 <section id="inhalt">
-  <div class="artikel-text">
+  <div class="lese-raster">
+    <nav class="toc" aria-label="Inhalt dieser Seite">
+      <p class="toc-titel">Inhalt</p>
+      <ol>
+        <li><a href="#beschluesse">Wie ein Verein Beschlüsse fasst</a></li>
+        <li><a href="#schriftlich">Schriftlich oder elektronisch beschliessen</a></li>
+        <li><a href="#statuten">Die Rolle der Statuten</a></li>
+        <li><a href="#meinungsbild">Meinungsbild oder verbindlicher Beschluss</a></li>
+        <li><a href="#anonymitaet">Anonymität und Stimmgeheimnis</a></li>
+        <li><a href="#datenschutz">Datenschutz nach nDSG bei Mitgliederdaten</a></li>
+        <li><a href="#checkliste">Checkliste: Online-Abstimmung im Verein (14 Punkte)</a></li>
+        <li><a href="#meyssens">Und Meyssens?</a></li>
+      </ol>
+      <ul class="toc-mehr">
+        <li><a href="#fragen">Häufige Fragen</a></li>
+        <li><a href="#weiterlesen">Passend zum Thema</a></li>
+        <li><a href="#angebot">Was Meyssens dazu anbietet</a></li>
+        <li><a href="#quellen">Quellen und Hinweis</a></li>
+        <li><a href="#anfrage">Anfrage</a></li>
+      </ul>
+    </nav>
+    <div class="artikel-text">
     <h2 id="beschluesse">Wie ein Verein Beschlüsse fasst</h2>
     <p>Das Vereinsrecht im Zivilgesetzbuch (ZGB) ist kurz, und vieles überlässt es den Statuten. Einige Grundsätze sind aber fest. Oberstes Organ des Vereins ist die Vereinsversammlung, meist Generalversammlung oder Mitgliederversammlung genannt (Art. 64 ZGB). Sie wird vom Vorstand einberufen. Verlangt ein Fünftel der Mitglieder eine Versammlung, muss der Vorstand sie einberufen.</p>
     <p>Für die Abstimmung selbst gilt Art. 67 ZGB:</p>
@@ -151,10 +173,11 @@
 
     <h2 id="meyssens">Und Meyssens?</h2>
     <p>Meyssens ist ein Einzelunternehmen ohne Kunden. Unser Produkt Umfragen &amp; Abstimmungen befindet sich in der Pilotphase, die Website für Vereine ist in Planung. Eines ist uns wichtig: Ob ein Beschluss verbindlich ist, hängt von Ihren Statuten ab, nicht von unserem Werkzeug. Ein Abstimmungstool kann ein sauberes Verfahren unterstützen, aber es kann keine fehlende statutarische Grundlage ersetzen.</p>
+    </div>
   </div>
 </section>
 
-<section id="fragen" style="background:var(--surface)">
+<section id="fragen" class="flaeche">
   <div class="r">
     <span class="s-label">Fragen</span>
     <h2>Häufige Fragen</h2>
@@ -212,25 +235,31 @@
   </div>
 </section>
 
-<section id="angebot" style="background:var(--surface)">
+<section id="angebot" class="dunkel">
   <div class="r">
     <span class="s-label">Unser Angebot</span>
     <h2>Was Meyssens dazu anbietet</h2>
     <p class="s-lead artikel-ehrlich">Meyssens ist ein Einzelunternehmen in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen. Stand der hier genannten Produkte: Umfragen &amp; Abstimmungen in der Pilotphase, Website für Vereine in Planung. Ein Werkzeug ersetzt keine rechtliche Prüfung, und am Ende entscheidet immer ein Mensch.</p>
   </div>
-  <div class="feat-grid r">
-    <a href="/produkte/umfragen-abstimmungen/" class="feat tile">
-      <span class="status-chip">Pilotphase, Pilotpartner gesucht</span>
-      <h3>Umfragen &amp; Abstimmungen</h3>
-      <p>Online-Umfragen und Abstimmungen für Vereine und Unternehmen. Sie erstellen Fragen, verschicken einen Link und sehen die Ergebnisse übersichtlich ausgewertet. Geeignet für Mitgliederbefragungen, Terminabfragen und Abstimmungen zwischen zwei Versammlungen.</p>
-      <span class="way-go">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-    <a href="/produkte/website-fuer-vereine/" class="feat tile">
-      <span class="status-chip">In Planung</span>
-      <h3>Website für Vereine</h3>
-      <p>Eine übersichtliche Vereinswebsite mit Anlässen, Neuigkeiten, Kontakt und Informationen für Mitglieder. Der Vorstand pflegt die Inhalte selbst, ohne technische Vorkenntnisse. Die Seite funktioniert auf dem Handy ebenso gut wie am Computer.</p>
-      <span class="way-go">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
+  <div class="angebot-raster">
+    <article class="angebot-karte r">
+      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Umfragen &amp; Abstimmungen</span></div>
+      <div class="angebot-inhalt">
+        <span class="status-chip">Pilotphase, Pilotpartner gesucht</span>
+        <h3><a href="/produkte/umfragen-abstimmungen/">Umfragen &amp; Abstimmungen</a></h3>
+        <p>Online-Umfragen und Abstimmungen für Vereine und Unternehmen. Sie erstellen Fragen, verschicken einen Link und sehen die Ergebnisse übersichtlich ausgewertet. Geeignet für Mitgliederbefragungen, Terminabfragen und Abstimmungen zwischen zwei Versammlungen.</p>
+        <div class="angebot-links"><a class="mehr" href="/produkte/umfragen-abstimmungen/">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/umfragen-abstimmungen/#ansicht">Beispiel ausprobieren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/umfragen-abstimmungen/#anfrage">Pilotpartner werden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </article>
+    <article class="angebot-karte r">
+      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Website für Vereine</span></div>
+      <div class="angebot-inhalt">
+        <span class="status-chip">In Planung</span>
+        <h3><a href="/produkte/website-fuer-vereine/">Website für Vereine</a></h3>
+        <p>Eine übersichtliche Vereinswebsite mit Anlässen, Neuigkeiten, Kontakt und Informationen für Mitglieder. Der Vorstand pflegt die Inhalte selbst, ohne technische Vorkenntnisse. Die Seite funktioniert auf dem Handy ebenso gut wie am Computer.</p>
+        <div class="angebot-links"><a class="mehr" href="/produkte/website-fuer-vereine/">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/website-fuer-vereine/#ansicht">Beispielansicht <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/website-fuer-vereine/#anfrage">Unverbindlich vormerken <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -253,7 +282,7 @@
   </div>
 </section>
 
-<section id="anfrage" style="background:var(--surface)">
+<section id="anfrage" class="flaeche">
   <div class="contact-grid">
     <div class="r">
       <span class="s-label">Anfrage</span>
@@ -411,6 +440,7 @@ document.addEventListener('keydown', function(e){
 });
 
 </script>
+<script src="/assets/demos.js" defer></script>
 <script>
 // --- Kontaktformular ohne Seitenwechsel absenden ---
 const FORM_MSG = {

@@ -19,9 +19,10 @@
 <link rel="canonical" href="{{url}}">
 <link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
 {{head}}
+<link rel="stylesheet" href="/assets/stil.css">
 {{ld}}
 </head>
-<body>
+<body class="stil lang">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 {{kopf}}
 
@@ -31,6 +32,9 @@
   <div class="chip"><span class="chip-dot"></span><span>{{name}}</span></div>
   <h1>Digitale Infrastruktur für <span class="hl">{{fuer}}</span></h1>
   <p class="lead">{{intro}}</p>
+  <nav class="sprung" aria-label="Auf dieser Seite">
+    <a href="#alltag">Alltag</a><a href="#beispiele">Beispielszenarien</a><a href="#besonderheit">Besonderheit</a><a href="#fragen">Fragen</a><a href="#produkte">Passende Produkte</a><a href="#anfrage">Anfrage</a>
+  </nav>
 </section>
 
 <section id="alltag">
@@ -43,7 +47,7 @@
   </div>
 </section>
 
-<section id="beispiele" style="background:var(--surface)">
+<section id="beispiele" class="flaeche">
   <div class="r">
     <span class="s-label">Beispielszenarien</span>
     <h2>So könnte es aussehen</h2>
@@ -54,21 +58,11 @@
   </div>{{demo}}
 </section>
 
-<section id="besonderheit">
+<section id="besonderheit" class="dunkel">
   <div class="r">
     <span class="s-label">Besonderheit</span>
     <h2>{{besonderheit_titel}}</h2>
     <div class="note">{{besonderheit_text}}</div>
-  </div>
-</section>
-
-<section id="produkte" style="background:var(--surface)">
-  <div class="r">
-    <span class="s-label">Passende Produkte</span>
-    <h2>Was dazu passt</h2>
-  </div>
-  <div class="feat-grid r">
-{{produkte}}
   </div>
 </section>
 
@@ -82,7 +76,17 @@
   </div>
 </section>
 
-<section id="anfrage" style="background:var(--surface)">
+<section id="produkte" class="dunkel">
+  <div class="r">
+    <span class="s-label">Passende Produkte</span>
+    <h2>Was dazu passt</h2>
+  </div>
+  <div class="angebot-raster">
+{{produkte}}
+  </div>
+</section>
+
+<section id="anfrage" class="flaeche">
   <div class="contact-grid">
     <div class="r">
       <span class="s-label">Anfrage</span>
@@ -118,6 +122,7 @@
 {{rechtliches}}
 
 {{skripte}}
+<script src="/assets/demos.js" defer></script>
 <script>
 {{formular_skript}}</script>
 </body>

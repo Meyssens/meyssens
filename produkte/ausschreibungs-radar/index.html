@@ -49,9 +49,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/stil.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen und Vereine", "item": "https://meyssens.ch/unternehmen/"}, {"@type": "ListItem", "position": 3, "name": "Ausschreibungs-Radar", "item": "https://meyssens.ch/produkte/ausschreibungs-radar/"}]}]}</script>
 </head>
-<body>
+<body class="stil">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <nav id="nav">
   <a href="/" class="logo"><img src="/logo-web.png" width="701" height="96" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
@@ -77,7 +78,28 @@
 
 </section>
 
-<section id="details">
+<section id="ansicht" class="ansicht-wrap">
+  <h2 class="sr-only">Beispiel</h2>
+<div class="r">
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Ausschreibungs-Radar</span><span class="beispiel">Beispielansicht</span></div>
+  <div class="geraet-inhalt">
+<div class="mock mock-radar">
+  <div class="mock-chips"><span>Elektroinstallation</span><span>Beleuchtung</span><span>Region Nordwestschweiz</span></div>
+  <ul class="mock-liste mock-treffer">
+    <li><b>Erneuerung Beleuchtung Schulhaus</b><span>Frist in 18 Tagen · Originalquelle</span></li>
+    <li><b>Elektroinstallation Werkhof</b><span>Frist in 25 Tagen · Originalquelle</span></li>
+    <li><b>Unterhalt Strassenbeleuchtung</b><span>Frist in 31 Tagen · Originalquelle</span></li>
+  </ul>
+  <p class="mock-klein">Treffer nach Ihren Stichworten. Sie entscheiden, worauf Sie sich bewerben.</p>
+</div>
+  </div>
+</figure>
+</div>
+<p class="ansicht-hinweis">Beispielansicht, wie das Produkt aussehen könnte. Das Produkt ist in Planung.</p>
+</section>
+
+<section id="details" class="dunkel">
   <h2 class="sr-only">Überblick</h2>
   <div class="feat-grid r">
     <div class="feat">
@@ -99,7 +121,7 @@
   <div class="note r">Dieses Produkt ist in Planung. Mit Ihrer Anfrage merken wir Sie unverbindlich vor.</div>
 </section>
 
-<section id="anfrage" style="background:var(--surface)">
+<section id="anfrage" class="flaeche">
   <div class="contact-grid">
     <div class="r">
       <span class="s-label">In Planung</span>
@@ -257,6 +279,7 @@ document.addEventListener('keydown', function(e){
 });
 
 </script>
+<script src="/assets/demos.js" defer></script>
 <script>
 // --- Kontaktformular ohne Seitenwechsel absenden ---
 const FORM_MSG = {
