@@ -17,7 +17,9 @@ Quellen:
                            Die Bereiche <!-- auto:name:start --> bis <!-- auto:name:ende --> der Startseite
                            (Produktansicht, Demos, In Planung, Zahlen) schreibt build.py selbst neu.
   ansichten.html           Demos (Pilotphase) und Beispielansichten (In Planung) im Gerätefenster
-  gemeinden/index.html     Formspree-Ziel, Einwilligung und Formular-Skript des bestehenden Kontaktformulars
+  gemeinden/index.html     Formspree-Ziel, Einwilligung und Formular-Skript des bestehenden Kontaktformulars.
+                           build.py schreibt dort die Bereiche auto:buehne und auto:ablauf-1 bis -4 neu
+                           (Beispielansichten aus ansichten.html), alles andere bleibt von Hand gepflegt.
 """
 import datetime
 import html
@@ -67,7 +69,7 @@ def setze_auto(text, name, inhalt):
     # Ersetzt den Inhalt eines automatisch erzeugten Bereichs der Startseite
     muster = re.compile(r"(<!-- auto:%s:start -->\n).*?(<!-- auto:%s:ende -->)" % (name, name), re.S)
     if not muster.search(text):
-        raise SystemExit("Bereich auto:%s fehlt in index.html" % name)
+        raise SystemExit("Bereich auto:%s fehlt" % name)
     return muster.sub(lambda m: m.group(1) + inhalt + "\n" + m.group(2), text)
 
 
@@ -171,22 +173,7 @@ def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
                      '</article>' % (html.escape(STUFEN[p["status"]]["badge"]), html.escape(p["name"]),
                                      html.escape(p["kurzbeschreibung"]), p["slug"], PFEIL, bild))
     geplant = [p for p in produkte if p["status"] == "In Planung"]
-    schritte = []
-    for i, p in enumerate(geplant, 1):
-        bild, _ = ansicht(ansichten, p)
-        schritte.append('  <div class="schritt%s">\n'
-                        '    <div class="schritt-text">\n'
-                        '      <span class="schritt-nr">%02d / %02d</span>\n'
-                        '      <span class="status-chip">%s</span>\n'
-                        '      <h3><a href="/produkte/%s/">%s</a></h3>\n'
-                        '      <p>%s</p>\n'
-                        '      <a class="mehr" href="/produkte/%s/#anfrage">%s %s</a>\n'
-                        '    </div>\n'
-                        '    <div class="schritt-bild">\n%s\n    </div>\n'
-                        '  </div>' % (" aktiv" if i == 1 else "", i, len(geplant), html.escape(STUFEN[p["status"]]["badge"]),
-                                      p["slug"], html.escape(p["name"]), html.escape(p["kurzbeschreibung"]),
-                                      p["slug"], STUFEN[p["status"]]["knopf"], PFEIL, bild))
-    planung = '<div class="scrolly" data-scrolly>\n%s\n</div>' % "\n".join(schritte)
+    planung = scrolly(ansichten, geplant)
     zahlen = [(len(produkte), "Produkte"),
               (sum(p["status"] == "Pilotphase" for p in produkte), "in der Pilotphase"),
               (len(geplant), "in Planung"),
@@ -199,6 +186,65 @@ def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
     for name, inhalt in (("held", held), ("demos", "\n".join(demos)), ("planung", planung), ("zahlen", zahlen)):
         start = setze_auto(start, name, inhalt)
     return start
+
+
+def scrolly(ansichten, liste, mehr=False):
+    # Sticky-Abschnitt: links der Text (bleibt stehen), rechts wechselt die Ansicht im Gerätefenster.
+    # mehr=True: zusätzlich der Link "Mehr erfahren" auf die Produktseite (Unternehmen-Seite)
+    schritte = []
+    for i, p in enumerate(liste, 1):
+        bild, _ = ansicht(ansichten, p)
+        links = ('      <a class="mehr" href="/produkte/%s/">Mehr erfahren %s</a>\n' % (p["slug"], PFEIL)) if mehr else ""
+        schritte.append('  <div class="schritt%s">\n'
+                        '    <div class="schritt-text">\n'
+                        '      <span class="schritt-nr">%02d / %02d</span>\n'
+                        '      <span class="status-chip">%s</span>\n'
+                        '      <h3><a href="/produkte/%s/">%s</a></h3>\n'
+                        '      <p>%s</p>\n'
+                        '%s'
+                        '      <a class="mehr" href="/produkte/%s/#anfrage">%s %s</a>\n'
+                        '    </div>\n'
+                        '    <div class="schritt-bild" style="--z:%d">\n%s\n    </div>\n'
+                        '  </div>' % (" aktiv" if i == 1 else "", i, len(liste), html.escape(STUFEN[p["status"]]["badge"]),
+                                      p["slug"], html.escape(p["name"]), html.escape(p["kurzbeschreibung"]), links,
+                                      p["slug"], STUFEN[p["status"]]["knopf"], PFEIL, i, bild))
+    return '<div class="scrolly" data-scrolly style="--n:%d">\n%s\n</div>' % (len(liste), "\n".join(schritte))
+
+
+def angebot(p):
+    # Angebotskarte im Gerätefenster-Stil (Branchen- und Ratgeberseiten): gleiche Texte und Links wie die Kachel,
+    # dazu der Weg zur Beispielansicht und zur Anfrage
+    stufe = STUFEN[p["status"]]
+    return ('    <article class="angebot-karte r">\n'
+            '      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>'
+            '<span class="geraet-titel">%s</span></div>\n'
+            '      <div class="angebot-inhalt">\n'
+            '        <span class="status-chip">%s</span>\n'
+            '        <h3><a href="/produkte/%s/">%s</a></h3>\n'
+            '        <p>%s</p>\n'
+            '        <div class="angebot-links"><a class="mehr" href="/produkte/%s/">Mehr erfahren %s</a>'
+            '<a class="mehr" href="/produkte/%s/#ansicht">%s %s</a>'
+            '<a class="mehr" href="/produkte/%s/#anfrage">%s %s</a></div>\n'
+            '      </div>\n'
+            '    </article>' % (html.escape(p["name"]), html.escape(stufe["badge"]), p["slug"], html.escape(p["name"]),
+                               html.escape(p["kurzbeschreibung"]), p["slug"], PFEIL, p["slug"],
+                               "Beispiel ausprobieren" if p["status"] == "Pilotphase" else "Beispielansicht", PFEIL,
+                               p["slug"], stufe["knopf"], PFEIL))
+
+
+def inhaltsverzeichnis(inhalt):
+    # Sprungmarken aus den Zwischentiteln des Langtexts (h2 mit id) und zu den Abschnitten danach
+    ziele = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', inhalt)
+    if len(ziele) != len(re.findall(r"<h2\b", inhalt)):
+        raise SystemExit("Langtext: jede h2 braucht eine id für das Inhaltsverzeichnis")
+    weitere = (("fragen", "Häufige Fragen"), ("weiterlesen", "Passend zum Thema"), ("angebot", "Was Meyssens dazu anbietet"),
+               ("quellen", "Quellen und Hinweis"), ("anfrage", "Anfrage"))
+    return ('<nav class="toc" aria-label="Inhalt dieser Seite">\n'
+            '      <p class="toc-titel">Inhalt</p>\n'
+            '      <ol>\n%s\n      </ol>\n'
+            '      <ul class="toc-mehr">\n%s\n      </ul>\n'
+            '    </nav>' % ("\n".join('        <li><a href="#%s">%s</a></li>' % z for z in ziele),
+                          "\n".join('        <li><a href="#%s">%s</a></li>' % z for z in weitere)))
 
 
 def produkt_ansicht(ansichten, p):
@@ -260,7 +306,8 @@ WORTE = (1500, 2200)
 
 
 def worte(text):
-    # Wörter im sichtbaren Text eines HTML-Fragments
+    # Wörter im sichtbaren Text eines HTML-Fragments, ohne Navigation (Inhaltsverzeichnis)
+    text = re.sub(r"<nav\b.*?</nav>", " ", text, flags=re.S)
     return len(re.findall(r"\w[\w'’.-]*", html.unescape(re.sub(r"<[^>]+>", " ", text))))
 
 
@@ -360,7 +407,6 @@ def main():
 
     ansichten = lies("ansichten.html")
     vorlage_produkt = lies("vorlage_produkt.html")
-    kacheln = []
     for p in produkte:
         e = {k: html.escape(str(v)) for k, v in p.items()}
         stufe = {k: html.escape(v) for k, v in STUFEN[p["status"]].items()}
@@ -389,7 +435,6 @@ def main():
             "formular_skript": formular_skript,
         })
         schreibe("produkte/%s/index.html" % p["slug"], fuelle(vorlage_produkt, werte))
-        kacheln.append(kachel(p))
 
     vorlage_branche = lies("vorlage_branche.html")
     for b in branchen:
@@ -410,7 +455,7 @@ def main():
                       "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in b["faq"]]}),
             "besonderheit_titel": html.escape(b["besonderheit"]["titel"]),
             "besonderheit_text": html.escape(b["besonderheit"]["text"]),
-            "produkte": "\n".join(kachel(nach_slug[s]) for s in b["produkte"]),
+            "produkte": "\n".join(angebot(nach_slug[s]) for s in b["produkte"]),
             "faq": "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
                              % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in b["faq"]),
             "formular_ziel": formular_ziel,
@@ -450,6 +495,7 @@ def main():
             "autor": AUTOR,
             "geprueft": datum.strftime("%d.%m.%Y"),
             "inhalt": inhalt,
+            "toc": inhaltsverzeichnis(inhalt),
             "faq": "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
                              % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in a["faq"]),
             "weiterlesen": "\n".join('    <a href="%s" class="feat tile">\n      <h3>%s</h3>\n      <p>%s</p>\n'
@@ -457,7 +503,7 @@ def main():
                                      % (l["url"], html.escape(l["titel"]), html.escape(l["grund"]), PFEIL)
                                      for l in a["weiterlesen"]),
             "ehrlich": html.escape(ehrlich([nach_slug[s] for s in a["produkte"]])),
-            "produkte": "\n".join(kachel(nach_slug[s]) for s in a["produkte"]),
+            "produkte": "\n".join(angebot(nach_slug[s]) for s in a["produkte"]),
             "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
                                  % (html.escape(q["url"]), html.escape(q["titel"])) for q in a["quellen"]),
             "zurueck_url": art["zurueck"][0],
@@ -491,7 +537,7 @@ def main():
         "beschreibung": html.escape("Digitale Werkzeuge für Unternehmen und Vereine: Umfragen, Newsletter, "
                                     "Vereinswebsite, Mail-Assistent und mehr. Jetzt Pilotpartner werden."),
         "url": DOMAIN + "/unternehmen/",
-        "kacheln": "\n".join(kacheln),
+        "produkte": scrolly(ansichten, produkte, mehr=True),
         "ld": ld(brotkrumen(START, UNTERNEHMEN)),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
                                for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
@@ -499,6 +545,17 @@ def main():
                                for a in ratgeber),
     })
     schreibe("unternehmen/index.html", fuelle(lies("vorlage_unternehmen.html"), werte))
+
+    # Gemeinden-Seite: Bühne unter dem Hero und Ansichten im Sticky-Abschnitt "Ablauf"
+    neu_g = setze_auto(gemeinden, "buehne", '<div class="buehne" data-buehne>\n%s\n</div>' % geraet(
+        '<span data-i18n="g.demo.titel">Mitwirken in Beispielgemeinde</span>', teil(ansichten, "gemeinden-held"),
+        '<span data-i18n="g.beispiel">Beispiel</span>'))
+    for i in range(1, 5):
+        neu_g = setze_auto(neu_g, "ablauf-%d" % i, geraet(
+            '<span data-i18n="g.ablauf%d.titel">%s</span>' % (i, teil(ansichten, "gemeinden-ablauf-%d-titel" % i)),
+            teil(ansichten, "gemeinden-ablauf-%d" % i), '<span data-i18n="g.beispielansicht">Beispielansicht</span>'))
+    if neu_g != gemeinden:
+        schreibe("gemeinden/index.html", neu_g)
 
     neu = startseite(start, ansichten, produkte, len(branchen) + len(artikel_branchen), len(ratgeber))
     if neu != start:

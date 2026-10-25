@@ -1,5 +1,8 @@
 /* Schlichter Stil für Startseite, Produkt-, Unternehmen-, Branchen- und Ratgeberseiten.
    Gilt nur unter body.stil, damit die Gemeinden-Seite unverändert bleibt. Ergänzt assets/site.css. */
+/* Ersatzschrift mit den Massen von Inter: bis die Webschrift geladen ist, bricht der Text gleich um und springt nicht */
+@font-face{font-family:'Inter Ersatz';src:local('Arial'),local('Helvetica'),local('Liberation Sans'),local('Roboto');size-adjust:107%;ascent-override:90%;descent-override:22.4%;line-gap-override:0%}
+.stil,.stil .btn-p,.stil .pcta,.stil .finput,.stil .fselect,.stil .ftextarea,.stil .lang-btn,.stil .cookie-btn,.stil .chat-fragen button{font-family:'Inter','Inter Ersatz',sans-serif}
 .stil{--nacht:#07071a;--nacht2:#11112a;--hellblau:#a8a8ff;--grau:#f5f5f7;--rand:rgba(0,0,0,.08);--weich:cubic-bezier(.2,.7,.2,1)}
 .stil section{padding-top:clamp(4.5rem,9vw,8rem);padding-bottom:clamp(4.5rem,9vw,8rem)}
 .stil h1 .hl{animation:none;background:linear-gradient(90deg,#0000ff,#3d3dff);-webkit-background-clip:text;background-clip:text}
@@ -182,7 +185,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 /* Dunkle Abschnitte */
 .stil .dunkel{background:var(--nacht);color:#f5f5f7}
 .stil .dunkel h2,.stil .dunkel .feat h3,.stil .dunkel .qa h3,.stil .dunkel .schritt-text h3,.stil .dunkel .demo-text h3{color:#fff}
-.stil .dunkel .s-label{color:var(--hellblau)}
+.stil .dunkel .s-label,.stil .dunkel .schritt-nr{color:var(--hellblau)}
 .stil .dunkel .s-label::before{background:var(--hellblau)}
 .stil .dunkel .s-lead,.stil .dunkel .kopf-mitte p,.stil .dunkel .schritt-text p,.stil .dunkel .demo-text p,.stil .dunkel .feat p{color:rgba(255,255,255,.74)}
 .stil .dunkel .feat{background:var(--nacht2);border-color:rgba(255,255,255,.08)}
@@ -222,21 +225,21 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .scrolly{max-width:1180px;margin:0 auto}
 .schritt{display:block;margin-bottom:clamp(3.5rem,8vw,5rem)}
 .schritt-text{max-width:560px;margin-bottom:1.5rem}
-.schritt-nr{display:block;font-size:.75rem;font-weight:600;letter-spacing:.1em;color:var(--hellblau);margin-bottom:.75rem;font-variant-numeric:tabular-nums}
-.schritt-text h3{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,2.6vw,2.6rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:1rem}
+.schritt-nr{display:block;font-size:.75rem;font-weight:600;letter-spacing:.1em;color:var(--blue);margin-bottom:.75rem;font-variant-numeric:tabular-nums}
+.schritt-text h3{font-family:'Syne',sans-serif;font-size:clamp(1.6rem,2.3vw,2.4rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:1rem}
 .schritt-text h3 a{color:inherit!important;text-decoration:none}
 .schritt-text h3 a:hover{text-decoration:underline;text-underline-offset:4px}
-.schritt-text p{font-size:1rem;line-height:1.8;margin-bottom:1.25rem}
+.schritt-text p{font-size:1rem;line-height:1.8;margin-bottom:1.25rem;color:var(--ink3)}
+.schritt-text .mehr{margin-right:1.5rem;margin-bottom:.5rem}
+.schritt-text .step-tag{margin-top:0}
 @media(min-width:901px){
-  .scrolly.an{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:clamp(2rem,5vw,5rem)}
+  .scrolly.an{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:repeat(var(--n,5),auto);column-gap:clamp(2rem,5vw,5rem)}
   .scrolly.an .schritt{display:contents}
-  .scrolly.an .schritt-text{grid-column:1;grid-row:1 / span 5;position:sticky;top:calc(50vh - 9rem);align-self:start;opacity:0;transform:translateY(16px);transition:opacity .5s var(--weich),transform .5s var(--weich);pointer-events:none;margin:0}
+  .scrolly.an .schritt-text{grid-column:1;grid-row:1 / -1;position:sticky;top:calc(50vh - 9rem);align-self:start;opacity:0;transform:translateY(16px);transition:opacity .5s var(--weich),transform .5s var(--weich);pointer-events:none;margin:0}
   .scrolly.an .schritt.aktiv .schritt-text,.scrolly.an .schritt-text:focus-within{opacity:1;transform:none;pointer-events:auto}
   .scrolly.an .schritt-bild{grid-column:2;min-height:78vh;display:flex;align-items:center;opacity:.35;transform:scale(.96);transition:opacity .6s var(--weich),transform .6s var(--weich)}
   .scrolly.an .schritt.aktiv .schritt-bild{opacity:1;transform:none}
-  .scrolly.an .schritt:nth-child(1) .schritt-bild{grid-row:1}.scrolly.an .schritt:nth-child(2) .schritt-bild{grid-row:2}
-  .scrolly.an .schritt:nth-child(3) .schritt-bild{grid-row:3}.scrolly.an .schritt:nth-child(4) .schritt-bild{grid-row:4}
-  .scrolly.an .schritt:nth-child(5) .schritt-bild{grid-row:5}
+  .scrolly.an .schritt-bild{grid-row:var(--z)}
   .scrolly.an .schritt-bild .geraet{width:100%}
 }
 
@@ -269,12 +272,137 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 @media(max-width:640px){
   .stil .page-hero h1,.stil.lang .page-hero h1{font-size:clamp(1.85rem,8vw,2.8rem);max-width:none}
   .stil .held h1{font-size:clamp(1.6rem,7.2vw,2.8rem);hyphens:manual;-webkit-hyphens:manual}
+  .stil .hero h1{font-size:clamp(1.85rem,8.4vw,2.8rem);max-width:none}
+  .stil .hero .btns{flex-direction:column;align-items:center}
   .stil h2{font-size:clamp(1.6rem,7.4vw,2.2rem);hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
   .demo-text h3,.schritt-text h3{font-size:clamp(1.5rem,7vw,2rem);hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
   .held-chat{display:none}
   .geraet{border-radius:18px}
   .geraet-titel{text-align:left}
 }
+/* Gemeinden: Hero zentriert, Bühne mit Beispiel, Eckdaten als Reihe */
+.stil .hero{display:block;min-height:0;text-align:center;padding-top:calc(60px + clamp(4rem,9vw,8rem));padding-bottom:clamp(3rem,6vw,5rem);overflow:visible;background:#fff}
+.stil .hero::before{display:none}
+.stil .hero-l,.stil .hero-r{animation:none}
+.stil .hero h1{font-size:clamp(2.4rem,7vw,5.8rem);letter-spacing:-.045em;line-height:1.02;max-width:16ch;margin-left:auto;margin-right:auto}
+/* Mit Syne bricht der Titel in vier Zeilen um; die Höhe vorab reservieren, damit beim Laden der Schrift nichts springt */
+.stil .hero h1{min-height:4.08em}
+.stil .hero .lead{font-size:clamp(1.05rem,1.6vw,1.3rem);max-width:680px;margin:0 auto;color:var(--ink3)}
+.stil .hero .btns{justify-content:center;margin:2.25rem 0 1.5rem}
+.stil .proof{justify-content:center}
+.stil .hero .buehne-wrap{padding:clamp(3rem,6vw,5rem) 0 0!important}
+.stil .hero-r{max-width:1040px;margin:clamp(2.5rem,5vw,4rem) auto 0;text-align:left}
+.stil .hero-cards{display:grid;grid-template-columns:1fr 1fr 2fr;gap:1rem}
+.stil .hcard-row{display:contents}
+.stil .hcard{border-radius:22px;border-color:transparent;background:var(--grau)}
+.stil .hcard.blue{background:var(--blue)}
+.stil .hcard-val{font-size:clamp(1.6rem,6vw,2.2rem)}
+.stil .hcard.blue .hcard-label,.stil .hcard.blue .hcard-sub,.stil .astat-label,.stil .astat-sub{color:rgba(255,255,255,.88)}
+.stil .hcard:hover{transform:translateY(-3px);box-shadow:0 20px 50px -24px rgba(10,10,80,.25)}
+.stil .lang-btn{min-height:24px}
+/* Gemeinden: sechs Menüpunkte und Sprachwahl passen erst ab 1101 px in die Leiste, darunter das Menü */
+@media(min-width:641px) and (max-width:1100px){.stil.gemeinden .nav-items,.stil.gemeinden #lang-switch-desktop{display:none}.stil.gemeinden .hamburger{display:flex}.stil.gemeinden .mobile-nav{top:86px;left:14px;right:14px;border-radius:18px}}
+@media(max-width:900px){.stil .hero-cards{grid-template-columns:1fr 1fr}.stil .hero-cards>.hcard:last-child{grid-column:1 / -1}}
+.stil #ablauf .kopf-mitte{margin-bottom:clamp(2.5rem,5vw,4rem)}
+.stil #pilot.dunkel{background:var(--nacht)}
+.stil #ueber-uns{background:#fff}
+.stil .about-grid h2,.stil .contact-grid h2{font-size:clamp(1.8rem,3.4vw,2.8rem)}
+.stil .dunkel .step-tag{background:rgba(168,168,255,.12);border-color:rgba(168,168,255,.3);color:#d4d4ff}
+.stil .dunkel .feat-icon-box{background:rgba(168,168,255,.14);color:#d4d4ff;border-color:rgba(168,168,255,.25)}
+.stil .faq-list{max-width:820px}
+.stil .faq-q{font-size:clamp(1rem,1.5vw,1.15rem);padding:1.4rem 0;min-height:44px}
+.stil .faq-a-inner{font-size:.95rem}
+.stil .faq-item.open .faq-a{max-height:600px}
+.stil .acard{border-radius:26px;border-color:transparent;box-shadow:0 24px 60px -32px rgba(10,10,80,.3)}
+.stil .logo-banner{gap:2.5rem}
+
+/* Beteiligungsplattform (Beispiel) */
+.bt-frage{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1rem,1.8vw,1.3rem);line-height:1.25;color:var(--ink);margin-bottom:.8rem}
+.bt-phasen{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0 0 1rem}
+.bt-phasen li{font-size:.75rem;padding:.25rem .75rem;border-radius:999px;background:var(--grau);color:var(--ink3)}
+.bt-phasen li.fertig{background:var(--blue-8);color:var(--blue)}
+.bt-phasen li.jetzt{background:var(--blue);color:#fff}
+.bt-raster{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:1rem;align-items:start}
+.bt-plan{aspect-ratio:320/200}
+.bt-liste{list-style:none;margin:0;display:flex;flex-direction:column;gap:.5rem}
+.bt-liste li{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.7rem .85rem;border-radius:14px;background:var(--grau);border:1px solid transparent;transition:border-color .25s,background .25s}
+.bt-liste li.aktiv{border-color:var(--blue);background:#fff}
+.bt-text{display:flex;flex-direction:column;min-width:0}
+.bt-text strong{font-weight:600;color:var(--ink);font-size:.88rem;line-height:1.35}
+.bt-text span{font-size:.75rem;color:var(--ink3)}
+.bt-stimme{flex:none;min-height:44px;display:inline-flex;align-items:center;gap:.35rem;padding:.4rem .85rem;border-radius:999px;border:1px solid var(--blue-20);background:#fff;color:var(--blue);font:500 .8rem 'Inter','Inter Ersatz',sans-serif;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.bt-stimme:hover{border-color:var(--blue)}
+.bt-zahl{font-weight:700;font-variant-numeric:tabular-nums}
+.bt-stimme[aria-pressed="true"]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.plan-platz{fill:#e6e2da;stroke:#cdc7bc;stroke-width:.8}.plan-brunnen{fill:#b9d3ea}.plan-halt{fill:#9aa3b5}
+@media(max-width:760px){.bt-raster{grid-template-columns:1fr}}
+@media(max-width:420px){.bt-liste li{flex-direction:column;align-items:stretch}.bt-stimme{justify-content:center}}
+
+/* Beispielansichten der Gemeinden-Seite */
+.mock-check .mock-ok{color:#0b6b37;font-weight:700;font-size:.9rem}
+.mock-offen{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--ink4)}
+.mock-gemeinde{display:flex;align-items:center;gap:.6rem;margin-bottom:1rem}
+.mock-wappen{width:26px;height:30px;border-radius:4px 4px 13px 13px;background:linear-gradient(var(--blue) 50%,#d9d9ff 50%)}
+.mock-gemeinde b{font-family:'Syne',sans-serif;color:var(--ink);font-size:1rem}
+
+/* Seiten-Navigationen (Sprungmarken, Inhaltsverzeichnis) nicht wie die Kopfzeile fixieren */
+.stil nav.sprung,.stil nav.toc{position:static;top:auto;left:auto;right:auto;z-index:auto;height:auto;border:0;border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;transition:none}
+.stil nav.sprung{background:none;padding:0}
+.stil nav.toc{display:block}
+
+/* Branchenseiten: ruhige Sprungmarken unter dem Hero */
+.sprung{display:flex;flex-wrap:wrap;justify-content:center;gap:.45rem .5rem;margin:2.25rem auto 0;max-width:820px}
+.sprung a{display:inline-flex;align-items:center;min-height:44px;padding:.45rem 1rem;border-radius:999px;border:1px solid var(--rand);font-size:.85rem;color:var(--ink2);text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.sprung a:hover{background:var(--blue-5);border-color:var(--blue-20);color:var(--blue)}
+
+/* Langtexte: Lesespalte von etwa 70 Zeichen, Inhaltsverzeichnis daneben (breit) oder darüber (schmal) */
+.lese-raster{max-width:940px;margin:0 auto}
+.stil .artikel-text{max-width:none}
+.stil .artikel-text > *{max-width:37em}
+.stil .artikel-text p,.stil .artikel-text li{font-size:1.04rem;line-height:1.8}
+.stil .artikel-text h2{font-size:clamp(1.6rem,2.7vw,2.1rem);line-height:1.12;margin:4rem 0 1.1rem;scroll-margin-top:90px}
+.stil .artikel-text h3{font-size:1.15rem;margin-top:2.25rem}
+#quellen .artikel-text,#inhalt .artikel-text{margin:0 auto}
+.stil nav.toc{margin:0 0 3rem;padding:1.25rem 1.4rem;border-radius:20px;background:var(--grau);max-width:37em}
+.toc-titel{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.4rem}
+.toc ol,.toc ul{list-style:none;margin:0;padding:0}
+.toc a{display:block;padding:.45rem 0;font-size:.9rem;line-height:1.4;color:var(--ink2);text-decoration:none;border-left:2px solid transparent;transition:color .2s,border-color .2s}
+.toc a:hover{color:var(--blue)}
+.toc a.aktiv{color:var(--blue);font-weight:500}
+.toc-mehr{display:none}
+@media(min-width:1100px){
+  .lese-raster{display:grid;grid-template-columns:220px minmax(0,1fr);column-gap:4.5rem;align-items:start}
+  .stil nav.toc{position:sticky;top:100px;margin:0;padding:0;background:none;max-height:calc(100vh - 130px);overflow-y:auto}
+  .toc a{padding:.38rem 0 .38rem .9rem}
+  .toc a.aktiv{border-left-color:var(--blue)}
+  .toc-mehr{display:block;margin-top:.75rem!important;padding-top:.75rem!important;border-top:1px solid var(--rand)}
+  .toc-mehr a{font-size:.82rem;color:var(--ink3)}
+  #inhalt .artikel-text{margin:0}
+}
+#fragen,#weiterlesen,#quellen{scroll-margin-top:70px}
+
+/* Angebot im Gerätefenster-Stil (Branchen und Ratgeber) */
+.angebot-raster{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:1.25rem;max-width:1180px;margin:clamp(2rem,4vw,3rem) auto 0}
+.angebot-karte{display:flex;flex-direction:column;background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(0,0,0,.6);transition:transform .35s var(--weich),box-shadow .35s var(--weich)}
+.angebot-karte:hover{transform:translateY(-4px);box-shadow:0 36px 80px -36px rgba(0,0,0,.7)}
+.angebot-inhalt{display:flex;flex-direction:column;align-items:flex-start;gap:.75rem;flex:1;padding:clamp(1.25rem,2.4vw,1.75rem)}
+.angebot-inhalt h3{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.angebot-inhalt p{font-size:.92rem;line-height:1.7;color:var(--ink3)}
+.angebot-links{display:flex;flex-direction:column;gap:.35rem;margin-top:auto;padding-top:.5rem}
+.angebot-links .mehr{min-height:32px}
+.stil .dunkel .angebot-karte h3 a{color:var(--ink)!important;text-decoration:none}
+.stil .dunkel .angebot-karte h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.stil .dunkel .angebot-karte .mehr{color:var(--blue)!important}
+.stil .dunkel .angebot-karte p{color:var(--ink3)}
+.stil .dunkel .angebot-karte .status-chip{background:var(--blue-8);border-color:var(--blue-20);color:var(--blue)}
+
+/* Impressum und Datenschutz (Dialoge mit Inline-Stilen) */
+.stil #impressum-modal,.stil #datenschutz-modal{background:rgba(7,7,26,.55)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.stil #impressum-modal > div,.stil #datenschutz-modal > div{border-radius:26px!important;padding:clamp(1.75rem,4vw,3rem)!important;max-width:620px!important;box-shadow:0 40px 100px -40px rgba(0,0,0,.6);animation:aufklappen .35s var(--weich)}
+.stil #impressum-modal h3,.stil #datenschutz-modal h3{font-size:clamp(1.5rem,3vw,2rem)!important;letter-spacing:-.03em}
+.stil #impressum-modal > div > button,.stil #datenschutz-modal > div > button{width:44px;height:44px;border-radius:50%!important;color:#55556e!important}
+.stil #impressum-modal > div > button:hover,.stil #datenschutz-modal > div > button:hover{background:var(--grau)!important}
+
 @media (prefers-reduced-motion:reduce){
   .buehne .geraet,.held-karte{transform:none!important}
   .held-balken::before{width:calc(var(--w) * 1%)}

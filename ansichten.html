@@ -3,6 +3,9 @@ Bausteine für Startseite und Produktseiten (build.py liest die Abschnitte zwisc
   held                     Produktansicht unter dem Hero der Startseite (scroll-getrieben, assets/demos.js)
   demo-<slug>              Interaktive Mini-Demo für Produkte in der Pilotphase, fest vorgegebene Beispielinhalte
   ansicht-<slug>           Statische Beispielansicht für Produkte in Planung
+  gemeinden-held           Interaktives Beispiel einer Beteiligungsplattform unter dem Hero der Gemeinden-Seite
+  gemeinden-ablauf-<n>     Beispielansichten im Sticky-Abschnitt "Ablauf" (mit -titel für das Gerätefenster)
+  Texte auf der Gemeinden-Seite tragen data-i18n; die Übersetzungen stehen im Skript von gemeinden/index.html.
 Alle Inhalte sind Beispiele. Keine echten Kunden, keine echten Daten, kein Aufruf externer Dienste.
 -->
 
@@ -183,3 +186,84 @@ Alle Inhalte sind Beispiele. Keine echten Kunden, keine echten Daten, kein Aufru
   <p class="mock-klein">Treffer nach Ihren Stichworten. Sie entscheiden, worauf Sie sich bewerben.</p>
 </div>
 <!-- ansicht-ausschreibungs-radar:ende -->
+
+<!-- gemeinden-held:start -->
+<div class="beteiligung" data-beteiligung>
+  <div class="bt-kopf">
+    <p class="held-titel" data-i18n="g.demo.prozess">Beteiligungsprozess</p>
+    <p class="bt-frage" data-i18n="g.demo.frage">Wie soll der Dorfplatz neu gestaltet werden?</p>
+    <ol class="bt-phasen"><li class="fertig" data-i18n="g.demo.ph1">Ideen sammeln</li><li class="jetzt" data-i18n="g.demo.ph2">Abstimmung</li><li data-i18n="g.demo.ph3">Umsetzung</li></ol>
+  </div>
+  <div class="bt-raster">
+  <div class="plan-rahmen bt-plan">
+    <svg class="plan" viewBox="0 0 320 200" aria-hidden="true" focusable="false"><rect width="320" height="200" class="plan-land"/><path class="plan-wald" d="M0 128H128Q134 165 124 200H0Z"/><g class="plan-baeume"><circle cx="24" cy="150" r="7"/><circle cx="52" cy="172" r="8"/><circle cx="88" cy="146" r="6"/><circle cx="100" cy="182" r="7"/><circle cx="18" cy="186" r="6"/></g><g class="plan-strasse"><path d="M0 110H320"/><path d="M160 0V110"/></g><rect class="plan-platz" x="182" y="124" width="74" height="50" rx="4"/><circle class="plan-brunnen" cx="219" cy="149" r="6"/><rect class="plan-halt" x="96" y="116" width="22" height="6" rx="1.5"/><rect class="haus" x="62" y="40" width="64" height="36" rx="2"/><g class="plan-haeuser"><rect class="haus" x="178" y="40" width="22" height="16" rx="1.5"/><rect class="haus" x="208" y="40" width="22" height="16" rx="1.5"/><rect class="haus" x="244" y="44" width="20" height="16" rx="1.5"/><rect class="haus" x="274" y="40" width="24" height="18" rx="1.5"/><rect class="haus" x="184" y="72" width="20" height="16" rx="1.5"/><rect class="haus" x="240" y="72" width="24" height="18" rx="1.5"/><rect class="haus" x="278" y="76" width="22" height="16" rx="1.5"/><rect class="haus" x="20" y="46" width="22" height="18" rx="1.5"/><rect class="haus" x="20" y="78" width="24" height="16" rx="1.5"/><rect class="haus" x="140" y="128" width="24" height="18" rx="1.5"/><rect class="haus" x="268" y="128" width="22" height="18" rx="1.5"/><rect class="haus" x="268" y="156" width="22" height="18" rx="1.5"/><rect class="haus" x="294" y="128" width="18" height="16" rx="1.5"/></g><g class="plan-name"><text x="94" y="33" text-anchor="middle" data-i18n="g.plan.schule">Schulhaus</text><text x="219" y="187" text-anchor="middle" data-i18n="g.plan.platz">Dorfplatz</text><text x="232" y="113" data-i18n="g.plan.strasse">Dorfstrasse</text></g></svg>
+    <button type="button" class="pin" data-vorschlag="0" style="left:68.44%;top:71.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v0">Mehr Sitzbänke beim Brunnen</span></button>
+    <button type="button" class="pin" data-vorschlag="1" style="left:29.38%;top:28.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v1">Veloständer beim Schulhaus</span></button>
+    <button type="button" class="pin" data-vorschlag="2" style="left:33.44%;top:59.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v2">Wartehäuschen an der Bushaltestelle</span></button>
+  </div>
+  <ul class="bt-liste">
+    <li data-vorschlag="0"><span class="bt-text"><strong data-i18n="g.demo.v0">Mehr Sitzbänke beim Brunnen</strong><span data-i18n="g.demo.o0">Dorfplatz</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="24"><span class="bt-zahl">24</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+    <li data-vorschlag="1"><span class="bt-text"><strong data-i18n="g.demo.v1">Veloständer beim Schulhaus</strong><span data-i18n="g.demo.o1">Schulhaus</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="17"><span class="bt-zahl">17</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+    <li data-vorschlag="2"><span class="bt-text"><strong data-i18n="g.demo.v2">Wartehäuschen an der Bushaltestelle</strong><span data-i18n="g.demo.o2">Bushaltestelle</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="31"><span class="bt-zahl">31</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+  </ul>
+  </div>
+  <p class="demo-hinweis" data-i18n="g.demo.hinweis">Beispiel mit erfundenen Inhalten. Klicken Sie auf einen Pin oder unterstützen Sie einen Vorschlag. Nichts wird gespeichert.</p>
+</div>
+<!-- gemeinden-held:ende -->
+
+<!-- gemeinden-ablauf-1-titel:start -->
+Gesprächsnotiz
+<!-- gemeinden-ablauf-1-titel:ende -->
+<!-- gemeinden-ablauf-1:start -->
+<div class="mock">
+  <p class="mock-titel" data-i18n="g.a1.kopf">Erstgespräch</p>
+  <ul class="mock-liste mock-check">
+    <li><b data-i18n="g.a1.p1">Bedürfnisse der Gemeinde</b><span class="mock-ok" aria-hidden="true">✓</span></li>
+    <li><b data-i18n="g.a1.p2">Demo live ansehen</b><span class="mock-ok" aria-hidden="true">✓</span></li>
+    <li><b data-i18n="g.a1.p3">Nächste Schritte festlegen</b><span class="mock-offen" aria-hidden="true"></span></li>
+  </ul>
+  <p class="mock-klein" data-i18n="g.a1.fuss">Kostenlos und unverbindlich</p>
+</div>
+<!-- gemeinden-ablauf-1:ende -->
+
+<!-- gemeinden-ablauf-2-titel:start -->
+Einrichtung
+<!-- gemeinden-ablauf-2-titel:ende -->
+<!-- gemeinden-ablauf-2:start -->
+<div class="mock">
+  <div class="mock-gemeinde"><span class="mock-wappen" aria-hidden="true"></span><b data-i18n="g.a2.name">Beispielgemeinde</b></div>
+  <p class="mock-titel" data-i18n="g.a2.themen">Themen</p>
+  <div class="mock-chips"><span data-i18n="g.a2.t1">Mobilität</span><span data-i18n="g.a2.t2">Wohnen</span><span data-i18n="g.a2.t3">Freiraum</span></div>
+  <p class="mock-titel" data-i18n="g.a2.inhalte">Inhalte</p>
+  <i class="mock-zeile"></i><i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
+  <p class="mock-klein" data-i18n="g.a2.fuss">Logo, Themen und Inhalte Ihrer Gemeinde</p>
+</div>
+<!-- gemeinden-ablauf-2:ende -->
+
+<!-- gemeinden-ablauf-3-titel:start -->
+Startseite der Plattform
+<!-- gemeinden-ablauf-3-titel:ende -->
+<!-- gemeinden-ablauf-3:start -->
+<div class="mock">
+  <div class="mock-banner"><p class="mock-h" data-i18n="g.demo.titel">Mitwirken in Beispielgemeinde</p><i class="mock-zeile hell"></i></div>
+  <ul class="mock-liste">
+    <li><b data-i18n="g.a3.p1">Neugestaltung Dorfplatz</b><span class="mock-tag" data-i18n="g.a3.offen">Offen</span></li>
+    <li><b data-i18n="g.a3.p2">Partizipatives Budget</b><span class="mock-tag" data-i18n="g.a3.bald">Demnächst</span></li>
+  </ul>
+  <p class="mock-klein" data-i18n="g.a3.fuss">Plattform freigeschaltet</p>
+</div>
+<!-- gemeinden-ablauf-3:ende -->
+
+<!-- gemeinden-ablauf-4-titel:start -->
+Betrieb
+<!-- gemeinden-ablauf-4-titel:ende -->
+<!-- gemeinden-ablauf-4:start -->
+<div class="mock">
+  <ul class="mock-liste mock-check">
+    <li><b>Hosting</b><span data-i18n="g.a4.s1">Schweiz</span></li>
+    <li><b>Updates</b><span data-i18n="g.a4.s2">laufend</span></li>
+    <li><b>Support</b><span data-i18n="g.a4.s3">persönlich</span></li>
+  </ul>
+  <p class="mock-klein" data-i18n="g.a4.fuss">Sie kümmern sich um die Inhalte.</p>
+</div>
+<!-- gemeinden-ablauf-4:ende -->

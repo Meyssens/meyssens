@@ -147,6 +147,40 @@ alle('[data-chat]').forEach(function(c){
   });
 });
 
+// --- Beteiligung (Gemeinden): Pin hebt den Vorschlag hervor, Unterstützen zählt mit ---
+alle('[data-beteiligung]').forEach(function(b){
+  var pins = alle('.pin', b), eintraege = alle('.bt-liste li', b);
+  function zeige(k){
+    pins.forEach(function(p){ var an = p.getAttribute('data-vorschlag') === k; p.classList.toggle('aktiv', an); p.setAttribute('aria-pressed', an ? 'true' : 'false'); });
+    eintraege.forEach(function(li){ li.classList.toggle('aktiv', li.getAttribute('data-vorschlag') === k); });
+  }
+  pins.forEach(function(p){ p.addEventListener('click', function(){ zeige(p.getAttribute('data-vorschlag')); }); });
+  eintraege.forEach(function(li){ li.addEventListener('mouseenter', function(){ zeige(li.getAttribute('data-vorschlag')); }); });
+  alle('.bt-stimme', b).forEach(function(k){
+    k.addEventListener('click', function(){
+      var an = k.getAttribute('aria-pressed') !== 'true';
+      k.setAttribute('aria-pressed', an ? 'true' : 'false');
+      k.querySelector('.bt-zahl').textContent = +k.getAttribute('data-n') + (an ? 1 : 0);
+      zeige(k.parentNode.getAttribute('data-vorschlag'));
+    });
+  });
+});
+
+// --- Inhaltsverzeichnis der Langtexte: aktueller Abschnitt wird markiert, sonst keine Bewegung ---
+alle('.toc').forEach(function(toc){
+  if(!hatIO) return;
+  var links = alle('a', toc), nach = {};
+  links.forEach(function(a){ nach[a.getAttribute('href').slice(1)] = a; });
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting || !nach[e.target.id]) return;
+      links.forEach(function(a){ a.classList.remove('aktiv'); a.removeAttribute('aria-current'); });
+      nach[e.target.id].classList.add('aktiv'); nach[e.target.id].setAttribute('aria-current', 'location');
+    });
+  }, {rootMargin:'0px 0px -70% 0px'});
+  Object.keys(nach).forEach(function(id){ var z = document.getElementById(id); if(z) io.observe(z); });
+});
+
 // --- Sticky-Abschnitt: aktive Ansicht bestimmt den Text links ---
 alle('[data-scrolly]').forEach(function(s){
   if(!hatIO) return;
