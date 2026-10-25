@@ -359,3 +359,30 @@ a.feat.tile{text-decoration:none;color:inherit;cursor:pointer}
 .btn-p[target="_blank"],.demo-note .btn-p{min-height:44px}
 .demo-note__aktion{margin-top:.875rem}
 @media(max-width:768px){.demo-box{flex-direction:column;align-items:stretch;gap:1.25rem;padding:1.5rem}.demo-box__aktion{margin-left:0}.demo-box__aktion .btn-p{width:100%;justify-content:center}}
+/* Langtext-Seiten (artikel.json: Branchen mit Langtext und Ratgeber) */
+.artikel-meta{font-size:.8rem;color:var(--ink4);margin-top:1.5rem;max-width:640px}
+.artikel-text{max-width:760px}
+.artikel-text h2{font-size:clamp(1.5rem,2.6vw,2.1rem);margin:3.5rem 0 1rem}
+.artikel-text > h2:first-child,.artikel-text .s-label + h2{margin-top:0}
+.artikel-text h3{font-family:'Syne',sans-serif;font-size:1.08rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin:2rem 0 .5rem}
+.artikel-text p,.artikel-text li{font-size:.98rem;color:var(--ink2);line-height:1.85;overflow-wrap:break-word}
+.artikel-text p{margin-bottom:1rem}
+.artikel-text ul,.artikel-text ol{margin:0 0 1.25rem 1.3rem}
+.artikel-text li{margin-bottom:.45rem;padding-left:.2rem}
+.artikel-text a{color:var(--blue);text-underline-offset:2px}
+.artikel-text strong{font-weight:600;color:var(--ink)}
+.artikel-text .note{margin:1.5rem 0}
+.artikel-text .note p:last-child{margin-bottom:0}
+.artikel-text .checkliste{list-style:none;margin:1.5rem 0;padding:1.5rem 1.75rem;border:1px solid var(--blue-20);border-radius:var(--r-lg);background:var(--white);counter-reset:punkt}
+.artikel-text .checkliste li{counter-increment:punkt;position:relative;padding-left:2.4rem;margin-bottom:.8rem}
+.artikel-text .checkliste li:last-child{margin-bottom:0}
+.artikel-text .checkliste li::before{content:counter(punkt);position:absolute;left:0;top:.1rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--blue-8);color:var(--blue);font-size:.75rem;font-weight:600;display:flex;align-items:center;justify-content:center}
+.artikel-text .vorlage{margin:1rem 0 1.5rem;padding:1.1rem 1.4rem;border-left:3px solid var(--blue);background:var(--surface);border-radius:0 var(--r-sm) var(--r-sm) 0}
+.artikel-text .vorlage p{font-size:.92rem;margin-bottom:.6rem}
+.artikel-text .vorlage p:last-child{margin-bottom:0}
+.artikel-text .marke{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .55rem;border-radius:4px;background:var(--blue-8);color:var(--blue);border:1px solid var(--blue-12);margin-bottom:.5rem}
+.artikel-ehrlich{max-width:640px}
+.feat-grid.zwei{grid-template-columns:repeat(2,1fr)}
+.quellen{margin-top:1.5rem}
+.quellen li{font-size:.85rem;line-height:1.7;margin-bottom:.35rem}
+@media(max-width:640px){.feat-grid.zwei{grid-template-columns:1fr}.artikel-text h2{font-size:1.45rem;hyphens:auto;-webkit-hyphens:auto}.artikel-text .checkliste{padding:1.1rem 1.1rem}}

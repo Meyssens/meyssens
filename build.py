@@ -7,6 +7,8 @@ Nur Python-Standardbibliothek.
 Quellen:
   produkte.json            Produktdaten
   branchen.json            Branchendaten
+  artikel.json             Langtext-Seiten (Branchen und Ratgeber), Text in artikel/<slug>.html
+  vorlage_artikel.html     Vorlage für branchen/<slug>/ und ratgeber/<slug>/ aus artikel.json
   vorlage_branche.html     Vorlage für branchen/<slug>/index.html
   vorlage_produkt.html     Vorlage für produkte/<slug>/index.html
   vorlage_unternehmen.html Vorlage für unternehmen/index.html
@@ -154,6 +156,62 @@ def brotkrumen(*stufen):
         {"@type": "ListItem", "position": i, "name": n, "item": DOMAIN + u} for i, (n, u) in enumerate(stufen, 1)]}
 
 
+AUTOR = "Lionel Nickelsen"
+# Langtext-Seiten: Ausgabeordner, Zurück-Link und Formularfeld je Art
+ARTEN = {
+    "branche": {"ordner": "branchen", "zurueck": ("/unternehmen/#branchen", "Alle Branchen"),
+                "anfrage": "Interesse für Ihren Betrieb?", "betreff": "Branchenanfrage über meyssens.ch: %s",
+                "feld": ("branche", "Branche")},
+    "ratgeber": {"ordner": "ratgeber", "zurueck": ("/unternehmen/#ratgeber", "Alle Ratgeber"),
+                 "anfrage": "Fragen zum Thema?", "betreff": "Anfrage zum Ratgeber über meyssens.ch: %s",
+                 "feld": ("thema", "Thema")},
+}
+WORTE = (1500, 2200)
+
+
+def worte(text):
+    # Wörter im sichtbaren Text eines HTML-Fragments
+    return len(re.findall(r"\w[\w'’.-]*", html.unescape(re.sub(r"<[^>]+>", " ", text))))
+
+
+def pruefe_artikel(a, nach_slug):
+    fehlt = [f for f in ("slug", "art", "name", "titel", "beschreibung", "h1", "lead", "geprueft") if not a.get(f)]
+    if a.get("art") not in ARTEN:
+        fehlt.append("art (branche oder ratgeber)")
+    if len(a.get("weiterlesen", [])) != 4:
+        fehlt.append("weiterlesen (genau 4)")
+    if len(a.get("faq", [])) < 3:
+        fehlt.append("faq (mindestens 3)")
+    if not a.get("quellen"):
+        fehlt.append("quellen")
+    if not 1 <= len(a.get("produkte", [])) <= 4:
+        fehlt.append("produkte (1 bis 4)")
+    if fehlt:
+        raise SystemExit("Artikel %s: %s" % (a.get("slug", "?"), ", ".join(fehlt)))
+    unbekannt = [s for s in a["produkte"] if s not in nach_slug]
+    if unbekannt:
+        raise SystemExit("Artikel %s: unbekannte Produkte %s" % (a["slug"], ", ".join(unbekannt)))
+    if not re.fullmatch(r"[a-z0-9-]+", a["slug"]):
+        raise SystemExit("Ungültiger Artikel-Slug: %s" % a["slug"])
+    if not all(q["url"].startswith("https://") for q in a["quellen"]):
+        raise SystemExit("Artikel %s: Quellen brauchen https-Links" % a["slug"])
+
+
+def ehrlich(produkte):
+    # Ehrlichkeitsvermerk aus dem Status der Produkte auf der Seite (produkte.json)
+    def liste(namen):
+        return " und ".join([", ".join(namen[:-1]), namen[-1]] if len(namen) > 1 else namen)
+    teile = []
+    for stufe, text in (("Pilotphase", "in der Pilotphase"), ("In Planung", "in Planung")):
+        namen = [p["name"] for p in produkte if p["status"] == stufe]
+        if namen:
+            teile.append("%s %s" % (liste(namen), text))
+    return ("Meyssens ist ein Einzelunternehmen in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen. "
+            "Stand der hier genannten Produkte: %s. "
+            "Ein Werkzeug ersetzt keine rechtliche Prüfung, und am Ende entscheidet immer ein Mensch."
+            % ", ".join(teile))
+
+
 START = ("Startseite", "/")
 UNTERNEHMEN = ("Unternehmen und Vereine", "/unternehmen/")
 
@@ -189,6 +247,15 @@ def main():
         if not re.fullmatch(r"[a-z0-9-]+", b["slug"]) or b["slug"] in bslugs:
             raise SystemExit("Ungültiger oder doppelter Branchen-Slug: %s" % b["slug"])
         bslugs.add(b["slug"])
+
+    artikel = json.loads(lies("artikel.json"))
+    for a in artikel:
+        pruefe_artikel(a, nach_slug)
+    aslugs = {(a["art"], a["slug"]) for a in artikel}
+    if len(aslugs) != len(artikel) or {a["slug"] for a in artikel if a["art"] == "branche"} & bslugs:
+        raise SystemExit("Doppelter Artikel-Slug")
+    artikel_branchen = [a for a in artikel if a["art"] == "branche"]
+    ratgeber = [a for a in artikel if a["art"] == "ratgeber"]
 
     start = lies("index.html")
     gemeinden = lies("gemeinden/index.html")
@@ -260,6 +327,73 @@ def main():
         })
         schreibe("branchen/%s/index.html" % b["slug"], fuelle(vorlage_branche, werte))
 
+    # Alle Seiten, auf die Langtext-Seiten intern verlinken dürfen
+    bekannte_seiten = {"/", "/gemeinden/", "/unternehmen/"}
+    bekannte_seiten |= {"/produkte/%s/" % s for s in slugs} | {"/branchen/%s/" % s for s in bslugs}
+    bekannte_seiten |= {"/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]) for a in artikel}
+
+    vorlage_artikel = lies("vorlage_artikel.html")
+    for a in artikel:
+        art = ARTEN[a["art"]]
+        pfad = "/%s/%s/" % (art["ordner"], a["slug"])
+        inhalt = lies("artikel/%s.html" % a["slug"]).rstrip("\n")
+        for link in a["weiterlesen"]:
+            if link["url"] not in bekannte_seiten:
+                raise SystemExit("Artikel %s: Weiterlesen auf unbekannte Seite %s" % (a["slug"], link["url"]))
+        for ziel in re.findall(r'href="(/[^"#]*)', inhalt):
+            if ziel not in bekannte_seiten:
+                raise SystemExit("Artikel %s: interner Link auf unbekannte Seite %s" % (a["slug"], ziel))
+        roh = inhalt + json.dumps(a, ensure_ascii=False)
+        if "[Status" in roh or "ß" in roh:
+            raise SystemExit("Artikel %s: Platzhalter [Status ...] oder ß im Text" % a["slug"])
+        datum = datetime.date.fromisoformat(a["geprueft"])
+        werte = dict(gemeinsam, **{
+            "titel": html.escape(a["titel"]),
+            "beschreibung": html.escape(a["beschreibung"]),
+            "url": DOMAIN + pfad,
+            "name": html.escape(a["name"]),
+            "chip": html.escape(a["name"] if a["art"] == "branche" else "Ratgeber"),
+            "h1": html.escape(a["h1"]),
+            "lead": html.escape(a["lead"]),
+            "autor": AUTOR,
+            "geprueft": datum.strftime("%d.%m.%Y"),
+            "inhalt": inhalt,
+            "faq": "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
+                             % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in a["faq"]),
+            "weiterlesen": "\n".join('    <a href="%s" class="feat tile">\n      <h3>%s</h3>\n      <p>%s</p>\n'
+                                     '      <span class="way-go">Weiterlesen %s</span>\n    </a>'
+                                     % (l["url"], html.escape(l["titel"]), html.escape(l["grund"]), PFEIL)
+                                     for l in a["weiterlesen"]),
+            "ehrlich": html.escape(ehrlich([nach_slug[s] for s in a["produkte"]])),
+            "produkte": "\n".join(kachel(nach_slug[s]) for s in a["produkte"]),
+            "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
+                                 % (html.escape(q["url"]), html.escape(q["titel"])) for q in a["quellen"]),
+            "zurueck_url": art["zurueck"][0],
+            "zurueck_text": art["zurueck"][1],
+            "anfrage_titel": art["anfrage"],
+            "betreff": html.escape(art["betreff"] % a["name"]),
+            "feld": art["feld"][0],
+            "feld_label": art["feld"][1],
+            # Article und FAQPage nur aus dem sichtbaren Inhalt der Seite
+            "ld": ld(brotkrumen(START, UNTERNEHMEN, (a["name"], pfad)),
+                     {"@type": "Article", "headline": a["h1"], "description": a["beschreibung"],
+                      "inLanguage": "de-CH", "dateModified": a["geprueft"], "mainEntityOfPage": DOMAIN + pfad,
+                      "author": {"@type": "Person", "name": AUTOR},
+                      "publisher": {"@id": DOMAIN + "/#org", "@type": "Organization", "name": "Meyssens",
+                                    "logo": DOMAIN + "/logo.png"},
+                      "image": DOMAIN + "/og-image.png"},
+                     {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
+                      "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in a["faq"]]}),
+            "formular_ziel": formular_ziel,
+            "einwilligung": einwilligung,
+            "formular_skript": formular_skript,
+        })
+        seite = fuelle(vorlage_artikel, werte)
+        n = worte(zwischen(seite, '<main id="main"', '<section id="quellen"'))
+        hinweis = "" if WORTE[0] <= n <= WORTE[1] else "  ACHTUNG: ausserhalb %d bis %d" % WORTE
+        print("Wörter %s: %d%s" % (pfad, n, hinweis))
+        schreibe(pfad.strip("/") + "/index.html", seite)
+
     werte = dict(gemeinsam, **{
         "titel": "Für Unternehmen und Vereine – Meyssens",
         "beschreibung": html.escape("Digitale Werkzeuge für Unternehmen und Vereine: Umfragen, Newsletter, "
@@ -268,12 +402,18 @@ def main():
         "kacheln": "\n".join(kacheln),
         "ld": ld(brotkrumen(START, UNTERNEHMEN)),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
-                               for b in branchen),
+                               for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
+        "ratgeber": "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (a["slug"], html.escape(a["name"]), PFEIL)
+                               for a in ratgeber),
     })
     schreibe("unternehmen/index.html", fuelle(lies("vorlage_unternehmen.html"), werte))
 
     # Verwaiste Ordner nur melden, nicht löschen
-    for ordner, bekannt, quelle in (("produkte", slugs, "produkte.json"), ("branchen", bslugs, "branchen.json")):
+    bslugs_alle = bslugs | {a["slug"] for a in artikel_branchen}
+    for ordner, bekannt, quelle in (("produkte", slugs, "produkte.json"), ("branchen", bslugs_alle, "branchen.json/artikel.json"),
+                                    ("ratgeber", {a["slug"] for a in ratgeber}, "artikel.json")):
+        if not (ROOT / ordner).is_dir():
+            continue
         for d in sorted((ROOT / ordner).iterdir()):
             if d.is_dir() and d.name not in bekannt:
                 print("Hinweis: %s/%s steht nicht in %s" % (ordner, d.name, quelle))
@@ -282,6 +422,7 @@ def main():
     seiten = [("/", "1.0"), ("/gemeinden/", "0.9"), ("/unternehmen/", "0.8")]
     seiten += [("/produkte/%s/" % p["slug"], "0.6") for p in produkte]
     seiten += [("/branchen/%s/" % b["slug"], "0.6") for b in branchen]
+    seiten += [("/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]), "0.6") for a in artikel]
     zeilen = ["  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>"
               % (DOMAIN, pfad, heute, prio) for pfad, prio in seiten]
     schreibe("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
