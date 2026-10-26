@@ -1,7 +1,9 @@
 <!--
 Bausteine für Startseite und Produktseiten (build.py liest die Abschnitte zwischen den Markierungen name:start und name:ende).
   held                     Produktansicht unter dem Hero der Startseite (scroll-getrieben, assets/demos.js)
-  demo-<slug>              Interaktive Mini-Demo für Produkte in der Pilotphase, fest vorgegebene Beispielinhalte
+  demo-<slug>              Interaktive Mini-Demo für Produkte in der Pilotphase, fest vorgegebene Beispielinhalte.
+                           Bei Automatisierungs-Bausteinen (In Planung) die Demo der Branchenseite, umgeschaltet über
+                           data-wahl / data-wahl-knopf / data-wahl-feld (alle Inhalte stehen im HTML)
   ansicht-<slug>           Statische Beispielansicht für Produkte in Planung
   gemeinden-held           Interaktives Beispiel einer Beteiligungsplattform unter dem Hero der Gemeinden-Seite
   gemeinden-ablauf-<n>     Beispielansichten im Sticky-Abschnitt "Ablauf" (mit -titel für das Gerätefenster)
@@ -267,3 +269,271 @@ Betrieb
   <p class="mock-klein" data-i18n="g.a4.fuss">Sie kümmern sich um die Inhalte.</p>
 </div>
 <!-- gemeinden-ablauf-4:ende -->
+<!-- demo-online-terminanfrage-zahnarztpraxis:start -->
+<div class="mock wahl" data-wahl>
+  <p class="mock-titel">Terminanfrage · Beispielpraxis</p>
+  <p class="wahl-frage">Worum geht es?</p>
+  <div class="wahl-knoepfe" role="group" aria-label="Worum geht es?">
+    <button type="button" class="wahl-knopf" aria-pressed="true" data-wahl-knopf="kontrolle">Kontrolle</button>
+    <button type="button" class="wahl-knopf" aria-pressed="false" data-wahl-knopf="dh">Dentalhygiene</button>
+    <button type="button" class="wahl-knopf" aria-pressed="false" data-wahl-knopf="schmerz">Schmerzen oder Unfall</button>
+  </div>
+  <div class="wahl-felder" aria-live="polite">
+    <div data-wahl-feld="kontrolle">
+      <ul class="mock-liste">
+        <li><b>Bereits in Behandlung</b><span>Ja</span></li>
+        <li><b>Bevorzugt</b><span>Dienstag oder Donnerstag, vormittags</span></li>
+      </ul>
+      <div class="mock-entwurf">
+        <p class="mock-titel">Entwurf Bestätigung</p>
+        <p>Guten Tag Frau Muster, vielen Dank für Ihre Anfrage zur Kontrolle. Termin: setzt die MPA ein.</p>
+        <div class="mock-knoepfe"><span class="mock-knopf hell">Termin einsetzen</span><span class="mock-knopf">Prüfen und senden</span></div>
+      </div>
+    </div>
+    <div data-wahl-feld="dh" hidden>
+      <ul class="mock-liste">
+        <li><b>Bereits in Behandlung</b><span>Nein, neu</span></li>
+        <li><b>Bevorzugt</b><span>Mittwoch, nachmittags</span></li>
+      </ul>
+      <div class="mock-entwurf">
+        <p class="mock-titel">Entwurf Bestätigung</p>
+        <p>Guten Tag Herr Beispiel, vielen Dank für Ihre Anfrage zur Dentalhygiene. Wir melden uns mit einem Terminvorschlag.</p>
+        <div class="mock-knoepfe"><span class="mock-knopf hell">Termin einsetzen</span><span class="mock-knopf">Prüfen und senden</span></div>
+      </div>
+    </div>
+    <div data-wahl-feld="schmerz" hidden>
+      <div class="wahl-hinweis">
+        <b>Bitte rufen Sie direkt an</b>
+        <p>Bei Schmerzen oder nach einem Unfall nimmt das Formular keine Anfrage entgegen. Telefon der Beispielpraxis: 061 000 00 00.</p>
+      </div>
+    </div>
+  </div>
+  <p class="mock-klein">Erfundene Beispielpraxis. Kein Freitext für Beschwerden. Es wird nichts gespeichert oder versendet.</p>
+</div>
+<!-- demo-online-terminanfrage-zahnarztpraxis:ende -->
+<!-- ansicht-laborauftrag-zahnarztpraxis:start -->
+<div class="mock">
+  <p class="mock-h">Offene Laboraufträge</p>
+  <ul class="mock-liste mock-treffer">
+    <li><b>Fall 2417 · Krone</b><span>Dentallabor Beispiel · zurück bis 4.11. · Termin 6.11.</span></li>
+    <li><b>Fall 2422 · Aufbissschiene</b><span class="mock-tag dringend">Noch nicht eingetroffen, Termin übermorgen</span></li>
+  </ul>
+  <div class="mock-entwurf">
+    <p class="mock-titel">Entwurf Materialbestellung</p>
+    <p>Abformmaterial, übliche Menge 2 Packungen · Einweghandschuhe M, 10 Boxen</p>
+    <div class="mock-knoepfe"><span class="mock-knopf hell">Menge ändern</span><span class="mock-knopf">Prüfen und senden</span></div>
+  </div>
+  <p class="mock-klein">Fall-Nummer statt Name. Erfundene Beispieldaten.</p>
+</div>
+<!-- ansicht-laborauftrag-zahnarztpraxis:ende -->
+<!-- ansicht-praxis-textbausteine:start -->
+<div class="mock">
+  <div class="mock-chips"><span>Öffnungszeiten</span><span>Notfalldienst</span><span>Anfahrt</span><span>Dentalhygiene</span><span>Erste Konsultation</span></div>
+  <div class="mock-entwurf">
+    <p class="mock-titel">Textbaustein · Notfalldienst</p>
+    <p>Ausserhalb unserer Öffnungszeiten erreichen Sie den zahnärztlichen Notfalldienst unter der Nummer, die wir hier hinterlegen.</p>
+    <p class="mock-klein">Zuletzt angepasst vom Praxisteam, gilt in allen Entwürfen.</p>
+    <div class="mock-knoepfe"><span class="mock-knopf hell">Bearbeiten</span><span class="mock-knopf">In Antwortentwurf übernehmen</span></div>
+  </div>
+  <p class="mock-klein">Beispielinhalte. Keine Patientendaten in der Sammlung.</p>
+</div>
+<!-- ansicht-praxis-textbausteine:ende -->
+<!-- demo-schadenmeldung-triage:start -->
+<div class="mock wahl" data-wahl>
+  <p class="mock-titel">Schadenmeldung · Beispielverwaltung</p>
+  <p class="wahl-frage">Was ist passiert?</p>
+  <div class="wahl-knoepfe" role="group" aria-label="Was ist passiert?">
+    <button type="button" class="wahl-knopf" aria-pressed="true" data-wahl-knopf="heizung">Heizung bleibt kalt</button>
+    <button type="button" class="wahl-knopf" aria-pressed="false" data-wahl-knopf="storen">Storen klemmt</button>
+    <button type="button" class="wahl-knopf" aria-pressed="false" data-wahl-knopf="wasser">Wasser tritt aus</button>
+  </div>
+  <div class="wahl-felder" aria-live="polite">
+    <div data-wahl-feld="heizung">
+      <ul class="mock-liste">
+        <li><b>Wohnung</b><span>Beispielweg 12, 3. OG links</span></li>
+        <li><b>Vorschlag Kategorie</b><span class="mock-tag">Heizung</span></li>
+        <li><b>Vorschlag Dringlichkeit</b><span class="mock-tag dringend">Hoch</span></li>
+      </ul>
+      <div class="mock-entwurf">
+        <p class="mock-titel">Entwurf Antwort</p>
+        <p>Guten Tag, wir haben Ihre Meldung erhalten und melden uns mit einem Termin für die Reparatur.</p>
+        <div class="mock-knoepfe"><span class="mock-knopf hell">Vorschlag ändern</span><span class="mock-knopf">Prüfen und senden</span></div>
+      </div>
+    </div>
+    <div data-wahl-feld="storen" hidden>
+      <ul class="mock-liste">
+        <li><b>Wohnung</b><span>Beispielweg 12, 1. OG rechts</span></li>
+        <li><b>Vorschlag Kategorie</b><span class="mock-tag">Storen und Fenster</span></li>
+        <li><b>Vorschlag Dringlichkeit</b><span class="mock-tag">Normal</span></li>
+      </ul>
+      <div class="mock-entwurf">
+        <p class="mock-titel">Entwurf Antwort</p>
+        <p>Guten Tag, vielen Dank für die Meldung mit Foto. Wir prüfen sie und melden uns mit dem weiteren Vorgehen.</p>
+        <div class="mock-knoepfe"><span class="mock-knopf hell">Vorschlag ändern</span><span class="mock-knopf">Prüfen und senden</span></div>
+      </div>
+    </div>
+    <div data-wahl-feld="wasser" hidden>
+      <div class="wahl-hinweis">
+        <b>Notfall: bitte sofort anrufen</b>
+        <p>Notfallnummer der Beispielverwaltung: 061 000 00 01. Die Meldung wird zusätzlich als Notfall in der Liste markiert.</p>
+      </div>
+    </div>
+  </div>
+  <p class="mock-klein">Vorschlag, kein Entscheid: Den Auftrag erteilt die Bewirtschaftung. Erfundene Beispieldaten, nichts wird versendet.</p>
+</div>
+<!-- demo-schadenmeldung-triage:ende -->
+<!-- ansicht-besichtigungstermine-mietobjekt:start -->
+<div class="mock">
+  <p class="mock-h">Besichtigung Beispielweg 12, 3½ Zimmer</p>
+  <ul class="mock-liste">
+    <li><b>Dienstag, 17.30 Uhr</b><span>4 von 6 Plätzen gebucht</span></li>
+    <li><b>Dienstag, 18.00 Uhr</b><span class="mock-tag">Ausgebucht</span></li>
+    <li><b>Samstag, 10.00 Uhr</b><span>2 von 6 Plätzen gebucht</span></li>
+  </ul>
+  <div class="mock-entwurf">
+    <p class="mock-titel">Entwurf Erinnerung für Dienstag</p>
+    <i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
+    <div class="mock-knoepfe"><span class="mock-knopf">Prüfen und senden</span></div>
+  </div>
+  <p class="mock-klein">Nur Name und Kontakt, keine Bewerbungsunterlagen. Erfundene Beispieldaten.</p>
+</div>
+<!-- ansicht-besichtigungstermine-mietobjekt:ende -->
+<!-- ansicht-uebergabeprotokoll:start -->
+<div class="mock">
+  <p class="mock-h">Übergabe Beispielweg 12, 3. OG links</p>
+  <ul class="mock-liste mock-check">
+    <li><b>Küche</b><span>In Ordnung · 2 Fotos</span></li>
+    <li><b>Bad</b><span>Bemerkung: Fuge beim Lavabo · 1 Foto</span></li>
+    <li><b>Zählerstand Strom</b><span>Abgelesen und fotografiert</span></li>
+    <li><b>Schlüssel</b><span>3 Wohnung, 1 Briefkasten</span></li>
+  </ul>
+  <div class="mock-knoepfe"><span class="mock-knopf hell">Unterschrift Mieterschaft</span><span class="mock-knopf hell">Unterschrift Verwaltung</span><span class="mock-knopf">PDF-Entwurf erstellen</span></div>
+  <p class="mock-klein">Ob ein Mangel vorliegt, entscheidet die Verwaltung. Erfundene Beispieldaten.</p>
+</div>
+<!-- ansicht-uebergabeprotokoll:ende -->
+<!-- demo-zeiterfassung-sia-phasen:start -->
+<div class="mock wahl" data-wahl>
+  <p class="mock-titel">Zeiterfassung · Beispielbüro</p>
+  <div class="wahl-knoepfe" role="group" aria-label="Ansicht wählen">
+    <button type="button" class="wahl-knopf" aria-pressed="true" data-wahl-knopf="woche">Woche</button>
+    <button type="button" class="wahl-knopf" aria-pressed="false" data-wahl-knopf="rapport">Monatsrapport</button>
+    <button type="button" class="wahl-knopf" aria-pressed="false" data-wahl-knopf="akonto">Akonto-Entwurf</button>
+  </div>
+  <div class="wahl-felder" aria-live="polite">
+    <div data-wahl-feld="woche">
+      <ul class="mock-liste">
+        <li><b>Montag · Schulhaus Rheinweg</b><span>Vorprojekt · 6.5 h</span></li>
+        <li><b>Dienstag · Wohnhaus Lindengasse</b><span>Bauprojekt · 3.5 h</span></li>
+        <li><b>Mittwoch · Schulhaus Rheinweg</b><span class="mock-tag dringend">Phase fehlt · 4.0 h</span></li>
+      </ul>
+      <p class="mock-klein">Hinweis: Ein Eintrag hat noch keine Phase.</p>
+    </div>
+    <div data-wahl-feld="rapport" hidden>
+      <p class="mock-h">Schulhaus Rheinweg, Oktober</p>
+      <ul class="mock-liste mock-buchungen">
+        <li><b>Vorprojekt</b><span>42.5 h</span></li>
+        <li><b>Bauprojekt</b><span>18.0 h</span></li>
+      </ul>
+      <p class="mock-stand"><span>Total</span><b>60.5 h</b></p>
+      <div class="mock-knoepfe"><span class="mock-knopf hell">Zuordnung korrigieren</span><span class="mock-knopf">Prüfen und freigeben</span></div>
+    </div>
+    <div data-wahl-feld="akonto" hidden>
+      <ul class="mock-liste mock-buchungen">
+        <li><b>60.5 h zu CHF 140.00 (Beispielansatz)</b><span class="plus">8 470.00</span></li>
+        <li><b>Bisherige Akontozahlungen</b><span class="minus">− 5 000.00</span></li>
+      </ul>
+      <p class="mock-stand"><span>Entwurf Akontorechnung</span><b>CHF 3 470.00</b></p>
+      <div class="mock-knoepfe"><span class="mock-knopf hell">Bearbeiten</span><span class="mock-knopf">Freigeben</span></div>
+    </div>
+  </div>
+  <p class="mock-klein">Erfundene Projekte und Beispielwerte, kein echter Ansatz. Den Versand übernimmt das Büro.</p>
+</div>
+<!-- demo-zeiterfassung-sia-phasen:ende -->
+<!-- ansicht-akontorechnung-architektur:start -->
+<div class="mock">
+  <p class="mock-h">Fällige Akontorechnungen</p>
+  <ul class="mock-liste mock-treffer">
+    <li><b>Schulhaus Rheinweg</b><span>Rapport Oktober freigegeben · Entwurf bereit</span></li>
+    <li><b>Wohnhaus Lindengasse</b><span class="mock-tag">Rapport noch nicht freigegeben</span></li>
+  </ul>
+  <div class="mock-entwurf">
+    <p class="mock-titel">Entwurf · Akontorechnung Nr. 3</p>
+    <i class="mock-zeile"></i><i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
+    <div class="mock-knoepfe"><span class="mock-knopf hell">Berechnung prüfen</span><span class="mock-knopf">Freigeben</span></div>
+  </div>
+  <p class="mock-klein">Erfundene Projekte. Ansätze und Regeln legt das Büro fest.</p>
+</div>
+<!-- ansicht-akontorechnung-architektur:ende -->
+<!-- ansicht-protokoll-pendenzen:start -->
+<div class="mock">
+  <p class="mock-h">Bausitzung 7 · Schulhaus Rheinweg</p>
+  <ul class="mock-liste mock-treffer">
+    <li><b>Farbkonzept Fassade bemustern</b><span>Architektur · bis 12.11.</span></li>
+    <li><b>Offerte Elektro nachreichen</b><span class="mock-tag dringend">Elektroplanung · überfällig</span></li>
+    <li><b>Zufahrt Baustelle klären</b><span>Bauleitung · übernommen aus Sitzung 6</span></li>
+  </ul>
+  <div class="mock-knoepfe"><span class="mock-knopf hell">Beschluss erfassen</span><span class="mock-knopf">Protokoll freigeben</span></div>
+  <p class="mock-klein">Erfundenes Projekt. Keine Aufnahme, kein Transkript.</p>
+</div>
+<!-- ansicht-protokoll-pendenzen:ende -->
+<!-- demo-arbeitszeit-pflege:start -->
+<div class="mock wahl" data-wahl>
+  <p class="mock-titel">Arbeitszeit · Beispielbetrieb</p>
+  <div class="wahl-knoepfe" role="group" aria-label="Ansicht wählen">
+    <button type="button" class="wahl-knopf" aria-pressed="true" data-wahl-knopf="woche">Woche</button>
+    <button type="button" class="wahl-knopf" aria-pressed="false" data-wahl-knopf="hinweise">Hinweise</button>
+    <button type="button" class="wahl-knopf" aria-pressed="false" data-wahl-knopf="abschluss">Monatsabschluss</button>
+  </div>
+  <div class="wahl-felder" aria-live="polite">
+    <div data-wahl-feld="woche">
+      <ul class="mock-liste">
+        <li><b>Montag · Frühdienst</b><span>07.00 bis 15.30 · Pause 30 Min.</span></li>
+        <li><b>Dienstag · Spätdienst</b><span>14.00 bis 22.30 · Pause 30 Min.</span></li>
+        <li><b>Mittwoch · Frühdienst</b><span>07.00 bis 15.30 · <span class="mock-tag dringend">Pause fehlt</span></span></li>
+      </ul>
+    </div>
+    <div data-wahl-feld="hinweise" hidden>
+      <ul class="mock-liste mock-treffer">
+        <li><b>Dienstag auf Mittwoch</b><span>Ruhezeit 8.5 Stunden, kürzer als die hinterlegte Regel</span></li>
+        <li><b>Mittwoch</b><span>Pause nicht erfasst</span></li>
+      </ul>
+      <p class="mock-klein">Die Teamleitung klärt jeden Hinweis. Der Baustein beurteilt nichts arbeitsrechtlich.</p>
+    </div>
+    <div data-wahl-feld="abschluss" hidden>
+      <ul class="mock-liste">
+        <li><b>Oktober · Beispielperson</b><span>Entwurf</span></li>
+        <li><b>Offene Hinweise</b><span class="mock-tag dringend">2</span></li>
+      </ul>
+      <div class="mock-knoepfe"><span class="mock-knopf hell">Hinweise klären</span><span class="mock-knopf">Freigeben</span></div>
+    </div>
+  </div>
+  <p class="mock-klein">Erfundene Beispieldaten. Die Regel zur Ruhezeit legt der Betrieb fest.</p>
+</div>
+<!-- demo-arbeitszeit-pflege:ende -->
+<!-- ansicht-besichtigung-pflegeheim:start -->
+<div class="mock">
+  <p class="mock-h">Besichtigung · Beispielheim</p>
+  <ul class="mock-liste">
+    <li><b>Donnerstag, 14.00 Uhr</b><span>Frei</span></li>
+    <li><b>Freitag, 10.00 Uhr</b><span class="mock-tag">Gebucht</span></li>
+  </ul>
+  <div class="mock-entwurf">
+    <p class="mock-titel">Entwurf Bestätigung</p>
+    <p>Ihr Termin: Donnerstag, 14.00 Uhr, Treffpunkt Empfang. Ansprechperson: Leitung Empfang.</p>
+    <div class="mock-knoepfe"><span class="mock-knopf">Prüfen und senden</span></div>
+  </div>
+  <p class="mock-klein">Neutraler Inhalt, keine Gesundheitsangaben. Keine Anmeldung, kein Wartelisteneintrag.</p>
+</div>
+<!-- ansicht-besichtigung-pflegeheim:ende -->
+<!-- ansicht-abrechnung-vorpruefung:start -->
+<div class="mock">
+  <p class="mock-h">Vorprüfung Export Oktober</p>
+  <ul class="mock-liste mock-treffer">
+    <li><b>Klient K-0193</b><span class="mock-tag dringend">Leistung ausserhalb des Einsatzzeitraums</span></li>
+    <li><b>Klientin K-0207</b><span class="mock-tag dringend">Pflichtfeld fehlt</span></li>
+    <li><b>Datei</b><span>Unverändert, nur Warnungen</span></li>
+  </ul>
+  <div class="mock-knoepfe"><span class="mock-knopf">In der Pflegesoftware korrigieren</span></div>
+  <p class="mock-klein">Keine Kürzungen, keine pflegerische Beurteilung. Erfundene Beispieldaten.</p>
+</div>
+<!-- ansicht-abrechnung-vorpruefung:ende -->

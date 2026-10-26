@@ -196,6 +196,17 @@ alle('[data-scrolly]').forEach(function(s){
   alle('.schritt-bild', s).forEach(function(b){ io.observe(b); });
 });
 
+// --- Bausteine: Ansicht wählen, alle Felder stehen im HTML, nur eines ist sichtbar ---
+alle('[data-wahl]').forEach(function(w){
+  var knoepfe = alle('[data-wahl-knopf]', w), felder = alle('[data-wahl-feld]', w);
+  knoepfe.forEach(function(k){
+    k.addEventListener('click', function(){
+      knoepfe.forEach(function(x){ x.setAttribute('aria-pressed', x === k ? 'true' : 'false'); });
+      felder.forEach(function(f){ f.hidden = f.getAttribute('data-wahl-feld') !== k.getAttribute('data-wahl-knopf'); });
+    });
+  });
+});
+
 // --- Grosse Zahlen: kurz hochzählen, Endwert steht bereits im HTML ---
 if(!ruhig && hatIO){
   var zio = new IntersectionObserver(function(es){

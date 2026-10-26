@@ -345,12 +345,12 @@ const FORM_MSG = {
   it: {ok:"Grazie! Vi risponderemo al più presto.", err:"Purtroppo non ha funzionato. Scriveteci direttamente a lionel@meyssens.ch."},
   en: {ok:"Thank you! We will get back to you shortly.", err:"Sorry, that did not work. Please write to us directly at lionel@meyssens.ch."}
 };
-const contactForm = document.querySelector('form[action*="formspree.io"]');
-if(contactForm){
+// Alle Formulare der Seite (Kontakt und, auf Branchenseiten, je ein Formular pro Baustein)
+document.querySelectorAll('form[action*="formspree.io"]').forEach(function(contactForm){
   contactForm.addEventListener('submit', function(e){
     e.preventDefault();
-    const btn = document.getElementById('sbtn');
-    const msg = document.getElementById('form-msg');
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const msg = contactForm.querySelector('[role="status"]');
     const t = FORM_MSG[document.documentElement.lang] || FORM_MSG.de;
     if(btn) btn.disabled = true;
     fetch(contactForm.action, {method:'POST', body:new FormData(contactForm), headers:{'Accept':'application/json'}})
@@ -364,7 +364,7 @@ if(contactForm){
       })
       .then(function(){ if(btn) btn.disabled = false; });
   });
-}
+});
 
 </script>
 </body>

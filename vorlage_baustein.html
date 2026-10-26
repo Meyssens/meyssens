@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{titel}}</title>
+<meta name="description" content="{{beschreibung}}">
+<meta property="og:title" content="{{titel}}">
+<meta property="og:description" content="{{beschreibung}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://meyssens.ch/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Meyssens – Digitale Infrastruktur für Organisationen">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Meyssens">
+<link rel="canonical" href="{{url}}">
+<link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
+{{head}}
+<link rel="stylesheet" href="/assets/stil.css">
+{{ld}}
+</head>
+<body class="stil">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+{{kopf}}
+
+
+<main id="main" class="baustein">
+<section class="page-hero">
+  <a href="{{branche_url}}#automatisierung" class="back-link">← {{branche}}</a>
+  <div class="chip"><span class="chip-dot"></span><span>{{status_badge}}</span></div>
+  <h1>{{name}}</h1>
+  <p class="lead">{{kurzbeschreibung}}</p>
+  <p class="artikel-meta">Baustein für {{branche}} · zuletzt geprüft am {{geprueft}} · Allgemeine Information, keine Rechtsberatung</p>
+</section>
+
+<section id="ansicht" class="ansicht-wrap">
+  <h2 class="sr-only">Beispiel</h2>
+{{ansicht}}
+</section>
+
+<section id="details" class="dunkel">
+  <div class="kopf-mitte r">
+    <span class="s-label">Ablauf</span>
+    <h2>Wer was übernimmt</h2>
+  </div>
+  <div class="feat-grid r">
+    <div class="feat">
+      <div class="feat-tag-row">Heute</div>
+      <h3>Heute von Hand</h3>
+      <p>{{problem}}</p>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row">Baustein</div>
+      <h3>Das übernimmt der Baustein</h3>
+      <p>{{loesung}}</p>
+    </div>
+    <div class="feat">
+      <div class="feat-tag-row">Mensch</div>
+      <h3>Das entscheiden Sie</h3>
+      <p>{{mensch}}</p>
+    </div>
+  </div>
+  <p class="regel r">{{regel}}</p>
+</section>
+
+<section id="einordnung">
+  <div class="einordnung r">
+    <div class="einordnung-feld">
+      <h2>Für wen</h2>
+      <p>{{fuer_wen}}</p>
+    </div>
+    <div class="einordnung-feld">
+      <h2>Aufwand: {{aufwand}}</h2>
+      <p>Das ist eine Einschätzung aus unserer Recherche, keine gemessene Grösse. Belegte Schweizer Zahlen dazu, wie viel Handarbeit in diesem Ablauf heute anfällt, gibt es nicht. Den tatsächlichen Aufwand bestimmt vor allem, welche Software Sie heute nutzen und welche Exporte sie bietet.</p>
+    </div>
+    <div class="einordnung-feld">
+      <h2>Daten und Schutz</h2>
+      <p>{{daten}}</p>
+{{bedingungen}}    </div>
+  </div>
+  <div class="note r">{{status_text}} Meyssens hat noch keine Kunden und keine Referenzen.</div>
+</section>
+
+<section id="weitere" class="flaeche">
+  <div class="r">
+    <span class="s-label">{{branche}}</span>
+    <h2>Weitere Bausteine für {{branche}}</h2>
+    <p class="s-lead">Ausgewählt für diese Branche, mit Ablauf-Grafik und Beispiel auf der <a href="{{branche_url}}#automatisierung">Branchenseite</a>.</p>
+  </div>
+  <div class="feat-grid zwei r">
+{{andere}}
+  </div>
+</section>
+
+<section id="quellen">
+  <div class="artikel-text">
+    <span class="s-label">Quellen</span>
+    <h2>Quellen und Hinweis</h2>
+    <div class="note"><strong>Allgemeine Information, keine Rechtsberatung.</strong> Diese Seite beschreibt einen geplanten Baustein und fasst öffentlich zugängliche Quellen zusammen. Gesetzestexte haben wir nicht im Wortlaut geprüft; vor einem Einsatz klären wir die rechtlichen Fragen im Einzelfall. Zuletzt geprüft am {{geprueft}}.</div>
+    <ul class="quellen">
+{{quellen}}
+    </ul>
+  </div>
+</section>
+
+<section id="anfrage" class="flaeche">
+  <div class="contact-grid">
+    <div class="r">
+      <span class="s-label">{{status_badge}}</span>
+      <h2>Interesse an diesem Baustein?</h2>
+      <p class="s-lead">Hinterlassen Sie uns Ihre Angaben. Die Anfrage ist unverbindlich und kostenlos.</p>
+      <a href="{{branche_url}}#automatisierung" class="back-link">← Zurück zu {{branche}}</a>
+    </div>
+    <div class="ccard r">
+      <form action="{{formular_ziel}}" method="POST">
+        <input type="hidden" name="_subject" value="Bausteinanfrage über meyssens.ch: {{name}} ({{branche}})">
+        <input type="hidden" name="branche" value="{{branche}}">
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="vorname">Vorname</label><input class="finput" type="text" id="vorname" name="vorname" required></div>
+          <div class="fgrp"><label class="flabel" for="nachname">Nachname</label><input class="finput" type="text" id="nachname" name="nachname" required></div>
+        </div>
+        <div class="fgrp"><label class="flabel" for="organisation">Praxis, Verwaltung, Büro oder Betrieb</label><input class="finput" type="text" id="organisation" name="organisation" required></div>
+        <div class="fgrp"><label class="flabel" for="email">E-Mail</label><input class="finput" type="email" id="email" name="email" required></div>
+        <div class="fgrp"><label class="flabel" for="baustein">Baustein</label><input class="finput" type="text" id="baustein" name="baustein" value="{{name}}" readonly></div>
+        <div class="fgrp"><label class="flabel" for="nachricht">Nachricht (optional)</label><textarea class="ftextarea" id="nachricht" name="nachricht" placeholder="Ihre Fragen oder Wünsche..."></textarea></div>
+        {{einwilligung}}
+        <button type="submit" class="btn-p" id="sbtn" style="width:100%;justify-content:center;border-radius:var(--r-sm)">
+          <span>{{knopf}}</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p id="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+{{fuss}}
+
+{{rechtliches}}
+
+{{skripte}}
+<script src="/assets/demos.js" defer></script>
+<script>
+{{formular_skript}}</script>
+</body>
+</html>

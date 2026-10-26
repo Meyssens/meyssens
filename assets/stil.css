@@ -419,3 +419,98 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .held-balken::before{width:calc(var(--w) * 1%)}
   .pin:hover,.pin.aktiv{transform:translate(-50%,-94%)}
 }
+
+/* Automatisierung: Regel, Bausteinkarten mit Formular, Ablauf-Kette, Demo (Branchen- und Bausteinseiten) */
+.regel{max-width:780px;margin:0 auto clamp(2rem,4vw,3rem);padding:1rem 1.3rem;border-radius:16px;border:1px solid var(--blue-20);background:var(--blue-5);color:var(--ink2);font-size:.95rem;line-height:1.65;text-align:center}
+.regel strong{color:var(--ink);font-weight:600}
+.stil .dunkel .regel{background:rgba(168,168,255,.1);border-color:rgba(168,168,255,.32);color:rgba(255,255,255,.86)}
+.stil .dunkel .regel strong{color:#fff}
+#details .regel{margin-top:clamp(2rem,4vw,3rem);margin-bottom:0}
+.baustein-raster{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.25rem;max-width:1180px;margin:0 auto;align-items:start}
+.baustein-karte{display:flex;flex-direction:column;align-items:flex-start;gap:.85rem;background:#fff;color:var(--ink2);border-radius:22px;padding:clamp(1.25rem,2.4vw,1.75rem);box-shadow:0 30px 70px -40px rgba(0,0,0,.6);min-width:0}
+.baustein-kopf{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .75rem}
+.baustein-aufwand{font-size:.75rem;color:var(--ink3)}
+.baustein-karte h3{font-family:'Syne','Syne Ersatz',sans-serif;font-size:1.25rem;font-weight:800;letter-spacing:-.02em;line-height:1.15;color:var(--ink)}
+.baustein-teile{display:flex;flex-direction:column;gap:.7rem;margin:0}
+.baustein-teile dt{font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:.15rem}
+.baustein-teile dd{margin:0;font-size:.9rem;line-height:1.6;color:var(--ink2)}
+.baustein-daten{font-size:.82rem;line-height:1.55;color:var(--ink2);background:var(--grau);border-radius:12px;padding:.65rem .8rem}
+.baustein-daten strong{color:var(--ink);font-weight:600}
+.stil .dunkel .baustein-karte h3 a,.stil .dunkel .baustein-karte a:not(.btn-p){color:var(--blue)}
+.stil .dunkel .baustein-karte h3 a{color:var(--ink);text-decoration:none}
+.stil .dunkel .baustein-karte h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.stil .dunkel .baustein-karte .status-chip{background:var(--blue-8);border-color:var(--blue-20);color:var(--blue)}
+.baustein-anfrage{width:100%;border-top:1px solid var(--rand);padding-top:.85rem;margin-top:.15rem}
+.baustein-anfrage summary{display:flex;align-items:center;justify-content:space-between;gap:.5rem;min-height:44px;cursor:pointer;font-weight:500;color:var(--blue);list-style:none;border-radius:10px}
+.baustein-anfrage summary::-webkit-details-marker{display:none}
+.baustein-anfrage summary::after{content:'+';font-size:1.3rem;line-height:1;transition:transform .25s var(--weich)}
+.baustein-anfrage[open] summary::after{transform:rotate(45deg)}
+.baustein-anfrage summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.baustein-anfrage form{padding-top:.75rem}
+.baustein-anfrage .frow{grid-template-columns:1fr}
+.baustein-anfrage .btn-p{width:100%;justify-content:center}
+.baustein-anfrage [role="status"]{display:none;font-size:.85rem;line-height:1.55;margin-top:.75rem;padding:.7rem .9rem;border-radius:8px}
+.baustein-anfrage [role="status"].ok{display:block;background:#e8f7ee;color:#14532d}
+.baustein-anfrage [role="status"].err{display:block;background:#fdecec;color:#7f1d1d}
+.kette-wrap{max-width:1180px;margin:clamp(3rem,6vw,5rem) auto 0}
+.kette-wrap h3{font-family:'Syne','Syne Ersatz',sans-serif;font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:.6rem}
+.kette-wrap > p{max-width:62ch;font-size:.95rem;line-height:1.7;margin-bottom:1.75rem}
+.kette{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.75rem;counter-reset:k}
+.kette-schritt{position:relative;display:flex;flex-direction:column;gap:.35rem;padding:1rem 1rem 1.1rem;border-radius:16px;border:1px solid var(--rand);background:#fff;min-width:0}
+.kette-schritt b{font-weight:600;color:var(--ink);font-size:.95rem;line-height:1.3}
+.kette-nr{font-size:.7rem;font-weight:600;color:var(--ink4);font-variant-numeric:tabular-nums}
+.kette-art{align-self:flex-start;font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.15rem .5rem;border-radius:999px;background:var(--grau);color:var(--ink2)}
+.kette-text{font-size:.82rem;line-height:1.5;color:var(--ink3)}
+.kette-schritt.baustein{border-color:var(--blue-35);box-shadow:inset 0 3px 0 var(--blue)}
+.kette-schritt.baustein .kette-art{background:var(--blue);color:#fff}
+.kette-schritt.mensch .kette-art{background:#fff1cf;color:#6b4100}
+.kette-schritt.spaeter{border-style:dashed}
+.kette-legende{font-size:.8rem;margin-top:1rem}
+.stil .dunkel .kette-wrap h3{color:#fff}
+.stil .dunkel .kette-wrap > p,.stil .dunkel .kette-legende{color:rgba(255,255,255,.74)}
+.stil .dunkel .kette-schritt{background:var(--nacht2);border-color:rgba(255,255,255,.12)}
+.stil .dunkel .kette-schritt b{color:#fff}
+.stil .dunkel .kette-nr{color:rgba(255,255,255,.6)}
+.stil .dunkel .kette-text{color:rgba(255,255,255,.74)}
+.stil .dunkel .kette-art{background:rgba(255,255,255,.1);color:rgba(255,255,255,.88)}
+.stil .dunkel .kette-schritt.baustein{border-color:rgba(168,168,255,.55);box-shadow:inset 0 3px 0 var(--hellblau)}
+.stil .dunkel .kette-schritt.baustein .kette-art{background:var(--hellblau);color:var(--nacht)}
+.stil .dunkel .kette-schritt.mensch .kette-art{background:#fff1cf;color:#6b4100}
+.stil .dunkel .kette-schritt.spaeter{border-color:rgba(255,255,255,.22)}
+.auto-demo{margin-top:clamp(3.5rem,7vw,6rem)}
+.auto-hinweis{max-width:780px;margin:clamp(2.5rem,5vw,4rem) auto 0;font-size:.82rem;line-height:1.7;text-align:center}
+.stil .dunkel .auto-hinweis{color:rgba(255,255,255,.7)}
+@media(max-width:600px){.kette{grid-template-columns:1fr}.kette-schritt{flex-direction:row;flex-wrap:wrap;align-items:baseline;column-gap:.6rem}.kette-text{flex-basis:100%}}
+/* Umschaltbare Demo der Bausteine */
+.wahl-frage{font-weight:600;color:var(--ink);margin-bottom:.6rem}
+.wahl-knoepfe{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1rem}
+.wahl-knopf{min-height:44px;padding:.5rem 1rem;border-radius:999px;border:1px solid var(--blue-20);background:#fff;color:var(--blue);font:inherit;font-size:.84rem;font-weight:500;cursor:pointer;transition:background .2s,border-color .2s}
+.wahl-knopf:hover{background:var(--blue-5)}
+.wahl-knopf[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.wahl-knopf:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.wahl-felder .mock-entwurf{margin-top:.6rem}
+.wahl-hinweis{border-radius:12px;padding:1rem;background:#ffe8e3;color:#5c1405}
+.wahl-hinweis b{display:block;color:#5c1405;margin-bottom:.3rem}
+/* Bausteinseite: Einordnung */
+.einordnung{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(1.5rem,3vw,2.5rem);max-width:1180px;margin:0 auto}
+.einordnung-feld h2{font-size:clamp(1.25rem,1.9vw,1.5rem);margin-bottom:.6rem}
+.einordnung-feld p{font-size:.95rem;line-height:1.75;color:var(--ink2)}
+.bedingungen{margin:.9rem 0 0 1.1rem;font-size:.92rem;line-height:1.7;color:var(--ink2)}
+#einordnung .note{max-width:1180px;margin:clamp(2rem,4vw,3rem) auto 0}
+/* Unternehmen: Automatisierungen nach Branche */
+.auto-gruppen{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1.25rem;max-width:1180px;margin:0 auto}
+.auto-gruppe{background:var(--nacht2);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:clamp(1.25rem,2.4vw,1.75rem)}
+.auto-gruppe h3{font-family:'Syne','Syne Ersatz',sans-serif;font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.9rem}
+.stil .dunkel .auto-gruppe h3 a{color:#fff;text-decoration:none}
+.stil .dunkel .auto-gruppe h3 a:hover{text-decoration:underline;text-underline-offset:4px}
+.auto-gruppe ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.auto-gruppe li{display:flex;flex-direction:column;align-items:flex-start;gap:.3rem;padding-top:.6rem;border-top:1px solid rgba(255,255,255,.1)}
+.auto-gruppe li a{display:inline-flex;align-items:center;gap:6px;min-height:28px;font-size:.92rem;text-decoration:none}
+.auto-gruppe li a:hover{text-decoration:underline;text-underline-offset:3px}
+.auto-demo .demo-text h3{font-size:clamp(1.5rem,2.2vw,2rem);overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+.stil .dunkel .baustein-karte [style*="--ink3"],.stil .dunkel .baustein-karte [style*="--ink2"]{color:var(--ink3)!important}
+.baustein-karte h3,.einordnung-feld h2{overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+.stil main.baustein .page-hero h1{max-width:22ch;font-size:clamp(2.1rem,5.2vw,4.2rem);hyphens:auto;-webkit-hyphens:auto}
+.auto-gruppe h3{font-size:clamp(1.05rem,1.6vw,1.2rem);overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
+@media(max-width:900px){.auto-demo{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){.geraet-leiste{height:auto;min-height:40px;padding-top:.45rem;padding-bottom:.45rem}.geraet-titel{white-space:normal;overflow:visible;line-height:1.35}}

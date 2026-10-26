@@ -11,6 +11,9 @@ Quellen:
   vorlage_artikel.html     Vorlage für branchen/<slug>/ und ratgeber/<slug>/ aus artikel.json
   vorlage_branche.html     Vorlage für branchen/<slug>/index.html
   vorlage_produkt.html     Vorlage für produkte/<slug>/index.html
+  vorlage_baustein.html    Vorlage für Automatisierungs-Bausteine (Einträge in produkte.json mit Feld "branche");
+                           der Abschnitt "Was sich automatisieren lässt" der Branchenseite kommt aus artikel.json
+                           (Feld "automatisierung")
   vorlage_unternehmen.html Vorlage für unternehmen/index.html
   index.html               Kopfbereich, Header, Footer, Cookie-Banner, Impressum, Datenschutz, Skripte
                            (Abschnitte zwischen <!-- name:start --> und <!-- name:ende -->).
@@ -232,12 +235,13 @@ def angebot(p):
                                p["slug"], stufe["knopf"], PFEIL))
 
 
-def inhaltsverzeichnis(inhalt):
+def inhaltsverzeichnis(inhalt, mit_automatisierung=False):
     # Sprungmarken aus den Zwischentiteln des Langtexts (h2 mit id) und zu den Abschnitten danach
     ziele = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', inhalt)
     if len(ziele) != len(re.findall(r"<h2\b", inhalt)):
         raise SystemExit("Langtext: jede h2 braucht eine id für das Inhaltsverzeichnis")
-    weitere = (("fragen", "Häufige Fragen"), ("weiterlesen", "Passend zum Thema"), ("angebot", "Was Meyssens dazu anbietet"),
+    weitere = ((("automatisierung", "Was sich automatisieren lässt"),) if mit_automatisierung else ()) + (
+               ("fragen", "Häufige Fragen"), ("weiterlesen", "Passend zum Thema"), ("angebot", "Was Meyssens dazu anbietet"),
                ("quellen", "Quellen und Hinweis"), ("anfrage", "Anfrage"))
     return ('<nav class="toc" aria-label="Inhalt dieser Seite">\n'
             '      <p class="toc-titel">Inhalt</p>\n'
@@ -249,10 +253,158 @@ def inhaltsverzeichnis(inhalt):
 
 def produkt_ansicht(ansichten, p):
     bild, interaktiv = ansicht(ansichten, p)
-    hinweis = ("Interaktives Beispiel mit erfundenen Inhalten. Das Produkt ist in der Pilotphase." if interaktiv else
-               "Beispielansicht, wie das Produkt aussehen könnte. Das Produkt ist %s." % (
-                   "in Planung" if p["status"] == "In Planung" else "in der Pilotphase"))
+    stand = "in Planung" if p["status"] == "In Planung" else "in der Pilotphase"
+    hinweis = ("Interaktives Beispiel mit erfundenen Inhalten. Das Produkt ist %s." % stand if interaktiv else
+               "Beispielansicht, wie das Produkt aussehen könnte. Das Produkt ist %s." % stand)
     return '<div class="r">\n%s\n</div>\n<p class="ansicht-hinweis">%s</p>' % (bild, hinweis)
+
+
+# Automatisierungs-Bausteine (produkte.json mit Feld "branche")
+BAUSTEIN_FELDER = ("branche", "mensch", "aufwand", "daten", "quellen", "geprueft")
+AUFWAND = ("klein", "klein bis mittel", "mittel", "mittel bis gross", "gross")
+REGEL = ("Entwürfe ja, automatischer Versand nein.",
+         "Jeder Baustein bereitet vor: Entwürfe, Listen und Hinweise. Was Ihren Betrieb verlässt, gibt ein Mensch frei.")
+BEDINGUNGEN = ("Vertrag zur Auftragsbearbeitung, bevor echte Daten verarbeitet werden",
+               "Hosting in der Schweiz",
+               "Datenminimierung: nur die Angaben, die der Ablauf wirklich braucht")
+KETTE_ART = {"baustein": "Baustein", "mensch": "Mensch entscheidet", "spaeter": "Später", "vorhanden": "Ihre Software"}
+AUTO_WORTE = (450, 1100)
+BAUSTEIN_WORTE = (450, 1000)
+
+
+def ist_baustein(p):
+    return bool(p.get("branche"))
+
+
+def a_bausteine(artikel):
+    return {s for a in artikel for s in a.get("automatisierung", {}).get("bausteine", [])}
+
+
+def anfang(text, mindestens=90):
+    # Erste Sätze eines Texts, bis mindestens die angegebene Länge erreicht ist (für die Bausteinkarten)
+    out = ""
+    for s in re.split(r"(?<=[.!?])\s+", text):
+        out = (out + " " + s).strip()
+        if len(out) >= mindestens:
+            break
+    return out
+
+
+def aufwand(p):
+    return "Aufwand %s, Einschätzung" % p["aufwand"]
+
+
+def ohne_automatisierung(text):
+    # Langtext-Wortzahl ohne den Abschnitt "Was sich automatisieren lässt" (wird getrennt gezählt)
+    return re.sub(r'<section id="automatisierung".*?</section>', " ", text, flags=re.S)
+
+
+def baustein_formular(p, branche, formular_ziel, einwilligung):
+    # Eigenes Anfrage-Formular pro Baustein, aufklappbar in der Bausteinkarte der Branchenseite
+    s, e = p["slug"], html.escape(p["name"])
+    feld = ('<div class="fgrp"><label class="flabel" for="%s-%s">%s</label>'
+            '<input class="finput" type="%s" id="%s-%s" name="%s" required></div>')
+    return ('      <details class="baustein-anfrage">\n'
+            '        <summary>Diesen Baustein anfragen</summary>\n'
+            '        <form action="%s" method="POST">\n'
+            '          <input type="hidden" name="_subject" value="Bausteinanfrage über meyssens.ch: %s (%s)">\n'
+            '          <input type="hidden" name="branche" value="%s">\n'
+            '          <div class="frow">%s%s</div>\n'
+            '          %s\n          %s\n'
+            '          <div class="fgrp"><label class="flabel" for="%s-baustein">Baustein</label>'
+            '<input class="finput" type="text" id="%s-baustein" name="baustein" value="%s" readonly></div>\n'
+            '          %s\n'
+            '          <button type="submit" class="btn-p"><span>%s</span> %s</button>\n'
+            '          <p role="status" aria-live="polite"></p>\n'
+            '        </form>\n'
+            '      </details>' % (formular_ziel, e, html.escape(branche), html.escape(branche),
+                                 feld % (s, "vorname", "Vorname", "text", s, "vorname", "vorname"),
+                                 feld % (s, "nachname", "Nachname", "text", s, "nachname", "nachname"),
+                                 feld % (s, "organisation", "Praxis, Verwaltung, Büro oder Betrieb", "text", s, "organisation", "organisation"),
+                                 feld % (s, "email", "E-Mail", "email", s, "email", "email"),
+                                 s, s, e, einwilligung, STUFEN[p["status"]]["knopf"], PFEIL))
+
+
+def baustein_karte(p, branche, formular_ziel, einwilligung):
+    daten = ('      <p class="baustein-daten"><strong>Personendaten:</strong> nur mit Vertrag zur Auftragsbearbeitung, '
+             'Hosting in der Schweiz und Datenminimierung.</p>\n') if p["personendaten"] else ""
+    return ('    <article class="baustein-karte r">\n'
+            '      <div class="baustein-kopf"><span class="status-chip">%s</span><span class="baustein-aufwand">%s</span></div>\n'
+            '      <h3><a href="/produkte/%s/">%s</a></h3>\n'
+            '      <dl class="baustein-teile">\n'
+            '        <div><dt>Heute von Hand</dt><dd>%s</dd></div>\n'
+            '        <div><dt>Das übernimmt der Baustein</dt><dd>%s</dd></div>\n'
+            '        <div><dt>Das entscheidet der Mensch</dt><dd>%s</dd></div>\n'
+            '      </dl>\n'
+            '%s'
+            '      <a class="mehr" href="/produkte/%s/">Mehr erfahren %s</a>\n'
+            '%s\n'
+            '    </article>' % (html.escape(STUFEN[p["status"]]["badge"]), html.escape(aufwand(p)), p["slug"],
+                               html.escape(p["name"]), html.escape(anfang(p["problem"])), html.escape(anfang(p["loesung"])),
+                               html.escape(anfang(p["mensch"])), daten, p["slug"], PFEIL,
+                               baustein_formular(p, branche, formular_ziel, einwilligung)))
+
+
+def kette(k, nach_slug):
+    # Verknüpfungs-Kette als Ablauf-Grafik; Schritte: [Titel, Art, Baustein-Slug oder Hinweis]
+    schritte = []
+    for i, (titel, art, rest) in enumerate(k["schritte"], 1):
+        if art not in KETTE_ART:
+            raise SystemExit("Kette %s: unbekannte Art %s" % (k["titel"], art))
+        if art == "baustein":
+            if rest not in nach_slug:
+                raise SystemExit("Kette %s: unbekannter Baustein %s" % (k["titel"], rest))
+            zusatz = '<a href="/produkte/%s/">%s</a>' % (rest, html.escape(nach_slug[rest]["name"]))
+        else:
+            zusatz = html.escape(rest)
+        schritte.append('      <li class="kette-schritt %s"><span class="kette-nr" aria-hidden="true">%d</span>'
+                        '<b>%s</b><span class="kette-art">%s</span><span class="kette-text">%s</span></li>'
+                        % (art, i, html.escape(titel), KETTE_ART[art], zusatz))
+    return ('  <div class="kette-wrap r">\n'
+            '    <h3>Ablauf: %s</h3>\n'
+            '    <p>%s</p>\n'
+            '    <ol class="kette">\n%s\n    </ol>\n'
+            '    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>\n'
+            '  </div>' % (html.escape(k["titel"]), html.escape(k["text"]), "\n".join(schritte)))
+
+
+def automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
+    # Abschnitt "Was sich automatisieren lässt" einer Branchenseite (artikel.json, Feld "automatisierung")
+    au = a.get("automatisierung")
+    if not au:
+        return ""
+    bausteine = [nach_slug[s] for s in au["bausteine"]]
+    d = nach_slug[au["demo"]]
+    bild, interaktiv = ansicht(ansichten, d)
+    if not interaktiv:
+        raise SystemExit("Branche %s: für die Demo fehlt demo-%s in ansichten.html" % (a["slug"], d["slug"]))
+    datum = datetime.date.fromisoformat(au["geprueft"]).strftime("%d.%m.%Y")
+    return ('<section id="automatisierung" class="dunkel">\n'
+            '  <div class="kopf-mitte r">\n'
+            '    <span class="s-label">Automatisierung</span>\n'
+            '    <h2>Was sich automatisieren lässt</h2>\n'
+            '    <p class="s-lead">%s</p>\n'
+            '  </div>\n'
+            '  <p class="regel r"><strong>%s</strong> %s</p>\n'
+            '  <div class="baustein-raster">\n%s\n  </div>\n'
+            '%s\n'
+            '  <article class="demo auto-demo r">\n'
+            '    <div class="demo-text">\n'
+            '      <span class="status-chip">%s</span>\n'
+            '      <h3>%s</h3>\n'
+            '      <p>%s</p>\n'
+            '      <a class="mehr" href="/produkte/%s/">Mehr erfahren %s</a>\n'
+            '    </div>\n'
+            '    <div class="demo-bild">\n%s\n    </div>\n'
+            '  </article>\n'
+            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Alle Bausteine auf dieser Seite sind '
+            'in Planung, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand und zur Reihenfolge sind '
+            'Einschätzungen, keine gemessenen Werte. Vor einem Einsatz mit Personendaten prüfen wir die rechtlichen Fragen '
+            'im Einzelfall. Zuletzt geprüft am %s.</p>\n'
+            '</section>' % (html.escape(au["intro"]), REGEL[0], REGEL[1],
+                            "\n".join(baustein_karte(p, a["name"], formular_ziel, einwilligung) for p in bausteine),
+                            kette(au["kette"], nach_slug), html.escape(STUFEN[d["status"]]["badge"]),
+                            html.escape(d["name"]), html.escape(d["kurzbeschreibung"]), d["slug"], PFEIL, bild, datum))
 
 
 def kurz(text, laenge=155, mindestens=120):
@@ -365,7 +517,18 @@ def main():
         if not re.fullmatch(r"[a-z0-9-]+", p["slug"]) or p["slug"] in slugs:
             raise SystemExit("Ungültiger oder doppelter Slug: %s" % p["slug"])
         slugs.add(p["slug"])
+        if ist_baustein(p):
+            fehlt = [f for f in BAUSTEIN_FELDER if not p.get(f)]
+            if p.get("aufwand") not in AUFWAND:
+                fehlt.append("aufwand (%s)" % ", ".join(AUFWAND))
+            if not isinstance(p.get("personendaten"), bool):
+                fehlt.append("personendaten (true oder false)")
+            if not all(q["url"].startswith("https://") for q in p.get("quellen", [])):
+                fehlt.append("quellen mit https-Links")
+            if fehlt:
+                raise SystemExit("Baustein %s: %s" % (p["slug"], ", ".join(fehlt)))
     nach_slug = {p["slug"]: p for p in produkte}
+    allgemein = [p for p in produkte if not ist_baustein(p)]
 
     branchen = json.loads(lies("branchen.json"))
     bslugs = set()
@@ -392,6 +555,23 @@ def main():
     if len(aslugs) != len(artikel) or {a["slug"] for a in artikel if a["art"] == "branche"} & bslugs:
         raise SystemExit("Doppelter Artikel-Slug")
     artikel_branchen = [a for a in artikel if a["art"] == "branche"]
+    for a in artikel:
+        au = a.get("automatisierung")
+        if not au:
+            continue
+        fehlt = [f for f in ("intro", "kette", "demo", "geprueft") if not au.get(f)]
+        if not 3 <= len(au.get("bausteine", [])) <= 4:
+            fehlt.append("bausteine (3 bis 4)")
+        if fehlt or a["art"] != "branche":
+            raise SystemExit("Automatisierung %s: %s" % (a["slug"], ", ".join(fehlt) or "nur auf Branchenseiten"))
+        for s in au["bausteine"]:
+            if s not in nach_slug or nach_slug[s].get("branche") != a["slug"]:
+                raise SystemExit("Automatisierung %s: %s ist kein Baustein dieser Branche" % (a["slug"], s))
+        if au["demo"] not in au["bausteine"]:
+            raise SystemExit("Automatisierung %s: Demo muss einer der Bausteine sein" % a["slug"])
+    for p in produkte:
+        if ist_baustein(p) and p["slug"] not in a_bausteine(artikel):
+            raise SystemExit("Baustein %s steht auf keiner Branchenseite" % p["slug"])
     ratgeber = [a for a in artikel if a["art"] == "ratgeber"]
 
     start = lies("index.html")
@@ -407,7 +587,7 @@ def main():
 
     ansichten = lies("ansichten.html")
     vorlage_produkt = lies("vorlage_produkt.html")
-    for p in produkte:
+    for p in allgemein:
         e = {k: html.escape(str(v)) for k, v in p.items()}
         stufe = {k: html.escape(v) for k, v in STUFEN[p["status"]].items()}
         url = "%s/produkte/%s/" % (DOMAIN, p["slug"])
@@ -495,7 +675,8 @@ def main():
             "autor": AUTOR,
             "geprueft": datum.strftime("%d.%m.%Y"),
             "inhalt": inhalt,
-            "toc": inhaltsverzeichnis(inhalt),
+            "toc": inhaltsverzeichnis(inhalt, bool(a.get("automatisierung"))),
+            "automatisierung": automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung),
             "faq": "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
                              % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in a["faq"]),
             "weiterlesen": "\n".join('    <a href="%s" class="feat tile">\n      <h3>%s</h3>\n      <p>%s</p>\n'
@@ -527,8 +708,63 @@ def main():
             "formular_skript": formular_skript,
         })
         seite = fuelle(vorlage_artikel, werte)
-        n = worte(zwischen(seite, '<main id="main"', '<section id="quellen"'))
+        n = worte(ohne_automatisierung(zwischen(seite, '<main id="main"', '<section id="quellen"')))
         hinweis = "" if WORTE[0] <= n <= WORTE[1] else "  ACHTUNG: ausserhalb %d bis %d" % WORTE
+        print("Wörter %s: %d%s" % (pfad, n, hinweis))
+        if a.get("automatisierung"):
+            n = worte(zwischen(seite, '<section id="automatisierung"', "</section>"))
+            hinweis = "" if AUTO_WORTE[0] <= n <= AUTO_WORTE[1] else "  ACHTUNG: ausserhalb %d bis %d" % AUTO_WORTE
+            print("Wörter %s#automatisierung: %d%s" % (pfad, n, hinweis))
+        schreibe(pfad.strip("/") + "/index.html", seite)
+
+    vorlage_baustein = lies("vorlage_baustein.html")
+    nach_branche = {a["slug"]: a for a in artikel_branchen}
+    for p in (p for p in produkte if ist_baustein(p)):
+        b = nach_branche[p["branche"]]
+        e = {k: html.escape(str(v)) for k, v in p.items() if isinstance(v, str)}
+        stufe = {k: html.escape(v) for k, v in STUFEN[p["status"]].items()}
+        pfad = "/produkte/%s/" % p["slug"]
+        roh = json.dumps(p, ensure_ascii=False)
+        if "[Status" in roh or "ß" in roh:
+            raise SystemExit("Baustein %s: Platzhalter [Status ...] oder ß im Text" % p["slug"])
+        andere = [nach_slug[s] for s in b["automatisierung"]["bausteine"] if s != p["slug"]]
+        daten = ('    <ul class="bedingungen">\n%s\n    </ul>\n' % "\n".join("      <li>%s</li>" % html.escape(x) for x in BEDINGUNGEN)
+                 if p["personendaten"] else "")
+        werte = dict(gemeinsam, **{
+            "titel": html.escape("%s – Meyssens" % p["name"]),
+            "beschreibung": html.escape(kurz(p["kurzbeschreibung"])),
+            "url": DOMAIN + pfad,
+            "name": e["name"],
+            "branche": html.escape(b["name"]),
+            "branche_url": "/branchen/%s/" % b["slug"],
+            "status_badge": stufe["badge"],
+            "status_text": stufe["text"],
+            "knopf": stufe["knopf"],
+            "kurzbeschreibung": e["kurzbeschreibung"],
+            "problem": e["problem"],
+            "loesung": e["loesung"],
+            "mensch": e["mensch"],
+            "fuer_wen": e["fuer_wen"],
+            "aufwand": e["aufwand"],
+            "daten": e["daten"],
+            "bedingungen": daten,
+            "regel": "<strong>%s</strong> %s" % REGEL,
+            "geprueft": datetime.date.fromisoformat(p["geprueft"]).strftime("%d.%m.%Y"),
+            "ansicht": produkt_ansicht(ansichten, p),
+            "andere": "\n".join('    <a href="/produkte/%s/" class="feat tile">\n      <span class="status-chip">%s</span>\n'
+                                '      <h3>%s</h3>\n      <p>%s</p>\n      <span class="way-go">Mehr erfahren %s</span>\n    </a>'
+                                % (x["slug"], html.escape(STUFEN[x["status"]]["badge"]), html.escape(x["name"]),
+                                   html.escape(x["kurzbeschreibung"]), PFEIL) for x in andere),
+            "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
+                                 % (html.escape(q["url"]), html.escape(q["titel"])) for q in p["quellen"]),
+            "ld": ld(brotkrumen(START, UNTERNEHMEN, (b["name"], "/branchen/%s/" % b["slug"]), (p["name"], pfad))),
+            "formular_ziel": formular_ziel,
+            "einwilligung": einwilligung,
+            "formular_skript": formular_skript,
+        })
+        seite = fuelle(vorlage_baustein, werte)
+        n = worte(zwischen(seite, '<main id="main"', '<section id="quellen"'))
+        hinweis = "" if BAUSTEIN_WORTE[0] <= n <= BAUSTEIN_WORTE[1] else "  ACHTUNG: ausserhalb %d bis %d" % BAUSTEIN_WORTE
         print("Wörter %s: %d%s" % (pfad, n, hinweis))
         schreibe(pfad.strip("/") + "/index.html", seite)
 
@@ -537,7 +773,14 @@ def main():
         "beschreibung": html.escape("Digitale Werkzeuge für Unternehmen und Vereine: Umfragen, Newsletter, "
                                     "Vereinswebsite, Mail-Assistent und mehr. Jetzt Pilotpartner werden."),
         "url": DOMAIN + "/unternehmen/",
-        "produkte": scrolly(ansichten, produkte, mehr=True),
+        "produkte": scrolly(ansichten, allgemein, mehr=True),
+        "bausteine": "\n".join(
+            '    <div class="auto-gruppe r">\n      <h3><a href="/branchen/%s/#automatisierung">%s</a></h3>\n      <ul>\n%s\n      </ul>\n    </div>'
+            % (a["slug"], html.escape(a["name"]), "\n".join(
+                '        <li><a href="/produkte/%s/">%s %s</a><span class="status-chip">%s</span></li>'
+                % (s, html.escape(nach_slug[s]["name"]), PFEIL, html.escape(STUFEN[nach_slug[s]["status"]]["badge"]))
+                for s in a["automatisierung"]["bausteine"]))
+            for a in artikel_branchen if a.get("automatisierung")),
         "ld": ld(brotkrumen(START, UNTERNEHMEN)),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
                                for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
@@ -557,7 +800,7 @@ def main():
     if neu_g != gemeinden:
         schreibe("gemeinden/index.html", neu_g)
 
-    neu = startseite(start, ansichten, produkte, len(branchen) + len(artikel_branchen), len(ratgeber))
+    neu = startseite(start, ansichten, allgemein, len(branchen) + len(artikel_branchen), len(ratgeber))
     if neu != start:
         schreibe("index.html", neu)
 
