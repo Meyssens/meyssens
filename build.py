@@ -211,7 +211,10 @@ def scrolly(ansichten, liste, mehr=False):
                         '  </div>' % (" aktiv" if i == 1 else "", i, len(liste), html.escape(STUFEN[p["status"]]["badge"]),
                                       p["slug"], html.escape(p["name"]), html.escape(p["kurzbeschreibung"]), links,
                                       p["slug"], STUFEN[p["status"]]["knopf"], PFEIL, i, bild))
-    return '<div class="scrolly" data-scrolly style="--n:%d">\n%s\n</div>' % (len(liste), "\n".join(schritte))
+    # Klasse "an" sofort setzen, nicht erst in demos.js (defer), sonst springt das Layout nach dem ersten Rendern
+    return ('<div class="scrolly" data-scrolly style="--n:%d">\n'
+            '<script>if("IntersectionObserver" in window)document.currentScript.parentNode.classList.add("an")</script>\n'
+            '%s\n</div>') % (len(liste), "\n".join(schritte))
 
 
 def angebot(p):
