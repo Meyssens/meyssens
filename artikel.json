@@ -100,7 +100,58 @@
     "titel": "Blick (2025), Fachleute warnen: Jede dritte Zahnarztrechnung ist überhöht",
     "url": "https://www.blick.ch/wirtschaft/fachleute-warnen-jede-dritte-zahnarztrechnung-ist-ueberhoeht-id20723422.html"
    }
-  ]
+  ],
+  "automatisierung": {
+   "intro": "Fast jeder Ablauf in einer Praxis berührt Patientendaten. Wir beginnen deshalb mit drei Bausteinen, die mit wenig Gesundheitsangaben auskommen: Terminanfrage, Laborauftrag und Textbausteine. Recall und Terminerinnerungen folgen erst später, mit Vertrag zur Auftragsbearbeitung und Einwilligung der Patientinnen und Patienten.",
+   "bausteine": [
+    "online-terminanfrage-zahnarztpraxis",
+    "laborauftrag-zahnarztpraxis",
+    "praxis-textbausteine"
+   ],
+   "kette": {
+    "titel": "Patientenreise",
+    "text": "So könnten die Schritte vom ersten Kontakt bis zum nächsten Recall zusammenhängen. Nur der erste Schritt ist ein Baustein dieser Seite, die übrigen zeigen, wo ein Mensch entscheidet oder was erst später dazukommt.",
+    "schritte": [
+     [
+      "Online-Anfrage",
+      "baustein",
+      "online-terminanfrage-zahnarztpraxis"
+     ],
+     [
+      "Bestätigung",
+      "mensch",
+      "Die MPA wählt den Termin und gibt den Entwurf frei."
+     ],
+     [
+      "Erinnerung",
+      "spaeter",
+      "Nur mit Einwilligung."
+     ],
+     [
+      "Absage und Warteliste",
+      "spaeter",
+      "Mit Vertrag zur Auftragsbearbeitung."
+     ],
+     [
+      "Termin",
+      "mensch",
+      "Behandlung in der Praxis."
+     ],
+     [
+      "Recall",
+      "spaeter",
+      "Mit Vertrag und Opt-in."
+     ],
+     [
+      "Bewertungsbitte",
+      "mensch",
+      "Nur mit Freigabe pro Patientin oder Patient."
+     ]
+    ]
+   },
+   "demo": "online-terminanfrage-zahnarztpraxis",
+   "geprueft": "2026-10-26"
+  }
  },
  {
   "slug": "immobilienverwaltungen",
@@ -195,7 +246,58 @@
     "titel": "WEKA, Stockwerkeigentümerversammlung: Voraussetzungen",
     "url": "https://www.weka.ch/themen/bau-immobilien/immobilien/grund-und-wohneigentum/article/stockwerkeigentuemerversammlung-voraussetzungen-fuer-die-versammlung-der-stockwerkeigentuemer/"
    }
-  ]
+  ],
+  "automatisierung": {
+   "intro": "Die ersten Bausteine setzen dort an, wo heute viel nachgefragt und abgetippt wird: bei Schadenmeldungen, Besichtigungen und Übergaben. Die heiklen Entscheide bleiben bei der Verwaltung. Wer eine Wohnung erhält, was als Mangel gilt und wann ein amtliches Formular hinausgeht, entscheidet immer ein Mensch.",
+   "bausteine": [
+    "schadenmeldung-triage",
+    "besichtigungstermine-mietobjekt",
+    "uebergabeprotokoll"
+   ],
+   "kette": {
+    "titel": "Neuvermietung",
+    "text": "So könnte eine Neuvermietung von der Besichtigung bis zum Schlüssel ablaufen. Zwei Schritte decken Bausteine dieser Seite ab, die Auswahl der Mieterschaft bleibt ausdrücklich beim Menschen.",
+    "schritte": [
+     [
+      "Besichtigung buchen",
+      "baustein",
+      "besichtigungstermine-mietobjekt"
+     ],
+     [
+      "Anmeldeformular",
+      "spaeter",
+      "Nur zulässige Fragen, nach Rechtsprüfung."
+     ],
+     [
+      "Auswahl",
+      "mensch",
+      "Die Verwaltung entscheidet, keine automatische Ablehnung."
+     ],
+     [
+      "Originalunterlagen",
+      "mensch",
+      "Nur vom gewählten Kandidaten."
+     ],
+     [
+      "Löschroutine",
+      "spaeter",
+      "Unterlagen Nichtberücksichtigter löschen."
+     ],
+     [
+      "Übergabeprotokoll",
+      "baustein",
+      "uebergabeprotokoll"
+     ],
+     [
+      "Schlüsselliste",
+      "baustein",
+      "uebergabeprotokoll"
+     ]
+    ]
+   },
+   "demo": "schadenmeldung-triage",
+   "geprueft": "2026-10-26"
+  }
  },
  {
   "slug": "architekturbueros",
@@ -286,7 +388,48 @@
     "titel": "EDÖB, AI and data protection",
     "url": "https://www.edoeb.admin.ch/en/ai-and-data-protection"
    }
-  ]
+  ],
+  "automatisierung": {
+   "intro": "Für die Suche nach Ausschreibungen gibt es bereits das Ausschreibungs-Radar. Hier geht es um den Weg von der geleisteten Stunde bis zur Rechnung und um Sitzungen, die viel Nacharbeit erzeugen. Berechnungen prüft immer die Projektleitung, und Rechnungen und Protokolle verschickt das Büro selbst.",
+   "bausteine": [
+    "zeiterfassung-sia-phasen",
+    "akontorechnung-architektur",
+    "protokoll-pendenzen"
+   ],
+   "kette": {
+    "titel": "Stunden bis Rechnung",
+    "text": "So könnten Zeiterfassung und Abrechnung zusammenhängen. Die Daten fliessen ohne Abtippen weiter, an zwei Stellen gibt die Projektleitung frei.",
+    "schritte": [
+     [
+      "Zeiterfassung",
+      "baustein",
+      "zeiterfassung-sia-phasen"
+     ],
+     [
+      "Monatsrapport",
+      "baustein",
+      "zeiterfassung-sia-phasen"
+     ],
+     [
+      "Rechnungsentwurf",
+      "baustein",
+      "akontorechnung-architektur"
+     ],
+     [
+      "Freigabe",
+      "mensch",
+      "Die Projektleitung prüft Stunden und Berechnung."
+     ],
+     [
+      "Versand",
+      "mensch",
+      "Das Büro verschickt die Rechnung selbst."
+     ]
+    ]
+   },
+   "demo": "zeiterfassung-sia-phasen",
+   "geprueft": "2026-10-26"
+  }
  },
  {
   "slug": "pflegeheime-spitex",
@@ -377,7 +520,53 @@
     "titel": "EDÖB, AI and data protection",
     "url": "https://www.edoeb.admin.ch/en/ai-and-data-protection"
    }
-  ]
+  ],
+  "automatisierung": {
+   "intro": "Diese Bausteine betreffen nur die Verwaltung, pflegerische und medizinische Entscheide bleiben ausserhalb. Wir beginnen mit Arbeitszeiten und Terminen, die kaum Gesundheitsdaten berühren. Die Vorprüfung der Abrechnung folgt, sobald das kantonale Format feststeht und Vertrag und Rechtsprüfung vorliegen.",
+   "bausteine": [
+    "arbeitszeit-pflege",
+    "besichtigung-pflegeheim",
+    "abrechnung-vorpruefung"
+   ],
+   "kette": {
+    "titel": "Einsatz bis Rechnung",
+    "text": "So könnte der Weg vom geplanten Einsatz bis zur elektronischen Abrechnung aussehen. Der Baustein prüft nur, entscheiden und versenden bleibt Sache des Betriebs.",
+    "schritte": [
+     [
+      "Dienstplan",
+      "vorhanden",
+      "Plant die Leitung, eine Regelprüfung folgt später."
+     ],
+     [
+      "Leistungserfassung",
+      "vorhanden",
+      "In Ihrer Pflegesoftware."
+     ],
+     [
+      "Plausibilitätsprüfung",
+      "baustein",
+      "abrechnung-vorpruefung"
+     ],
+     [
+      "Rechnungsdatei",
+      "vorhanden",
+      "Export aus der Pflegesoftware."
+     ],
+     [
+      "Freigabe",
+      "mensch",
+      "Die Administration klärt jede Warnung."
+     ],
+     [
+      "Versand",
+      "mensch",
+      "Über MediData oder H-Net."
+     ]
+    ]
+   },
+   "demo": "arbeitszeit-pflege",
+   "geprueft": "2026-10-26"
+  }
  },
  {
   "slug": "ndsg-kmu-checkliste",

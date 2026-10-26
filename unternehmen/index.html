@@ -44,6 +44,7 @@
 </script>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
 <link rel="preload" href="/assets/schriften/syne-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/schriften/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/stil.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen und Vereine", "item": "https://meyssens.ch/unternehmen/"}]}]}</script>
@@ -75,6 +76,7 @@
 <section id="produkte">
   <h2 class="sr-only">Produkte</h2>
 <div class="scrolly" data-scrolly style="--n:8">
+<script>if("IntersectionObserver" in window)document.currentScript.parentNode.classList.add("an")</script>
   <div class="schritt aktiv">
     <div class="schritt-text">
       <span class="schritt-nr">01 / 08</span>
@@ -345,6 +347,48 @@
     </div>
   </div>
 </div>
+</section>
+
+<section id="automatisierungen" class="dunkel">
+  <div class="kopf-mitte r">
+    <span class="s-label">Automatisierung</span>
+    <h2>Automatisierungen nach Branche</h2>
+    <p class="s-lead">Bausteine, die einzelne Abläufe vorbereiten, ausgewählt pro Branche. Entwürfe ja, automatischer Versand nein: Was Ihren Betrieb verlässt, gibt ein Mensch frei. Alle Bausteine sind in Planung.</p>
+  </div>
+  <div class="auto-gruppen">
+    <div class="auto-gruppe r">
+      <h3><a href="/branchen/zahnarztpraxen/#automatisierung">Zahnarztpraxen</a></h3>
+      <ul>
+        <li><a href="/produkte/online-terminanfrage-zahnarztpraxis/">Online-Terminanfrage für Zahnarztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+        <li><a href="/produkte/laborauftrag-zahnarztpraxis/">Labor- und Materialbestellung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+        <li><a href="/produkte/praxis-textbausteine/">Textbausteine für Telefon und Mail <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+      </ul>
+    </div>
+    <div class="auto-gruppe r">
+      <h3><a href="/branchen/immobilienverwaltungen/#automatisierung">Immobilienverwaltungen</a></h3>
+      <ul>
+        <li><a href="/produkte/schadenmeldung-triage/">Schadenmeldung mit Triage <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+        <li><a href="/produkte/besichtigungstermine-mietobjekt/">Besichtigungstermine für Mietobjekte <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+        <li><a href="/produkte/uebergabeprotokoll/">Digitales Übergabeprotokoll <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+      </ul>
+    </div>
+    <div class="auto-gruppe r">
+      <h3><a href="/branchen/architekturbueros/#automatisierung">Architekturbüros</a></h3>
+      <ul>
+        <li><a href="/produkte/zeiterfassung-sia-phasen/">Zeiterfassung nach Projekt und Phase <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+        <li><a href="/produkte/akontorechnung-architektur/">Akontorechnung aus Stunden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+        <li><a href="/produkte/protokoll-pendenzen/">Sitzungsprotokoll und Pendenzenliste <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+      </ul>
+    </div>
+    <div class="auto-gruppe r">
+      <h3><a href="/branchen/pflegeheime-spitex/#automatisierung">Pflegeheime und Spitex</a></h3>
+      <ul>
+        <li><a href="/produkte/arbeitszeit-pflege/">Arbeitszeiterfassung für Pflege und Spitex <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+        <li><a href="/produkte/besichtigung-pflegeheim/">Besichtigungen und Informationsgespräche <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+        <li><a href="/produkte/abrechnung-vorpruefung/">Vorprüfung der Leistungsabrechnung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="status-chip">In Planung</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <section id="branchen" class="flaeche">

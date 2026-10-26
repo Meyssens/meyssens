@@ -44,6 +44,7 @@
 </script>
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
 <link rel="preload" href="/assets/schriften/syne-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/schriften/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/stil.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen und Vereine", "item": "https://meyssens.ch/unternehmen/"}, {"@type": "ListItem", "position": 3, "name": "Offertanfragen schneller beantworten", "item": "https://meyssens.ch/ratgeber/offertanfragen-beantworten/"}]}, {"@type": "Article", "headline": "Offertanfragen schneller beantworten: Leitfaden für kleine Betriebe", "description": "Was eine Offerte rechtlich bindet, welche Fristen gelten und wie Sie Anfragen schneller beantworten: mit Textbausteinen und Checkliste.", "inLanguage": "de-CH", "dateModified": "2026-10-25", "mainEntityOfPage": "https://meyssens.ch/ratgeber/offertanfragen-beantworten/", "author": {"@type": "Person", "name": "Lionel Nickelsen"}, "publisher": {"@id": "https://meyssens.ch/#org", "@type": "Organization", "name": "Meyssens", "logo": "https://meyssens.ch/logo.png"}, "image": "https://meyssens.ch/og-image.png"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Bin ich an meine Offerte gebunden?", "acceptedAnswer": {"@type": "Answer", "text": "In der Regel ja. Mit Frist sind Sie bis zu deren Ablauf gebunden (Art. 3 OR). Ohne Frist hängt es davon ab, ob die Offerte unter Anwesenden (auch am Telefon) oder unter Abwesenden gemacht wurde (Art. 4 und 5 OR). Ein ausdrücklicher Vorbehalt wie «unverbindlich» hebt die Bindung auf (Art. 7 OR)."}}, {"@type": "Question", "name": "Wie lange gilt eine Offerte ohne Frist?", "acceptedAnswer": {"@type": "Answer", "text": "Unter Anwesenden nur, wenn sie sogleich angenommen wird. Unter Abwesenden, etwa per E-Mail, bis Sie den Eingang einer rechtzeitig abgesandten Antwort erwarten dürfen. Weil das unscharf ist, lohnt sich immer ein Gültigkeitsdatum."}}, {"@type": "Question", "name": "Sind Preise auf meiner Website verbindlich?", "acceptedAnswer": {"@type": "Answer", "text": "Preislisten und Tarife gelten nach Art. 7 OR an sich nicht als Antrag. Ob das für eine bestimmte Preisangabe auf Ihrer Website gleich gilt, haben wir nicht geprüft. Ein ausdrücklicher Vorbehalt schafft Klarheit."}}, {"@type": "Question", "name": "Was gilt, wenn die Kundin nach Ablauf der Frist annimmt?", "acceptedAnswer": {"@type": "Answer", "text": "Nach Ablauf der Frist sind Sie nicht mehr gebunden (Art. 3 OR). Ob Sie zu den alten Bedingungen zusagen, entscheiden Sie neu."}}, {"@type": "Question", "name": "Was passiert, wenn ein ungefährer Preis deutlich überschritten wird?", "acceptedAnswer": {"@type": "Answer", "text": "Wird ein ungefährer Kostenansatz unverhältnismässig überschritten, kann der Besteller vom Werkvertrag zurücktreten (Art. 375 OR). Informieren Sie deshalb früh, wenn die Kosten aus dem Rahmen laufen."}}]}]}</script>
@@ -175,6 +176,7 @@
     </div>
   </div>
 </section>
+
 
 <section id="fragen" class="flaeche">
   <div class="r">
@@ -438,12 +440,12 @@ const FORM_MSG = {
   it: {ok:"Grazie! Vi risponderemo al più presto.", err:"Purtroppo non ha funzionato. Scriveteci direttamente a lionel@meyssens.ch."},
   en: {ok:"Thank you! We will get back to you shortly.", err:"Sorry, that did not work. Please write to us directly at lionel@meyssens.ch."}
 };
-const contactForm = document.querySelector('form[action*="formspree.io"]');
-if(contactForm){
+// Alle Formulare der Seite (Kontakt und, auf Branchenseiten, je ein Formular pro Baustein)
+document.querySelectorAll('form[action*="formspree.io"]').forEach(function(contactForm){
   contactForm.addEventListener('submit', function(e){
     e.preventDefault();
-    const btn = document.getElementById('sbtn');
-    const msg = document.getElementById('form-msg');
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const msg = contactForm.querySelector('[role="status"]');
     const t = FORM_MSG[document.documentElement.lang] || FORM_MSG.de;
     if(btn) btn.disabled = true;
     fetch(contactForm.action, {method:'POST', body:new FormData(contactForm), headers:{'Accept':'application/json'}})
@@ -457,7 +459,7 @@ if(contactForm){
       })
       .then(function(){ if(btn) btn.disabled = false; });
   });
-}
+});
 
 </script>
 </body>

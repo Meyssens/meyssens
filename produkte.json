@@ -76,5 +76,289 @@
     "loesung": "Sie hinterlegen Stichworte, Fachgebiete und Regionen, die für Sie relevant sind. Das Ausschreibungs-Radar prüft neue Veröffentlichungen und stellt passende Treffer mit Frist und Link zur Originalquelle zusammen. Sie entscheiden selbst, auf welche Ausschreibungen Sie sich bewerben.",
     "fuer_wen": "Für kleine und mittlere Unternehmen, die sich um öffentliche Aufträge bewerben. Für Handwerks-, Planungs- und Dienstleistungsbetriebe mit regionalem Schwerpunkt. Für Unternehmen, die bisher wenig Zeit für die Suche nach Ausschreibungen haben.",
     "status": "In Planung"
+  },
+  {
+    "slug": "online-terminanfrage-zahnarztpraxis",
+    "branche": "zahnarztpraxen",
+    "name": "Online-Terminanfrage für Zahnarztpraxen",
+    "kurzbeschreibung": "Patientinnen und Patienten fragen einen Termin über ein kurzes Formular auf Ihrer Website an, statt anzurufen. Das Formular fragt nur, was für die Terminplanung nötig ist, und legt einen Entwurf für die Bestätigung an. Gebucht wird nicht automatisch: Die MPA wählt den Termin und gibt die Antwort frei.",
+    "problem": "Terminwünsche kommen meist per Telefon, auch während die MPA am Behandlungsstuhl assistiert. Name, Anliegen und mögliche Zeiten werden auf einem Zettel oder direkt in der Praxissoftware notiert, bei Unklarheiten folgt ein Rückruf. Anfragen per E-Mail kommen oft unvollständig an und enthalten manchmal mehr Gesundheitsangaben, als für einen Termin nötig wären.",
+    "loesung": "Ein Formular mit festen Auswahlfeldern nimmt die Anfrage auf: Art des Termins wie Kontrolle oder Dentalhygiene, neu oder bereits in Behandlung, bevorzugte Tage und Zeiten, Kontakt. Ein Freitextfeld für Beschwerden gibt es bewusst nicht. Bei Schmerzen oder nach einem Unfall verweist das Formular auf die Telefonnummer der Praxis. Jede Anfrage erscheint geordnet in einer Liste, zusammen mit einem Entwurf für die Terminbestätigung.",
+    "mensch": "Die MPA entscheidet, welcher Termin passt, trägt ihn in die Praxissoftware ein und gibt die Bestätigung frei. Ohne Freigabe geht keine Nachricht hinaus. Ob die Praxis neue Patientinnen und Patienten aufnimmt, legt die Praxis fest, nicht das Formular.",
+    "fuer_wen": "Für Zahnarztpraxen, deren Telefon zu Stosszeiten besetzt ist. Für Praxen, die online erreichbar sein möchten, ohne eine Direktbuchung in die Praxissoftware einzurichten.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Schon eine Terminanfrage kann zeigen, dass jemand Patientin oder Patient einer Praxis ist. Das EDÖB empfiehlt dafür eine gesicherte Übermittlung oder eine Einwilligung nach vorheriger Information, und nur die nötigen Angaben. Arbeitet ein IT-Dienstleister mit, braucht es zusätzlich eine Geheimhaltungsvereinbarung wegen des Berufsgeheimnisses.",
+    "quellen": [
+      {
+        "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen",
+        "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erläuterungen%20Patientenformularen%20ärztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+      },
+      {
+        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
+        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "laborauftrag-zahnarztpraxis",
+    "branche": "zahnarztpraxen",
+    "name": "Labor- und Materialbestellung",
+    "kurzbeschreibung": "Laboraufträge und Nachbestellungen von Verbrauchsmaterial entstehen aus einer festen Vorlage statt per Telefon oder freier E-Mail. Der Baustein legt den Auftrag als Entwurf an, führt eine Liste offener Bestellungen und erinnert, wenn eine Arbeit kurz vor dem Termin noch fehlt. Abgeschickt wird erst nach Ihrer Freigabe.",
+    "problem": "Laboraufträge gehen je nach Labor per Formular, E-Mail oder Telefon hinaus, Material wird oft dann bestellt, wenn ein Fach leer ist. Wann eine Arbeit zurückkommt, steht auf einem Zettel oder ist nur einer Person bekannt. Fehlt eine Lieferung kurz vor dem Patiententermin, beginnt das Nachtelefonieren.",
+    "loesung": "Pro Labor gibt es eine Vorlage mit den Angaben, die dieses Labor braucht, und für das Material eine Liste mit der üblichen Bestellmenge. Der Baustein füllt den Auftrag mit einer Fall-Nummer statt mit dem Namen, setzt das gewünschte Lieferdatum und legt einen Entwurf an. Offene Aufträge erscheinen in einer Übersicht, und einige Tage vor dem Patiententermin kommt eine Erinnerung an die Praxis, falls die Arbeit noch nicht eingetroffen ist.",
+    "mensch": "Den Inhalt des Laborauftrags bestimmt die Zahnärztin oder der Zahnarzt. Die MPA prüft jeden Entwurf und schickt ihn ab. Welche Mengen bestellt werden und bei welchem Lieferanten, bleibt Ihre Entscheidung.",
+    "fuer_wen": "Für Praxen, die mit einem oder mehreren Dentallabors zusammenarbeiten und offene Arbeiten im Blick behalten möchten. Für Praxen, in denen mehrere Personen Material nachbestellen.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Der Auftrag nennt eine Fall-Nummer statt des Namens. Die Zuordnung zur Person bleibt in der Praxissoftware. Auch eine Fall-Nummer mit Angaben zur Arbeit bleibt für die Praxis ein Personenbezug, deshalb gelten die Bedingungen unten.",
+    "quellen": [
+      {
+        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
+        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "praxis-textbausteine",
+    "branche": "zahnarztpraxen",
+    "name": "Textbausteine für Telefon und Mail",
+    "kurzbeschreibung": "Eine gemeinsame Sammlung geprüfter Antworten auf wiederkehrende Fragen: Öffnungszeiten, Anfahrt, Notfalldienst, Ablauf einer Dentalhygiene, was zur ersten Konsultation mitzubringen ist. Das Praxisteam findet die passende Antwort schnell und passt sie an. Eine Sprach-KI, die Patientenanrufe entgegennimmt, gehört ausdrücklich nicht dazu.",
+    "problem": "Viele Anrufe und E-Mails drehen sich um dieselben Fragen. Jede Person im Team antwortet etwas anders, und Angaben wie die Nummer des Notfalldienstes oder die Ferienabwesenheit sind an mehreren Orten notiert und nicht immer aktuell. Neue Mitarbeitende fragen nach, bis sie die Antworten kennen.",
+    "loesung": "Die Praxis hinterlegt ihre Antworten einmal, geordnet nach Thema. Am Telefon dient die Sammlung als Nachschlagewerk, bei E-Mails entsteht aus dem passenden Textbaustein ein Antwortentwurf. Ändert sich eine Angabe, wird sie an einer Stelle angepasst und gilt danach in allen Textbausteinen.",
+    "mensch": "Die Praxis entscheidet, welche Antworten in die Sammlung kommen und wer sie ändern darf. Jeder E-Mail-Entwurf wird gelesen und von einer Person abgeschickt. Fragen zur Behandlung beantwortet weiterhin die Zahnärztin oder der Zahnarzt.",
+    "fuer_wen": "Für Praxisteams mit mehreren MPA oder wechselnden Teilzeitpensen. Für Praxen, die einheitlich antworten und neue Mitarbeitende schneller einarbeiten möchten.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Die Sammlung selbst enthält keine Patientendaten. Für Antwortentwürfe auf E-Mails von Patientinnen und Patienten gelten die Bedingungen unten.",
+    "quellen": [
+      {
+        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
+        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "schadenmeldung-triage",
+    "branche": "immobilienverwaltungen",
+    "name": "Schadenmeldung mit Triage",
+    "kurzbeschreibung": "Mieterinnen und Mieter melden Schäden und Anliegen über ein einziges Formular mit Foto. Der Baustein schlägt Kategorie und Dringlichkeit vor und zeigt bei Notfällen sofort die Notfallnummer an. Ob und wer einen Auftrag erhält, entscheidet die Bewirtschaftung.",
+    "problem": "Schadenmeldungen kommen per Telefon, E-Mail, Brief oder über den Hauswart, oft ohne Foto, Wohnungsnummer oder Angabe, seit wann das Problem besteht. Die Bewirtschafterin fragt nach, sortiert von Hand und schätzt ein, was dringend ist. Bei vielen Liegenschaften gehen einzelne Meldungen zwischen anderen E-Mails unter.",
+    "loesung": "Ein Formular fragt die nötigen Angaben strukturiert ab: Liegenschaft, Wohnung, Art des Schadens, seit wann, Foto und Erreichbarkeit. Bei Notfällen wie austretendem Wasser zeigt es sofort die Notfallnummer an, statt nur eine Meldung anzulegen. Jede Meldung erhält einen Vorschlag für Kategorie und Dringlichkeit, damit die Liste nach Wichtigkeit geordnet ist, und einen Entwurf für die Antwort an die Mieterschaft.",
+    "mensch": "Die Bewirtschaftung prüft den Vorschlag, ändert Kategorie oder Dringlichkeit bei Bedarf und entscheidet, ob und welcher Handwerker beauftragt wird. Antworten an die Mieterschaft gehen erst nach Freigabe hinaus. Der Vorschlag ist eine Hilfe zum Sortieren, kein Entscheid.",
+    "fuer_wen": "Für Immobilienverwaltungen mit mehreren Liegenschaften, bei denen Meldungen über viele Kanäle eingehen. Für Verwaltungen, die Hauswart und Bewirtschaftung auf denselben Stand bringen möchten.",
+    "aufwand": "klein bis mittel",
+    "personendaten": true,
+    "daten": "Eine Meldung enthält Name, Wohnung und Kontakt, manchmal Fotos aus der Wohnung. Fotos werden nur für die Bearbeitung des Schadens verwendet.",
+    "quellen": [
+      {
+        "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E",
+        "url": "https://svit.ch/sites/default/files/2024-07/svit_branchenempfehlung_dsg_anhangE_de_v1.1_2407.pdf"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "besichtigungstermine-mietobjekt",
+    "branche": "immobilienverwaltungen",
+    "name": "Besichtigungstermine für Mietobjekte",
+    "kurzbeschreibung": "Interessierte wählen einen freien Besichtigungstermin auf einer Buchungsseite, statt per Telefon oder E-Mail einen Termin auszuhandeln. Die Verwaltung legt die Zeitfenster fest und sieht jederzeit, wer kommt. Erinnerungen und Absagen liegen als Entwurf bereit und gehen mit Ihrer Freigabe hinaus.",
+    "problem": "Für eine freie Wohnung melden sich je nach Lage viele Interessierte. Termine werden per Telefon und E-Mail vereinbart, verschoben und abgesagt, und die Teilnehmerliste entsteht von Hand. Wer nicht erscheint, fällt erst vor Ort auf.",
+    "loesung": "Pro Objekt legen Sie Zeitfenster und die Anzahl Plätze fest. Interessierte buchen über einen Link, den Sie im Inserat angeben, und geben nur Name und Kontakt an. Die Teilnehmerliste ist laufend aktuell. Erinnerungen am Vortag und Mitteilungen bei Absagen liegen als Entwürfe bereit. Bewerbungsunterlagen werden bei der Buchung bewusst nicht verlangt.",
+    "mensch": "Sie entscheiden, wann besichtigt wird und ob ein Termin abgesagt wird. Wer die Wohnung erhält, entscheidet ein Mensch, nie die Buchungsseite. Das Anmeldeformular für die Wohnung ist ein eigener Schritt mit eigenen Regeln.",
+    "fuer_wen": "Für Verwaltungen, die regelmässig Wohnungen oder Geschäftsräume neu vermieten. Für Bewirtschaftungen, die Sammelbesichtigungen planbar machen möchten.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Für die Buchung genügen Name, E-Mail und Telefon. Geplant ist, diese Angaben nach der Besichtigung zu löschen, wenn keine Anmeldung folgt.",
+    "quellen": [
+      {
+        "titel": "EDÖB, Merkblatt zu Anmeldeformularen für Mietwohnungen (15.07.2025)",
+        "url": "https://www.edoeb.admin.ch/dam/en/sd-web/F7ojQw99LBH-/Merkblatt%20zu%20Anmeldeformularen%20f%C3%BCr%20Mietwohnungen%20DE_20250715.pdf"
+      },
+      {
+        "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E",
+        "url": "https://svit.ch/sites/default/files/2024-07/svit_branchenempfehlung_dsg_anhangE_de_v1.1_2407.pdf"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "uebergabeprotokoll",
+    "branche": "immobilienverwaltungen",
+    "name": "Digitales Übergabeprotokoll",
+    "kurzbeschreibung": "Wohnungsabnahme und Übergabe auf Tablet oder Handy: Raum für Raum mit Fotos, Zählerständen und Schlüsseln, unterschrieben vor Ort. Daraus entsteht das Protokoll als PDF-Entwurf. Was als Mangel gilt und wer dafür aufkommt, entscheiden die Beteiligten.",
+    "problem": "Übergaben laufen vielerorts mit einem Papierformular. Fotos landen auf dem Handy der Bewirtschafterin, Zählerstände auf einem separaten Blatt, und das Protokoll wird im Büro abgetippt. Fehlt später ein Foto oder ist eine Notiz unleserlich, lässt sich der Zustand schwer nachweisen.",
+    "loesung": "Eine Checkliste pro Objekt führt durch alle Räume. Zu jedem Punkt lassen sich Zustand, Bemerkung und Fotos erfassen, dazu Zählerstände und abgegebene Schlüssel. Am Ende unterschreiben Mieterschaft und Verwaltung auf dem Gerät. Der Baustein erstellt das Protokoll als PDF-Entwurf, legt es beim Objekt ab und übernimmt die Schlüssel in eine Liste.",
+    "mensch": "Die Personen vor Ort halten den Zustand fest und unterschreiben. Ob ein Schaden über die normale Abnützung hinausgeht und wer ihn bezahlt, entscheidet die Verwaltung, nicht der Baustein. Das Protokoll geht erst nach Durchsicht an die Mieterschaft.",
+    "fuer_wen": "Für Verwaltungen mit regelmässigen Ein- und Auszügen. Für Bewirtschaftungen, die Fotos, Zählerstände und Schlüssel an einem Ort haben möchten.",
+    "aufwand": "klein bis mittel",
+    "personendaten": true,
+    "daten": "Das Protokoll enthält Namen, Unterschriften und Fotos aus der Wohnung. Fotos und Kontaktdaten aus bewohnten Wohnungen nur mit Einwilligung der Mieterin oder des Mieters.",
+    "quellen": [
+      {
+        "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E",
+        "url": "https://svit.ch/sites/default/files/2024-07/svit_branchenempfehlung_dsg_anhangE_de_v1.1_2407.pdf"
+      },
+      {
+        "titel": "EDÖB, Merkblatt zu Anmeldeformularen für Mietwohnungen (15.07.2025)",
+        "url": "https://www.edoeb.admin.ch/dam/en/sd-web/F7ojQw99LBH-/Merkblatt%20zu%20Anmeldeformularen%20f%C3%BCr%20Mietwohnungen%20DE_20250715.pdf"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "zeiterfassung-sia-phasen",
+    "branche": "architekturbueros",
+    "name": "Zeiterfassung nach Projekt und Phase",
+    "kurzbeschreibung": "Stunden werden direkt dem Projekt und der Phase zugeordnet, am Computer oder unterwegs auf dem Handy. Am Monatsende liegt ein Rapport pro Projekt und Phase als Entwurf bereit. Er dient als Grundlage für Zeithonorar und Akontorechnung.",
+    "problem": "Stunden werden oft am Ende der Woche aus dem Gedächtnis in eine Tabelle übertragen, nicht immer mit klarer Zuordnung zu Projekt und Phase. Am Monatsende sucht jemand die Zahlen zusammen, um Honorar und Projektstand zu beurteilen. Fehlende Einträge fallen erst auf, wenn die Rechnung ansteht.",
+    "loesung": "Alle Mitarbeitenden erfassen Stunden mit Projekt, Phase und kurzer Tätigkeit, die Phasen so, wie Ihr Büro sie verwendet, etwa angelehnt an SIA 102. Der Baustein weist auf fehlende Zuordnungen und Lücken in der Woche hin und fasst am Monatsende alles zu einem Rapport pro Projekt und Phase zusammen. Der Rapport lässt sich als Tabelle exportieren.",
+    "mensch": "Die Projektleitung prüft den Monatsrapport, korrigiert falsche Zuordnungen und gibt ihn frei. Welche Stunden verrechnet werden, entscheidet das Büro. Der Baustein bewertet keine Leistung einzelner Personen.",
+    "fuer_wen": "Für Architekturbüros mit mehreren laufenden Projekten, die nach Zeitaufwand oder nach Phasen abrechnen. Für Büros, die bisher mit Tabellen oder Papierrapporten arbeiten.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Erfasst werden Arbeitszeiten von Mitarbeitenden, also Personendaten. Einsehen sollen sie nur die Person selbst und die Projektleitung.",
+    "quellen": [
+      {
+        "titel": "law.ch, Honorarbemessung nach SIA 102/103: Zeithonorar",
+        "url": "https://law.ch/lawinfo/architektenrecht/architekturvertrag/bauherren-pflichten/architektenhonorar/honorarbemessung-nach-sia-102-103/zeithonorar/"
+      },
+      {
+        "titel": "WEKA, Auftragsbearbeitung: was KMU beim Einsatz von Dienstleistern beachten müssen",
+        "url": "https://www.weka.ch/themen/datenschutz-und-it-recht/datenschutz-umsetzen/article/auftragsbearbeitung-was-muessen-kmu-beim-einsatz-von-auslaendischen-dienstleistern-beachten/"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "akontorechnung-architektur",
+    "branche": "architekturbueros",
+    "name": "Akontorechnung aus Stunden",
+    "kurzbeschreibung": "Aus dem freigegebenen Monatsrapport entsteht ein Entwurf für die Akonto- oder Honorarrechnung, mit Stunden, Ansätzen und bisherigen Zahlungen. Die Projektleitung prüft die Berechnung und gibt die Rechnung frei. Verschickt wird sie vom Büro selbst.",
+    "problem": "Für die Rechnung werden Stunden aus der Zeiterfassung abgeschrieben, mit Ansätzen multipliziert und mit früheren Akontozahlungen verglichen, oft in einer eigenen Tabelle pro Projekt. Rechenfehler und vergessene Akontorechnungen fallen spät auf. Mit jeder weiteren Tabelle wächst die Gefahr, dass zwei Stände nicht übereinstimmen.",
+    "loesung": "Der Baustein übernimmt die Stunden pro Phase aus dem freigegebenen Rapport, rechnet sie mit den vereinbarten Ansätzen und zieht bisherige Akontozahlungen ab. Daraus entsteht ein Rechnungsentwurf im Layout Ihres Büros. Eine Übersicht zeigt, bei welchen Projekten eine Akontorechnung fällig wäre.",
+    "mensch": "Ansätze und Abrechnungsregeln legt das Büro fest, gemäss Vertrag mit der Bauherrschaft. Die Projektleitung prüft jede Berechnung, passt sie an und gibt die Rechnung frei. Den Versand übernimmt das Büro.",
+    "fuer_wen": "Für Büros, die nach Zeithonorar oder in Akontozahlungen abrechnen. Für Büros, die Rechnungen heute aus mehreren Tabellen zusammenstellen.",
+    "aufwand": "mittel",
+    "personendaten": true,
+    "daten": "Die Rechnung enthält Namen und Adressen der Bauherrschaft und Stunden von Mitarbeitenden.",
+    "quellen": [
+      {
+        "titel": "law.ch, Honorarbemessung nach SIA 102/103: Zeithonorar",
+        "url": "https://law.ch/lawinfo/architektenrecht/architekturvertrag/bauherren-pflichten/architektenhonorar/honorarbemessung-nach-sia-102-103/zeithonorar/"
+      },
+      {
+        "titel": "WEKA, Auftragsbearbeitung: was KMU beim Einsatz von Dienstleistern beachten müssen",
+        "url": "https://www.weka.ch/themen/datenschutz-und-it-recht/datenschutz-umsetzen/article/auftragsbearbeitung-was-muessen-kmu-beim-einsatz-von-auslaendischen-dienstleistern-beachten/"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "protokoll-pendenzen",
+    "branche": "architekturbueros",
+    "name": "Sitzungsprotokoll und Pendenzenliste",
+    "kurzbeschreibung": "Bau- und Planersitzungen mit einer festen Vorlage protokollieren: Beschlüsse, Pendenzen mit Verantwortlichen und Termin. Offene Punkte wandern automatisch in das nächste Protokoll. Aufnahmen oder KI-Transkripte gehören nicht dazu, ausser alle Beteiligten willigen ein.",
+    "problem": "Protokolle werden nach der Sitzung aus Notizen abgetippt, Pendenzen stehen verstreut in mehreren Dokumenten. Vor der nächsten Sitzung sucht jemand zusammen, was erledigt ist. Wer für welchen Punkt zuständig war, ist nicht immer klar.",
+    "loesung": "Eine Protokollvorlage pro Projekt mit Teilnehmenden, Traktanden, Beschlüssen und Pendenzen. Jede Pendenz hat eine verantwortliche Stelle und einen Termin. Der Baustein übernimmt offene Pendenzen in das nächste Protokoll, zeigt überfällige Punkte und bereitet den Versand an den Verteiler als Entwurf vor.",
+    "mensch": "Die protokollführende Person hält fest, was beschlossen wurde, und gibt das Protokoll frei. Termine und Zuständigkeiten legen die Beteiligten in der Sitzung fest. An den Verteiler geht das Protokoll erst nach Freigabe.",
+    "fuer_wen": "Für Architekturbüros in Projektleitung und Bauleitung mit regelmässigen Sitzungen. Für Büros, die Pendenzen über mehrere Projekte im Blick behalten möchten.",
+    "aufwand": "klein bis mittel",
+    "personendaten": true,
+    "daten": "Protokolle enthalten Namen und Funktionen der Teilnehmenden. Aufnahmen und KI-Transkripte nur mit Einwilligung aller Beteiligten und mit Vertrag.",
+    "quellen": [
+      {
+        "titel": "WEKA, Auftragsbearbeitung: was KMU beim Einsatz von Dienstleistern beachten müssen",
+        "url": "https://www.weka.ch/themen/datenschutz-und-it-recht/datenschutz-umsetzen/article/auftragsbearbeitung-was-muessen-kmu-beim-einsatz-von-auslaendischen-dienstleistern-beachten/"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "arbeitszeit-pflege",
+    "branche": "pflegeheime-spitex",
+    "name": "Arbeitszeiterfassung für Pflege und Spitex",
+    "kurzbeschreibung": "Mitarbeitende erfassen Arbeitszeiten und Pausen am Handy oder Terminal, auch bei Einsätzen unterwegs. Am Monatsende liegt der Abschluss pro Person als Entwurf bereit, mit Hinweisen auf fehlende Einträge und auf Abweichungen von Regeln, die Ihr Betrieb hinterlegt. Freigabe und Korrekturen bleiben bei der Leitung.",
+    "problem": "Zeiten werden in vielen Betrieben auf Papier, in Tabellen oder in mehreren Systemen erfasst. Zum Monatsende tragen Teamleitungen die Stunden zusammen, klären Lücken nach und geben sie an die Lohnbuchhaltung weiter. Dass die Arbeitszeit erfasst werden muss, ist vorgeschrieben, wie viel Handarbeit dabei anfällt, ist von Betrieb zu Betrieb verschieden.",
+    "loesung": "Beginn, Pausen und Ende werden direkt erfasst, bei der Spitex auch für Einsatztage unterwegs. Der Baustein vergleicht die Einträge mit dem Dienstplan, markiert fehlende Pausen oder Lücken und prüft Regeln, die der Betrieb hinterlegt, etwa zu Ruhezeiten. Am Monatsende entsteht pro Person ein Abschluss als Entwurf für die Lohnbuchhaltung.",
+    "mensch": "Die Mitarbeitenden bestätigen ihre Zeiten. Die Teamleitung klärt Hinweise, korrigiert bei Bedarf und gibt den Abschluss frei. Welche Regeln gelten, legt der Betrieb fest, der Baustein trifft keine arbeitsrechtliche Beurteilung.",
+    "fuer_wen": "Für Pflegeheime und Spitex-Organisationen mit Schichtdiensten und Teilzeitpensen. Für Betriebe, die Zeiten heute auf Papier oder in Tabellen zusammentragen.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Arbeitszeiten sind Personendaten der Mitarbeitenden. Pflegerische Inhalte werden in diesem Baustein nicht erfasst.",
+    "quellen": [
+      {
+        "titel": "SECO, Arbeitszeiterfassung",
+        "url": "https://www.seco.admin.ch/de/arbeitszeiterfassung"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "besichtigung-pflegeheim",
+    "branche": "pflegeheime-spitex",
+    "name": "Besichtigungen und Informationsgespräche",
+    "kurzbeschreibung": "Angehörige und Interessierte wählen online einen Termin für eine Besichtigung oder ein Informationsgespräch. Bestätigung und Erinnerung enthalten nur neutrale Angaben wie Datum, Ort und Ansprechperson. Welche Termine angeboten werden und was besprochen wird, bestimmt der Betrieb.",
+    "problem": "Anfragen für Besichtigungen kommen per Telefon, oft dann, wenn die zuständige Person im Haus unterwegs ist. Termine werden mehrfach hin- und hergeschoben, Erinnerungen von Hand verschickt oder vergessen. Für Angehörige, die selbst berufstätig sind, ist das telefonische Abstimmen zusätzlich schwierig.",
+    "loesung": "Der Betrieb gibt Zeitfenster für Besichtigungen oder Informationsgespräche frei. Interessierte buchen über einen Link auf der Website mit Name und Kontakt, ohne Angaben zur Gesundheit. Bestätigung und Erinnerung am Vortag liegen als Entwürfe mit neutralem Inhalt bereit.",
+    "mensch": "Der Betrieb entscheidet, welche Termine angeboten werden, und führt das Gespräch. Die Buchung ist keine Anmeldung und kein Eintrag auf einer Warteliste. Wo die Vermittlung von Pflegeplätzen über eine Behörde läuft, wie in Basel-Stadt, verweist die Seite darauf.",
+    "fuer_wen": "Für Pflegeheime, die Besichtigungen planbarer machen möchten. Für Spitex-Organisationen, die Informationsgespräche für neue Klientinnen und Klienten anbieten.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Für die Buchung genügen Name und Kontakt. Gesundheitsangaben werden bewusst nicht abgefragt.",
+    "quellen": [
+      {
+        "titel": "Kanton Basel-Stadt, Merkblatt Pflegeplatzvermittlung (ab 1.1.2026)",
+        "url": "https://media.bs.ch/original_file/fbf29e2106c8e290be8a25851d07821081592536/merkblatt-pflegeplatzvermittlung-2026-01-01.pdf"
+      },
+      {
+        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
+        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
+  },
+  {
+    "slug": "abrechnung-vorpruefung",
+    "branche": "pflegeheime-spitex",
+    "name": "Vorprüfung der Leistungsabrechnung",
+    "kurzbeschreibung": "Bevor die Abrechnung hinausgeht, prüft der Baustein den Export aus Ihrer Pflegesoftware auf fehlende Pflichtfelder und Unstimmigkeiten. Er erstellt eine Warnliste, kürzt nichts und ändert nichts. Freigabe und Versand über MediData oder H-Net bleiben beim Betrieb.",
+    "problem": "Leistungen werden in der Pflegesoftware erfasst und für die Abrechnung exportiert. Fehlende Angaben oder Widersprüche fallen oft erst auf, wenn eine Rechnung zurückkommt. Mit der elektronischen Abrechnung, die etwa in Basel-Stadt ab 2026 verbindlich wird, kommen neue Formate und Pflichtfelder dazu.",
+    "loesung": "Der Baustein liest den Export aus der Pflegesoftware, prüft Pflichtfelder, Datumsangaben und offensichtliche Widersprüche, etwa Leistungen ausserhalb eines Einsatzzeitraums, und erstellt eine Warnliste. Bei CSV- oder XML-Dateien prüft er zusätzlich das Format, sobald die kantonalen Vorgaben feststehen. Die Datei selbst bleibt unverändert.",
+    "mensch": "Die Administration klärt jede Warnung, korrigiert in der Pflegesoftware und gibt die Abrechnung frei. Pflegerische und medizinische Einschätzungen trifft der Baustein nie. Den Versand über MediData oder H-Net übernimmt der Betrieb.",
+    "fuer_wen": "Für Spitex-Organisationen und Pflegeheime, die ihre Abrechnung selbst erstellen und mit der elektronischen Abrechnung neue Formate erfüllen müssen.",
+    "aufwand": "klein bis mittel",
+    "personendaten": true,
+    "daten": "Abrechnungsdaten enthalten Gesundheitsdaten von Klientinnen und Klienten und unterstehen dem Berufsgeheimnis. Dieser Baustein startet deshalb erst nach Vertrag und Rechtsprüfung.",
+    "quellen": [
+      {
+        "titel": "Kanton Basel-Stadt, Merkblatt elektronische Abrechnung Spitex (ab 1.1.2026)",
+        "url": "https://media.bs.ch/original_file/8be94ea464aba4d88e20696573c20cb3d190eecf/merkblatt-elektronische-abrechnung-spitex-2026-01-01.pdf"
+      },
+      {
+        "titel": "Kanton Solothurn, Informationsschreiben Projekt ePflege",
+        "url": "https://so.ch/fileadmin/internet/ddi/ddi-gesa/PDF/Behandlung_und_Pflege/APH/Restkostenfinanzierung/2025-11-19_Informationsschreiben_II_Projekt_ePflege--Kopie-20260105.pdf"
+      },
+      {
+        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
+        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-26"
   }
 ]
