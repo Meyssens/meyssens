@@ -1,0 +1,15 @@
+# GitHub Pages (Jekyll): Quelldateien für build.py und Tests nicht veröffentlichen
+exclude:
+  - build.py
+  - test_seiten.py
+  - __pycache__
+  - artikel.json
+  - branchen.json
+  - produkte.json
+  - ansichten.html
+  - artikel
+  - vorlage_artikel.html
+  - vorlage_baustein.html
+  - vorlage_branche.html
+  - vorlage_produkt.html
+  - vorlage_unternehmen.html
