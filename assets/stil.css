@@ -472,6 +472,90 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .stil .dunkel .kette-schritt b{color:#fff}
 .stil .dunkel .kette-nr{color:rgba(255,255,255,.6)}
 .stil .dunkel .kette-text{color:rgba(255,255,255,.74)}
+/* Ablauf-Kette als Scroll-Animation (Branchenseiten). Ohne JS oder bei reduzierter Bewegung: statische Liste.
+   Nur opacity und transform werden animiert, damit sich nichts verschiebt. */
+.stil{--auto:#8c8cff;--mensch:#ffc95c}
+.ablauf{max-width:860px;margin:clamp(3rem,6vw,5rem) auto clamp(3rem,6vw,5rem)}
+.ablauf-kopf h3{font-family:'Syne','Syne Ersatz',sans-serif;font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-bottom:.6rem}
+.ablauf-kopf > p{max-width:62ch;font-size:.95rem;line-height:1.7;margin-bottom:1.1rem}
+.ablauf-legende{list-style:none;display:flex;flex-wrap:wrap;gap:.5rem 1.25rem;font-size:.8rem;margin-bottom:2rem}
+.ablauf-legende li{display:flex;align-items:center;gap:.45rem}
+.ablauf-punkt{width:14px;height:14px;border-radius:50%;flex:none;border:2px solid transparent}
+.ablauf-legende .baustein .ablauf-punkt{background:var(--auto)}
+.ablauf-legende .mensch .ablauf-punkt{background:var(--mensch)}
+.ablauf-legende .spaeter .ablauf-punkt{border:2px dashed var(--auto)}
+.ablauf-legende .vorhanden .ablauf-punkt{background:rgba(255,255,255,.3)}
+.ablauf-liste{list-style:none}
+.ablauf-schritt,.ablauf-ende{position:relative;display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:clamp(.85rem,2.5vw,1.5rem)}
+.ablauf-schritt{padding-bottom:1.25rem}
+.ablauf-marke{grid-row:1;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;position:relative;z-index:1}
+.ablauf-marke svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ablauf-linie{position:absolute;left:23px;top:52px;width:2px;height:calc(100% - 56px);overflow:visible;transform-origin:top}
+.ablauf-linie line{stroke:rgba(168,168,255,.45);stroke-width:2}
+.ablauf-karte{min-width:0;padding:1rem 1.15rem 1.05rem;border-radius:16px;background:var(--nacht2);border:1px solid rgba(255,255,255,.1);border-left-width:3px}
+.ablauf-karte h4{font-size:1.02rem;font-weight:600;line-height:1.35;color:#fff;margin:.45rem 0 .3rem}
+.ablauf-nr{font-variant-numeric:tabular-nums;color:rgba(255,255,255,.55);font-weight:500;margin-right:.15rem}
+.ablauf-karte p{font-size:.9rem;line-height:1.6;color:rgba(255,255,255,.8)}
+.ablauf-karte .ablauf-hinweis{font-size:.8rem;color:rgba(255,255,255,.6);margin-top:.3rem}
+.stil .dunkel .ablauf-link{display:inline-block;padding:.7rem 0 .2rem;font-size:.85rem;line-height:1.45;font-weight:500;color:var(--hellblau);text-decoration:none}
+.ablauf-link svg{display:inline;vertical-align:-2px;margin-left:.3rem}
+.stil .dunkel .ablauf-link:hover{text-decoration:underline;text-underline-offset:4px}
+.ablauf-art{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .55rem;border-radius:999px}
+/* Arten: automatisch (blau, gefüllt), Mensch (gelb), später (blau gestrichelt), Ihre Software (grau) */
+.ablauf-schritt.baustein .ablauf-marke{background:var(--auto);color:var(--nacht)}
+.ablauf-schritt.baustein .ablauf-karte{border-left-color:var(--auto)}
+.ablauf-schritt.baustein .ablauf-art{background:var(--auto);color:var(--nacht)}
+.ablauf-schritt.mensch .ablauf-marke{background:var(--mensch);color:var(--nacht)}
+.ablauf-schritt.mensch .ablauf-karte{border-left-color:var(--mensch);background:#1b1a2a}
+.ablauf-schritt.mensch .ablauf-art{background:var(--mensch);color:var(--nacht)}
+.ablauf-schritt.spaeter .ablauf-marke{background:var(--nacht);border:2px dashed var(--auto);color:var(--auto)}
+.ablauf-schritt.spaeter .ablauf-karte{border-style:dashed;border-left-style:dashed;border-left-color:var(--auto);background:transparent}
+.ablauf-schritt.spaeter .ablauf-art{border:1px dashed var(--auto);color:#d4d4ff}
+.ablauf-schritt.vorhanden .ablauf-marke{background:#2a2a48;color:rgba(255,255,255,.85)}
+.ablauf-schritt.vorhanden .ablauf-karte{border-left-color:rgba(255,255,255,.35)}
+.ablauf-schritt.vorhanden .ablauf-art{background:rgba(255,255,255,.12);color:rgba(255,255,255,.85)}
+/* Abschluss */
+.ablauf-ende{margin-top:.25rem}
+.ablauf-ende .ablauf-marke{width:48px;height:48px;background:#fff;color:var(--blue);box-shadow:0 0 0 8px rgba(140,140,255,.16),0 0 48px rgba(140,140,255,.55)}
+.ablauf-ende .ablauf-marke svg{width:24px;height:24px;stroke-width:2.6}
+.ablauf-ziel{min-width:0;padding-top:.35rem}
+.ablauf-ziel-text{font-family:'Syne','Syne Ersatz',sans-serif;font-weight:700;font-size:clamp(1.25rem,2.4vw,1.75rem);line-height:1.25;letter-spacing:-.02em;color:#fff;max-width:30ch}
+.stil .dunkel .ablauf-cta{margin-top:1.4rem;min-height:52px;font-size:1rem;padding:.95rem 1.6rem;box-shadow:0 18px 40px -16px rgba(0,0,255,.9);white-space:normal;text-align:left}
+.ablauf-cta:hover{background:var(--blue-h)}
+.ablauf-mikro{font-size:.8rem;line-height:1.55;color:rgba(255,255,255,.65);margin-top:.75rem;max-width:52ch}
+.ablauf > .kette-legende{margin:1.5rem 0 0 calc(48px + clamp(.85rem,2.5vw,1.5rem))}
+/* Formular */
+.ablauf-form{margin:2rem 0 0 calc(48px + clamp(.85rem,2.5vw,1.5rem));max-width:620px;background:#fff;color:var(--ink);border-radius:22px;padding:clamp(1.25rem,3vw,1.9rem);scroll-margin-top:84px}
+.ablauf-form h4{font-family:'Syne','Syne Ersatz',sans-serif;font-weight:800;font-size:1.15rem;line-height:1.25;letter-spacing:-.02em;margin-bottom:1rem}
+/* Einwilligung: Inline-Farbe gilt auf der weissen Karte, nicht die helle Schrift des dunklen Abschnitts */
+.stil .dunkel .ablauf-form [style*="--ink3"]{color:var(--ink3)!important}
+.ablauf-form .finput[readonly]{background:var(--blue-5);border-color:var(--blue-20);color:var(--ink2);font-weight:400}
+.ablauf-form .ftextarea{min-height:88px}
+.ablauf-form .btn-p{width:100%;justify-content:center;min-height:48px}
+.ablauf-form [role="status"]{display:none;font-size:.85rem;line-height:1.55;margin-top:.75rem;padding:.7rem .9rem;border-radius:8px}
+.ablauf-form [role="status"].ok{display:block;background:#e8f7ee;color:#14532d}
+.ablauf-form [role="status"].err{display:block;background:#fdecec;color:#7f1d1d}
+@media(max-width:560px){.ablauf-form,.ablauf > .kette-legende{margin-left:0}.ablauf-cta{width:100%;justify-content:center}}
+/* Animation: nur mit Klasse "bewegt" (IntersectionObserver vorhanden, keine reduzierte Bewegung) */
+.ablauf.bewegt .ablauf-marke{transition:transform .5s var(--weich),opacity .5s var(--weich)}
+.ablauf.bewegt .ablauf-karte{transition:transform .7s var(--weich) .08s,opacity .7s var(--weich) .08s}
+.ablauf.bewegt .ablauf-linie{transition:transform .9s var(--weich) .35s}
+.ablauf.bewegt .ablauf-schritt:not(.an) .ablauf-marke,.ablauf.bewegt .ablauf-ende:not(.an) .ablauf-marke{opacity:0;transform:scale(.5)}
+.ablauf.bewegt .ablauf-schritt:not(.an) .ablauf-karte{opacity:0;transform:translateY(20px)}
+.ablauf.bewegt .ablauf-schritt:not(.an) .ablauf-linie{transform:scaleY(0)}
+.ablauf.bewegt .ablauf-ende .ablauf-ziel{transition:transform .8s var(--weich) .15s,opacity .8s var(--weich) .15s}
+.ablauf.bewegt .ablauf-ende:not(.an) .ablauf-ziel{opacity:0;transform:translateY(24px) scale(.98)}
+.ablauf.bewegt .ablauf-ende path{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .6s var(--weich) .35s}
+.ablauf.bewegt .ablauf-ende.an path{stroke-dashoffset:0}
+.ablauf.bewegt .ablauf-ende.an .ablauf-marke{animation:ablauf-puls 1.6s var(--weich) .5s 1}
+@keyframes ablauf-puls{0%{box-shadow:0 0 0 8px rgba(140,140,255,.16),0 0 48px rgba(140,140,255,.55)}40%{box-shadow:0 0 0 22px rgba(140,140,255,0),0 0 80px rgba(140,140,255,.9)}100%{box-shadow:0 0 0 8px rgba(140,140,255,.16),0 0 48px rgba(140,140,255,.55)}}
+/* Fester Anfrage-Knopf */
+.stil .anfrage-fest{position:fixed;right:clamp(16px,2.5vw,28px);bottom:clamp(16px,2.5vw,28px);z-index:90;display:inline-flex;align-items:center;gap:.4rem;min-height:48px;padding:.75rem 1.2rem;border-radius:999px;background:var(--blue);color:#fff;font-size:.9rem;font-weight:500;text-decoration:none;box-shadow:0 14px 36px -12px rgba(0,0,80,.6);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s var(--weich),transform .3s var(--weich),visibility 0s linear .3s}
+.stil .anfrage-fest.zeigen{opacity:1;visibility:visible;transform:none;transition:opacity .3s var(--weich),transform .3s var(--weich)}
+.stil .anfrage-fest:hover{background:var(--blue-h)}
+.stil .anfrage-fest:focus-visible,.ablauf-cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.stil .anfrage-fest[hidden]{display:none}
+@media print{.anfrage-fest{display:none!important}}
 .stil .dunkel .kette-art{background:rgba(255,255,255,.1);color:rgba(255,255,255,.88)}
 .stil .dunkel .kette-schritt.baustein{border-color:rgba(168,168,255,.55);box-shadow:inset 0 3px 0 var(--hellblau)}
 .stil .dunkel .kette-schritt.baustein .kette-art{background:var(--hellblau);color:var(--nacht)}

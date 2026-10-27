@@ -188,6 +188,97 @@
     <p class="s-lead">Diese Bausteine betreffen nur die Verwaltung, pflegerische und medizinische Entscheide bleiben ausserhalb. Wir beginnen mit Arbeitszeiten und Terminen, die kaum Gesundheitsdaten berühren. Die Vorprüfung der Abrechnung folgt, sobald das kantonale Format feststeht und Vertrag und Rechtsprüfung vorliegen.</p>
   </div>
   <p class="regel r"><strong>Entwürfe ja, automatischer Versand nein.</strong> Jeder Baustein bereitet vor: Entwürfe, Listen und Hinweise. Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>
+  <div class="ablauf" id="ablauf" data-ablauf>
+    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.currentScript.parentNode.classList.add("bewegt")</script>
+    <div class="ablauf-kopf">
+      <h3>Ablauf: Einsatz bis Rechnung</h3>
+      <p>So könnte der Weg vom geplanten Einsatz bis zur elektronischen Abrechnung aussehen. Der Baustein prüft nur, entscheiden und versenden bleibt Sache des Betriebs.</p>
+      <ul class="ablauf-legende" aria-label="Legende"><li class="vorhanden"><span class="ablauf-punkt" aria-hidden="true"></span>Ihre Software</li><li class="baustein"><span class="ablauf-punkt" aria-hidden="true"></span>Läuft automatisch, als Entwurf</li><li class="mensch"><span class="ablauf-punkt" aria-hidden="true"></span>Mensch entscheidet</li></ul>
+    </div>
+    <ol class="ablauf-liste">
+      <li class="ablauf-schritt vorhanden">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M9 20.5h6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Ihre Software</span>
+          <h4><span class="ablauf-nr">1</span> Dienstplan</h4>
+          <p>Die Leitung plant die Einsätze wie heute, die Arbeitszeiterfassung gleicht die erfassten Zeiten später mit diesem Plan ab.</p><p class="ablauf-hinweis">Plant die Leitung, eine Regelprüfung folgt später.</p>
+          <a class="ablauf-link" href="/produkte/arbeitszeit-pflege/">Zum Baustein: Arbeitszeiterfassung für Pflege und Spitex <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt vorhanden">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M9 20.5h6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Ihre Software</span>
+          <h4><span class="ablauf-nr">2</span> Leistungserfassung</h4>
+          <p>Die Pflegenden erfassen ihre Leistungen weiter in Ihrer Pflegesoftware, daran ändert der Baustein nichts.</p><p class="ablauf-hinweis">In Ihrer Pflegesoftware.</p>
+          <a class="ablauf-link" href="/produkte/abrechnung-vorpruefung/">Zum Baustein: Vorprüfung der Leistungsabrechnung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">3</span> Plausibilitätsprüfung</h4>
+          <p>Der Baustein findet etwa eine Leistung ausserhalb des Einsatzzeitraums und setzt sie auf die Warnliste.</p>
+          <a class="ablauf-link" href="/produkte/abrechnung-vorpruefung/">Zum Baustein: Vorprüfung der Leistungsabrechnung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt vorhanden">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M9 20.5h6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Ihre Software</span>
+          <h4><span class="ablauf-nr">4</span> Rechnungsdatei</h4>
+          <p>Die Abrechnungsdatei kommt aus der Pflegesoftware, ihr Format prüft der Baustein, sobald die kantonalen Vorgaben feststehen.</p><p class="ablauf-hinweis">Export aus der Pflegesoftware.</p>
+          <a class="ablauf-link" href="/produkte/abrechnung-vorpruefung/">Zum Baustein: Vorprüfung der Leistungsabrechnung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">5</span> Freigabe</h4>
+          <p>Die Administration klärt jede Warnung, korrigiert in der Pflegesoftware und gibt die Abrechnung frei.</p><p class="ablauf-hinweis">Die Administration klärt jede Warnung.</p>
+          <a class="ablauf-link" href="/produkte/abrechnung-vorpruefung/">Zum Baustein: Vorprüfung der Leistungsabrechnung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">6</span> Versand</h4>
+          <p>Die Rechnung geht über MediData oder H-Net hinaus, ausgelöst vom Betrieb.</p><p class="ablauf-hinweis">Über MediData oder H-Net.</p>
+          <a class="ablauf-link" href="/produkte/abrechnung-vorpruefung/">Zum Baustein: Vorprüfung der Leistungsabrechnung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+    </ol>
+    <div class="ablauf-ende">
+      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>
+      <div class="ablauf-ziel">
+        <p class="ablauf-ziel-text">Ziel: Fehler fallen vor dem Versand auf, nicht erst bei einer Rückweisung. Pflegerische Entscheide trifft der Baustein nie.</p>
+        <a class="btn-p ablauf-cta" href="#ablauf-anfrage"><span>Diesen Ablauf für meine Einrichtung anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>
+      </div>
+    </div>
+    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
+    <form class="ablauf-form" id="ablauf-anfrage" action="https://formspree.io/f/xlgpzzew" method="POST">
+      <h4>Diesen Ablauf für meine Einrichtung anfragen</h4>
+      <input type="hidden" name="_subject" value="Ablauf-Anfrage über meyssens.ch: Einsatz bis Rechnung (Pflegeheime und Spitex)">
+      <input type="hidden" name="branche" value="Pflegeheime und Spitex">
+      <div class="fgrp"><label class="flabel" for="ab-ablauf">Ablauf</label><input class="finput" type="text" id="ab-ablauf" name="ablauf" value="Einsatz bis Rechnung (Pflegeheime und Spitex)" readonly></div>
+      <div class="frow"><div class="fgrp"><label class="flabel" for="ab-name">Name</label><input class="finput" type="text" id="ab-name" name="name" autocomplete="name" required></div><div class="fgrp"><label class="flabel" for="ab-email">E-Mail</label><input class="finput" type="email" id="ab-email" name="email" autocomplete="email" required></div></div>
+      <div class="fgrp"><label class="flabel" for="ab-nachricht">Nachricht (optional)</label><textarea class="ftextarea" id="ab-nachricht" name="nachricht" rows="3" placeholder="Zum Beispiel: welche Software Sie heute nutzen"></textarea></div>
+      <div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>
+      <button type="submit" class="btn-p"><span>Ablauf anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <p role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <a class="anfrage-fest" href="#ablauf-anfrage" data-anfrage-fest hidden>Ablauf anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <div class="baustein-raster">
     <article class="baustein-karte r">
       <div class="baustein-kopf"><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand klein, Einschätzung</span></div>
@@ -264,19 +355,6 @@
         </form>
       </details>
     </article>
-  </div>
-  <div class="kette-wrap r">
-    <h3>Ablauf: Einsatz bis Rechnung</h3>
-    <p>So könnte der Weg vom geplanten Einsatz bis zur elektronischen Abrechnung aussehen. Der Baustein prüft nur, entscheiden und versenden bleibt Sache des Betriebs.</p>
-    <ol class="kette">
-      <li class="kette-schritt vorhanden"><span class="kette-nr" aria-hidden="true">1</span><b>Dienstplan</b><span class="kette-art">Ihre Software</span><span class="kette-text">Plant die Leitung, eine Regelprüfung folgt später.</span></li>
-      <li class="kette-schritt vorhanden"><span class="kette-nr" aria-hidden="true">2</span><b>Leistungserfassung</b><span class="kette-art">Ihre Software</span><span class="kette-text">In Ihrer Pflegesoftware.</span></li>
-      <li class="kette-schritt baustein"><span class="kette-nr" aria-hidden="true">3</span><b>Plausibilitätsprüfung</b><span class="kette-art">Baustein</span><span class="kette-text"><a href="/produkte/abrechnung-vorpruefung/">Vorprüfung der Leistungsabrechnung</a></span></li>
-      <li class="kette-schritt vorhanden"><span class="kette-nr" aria-hidden="true">4</span><b>Rechnungsdatei</b><span class="kette-art">Ihre Software</span><span class="kette-text">Export aus der Pflegesoftware.</span></li>
-      <li class="kette-schritt mensch"><span class="kette-nr" aria-hidden="true">5</span><b>Freigabe</b><span class="kette-art">Mensch entscheidet</span><span class="kette-text">Die Administration klärt jede Warnung.</span></li>
-      <li class="kette-schritt mensch"><span class="kette-nr" aria-hidden="true">6</span><b>Versand</b><span class="kette-art">Mensch entscheidet</span><span class="kette-text">Über MediData oder H-Net.</span></li>
-    </ol>
-    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
   </div>
   <article class="demo auto-demo r">
     <div class="demo-text">

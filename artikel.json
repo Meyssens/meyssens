@@ -112,42 +112,57 @@
     "titel": "Patientenreise",
     "text": "So könnten die Schritte vom ersten Kontakt bis zum nächsten Recall zusammenhängen. Nur der erste Schritt ist ein Baustein dieser Seite, die übrigen zeigen, wo ein Mensch entscheidet oder was erst später dazukommt.",
     "schritte": [
-     [
-      "Online-Anfrage",
-      "baustein",
-      "online-terminanfrage-zahnarztpraxis"
-     ],
-     [
-      "Bestätigung",
-      "mensch",
-      "Die MPA wählt den Termin und gibt den Entwurf frei."
-     ],
-     [
-      "Erinnerung",
-      "spaeter",
-      "Nur mit Einwilligung."
-     ],
-     [
-      "Absage und Warteliste",
-      "spaeter",
-      "Mit Vertrag zur Auftragsbearbeitung."
-     ],
-     [
-      "Termin",
-      "mensch",
-      "Behandlung in der Praxis."
-     ],
-     [
-      "Recall",
-      "spaeter",
-      "Mit Vertrag und Opt-in."
-     ],
-     [
-      "Bewertungsbitte",
-      "mensch",
-      "Nur mit Freigabe pro Patientin oder Patient."
-     ]
-    ]
+     {
+      "titel": "Online-Anfrage",
+      "art": "baustein",
+      "seite": "online-terminanfrage-zahnarztpraxis",
+      "beispiel": "Eine Patientin wählt im Formular «Kontrolle» und «Dienstag vormittags», ein Feld für Beschwerden gibt es bewusst nicht."
+     },
+     {
+      "titel": "Bestätigung",
+      "art": "mensch",
+      "seite": "online-terminanfrage-zahnarztpraxis",
+      "beispiel": "Die MPA setzt im vorbereiteten Entwurf den freien Termin ein und schickt die Bestätigung selbst ab.",
+      "hinweis": "Die MPA wählt den Termin und gibt den Entwurf frei."
+     },
+     {
+      "titel": "Erinnerung",
+      "art": "spaeter",
+      "seite": null,
+      "beispiel": "Am Vortag liegt eine Erinnerung als Entwurf bereit, nur für Patientinnen und Patienten, die eingewilligt haben.",
+      "hinweis": "Nur mit Einwilligung."
+     },
+     {
+      "titel": "Absage und Warteliste",
+      "art": "spaeter",
+      "seite": null,
+      "beispiel": "Sagt jemand ab, schlägt die Liste Personen vor, die gern früher kämen, und die MPA meldet sich bei ihnen.",
+      "hinweis": "Mit Vertrag zur Auftragsbearbeitung."
+     },
+     {
+      "titel": "Termin",
+      "art": "mensch",
+      "seite": "laborauftrag-zahnarztpraxis",
+      "beispiel": "Fehlt einige Tage vorher noch die Arbeit aus dem Labor, erinnert der Laborauftrag die Praxis, die Behandlung selbst bleibt ganz bei Ihnen.",
+      "hinweis": "Behandlung in der Praxis."
+     },
+     {
+      "titel": "Recall",
+      "art": "spaeter",
+      "seite": null,
+      "beispiel": "Ist die nächste Kontrolle fällig, entsteht ein Recall-Entwurf mit Buchungslink, den die MPA freigibt.",
+      "hinweis": "Mit Vertrag und Opt-in."
+     },
+     {
+      "titel": "Bewertungsbitte",
+      "art": "mensch",
+      "seite": null,
+      "beispiel": "Ob eine Patientin um eine Bewertung gebeten wird, entscheidet die Praxis jedes Mal einzeln.",
+      "hinweis": "Nur mit Freigabe pro Patientin oder Patient."
+     }
+    ],
+    "betrieb": "Praxis",
+    "abschluss": "Ziel: weniger Anrufe während der Behandlung. Und keine Nachricht verlässt die Praxis, ohne dass die MPA sie freigegeben hat."
    },
    "demo": "online-terminanfrage-zahnarztpraxis",
    "geprueft": "2026-10-26"
@@ -258,42 +273,55 @@
     "titel": "Neuvermietung",
     "text": "So könnte eine Neuvermietung von der Besichtigung bis zum Schlüssel ablaufen. Zwei Schritte decken Bausteine dieser Seite ab, die Auswahl der Mieterschaft bleibt ausdrücklich beim Menschen.",
     "schritte": [
-     [
-      "Besichtigung buchen",
-      "baustein",
-      "besichtigungstermine-mietobjekt"
-     ],
-     [
-      "Anmeldeformular",
-      "spaeter",
-      "Nur zulässige Fragen, nach Rechtsprüfung."
-     ],
-     [
-      "Auswahl",
-      "mensch",
-      "Die Verwaltung entscheidet, keine automatische Ablehnung."
-     ],
-     [
-      "Originalunterlagen",
-      "mensch",
-      "Nur vom gewählten Kandidaten."
-     ],
-     [
-      "Löschroutine",
-      "spaeter",
-      "Unterlagen Nichtberücksichtigter löschen."
-     ],
-     [
-      "Übergabeprotokoll",
-      "baustein",
-      "uebergabeprotokoll"
-     ],
-     [
-      "Schlüsselliste",
-      "baustein",
-      "uebergabeprotokoll"
-     ]
-    ]
+     {
+      "titel": "Besichtigung buchen",
+      "art": "baustein",
+      "seite": "besichtigungstermine-mietobjekt",
+      "beispiel": "Interessierte buchen über den Link im Inserat einen Platz am Samstagvormittag, nur mit Name und Kontakt."
+     },
+     {
+      "titel": "Anmeldeformular",
+      "art": "spaeter",
+      "seite": null,
+      "beispiel": "Das Anmeldeformular stellt nur Fragen, die nach dem Merkblatt des EDÖB zulässig sind, und kommt erst nach einer Rechtsprüfung.",
+      "hinweis": "Nur zulässige Fragen, nach Rechtsprüfung."
+     },
+     {
+      "titel": "Auswahl",
+      "art": "mensch",
+      "seite": "besichtigungstermine-mietobjekt",
+      "beispiel": "Wer die Wohnung erhält, entscheidet die Bewirtschaftung, niemand wird automatisch abgelehnt.",
+      "hinweis": "Die Verwaltung entscheidet, keine automatische Ablehnung."
+     },
+     {
+      "titel": "Originalunterlagen",
+      "art": "mensch",
+      "seite": null,
+      "beispiel": "Betreibungsauszug und weitere Unterlagen verlangt die Verwaltung erst von der Person, die sie ausgewählt hat.",
+      "hinweis": "Nur vom gewählten Kandidaten."
+     },
+     {
+      "titel": "Löschroutine",
+      "art": "spaeter",
+      "seite": null,
+      "beispiel": "Nach Vertragsabschluss erinnert eine Liste daran, die Unterlagen der nicht berücksichtigten Bewerbungen zu löschen.",
+      "hinweis": "Unterlagen Nichtberücksichtigter löschen."
+     },
+     {
+      "titel": "Übergabeprotokoll",
+      "art": "baustein",
+      "seite": "uebergabeprotokoll",
+      "beispiel": "Beim Einzug halten Verwaltung und Mieterschaft Raum für Raum Zustand, Fotos und Zählerstände auf dem Tablet fest und unterschreiben vor Ort."
+     },
+     {
+      "titel": "Schlüsselliste",
+      "art": "baustein",
+      "seite": "uebergabeprotokoll",
+      "beispiel": "Die übergebenen Schlüssel gehen aus dem Protokoll direkt in die Schlüsselliste des Objekts."
+     }
+    ],
+    "betrieb": "Verwaltung",
+    "abschluss": "Ziel: weniger Nachtelefonieren und Abtippen rund um die Neuvermietung. Wer die Wohnung erhält, entscheidet weiterhin die Verwaltung."
    },
    "demo": "schadenmeldung-triage",
    "geprueft": "2026-10-26"
@@ -400,32 +428,41 @@
     "titel": "Stunden bis Rechnung",
     "text": "So könnten Zeiterfassung und Abrechnung zusammenhängen. Die Daten fliessen ohne Abtippen weiter, an zwei Stellen gibt die Projektleitung frei.",
     "schritte": [
-     [
-      "Zeiterfassung",
-      "baustein",
-      "zeiterfassung-sia-phasen"
-     ],
-     [
-      "Monatsrapport",
-      "baustein",
-      "zeiterfassung-sia-phasen"
-     ],
-     [
-      "Rechnungsentwurf",
-      "baustein",
-      "akontorechnung-architektur"
-     ],
-     [
-      "Freigabe",
-      "mensch",
-      "Die Projektleitung prüft Stunden und Berechnung."
-     ],
-     [
-      "Versand",
-      "mensch",
-      "Das Büro verschickt die Rechnung selbst."
-     ]
-    ]
+     {
+      "titel": "Zeiterfassung",
+      "art": "baustein",
+      "seite": "zeiterfassung-sia-phasen",
+      "beispiel": "Eine Mitarbeiterin bucht Stunden auf «Erweiterung Schulhaus, Vorprojekt», und der Baustein weist auf eine Lücke am Mittwoch hin."
+     },
+     {
+      "titel": "Monatsrapport",
+      "art": "baustein",
+      "seite": "zeiterfassung-sia-phasen",
+      "beispiel": "Am Monatsende fasst der Rapport alle Stunden pro Projekt und Phase in einer Tabelle zum Prüfen zusammen."
+     },
+     {
+      "titel": "Rechnungsentwurf",
+      "art": "baustein",
+      "seite": "akontorechnung-architektur",
+      "beispiel": "Aus dem freigegebenen Rapport entsteht ein Entwurf der Akontorechnung mit Ihren Ansätzen, abzüglich bisheriger Zahlungen."
+     },
+     {
+      "titel": "Freigabe",
+      "art": "mensch",
+      "seite": "akontorechnung-architektur",
+      "beispiel": "Die Projektleitung prüft Stunden und Berechnung, korrigiert bei Bedarf und gibt die Rechnung frei.",
+      "hinweis": "Die Projektleitung prüft Stunden und Berechnung."
+     },
+     {
+      "titel": "Versand",
+      "art": "mensch",
+      "seite": "akontorechnung-architektur",
+      "beispiel": "Das Büro verschickt die Rechnung selbst an die Bauherrschaft.",
+      "hinweis": "Das Büro verschickt die Rechnung selbst."
+     }
+    ],
+    "betrieb": "Büro",
+    "abschluss": "Ziel: Stunden werden einmal erfasst und für die Rechnung nicht neu abgetippt. Was die Bauherrschaft erhält, gibt die Projektleitung frei."
    },
    "demo": "zeiterfassung-sia-phasen",
    "geprueft": "2026-10-26"
@@ -532,37 +569,50 @@
     "titel": "Einsatz bis Rechnung",
     "text": "So könnte der Weg vom geplanten Einsatz bis zur elektronischen Abrechnung aussehen. Der Baustein prüft nur, entscheiden und versenden bleibt Sache des Betriebs.",
     "schritte": [
-     [
-      "Dienstplan",
-      "vorhanden",
-      "Plant die Leitung, eine Regelprüfung folgt später."
-     ],
-     [
-      "Leistungserfassung",
-      "vorhanden",
-      "In Ihrer Pflegesoftware."
-     ],
-     [
-      "Plausibilitätsprüfung",
-      "baustein",
-      "abrechnung-vorpruefung"
-     ],
-     [
-      "Rechnungsdatei",
-      "vorhanden",
-      "Export aus der Pflegesoftware."
-     ],
-     [
-      "Freigabe",
-      "mensch",
-      "Die Administration klärt jede Warnung."
-     ],
-     [
-      "Versand",
-      "mensch",
-      "Über MediData oder H-Net."
-     ]
-    ]
+     {
+      "titel": "Dienstplan",
+      "art": "vorhanden",
+      "seite": "arbeitszeit-pflege",
+      "beispiel": "Die Leitung plant die Einsätze wie heute, die Arbeitszeiterfassung gleicht die erfassten Zeiten später mit diesem Plan ab.",
+      "hinweis": "Plant die Leitung, eine Regelprüfung folgt später."
+     },
+     {
+      "titel": "Leistungserfassung",
+      "art": "vorhanden",
+      "seite": "abrechnung-vorpruefung",
+      "beispiel": "Die Pflegenden erfassen ihre Leistungen weiter in Ihrer Pflegesoftware, daran ändert der Baustein nichts.",
+      "hinweis": "In Ihrer Pflegesoftware."
+     },
+     {
+      "titel": "Plausibilitätsprüfung",
+      "art": "baustein",
+      "seite": "abrechnung-vorpruefung",
+      "beispiel": "Der Baustein findet etwa eine Leistung ausserhalb des Einsatzzeitraums und setzt sie auf die Warnliste."
+     },
+     {
+      "titel": "Rechnungsdatei",
+      "art": "vorhanden",
+      "seite": "abrechnung-vorpruefung",
+      "beispiel": "Die Abrechnungsdatei kommt aus der Pflegesoftware, ihr Format prüft der Baustein, sobald die kantonalen Vorgaben feststehen.",
+      "hinweis": "Export aus der Pflegesoftware."
+     },
+     {
+      "titel": "Freigabe",
+      "art": "mensch",
+      "seite": "abrechnung-vorpruefung",
+      "beispiel": "Die Administration klärt jede Warnung, korrigiert in der Pflegesoftware und gibt die Abrechnung frei.",
+      "hinweis": "Die Administration klärt jede Warnung."
+     },
+     {
+      "titel": "Versand",
+      "art": "mensch",
+      "seite": "abrechnung-vorpruefung",
+      "beispiel": "Die Rechnung geht über MediData oder H-Net hinaus, ausgelöst vom Betrieb.",
+      "hinweis": "Über MediData oder H-Net."
+     }
+    ],
+    "betrieb": "Einrichtung",
+    "abschluss": "Ziel: Fehler fallen vor dem Versand auf, nicht erst bei einer Rückweisung. Pflegerische Entscheide trifft der Baustein nie."
    },
    "demo": "arbeitszeit-pflege",
    "geprueft": "2026-10-26"

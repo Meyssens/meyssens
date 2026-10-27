@@ -9,6 +9,9 @@
 - Jede Langtext-Seite steht in der sitemap.xml
 - Abschnitt "Was sich automatisieren lässt" (Branchenseiten mit Feld "automatisierung"): 3 bis 4 Bausteinkarten
   mit je einem Formular, Ablauf-Kette, Demo mit "Beispiel", Regel, Hinweise, Wortzahl
+- Ablauf-Kette als Scroll-Animation: jeder Schritt mit Art, genau einem Beispielsatz, bisherigem Hinweis und genau
+  einem Link (Bausteinseite oder Anfrage), Abschluss, Anfrage-Knopf mit Betrieb, kurzes Formular (Name, E-Mail,
+  Freitext) mit vorausgefüllter Branche und Kette, fester Anfrage-Knopf, Animation nur ohne reduzierte Bewegung
 - Bausteinseiten (produkte.json mit Feld "branche"): Hinweise, Regel, Status, Einschätzung, bei Personendaten
   Auftragsbearbeitung/Schweiz/Datenminimierung, kein ß, Wortzahl, Sitemap, verlinkt von Branchenseite und Übersicht
 - Keine Platzhalter ({{...}}, [Status, TODO, Lorem) auf irgendeiner Seite
@@ -21,7 +24,7 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
-from build import (ARTEN, AUTO_WORTE, BAUSTEIN_WORTE, BEDINGUNGEN, REGEL, WORTE, ist_baustein, ohne_automatisierung,
+from build import (ARTEN, AUTO_WORTE, KETTE_ART, BAUSTEIN_WORTE, BEDINGUNGEN, REGEL, WORTE, ist_baustein, ohne_automatisierung,
                    worte, zwischen)
 
 ROOT = Path(__file__).resolve().parent
@@ -117,6 +120,56 @@ for url, (text, parser) in seiten.items():
 produkte = json.loads((ROOT / "produkte.json").read_text(encoding="utf-8"))
 nach_slug = {p["slug"]: p for p in produkte}
 regel = " ".join(REGEL)
+BETRIEBE = ("Praxis", "Verwaltung", "Büro", "Einrichtung")
+
+
+def pruefe_ablauf(a, teil):
+    # Ablauf-Kette einer Branchenseite gegen artikel.json prüfen
+    k, f = a["automatisierung"]["kette"], []
+    if '<div class="ablauf" id="ablauf" data-ablauf>' not in teil:
+        return ["Ablauf-Kette fehlt"]
+    ablauf = teil[teil.index('<div class="ablauf"'):teil.index('<div class="baustein-raster">')]
+    if 'prefers-reduced-motion: reduce' not in ablauf or 'classList.add("bewegt")' not in ablauf:
+        f.append("Animation ohne Prüfung auf reduzierte Bewegung")
+    schritte = re.findall(r'<li class="ablauf-schritt (\w+)">(.*?)</li>', ablauf, flags=re.S)
+    if len(schritte) != len(k["schritte"]) or len(schritte) < 4:
+        f.append("%d statt %d Schritte" % (len(schritte), len(k["schritte"])))
+    for (art, li), st in zip(schritte, k["schritte"]):
+        name = st["titel"]
+        if art != st["art"] or KETTE_ART[art] not in li:
+            f.append("Schritt %s: Art fehlt oder falsch" % name)
+        if html.escape(st["beispiel"]) not in li or len(re.findall(r"[.!?](\s|$)", st["beispiel"])) != 1:
+            f.append("Schritt %s: nicht genau ein Beispielsatz" % name)
+        if st.get("hinweis") and html.escape(st["hinweis"]) not in li:
+            f.append("Schritt %s: bisheriger Hinweis fehlt" % name)
+        links = re.findall(r'<a [^>]*href="([^"]+)"', li)
+        soll = "/produkte/%s/" % st["seite"] if st.get("seite") else "#ablauf-anfrage"
+        if links != [soll]:
+            f.append("Schritt %s: Link %s statt %s" % (name, links, soll))
+    if k.get("betrieb") not in BETRIEBE:
+        f.append("Betrieb %s" % k.get("betrieb"))
+    knopf = "Diesen Ablauf für meine %s anfragen" % k.get("betrieb")
+    try:
+        reihenfolge = [ablauf.index(x) for x in ('<ol class="ablauf-liste">', html.escape(k["abschluss"]),
+                                                 '<a class="btn-p ablauf-cta" href="#ablauf-anfrage"><span>%s</span>' % knopf,
+                                                 '<form class="ablauf-form" id="ablauf-anfrage"')]
+        if reihenfolge != sorted(reihenfolge):
+            f.append("Reihenfolge Kette, Abschluss, Knopf, Formular stimmt nicht")
+    except ValueError:
+        f.append("Abschluss, Knopf oder Formular fehlt")
+    form = ablauf[ablauf.find('<form class="ablauf-form"'):ablauf.find("</form>")]
+    felder = set(re.findall(r'name="([^"]+)"', form))
+    if felder != {"_subject", "branche", "ablauf", "name", "email", "nachricht", "datenschutz-gelesen"}:
+        f.append("Formularfelder %s" % sorted(felder))
+    if 'name="branche" value="%s"' % html.escape(a["name"]) not in form or \
+            not re.search(r'name="ablauf" value="%s \(%s\)" readonly' % (re.escape(html.escape(k["titel"])),
+                                                                          re.escape(html.escape(a["name"]))), form):
+        f.append("Branche oder Kette im Formular nicht vorausgefüllt")
+    if not re.search(r'<a class="anfrage-fest" href="#ablauf-anfrage" data-anfrage-fest hidden>', teil):
+        f.append("fester Anfrage-Knopf fehlt")
+    return f
+
+
 geprueft_neu = "zuletzt geprüft am 26.10.2026"
 uebersicht = seiten.get("/unternehmen/", ("", None))[0]
 for a in artikel:
@@ -133,13 +186,12 @@ for a in artikel:
     karten = teil.count('<article class="baustein-karte')
     if not 3 <= karten <= 4 or karten != len(au["bausteine"]):
         fehler.append("%s: %d Bausteinkarten" % (url, karten))
-    if teil.count("<form ") != karten or teil.count('name="baustein"') != karten:
-        fehler.append("%s: nicht genau ein Formular pro Baustein" % url)
+    if teil.count("<form ") != karten + 1 or teil.count('name="baustein"') != karten:
+        fehler.append("%s: nicht genau ein Formular pro Baustein plus eines zum Ablauf" % url)
     for slug in au["bausteine"]:
         if 'href="/produkte/%s/"' % slug not in teil:
             fehler.append("%s: kein Link auf /produkte/%s/" % (url, slug))
-    if '<ol class="kette">' not in teil or teil.count('class="kette-schritt') < 4:
-        fehler.append("%s: Ablauf-Kette fehlt" % url)
+    fehler += ["%s#ablauf: %s" % (url, f) for f in pruefe_ablauf(a, teil)]
     if '<span class="beispiel">Beispiel</span>' not in teil or "data-wahl" not in teil:
         fehler.append("%s: Demo mit Beschriftung Beispiel fehlt" % url)
     for muss in ("Was sich automatisieren lässt", regel, "keine Rechtsberatung", geprueft_neu, "Einschätzung",
