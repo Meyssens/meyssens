@@ -1,0 +1,72 @@
+    <h2 id="ueberblick">Keine nationale Einheitsregel</h2>
+    <p>Wer «elektronische Spitex-Abrechnung ab 2026» sucht, findet keine einheitliche Regel für die ganze Schweiz. Die Pflegeleistungen werden aus drei Quellen finanziert, und für den Teil der öffentlichen Hand, die Restfinanzierung, legt jeder Kanton eigene Regeln fest. Mehrere Kantone stellen diese Abrechnung derzeit auf elektronische Rechnungen im XML-Format um, mit unterschiedlichen Daten und Übergangsfristen.</p>
+    <p>Für die ambulante Pflege gelten dabei die Regeln des Standortkantons der Spitex, wie das Amt für Gesundheit des Kantons Zürich in seinem Kreisschreiben zu den Normdefiziten 2026 festhält. Eine Spitex in Basel-Stadt richtet sich also nach den Basler Regeln, auch wenn sie Personen aus anderen Kantonen pflegt. Dieser Ratgeber fasst zusammen, was für Basel-Stadt, Solothurn, Nidwalden und Zürich in den offiziellen Merkblättern steht, und was auf Bundesebene beschlossen ist. Andere Kantone haben wir nicht geprüft.</p>
+
+    <h2 id="finanzierung">Wer was bezahlt</h2>
+    <p>Die Merkblätter von Basel-Stadt und Solothurn beschreiben die Aufteilung nach dem Krankenversicherungsgesetz (KVG) gleich:</p>
+    <ul>
+      <li><strong>Krankenversicherer:</strong> Die obligatorische Krankenpflegeversicherung zahlt die vom Bundesrat festgelegten Beiträge (Art. 7a Abs. 1 KLV).</li>
+      <li><strong>Patientin oder Patient:</strong> Ein Eigenbeitrag von höchstens 20 Prozent des höchsten Pflegebeitrags, bei der Spitex also höchstens 15.35 Franken pro Tag (Art. 25a Abs. 5 KVG). Basel-Stadt hat ihn auf 10 Prozent oder höchstens 7.65 Franken pro Tag gesenkt, Kinder und Jugendliche bis 18 Jahre zahlen nichts.</li>
+      <li><strong>Öffentliche Hand:</strong> Kanton oder Gemeinde übernehmen den Rest bis zu den kantonal festgelegten Normkosten, die Restfinanzierung.</li>
+    </ul>
+    <p>Abgerechnet wird in Zeiteinheiten von 5 Minuten, pro Einsatz mindestens 10 Minuten (Art. 7a Abs. 2 KLV), wie das Basler Merkblatt festhält. Leistungen nach IVG, UVG und MVG gehen direkt an die jeweiligen Kostenträger und nicht an den Kanton.</p>
+
+    <h2 id="basel-stadt">Basel-Stadt: elektronisch obligatorisch</h2>
+    <p>In Basel-Stadt ist die elektronische Abrechnung der Restfinanzierung für alle Spitexanbieter obligatorisch, gestützt auf die kantonale Verordnung über die Krankenversicherung (§ 8d KVO) und ein Reglement des Gesundheitsdepartements vom 16. August 2017, Stand 28. Februar 2025. Das Merkblatt gilt ab 1. Januar 2026. Die wichtigsten Punkte:</p>
+    <ul>
+      <li><strong>Format:</strong> gültiger XML-Standard nach den Richtlinien des Forums Datenaustausch.</li>
+      <li><strong>Ausnahme:</strong> Wer weniger als 10 000 Franken Restfinanzierung pro Jahr abrechnet, kann mit einem Antrag von der elektronischen Abrechnung entbunden werden.</li>
+      <li><strong>Pflichtfelder:</strong> unter anderem GLN- und ZSR-Nummer der Spitex, Name, Adresse, Geburtsdatum, Geschlecht und AHV-Nummer der Patientin oder des Patienten, Versicherer mit GLN, Behandlungszeitraum, Gesetz, Behandlungsgrund, Ort der Behandlung, Datum und Uhrzeit jeder Leistung, Tarifziffer und Minuten.</li>
+      <li><strong>Abrechnung:</strong> pro Kalendermonat. Lehnt ein Krankenversicherer Leistungen ab, ist die Restfinanzierung elektronisch zu stornieren.</li>
+    </ul>
+
+    <h2 id="solothurn">Solothurn: Clearingstelle digital</h2>
+    <p>Das Gesundheitsamt Solothurn hat die Abrechnung der Restkosten über seine Clearingstelle auf ein vollständig digitales Verfahren umgestellt (Merkblatt vom August 2026). Die Spitex reicht die Rechnungen im XML-Format über MediData oder H-Net ein, mit dem gültigen Standard des Forums Datenaustausch in Version 4.5 oder 5.0.</p>
+    <ul>
+      <li><strong>Einzelrechnungen:</strong> Sammelrechnungen sind nicht mehr möglich. Abgerechnet wird pro Person und Kalendermonat an die im Merkblatt genannte GLN der Clearingstelle.</li>
+      <li><strong>Tarifcodes und Behandlungsort:</strong> Die Rechnungsstellung braucht angepasste Tarifcodes und -ziffern, und die Clearingstelle braucht den Behandlungsort, um den Tarif zu bestimmen.</li>
+      <li><strong>Übergang:</strong> Wer die Umstellung nicht rechtzeitig schafft, kann befristet eine Excel-Vorlage nutzen.</li>
+    </ul>
+
+    <h2 id="nidwalden">Nidwalden: Pflicht ab Leistungen 2027</h2>
+    <p>Das Gesundheitsamt Nidwalden akzeptiert für Leistungen aus dem Jahr 2026 noch die bisherige Form, etwa Excel mit Sammelrechnungen oder PDF. Für Leistungen ab dem 1. Januar 2027 müssen die Rechnungen über MediData oder H-Net kommen (Merkblatt vom August 2026). Weitere Punkte aus dem Merkblatt:</p>
+    <ul>
+      <li>Die Rechnung an den Kanton entspricht der Rechnung an die Krankenversicherer, also Einzelrechnungen statt Sammelrechnungen.</li>
+      <li>Der Behandlungsgrund steht im XML-Feld, «unbekannt» wird nicht akzeptiert.</li>
+      <li>Der ärztliche Auftrag muss spätestens mit der Abrechnung vorliegen.</li>
+      <li>Korrekturen laufen über eine Stornorechnung und eine neue Rechnung, Rückweisungen kommen elektronisch im XML-Standard.</li>
+    </ul>
+
+    <h2 id="zuerich">Zürich: Angehörigenpflege separat ausweisen</h2>
+    <p>Für den Kanton Zürich haben wir im Kreisschreiben des Amts für Gesundheit zu den Normdefiziten 2026 keine neue Pflicht zur elektronischen Abrechnung gefunden. Neu ist aber: Ab 2026 müssen Spitex-Institutionen mit Betriebsbewilligung im Kanton bei der Rechnungsstellung an die Gemeinden separat ausweisen, wie viele Pflegestunden durch Angehörige erbracht wurden. Dafür gilt ein eigenes, tieferes Normdefizit. Für die Rechnungslegung verweist der Kanton auf das Finanzmanual von Spitex Schweiz.</p>
+
+    <h2 id="bund">Bund: elektronische Rechnung beschlossen, Datum offen</h2>
+    <p>Das Parlament hat am 21. März 2025 das Kostendämpfungspaket 2 verabschiedet. Es verpflichtet die Leistungserbringer, ihre Rechnungen an die Krankenversicherer grundsätzlich elektronisch zu übermitteln. Auf Verlangen erhalten Versicherte die Rechnung kostenlos auf Papier. Ab wann diese Pflicht gilt, nennt die Seite des Bundesamts für Gesundheit (Stand Oktober 2026) nicht. Bereits seit 2022 gilt, dass Versicherte eine Rechnungskopie erhalten. Elektronisch darf sie nach dem EDÖB nur mit ausdrücklicher Einwilligung zugestellt werden (Art. 42 Abs. 3 KVG).</p>
+
+    <h2 id="alltag">Was das im Alltag verändert</h2>
+    <p>Aus den Merkblättern lassen sich einige Folgen für die Administration ableiten. Das ist unsere Einschätzung, nicht eine Aussage der Kantone.</p>
+    <ul>
+      <li><strong>Mehr, aber kleinere Rechnungen:</strong> Wo Einzelrechnungen pro Person und Monat verlangt sind, entstehen statt einer Sammelrechnung viele einzelne Rechnungen. Fehler fallen dadurch pro Person auf und nicht erst in der Gesamtsumme.</li>
+      <li><strong>Gleiche Daten für Versicherer und Kanton:</strong> Nidwalden verlangt, dass die Rechnung an den Kanton der Rechnung an die Krankenversicherer entspricht. Wer beide aus derselben Software erzeugt, vermeidet Abweichungen.</li>
+      <li><strong>Rückweisungen kommen schneller:</strong> Solothurn begründet die Umstellung damit, dass Rechnungen schneller geprüft und Rückmeldungen zeitnah übermittelt werden. Fehlende Pflichtfelder zeigen sich also früher, und die Korrektur gehört in den monatlichen Ablauf.</li>
+      <li><strong>Mehrere Kantone, mehrere Regeln:</strong> Eine Spitex, die auch Personen aus anderen Kantonen pflegt, rechnet nach den Regeln ihres Standortkantons ab. Wer an mehreren Standorten tätig ist, braucht für jeden Standort den passenden Ablauf.</li>
+    </ul>
+
+    <h2 id="vorbereiten">So bereiten Sie sich vor</h2>
+    <ol class="checkliste">
+      <li><strong>Regeln des Standortkantons klären:</strong> Merkblatt der Gesundheitsdirektion oder des Gesundheitsamts lesen und den Stichtag notieren.</li>
+      <li><strong>Software prüfen:</strong> Kann sie XML nach dem Standard des Forums Datenaustausch in der verlangten Version erzeugen und über MediData oder H-Net senden?</li>
+      <li><strong>Pflichtfelder abgleichen:</strong> GLN, ZSR, AHV-Nummer, Behandlungsgrund, Behandlungsort und Tarifziffern vollständig erfassen.</li>
+      <li><strong>Einzelrechnungen statt Sammelrechnungen</strong> pro Person und Kalendermonat einrichten.</li>
+      <li><strong>Ärztliche Anordnung</strong> rechtzeitig vorliegen haben und mitsenden, wo verlangt.</li>
+      <li><strong>Storno-Ablauf festlegen:</strong> Was passiert, wenn der Versicherer eine Leistung ablehnt?</li>
+      <li><strong>Vor dem Versand prüfen:</strong> fehlende Felder und Widersprüche finden, bevor die Rechnung zurückkommt.</li>
+      <li><strong>Datenschutz:</strong> Gesundheitsdaten, Berufsgeheimnis und Verträge mit Dienstleistern, die Daten im Auftrag bearbeiten.</li>
+    </ol>
+
+    <h2 id="datenschutz">Datenschutz bei der Abrechnung</h2>
+    <p>Eine Spitex-Rechnung enthält Gesundheitsdaten und die AHV-Nummer. Wer dafür Software, Cloud-Dienste oder Übermittlungsplattformen einsetzt, lässt Daten im Auftrag bearbeiten. Der Kanton Zürich beschreibt auf seiner Seite zu Berufsgeheimnis und Cloud, dass IT-Dienstleister als Hilfspersonen gelten können, wenn eine Geheimhaltungsvereinbarung besteht und die Bearbeitung vertraglich geregelt ist. Die eigentliche Rechnungsübermittlung läuft über die etablierten Plattformen der Branche.</p>
+
+    <h2 id="meyssens">Und Meyssens?</h2>
+    <p>Meyssens ist ein Einzelunternehmen in Lausen (BL) und hat noch keine Kunden. Wir planen eine Vorprüfung der Leistungsabrechnung: Sie liest den Export aus der Pflegesoftware, findet fehlende Pflichtfelder und Widersprüche und erstellt eine Warnliste. Die Datei selbst bleibt unverändert, die Administration klärt jede Warnung und gibt frei, und den Versand über MediData oder H-Net übernimmt der Betrieb. Das Format prüfen wir erst, wenn die Vorgaben des jeweiligen Kantons feststehen.</p>
+    <p>Die Angaben in diesem Ratgeber stammen aus den Merkblättern der Kantone Basel-Stadt, Solothurn und Nidwalden, dem Kreisschreiben des Kantons Zürich und den Seiten des BAG und des EDÖB. Massgebend ist immer das aktuelle Merkblatt Ihres Standortkantons.</p>

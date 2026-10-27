@@ -416,5 +416,305 @@
     "geprueft": "2026-10-26",
     "seo_titel": "Spitex-Abrechnung vor dem Versand prüfen | Meyssens",
     "seo_beschreibung": "Prüft den Export der Pflegesoftware auf fehlende Pflichtfelder und Widersprüche, bevor Sie über MediData oder H-Net abrechnen. Jetzt vormerken."
+  },
+  {
+    "slug": "terminerinnerung-recall-zahnarztpraxis",
+    "branche": "zahnarztpraxen",
+    "name": "Terminerinnerung und Recall für Zahnarztpraxen",
+    "kurzbeschreibung": "Der Baustein stellt fällige Terminerinnerungen und Recalls als Entwürfe zusammen, nur für Patientinnen und Patienten, die eingewilligt haben. Die MPA prüft die Liste und gibt jede Nachricht frei. Nichts geht automatisch hinaus.",
+    "problem": "Erinnerungen an Termine und an die nächste Kontrolle laufen in vielen Praxen von Hand: Die MPA telefoniert, schreibt Karten oder E-Mails, oft zwischen zwei Behandlungen. Vergessene Termine kosten Zeit am Stuhl, und wer keinen Recall erhält, meldet sich oft erst bei Beschwerden. Gleichzeitig ist schon ein Termin in der Zahnarztpraxis eine Gesundheitsangabe. Der EDÖB stuft auch den rein administrativen Austausch wie Terminvereinbarungen als besonders schützenswert ein (Merkblatt Patientenformulare, 30.09.2025).",
+    "loesung": "Der Baustein liest aus einem Export der Praxissoftware die anstehenden Termine und die fälligen Kontrollen, aber nur bei Personen mit dokumentierter Einwilligung für den gewählten Kanal. Daraus entsteht eine Liste mit Entwürfen: Erinnerung am Vortag, Recall mit Hinweis auf die fällige Kontrolle und einem Weg zur Terminanfrage. Die Texte nennen weder Diagnose noch Behandlung. Wer keine Einwilligung gegeben hat, erscheint auf einer separaten Liste für den Anruf durch die MPA.",
+    "mensch": "Die MPA prüft jede Liste, streicht Einträge und gibt die Nachrichten frei. Ob und mit welchem Kanal eine Person erinnert wird, entscheidet die Praxis aufgrund der Einwilligung. Ob ein Recall rechtlich als Werbung gilt, ist nicht abschliessend geklärt; für Werbung per E-Mail oder SMS verlangt Art. 3 Abs. 1 lit. o UWG grundsätzlich eine Einwilligung (BAKOM). Wir planen deshalb immer mit Einwilligung.",
+    "fuer_wen": "Für Zahnarztpraxen, die Erinnerungen und Recalls heute von Hand verschicken oder telefonieren. Für Praxen, die einen festen Recall-Rhythmus pflegen und Lücken in der Agenda reduzieren möchten.",
+    "aufwand": "mittel",
+    "personendaten": true,
+    "daten": "Name, Kontaktangabe, Termin und Fälligkeit der Kontrolle sind Gesundheitsdaten im Sinne des Datenschutzgesetzes, weil sie eine Beziehung zur Praxis zeigen. Der Baustein arbeitet nur mit Personen, die eingewilligt haben, und mit Texten ohne Behandlungsangaben. Der Versand braucht einen gesicherten Kanal oder eine informierte Einwilligung in einen ungesicherten Kanal, wie es der EDÖB beschreibt.",
+    "quellen": [
+      {
+        "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen (30.09.2025)",
+        "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+      },
+      {
+        "titel": "BAKOM, Wann ist der Massenversand erlaubt? (Art. 3 Abs. 1 lit. o UWG)",
+        "url": "https://www.bakom.admin.ch/de/wann-ist-der-massenversand-erlaubt"
+      },
+      {
+        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
+        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-27",
+    "seo_titel": "Terminerinnerung und Recall Zahnarztpraxis | Meyssens",
+    "seo_beschreibung": "Erinnerungen und Recalls als Entwürfe, nur mit Einwilligung und ohne Behandlungsangaben. Die MPA gibt jede Nachricht frei. Jetzt unverbindlich vormerken.",
+    "faq": [
+      {
+        "frage": "Darf eine Zahnarztpraxis Terminerinnerungen per SMS oder E-Mail verschicken?",
+        "antwort": "Nach dem Merkblatt des EDÖB vom 30.09.2025 gilt schon die Terminvereinbarung als besonders schützenswert und braucht eine sichere Übermittlung. Ein ungesicherter Kanal ist möglich, wenn die Patientin oder der Patient vorher über die Risiken informiert wurde und freiwillig zugestimmt hat, zum Beispiel mit einem Kästchen auf dem Formular."
+      },
+      {
+        "frage": "Ist ein Recall Werbung?",
+        "antwort": "Das ist nicht abschliessend geklärt. Werbung per E-Mail oder SMS braucht nach Art. 3 Abs. 1 lit. o UWG grundsätzlich eine Einwilligung, mit einer Ausnahme für bestehende Kundinnen und Kunden. Der Baustein arbeitet deshalb nur mit Personen, die eingewilligt haben."
+      },
+      {
+        "frage": "Was steht in einer Erinnerung?",
+        "antwort": "Datum, Uhrzeit, Praxis und ein Hinweis, wie man absagt oder verschiebt. Keine Diagnose und keine Behandlung. Den Text legt die Praxis fest."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/produkte/online-terminanfrage-zahnarztpraxis/",
+        "titel": "Online-Terminanfrage für Zahnarztpraxen",
+        "grund": "Der Recall führt zur Terminanfrage, die MPA bestätigt den Termin."
+      },
+      {
+        "url": "/branchen/zahnarztpraxen/",
+        "titel": "Zahnarztpraxen: Recht und Praxis",
+        "grund": "Berufsgeheimnis, nDSG und die ganze Patientenreise als Ablauf."
+      }
+    ]
+  },
+  {
+    "slug": "honorarofferte-sia-102",
+    "branche": "architekturbueros",
+    "name": "Honorarofferte nach SIA 102",
+    "kurzbeschreibung": "Aus Bausteinen für Leistungen, Phasen und Stundenansätze entsteht ein Entwurf der Honorarofferte im Layout Ihres Büros. Die Projektleitung prüft Leistungsumfang und Berechnung und gibt die Offerte frei.",
+    "problem": "Jede Honorarofferte wird oft neu zusammengesetzt: Leistungsbeschrieb aus einer alten Offerte kopiert, Stunden pro Phase geschätzt, Ansätze nachgeschlagen, Nebenkosten und Mehrwertsteuer ergänzt. Das kostet Zeit, und Unterschiede zwischen Offerten desselben Büros fallen erst später auf. Gleichzeitig ist eine Offerte mit Frist verbindlich, bis die Frist abläuft (Art. 3 OR).",
+    "loesung": "Das Büro hinterlegt seine Leistungsbausteine, gegliedert nach den Phasen, mit denen es arbeitet, etwa angelehnt an SIA 102 und SIA 112, dazu Kategorien und Stundenansätze. Für eine neue Anfrage wählt die Projektleitung die Bausteine aus und schätzt die Stunden pro Phase. Der Baustein rechnet Honorar, Nebenkosten und Mehrwertsteuer zusammen, setzt eine Gültigkeitsfrist und legt den Entwurf im Layout des Büros ab. Ein Vergleich mit früheren Offerten zeigt, wo die Schätzung stark abweicht.",
+    "mensch": "Leistungsumfang, Stundenschätzung, Ansätze und Honorarmodell legt das Büro fest, nicht der Baustein. Die Projektleitung prüft jede Berechnung und gibt die Offerte frei. Den Versand übernimmt das Büro selbst.",
+    "fuer_wen": "Für Architekturbüros, die regelmässig Honorarofferten für private oder öffentliche Bauherrschaften erstellen. Für Büros, die nach Zeitaufwand oder mit Pauschalen offerieren und ihre Leistungsbeschriebe vereinheitlichen möchten.",
+    "aufwand": "mittel",
+    "personendaten": false,
+    "daten": "Der Baustein arbeitet mit Leistungsbausteinen, Ansätzen und Projektangaben. Personendaten kommen nur als Kontaktangaben der Bauherrschaft vor. Die Bedingungen für Personendaten gelten trotzdem, sobald solche Angaben gespeichert werden.",
+    "quellen": [
+      {
+        "titel": "KBOB, Empfehlungen zur Honorierung von Planerinnen und Planern 2026 (Dezember 2025)",
+        "url": "https://www.kbob.admin.ch/dam/de/sd-web/HGbaiE3U2uo5/20251202_KBOB-Empfehlungen%20Honorierung%202026_Dezember%202025_Publikation_DE.pdf"
+      },
+      {
+        "titel": "SIA, Leistungs- und Honorarkultur",
+        "url": "https://www.sia.ch/de/cms/dienstleistungen/leistungs-und-honorarkultur"
+      },
+      {
+        "titel": "Obligationenrecht, Art. 3 (Fedlex)",
+        "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_3"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-27",
+    "seo_titel": "Honorarofferte nach SIA 102 erstellen | Meyssens",
+    "seo_beschreibung": "Honorarofferten aus Leistungsbausteinen, Phasen und Stundenansätzen als Entwurf. Die Projektleitung prüft und gibt frei. Jetzt unverbindlich vormerken.",
+    "faq": [
+      {
+        "frage": "Wie wird ein Architektenhonorar heute berechnet?",
+        "antwort": "Die KBOB-Empfehlungen 2026 nennen drei Wege: nach effektivem Zeitaufwand, mit Festpreisen als Pauschale oder Globale, oder nach einem individuell vereinbarten Modell. Das Modell nach aufwandbestimmenden Baukosten betrifft nur noch Verträge, die vor Ende 2019 abgeschlossen wurden."
+      },
+      {
+        "frage": "Rechnet der Baustein Honorare nach Baukosten?",
+        "antwort": "Nein. Er rechnet mit den Stunden, Kategorien und Ansätzen, die Ihr Büro festlegt. Welches Honorarmodell Sie anbieten, entscheiden Sie."
+      },
+      {
+        "frage": "Wie lange ist eine Offerte verbindlich?",
+        "antwort": "Wer in der Offerte eine Frist setzt, ist bis zum Ablauf dieser Frist gebunden (Art. 3 OR). Der Baustein setzt die Frist, die Ihr Büro vorgibt, sichtbar in den Entwurf."
+      }
+    ]
+  },
+  {
+    "slug": "online-terminanfrage-arztpraxis",
+    "branche": "arztpraxen",
+    "name": "Online-Terminanfrage für Arztpraxen",
+    "kurzbeschreibung": "Patientinnen und Patienten fragen einen Termin über ein kurzes Formular an, ohne Feld für Beschwerden. Die Anfrage landet in einer geordneten Liste mit einem Entwurf für die Antwort. Das Praxisteam wählt den Termin und gibt die Antwort frei.",
+    "problem": "Viele Praxen sind am Telefon über Stunden besetzt, und Terminwünsche kommen zusätzlich per E-Mail, oft mit Beschwerden im Freitext. Solche E-Mails sind nicht verschlüsselt. Die FMH verlangt für den Austausch von Patientendaten per E-Mail eine Verschlüsselung (Minimalanforderungen IT-Grundschutz), und der EDÖB stuft schon Terminvereinbarungen als besonders schützenswert ein (Merkblatt Patientenformulare, 30.09.2025).",
+    "loesung": "Ein Formular auf der Praxiswebsite fragt nur, was für die Terminplanung nötig ist: Art des Termins, neu oder bereits in Behandlung, bevorzugte Zeiten und Kontakt. Ein Freitextfeld für Beschwerden gibt es bewusst nicht, bei dringenden Anliegen verweist das Formular auf die Telefonnummer und den Notfalldienst. Die Übermittlung ist verschlüsselt, die Anfragen liegen geordnet in einer Liste, zusammen mit einem Antwortentwurf. Für die Antwort per E-Mail fragt das Formular, ob die Person über die Risiken informiert ist und einen ungesicherten Kanal wünscht.",
+    "mensch": "Das Praxisteam entscheidet, welcher Termin passt, trägt ihn in die Praxissoftware ein und gibt die Antwort frei. Medizinische Fragen beantwortet die Ärztin oder der Arzt, nicht das Formular. Ob neue Patientinnen und Patienten aufgenommen werden, legt die Praxis fest.",
+    "fuer_wen": "Für Hausarzt- und Facharztpraxen mit vielen Terminanrufen. Für Praxen, die heute Terminwünsche per unverschlüsselter E-Mail erhalten und das ordnen möchten.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Die Anfrage enthält Name, Kontakt und Terminwunsch. Bei einer Arztpraxis lässt schon das Rückschlüsse auf die Gesundheit zu, besonders bei Fachärztinnen und Fachärzten (EDÖB). Deshalb gibt es kein Beschwerdefeld, die Übermittlung ist verschlüsselt, und es gelten die Bedingungen unten.",
+    "quellen": [
+      {
+        "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen (30.09.2025)",
+        "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+      },
+      {
+        "titel": "FMH, Minimalanforderungen IT-Grundschutz für Praxisärztinnen und Praxisärzte",
+        "url": "https://www.fmh.ch/files/pdf24/minimalanforderungen-it-grundschutz-praxisaerztinnen-praxisaerzte-d3.pdf"
+      },
+      {
+        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
+        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-27",
+    "seo_titel": "Online-Terminanfrage für Arztpraxen | Meyssens",
+    "seo_beschreibung": "Termine per Formular statt Telefon, ohne Beschwerdefeld, verschlüsselt übermittelt. Das Praxisteam bestätigt jeden Termin. Jetzt unverbindlich vormerken.",
+    "faq": [
+      {
+        "frage": "Warum gibt es kein Feld für Beschwerden?",
+        "antwort": "Weil es für die Terminplanung nicht nötig ist. Der EDÖB verlangt in seinem Merkblatt zu Patientenformularen, dass nur Angaben erhoben werden, die für die Behandlung erforderlich sind. Beschwerden bespricht die Praxis im Termin oder am Telefon."
+      },
+      {
+        "frage": "Darf die Praxis per E-Mail antworten?",
+        "antwort": "Patientendaten per E-Mail müssen nach den FMH-Minimalanforderungen verschlüsselt sein. Eine unverschlüsselte Antwort ist nach dem EDÖB nur möglich, wenn die Person über die Risiken informiert wurde und freiwillig eingewilligt hat. Das Formular fragt diese Wahl ab."
+      },
+      {
+        "frage": "Wird ein Termin automatisch gebucht?",
+        "antwort": "Nein. Das Praxisteam wählt den Termin und gibt die Antwort frei. Der Baustein bereitet nur vor."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/branchen/arztpraxen/",
+        "titel": "Arztpraxis digital entlasten",
+        "grund": "Schweigepflicht, nDSG und weitere Werkzeuge für Praxen in der Schweiz."
+      },
+      {
+        "url": "/ratgeber/website-chatbot-recht/",
+        "titel": "Website-Chatbot: was er darf",
+        "grund": "Wenn Patientinnen und Patienten Fragen auf der Website stellen."
+      },
+      {
+        "url": "/ratgeber/ndsg-kmu-checkliste/",
+        "titel": "nDSG für KMU: Checkliste",
+        "grund": "Datenschutzerklärung, Auftragsbearbeiter und Datensicherheit im Überblick."
+      }
+    ]
+  },
+  {
+    "slug": "maengelliste-bau",
+    "branche": "bauunternehmen",
+    "name": "Mängelliste mit Foto und Fristen",
+    "kurzbeschreibung": "Mängel werden auf der Baustelle mit Foto, Ort, Verantwortlichem und Termin erfasst. Der Baustein führt die Liste nach, erinnert an Termine und zeigt, wann eine Rüge oder Nachbesserung fällig wird. Fristen setzt und prüft ein Mensch.",
+    "problem": "Mängel werden bei der Abnahme und danach auf Zetteln, in Fotos auf dem Handy und in E-Mails festgehalten. Wer was bis wann behebt, ist oft nur einer Person klar. Seit dem 1. Januar 2026 gilt für Werkverträge über Bauten eine Rügefrist von 60 Tagen ab Entdeckung, die nicht verkürzt werden kann (Art. 367 Abs. 1bis und Art. 370 Abs. 4 OR, Revision Baumängel, BJ). Wer das Datum der Entdeckung nicht festhält, kann es später schwer belegen.",
+    "loesung": "Auf Handy oder Tablet erfasst die Bauleitung jeden Mangel mit Foto, Ort im Gebäude, Beschreibung, Datum der Entdeckung, verantwortlichem Unternehmen und Termin für die Behebung. Der Baustein führt die Liste pro Objekt, zeigt offene und überfällige Punkte und erinnert an Termine. Für jeden Mangel rechnet er das Datum aus, bis zu dem eine Rüge nach der eingestellten Frist spätestens erfolgen müsste, und legt einen Entwurf für die Mängelrüge oder die Aufforderung zur Nachbesserung an.",
+    "mensch": "Ob etwas ein Mangel ist, wer dafür verantwortlich ist und welche Frist gilt, entscheidet die Bauleitung oder die Bauherrschaft. Welche Regel im konkreten Vertrag gilt, hängt vom Abschlussdatum und vom Vertrag ab, etwa wenn die SIA-Norm 118 vereinbart ist. Rügen und Aufforderungen gehen erst nach Prüfung und Freigabe hinaus.",
+    "fuer_wen": "Für Bauunternehmen, General- und Totalunternehmen und Bauleitungen, die Abnahmen und Garantiearbeiten dokumentieren. Für Betriebe, die Mängel heute auf Papier oder in Fotos auf verschiedenen Handys sammeln.",
+    "aufwand": "mittel",
+    "personendaten": true,
+    "daten": "Die Liste enthält Namen von Ansprechpersonen und Unternehmen und Fotos von der Baustelle. Fotos aus bewohnten Räumen können Personen oder private Gegenstände zeigen. Deshalb gelten die Bedingungen unten, und die Erfassung beschränkt sich auf das, was für den Mangel nötig ist.",
+    "quellen": [
+      {
+        "titel": "Bundesamt für Justiz, Haftung für Baumängel",
+        "url": "https://www.bj.admin.ch/de/haftung-fuer-baumaengel"
+      },
+      {
+        "titel": "law.ch, Baumängel: neues Recht ab 01.01.2026",
+        "url": "https://law.ch/lawnews/2025/10/baumaengel-neues-recht-ab-01-01-2026/"
+      },
+      {
+        "titel": "WEKA, Mängelrügen: gesetzliche Änderungen ab 1. Januar 2026 (02.12.2025)",
+        "url": "https://www.weka.ch/themen/bau-immobilien/bau/bauschaeden-und-haftung/article/maengelruegen-gesetzliche-aenderungen-ab-1-januar-2026/"
+      },
+      {
+        "titel": "CMS, Wichtige Neuerungen im Bau- und Immobilienrecht per 1. Januar 2026",
+        "url": "https://cms.law/de/che/publication/legal-flash/wichtige-neuerungen-im-bau-und-immobilienrecht-per-1.-januar-2026"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-27",
+    "seo_titel": "Mängelliste Bau mit Foto und Rügefrist | Meyssens",
+    "seo_beschreibung": "Mängel mit Foto, Verantwortlichem und Termin erfassen, Rügefrist von 60 Tagen im Blick, Entwürfe für Rügen. Für Schweizer Baubetriebe. Jetzt vormerken.",
+    "faq": [
+      {
+        "frage": "Was hat sich bei Baumängeln 2026 geändert?",
+        "antwort": "Seit dem 1. Januar 2026 gilt bei Werkverträgen über Bauten eine Rügefrist von 60 Tagen, bei verdeckten Mängeln ab Entdeckung. Kürzere Fristen sind unwirksam. Die Verjährung von fünf Jahren darf zum Nachteil des Bestellers nicht verkürzt werden (Art. 367 Abs. 1bis, 370 Abs. 4 und 371 Abs. 3 OR). Die neuen Regeln gelten grundsätzlich für Verträge ab dem 1. Januar 2026."
+      },
+      {
+        "frage": "Wie verhält sich das zur SIA-Norm 118?",
+        "antwort": "Nach SIA 118 können Mängel während zwei Jahren nach der Abnahme jederzeit gerügt werden. Laut Fachbeiträgen von WEKA und CMS bleibt diese günstigere Regel bestehen, für später entdeckte Mängel verdrängt die 60-Tage-Frist des OR die strengere SIA-Regel bei Verträgen ab 2026."
+      },
+      {
+        "frage": "Setzt der Baustein die Fristen selbst?",
+        "antwort": "Nein. Er rechnet mit der Frist, die Sie für den Vertrag einstellen, und zeigt Termine an. Welche Frist gilt und ob eine Rüge nötig ist, entscheidet ein Mensch."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/branchen/bauunternehmen/",
+        "titel": "Bauunternehmen: Ausschreibungen und Anfragen",
+        "grund": "Weitere Werkzeuge für Baufirmen in der Schweiz."
+      },
+      {
+        "url": "/ratgeber/offertanfragen-beantworten/",
+        "titel": "Offertanfragen schneller beantworten",
+        "grund": "Was eine Offerte bindet und wie Anfragen schneller beantwortet werden."
+      },
+      {
+        "url": "/produkte/ausschreibungs-radar/",
+        "titel": "Ausschreibungs-Radar",
+        "grund": "Öffentliche Ausschreibungen von Bund, Kantonen und Gemeinden im Blick."
+      }
+    ]
+  },
+  {
+    "slug": "fristenkalender-belegeingang-treuhand",
+    "branche": "treuhaender",
+    "name": "Fristenkalender und Belegeingang für Treuhandbüros",
+    "kurzbeschreibung": "Ein Fristenkalender pro Mandat für MWST-Abrechnungen, Steuererklärungen und eigene Termine, dazu ein geordneter Belegeingang mit Checkliste. Der Baustein erinnert und bereitet Nachfragen als Entwurf vor. Die Treuhänderin oder der Treuhänder entscheidet.",
+    "problem": "Fristen sind über viele Mandate verteilt: MWST-Abrechnungen innert 60 Tagen nach Ablauf der Abrechnungsperiode (Art. 71 MWSTG), Steuererklärungen mit kantonal verschiedenen Fristen, etwa im Kanton Zürich bis 31. März für natürliche und bis 30. September für juristische Personen (Zürcher Steuerbuch Nr. 133.1). Belege kommen per E-Mail, Post und Foto, oft unvollständig. Nachfragen bei Mandantinnen und Mandanten kosten viel Zeit.",
+    "loesung": "Pro Mandat legt das Büro fest, welche Fristen gelten: Abrechnungsperiode der MWST, Steuerfristen des Kantons, eigene interne Termine. Der Baustein zeigt einen gemeinsamen Kalender, erinnert rechtzeitig und markiert Mandate, bei denen Unterlagen fehlen. Belege kommen über einen geordneten Eingang pro Mandat herein, eine Checkliste zeigt, was für den Abschluss noch fehlt, und eine Nachfrage an die Mandantin oder den Mandanten liegt als Entwurf bereit. Abgelegt wird in einem archivtauglichen Format wie PDF/A.",
+    "mensch": "Welche Fristen für ein Mandat gelten und ob eine Fristverlängerung beantragt wird, entscheidet das Treuhandbüro. Belege prüft und verbucht ein Mensch. Nachfragen an Mandantinnen und Mandanten gehen erst nach Freigabe hinaus. Ob die Ablage den Anforderungen der Geschäftsbücherverordnung an veränderbare Datenträger genügt, prüfen wir vor dem Einsatz.",
+    "fuer_wen": "Für Treuhandbüros mit vielen kleinen Mandaten, Lohn- und MWST-Abrechnungen. Für Büros, bei denen Belege auf vielen Wegen eintreffen und Fristen in Tabellen oder Köpfen stehen.",
+    "aufwand": "mittel",
+    "personendaten": true,
+    "daten": "Belege und Mandatsdaten enthalten Finanz- und Personendaten. Geschäftsbücher und Buchungsbelege sind zehn Jahre aufzubewahren (Art. 958f OR). Eine Cloud gilt nach der KMU-Seite des Bundes nicht als unveränderbarer Datenträger, deshalb gelten die strengeren Regeln der Geschäftsbücherverordnung und die Bedingungen unten.",
+    "quellen": [
+      {
+        "titel": "Mehrwertsteuergesetz, Art. 71 (Fedlex)",
+        "url": "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_71"
+      },
+      {
+        "titel": "ESTV, Fristverlängerung für die Einreichung der MWST-Abrechnung",
+        "url": "https://www.estv.admin.ch/de/mwst-fristverlaengerung-einreichung-abrechnung"
+      },
+      {
+        "titel": "Kanton Zürich, Zürcher Steuerbuch Nr. 133.1, Aufforderung zur Einreichung 2026",
+        "url": "https://www.zh.ch/de/steuern-finanzen/steuern/treuhaender/steuerbuch/steuerbuch-definition/zstb-133-1.html"
+      },
+      {
+        "titel": "Kanton Bern, TaxInfo: Abgabefrist und Fristverlängerung",
+        "url": "https://www.taxinfo.sv.fin.be.ch/taxinfo/1cce120a-05da-45e8-8968-b66ae236fee5"
+      },
+      {
+        "titel": "KMU-Portal des Bundes, Elektronische Aufbewahrung der Geschäftsbücher",
+        "url": "https://www.kmu.admin.ch/de/elektronische-aufbewahrung-der-geschaeftsbuecher"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-27",
+    "seo_titel": "Fristenkalender und Belegeingang Treuhand | Meyssens",
+    "seo_beschreibung": "MWST- und Steuerfristen pro Mandat im Blick, Belege geordnet mit Checkliste, Nachfragen als Entwurf. Für Treuhandbüros in der Schweiz. Jetzt vormerken.",
+    "faq": [
+      {
+        "frage": "Bis wann muss die MWST abgerechnet werden?",
+        "antwort": "Innert 60 Tagen nach Ablauf der Abrechnungsperiode, ohne Aufforderung (Art. 71 MWSTG). Bei der jährlichen Abrechnung gilt bis Ende Februar des Folgejahres. Fristverlängerungen beantragt man elektronisch über das ESTV-Portal."
+      },
+      {
+        "frage": "Gelten in allen Kantonen dieselben Steuerfristen?",
+        "antwort": "Nein. Im Kanton Zürich gilt für die Steuererklärung 2026 der 31. März 2027 für natürliche und der 30. September 2027 für juristische Personen. Im Kanton Bern nennt TaxInfo den 15. März für Unselbständigerwerbende, den 15. Mai für Selbständigerwerbende und für juristische Personen den 31. Juli beziehungsweise sieben Monate nach Geschäftsabschluss. Der Fristenkalender wird deshalb pro Mandat und Kanton eingestellt."
+      },
+      {
+        "frage": "Dürfen Belege nur elektronisch aufbewahrt werden?",
+        "antwort": "Ja, wenn die Übereinstimmung mit den Geschäftsvorfällen gewährleistet ist und die Daten jederzeit lesbar gemacht werden können. Die Einzelheiten regelt die Geschäftsbücherverordnung, etwa zu veränderbaren Datenträgern mit Zeitstempel und Protokoll. Aufzubewahren sind sie zehn Jahre (Art. 958f OR)."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/branchen/treuhaender/",
+        "titel": "Treuhandbüro digital",
+        "grund": "Mandantenanfragen ordnen und weitere Werkzeuge für Treuhandbüros."
+      },
+      {
+        "url": "/ratgeber/ndsg-kmu-checkliste/",
+        "titel": "nDSG für KMU: Checkliste",
+        "grund": "Auftragsbearbeiter, Datensicherheit und Pannen im Überblick."
+      },
+      {
+        "url": "/produkte/mail-assistent/",
+        "titel": "Mail-Assistent",
+        "grund": "Antwortentwürfe für wiederkehrende Mandantenfragen."
+      }
+    ]
   }
 ]

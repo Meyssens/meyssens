@@ -177,7 +177,7 @@
   <div class="kopf-mitte r">
     <span class="s-label">Automatisierung</span>
     <h2>Was sich automatisieren lässt</h2>
-    <p class="s-lead">Fast jeder Ablauf in einer Praxis berührt Patientendaten. Wir beginnen deshalb mit drei Bausteinen, die mit wenig Gesundheitsangaben auskommen: Terminanfrage, Laborauftrag und Textbausteine. Recall und Terminerinnerungen folgen erst später, mit Vertrag zur Auftragsbearbeitung und Einwilligung der Patientinnen und Patienten.</p>
+    <p class="s-lead">Fast jeder Ablauf in einer Praxis berührt Patientendaten. Wir beginnen deshalb mit drei Bausteinen, die mit wenig Gesundheitsangaben auskommen: Terminanfrage, Laborauftrag und Textbausteine. Der vierte Baustein, Terminerinnerung und Recall, kommt erst danach, mit Vertrag zur Auftragsbearbeitung und Einwilligung der Patientinnen und Patienten.</p>
   </div>
   <p class="regel r"><strong>Entwürfe ja, automatischer Versand nein.</strong> Jeder Baustein bereitet vor: Entwürfe, Listen und Hinweise. Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>
   <div class="ablauf" id="ablauf" data-ablauf>
@@ -215,7 +215,7 @@
           <span class="ablauf-art">Später geplant</span>
           <h4><span class="ablauf-nr">3</span> Erinnerung</h4>
           <p>Am Vortag liegt eine Erinnerung als Entwurf bereit, nur für Patientinnen und Patienten, die eingewilligt haben.</p><p class="ablauf-hinweis">Nur mit Einwilligung.</p>
-          <a class="ablauf-link" href="#ablauf-anfrage" data-schritt="Erinnerung">Noch kein eigener Baustein: Interesse melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="ablauf-link" href="/produkte/terminerinnerung-recall-zahnarztpraxis/">Zum Baustein: Terminerinnerung und Recall für Zahnarztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </li>
       <li class="ablauf-schritt spaeter">
@@ -245,7 +245,7 @@
           <span class="ablauf-art">Später geplant</span>
           <h4><span class="ablauf-nr">6</span> Recall</h4>
           <p>Ist die nächste Kontrolle fällig, entsteht ein Recall-Entwurf mit Buchungslink, den die MPA freigibt.</p><p class="ablauf-hinweis">Mit Vertrag und Opt-in.</p>
-          <a class="ablauf-link" href="#ablauf-anfrage" data-schritt="Recall">Noch kein eigener Baustein: Interesse melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="ablauf-link" href="/produkte/terminerinnerung-recall-zahnarztpraxis/">Zum Baustein: Terminerinnerung und Recall für Zahnarztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </li>
       <li class="ablauf-schritt mensch">
@@ -351,6 +351,31 @@
           <div class="fgrp"><label class="flabel" for="praxis-textbausteine-organisation">Praxis, Verwaltung, Büro oder Betrieb</label><input class="finput" type="text" id="praxis-textbausteine-organisation" name="organisation" required></div>
           <div class="fgrp"><label class="flabel" for="praxis-textbausteine-email">E-Mail</label><input class="finput" type="email" id="praxis-textbausteine-email" name="email" required></div>
           <div class="fgrp"><label class="flabel" for="praxis-textbausteine-baustein">Baustein</label><input class="finput" type="text" id="praxis-textbausteine-baustein" name="baustein" value="Textbausteine für Telefon und Mail" readonly></div>
+          <div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>
+          <button type="submit" class="btn-p"><span>Unverbindlich vormerken</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <p role="status" aria-live="polite"></p>
+        </form>
+      </details>
+    </article>
+    <article class="baustein-karte r">
+      <div class="baustein-kopf"><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3><a href="/produkte/terminerinnerung-recall-zahnarztpraxis/">Terminerinnerung und Recall für Zahnarztpraxen</a></h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand</dt><dd>Erinnerungen an Termine und an die nächste Kontrolle laufen in vielen Praxen von Hand: Die MPA telefoniert, schreibt Karten oder E-Mails, oft zwischen zwei Behandlungen.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Der Baustein liest aus einem Export der Praxissoftware die anstehenden Termine und die fälligen Kontrollen, aber nur bei Personen mit dokumentierter Einwilligung für den gewählten Kanal.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die MPA prüft jede Liste, streicht Einträge und gibt die Nachrichten frei. Ob und mit welchem Kanal eine Person erinnert wird, entscheidet die Praxis aufgrund der Einwilligung.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Personendaten:</strong> nur mit Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.</p>
+      <a class="mehr" href="/produkte/terminerinnerung-recall-zahnarztpraxis/">Mehr erfahren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <details class="baustein-anfrage">
+        <summary>Diesen Baustein anfragen</summary>
+        <form action="https://formspree.io/f/xlgpzzew" method="POST">
+          <input type="hidden" name="_subject" value="Bausteinanfrage über meyssens.ch: Terminerinnerung und Recall für Zahnarztpraxen (Zahnarztpraxen)">
+          <input type="hidden" name="branche" value="Zahnarztpraxen">
+          <div class="frow"><div class="fgrp"><label class="flabel" for="terminerinnerung-recall-zahnarztpraxis-vorname">Vorname</label><input class="finput" type="text" id="terminerinnerung-recall-zahnarztpraxis-vorname" name="vorname" required></div><div class="fgrp"><label class="flabel" for="terminerinnerung-recall-zahnarztpraxis-nachname">Nachname</label><input class="finput" type="text" id="terminerinnerung-recall-zahnarztpraxis-nachname" name="nachname" required></div></div>
+          <div class="fgrp"><label class="flabel" for="terminerinnerung-recall-zahnarztpraxis-organisation">Praxis, Verwaltung, Büro oder Betrieb</label><input class="finput" type="text" id="terminerinnerung-recall-zahnarztpraxis-organisation" name="organisation" required></div>
+          <div class="fgrp"><label class="flabel" for="terminerinnerung-recall-zahnarztpraxis-email">E-Mail</label><input class="finput" type="email" id="terminerinnerung-recall-zahnarztpraxis-email" name="email" required></div>
+          <div class="fgrp"><label class="flabel" for="terminerinnerung-recall-zahnarztpraxis-baustein">Baustein</label><input class="finput" type="text" id="terminerinnerung-recall-zahnarztpraxis-baustein" name="baustein" value="Terminerinnerung und Recall für Zahnarztpraxen" readonly></div>
           <div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>
           <button type="submit" class="btn-p"><span>Unverbindlich vormerken</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <p role="status" aria-live="polite"></p>

@@ -59,7 +59,11 @@
     "seo_titel": "Bauunternehmen: Ausschreibungen digital finden | Meyssens",
     "seo_beschreibung": "Öffentliche Ausschreibungen von Bund und Kantonen im Blick, Anfragen von Bauherrschaften geordnet beantworten. Für Schweizer Baufirmen. Jetzt anfragen.",
     "h1": "Bauunternehmen: Ausschreibungen und Anfragen digital im Griff",
-    "schweiz": "Öffentliche Aufträge von Bund, Kantonen und Gemeinden werden in der Schweiz grösstenteils auf simap.ch publiziert, die Regeln stehen im BöB und in der IVöB. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+    "schweiz": "Öffentliche Aufträge von Bund, Kantonen und Gemeinden werden in der Schweiz grösstenteils auf simap.ch publiziert, die Regeln stehen im BöB und in der IVöB. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
+    "bausteine": [
+      "maengelliste-bau"
+    ],
+    "bausteine_intro": "Seit 2026 gelten neue Regeln für Baumängel. Dieser Baustein hilft, Mängel und Fristen sauber zu dokumentieren."
   },
   {
     "slug": "elektro-handwerk",
@@ -315,7 +319,11 @@
     "seo_titel": "Arztpraxis digital entlasten in der Schweiz | Meyssens",
     "seo_beschreibung": "Patientenfragen auf der Website beantworten, E-Mails ordnen, Schweigepflicht und nDSG wahren: Werkzeuge für Arztpraxen. Jetzt unverbindlich anfragen.",
     "h1": "Arztpraxis digital entlasten: Werkzeuge für Praxen in der Schweiz",
-    "schweiz": "Für Arztpraxen in der ganzen Schweiz gelten das Berufsgeheimnis nach Art. 321 StGB und das revidierte Datenschutzgesetz (nDSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+    "schweiz": "Für Arztpraxen in der ganzen Schweiz gelten das Berufsgeheimnis nach Art. 321 StGB und das revidierte Datenschutzgesetz (nDSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
+    "bausteine": [
+      "online-terminanfrage-arztpraxis"
+    ],
+    "bausteine_intro": "Für Arztpraxen planen wir zuerst einen Baustein, der mit wenig Gesundheitsangaben auskommt."
   },
   {
     "slug": "treuhaender",
@@ -378,7 +386,11 @@
     "seo_titel": "Treuhandbüro digital: Mandantenanfragen ordnen | Meyssens",
     "seo_beschreibung": "Mandantenanfragen ordnen, wiederkehrende Fragen beantworten und Mandanten informieren, vertraulich und mit Blick aufs nDSG. Jetzt unverbindlich anfragen.",
     "h1": "Treuhandbüro digital: Mandantenanfragen geordnet beantworten",
-    "schweiz": "Treuhandbüros in der Schweiz bearbeiten Mandantendaten nach dem nDSG, oft zusätzlich unter vertraglicher Verschwiegenheit. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+    "schweiz": "Treuhandbüros in der Schweiz bearbeiten Mandantendaten nach dem nDSG, oft zusätzlich unter vertraglicher Verschwiegenheit. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
+    "bausteine": [
+      "fristenkalender-belegeingang-treuhand"
+    ],
+    "bausteine_intro": "Fristen und Belege über viele Mandate hinweg im Blick behalten."
   },
   {
     "slug": "hotels-gastronomie",
