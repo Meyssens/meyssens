@@ -224,4 +224,53 @@ if(!ruhig && hatIO){
   }, {threshold:.6});
   alle('.zahl strong').forEach(function(z){ zio.observe(z); });
 }
+// --- Ablauf-Kette: Schritt erscheint beim Scrollen, die Linie zieht sich zum nächsten ---
+alle('[data-ablauf]').forEach(function(k){
+  if(!k.classList.contains('bewegt')) return;
+  var teile = alle('.ablauf-schritt, .ablauf-ende', k);
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return;
+      // alle Schritte bis zu diesem einblenden, damit die Linie nie Lücken hat
+      for(var i = 0; i <= teile.indexOf(e.target); i++){ teile[i].classList.add('an'); io.unobserve(teile[i]); }
+    });
+  }, {rootMargin:'0px 0px -28% 0px'});
+  teile.forEach(function(t){ io.observe(t); });
+});
+
+// --- Anfrage zum Ablauf: Schritt vorausfüllen, Namensfeld fokussieren ---
+var ablaufForm = document.getElementById('ablauf-anfrage');
+if(ablaufForm){
+  alle('a[href="#ablauf-anfrage"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var schritt = a.getAttribute('data-schritt'), feld = ablaufForm.querySelector('textarea');
+      if(schritt && feld && feld.value.indexOf(schritt) < 0){
+        feld.value = (feld.value ? feld.value + '\n' : '') + 'Interesse am Schritt: ' + schritt;
+      }
+      if(matchMedia('(pointer: fine)').matches){
+        setTimeout(function(){ ablaufForm.querySelector('input[name="name"]').focus({preventScroll:true}); }, ruhig ? 0 : 600);
+      }
+    });
+  });
+}
+
+// --- Fester Anfrage-Knopf: erst nach dem Einstieg, nicht wenn ein Formular oder der Cookie-Hinweis sichtbar ist ---
+var fest = document.querySelector('[data-anfrage-fest]');
+if(fest && ablaufForm){
+  var schluss = document.getElementById('anfrage'), raf2 = 0;
+  fest.hidden = false;
+  function imBild(el){ var r = el.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; }
+  function setze(){
+    raf2 = 0;
+    var cookie = document.querySelector('.cookie-banner:not(.hidden)');
+    var zeigen = scrollY > innerHeight * .9 && !imBild(ablaufForm) &&
+      !(schluss && schluss.getBoundingClientRect().top < innerHeight) && !(cookie && cookie.offsetParent);
+    fest.classList.toggle('zeigen', zeigen);
+  }
+  window.addEventListener('scroll', function(){ if(!raf2) raf2 = requestAnimationFrame(setze); }, {passive:true});
+  window.addEventListener('resize', setze);
+  document.addEventListener('click', function(){ setTimeout(setze, 50); });
+  setze();
+}
+
 })();

@@ -180,6 +180,107 @@
     <p class="s-lead">Fast jeder Ablauf in einer Praxis berührt Patientendaten. Wir beginnen deshalb mit drei Bausteinen, die mit wenig Gesundheitsangaben auskommen: Terminanfrage, Laborauftrag und Textbausteine. Recall und Terminerinnerungen folgen erst später, mit Vertrag zur Auftragsbearbeitung und Einwilligung der Patientinnen und Patienten.</p>
   </div>
   <p class="regel r"><strong>Entwürfe ja, automatischer Versand nein.</strong> Jeder Baustein bereitet vor: Entwürfe, Listen und Hinweise. Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>
+  <div class="ablauf" id="ablauf" data-ablauf>
+    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.currentScript.parentNode.classList.add("bewegt")</script>
+    <div class="ablauf-kopf">
+      <h3>Ablauf: Patientenreise</h3>
+      <p>So könnten die Schritte vom ersten Kontakt bis zum nächsten Recall zusammenhängen. Nur der erste Schritt ist ein Baustein dieser Seite, die übrigen zeigen, wo ein Mensch entscheidet oder was erst später dazukommt.</p>
+      <ul class="ablauf-legende" aria-label="Legende"><li class="baustein"><span class="ablauf-punkt" aria-hidden="true"></span>Läuft automatisch, als Entwurf</li><li class="mensch"><span class="ablauf-punkt" aria-hidden="true"></span>Mensch entscheidet</li><li class="spaeter"><span class="ablauf-punkt" aria-hidden="true"></span>Später geplant</li></ul>
+    </div>
+    <ol class="ablauf-liste">
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">1</span> Online-Anfrage</h4>
+          <p>Eine Patientin wählt im Formular «Kontrolle» und «Dienstag vormittags», ein Feld für Beschwerden gibt es bewusst nicht.</p>
+          <a class="ablauf-link" href="/produkte/online-terminanfrage-zahnarztpraxis/">Zum Baustein: Online-Terminanfrage für Zahnarztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">2</span> Bestätigung</h4>
+          <p>Die MPA setzt im vorbereiteten Entwurf den freien Termin ein und schickt die Bestätigung selbst ab.</p><p class="ablauf-hinweis">Die MPA wählt den Termin und gibt den Entwurf frei.</p>
+          <a class="ablauf-link" href="/produkte/online-terminanfrage-zahnarztpraxis/">Zum Baustein: Online-Terminanfrage für Zahnarztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt spaeter">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="M12 8v4.2l2.8 1.8"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Später geplant</span>
+          <h4><span class="ablauf-nr">3</span> Erinnerung</h4>
+          <p>Am Vortag liegt eine Erinnerung als Entwurf bereit, nur für Patientinnen und Patienten, die eingewilligt haben.</p><p class="ablauf-hinweis">Nur mit Einwilligung.</p>
+          <a class="ablauf-link" href="#ablauf-anfrage" data-schritt="Erinnerung">Noch kein eigener Baustein: Interesse melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt spaeter">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="M12 8v4.2l2.8 1.8"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Später geplant</span>
+          <h4><span class="ablauf-nr">4</span> Absage und Warteliste</h4>
+          <p>Sagt jemand ab, schlägt die Liste Personen vor, die gern früher kämen, und die MPA meldet sich bei ihnen.</p><p class="ablauf-hinweis">Mit Vertrag zur Auftragsbearbeitung.</p>
+          <a class="ablauf-link" href="#ablauf-anfrage" data-schritt="Absage und Warteliste">Noch kein eigener Baustein: Interesse melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">5</span> Termin</h4>
+          <p>Fehlt einige Tage vorher noch die Arbeit aus dem Labor, erinnert der Laborauftrag die Praxis, die Behandlung selbst bleibt ganz bei Ihnen.</p><p class="ablauf-hinweis">Behandlung in der Praxis.</p>
+          <a class="ablauf-link" href="/produkte/laborauftrag-zahnarztpraxis/">Zum Baustein: Labor- und Materialbestellung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt spaeter">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7.5"/><path d="M12 8v4.2l2.8 1.8"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Später geplant</span>
+          <h4><span class="ablauf-nr">6</span> Recall</h4>
+          <p>Ist die nächste Kontrolle fällig, entsteht ein Recall-Entwurf mit Buchungslink, den die MPA freigibt.</p><p class="ablauf-hinweis">Mit Vertrag und Opt-in.</p>
+          <a class="ablauf-link" href="#ablauf-anfrage" data-schritt="Recall">Noch kein eigener Baustein: Interesse melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">7</span> Bewertungsbitte</h4>
+          <p>Ob eine Patientin um eine Bewertung gebeten wird, entscheidet die Praxis jedes Mal einzeln.</p><p class="ablauf-hinweis">Nur mit Freigabe pro Patientin oder Patient.</p>
+          <a class="ablauf-link" href="#ablauf-anfrage" data-schritt="Bewertungsbitte">Noch kein eigener Baustein: Interesse melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+    </ol>
+    <div class="ablauf-ende">
+      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>
+      <div class="ablauf-ziel">
+        <p class="ablauf-ziel-text">Ziel: weniger Anrufe während der Behandlung. Und keine Nachricht verlässt die Praxis, ohne dass die MPA sie freigegeben hat.</p>
+        <a class="btn-p ablauf-cta" href="#ablauf-anfrage"><span>Diesen Ablauf für meine Praxis anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>
+      </div>
+    </div>
+    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
+    <form class="ablauf-form" id="ablauf-anfrage" action="https://formspree.io/f/xlgpzzew" method="POST">
+      <h4>Diesen Ablauf für meine Praxis anfragen</h4>
+      <input type="hidden" name="_subject" value="Ablauf-Anfrage über meyssens.ch: Patientenreise (Zahnarztpraxen)">
+      <input type="hidden" name="branche" value="Zahnarztpraxen">
+      <div class="fgrp"><label class="flabel" for="ab-ablauf">Ablauf</label><input class="finput" type="text" id="ab-ablauf" name="ablauf" value="Patientenreise (Zahnarztpraxen)" readonly></div>
+      <div class="frow"><div class="fgrp"><label class="flabel" for="ab-name">Name</label><input class="finput" type="text" id="ab-name" name="name" autocomplete="name" required></div><div class="fgrp"><label class="flabel" for="ab-email">E-Mail</label><input class="finput" type="email" id="ab-email" name="email" autocomplete="email" required></div></div>
+      <div class="fgrp"><label class="flabel" for="ab-nachricht">Nachricht (optional)</label><textarea class="ftextarea" id="ab-nachricht" name="nachricht" rows="3" placeholder="Zum Beispiel: welche Software Sie heute nutzen"></textarea></div>
+      <div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>
+      <button type="submit" class="btn-p"><span>Ablauf anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <p role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <a class="anfrage-fest" href="#ablauf-anfrage" data-anfrage-fest hidden>Ablauf anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <div class="baustein-raster">
     <article class="baustein-karte r">
       <div class="baustein-kopf"><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand klein, Einschätzung</span></div>
@@ -256,20 +357,6 @@
         </form>
       </details>
     </article>
-  </div>
-  <div class="kette-wrap r">
-    <h3>Ablauf: Patientenreise</h3>
-    <p>So könnten die Schritte vom ersten Kontakt bis zum nächsten Recall zusammenhängen. Nur der erste Schritt ist ein Baustein dieser Seite, die übrigen zeigen, wo ein Mensch entscheidet oder was erst später dazukommt.</p>
-    <ol class="kette">
-      <li class="kette-schritt baustein"><span class="kette-nr" aria-hidden="true">1</span><b>Online-Anfrage</b><span class="kette-art">Baustein</span><span class="kette-text"><a href="/produkte/online-terminanfrage-zahnarztpraxis/">Online-Terminanfrage für Zahnarztpraxen</a></span></li>
-      <li class="kette-schritt mensch"><span class="kette-nr" aria-hidden="true">2</span><b>Bestätigung</b><span class="kette-art">Mensch entscheidet</span><span class="kette-text">Die MPA wählt den Termin und gibt den Entwurf frei.</span></li>
-      <li class="kette-schritt spaeter"><span class="kette-nr" aria-hidden="true">3</span><b>Erinnerung</b><span class="kette-art">Später</span><span class="kette-text">Nur mit Einwilligung.</span></li>
-      <li class="kette-schritt spaeter"><span class="kette-nr" aria-hidden="true">4</span><b>Absage und Warteliste</b><span class="kette-art">Später</span><span class="kette-text">Mit Vertrag zur Auftragsbearbeitung.</span></li>
-      <li class="kette-schritt mensch"><span class="kette-nr" aria-hidden="true">5</span><b>Termin</b><span class="kette-art">Mensch entscheidet</span><span class="kette-text">Behandlung in der Praxis.</span></li>
-      <li class="kette-schritt spaeter"><span class="kette-nr" aria-hidden="true">6</span><b>Recall</b><span class="kette-art">Später</span><span class="kette-text">Mit Vertrag und Opt-in.</span></li>
-      <li class="kette-schritt mensch"><span class="kette-nr" aria-hidden="true">7</span><b>Bewertungsbitte</b><span class="kette-art">Mensch entscheidet</span><span class="kette-text">Nur mit Freigabe pro Patientin oder Patient.</span></li>
-    </ol>
-    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
   </div>
   <article class="demo auto-demo r">
     <div class="demo-text">

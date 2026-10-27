@@ -270,7 +270,8 @@ REGEL = ("Entwürfe ja, automatischer Versand nein.",
 BEDINGUNGEN = ("Vertrag zur Auftragsbearbeitung, bevor echte Daten verarbeitet werden",
                "Hosting in der Schweiz",
                "Datenminimierung: nur die Angaben, die der Ablauf wirklich braucht")
-KETTE_ART = {"baustein": "Baustein", "mensch": "Mensch entscheidet", "spaeter": "Später", "vorhanden": "Ihre Software"}
+KETTE_ART = {"baustein": "Läuft automatisch, als Entwurf", "mensch": "Mensch entscheidet", "spaeter": "Später geplant",
+             "vorhanden": "Ihre Software"}
 AUTO_WORTE = (450, 1100)
 BAUSTEIN_WORTE = (450, 1000)
 
@@ -348,27 +349,96 @@ def baustein_karte(p, branche, formular_ziel, einwilligung):
                                baustein_formular(p, branche, formular_ziel, einwilligung)))
 
 
-def kette(k, nach_slug):
-    # Verknüpfungs-Kette als Ablauf-Grafik; Schritte: [Titel, Art, Baustein-Slug oder Hinweis]
-    schritte = []
-    for i, (titel, art, rest) in enumerate(k["schritte"], 1):
+# Symbole der Ablauf-Schritte (inline SVG, 24er-Raster)
+KETTE_SYMBOL = {
+    "baustein": '<path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/>',
+    "mensch": '<circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/>',
+    "spaeter": '<circle cx="12" cy="12" r="7.5"/><path d="M12 8v4.2l2.8 1.8"/>',
+    "vorhanden": '<rect x="4" y="5" width="16" height="12" rx="2"/><path d="M9 20.5h6"/>',
+}
+
+
+def kette(k, nach_slug, branche, formular_ziel, einwilligung):
+    # Ablauf-Kette als Scroll-Animation: ohne JS eine lesbare Liste, mit JS (demos.js) erscheint Schritt für Schritt.
+    # Schritte: {titel, art, seite (Bausteinseite oder null), beispiel (1 Satz), hinweis (optional)}
+    schritte, arten = [], []
+    for i, st in enumerate(k["schritte"], 1):
+        art, seite = st["art"], st.get("seite")
         if art not in KETTE_ART:
             raise SystemExit("Kette %s: unbekannte Art %s" % (k["titel"], art))
-        if art == "baustein":
-            if rest not in nach_slug:
-                raise SystemExit("Kette %s: unbekannter Baustein %s" % (k["titel"], rest))
-            zusatz = '<a href="/produkte/%s/">%s</a>' % (rest, html.escape(nach_slug[rest]["name"]))
+        if art == "baustein" and not seite:
+            raise SystemExit("Kette %s: Schritt %s ohne Bausteinseite" % (k["titel"], st["titel"]))
+        if seite and seite not in nach_slug:
+            raise SystemExit("Kette %s: unbekannter Baustein %s" % (k["titel"], seite))
+        if len(re.findall(r"[.!?](\s|$)", st["beispiel"])) != 1:
+            raise SystemExit("Kette %s: Beispiel zu %s ist nicht genau ein Satz" % (k["titel"], st["titel"]))
+        if art not in arten:
+            arten.append(art)
+        if seite:
+            link = '<a class="ablauf-link" href="/produkte/%s/">Zum Baustein: %s %s</a>' % (
+                seite, html.escape(nach_slug[seite]["name"]), PFEIL)
         else:
-            zusatz = html.escape(rest)
-        schritte.append('      <li class="kette-schritt %s"><span class="kette-nr" aria-hidden="true">%d</span>'
-                        '<b>%s</b><span class="kette-art">%s</span><span class="kette-text">%s</span></li>'
-                        % (art, i, html.escape(titel), KETTE_ART[art], zusatz))
-    return ('  <div class="kette-wrap r">\n'
-            '    <h3>Ablauf: %s</h3>\n'
-            '    <p>%s</p>\n'
-            '    <ol class="kette">\n%s\n    </ol>\n'
+            link = ('<a class="ablauf-link" href="#ablauf-anfrage" data-schritt="%s">Noch kein eigener Baustein: '
+                    'Interesse melden %s</a>' % (html.escape(st["titel"]), PFEIL))
+        hinweis = '<p class="ablauf-hinweis">%s</p>' % html.escape(st["hinweis"]) if st.get("hinweis") else ""
+        schritte.append(
+            '      <li class="ablauf-schritt %s">\n'
+            '        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24">%s</svg></span>\n'
+            '        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none">'
+            '<line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>\n'
+            '        <div class="ablauf-karte">\n'
+            '          <span class="ablauf-art">%s</span>\n'
+            '          <h4><span class="ablauf-nr">%d</span> %s</h4>\n'
+            '          <p>%s</p>%s\n'
+            '          %s\n'
+            '        </div>\n'
+            '      </li>' % (art, KETTE_SYMBOL[art], KETTE_ART[art], i, html.escape(st["titel"]),
+                             html.escape(st["beispiel"]), hinweis, link))
+    legende = "".join('<li class="%s"><span class="ablauf-punkt" aria-hidden="true"></span>%s</li>' % (art, KETTE_ART[art])
+                      for art in arten)
+    knopf = "Diesen Ablauf für meine %s anfragen" % k["betrieb"]
+    wert = "%s (%s)" % (k["titel"], branche)
+    return ('  <div class="ablauf" id="ablauf" data-ablauf>\n'
+            '    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)'
+            'document.currentScript.parentNode.classList.add("bewegt")</script>\n'
+            '    <div class="ablauf-kopf">\n'
+            '      <h3>Ablauf: %s</h3>\n'
+            '      <p>%s</p>\n'
+            '      <ul class="ablauf-legende" aria-label="Legende">%s</ul>\n'
+            '    </div>\n'
+            '    <ol class="ablauf-liste">\n%s\n    </ol>\n'
+            '    <div class="ablauf-ende">\n'
+            '      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>\n'
+            '      <div class="ablauf-ziel">\n'
+            '        <p class="ablauf-ziel-text">%s</p>\n'
+            '        <a class="btn-p ablauf-cta" href="#ablauf-anfrage"><span>%s</span> %s</a>\n'
+            '        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>\n'
+            '      </div>\n'
+            '    </div>\n'
             '    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>\n'
-            '  </div>' % (html.escape(k["titel"]), html.escape(k["text"]), "\n".join(schritte)))
+            '    <form class="ablauf-form" id="ablauf-anfrage" action="%s" method="POST">\n'
+            '      <h4>%s</h4>\n'
+            '      <input type="hidden" name="_subject" value="Ablauf-Anfrage über meyssens.ch: %s">\n'
+            '      <input type="hidden" name="branche" value="%s">\n'
+            '      <div class="fgrp"><label class="flabel" for="ab-ablauf">Ablauf</label>'
+            '<input class="finput" type="text" id="ab-ablauf" name="ablauf" value="%s" readonly></div>\n'
+            '      <div class="frow"><div class="fgrp"><label class="flabel" for="ab-name">Name</label>'
+            '<input class="finput" type="text" id="ab-name" name="name" autocomplete="name" required></div>'
+            '<div class="fgrp"><label class="flabel" for="ab-email">E-Mail</label>'
+            '<input class="finput" type="email" id="ab-email" name="email" autocomplete="email" required></div></div>\n'
+            '      <div class="fgrp"><label class="flabel" for="ab-nachricht">Nachricht (optional)</label>'
+            '<textarea class="ftextarea" id="ab-nachricht" name="nachricht" rows="3" '
+            'placeholder="Zum Beispiel: welche Software Sie heute nutzen"></textarea></div>\n'
+            '      %s\n'
+            '      <button type="submit" class="btn-p"><span>Ablauf anfragen</span> %s</button>\n'
+            '      <p role="status" aria-live="polite"></p>\n'
+            '    </form>\n'
+            '  </div>\n'
+            '  <a class="anfrage-fest" href="#ablauf-anfrage" data-anfrage-fest hidden>Ablauf anfragen %s</a>'
+            % (html.escape(k["titel"]), html.escape(k["text"]), legende, "\n".join(schritte),
+               html.escape(k["abschluss"]), html.escape(knopf), PFEIL,
+               formular_ziel, html.escape(knopf), html.escape(wert), html.escape(branche), html.escape(wert),
+               einwilligung.replace('id="', 'id="ab-').replace('for="', 'for="ab-'), PFEIL, PFEIL))
 
 
 def automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
@@ -389,8 +459,8 @@ def automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
             '    <p class="s-lead">%s</p>\n'
             '  </div>\n'
             '  <p class="regel r"><strong>%s</strong> %s</p>\n'
-            '  <div class="baustein-raster">\n%s\n  </div>\n'
             '%s\n'
+            '  <div class="baustein-raster">\n%s\n  </div>\n'
             '  <article class="demo auto-demo r">\n'
             '    <div class="demo-text">\n'
             '      <span class="status-chip">%s</span>\n'
@@ -405,8 +475,9 @@ def automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
             'Einschätzungen, keine gemessenen Werte. Vor einem Einsatz mit Personendaten prüfen wir die rechtlichen Fragen '
             'im Einzelfall. Zuletzt geprüft am %s.</p>\n'
             '</section>' % (html.escape(au["intro"]), REGEL[0], REGEL[1],
+                            kette(au["kette"], nach_slug, a["name"], formular_ziel, einwilligung),
                             "\n".join(baustein_karte(p, a["name"], formular_ziel, einwilligung) for p in bausteine),
-                            kette(au["kette"], nach_slug), html.escape(STUFEN[d["status"]]["badge"]),
+                            html.escape(STUFEN[d["status"]]["badge"]),
                             html.escape(d["name"]), html.escape(d["kurzbeschreibung"]), d["slug"], PFEIL, bild, datum))
 
 
