@@ -4,8 +4,8 @@
   "art": "branche",
   "name": "Zahnarztpraxen",
   "kurz": "Berufsgeheimnis, nDSG und digitale Assistenz in der Zahnarztpraxis.",
-  "titel": "Digitale Assistenz für Zahnarztpraxen: Recht & Praxis",
-  "beschreibung": "Was Zahnarztpraxen bei Berufsgeheimnis und nDSG beachten müssen, wenn sie Chatbot, Mail-Assistent oder Newsletter nutzen. Mit Checkliste.",
+  "titel": "Zahnarztpraxis digital: Terminanfrage und nDSG | Meyssens",
+  "beschreibung": "Berufsgeheimnis, nDSG und Online-Terminanfrage: was Zahnarztpraxen in der Schweiz beachten und wo Bausteine entlasten. Checkliste lesen.",
   "h1": "Digitale Assistenz in der Zahnarztpraxis: was rechtlich gilt und was praktisch hilft",
   "lead": "Das Telefon klingelt, während am Stuhl behandelt wird. Im Postfach liegen Rechnungsfragen neben Laborpost und Werbung. Ein Chatbot oder ein Mail-Assistent klingt nach Entlastung, doch in der Zahnarztpraxis gelten Berufsgeheimnis und strenger Datenschutz. Dieser Text zeigt, was rechtlich gilt, wo digitale Bausteine sinnvoll sein könnten und wo ihre Grenzen liegen.",
   "geprueft": "2026-10-25",
@@ -158,8 +158,8 @@
   "art": "branche",
   "name": "Immobilienverwaltungen",
   "kurz": "Mieteranfragen, Schadenmeldungen und nDSG in der Verwaltung.",
-  "titel": "Immobilienverwaltung: Büroalltag entlasten | Meyssens",
-  "beschreibung": "Mieteranfragen, Schadenmeldungen, nDSG: was Immobilienverwaltungen in der Schweiz beachten müssen und wo digitale Bausteine entlasten können.",
+  "titel": "Immobilienverwaltung digital: Mieteranfragen | Meyssens",
+  "beschreibung": "Schadenmeldungen, Besichtigungen und Übergaben digital, amtliche Formulare je Kanton und nDSG im Blick. Für Verwaltungen in der Schweiz. Jetzt lesen.",
   "h1": "Digitale Unterstützung für Immobilienverwaltungen in der Schweiz",
   "lead": "Ein Wasserschaden im dritten Stock, drei Anfragen zur Nebenkostenabrechnung, zwölf Bewerbungen für eine Wohnung und die Einladung zur Stockwerkeigentümerversammlung, alles in derselben Woche. In der Verwaltung kommt vieles gleichzeitig, und manches davon ist rechtlich streng geregelt. Dieser Text zeigt den rechtlichen Rahmen und wo digitale Bausteine entlasten könnten.",
   "geprueft": "2026-10-25",
@@ -219,8 +219,8 @@
     "url": "https://www.edoeb.admin.ch/dam/en/sd-web/F7ojQw99LBH-/Merkblatt%20zu%20Anmeldeformularen%20f%C3%BCr%20Mietwohnungen%20DE_20250715.pdf"
    },
    {
-    "titel": "SVIT, Branchenempfehlung DSG, Anhang E",
-    "url": "https://svit.ch/sites/default/files/2024-07/svit_branchenempfehlung_dsg_anhangE_de_v1.1_2407.pdf"
+    "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E (Übersichtsseite)",
+    "url": "https://www.svit.ch/de/datenschutzgesetz"
    },
    {
     "titel": "SVIT, Branchenempfehlung Auftragsbearbeitung kompakt",
@@ -304,8 +304,8 @@
   "art": "branche",
   "name": "Architekturbüros",
   "kurz": "Ausschreibungen auf simap, Bauherrenfragen und nDSG im Architekturbüro.",
-  "titel": "Architekturbüros: Ausschreibungen und Bauherren | Meyssens",
-  "beschreibung": "Ausschreibungen auf simap finden, Bauherrenfragen bündeln, nDSG beachten: Überblick für Architekturbüros in der Schweiz mit Checkliste.",
+  "titel": "Architekturbüro digital: simap und SIA-Stunden | Meyssens",
+  "beschreibung": "simap-Ausschreibungen finden, Stunden nach SIA-Phasen erfassen, Akontorechnungen vorbereiten: Überblick für Schweizer Architekturbüros. Jetzt lesen.",
   "h1": "Digitale Unterstützung für Architekturbüros in der Schweiz",
   "lead": "Eine Ausschreibung für ein Schulhaus erscheint auf simap, die Eingabefrist läuft, und gleichzeitig will die Bauherrschaft eines laufenden Projekts wissen, ob sich die Küche noch verschieben lässt. Im Architekturbüro konkurrieren Akquisition und Projektarbeit um dieselbe Zeit. Dieser Text zeigt den rechtlichen Rahmen bei öffentlichen Aufträgen und wo digitale Bausteine helfen könnten.",
   "geprueft": "2026-10-25",
@@ -436,8 +436,8 @@
   "art": "branche",
   "name": "Pflegeheime und Spitex",
   "kurz": "Berufsgeheimnis, Angehörigenauskunft und nDSG in Heim und Spitex.",
-  "titel": "Pflegeheim & Spitex: Digitale Kommunikation und Recht",
-  "beschreibung": "Berufsgeheimnis, Angehörigenauskunft und nDSG: Was Pflegeheime und Spitex-Organisationen bei digitalen Assistenten beachten sollten. Mit Checkliste.",
+  "titel": "Pflegeheim und Spitex digital: Recht und Alltag | Meyssens",
+  "beschreibung": "Berufsgeheimnis, nDSG und elektronische Abrechnung ab 2026 in Basel-Stadt und Solothurn: was Heime und Spitex beachten. Checkliste lesen.",
   "h1": "Digitale Kommunikation in Pflegeheim und Spitex: Recht, Alltag, Möglichkeiten",
   "lead": "Eine Tochter ruft an und möchte wissen, wie es ihrer Mutter nach dem Sturz geht. Gleichzeitig fragt jemand per E-Mail nach freien Plätzen, und die Spitex-Tour beginnt in zehn Minuten. In der Langzeitpflege ist Kommunikation Alltag, und fast jede Auskunft berührt das Berufsgeheimnis. Dieser Text zeigt, was gilt und wo digitale Bausteine entlasten könnten, ohne Grenzen zu überschreiten.",
   "geprueft": "2026-10-25",
@@ -505,8 +505,8 @@
     "url": "https://www.bag.admin.ch/de/patientenwillen-staerken-vorgehen"
    },
    {
-    "titel": "Kanton Aargau, Vorgaben Datenschutz Pflege",
-    "url": "https://www.ag.ch/media/kanton-aargau/dgs/dokumente/gesundheit/gesundheitsversorgung/pflege/vorgaben-datenschutz.pdf"
+    "titel": "Kanton Aargau, Vorgaben Datenschutz Pflege (Archivkopie)",
+    "url": "https://web.archive.org/web/20250211120108/https://www.ag.ch/media/kanton-aargau/dgs/dokumente/gesundheit/gesundheitsversorgung/pflege/vorgaben-datenschutz.pdf"
    },
    {
     "titel": "Obsan Bulletin 05/2021",
@@ -573,7 +573,7 @@
   "art": "ratgeber",
   "name": "nDSG für KMU: Checkliste",
   "titel": "nDSG für KMU: Checkliste mit 18 Punkten | Meyssens",
-  "beschreibung": "Was KMU nach dem Schweizer Datenschutzgesetz tun müssen: Datenschutzerklärung, Verzeichnis, Auftragsbearbeiter, Pannen, Bussen. Mit Checkliste.",
+  "beschreibung": "Was KMU nach dem Schweizer Datenschutzgesetz tun müssen: Datenschutzerklärung, Verzeichnis, Auftragsbearbeiter, Pannen. Checkliste jetzt lesen.",
   "h1": "nDSG für KMU: Die Checkliste für den Alltag",
   "lead": "Ein Kontaktformular auf der Website, eine Kundenliste in der Buchhaltung, ein Newsletter an Stammkunden: Fast jedes KMU bearbeitet Personendaten. Seit September 2023 gilt dafür das revidierte Datenschutzgesetz. Dieser Ratgeber erklärt die wichtigsten Pflichten in verständlicher Sprache und schliesst mit einer Checkliste in 18 Punkten.",
   "geprueft": "2026-10-25",
@@ -651,8 +651,8 @@
     "url": "https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen/bundesrat.msg-id-102054.html"
    },
    {
-    "titel": "datenschutz.ch, Praxishilfe zum Angemessenheitsbeschluss USA",
-    "url": "https://docs.datenschutz.ch/u/d/publikationen/webartikel/240776INF-04-Webartikel-Umgang-mit-dem-Angemessenheitsbeschluss-USA.pdf"
+    "titel": "datenschutz.ch, Praxishilfe zum Angemessenheitsbeschluss USA (Archivkopie)",
+    "url": "https://web.archive.org/web/20241104082755/https://docs.datenschutz.ch/u/d/publikationen/webartikel/240776INF-04-Webartikel-Umgang-mit-dem-Angemessenheitsbeschluss-USA.pdf"
    },
    {
     "titel": "EDÖB, Leitfaden zur Meldung von Datensicherheitsverletzungen nach Art. 24 DSG",
@@ -676,8 +676,8 @@
   "slug": "offertanfragen-beantworten",
   "art": "ratgeber",
   "name": "Offertanfragen schneller beantworten",
-  "titel": "Offertanfragen schneller beantworten: Leitfaden Schweiz",
-  "beschreibung": "Was eine Offerte rechtlich bindet, welche Fristen gelten und wie Sie Anfragen schneller beantworten: mit Textbausteinen und Checkliste.",
+  "titel": "Offertanfragen schneller beantworten: Leitfaden | Meyssens",
+  "beschreibung": "Was eine Offerte nach OR bindet, welche Fristen gelten und wie Sie Anfragen schneller beantworten, mit Textbausteinen. Leitfaden und Checkliste lesen.",
   "h1": "Offertanfragen schneller beantworten: Leitfaden für kleine Betriebe",
   "lead": "Die Anfrage kam am Montag, die Offerte ist am Freitag noch nicht geschrieben, und am Telefon haben Sie schon einen Preis genannt. Gilt der jetzt? Dieser Leitfaden erklärt, wann eine Offerte nach Schweizer Recht bindet, wie Sie Fristen setzen und wie Sie Anfragen mit Textbausteinen schneller und sauberer beantworten.",
   "geprueft": "2026-10-25",
@@ -730,8 +730,8 @@
   ],
   "quellen": [
    {
-    "titel": "Omnilex, Kommentar zu Art. 3 OR",
-    "url": "https://app.omnilex.ai/de/sources/commentaries/ch-fedlex--220--3"
+    "titel": "Obligationenrecht, Art. 3 (Fedlex)",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_3"
    },
    {
     "titel": "droit-bilingue.ch, Art. 4 bis 7 OR",
@@ -768,7 +768,7 @@
   "art": "ratgeber",
   "name": "Online-Abstimmungen im Verein",
   "titel": "Online-Abstimmung im Verein: rechtssicher nach ZGB",
-  "beschreibung": "Wann ist eine Online-Abstimmung im Schweizer Verein verbindlich? Statuten, Art. 66 ZGB, Datenschutz und Checkliste im Überblick.",
+  "beschreibung": "Wann ist eine Online-Abstimmung im Schweizer Verein verbindlich? Statuten, Art. 66 ZGB, Datenschutz und Checkliste. Jetzt lesen und umsetzen.",
   "h1": "Online-Abstimmungen im Verein rechtssicher durchführen",
   "lead": "Die Generalversammlung ist schlecht besucht, der Vorstand möchte über das neue Jahresprogramm lieber online abstimmen lassen. Geht das, und ist das Ergebnis dann verbindlich? Die Antwort steht zum grössten Teil in Ihren Statuten. Dieser Ratgeber erklärt, was das ZGB verlangt, warum eine einzige Gegenstimme reichen kann und wie eine Statutenklausel aussehen könnte.",
   "geprueft": "2026-10-25",
@@ -846,16 +846,16 @@
     "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/wirtschaft-arbeit/handelsregister/verein/verein_vorlage_statuten_kurz_mit_Kommentar.pdf"
    },
    {
-    "titel": "Bundesamt für Justiz, FAQ Generalversammlung COVID-19",
-    "url": "https://www.esbk.admin.ch/dam/bj/de/data/aktuell/coronavirus/faq-covid19-generalversammlung.pdf.download.pdf/faq-covid19-generalversammlung-d.pdf"
+    "titel": "Bundesamt für Justiz, FAQ Generalversammlung COVID-19 (Archivkopie)",
+    "url": "https://web.archive.org/web/20260613221726/https://www.bj.admin.ch/dam/bj/de/data/staat/coronavirus/faq-covid19-generalversammlung.pdf.download.pdf/faq-covid19-generalversammlung-d.pdf"
    },
    {
     "titel": "Bundesamt für Justiz, Datenschutz",
     "url": "https://www.bj.admin.ch/de/datenschutz"
    },
    {
-    "titel": "Frauenbund, nDSG-Checkliste für Vereine",
-    "url": "https://www.frauenbund.ch/frauenbund-dachverband/seiteninhalte/verbandsdienstleistungen/Vereinswissen/2023-05-17-nDSG-Checkliste.pdf"
+    "titel": "Frauenbund, nDSG-Checkliste für Vereine (Archivkopie)",
+    "url": "https://web.archive.org/web/20240910065738/https://www.frauenbund.ch/frauenbund-dachverband/seiteninhalte/verbandsdienstleistungen/Vereinswissen/2023-05-17-nDSG-Checkliste.pdf"
    }
   ]
  },
@@ -863,8 +863,8 @@
   "slug": "website-chatbot-recht",
   "art": "ratgeber",
   "name": "Website-Chatbot: was er darf und was nicht",
-  "titel": "Website-Chatbot Schweiz: Was er darf und was nicht",
-  "beschreibung": "KI-Chatbot auf der Firmenwebsite: Kennzeichnung, Datenschutz nach nDSG, US-Anbieter, Haftung und Grenzen. Mit Checkliste für den Start.",
+  "titel": "Website-Chatbot Schweiz: was er darf und was nicht",
+  "beschreibung": "KI-Chatbot auf der Firmenwebsite: Kennzeichnung, nDSG, US-Anbieter, Haftung und Grenzen. Mit Checkliste für den Start. Jetzt lesen.",
   "h1": "Website-Chatbot in der Schweiz: Was er darf und was nicht",
   "lead": "Ein Chatbot auf der Website beantwortet Fragen auch am Sonntagabend und entlastet das Telefon. Doch was muss er offenlegen, was passiert mit den Eingaben, und wer haftet, wenn er Unsinn erzählt? Dieser Ratgeber fasst zusammen, was nach Schweizer Recht gilt, wo die Rechtslage offen ist und was Sie vor dem Start prüfen sollten.",
   "geprueft": "2026-10-25",
