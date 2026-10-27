@@ -21,6 +21,9 @@
   FAQPage genau dann wenn sichtbare Fragen, Service mit areaServed Schweiz auf Produkt- und Bausteinseiten,
   keine Bewertungen; im Inhalt der Unternehmensseiten kein Bezug auf Deutschland
 - 404.html: vorhanden, noindex, ohne Canonical, nicht in der Sitemap; robots.txt verweist auf die Sitemap
+- Ratgeber und Bausteine: jede Seite endet mit dem Anfrage-Formular (Abschnitt #anfrage mit Formular und Knopf),
+  Ratgeber sind von einer Branchenseite und der Übersicht verlinkt, Bausteine mit FAQ haben mindestens 3 Fragen,
+  Branchen ohne Langtext zeigen ihre Bausteine im Abschnitt #bausteine
 Nur Python-Standardbibliothek.
 """
 import html
@@ -34,6 +37,12 @@ from build import (ARTEN, AUTO_WORTE, KETTE_ART, BAUSTEIN_WORTE, BEDINGUNGEN, RE
                    worte, zwischen)
 
 ROOT = Path(__file__).resolve().parent
+
+
+def datum(iso):
+    # "2026-10-27" -> "27.10.2026", wie auf den Seiten angezeigt
+    j, m, t = iso.split("-")
+    return "%s.%s.%s" % (t, m, j)
 fehler = []
 
 
@@ -90,7 +99,7 @@ for a in artikel:
         continue
     text, parser = seiten[url]
     sichtbar = html.unescape(re.sub(r"<script.*?</script>|<[^>]+>", " ", text, flags=re.S))
-    for muss in ("Allgemeine Information, keine Rechtsberatung", "zuletzt geprüft am 25.10.2026"):
+    for muss in ("Allgemeine Information, keine Rechtsberatung", "zuletzt geprüft am " + datum(a["geprueft"])):
         if muss not in sichtbar:
             fehler.append("%s: Hinweis fehlt: %s" % (url, muss))
     if "[Status" in sichtbar or "ß" in sichtbar:
@@ -176,7 +185,6 @@ def pruefe_ablauf(a, teil):
     return f
 
 
-geprueft_neu = "zuletzt geprüft am 26.10.2026"
 uebersicht = seiten.get("/unternehmen/", ("", None))[0]
 for a in artikel:
     au = a.get("automatisierung")
@@ -200,7 +208,8 @@ for a in artikel:
     fehler += ["%s#ablauf: %s" % (url, f) for f in pruefe_ablauf(a, teil)]
     if '<span class="beispiel">Beispiel</span>' not in teil or "data-wahl" not in teil:
         fehler.append("%s: Demo mit Beschriftung Beispiel fehlt" % url)
-    for muss in ("Was sich automatisieren lässt", regel, "keine Rechtsberatung", geprueft_neu, "Einschätzung",
+    for muss in ("Was sich automatisieren lässt", regel, "keine Rechtsberatung", "zuletzt geprüft am " + datum(au["geprueft"]),
+                 "Einschätzung",
                  "in Planung", "keine Kunden und keine Referenzen"):
         if muss.lower() not in s:
             fehler.append("%s#automatisierung: fehlt: %s" % (url, muss))
@@ -220,7 +229,8 @@ for p in (p for p in produkte if ist_baustein(p)):
         continue
     text = seiten[url][0]
     s = sichtbar_text(text)
-    muss = ["Allgemeine Information, keine Rechtsberatung", geprueft_neu, regel, "Einschätzung", p["status"]]
+    muss = ["Allgemeine Information, keine Rechtsberatung", "zuletzt geprüft am " + datum(p["geprueft"]), regel,
+            "Einschätzung", p["status"]]
     if p["personendaten"]:
         muss += list(BEDINGUNGEN)
     for m in muss:
@@ -317,6 +327,34 @@ for ziel in re.findall(r'href="(/[^"#?]*)', seite404):
         fehler.append("404.html: toter Link %s" % ziel)
 if "Sitemap: https://meyssens.ch/sitemap.xml" not in (ROOT / "robots.txt").read_text(encoding="utf-8"):
     fehler.append("robots.txt ohne Sitemap")
+
+# --- Ratgeber, Bausteine, Branchen mit Bausteinen ---
+branchen_daten = json.loads((ROOT / "branchen.json").read_text(encoding="utf-8"))
+branchen_seiten = " ".join(t for u, (t, _) in seiten.items() if u.startswith("/branchen/"))
+ziele = ["/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]) for a in artikel if a["art"] == "ratgeber"]
+ziele += ["/produkte/%s/" % p["slug"] for p in produkte if ist_baustein(p)]
+for url in ziele:
+    text = seiten.get(url, ("",))[0]
+    hauptteil = text[text.find("<main"):text.find("</main>")]
+    letzter = re.findall(r'<section id="([^"]+)"', hauptteil)[-1:] or [None]
+    anfrage = zwischen(text, '<section id="anfrage"', "</section>") if '<section id="anfrage"' in text else ""
+    if letzter != ["anfrage"] or "<form " not in anfrage or '<button type="submit"' not in anfrage:
+        fehler.append("%s: endet nicht mit Anfrage-Formular und Knopf" % url)
+for a in (a for a in artikel if a["art"] == "ratgeber"):
+    url = "/ratgeber/%s/" % a["slug"]
+    if 'href="%s"' % url not in branchen_seiten:
+        fehler.append("%s: von keiner Branchenseite verlinkt" % url)
+    if 'href="%s"' % url not in uebersicht:
+        fehler.append("%s: nicht von der Übersicht verlinkt" % url)
+for p in (p for p in produkte if ist_baustein(p) and p.get("faq")):
+    if len(p["faq"]) < 3 or '<section id="fragen"' not in seiten.get("/produkte/%s/" % p["slug"], ("",))[0]:
+        fehler.append("/produkte/%s/: FAQ mit weniger als 3 Fragen oder nicht sichtbar" % p["slug"])
+for b in (b for b in branchen_daten if b.get("bausteine")):
+    text = seiten.get("/branchen/%s/" % b["slug"], ("",))[0]
+    teil = zwischen(text, '<section id="bausteine">', "</section>") if '<section id="bausteine">' in text else ""
+    for x in b["bausteine"]:
+        if 'href="/produkte/%s/"' % x not in teil:
+            fehler.append("/branchen/%s/: Baustein %s fehlt im Abschnitt #bausteine" % (b["slug"], x))
 
 print("\n%d Seiten, %d interne Links geprüft" % (len(seiten), geprueft))
 if fehler:

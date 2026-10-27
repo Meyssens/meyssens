@@ -272,7 +272,7 @@ BEDINGUNGEN = ("Vertrag zur Auftragsbearbeitung, bevor echte Daten verarbeitet w
                "Datenminimierung: nur die Angaben, die der Ablauf wirklich braucht")
 KETTE_ART = {"baustein": "Läuft automatisch, als Entwurf", "mensch": "Mensch entscheidet", "spaeter": "Später geplant",
              "vorhanden": "Ihre Software"}
-AUTO_WORTE = (450, 1100)
+AUTO_WORTE = (450, 1300)  # 3 bis 4 Bausteinkarten mit Formular, Ablauf-Kette und Demo
 BAUSTEIN_WORTE = (450, 1000)
 
 
@@ -280,8 +280,27 @@ def ist_baustein(p):
     return bool(p.get("branche"))
 
 
-def a_bausteine(artikel):
-    return {s for a in artikel for s in a.get("automatisierung", {}).get("bausteine", [])}
+def a_bausteine(artikel, branchen=()):
+    # Alle Bausteine, die auf einer Branchenseite stehen: Abschnitt "Was sich automatisieren lässt" der Langtext-Branchen
+    # oder Feld "bausteine" der Branchen ohne Langtext
+    return ({s for a in artikel for s in a.get("automatisierung", {}).get("bausteine", [])} |
+            {s for b in branchen for s in b.get("bausteine", [])})
+
+
+def qa_liste(faq):
+    return "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
+                     % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in faq)
+
+
+def faq_ld(faq):
+    return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
+            "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in faq]}
+
+
+def kachel(url, chip, titel, text, knopf):
+    return ('    <a href="%s" class="feat tile">\n%s      <h3>%s</h3>\n      <p>%s</p>\n      <span class="way-go">%s %s</span>\n    </a>'
+            % (url, '      <span class="status-chip">%s</span>\n' % html.escape(chip) if chip else "", html.escape(titel),
+               html.escape(text), knopf, PFEIL))
 
 
 def anfang(text, mindestens=90):
@@ -674,9 +693,16 @@ def main():
                 raise SystemExit("Automatisierung %s: %s ist kein Baustein dieser Branche" % (a["slug"], s))
         if au["demo"] not in au["bausteine"]:
             raise SystemExit("Automatisierung %s: Demo muss einer der Bausteine sein" % a["slug"])
+    for b in branchen:
+        for x in b.get("bausteine", []):
+            if x not in nach_slug or nach_slug[x].get("branche") != b["slug"]:
+                raise SystemExit("Branche %s: %s ist kein Baustein dieser Branche" % (b["slug"], x))
     for p in produkte:
-        if ist_baustein(p) and p["slug"] not in a_bausteine(artikel):
+        if ist_baustein(p) and p["slug"] not in a_bausteine(artikel, branchen):
             raise SystemExit("Baustein %s steht auf keiner Branchenseite" % p["slug"])
+        for q in p.get("faq", []):
+            if not q.get("frage") or not q.get("antwort"):
+                raise SystemExit("Baustein %s: FAQ unvollständig" % p["slug"])
     ratgeber = [a for a in artikel if a["art"] == "ratgeber"]
 
     start = lies("index.html")
@@ -747,8 +773,13 @@ def main():
             "besonderheit_text": html.escape(b["besonderheit"]["text"]),
             "schweiz": html.escape(b["schweiz"]),
             "produkte": "\n".join(angebot(nach_slug[s]) for s in b["produkte"]),
-            "faq": "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
-                             % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in b["faq"]),
+            "bausteine_abschnitt": ('<section id="bausteine">\n  <div class="r">\n    <span class="s-label">Automatisierung</span>\n'
+                                    '    <h2>Bausteine für %s</h2>\n    <p class="s-lead">%s Entwürfe ja, automatischer Versand nein: '
+                                    'Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>\n  </div>\n  <div class="angebot-raster">\n%s\n  </div>\n'
+                                    '</section>\n' % (html.escape(b["name"]), html.escape(b.get("bausteine_intro", "")),
+                                                     "\n".join(angebot(nach_slug[x]) for x in b["bausteine"]))
+                                    if b.get("bausteine") else ""),
+            "faq": qa_liste(b["faq"]),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -831,15 +862,18 @@ def main():
 
     vorlage_baustein = lies("vorlage_baustein.html")
     nach_branche = {a["slug"]: a for a in artikel_branchen}
+    nach_branche.update({b["slug"]: b for b in branchen})
     for p in (p for p in produkte if ist_baustein(p)):
         b = nach_branche[p["branche"]]
+        langtext = "automatisierung" in b
+        reihe = b["automatisierung"]["bausteine"] if langtext else b.get("bausteine", [])
         e = {k: html.escape(str(v)) for k, v in p.items() if isinstance(v, str)}
         stufe = {k: html.escape(v) for k, v in STUFEN[p["status"]].items()}
         pfad = "/produkte/%s/" % p["slug"]
         roh = json.dumps(p, ensure_ascii=False)
         if "[Status" in roh or "ß" in roh:
             raise SystemExit("Baustein %s: Platzhalter [Status ...] oder ß im Text" % p["slug"])
-        andere = [nach_slug[s] for s in b["automatisierung"]["bausteine"] if s != p["slug"]]
+        andere = [nach_slug[s] for s in reihe if s != p["slug"]]
         daten = ('    <ul class="bedingungen">\n%s\n    </ul>\n' % "\n".join("      <li>%s</li>" % html.escape(x) for x in BEDINGUNGEN)
                  if p["personendaten"] else "")
         werte = dict(gemeinsam, **{
@@ -850,6 +884,7 @@ def main():
             "name": e["name"],
             "branche": html.escape(b["name"]),
             "branche_url": "/branchen/%s/" % b["slug"],
+            "branche_anker": "#automatisierung" if langtext else "#bausteine",
             "status_badge": stufe["badge"],
             "status_text": stufe["text"],
             "knopf": stufe["knopf"],
@@ -864,14 +899,27 @@ def main():
             "regel": "<strong>%s</strong> %s" % REGEL,
             "geprueft": datetime.date.fromisoformat(p["geprueft"]).strftime("%d.%m.%Y"),
             "ansicht": produkt_ansicht(ansichten, p),
-            "andere": "\n".join('    <a href="/produkte/%s/" class="feat tile">\n      <span class="status-chip">%s</span>\n'
-                                '      <h3>%s</h3>\n      <p>%s</p>\n      <span class="way-go">Mehr erfahren %s</span>\n    </a>'
-                                % (x["slug"], html.escape(STUFEN[x["status"]]["badge"]), html.escape(x["name"]),
-                                   html.escape(x["kurzbeschreibung"]), PFEIL) for x in andere),
+            # Weitere Bausteine der Branche und Weiterlesen-Links
+            "weitere": ('<section id="weitere" class="flaeche">\n  <div class="r">\n    <span class="s-label">%s</span>\n'
+                        '    <h2>%s</h2>\n    <p class="s-lead">%s</p>\n  </div>\n  <div class="feat-grid zwei r">\n%s\n  </div>\n</section>\n'
+                        % (html.escape(b["name"]),
+                           "Weitere Bausteine für %s" % html.escape(b["name"]) if andere and not p.get("weiterlesen")
+                           else "Weitere Bausteine und passende Seiten" if andere else "Passend zum Thema",
+                           'Ausgewählt für diese Branche, mit Ablauf-Grafik und Beispiel auf der <a href="/branchen/%s/#automatisierung">'
+                           'Branchenseite</a>.' % b["slug"] if langtext else
+                           'Alle Bausteine für %s stehen auf der <a href="/branchen/%s/#bausteine">Branchenseite</a>.'
+                           % (html.escape(b["name"]), b["slug"]),
+                           "\n".join([kachel("/produkte/%s/" % x["slug"], STUFEN[x["status"]]["badge"], x["name"],
+                                              x["kurzbeschreibung"], "Mehr erfahren") for x in andere] +
+                                     [kachel(l["url"], None, l["titel"], l["grund"], "Weiterlesen")
+                                      for l in p.get("weiterlesen", [])]))),
+            "faq_abschnitt": ('\n<section id="fragen">\n  <div class="r">\n    <span class="s-label">Fragen</span>\n'
+                              '    <h2>Häufige Fragen</h2>\n  </div>\n  <div class="qa-list r">\n%s\n  </div>\n</section>\n'
+                              % qa_liste(p["faq"]) if p.get("faq") else ""),
             "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
                                  % (html.escape(q["url"]), html.escape(q["titel"])) for q in p["quellen"]),
-            "ld": ld(brotkrumen(START, UNTERNEHMEN, (b["name"], "/branchen/%s/" % b["slug"]), (p["name"], pfad)),
-                     dienst(p, DOMAIN + pfad, b["name"])),
+            "ld": ld(*[brotkrumen(START, UNTERNEHMEN, (b["name"], "/branchen/%s/" % b["slug"]), (p["name"], pfad)),
+                       dienst(p, DOMAIN + pfad, b["name"])] + ([faq_ld(p["faq"])] if p.get("faq") else [])),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -889,13 +937,16 @@ def main():
         "url": DOMAIN + "/unternehmen/",
         "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
         "produkte": scrolly(ansichten, allgemein, mehr=True),
+        # Bausteine nach Branche: zuerst die Branchen mit Abschnitt "Was sich automatisieren lässt", dann die übrigen
         "bausteine": "\n".join(
-            '    <div class="auto-gruppe r">\n      <h3><a href="/branchen/%s/#automatisierung">%s</a></h3>\n      <ul>\n%s\n      </ul>\n    </div>'
-            % (a["slug"], html.escape(a["name"]), "\n".join(
+            '    <div class="auto-gruppe r">\n      <h3><a href="/branchen/%s/%s">%s</a></h3>\n      <ul>\n%s\n      </ul>\n    </div>'
+            % (a["slug"], anker, html.escape(a["name"]), "\n".join(
                 '        <li><a href="/produkte/%s/">%s %s</a><span class="status-chip">%s</span></li>'
                 % (s, html.escape(nach_slug[s]["name"]), PFEIL, html.escape(STUFEN[nach_slug[s]["status"]]["badge"]))
-                for s in a["automatisierung"]["bausteine"]))
-            for a in artikel_branchen if a.get("automatisierung")),
+                for s in liste))
+            for a, anker, liste in [(a, "#automatisierung", a["automatisierung"]["bausteine"])
+                                    for a in artikel_branchen if a.get("automatisierung")] +
+                                   [(b, "#bausteine", b["bausteine"]) for b in branchen if b.get("bausteine")]),
         "ld": ld(brotkrumen(START, UNTERNEHMEN)),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
                                for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),

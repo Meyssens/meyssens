@@ -30,7 +30,7 @@
 
 <main id="main" class="baustein">
 <section class="page-hero">
-  <a href="{{branche_url}}#automatisierung" class="back-link">← {{branche}}</a>
+  <a href="{{branche_url}}{{branche_anker}}" class="back-link">← {{branche}}</a>
   <div class="chip"><span class="chip-dot"></span><span>{{status_badge}}</span></div>
   <h1>{{name}}</h1>
   <p class="lead">{{kurzbeschreibung}}</p>
@@ -85,17 +85,7 @@
   <div class="note r">{{status_text}} Meyssens hat noch keine Kunden und keine Referenzen.</div>
 </section>
 
-<section id="weitere" class="flaeche">
-  <div class="r">
-    <span class="s-label">{{branche}}</span>
-    <h2>Weitere Bausteine für {{branche}}</h2>
-    <p class="s-lead">Ausgewählt für diese Branche, mit Ablauf-Grafik und Beispiel auf der <a href="{{branche_url}}#automatisierung">Branchenseite</a>.</p>
-  </div>
-  <div class="feat-grid zwei r">
-{{andere}}
-  </div>
-</section>
-
+{{weitere}}{{faq_abschnitt}}
 <section id="quellen">
   <div class="artikel-text">
     <span class="s-label">Quellen</span>
@@ -113,7 +103,7 @@
       <span class="s-label">{{status_badge}}</span>
       <h2>Interesse an diesem Baustein?</h2>
       <p class="s-lead">Hinterlassen Sie uns Ihre Angaben. Die Anfrage ist unverbindlich und kostenlos.</p>
-      <a href="{{branche_url}}#automatisierung" class="back-link">← Zurück zu {{branche}}</a>
+      <a href="{{branche_url}}{{branche_anker}}" class="back-link">← Zurück zu {{branche}}</a>
     </div>
     <div class="ccard r">
       <form action="{{formular_ziel}}" method="POST">
