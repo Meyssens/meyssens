@@ -436,10 +436,41 @@ def titel_branche(b):
     return t if len(t) <= 60 else "Digitale Lösungen für %s – Meyssens" % b["name"]
 
 
+# Organisation und Website: auf jeder erzeugten Seite, nur belegte Angaben (Impressum), keine Bewertungen
+ORG = {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "Meyssens", "url": DOMAIN + "/", "logo": DOMAIN + "/logo.png",
+       "email": "lionel@meyssens.ch", "founder": {"@type": "Person", "name": "Lionel Nickelsen"},
+       "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}
+WEBSITE = {"@type": "WebSite", "@id": DOMAIN + "/#website", "name": "Meyssens", "url": DOMAIN + "/", "inLanguage": "de-CH",
+           "publisher": {"@id": DOMAIN + "/#org"}}
+SCHWEIZ = {"@type": "Country", "name": "Schweiz"}
+
+
 def ld(*teile):
-    # Strukturierte Daten als JSON-LD (ein Block mit @graph)
+    # Strukturierte Daten als JSON-LD (ein Block mit @graph), immer mit Organisation und Website
     return '<script type="application/ld+json">%s</script>' % json.dumps(
-        {"@context": "https://schema.org", "@graph": list(teile)}, ensure_ascii=False)
+        {"@context": "https://schema.org", "@graph": [ORG, WEBSITE] + list(teile)}, ensure_ascii=False)
+
+
+def seo_kopf(url):
+    # Nur eine Sprachfassung (Deutsch, Schweiz): hreflang auf sich selbst und als x-default
+    return ('<link rel="alternate" hreflang="de-CH" href="%s">\n<link rel="alternate" hreflang="x-default" href="%s">'
+            % (url, url))
+
+
+def dienst(p, url, branche=None):
+    # Service für Produkt- und Bausteinseiten; keine Preise, keine Bewertungen
+    d = {"@type": "Service", "@id": url + "#dienst", "name": p["name"], "description": p["kurzbeschreibung"], "url": url,
+         "provider": {"@id": DOMAIN + "/#org"}, "areaServed": SCHWEIZ, "availableLanguage": "de-CH",
+         "audience": {"@type": "BusinessAudience", "audienceType": branche or "Unternehmen und Vereine in der Schweiz"}}
+    if p.get("status"):
+        d["additionalProperty"] = {"@type": "PropertyValue", "name": "Status", "value": p["status"]}
+    return d
+
+
+def h1_html(text):
+    # Teil nach dem Doppelpunkt hervorgehoben, wie im bisherigen Stil
+    vor, _, nach = text.partition(": ")
+    return "%s: <span class=\"hl\">%s</span>" % (html.escape(vor), html.escape(nach)) if nach else html.escape(text)
 
 
 def brotkrumen(*stufen):
@@ -598,10 +629,12 @@ def main():
         if p.get("hinweis"):
             hinweis = '  <div class="note">%s</div>' % e["hinweis"]
         werte = dict(gemeinsam, **{
-            "titel": html.escape("%s – Meyssens" % p["name"]),
-            "beschreibung": html.escape(kurz(p["kurzbeschreibung"])),
+            "titel": html.escape(p.get("seo_titel") or "%s – Meyssens" % p["name"]),
+            "beschreibung": html.escape(p.get("seo_beschreibung") or kurz(p["kurzbeschreibung"])),
             "url": url,
+            "seo_kopf": seo_kopf(url),
             "name": e["name"],
+            "h1": html.escape(p.get("h1") or p["name"]),
             "status_badge": stufe["badge"],
             "status_text": stufe["text"],
             "knopf": stufe["knopf"],
@@ -610,9 +643,10 @@ def main():
             "loesung": e["loesung"],
             "fuer_wen": e["fuer_wen"],
             "hinweis": hinweis,
+            "schweiz": e["schweiz"],
             "demo": demo(p.get("demo"), "produkt"),
             "ansicht": produkt_ansicht(ansichten, p),
-            "ld": ld(brotkrumen(START, UNTERNEHMEN, (p["name"], "/produkte/%s/" % p["slug"]))),
+            "ld": ld(brotkrumen(START, UNTERNEHMEN, (p["name"], "/produkte/%s/" % p["slug"])), dienst(p, url)),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -623,9 +657,11 @@ def main():
     for b in branchen:
         fuer = b["fuer"]
         werte = dict(gemeinsam, **{
-            "titel": html.escape(titel_branche(b)),
-            "beschreibung": html.escape(b["beschreibung"]),
+            "titel": html.escape(b.get("seo_titel") or titel_branche(b)),
+            "beschreibung": html.escape(b.get("seo_beschreibung") or b["beschreibung"]),
             "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),
+            "seo_kopf": seo_kopf("%s/branchen/%s/" % (DOMAIN, b["slug"])),
+            "h1": h1_html(b.get("h1") or "Digitale Infrastruktur für %s" % fuer),
             "name": html.escape(b["name"]),
             "fuer": html.escape(fuer),
             "intro": html.escape(b["intro"]),
@@ -638,6 +674,7 @@ def main():
                       "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in b["faq"]]}),
             "besonderheit_titel": html.escape(b["besonderheit"]["titel"]),
             "besonderheit_text": html.escape(b["besonderheit"]["text"]),
+            "schweiz": html.escape(b["schweiz"]),
             "produkte": "\n".join(angebot(nach_slug[s]) for s in b["produkte"]),
             "faq": "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
                              % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in b["faq"]),
@@ -671,6 +708,7 @@ def main():
             "titel": html.escape(a["titel"]),
             "beschreibung": html.escape(a["beschreibung"]),
             "url": DOMAIN + pfad,
+            "seo_kopf": seo_kopf(DOMAIN + pfad),
             "name": html.escape(a["name"]),
             "chip": html.escape(a["name"] if a["art"] == "branche" else "Ratgeber"),
             "h1": html.escape(a["h1"]),
@@ -734,9 +772,10 @@ def main():
         daten = ('    <ul class="bedingungen">\n%s\n    </ul>\n' % "\n".join("      <li>%s</li>" % html.escape(x) for x in BEDINGUNGEN)
                  if p["personendaten"] else "")
         werte = dict(gemeinsam, **{
-            "titel": html.escape("%s – Meyssens" % p["name"]),
-            "beschreibung": html.escape(kurz(p["kurzbeschreibung"])),
+            "titel": html.escape(p.get("seo_titel") or "%s – Meyssens" % p["name"]),
+            "beschreibung": html.escape(p.get("seo_beschreibung") or kurz(p["kurzbeschreibung"])),
             "url": DOMAIN + pfad,
+            "seo_kopf": seo_kopf(DOMAIN + pfad),
             "name": e["name"],
             "branche": html.escape(b["name"]),
             "branche_url": "/branchen/%s/" % b["slug"],
@@ -760,7 +799,8 @@ def main():
                                    html.escape(x["kurzbeschreibung"]), PFEIL) for x in andere),
             "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
                                  % (html.escape(q["url"]), html.escape(q["titel"])) for q in p["quellen"]),
-            "ld": ld(brotkrumen(START, UNTERNEHMEN, (b["name"], "/branchen/%s/" % b["slug"]), (p["name"], pfad))),
+            "ld": ld(brotkrumen(START, UNTERNEHMEN, (b["name"], "/branchen/%s/" % b["slug"]), (p["name"], pfad)),
+                     dienst(p, DOMAIN + pfad, b["name"])),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -772,10 +812,11 @@ def main():
         schreibe(pfad.strip("/") + "/index.html", seite)
 
     werte = dict(gemeinsam, **{
-        "titel": "Für Unternehmen und Vereine – Meyssens",
-        "beschreibung": html.escape("Digitale Werkzeuge für Unternehmen und Vereine: Umfragen, Newsletter, "
-                                    "Vereinswebsite, Mail-Assistent und mehr. Jetzt Pilotpartner werden."),
+        "titel": "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens",
+        "beschreibung": html.escape("Umfragen, Newsletter, Vereinswebsite, Mail-Assistent und Bausteine für Praxen, "
+                                    "Verwaltungen und Büros in der Schweiz. Jetzt Pilotpartner werden."),
         "url": DOMAIN + "/unternehmen/",
+        "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
         "produkte": scrolly(ansichten, allgemein, mehr=True),
         "bausteine": "\n".join(
             '    <div class="auto-gruppe r">\n      <h3><a href="/branchen/%s/#automatisierung">%s</a></h3>\n      <ul>\n%s\n      </ul>\n    </div>'
@@ -791,6 +832,20 @@ def main():
                                for a in ratgeber),
     })
     schreibe("unternehmen/index.html", fuelle(lies("vorlage_unternehmen.html"), werte))
+
+    # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
+    werte = dict(gemeinsam, **{
+        "titel": "Seite nicht gefunden | Meyssens",
+        "beschreibung": "Diese Seite gibt es nicht. Zu den Werkzeugen für Schweizer KMU und Vereine, den Branchen oder zur Startseite.",
+        "url": DOMAIN + "/404.html",
+        "links": "\n".join('    <a class="feat tile" href="%s">\n      <h3>%s</h3>\n      <p>%s</p>\n      <span class="way-go">Öffnen %s</span>\n    </a>'
+                           % (u, html.escape(t), html.escape(x), PFEIL) for u, t, x in (
+                               ("/unternehmen/", "Für Unternehmen und Vereine", "Werkzeuge und Bausteine für Schweizer KMU, Praxen, Verwaltungen und Vereine."),
+                               ("/unternehmen/#branchen", "Branchen", "Zahnarztpraxen, Immobilienverwaltungen, Architekturbüros, Pflege und weitere."),
+                               ("/unternehmen/#ratgeber", "Ratgeber", "nDSG für KMU, Offertanfragen, Online-Abstimmung im Verein, Website-Chatbot."),
+                               ("/", "Startseite", "Überblick über Meyssens."))),
+    })
+    schreibe("404.html", fuelle(lies("vorlage_404.html"), werte))
 
     # Gemeinden-Seite: Bühne unter dem Hero und Ansichten im Sticky-Abschnitt "Ablauf"
     neu_g = setze_auto(gemeinden, "buehne", '<div class="buehne" data-buehne>\n%s\n</div>' % geraet(

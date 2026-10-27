@@ -6,7 +6,11 @@
     "problem": "Viele Entscheidungen in Vereinen und Teams werden per Rundmail, auf Papier oder per Handzeichen eingeholt. Rückmeldungen gehen verloren, Antworten müssen von Hand gezählt werden, und wer nicht anwesend ist, kann nicht mitreden. Allgemeine Umfragewerkzeuge sind für einfache Abstimmungen oft unübersichtlich oder überdimensioniert.",
     "loesung": "Sie erstellen eine Umfrage oder Abstimmung in wenigen Schritten und verschicken den Link an Ihre Mitglieder oder Mitarbeitenden. Die Antworten werden automatisch gezählt und übersichtlich dargestellt. Sie legen fest, ob die Teilnahme anonym oder namentlich erfolgt und bis wann abgestimmt werden kann. Die Ergebnisse lassen sich exportieren und im Protokoll festhalten.",
     "fuer_wen": "Für Vereine, Verbände und Genossenschaften, die ihre Mitglieder einfach befragen möchten. Für kleine und mittlere Unternehmen, die Meinungen im Team einholen. Für Vorstände, die zwischen Versammlungen Entscheidungen vorbereiten. Ob eine Online-Abstimmung für verbindliche Beschlüsse zulässig ist, richtet sich nach Ihren Statuten.",
-    "status": "Pilotphase"
+    "status": "Pilotphase",
+    "seo_titel": "Online-Umfragen für Schweizer Vereine und KMU | Meyssens",
+    "seo_beschreibung": "Mitglieder und Kundschaft per Link befragen, Ergebnisse sofort sehen, Daten in der Schweiz. Beispiel ausprobieren und Pilotpartner werden.",
+    "h1": "Online-Umfragen und Abstimmungen für Vereine und KMU",
+    "schweiz": "Für Vereine und KMU in der ganzen Schweiz. Ob eine Abstimmung verbindlich ist, regeln Statuten und Art. 66 ZGB. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "newsletter",
@@ -15,7 +19,11 @@
     "problem": "Rundmails an lange Verteiler landen oft im Spam, Adressen sind in verschiedenen Listen verstreut, und Abmeldungen müssen von Hand nachgetragen werden. Grosse Marketing-Plattformen bieten viel, sind für kleine Organisationen aber aufwendig einzurichten. Häufig fehlt zudem ein sauberer Nachweis, wer sich wann angemeldet hat.",
     "loesung": "Sie gestalten Ihren Newsletter mit einfachen Bausteinen für Text, Bilder und Links. Interessierte melden sich über ein Formular auf Ihrer Website an und bestätigen ihre Adresse per E-Mail. Abmeldungen werden automatisch berücksichtigt, und Sie sehen jederzeit, wer Ihren Newsletter erhält.",
     "fuer_wen": "Für Vereine, die Mitglieder und Gönner auf dem Laufenden halten möchten. Für kleine Unternehmen, Läden und Praxen, die ihre Kundschaft regelmässig informieren. Für Organisationen, die bisher mit Rundmails aus dem eigenen Postfach arbeiten.",
-    "status": "In Planung"
+    "status": "In Planung",
+    "seo_titel": "Newsletter-Tool für Schweizer Vereine und KMU | Meyssens",
+    "seo_beschreibung": "Newsletter ohne Programmierkenntnisse gestalten und versenden, Empfängerliste nach nDSG führen. Jetzt unverbindlich vormerken lassen.",
+    "h1": "Newsletter-Tool für Vereine und kleine Unternehmen",
+    "schweiz": "Werbe-E-Mails brauchen in der Schweiz eine Einwilligung oder eine bestehende Kundenbeziehung (Art. 3 Abs. 1 lit. o UWG), Empfängerlisten fallen unter das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "website-fuer-vereine",
@@ -29,7 +37,11 @@
     "problem": "Viele Vereinswebsites sind veraltet, weil nur eine Person weiss, wie man sie aktualisiert. Wechselt der Vorstand, gehen Zugänge und Wissen verloren. Baukastensysteme sind oft unübersichtlich, deshalb werden Anlässe und Neuigkeiten gar nicht erst eingetragen.",
     "loesung": "Sie erhalten eine fertig eingerichtete Website mit den Bereichen, die ein Verein typischerweise braucht: Startseite, Anlässe, Neuigkeiten, Vorstand und Kontakt. Mehrere Personen können Inhalte pflegen, und Zugänge lassen sich bei einem Vorstandswechsel einfach übergeben. Anlässe erscheinen automatisch in einer Übersicht, vergangene Termine verschwinden von selbst.",
     "fuer_wen": "Für Sport-, Musik-, Kultur- und Quartiervereine jeder Grösse. Für Vereine, deren Website nicht mehr gepflegt wird oder die noch keine haben. Für Vorstände, die Inhalte gemeinsam und ohne Fachwissen aktuell halten möchten.",
-    "status": "In Planung"
+    "status": "In Planung",
+    "seo_titel": "Vereinswebsite erstellen und selbst pflegen | Meyssens",
+    "seo_beschreibung": "Anlässe, Neuigkeiten und Mitgliederinfos an einem Ort, vom Vorstand ohne Technikkenntnisse gepflegt. Für Vereine in der Schweiz. Jetzt vormerken.",
+    "h1": "Vereinswebsite, die der Vorstand selbst pflegt",
+    "schweiz": "Für Sport-, Musik- und Quartiervereine in der ganzen Schweiz, mit einer Datenschutzerklärung nach nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "mail-assistent",
@@ -38,7 +50,11 @@
     "problem": "Im Postfach vieler Organisationen landen täglich ähnliche Fragen, etwa zu Öffnungszeiten, Anmeldungen oder Terminen. Das Beantworten kostet Zeit, die für die eigentliche Arbeit fehlt. Gleichzeitig gehen wichtige Nachrichten zwischen Routineanfragen leicht unter.",
     "loesung": "Der Mail-Assistent liest neue Nachrichten, ordnet sie nach Thema und Dringlichkeit und schlägt passende Antworten vor. Die Vorschläge stützen sich auf Informationen, die Sie hinterlegen, zum Beispiel häufige Fragen, Abläufe oder Textbausteine. Es wird nichts automatisch versendet: Jede Antwort geht erst nach Ihrer Freigabe hinaus.",
     "fuer_wen": "Für Geschäftsstellen von Vereinen und Verbänden mit vielen wiederkehrenden Anfragen. Für kleine Unternehmen, Praxen und Büros, in denen wenige Personen das Postfach betreuen. Für Organisationen, die schneller antworten möchten, ohne die Kontrolle über ihre Kommunikation abzugeben.",
-    "status": "In Planung"
+    "status": "In Planung",
+    "seo_titel": "E-Mail-Assistent mit Antwortentwürfen für KMU | Meyssens",
+    "seo_beschreibung": "Eingehende E-Mails sortieren und Antworten als Entwurf vorbereiten, Versand bleibt bei Ihnen. Für KMU und Verbände in der Schweiz. Jetzt vormerken.",
+    "h1": "E-Mail-Assistent: Antwortentwürfe für KMU und Verbände",
+    "schweiz": "Für Betriebe und Verbände in der Schweiz. E-Mails enthalten oft Personendaten nach nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "website-chatbot",
@@ -47,7 +63,11 @@
     "problem": "Besucherinnen und Besucher finden die gesuchte Information auf einer Website oft nicht und rufen deshalb an oder schreiben eine E-Mail. Viele dieser Fragen sind auf der Website beantwortet, nur schwer auffindbar. Ausserhalb der Bürozeiten bleiben sie ganz unbeantwortet.",
     "loesung": "Der Chatbot greift auf die Inhalte Ihrer Website und auf Dokumente zurück, die Sie freigeben. Er beantwortet Fragen in natürlicher Sprache und nennt die Seite, auf der die Information steht. Kann er eine Frage nicht beantworten, sagt er das offen und verweist auf Ihre Kontaktmöglichkeiten.",
     "fuer_wen": "Für Unternehmen und Vereine mit umfangreichen Websites und vielen wiederkehrenden Fragen. Für Organisationen, die auch ausserhalb der Bürozeiten Auskunft geben möchten. Für Teams, die Telefon und Postfach entlasten wollen.",
-    "status": "Pilotphase"
+    "status": "Pilotphase",
+    "seo_titel": "Website-Chatbot für KMU in der Schweiz | Meyssens",
+    "seo_beschreibung": "Beantwortet Fragen aus Ihren eigenen Website-Inhalten, gekennzeichnet und mit Blick aufs nDSG. Beispiel ausprobieren und Pilotpartner werden.",
+    "h1": "Website-Chatbot für Schweizer KMU und Vereine",
+    "schweiz": "Der Chatbot gibt sich als automatisches System zu erkennen, Eingaben fallen unter das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "quartier-kasse",
@@ -57,16 +77,24 @@
     "loesung": "Die Quartier-Kasse zeigt für jedes Projekt, welche Beiträge eingegangen und welche Ausgaben angefallen sind. Belege können hinterlegt werden, und alle Beteiligten sehen denselben aktuellen Stand. Noch ohne Zahlungsfunktion, in Planung: Zahlungen werden vorerst von Hand erfasst, über die Kasse wird kein Geld bewegt.",
     "fuer_wen": "Für Quartier- und Nachbarschaftsvereine, die gemeinsame Projekte finanzieren. Für Organisationsteams von Festen, Märkten und Anlässen. Für Gruppen, die gemeinsame Ausgaben transparent abrechnen möchten.",
     "status": "In Planung",
-    "hinweis": "Noch ohne Zahlungsfunktion."
+    "hinweis": "Noch ohne Zahlungsfunktion.",
+    "seo_titel": "Kasse für Quartiervereine und Anlässe | Meyssens",
+    "seo_beschreibung": "Beiträge, Einnahmen und Ausgaben von Quartier- und Nachbarschaftsprojekten an einem Ort, für alle nachvollziehbar. Jetzt unverbindlich vormerken.",
+    "h1": "Quartier-Kasse für Vereine und Nachbarschaftsprojekte",
+    "schweiz": "Für Quartier- und Nachbarschaftsvereine in der Schweiz, Beträge in Franken. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "waerme-interessenkarte",
     "name": "Wärme-Interessenkarte",
-    "kurzbeschreibung": "Eine Online-Karte, auf der Eigentümerinnen und Eigentümer ihr Interesse an einem Wärmenetz eintragen. So wird sichtbar, in welchen Strassen und Quartieren sich ein Anschluss lohnen könnte. Die Karte eignet sich für Energieversorger, Genossenschaften und Initiativen.",
-    "problem": "Ob sich ein Wärmenetz lohnt, hängt stark davon ab, wie viele Gebäude sich anschliessen möchten. Diese Information wird bisher oft mit Papierfragebögen, Infoabenden oder Telefonaktionen gesammelt. Die Auswertung ist aufwendig, und der Überblick über einzelne Strassenzüge fehlt.",
+    "kurzbeschreibung": "Eine Online-Karte, auf der Eigentümerinnen und Eigentümer ihr Interesse an einem Wärmeverbund eintragen. So wird sichtbar, in welchen Strassen und Quartieren sich ein Anschluss lohnen könnte. Die Karte eignet sich für Energieversorger, Genossenschaften und Initiativen.",
+    "problem": "Ob sich ein Wärmeverbund lohnt, hängt stark davon ab, wie viele Gebäude sich anschliessen möchten. Diese Information wird bisher oft mit Papierfragebögen, Infoabenden oder Telefonaktionen gesammelt. Die Auswertung ist aufwendig, und der Überblick über einzelne Strassenzüge fehlt.",
     "loesung": "Interessierte markieren ihr Gebäude auf einer Karte und machen einige Angaben, etwa zur heutigen Heizung und zum gewünschten Zeitpunkt. Die Rückmeldungen erscheinen übersichtlich auf der Karte und lassen sich nach Gebieten auswerten. So erkennen Sie früh, wo sich weitere Planungsschritte lohnen.",
-    "fuer_wen": "Für Energieversorger und Stadtwerke, die ein Wärmenetz planen oder erweitern. Für Energiegenossenschaften und Bürgerinitiativen, die Interesse in ihrem Quartier sammeln. Für Planungsbüros, die eine Grundlage für Machbarkeitsabklärungen benötigen.",
-    "status": "Pilotphase"
+    "fuer_wen": "Für Energieversorger und Stadtwerke, die einen Wärmeverbund planen oder erweitern. Für Energiegenossenschaften und Bürgerinitiativen, die Interesse in ihrem Quartier sammeln. Für Planungsbüros, die eine Grundlage für Machbarkeitsabklärungen benötigen.",
+    "status": "Pilotphase",
+    "seo_titel": "Wärmeverbund planen: Interessenkarte online | Meyssens",
+    "seo_beschreibung": "Eigentümer tragen ihr Interesse am Wärmeverbund auf einer Karte ein, Sie sehen die dichtesten Quartiere. Für Energieversorger. Beispiel ansehen.",
+    "h1": "Wärme-Interessenkarte für Wärmeverbünde",
+    "schweiz": "Für Energieversorger, Gemeindewerke und Wärmeverbünde in der Schweiz. Eingetragene Adressen sind Personendaten nach nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "ausschreibungs-radar",
@@ -75,7 +103,11 @@
     "problem": "Öffentliche Aufträge werden auf verschiedenen Plattformen veröffentlicht, oft mit unterschiedlichen Begriffen und Kategorien. Wer passende Ausschreibungen finden will, muss regelmässig mehrere Portale durchsuchen. Für kleine Unternehmen ist das zeitaufwendig, und Fristen werden leicht verpasst.",
     "loesung": "Sie hinterlegen Stichworte, Fachgebiete und Regionen, die für Sie relevant sind. Das Ausschreibungs-Radar prüft neue Veröffentlichungen und stellt passende Treffer mit Frist und Link zur Originalquelle zusammen. Sie entscheiden selbst, auf welche Ausschreibungen Sie sich bewerben.",
     "fuer_wen": "Für kleine und mittlere Unternehmen, die sich um öffentliche Aufträge bewerben. Für Handwerks-, Planungs- und Dienstleistungsbetriebe mit regionalem Schwerpunkt. Für Unternehmen, die bisher wenig Zeit für die Suche nach Ausschreibungen haben.",
-    "status": "In Planung"
+    "status": "In Planung",
+    "seo_titel": "Öffentliche Ausschreibungen Schweiz finden | Meyssens",
+    "seo_beschreibung": "Öffentliche Ausschreibungen nach Stichworten und Regionen sammeln, passende Treffer auf einen Blick. Für KMU, Handwerk und Planung. Jetzt vormerken.",
+    "h1": "Ausschreibungs-Radar: öffentliche Ausschreibungen finden",
+    "schweiz": "Für Ausschreibungen von Bund, Kantonen und Gemeinden. Ob und wie simap.ch automatisiert abgefragt werden darf, klären wir vor dem Start. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "online-terminanfrage-zahnarztpraxis",
@@ -100,7 +132,9 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Online-Terminanfrage für Zahnarztpraxen | Meyssens",
+    "seo_beschreibung": "Patienten fragen Termine per Formular an, die MPA bestätigt. Ohne Symptomfeld, Hosting in der Schweiz, nDSG im Blick. Jetzt unverbindlich vormerken."
   },
   {
     "slug": "laborauftrag-zahnarztpraxis",
@@ -121,7 +155,9 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Laborauftrag Zahnarztpraxis digital vorbereiten | Meyssens",
+    "seo_beschreibung": "Laboraufträge und Materialbestellungen aus Vorlagen, mit Fall-Nummer statt Namen. Die MPA prüft und versendet. Jetzt unverbindlich vormerken."
   },
   {
     "slug": "praxis-textbausteine",
@@ -142,7 +178,9 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Textbausteine für Praxis-Telefon und E-Mail | Meyssens",
+    "seo_beschreibung": "Geprüfte Antworten zu Öffnungszeiten, Notfalldienst und Dentalhygiene an einem Ort, E-Mails als Entwurf. Jetzt unverbindlich vormerken."
   },
   {
     "slug": "schadenmeldung-triage",
@@ -158,12 +196,14 @@
     "daten": "Eine Meldung enthält Name, Wohnung und Kontakt, manchmal Fotos aus der Wohnung. Fotos werden nur für die Bearbeitung des Schadens verwendet.",
     "quellen": [
       {
-        "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E",
-        "url": "https://svit.ch/sites/default/files/2024-07/svit_branchenempfehlung_dsg_anhangE_de_v1.1_2407.pdf"
+        "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E (Übersichtsseite)",
+        "url": "https://www.svit.ch/de/datenschutzgesetz"
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Schadenmeldung für Mieter online mit Triage | Meyssens",
+    "seo_beschreibung": "Mieter melden Schäden per Formular mit Foto, der Baustein schlägt Dringlichkeit vor, die Verwaltung entscheidet. Jetzt unverbindlich vormerken."
   },
   {
     "slug": "besichtigungstermine-mietobjekt",
@@ -183,12 +223,14 @@
         "url": "https://www.edoeb.admin.ch/dam/en/sd-web/F7ojQw99LBH-/Merkblatt%20zu%20Anmeldeformularen%20f%C3%BCr%20Mietwohnungen%20DE_20250715.pdf"
       },
       {
-        "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E",
-        "url": "https://svit.ch/sites/default/files/2024-07/svit_branchenempfehlung_dsg_anhangE_de_v1.1_2407.pdf"
+        "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E (Übersichtsseite)",
+        "url": "https://www.svit.ch/de/datenschutzgesetz"
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Besichtigungstermine online buchen lassen | Meyssens",
+    "seo_beschreibung": "Interessenten buchen freie Besichtigungstermine selbst, nur mit Name und Kontakt. Weniger Telefon für die Verwaltung. Jetzt unverbindlich vormerken."
   },
   {
     "slug": "uebergabeprotokoll",
@@ -204,8 +246,8 @@
     "daten": "Das Protokoll enthält Namen, Unterschriften und Fotos aus der Wohnung. Fotos und Kontaktdaten aus bewohnten Wohnungen nur mit Einwilligung der Mieterin oder des Mieters.",
     "quellen": [
       {
-        "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E",
-        "url": "https://svit.ch/sites/default/files/2024-07/svit_branchenempfehlung_dsg_anhangE_de_v1.1_2407.pdf"
+        "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E (Übersichtsseite)",
+        "url": "https://www.svit.ch/de/datenschutzgesetz"
       },
       {
         "titel": "EDÖB, Merkblatt zu Anmeldeformularen für Mietwohnungen (15.07.2025)",
@@ -213,7 +255,9 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Wohnungsübergabe: digitales Übergabeprotokoll | Meyssens",
+    "seo_beschreibung": "Wohnungsabnahme auf Tablet oder Handy, mit Fotos, Zählerständen und Unterschrift vor Ort, PDF als Entwurf. Jetzt unverbindlich vormerken."
   },
   {
     "slug": "zeiterfassung-sia-phasen",
@@ -238,7 +282,9 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Zeiterfassung Architekturbüro nach SIA-Phasen | Meyssens",
+    "seo_beschreibung": "Stunden pro Projekt und Phase erfassen, angelehnt an SIA 102, mit Monatsrapport für die Abrechnung. Für Büros in der Schweiz. Jetzt vormerken."
   },
   {
     "slug": "akontorechnung-architektur",
@@ -263,7 +309,9 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Akontorechnung für Architekten aus Stunden | Meyssens",
+    "seo_beschreibung": "Aus dem freigegebenen Monatsrapport entsteht ein Entwurf der Akontorechnung, die Projektleitung gibt frei. Jetzt unverbindlich vormerken."
   },
   {
     "slug": "protokoll-pendenzen",
@@ -284,7 +332,9 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Bausitzung protokollieren mit Pendenzenliste | Meyssens",
+    "seo_beschreibung": "Beschlüsse und Pendenzen mit Verantwortlichen und Termin festhalten, offene Punkte wandern ins nächste Protokoll. Jetzt unverbindlich vormerken."
   },
   {
     "slug": "arbeitszeit-pflege",
@@ -305,7 +355,9 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Arbeitszeiterfassung für Pflegeheim und Spitex | Meyssens",
+    "seo_beschreibung": "Zeiten und Pausen am Handy erfassen, Abgleich mit dem Dienstplan, Monatsabschluss als Entwurf. Für Heime und Spitex in der Schweiz. Jetzt vormerken."
   },
   {
     "slug": "besichtigung-pflegeheim",
@@ -330,7 +382,9 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Besichtigung im Pflegeheim online buchen | Meyssens",
+    "seo_beschreibung": "Angehörige buchen Besichtigungen und Informationsgespräche online, ohne Gesundheitsangaben, Bestätigung als Entwurf. Jetzt unverbindlich vormerken."
   },
   {
     "slug": "abrechnung-vorpruefung",
@@ -359,6 +413,8 @@
       }
     ],
     "status": "In Planung",
-    "geprueft": "2026-10-26"
+    "geprueft": "2026-10-26",
+    "seo_titel": "Spitex-Abrechnung vor dem Versand prüfen | Meyssens",
+    "seo_beschreibung": "Prüft den Export der Pflegesoftware auf fehlende Pflichtfelder und Widersprüche, bevor Sie über MediData oder H-Net abrechnen. Jetzt vormerken."
   }
 ]

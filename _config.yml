@@ -13,3 +13,4 @@ exclude:
   - vorlage_branche.html
   - vorlage_produkt.html
   - vorlage_unternehmen.html
+  - vorlage_404.html

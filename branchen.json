@@ -55,7 +55,11 @@
     "produkte": [
       "ausschreibungs-radar",
       "mail-assistent"
-    ]
+    ],
+    "seo_titel": "Bauunternehmen: Ausschreibungen digital finden | Meyssens",
+    "seo_beschreibung": "Öffentliche Ausschreibungen von Bund und Kantonen im Blick, Anfragen von Bauherrschaften geordnet beantworten. Für Schweizer Baufirmen. Jetzt anfragen.",
+    "h1": "Bauunternehmen: Ausschreibungen und Anfragen digital im Griff",
+    "schweiz": "Öffentliche Aufträge von Bund, Kantonen und Gemeinden werden in der Schweiz grösstenteils auf simap.ch publiziert, die Regeln stehen im BöB und in der IVöB. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "elektro-handwerk",
@@ -114,7 +118,11 @@
       "website-chatbot",
       "mail-assistent",
       "ausschreibungs-radar"
-    ]
+    ],
+    "seo_titel": "Elektroinstallateur: Anfragen und Offerten ordnen | Meyssens",
+    "seo_beschreibung": "Kundenanfragen ordnen, Offerten schneller vorbereiten und Ausschreibungen finden: Werkzeuge für Elektrobetriebe in der Schweiz. Jetzt anfragen.",
+    "h1": "Elektroinstallateur: Anfragen und Offerten digital ordnen",
+    "schweiz": "Elektroinstallateure in der Schweiz arbeiten oft auch für Gemeinden und Kantone, die öffentliche Aufträge auf simap.ch ausschreiben. Für Kundendaten gilt das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "kindergaerten-schulen",
@@ -153,7 +161,7 @@
     ],
     "besonderheit": {
       "titel": "Datenschutz bei Kindern",
-      "text": "Daten über Kinder verdienen besonderen Schutz. Für Befragungen und Mitteilungen sollten nur die Angaben erhoben werden, die wirklich nötig sind, und Namen oder Fotos von Kindern gehören nicht ohne Einwilligung der Eltern in digitale Werkzeuge. Welche Regeln im Einzelnen gelten, hängt vom Kanton oder Bundesland und von den Vorgaben des Schulträgers ab. Diese Vorgaben gehen jedem Werkzeug vor. Im Zweifel gilt: lieber eine Angabe weniger erheben."
+      "text": "Daten über Kinder verdienen besonderen Schutz. Für Befragungen und Mitteilungen sollten nur die Angaben erhoben werden, die wirklich nötig sind, und Namen oder Fotos von Kindern gehören nicht ohne Einwilligung der Eltern in digitale Werkzeuge. Welche Regeln im Einzelnen gelten, hängt vom Kanton und von den Vorgaben der Schulträgerschaft ab. Diese Vorgaben gehen jedem Werkzeug vor. Im Zweifel gilt: lieber eine Angabe weniger erheben."
     },
     "faq": [
       {
@@ -172,7 +180,11 @@
     "produkte": [
       "umfragen-abstimmungen",
       "newsletter"
-    ]
+    ],
+    "seo_titel": "Kita und Schule: Eltern digital informieren | Meyssens",
+    "seo_beschreibung": "Eltern befragen und informieren, mit Sorgfalt beim Datenschutz von Kindern nach nDSG und kantonalen Regeln. Für Kitas und Schulen. Jetzt anfragen.",
+    "h1": "Kita und Schule: Eltern digital befragen und informieren",
+    "schweiz": "In der Schweiz regeln die Kantone das Schulwesen, und für öffentliche Schulen gilt das kantonale Datenschutzrecht, für private Kitas das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "vereine",
@@ -237,7 +249,11 @@
       "website-fuer-vereine",
       "umfragen-abstimmungen",
       "newsletter"
-    ]
+    ],
+    "seo_titel": "Vereinssoftware Schweiz: Website und Umfragen | Meyssens",
+    "seo_beschreibung": "Vereinswebsite, Newsletter und Online-Umfragen für Schweizer Vereine, mit Hinweisen zu Statuten und ZGB. Beispiele ansehen und Pilotpartner werden.",
+    "h1": "Vereinssoftware für Schweizer Vereine: Website, Umfragen, Newsletter",
+    "schweiz": "Für Schweizer Vereine gelten Art. 60 ff. ZGB und die eigenen Statuten, für Mitgliederdaten das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "arztpraxen",
@@ -295,7 +311,11 @@
     "produkte": [
       "website-chatbot",
       "mail-assistent"
-    ]
+    ],
+    "seo_titel": "Arztpraxis digital entlasten in der Schweiz | Meyssens",
+    "seo_beschreibung": "Patientenfragen auf der Website beantworten, E-Mails ordnen, Schweigepflicht und nDSG wahren: Werkzeuge für Arztpraxen. Jetzt unverbindlich anfragen.",
+    "h1": "Arztpraxis digital entlasten: Werkzeuge für Praxen in der Schweiz",
+    "schweiz": "Für Arztpraxen in der ganzen Schweiz gelten das Berufsgeheimnis nach Art. 321 StGB und das revidierte Datenschutzgesetz (nDSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "treuhaender",
@@ -354,7 +374,11 @@
       "mail-assistent",
       "website-chatbot",
       "newsletter"
-    ]
+    ],
+    "seo_titel": "Treuhandbüro digital: Mandantenanfragen ordnen | Meyssens",
+    "seo_beschreibung": "Mandantenanfragen ordnen, wiederkehrende Fragen beantworten und Mandanten informieren, vertraulich und mit Blick aufs nDSG. Jetzt unverbindlich anfragen.",
+    "h1": "Treuhandbüro digital: Mandantenanfragen geordnet beantworten",
+    "schweiz": "Treuhandbüros in der Schweiz bearbeiten Mandantendaten nach dem nDSG, oft zusätzlich unter vertraglicher Verschwiegenheit. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "hotels-gastronomie",
@@ -413,6 +437,10 @@
       "website-chatbot",
       "mail-assistent",
       "newsletter"
-    ]
+    ],
+    "seo_titel": "Hotel und Restaurant: Gästeanfragen digital | Meyssens",
+    "seo_beschreibung": "Gästefragen auf der Website beantworten, Bankettanfragen per E-Mail ordnen, Stammgäste informieren. Für Betriebe in der Schweiz. Jetzt anfragen.",
+    "h1": "Hotel und Restaurant: Gästeanfragen digital beantworten",
+    "schweiz": "Hotels und Restaurants in der Schweiz bearbeiten Gästedaten nach dem revidierten Datenschutzgesetz (nDSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   }
 ]

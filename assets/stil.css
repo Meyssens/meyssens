@@ -514,3 +514,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .auto-gruppe h3{font-size:clamp(1.05rem,1.6vw,1.2rem);overflow-wrap:break-word;hyphens:auto;-webkit-hyphens:auto}
 @media(max-width:900px){.auto-demo{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:640px){.geraet-leiste{height:auto;min-height:40px;padding-top:.45rem;padding-bottom:.45rem}.geraet-titel{white-space:normal;overflow:visible;line-height:1.35}}
+
+/* 404-Seite */
+.links-404{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1rem;max-width:1180px;margin:0 auto}
+.note-schweiz{margin-top:1rem}

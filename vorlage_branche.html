@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +17,7 @@
 <meta property="og:locale" content="de_CH">
 <meta property="og:site_name" content="Meyssens">
 <link rel="canonical" href="{{url}}">
+{{seo_kopf}}
 <link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
 {{head}}
 <link rel="stylesheet" href="/assets/stil.css">
@@ -30,7 +31,7 @@
 <section class="page-hero">
   <a href="/unternehmen/#branchen" class="back-link">← Alle Branchen</a>
   <div class="chip"><span class="chip-dot"></span><span>{{name}}</span></div>
-  <h1>Digitale Infrastruktur für <span class="hl">{{fuer}}</span></h1>
+  <h1>{{h1}}</h1>
   <p class="lead">{{intro}}</p>
   <nav class="sprung" aria-label="Auf dieser Seite">
     <a href="#alltag">Alltag</a><a href="#beispiele">Beispielszenarien</a><a href="#besonderheit">Besonderheit</a><a href="#fragen">Fragen</a><a href="#produkte">Passende Produkte</a><a href="#anfrage">Anfrage</a>
@@ -63,6 +64,7 @@
     <span class="s-label">Besonderheit</span>
     <h2>{{besonderheit_titel}}</h2>
     <div class="note">{{besonderheit_text}}</div>
+    <div class="note note-schweiz"><strong>In der Schweiz:</strong> {{schweiz}}</div>
   </div>
 </section>
 

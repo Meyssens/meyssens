@@ -12,6 +12,12 @@
 - Bausteinseiten (produkte.json mit Feld "branche"): Hinweise, Regel, Status, Einschätzung, bei Personendaten
   Auftragsbearbeitung/Schweiz/Datenminimierung, kein ß, Wortzahl, Sitemap, verlinkt von Branchenseite und Übersicht
 - Keine Platzhalter ({{...}}, [Status, TODO, Lorem) auf irgendeiner Seite
+- SEO (alle Seiten ausser /gemeinden/): Titel <= 60 Zeichen und eindeutig, Beschreibung <= 155 Zeichen mit
+  Handlungsaufforderung und eindeutig, genau eine H1, keine übersprungene Überschriftenebene, Canonical, hreflang de-CH
+  und x-default, lang="de-CH", Open-Graph-Bild, alt-Texte, JSON-LD mit Organization, WebSite, BreadcrumbList,
+  FAQPage genau dann wenn sichtbare Fragen, Service mit areaServed Schweiz auf Produkt- und Bausteinseiten,
+  keine Bewertungen; im Inhalt der Unternehmensseiten kein Bezug auf Deutschland
+- 404.html: vorhanden, noindex, ohne Canonical, nicht in der Sitemap; robots.txt verweist auf die Sitemap
 Nur Python-Standardbibliothek.
 """
 import html
@@ -184,6 +190,81 @@ for p in (p for p in produkte if ist_baustein(p)):
     if '<span class="beispiel">' not in text:
         fehler.append("%s: Ansicht ohne Beschriftung Beispiel" % url)
     print("%-42s %d" % (url, n))
+
+# --- SEO ---
+CTA = re.compile(r"\b(anfragen|vormerken|lesen|ansehen|ausprobieren|entdecken|werden|umsetzen|testen)\b", re.I)
+DE_BEZUG = re.compile(r"Deutschland|Bundesland|Bundesländer|DSGVO|\bEuro\b|€|Landkreis")
+DE_ERLAUBT = {"/ratgeber/offertanfragen-beantworten/": 1}  # zitierte Studie aus Deutschland, als Quelle gekennzeichnet
+titel_gesehen, beschr_gesehen = {}, {}
+
+
+def kopf_wert(text, muster):
+    m = re.search(muster, text, flags=re.S)
+    return html.unescape(m.group(1)).strip() if m else None
+
+
+for url, (text, parser) in sorted(seiten.items()):
+    if url == "/gemeinden/":
+        continue
+    kopf = text[:text.index("</head>")]
+    t = kopf_wert(kopf, r"<title>(.*?)</title>") or ""
+    d = kopf_wert(kopf, r'<meta name="description" content="([^"]*)"') or ""
+    if not t or len(t) > 60:
+        fehler.append("%s: Titel %d Zeichen" % (url, len(t)))
+    if not d or len(d) > 155 or not CTA.search(d):
+        fehler.append("%s: Beschreibung %d Zeichen oder ohne Handlungsaufforderung" % (url, len(d)))
+    for wert, gesehen, art in ((t, titel_gesehen, "Titel"), (d, beschr_gesehen, "Beschreibung")):
+        if wert in gesehen:
+            fehler.append("%s: %s doppelt mit %s" % (url, art, gesehen[wert]))
+        gesehen[wert] = url
+    rumpf = re.sub(r"<(script|style|svg)\b.*?</\1>", " ", text[text.index("<body"):], flags=re.S)
+    ebenen = [int(x) for x in re.findall(r"<h([1-6])\b", rumpf)]
+    if ebenen.count(1) != 1:
+        fehler.append("%s: %d H1" % (url, ebenen.count(1)))
+    if any(b > a + 1 for a, b in zip(ebenen, ebenen[1:])):
+        fehler.append("%s: Überschriftenebene übersprungen" % url)
+    soll = "https://meyssens.ch" + url
+    if kopf_wert(kopf, r'<link rel="canonical" href="([^"]+)"') != soll:
+        fehler.append("%s: Canonical fehlt oder falsch" % url)
+    for sprache in ("de-CH", "x-default"):
+        if '<link rel="alternate" hreflang="%s" href="%s">' % (sprache, soll) not in kopf:
+            fehler.append("%s: hreflang %s fehlt" % (url, sprache))
+    if '<html lang="de-CH">' not in text[:200]:
+        fehler.append("%s: lang nicht de-CH" % url)
+    if '<meta property="og:image" content="https://meyssens.ch/' not in kopf:
+        fehler.append("%s: og:image fehlt" % url)
+    if re.search(r"<img\b(?![^>]*\balt=)[^>]*>", text):
+        fehler.append("%s: Bild ohne alt" % url)
+    typen, roh = [], " ".join(re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, flags=re.S))
+    for blk in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, flags=re.S):
+        for g in json.loads(blk).get("@graph", []):
+            typen.append(g["@type"])
+            if g["@type"] == "Service" and g.get("areaServed", {}).get("name") != "Schweiz":
+                fehler.append("%s: Service ohne areaServed Schweiz" % url)
+    for typ in ("Organization", "WebSite", "BreadcrumbList"):
+        if typ not in typen:
+            fehler.append("%s: JSON-LD ohne %s" % (url, typ))
+    hat_faq = '<section id="fragen"' in text and '<div class="qa">' in text
+    if hat_faq != ("FAQPage" in typen):
+        fehler.append("%s: FAQPage passt nicht zu den sichtbaren Fragen" % url)
+    if url.startswith("/produkte/") and "Service" not in typen:
+        fehler.append("%s: JSON-LD ohne Service" % url)
+    if re.search(r"aggregateRating|\"Review\"|reviewRating", roh):
+        fehler.append("%s: Bewertungen in JSON-LD" % url)
+    if url != "/":
+        inhalt = sichtbar_text(text[text.index("<main"):text.index("</main>")]) if "<main" in text else ""
+        n = len(DE_BEZUG.findall(html.unescape(re.sub(r"<[^>]+>", " ", text[text.index("<main"):text.index("</main>")]))))
+        if n > DE_ERLAUBT.get(url, 0):
+            fehler.append("%s: %d Bezüge auf Deutschland im Inhalt" % (url, n))
+
+seite404 = (ROOT / "404.html").read_text(encoding="utf-8") if (ROOT / "404.html").is_file() else ""
+if not seite404 or 'content="noindex' not in seite404 or 'rel="canonical"' in seite404 or "404.html" in sitemap:
+    fehler.append("404.html fehlt, ist indexierbar, hat Canonical oder steht in der Sitemap")
+for ziel in re.findall(r'href="(/[^"#?]*)', seite404):
+    if not ziel_existiert(ziel):
+        fehler.append("404.html: toter Link %s" % ziel)
+if "Sitemap: https://meyssens.ch/sitemap.xml" not in (ROOT / "robots.txt").read_text(encoding="utf-8"):
+    fehler.append("robots.txt ohne Sitemap")
 
 print("\n%d Seiten, %d interne Links geprüft" % (len(seiten), geprueft))
 if fehler:
