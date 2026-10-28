@@ -90,7 +90,27 @@ def fuelle(vorlage, werte):
     return re.sub(r"\{\{(\w+)\}\}", ersetze, vorlage)
 
 
+# Namen der Zielseiten für beschreibende Linktexte (in main() gefüllt)
+ZIELNAMEN = {"#datenschutz": "zur Datenschutzerklärung"}
+GENERISCH = re.compile(r'(<a\b[^>]*href="([^"]*)"[^>]*>)(Mehr erfahren|Unverbindlich vormerken|Beispielansicht|Beispiel ausprobieren)'
+                       r'(\s*(?:<svg\b.*?</svg>)?\s*)</a>', re.S)
+
+
+def beschreibend(inhalt):
+    # Generische Linktexte ("Mehr erfahren") für Screenreader und Suchmaschinen um das Ziel ergänzen, sichtbar unverändert
+    def ergaenze(m):
+        ziel = m.group(2)
+        name = ZIELNAMEN.get(ziel) or ZIELNAMEN.get(ziel.split("#")[0])
+        if not name:
+            return m.group(0)
+        zusatz = name if ziel.startswith("#") else ("zu " + name)
+        return '%s%s<span class="sr-only"> %s</span>%s</a>' % (m.group(1), m.group(3), html.escape(zusatz), m.group(4))
+    return GENERISCH.sub(ergaenze, inhalt)
+
+
 def schreibe(pfad, inhalt):
+    if not pfad.startswith("gemeinden/"):
+        inhalt = beschreibend(inhalt)
     ziel = ROOT / pfad
     ziel.parent.mkdir(parents=True, exist_ok=True)
     ziel.write_text(inhalt, encoding="utf-8")
@@ -297,7 +317,7 @@ def faq_ld(faq):
             "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in faq]}
 
 
-def kachel(url, chip, titel, text, knopf):
+def link_kachel(url, chip, titel, text, knopf):
     return ('    <a href="%s" class="feat tile">\n%s      <h3>%s</h3>\n      <p>%s</p>\n      <span class="way-go">%s %s</span>\n    </a>'
             % (url, '      <span class="status-chip">%s</span>\n' % html.escape(chip) if chip else "", html.escape(titel),
                html.escape(text), knopf, PFEIL))
@@ -377,7 +397,7 @@ KETTE_SYMBOL = {
 }
 
 
-def kette(k, nach_slug, branche, formular_ziel, einwilligung):
+def kette(k, nach_slug, branche, formular_ziel, einwilligung, slug=None):
     # Ablauf-Kette als Scroll-Animation: ohne JS eine lesbare Liste, mit JS (demos.js) erscheint Schritt für Schritt.
     # Schritte: {titel, art, seite (Bausteinseite oder null), beispiel (1 Satz), hinweis (optional)}
     schritte, arten = [], []
@@ -416,6 +436,17 @@ def kette(k, nach_slug, branche, formular_ziel, einwilligung):
     legende = "".join('<li class="%s"><span class="ablauf-punkt" aria-hidden="true"></span>%s</li>' % (art, KETTE_ART[art])
                       for art in arten)
     knopf = "Diesen Ablauf für meine %s anfragen" % k["betrieb"]
+    # Ablauf als teilbares Bild (bilder.py), Alt-Text mit allen Schritten
+    bild = ""
+    datei = ROOT / "assets" / "ablauf" / ("%s.png" % slug)
+    if slug and datei.is_file():
+        breite, hoehe = png_masse(datei)
+        alt = "Ablauf %s für %s als Grafik: %s." % (k["titel"], branche, "; ".join(
+            "%d. %s (%s)" % (i, st["titel"], KETTE_ART[st["art"]]) for i, st in enumerate(k["schritte"], 1)))
+        bild = ('    <figure class="ablauf-bild">\n'
+                '      <img src="/assets/ablauf/%s.png" width="%d" height="%d" loading="lazy" decoding="async" alt="%s">\n'
+                '      <figcaption>Der Ablauf als Bild zum Teilen: <a href="/assets/ablauf/%s.png" download>Grafik «%s» herunterladen (PNG)</a></figcaption>\n'
+                '    </figure>\n' % (slug, breite, hoehe, html.escape(alt), slug, html.escape(k["titel"])))
     wert = "%s (%s)" % (k["titel"], branche)
     return ('  <div class="ablauf" id="ablauf" data-ablauf>\n'
             '    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)'
@@ -435,6 +466,7 @@ def kette(k, nach_slug, branche, formular_ziel, einwilligung):
             '      </div>\n'
             '    </div>\n'
             '    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>\n'
+            '%s'
             '    <form class="ablauf-form" id="ablauf-anfrage" action="%s" method="POST">\n'
             '      <h4>%s</h4>\n'
             '      <input type="hidden" name="_subject" value="Ablauf-Anfrage über meyssens.ch: %s">\n'
@@ -455,7 +487,7 @@ def kette(k, nach_slug, branche, formular_ziel, einwilligung):
             '  </div>\n'
             '  <a class="anfrage-fest" href="#ablauf-anfrage" data-anfrage-fest hidden>Ablauf anfragen %s</a>'
             % (html.escape(k["titel"]), html.escape(k["text"]), legende, "\n".join(schritte),
-               html.escape(k["abschluss"]), html.escape(knopf), PFEIL,
+               html.escape(k["abschluss"]), html.escape(knopf), PFEIL, bild,
                formular_ziel, html.escape(knopf), html.escape(wert), html.escape(branche), html.escape(wert),
                einwilligung.replace('id="', 'id="ab-').replace('for="', 'for="ab-'), PFEIL, PFEIL))
 
@@ -494,7 +526,7 @@ def automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
             'Einschätzungen, keine gemessenen Werte. Vor einem Einsatz mit Personendaten prüfen wir die rechtlichen Fragen '
             'im Einzelfall. Zuletzt geprüft am %s.</p>\n'
             '</section>' % (html.escape(au["intro"]), REGEL[0], REGEL[1],
-                            kette(au["kette"], nach_slug, a["name"], formular_ziel, einwilligung),
+                            kette(au["kette"], nach_slug, a["name"], formular_ziel, einwilligung, a["slug"]),
                             "\n".join(baustein_karte(p, a["name"], formular_ziel, einwilligung) for p in bausteine),
                             html.escape(STUFEN[d["status"]]["badge"]),
                             html.escape(d["name"]), html.escape(d["kurzbeschreibung"]), d["slug"], PFEIL, bild, datum))
@@ -528,17 +560,21 @@ def titel_branche(b):
 
 # Organisation und Website: auf jeder erzeugten Seite, nur belegte Angaben (Impressum), keine Bewertungen
 ORG = {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "Meyssens", "url": DOMAIN + "/", "logo": DOMAIN + "/logo.png",
-       "email": "lionel@meyssens.ch", "founder": {"@type": "Person", "name": "Lionel Nickelsen"},
+       "email": "lionel@meyssens.ch", "founder": {"@id": DOMAIN + "/ueber-uns/#person"},
        "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}
 WEBSITE = {"@type": "WebSite", "@id": DOMAIN + "/#website", "name": "Meyssens", "url": DOMAIN + "/", "inLanguage": "de-CH",
            "publisher": {"@id": DOMAIN + "/#org"}}
 SCHWEIZ = {"@type": "Country", "name": "Schweiz"}
 
 
+PERSON = {"@type": "Person", "@id": DOMAIN + "/ueber-uns/#person", "name": "Lionel Nickelsen", "url": DOMAIN + "/ueber-uns/",
+          "worksFor": {"@id": DOMAIN + "/#org"}}
+
+
 def ld(*teile):
     # Strukturierte Daten als JSON-LD (ein Block mit @graph), immer mit Organisation und Website
     return '<script type="application/ld+json">%s</script>' % json.dumps(
-        {"@context": "https://schema.org", "@graph": [ORG, WEBSITE] + list(teile)}, ensure_ascii=False)
+        {"@context": "https://schema.org", "@graph": [ORG, WEBSITE, PERSON] + list(teile)}, ensure_ascii=False)
 
 
 def seo_kopf(url):
@@ -564,8 +600,85 @@ def h1_html(text):
 
 
 def brotkrumen(*stufen):
-    return {"@type": "BreadcrumbList", "itemListElement": [
+    return {"@type": "BreadcrumbList", "@id": DOMAIN + stufen[-1][1] + "#brotkrumen", "itemListElement": [
         {"@type": "ListItem", "position": i, "name": n, "item": DOMAIN + u} for i, (n, u) in enumerate(stufen, 1)]}
+
+
+# Sichtbare Brotkrumen, gleiche Stufen wie BreadcrumbList im JSON-LD
+STUFE_BRANCHEN = ("Branchen", "/branchen/")
+STUFE_RATGEBER = ("Ratgeber", "/ratgeber/")
+STUFE_PRODUKTE = ("Produkte", "/produkte/")
+STUFE_UEBER = ("Über uns", "/ueber-uns/")
+OG_STANDARD = ("/og-image.png", "Meyssens – Digitale Infrastruktur für Organisationen")
+# Stand der Seiten ohne eigenes Prüfdatum (Startseite, Übersichten, Über uns, Produkte): bei inhaltlichen Änderungen anpassen
+SEITEN_STAND = "2026-10-28"
+
+
+def krumen(*stufen):
+    teile = ['<li><a href="%s">%s</a></li>' % (u, html.escape(n)) for n, u in stufen[:-1]]
+    teile.append('<li aria-current="page">%s</li>' % html.escape(stufen[-1][0]))
+    return '  <nav class="brotkrumen" aria-label="Brotkrumen"><ol>%s</ol></nav>' % "".join(teile)
+
+
+def bild_objekt(bild):
+    pfad, alt = bild
+    return {"@type": "ImageObject", "url": DOMAIN + pfad, "width": 1200, "height": 630, "caption": alt}
+
+
+def seitenkopf(stufen, titel, bild=OG_STANDARD):
+    # Kopfwerte (Brotkrumen, Open-Graph-Bild) und JSON-LD (BreadcrumbList, WebPage mit Bild) einer Seite
+    url = DOMAIN + stufen[-1][1]
+    webseite = {"@type": "WebPage", "@id": url, "url": url, "name": titel, "inLanguage": "de-CH",
+                "isPartOf": {"@id": DOMAIN + "/#website"}, "breadcrumb": {"@id": url + "#brotkrumen"},
+                "primaryImageOfPage": bild_objekt(bild)}
+    return ({"krumen": krumen(*stufen), "og_bild": DOMAIN + bild[0], "og_alt": html.escape(bild[1])},
+            [brotkrumen(*stufen), webseite])
+
+
+def og_branche(slug, name):
+    # Teilbares Bild pro Branche (bilder.py), sonst das allgemeine Bild
+    pfad = "/assets/og/branche-%s.png" % slug
+    return (pfad, "%s: digitale Werkzeuge von Meyssens" % name) if (ROOT / pfad.lstrip("/")).is_file() else OG_STANDARD
+
+
+def png_masse(pfad):
+    # Breite und Höhe aus dem PNG-Kopf (IHDR)
+    with open(pfad, "rb") as f:
+        kopf = f.read(24)
+    return int.from_bytes(kopf[16:20], "big"), int.from_bytes(kopf[20:24], "big")
+
+
+def verwandt_abschnitt(links):
+    # "Das könnte Sie auch interessieren": 3 Kacheln mit beschreibendem Linktext
+    return ('<section id="verwandt">\n  <div class="r">\n    <span class="s-label">Weiterlesen</span>\n'
+            '    <h2>Das könnte Sie auch interessieren</h2>\n  </div>\n  <div class="feat-grid r">\n%s\n  </div>\n</section>\n\n'
+            % "\n".join(link_kachel(u, art, name, text, "Mehr zu " + html.escape(name)) for u, art, name, text in links))
+
+
+def verwandte(netz, info, url, anzahl=3):
+    # Thematisch passende Seiten aus den Verknüpfungen der Daten: zuerst je eine andere Seitenart
+    # (Branche, Baustein oder Produkt, Ratgeber), dann weitere direkte Nachbarn, dann Nachbarn der Nachbarn
+    wunsch = {"branche": ("baustein", "ratgeber", "produkt", "branche"), "baustein": ("branche", "ratgeber", "baustein", "produkt"),
+              "ratgeber": ("branche", "baustein", "produkt", "ratgeber")}[info[url]["typ"]]
+    eigene = set(netz.get(url, []))
+    # Ähnlichste Nachbarn zuerst: Anteil gemeinsamer Verknüpfungen (Jaccard), bei Gleichstand Reihenfolge der Daten
+    def aehnlich(n):
+        andere = set(netz.get(n, []))
+        return len(eigene & andere) / max(1, len(eigene | andere))
+    nachbarn = sorted((n for n in netz.get(url, []) if n != url), key=lambda n: -aehnlich(n))
+    zweite = [m for n in nachbarn for m in netz.get(n, []) if m != url and m not in nachbarn]
+    wahl = []
+    for typ in wunsch:
+        for n in nachbarn:
+            if info[n]["typ"] == typ and n not in wahl:
+                wahl.append(n)
+                break
+    for n in nachbarn + zweite:
+        if len(wahl) >= anzahl:
+            break
+        if n not in wahl:
+            wahl.append(n)
+    return [(n, info[n]["art"], info[n]["name"], info[n]["text"]) for n in wahl[:anzahl]]
 
 
 AUTOR = "Lionel Nickelsen"
@@ -588,7 +701,8 @@ def worte(text):
 
 
 def pruefe_artikel(a, nach_slug):
-    fehlt = [f for f in ("slug", "art", "name", "titel", "beschreibung", "h1", "lead", "geprueft") if not a.get(f)]
+    fehlt = [f for f in ("slug", "art", "name", "titel", "beschreibung", "h1", "lead", "geprueft", "veroeffentlicht")
+             if not a.get(f)]
     if a.get("art") not in ARTEN:
         fehlt.append("art (branche oder ratgeber)")
     if len(a.get("weiterlesen", [])) != 4:
@@ -705,6 +819,44 @@ def main():
                 raise SystemExit("Baustein %s: FAQ unvollständig" % p["slug"])
     ratgeber = [a for a in artikel if a["art"] == "ratgeber"]
 
+    # Seiten und ihre Verknüpfungen aus den Daten: Branche ↔ Bausteine/Produkte ↔ Ratgeber
+    info, netz = {}, {}
+    def verbinde(a, b):
+        for x, y in ((a, b), (b, a)):
+            netz.setdefault(x, [])
+            if y not in netz[x]:
+                netz[x].append(y)
+    for p in produkte:
+        info["/produkte/%s/" % p["slug"]] = {"typ": "baustein" if ist_baustein(p) else "produkt",
+                                             "art": "Baustein" if ist_baustein(p) else "Produkt",
+                                             "name": p["name"], "text": anfang(p["kurzbeschreibung"], 70)}
+    for b in branchen:
+        info["/branchen/%s/" % b["slug"]] = {"typ": "branche", "art": "Branche", "name": b["name"], "text": b["kurz"]}
+    for a in artikel:
+        info["/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"])] = {
+            "typ": "branche" if a["art"] == "branche" else "ratgeber", "art": "Branche" if a["art"] == "branche" else "Ratgeber",
+            "name": a["name"], "text": a.get("kurz") or anfang(a["beschreibung"], 70)}
+    for b in branchen:
+        for x in b.get("bausteine", []) + b["produkte"]:
+            verbinde("/branchen/%s/" % b["slug"], "/produkte/%s/" % x)
+    for a in artikel:
+        url_a = "/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"])
+        ziele = ["/produkte/%s/" % x for x in a.get("automatisierung", {}).get("bausteine", []) + a["produkte"]]
+        ziele += [l["url"] for l in a["weiterlesen"]] + re.findall(r'href="(/[^"#]*)', lies("artikel/%s.html" % a["slug"]))
+        for z in ziele:
+            if z in info:
+                verbinde(url_a, z)
+    for r in ratgeber:
+        for b in branchen:
+            if set(r["produkte"]) & set(b["produkte"] + b.get("bausteine", [])):
+                verbinde("/ratgeber/%s/" % r["slug"], "/branchen/%s/" % b["slug"])
+    ZIELNAMEN.update({u: x["name"] for u, x in info.items()})
+    for p in (p for p in produkte if ist_baustein(p)):
+        verbinde("/produkte/%s/" % p["slug"], "/branchen/%s/" % p["branche"])
+        for l in p.get("weiterlesen", []):
+            if l["url"] in info:
+                verbinde("/produkte/%s/" % p["slug"], l["url"])
+
     start = lies("index.html")
     gemeinden = lies("gemeinden/index.html")
     gemeinsam = {name: abschnitt(start, name) for name in ("head", "kopf", "fuss", "rechtliches", "skripte")}
@@ -725,7 +877,9 @@ def main():
         hinweis = ""
         if p.get("hinweis"):
             hinweis = '  <div class="note">%s</div>' % e["hinweis"]
-        werte = dict(gemeinsam, **{
+        kopf, seitenld = seitenkopf((START, STUFE_PRODUKTE, (p["name"], "/produkte/%s/" % p["slug"])),
+                               p.get("seo_titel") or "%s – Meyssens" % p["name"])
+        werte = dict(gemeinsam, **kopf, **{
             "titel": html.escape(p.get("seo_titel") or "%s – Meyssens" % p["name"]),
             "beschreibung": html.escape(p.get("seo_beschreibung") or kurz(p["kurzbeschreibung"])),
             "url": url,
@@ -743,7 +897,7 @@ def main():
             "schweiz": e["schweiz"],
             "demo": demo(p.get("demo"), "produkt"),
             "ansicht": produkt_ansicht(ansichten, p),
-            "ld": ld(brotkrumen(START, UNTERNEHMEN, (p["name"], "/produkte/%s/" % p["slug"])), dienst(p, url)),
+            "ld": ld(*seitenld, dienst(p, url)),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -753,7 +907,11 @@ def main():
     vorlage_branche = lies("vorlage_branche.html")
     for b in branchen:
         fuer = b["fuer"]
-        werte = dict(gemeinsam, **{
+        burl = "/branchen/%s/" % b["slug"]
+        kopf, seitenld = seitenkopf((START, STUFE_BRANCHEN, (b["name"], burl)), b.get("seo_titel") or titel_branche(b),
+                               og_branche(b["slug"], b["name"]))
+        werte = dict(gemeinsam, **kopf, **{
+            "verwandt": verwandt_abschnitt(verwandte(netz, info, burl)),
             "titel": html.escape(b.get("seo_titel") or titel_branche(b)),
             "beschreibung": html.escape(b.get("seo_beschreibung") or b["beschreibung"]),
             "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),
@@ -766,7 +924,7 @@ def main():
             "szenarien": "\n".join(karte("Beispielszenario", x["titel"], x["text"]) for x in b["szenarien"]),
             "demo": demo(b.get("demo"), "branche"),
             # FAQPage nur aus den sichtbaren Fragen der Seite
-            "ld": ld(brotkrumen(START, UNTERNEHMEN, (b["name"], "/branchen/%s/" % b["slug"])),
+            "ld": ld(*seitenld,
                      {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
                       "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in b["faq"]]}),
             "besonderheit_titel": html.escape(b["besonderheit"]["titel"]),
@@ -806,7 +964,11 @@ def main():
         if "[Status" in roh or "ß" in roh:
             raise SystemExit("Artikel %s: Platzhalter [Status ...] oder ß im Text" % a["slug"])
         datum = datetime.date.fromisoformat(a["geprueft"])
-        werte = dict(gemeinsam, **{
+        stufe_a = STUFE_BRANCHEN if a["art"] == "branche" else STUFE_RATGEBER
+        bild_a = og_branche(a["slug"], a["name"]) if a["art"] == "branche" else OG_STANDARD
+        kopf, seitenld = seitenkopf((START, stufe_a, (a["name"], pfad)), a["titel"], bild_a)
+        werte = dict(gemeinsam, **kopf, **{
+            "verwandt": verwandt_abschnitt(verwandte(netz, info, pfad)),
             "titel": html.escape(a["titel"]),
             "beschreibung": html.escape(a["beschreibung"]),
             "url": DOMAIN + pfad,
@@ -837,13 +999,11 @@ def main():
             "feld": art["feld"][0],
             "feld_label": art["feld"][1],
             # Article und FAQPage nur aus dem sichtbaren Inhalt der Seite
-            "ld": ld(brotkrumen(START, UNTERNEHMEN, (a["name"], pfad)),
+            "ld": ld(*seitenld,
                      {"@type": "Article", "headline": a["h1"], "description": a["beschreibung"],
-                      "inLanguage": "de-CH", "dateModified": a["geprueft"], "mainEntityOfPage": DOMAIN + pfad,
-                      "author": {"@type": "Person", "name": AUTOR},
-                      "publisher": {"@id": DOMAIN + "/#org", "@type": "Organization", "name": "Meyssens",
-                                    "logo": DOMAIN + "/logo.png"},
-                      "image": DOMAIN + "/og-image.png"},
+                      "inLanguage": "de-CH", "datePublished": a["veroeffentlicht"], "dateModified": a["geprueft"],
+                      "mainEntityOfPage": {"@id": DOMAIN + pfad}, "author": {"@id": DOMAIN + "/ueber-uns/#person"},
+                      "publisher": {"@id": DOMAIN + "/#org"}, "image": bild_objekt(bild_a)},
                      {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
                       "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in a["faq"]]}),
             "formular_ziel": formular_ziel,
@@ -876,7 +1036,10 @@ def main():
         andere = [nach_slug[s] for s in reihe if s != p["slug"]]
         daten = ('    <ul class="bedingungen">\n%s\n    </ul>\n' % "\n".join("      <li>%s</li>" % html.escape(x) for x in BEDINGUNGEN)
                  if p["personendaten"] else "")
-        werte = dict(gemeinsam, **{
+        kopf, seitenld = seitenkopf((START, STUFE_BRANCHEN, (b["name"], "/branchen/%s/" % b["slug"]), (p["name"], pfad)),
+                               p.get("seo_titel") or "%s – Meyssens" % p["name"], og_branche(b["slug"], b["name"]))
+        werte = dict(gemeinsam, **kopf, **{
+            "verwandt": verwandt_abschnitt(verwandte(netz, info, pfad)),
             "titel": html.escape(p.get("seo_titel") or "%s – Meyssens" % p["name"]),
             "beschreibung": html.escape(p.get("seo_beschreibung") or kurz(p["kurzbeschreibung"])),
             "url": DOMAIN + pfad,
@@ -909,17 +1072,16 @@ def main():
                            'Branchenseite</a>.' % b["slug"] if langtext else
                            'Alle Bausteine für %s stehen auf der <a href="/branchen/%s/#bausteine">Branchenseite</a>.'
                            % (html.escape(b["name"]), b["slug"]),
-                           "\n".join([kachel("/produkte/%s/" % x["slug"], STUFEN[x["status"]]["badge"], x["name"],
+                           "\n".join([link_kachel("/produkte/%s/" % x["slug"], STUFEN[x["status"]]["badge"], x["name"],
                                               x["kurzbeschreibung"], "Mehr erfahren") for x in andere] +
-                                     [kachel(l["url"], None, l["titel"], l["grund"], "Weiterlesen")
+                                     [link_kachel(l["url"], None, l["titel"], l["grund"], "Weiterlesen")
                                       for l in p.get("weiterlesen", [])]))),
             "faq_abschnitt": ('\n<section id="fragen">\n  <div class="r">\n    <span class="s-label">Fragen</span>\n'
                               '    <h2>Häufige Fragen</h2>\n  </div>\n  <div class="qa-list r">\n%s\n  </div>\n</section>\n'
                               % qa_liste(p["faq"]) if p.get("faq") else ""),
             "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
                                  % (html.escape(q["url"]), html.escape(q["titel"])) for q in p["quellen"]),
-            "ld": ld(*[brotkrumen(START, UNTERNEHMEN, (b["name"], "/branchen/%s/" % b["slug"]), (p["name"], pfad)),
-                       dienst(p, DOMAIN + pfad, b["name"])] + ([faq_ld(p["faq"])] if p.get("faq") else [])),
+            "ld": ld(*seitenld, dienst(p, DOMAIN + pfad, b["name"]), *([faq_ld(p["faq"])] if p.get("faq") else [])),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -930,7 +1092,8 @@ def main():
         print("Wörter %s: %d%s" % (pfad, n, hinweis))
         schreibe(pfad.strip("/") + "/index.html", seite)
 
-    werte = dict(gemeinsam, **{
+    kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens")
+    werte = dict(gemeinsam, **kopf, **{
         "titel": "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens",
         "beschreibung": html.escape("Umfragen, Newsletter, Vereinswebsite, Mail-Assistent und Bausteine für Praxen, "
                                     "Verwaltungen und Büros in der Schweiz. Jetzt Pilotpartner werden."),
@@ -947,13 +1110,107 @@ def main():
             for a, anker, liste in [(a, "#automatisierung", a["automatisierung"]["bausteine"])
                                     for a in artikel_branchen if a.get("automatisierung")] +
                                    [(b, "#bausteine", b["bausteine"]) for b in branchen if b.get("bausteine")]),
-        "ld": ld(brotkrumen(START, UNTERNEHMEN)),
+        "ld": ld(*seitenld),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
                                for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
         "ratgeber": "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (a["slug"], html.escape(a["name"]), PFEIL)
                                for a in ratgeber),
     })
     schreibe("unternehmen/index.html", fuelle(lies("vorlage_unternehmen.html"), werte))
+
+    # Übersichtsseiten (Brotkrumen-Stufen) und Über uns, alle aus vorlage_seite.html
+    vorlage_seite = lies("vorlage_seite.html")
+    def raster(eintraege):
+        return '  <div class="feat-grid r">\n%s\n  </div>' % "\n".join(
+            link_kachel(u, art, name, text, "Mehr zu " + html.escape(name)) for u, art, name, text in eintraege)
+    def abschnitt_html(anker, label, titel, inhalt, klasse=""):
+        return ('<section id="%s"%s>\n  <div class="r">\n    <span class="s-label">%s</span>\n    <h2>%s</h2>\n  </div>\n%s\n</section>\n'
+                % (anker, ' class="%s"' % klasse if klasse else "", label, titel, inhalt))
+    def eintrag(u):
+        return (u, info[u]["art"], info[u]["name"], info[u]["text"])
+    alle_branchen = sorted([u for u in info if info[u]["typ"] == "branche"], key=lambda u: info[u]["name"])
+    pilot = sum(p["status"] == "Pilotphase" for p in allgemein)
+    uebersichten = [
+        ((START, STUFE_BRANCHEN), "Branchen: digitale Werkzeuge für Schweizer KMU | Meyssens",
+         "Zahnarztpraxen, Immobilienverwaltungen, Architekturbüros, Pflege, Bau, Treuhand und mehr: Werkzeuge "
+         "für Ihre Branche. Branche wählen und ansehen.",
+         "Branchen", "Werkzeuge für <span class=\"hl\">Ihre Branche.</span>",
+         "Für jede Branche zeigen wir, wo digitale Werkzeuge im Alltag entlasten können, was rechtlich gilt und welche "
+         "Bausteine wir planen. Alle Angaben beziehen sich auf die Schweiz.",
+         abschnitt_html("alle", "Branchen", "Alle Branchen", raster([eintrag(u) for u in alle_branchen]))),
+        ((START, STUFE_RATGEBER), "Ratgeber für Schweizer KMU: nDSG, Offerten | Meyssens",
+         "Ratgeber mit Quellen und Prüfdatum: nDSG für KMU, Offertanfragen, Online-Abstimmung im Verein, Mietformulare, "
+         "Spitex-Abrechnung. Jetzt lesen.",
+         "Ratgeber", "Ratgeber mit <span class=\"hl\">Quellen.</span>",
+         "Kurze Leitfäden zu Fragen aus dem Alltag Schweizer KMU, Praxen, Verwaltungen und Vereine. Jeder Ratgeber nennt "
+         "seine Quellen und das Datum der letzten Prüfung. Allgemeine Information, keine Rechtsberatung.",
+         abschnitt_html("alle", "Ratgeber", "Alle Ratgeber", raster(
+             [eintrag("/ratgeber/%s/" % a["slug"]) for a in ratgeber]))),
+        ((START, STUFE_PRODUKTE), "Produkte und Bausteine für Schweizer KMU | Meyssens",
+         "Umfragen, Newsletter, Website-Chatbot und Bausteine für Praxen, Verwaltungen, Büros und Spitex. Status ehrlich "
+         "angegeben. Jetzt ansehen und vormerken.",
+         "Produkte", "Produkte und <span class=\"hl\">Bausteine.</span>",
+         "%d Produkte sind in der Pilotphase, alle weiteren Produkte und Bausteine sind in Planung. Den Stand nennen wir auf "
+         "jeder Seite." % pilot,
+         abschnitt_html("produkte", "Produkte", "Werkzeuge für Unternehmen und Vereine",
+                        raster([eintrag("/produkte/%s/" % p["slug"]) for p in allgemein])) + "\n" +
+         abschnitt_html("bausteine", "Bausteine", "Bausteine nach Branche",
+                        raster([eintrag("/produkte/%s/" % p["slug"]) for p in produkte if ist_baustein(p)]), "flaeche")),
+    ]
+    bausteine_alle = [p for p in produkte if ist_baustein(p)]
+    ueber_inhalt = (
+        abschnitt_html("wer", "Wer", "Wer hinter Meyssens steht",
+            '  <div class="artikel-text r">\n'
+            '    <p>Meyssens ist ein Einzelunternehmen in Lausen im Kanton Basel-Landschaft, gegründet von Lionel Nickelsen. '
+            'Die Firma ist als Einzelfirma im Kanton Basel-Landschaft eingetragen. Wir haben noch keine Kunden und keine '
+            'Referenzen und sagen das auf unseren Seiten offen.</p>\n  </div>') + "\n" +
+        abschnitt_html("angebot", "Angebot", "Was wir anbieten",
+            '  <div class="artikel-text r">\n'
+            '    <p>Für Gemeinden betreiben wir eine Beteiligungsplattform auf Basis der Open-Source-Software Decidim, als '
+            'verwalteten Dienst mit Hosting, Updates, Backups und Sicherheit. Mehr dazu auf der Seite '
+            '<a href="/gemeinden/">Für Gemeinden</a>.</p>\n'
+            '    <p>Für Unternehmen und Vereine entwickeln wir schlanke Werkzeuge. Stand heute sind %d von %d Produkten in der '
+            'Pilotphase, die übrigen und alle %d Bausteine sind in Planung. Die Übersicht steht unter '
+            '<a href="/produkte/">Produkte und Bausteine</a>, die Branchen unter <a href="/branchen/">Branchen</a>.</p>\n'
+            '  </div>' % (pilot, len(allgemein), len(bausteine_alle)), "flaeche") + "\n" +
+        abschnitt_html("arbeitsweise", "Arbeitsweise", "Wie wir arbeiten",
+            '  <div class="artikel-text r">\n    <ul>\n'
+            '      <li><strong>Persönlich:</strong> Sie erreichen uns direkt, ohne Ticketsystem.</li>\n'
+            '      <li><strong>Entwürfe ja, automatischer Versand nein:</strong> Unsere Bausteine bereiten vor. Was Ihren '
+            'Betrieb verlässt, gibt ein Mensch frei.</li>\n'
+            '      <li><strong>Pilotpartner gestalten mit:</strong> Pilotpartner erhalten die Einrichtung kostenlos und '
+            'gestalten das Produkt mit.</li>\n'
+            '      <li><strong>Ehrliche Angaben:</strong> Jede Produktseite nennt den Status. Angaben zum Aufwand sind als '
+            'Einschätzung gekennzeichnet, Ratgeber nennen Quellen und das Datum der letzten Prüfung.</li>\n'
+            '    </ul>\n  </div>') + "\n" +
+        abschnitt_html("datenschutz-prinzipien", "Datenschutz", "Datenschutz-Prinzipien",
+            '  <div class="artikel-text r">\n'
+            '    <p>Die Beteiligungsplattform für Gemeinden wird ausschliesslich in der Schweiz gehostet. Für Personendaten in '
+            'unseren Bausteinen gelten drei Bedingungen: %s.</p>\n'
+            '    <p>Diese Website selbst wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Die Einzelheiten stehen in der '
+            '<a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">'
+            'Datenschutzerklärung</a>.</p>\n  </div>' % ", ".join(BEDINGUNGEN), "flaeche") + "\n" +
+        abschnitt_html("kontakt", "Kontakt", "Kontakt und Standort",
+            '  <div class="artikel-text r">\n'
+            '    <p>Meyssens, Lausen, Basel-Landschaft, Schweiz<br>E-Mail: <a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></p>\n'
+            '    <p><a class="btn-p" href="mailto:lionel@meyssens.ch">E-Mail an Lionel Nickelsen %s</a></p>\n'
+            '  </div>' % PFEIL))
+    uebersichten.append(((START, STUFE_UEBER), "Über uns: Meyssens aus Lausen BL | Meyssens",
+        "Wer hinter Meyssens steht: Einzelunternehmen von Lionel Nickelsen in Lausen BL, Arbeitsweise und "
+        "Datenschutz-Prinzipien. Jetzt mehr lesen.",
+        "Über uns", "Über <span class=\"hl\">Meyssens.</span>",
+        "Ein Einzelunternehmen aus Lausen im Kanton Basel-Landschaft: digitale Werkzeuge für Gemeinden, Unternehmen und "
+        "Vereine, persönlich begleitet.", ueber_inhalt))
+    for stufen, titel, beschreibung, chip, h1, lead, inhalt in uebersichten:
+        pfad = stufen[-1][1]
+        kopf, seitenld = seitenkopf(stufen, titel)
+        extra = [{"@type": "AboutPage", "@id": DOMAIN + pfad + "#ueber", "url": DOMAIN + pfad, "about": {"@id": DOMAIN + "/#org"},
+                  "mainEntity": {"@id": DOMAIN + "/ueber-uns/#person"}}] if pfad == "/ueber-uns/" else []
+        werte = dict(gemeinsam, **kopf, **{
+            "titel": html.escape(titel), "beschreibung": html.escape(beschreibung), "url": DOMAIN + pfad,
+            "seo_kopf": seo_kopf(DOMAIN + pfad), "chip": chip, "h1": h1, "lead": html.escape(lead), "inhalt": inhalt,
+            "ld": ld(*seitenld, *extra)})
+        schreibe(pfad.strip("/") + "/index.html", fuelle(vorlage_seite, werte))
 
     # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
     werte = dict(gemeinsam, **{
@@ -981,7 +1238,7 @@ def main():
         schreibe("gemeinden/index.html", neu_g)
 
     neu = startseite(start, ansichten, allgemein, len(branchen) + len(artikel_branchen), len(ratgeber))
-    if neu != start:
+    if beschreibend(neu) != start:
         schreibe("index.html", neu)
 
     # Verwaiste Ordner nur melden, nicht löschen
@@ -994,13 +1251,15 @@ def main():
             if d.is_dir() and d.name not in bekannt:
                 print("Hinweis: %s/%s steht nicht in %s" % (ordner, d.name, quelle))
 
-    heute = datetime.date.today().isoformat()
-    seiten = [("/", "1.0"), ("/gemeinden/", "0.9"), ("/unternehmen/", "0.8")]
-    seiten += [("/produkte/%s/" % p["slug"], "0.6") for p in produkte]
-    seiten += [("/branchen/%s/" % b["slug"], "0.6") for b in branchen]
-    seiten += [("/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]), "0.6") for a in artikel]
+    # lastmod: Prüfdatum der Seite, sonst SEITEN_STAND (Startseite, Übersichten, Über uns, Produkte ohne Prüfdatum)
+    seiten = [("/", "1.0", SEITEN_STAND), ("/gemeinden/", "0.9", SEITEN_STAND), ("/unternehmen/", "0.8", SEITEN_STAND),
+              ("/branchen/", "0.7", SEITEN_STAND), ("/produkte/", "0.7", SEITEN_STAND), ("/ratgeber/", "0.7", SEITEN_STAND),
+              ("/ueber-uns/", "0.5", SEITEN_STAND)]
+    seiten += [("/produkte/%s/" % p["slug"], "0.6", p.get("geprueft", SEITEN_STAND)) for p in produkte]
+    seiten += [("/branchen/%s/" % b["slug"], "0.6", SEITEN_STAND) for b in branchen]
+    seiten += [("/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]), "0.6", a["geprueft"]) for a in artikel]
     zeilen = ["  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>"
-              % (DOMAIN, pfad, heute, prio) for pfad, prio in seiten]
+              % (DOMAIN, pfad, stand, prio) for pfad, prio, stand in seiten]
     schreibe("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(zeilen) + "\n</urlset>\n")
 

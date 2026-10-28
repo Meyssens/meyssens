@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{titel}}</title>
+<meta name="description" content="{{beschreibung}}">
+<meta property="og:title" content="{{titel}}">
+<meta property="og:description" content="{{beschreibung}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{og_bild}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{og_alt}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{og_bild}}">
+<meta name="twitter:image:alt" content="{{og_alt}}">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Meyssens">
+<link rel="canonical" href="{{url}}">
+{{seo_kopf}}
+<link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
+{{head}}
+<link rel="stylesheet" href="/assets/stil.css">
+{{ld}}
+</head>
+<body class="stil">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+{{kopf}}
+
+<main id="main">
+<section class="page-hero">
+{{krumen}}
+  <div class="chip"><span class="chip-dot"></span><span>{{chip}}</span></div>
+  <h1>{{h1}}</h1>
+  <p class="lead">{{lead}}</p>
+</section>
+
+{{inhalt}}
+</main>
+
+{{fuss}}
+
+{{rechtliches}}
+
+{{skripte}}
+<script src="/assets/demos.js" defer></script>
+</body>
+</html>

@@ -9,11 +9,13 @@
 <meta property="og:description" content="{{beschreibung}}">
 <meta property="og:url" content="{{url}}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://meyssens.ch/og-image.png">
+<meta property="og:image" content="{{og_bild}}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Meyssens – Digitale Infrastruktur für Organisationen">
+<meta property="og:image:alt" content="{{og_alt}}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{og_bild}}">
+<meta name="twitter:image:alt" content="{{og_alt}}">
 <meta property="og:locale" content="de_CH">
 <meta property="og:site_name" content="Meyssens">
 <link rel="canonical" href="{{url}}">
@@ -30,7 +32,7 @@
 
 <main id="main" class="baustein">
 <section class="page-hero">
-  <a href="{{branche_url}}{{branche_anker}}" class="back-link">← {{branche}}</a>
+{{krumen}}
   <div class="chip"><span class="chip-dot"></span><span>{{status_badge}}</span></div>
   <h1>{{name}}</h1>
   <p class="lead">{{kurzbeschreibung}}</p>
@@ -97,7 +99,7 @@
   </div>
 </section>
 
-<section id="anfrage" class="flaeche">
+{{verwandt}}<section id="anfrage" class="flaeche">
   <div class="contact-grid">
     <div class="r">
       <span class="s-label">{{status_badge}}</span>
