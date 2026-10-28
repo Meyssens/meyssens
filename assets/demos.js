@@ -243,10 +243,15 @@ var ablaufForm = document.getElementById('ablauf-anfrage');
 if(ablaufForm){
   alle('a[href="#ablauf-anfrage"]').forEach(function(a){
     a.addEventListener('click', function(){
-      var schritt = a.getAttribute('data-schritt'), feld = ablaufForm.querySelector('textarea');
-      if(schritt && feld && feld.value.indexOf(schritt) < 0){
-        feld.value = (feld.value ? feld.value + '\n' : '') + 'Interesse am Schritt: ' + schritt;
+      var schritt = a.getAttribute('data-schritt'), baustein = a.getAttribute('data-baustein'),
+          wahl = a.getAttribute('data-ablauf-wahl'), feld = ablaufForm.querySelector('textarea'),
+          auswahl = ablaufForm.querySelector('select[name="ablauf"]');
+      var zeile = schritt ? 'Interesse am Schritt: ' + schritt : baustein ? 'Interesse am Baustein: ' + baustein : '';
+      if(zeile && feld && feld.value.indexOf(zeile) < 0){
+        feld.value = (feld.value ? feld.value + '\n' : '') + zeile;
       }
+      // Mehrere Ketten auf einer Seite: der Knopf wählt seine Kette im gemeinsamen Formular
+      if(wahl && auswahl){ auswahl.value = wahl; }
       if(matchMedia('(pointer: fine)').matches){
         setTimeout(function(){ ablaufForm.querySelector('input[name="name"]').focus({preventScroll:true}); }, ruhig ? 0 : 600);
       }

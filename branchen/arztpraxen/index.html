@@ -79,7 +79,7 @@
   <h1>Arztpraxis digital entlasten: <span class="hl">Werkzeuge für Praxen in der Schweiz</span></h1>
   <p class="lead">In Arztpraxen ist das Telefon oft der Engpass. Das Praxisteam beantwortet zwischen Empfang, Terminen und Administration laufend dieselben allgemeinen Fragen. Digitale Werkzeuge können hier entlasten, aber nur dort, wo keine Gesundheitsdaten im Spiel sind. Wer digitale Helfer in der Praxis einsetzt, muss die Grenze zwischen allgemeiner Auskunft und medizinischer Beratung klar ziehen.</p>
   <nav class="sprung" aria-label="Auf dieser Seite">
-    <a href="#alltag">Alltag</a><a href="#beispiele">Beispielszenarien</a><a href="#besonderheit">Besonderheit</a><a href="#fragen">Fragen</a><a href="#produkte">Passende Produkte</a><a href="#anfrage">Anfrage</a>
+    <a href="#alltag">Alltag</a><a href="#beispiele">Beispielszenarien</a><a href="#besonderheit">Besonderheit</a><a href="#fragen">Fragen</a><a href="#automatisierung">Automatisierungen</a><a href="#produkte">Passende Produkte</a><a href="#anfrage">Anfrage</a>
   </nav>
 </section>
 
@@ -159,24 +159,422 @@
   </div>
 </section>
 
-<section id="bausteine">
-  <div class="r">
+<section id="automatisierung" class="dunkel">
+  <div class="kopf-mitte r">
     <span class="s-label">Automatisierung</span>
-    <h2>Bausteine für Arztpraxen</h2>
-    <p class="s-lead">Für Arztpraxen planen wir zuerst einen Baustein, der mit wenig Gesundheitsangaben auskommt. Entwürfe ja, automatischer Versand nein: Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>
+    <h2>Automatisierungen für Arztpraxen</h2>
+    <p class="s-lead">In einer Arztpraxis berührt fast jeder Ablauf Gesundheitsdaten, und das Berufsgeheimnis gilt auch für die Hilfspersonen der Ärztin oder des Arztes. Seit dem 1. Januar 2026 wird nach TARDOC und ambulanten Pauschalen abgerechnet. Wir haben zehn Bausteine geplant und beginnen mit denen, die keine Krankengeschichte brauchen.</p>
   </div>
-  <div class="angebot-raster">
-    <article class="angebot-karte r">
-      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Online-Terminanfrage für Arztpraxen</span></div>
-      <div class="angebot-inhalt">
-        <span class="status-chip">In Planung</span>
-        <h3><a href="/produkte/online-terminanfrage-arztpraxis/">Online-Terminanfrage für Arztpraxen</a></h3>
-        <p>Patientinnen und Patienten fragen einen Termin über ein kurzes Formular an, ohne Feld für Beschwerden. Die Anfrage landet in einer geordneten Liste mit einem Entwurf für die Antwort. Das Praxisteam wählt den Termin und gibt die Antwort frei.</p>
-        <div class="angebot-links"><a class="mehr" href="/produkte/online-terminanfrage-arztpraxis/">Mehr erfahren<span class="sr-only"> zu Online-Terminanfrage für Arztpraxen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/online-terminanfrage-arztpraxis/#ansicht">Beispielansicht<span class="sr-only"> zu Online-Terminanfrage für Arztpraxen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/online-terminanfrage-arztpraxis/#anfrage">Unverbindlich vormerken<span class="sr-only"> zu Online-Terminanfrage für Arztpraxen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
+  <p class="regel r"><strong>Entwürfe ja, automatischer Versand nein.</strong> Jeder Baustein bereitet vor: Entwürfe, Listen und Hinweise. Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>
+  <p class="auto-start r">Startempfehlung, Einschätzung: zuerst Baustein 7 (Terminanfrage), 10 (Dienstplan und Material) und 6 (Mahnentwurf). Die Terminanfrage braucht keine Anbindung an die Krankengeschichte, Dienstplan und Material betreffen kaum Patientendaten. Der Mahnentwurf arbeitet mit Rechnungsdaten und ist der heikelste der drei: erst zu empfehlen, wenn die Rechtslage zu Dritten unter dem Berufsgeheimnis geklärt ist. Die Bausteine 4 und 5 sind wegen des Tarifwechsels interessant, brauchen aber Leistungsdaten und folgen in einer zweiten Stufe.</p>
+  <div class="baustein-raster">
+    <article class="baustein-karte kompakt r" id="baustein-1">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">1</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3>Sammler für Rezeptanfragen</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Rezeptwünsche kommen per Telefon und werden auf Zetteln weitergegeben.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Ein Formular erfasst Medikament, Dosis und Apotheke, ordnet die Anfrage der Patientin oder dem Patienten zu und führt eine Liste für die Ärztin oder den Arzt.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die Ärztin oder der Arzt stellt das Rezept aus und unterschreibt.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Gesundheitsdaten, besonders schützenswert.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> der Zugriff auf den Patientenstamm der Praxissoftware.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Sammler für Rezeptanfragen">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-2">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">2</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3>Entwurf für Überweisungsschreiben</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Überweisungen werden aus Stammdaten und Notizen von Hand zusammengestellt.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Füllt eine Vorlage mit Stammdaten, Fragestellung und der Liste der Anlagen.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die Ärztin oder der Arzt verantwortet Inhalt und Versand.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Gesundheitsdaten, besonders schützenswert.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> der Export aus der Praxissoftware.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Entwurf für Überweisungsschreiben">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-3">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">3</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand gross, Einschätzung</span></div>
+      <h3>Laborauftrag und Zuordnung der Befunde</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Ob zu jedem Laborauftrag ein Befund zurückkam, wird von Hand verfolgt.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Bereitet Zuweisungen vor, gleicht eingehende Befunde mit offenen Aufträgen ab und meldet, was fehlt.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die medizinische Bewertung bleibt bei der Ärztin oder beim Arzt.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Gesundheitsdaten, besonders schützenswert.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> die Schnittstelle zum Labor.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Laborauftrag und Zuordnung der Befunde">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-4">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">4</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3>Plausibilitätsprüfung TARDOC und Pauschalen</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Leistungen werden vor der Rechnung von Hand auf Tarifregeln geprüft.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Prüft erfasste Leistungen auf bekannte Regeln, etwa dass pro Behandlung entweder nach TARDOC oder nach Pauschale abgerechnet wird, und markiert Auffälligkeiten.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die Praxis entscheidet über die endgültige Erfassung.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Leistungs- und Gesundheitsdaten, besonders schützenswert.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> der Regelkatalog, der sich je Fachgebiet unterscheidet.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Plausibilitätsprüfung TARDOC und Pauschalen">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-5">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">5</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3>Vorprüfung der Rechnung</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Fehlende Pflichtangaben fallen oft erst auf, wenn eine Rechnung zurückkommt.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Prüft Versichertenkarten- und AHV-Nummer sowie die XML-Version und führt eine Fehlerliste.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die Praxis korrigiert und gibt die Rechnung frei.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Rechnungs- und Gesundheitsdaten, besonders schützenswert.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Vorprüfung der Rechnung">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-6">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">6</span><span class="status-chip">In Planung</span><span class="status-chip start-chip">Startempfehlung</span><span class="baustein-aufwand">Aufwand klein, Einschätzung</span></div>
+      <h3><a href="/produkte/mahnentwurf-arztpraxis/">Mahnentwurf für Arztpraxen</a></h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Überfällige Rechnungen werden von Hand gesucht und Mahnungen einzeln geschrieben.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Erkennt überfällige Rechnungen im System Tiers garant und schreibt sachliche Mahnentwürfe ohne Angaben zur Behandlung.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die Praxis entscheidet, ob gemahnt wird, und berücksichtigt Härtefälle.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Rechnungsdaten, besonders schützenswert.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> der Export der offenen Rechnungen und die Einbindung externer Dienstleister unter dem Berufsgeheimnis.</p>
+      <a class="mehr" href="/produkte/mahnentwurf-arztpraxis/">Mehr erfahren<span class="sr-only"> zu Mahnentwurf für Arztpraxen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-7">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">7</span><span class="status-chip">In Planung</span><span class="status-chip start-chip">Startempfehlung</span><span class="baustein-aufwand">Aufwand klein, Einschätzung</span></div>
+      <h3><a href="/produkte/online-terminanfrage-arztpraxis/">Online-Terminanfrage für Arztpraxen</a></h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Terminwünsche kommen per Telefon und per E-Mail, oft mit Beschwerden im Freitext.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Ein Webformular erfasst Terminwunsch und Dringlichkeit ohne medizinische Details und zeigt die Absageregel der Praxis an.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Das Praxisteam vergibt den Termin und gibt die Antwort frei.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Name, Kontakt und Terminwunsch; auch das ist bei einer Arztpraxis sensibel, darum ein gesicherter Kanal.</p>
+      <a class="mehr" href="/produkte/online-terminanfrage-arztpraxis/">Mehr erfahren<span class="sr-only"> zu Online-Terminanfrage für Arztpraxen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-8">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">8</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3>Patientenformular mit Information nach EDÖB</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Anmeldeformulare auf Papier fragen oft mehr ab, als die Behandlung braucht.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Fragt nur Notwendiges ab und trennt die Einwilligungen, etwa für Tiers payant, für Weitergaben und für E-Mail.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die Praxis wählt die Felder und übernimmt die Angaben in die Krankengeschichte.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Gesundheitsdaten, besonders schützenswert.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> das Hosting in der Schweiz und die Regelung zur Bearbeitung durch Dritte.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Patientenformular mit Information nach EDÖB">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-9">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">9</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3>Recall für Vorsorge, Impfungen und Kontrollen</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Wer zur Kontrolle oder Impfung fällig ist, wird aus Listen oder aus dem Gedächtnis zusammengesucht.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Schreibt Briefentwürfe aus Fälligkeitsdaten, ohne Diagnose im Text.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die Praxis entscheidet, wer angeschrieben wird, und versendet selbst.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Gesundheitsdaten, besonders schützenswert.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Recall für Vorsorge, Impfungen und Kontrollen">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-10">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">10</span><span class="status-chip">In Planung</span><span class="status-chip start-chip">Startempfehlung</span><span class="baustein-aufwand">Aufwand klein, Einschätzung</span></div>
+      <h3><a href="/produkte/dienstplan-material-arztpraxis/">Dienstplan und Materialbestellung für Arztpraxen</a></h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Dienstplan und Bestellungen entstehen in Tabellen und auf Zetteln.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Schlägt Dienstpläne nach Pensum und Abwesenheiten vor und erstellt Bestelllisten, sobald der Mindestbestand erreicht ist.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Die Praxis entscheidet über Einsätze und löst Bestellungen selbst aus.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Personendaten der Mitarbeitenden, keine Patientendaten; Materiallisten sind nicht sensibel.</p>
+      <a class="mehr" href="/produkte/dienstplan-material-arztpraxis/">Mehr erfahren<span class="sr-only"> zu Dienstplan und Materialbestellung für Arztpraxen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </article>
   </div>
+  <div class="ablauf-gruppe" id="ablauf">
+  <div class="kopf-mitte r">
+    <h3 class="ablauf-gruppe-titel">Drei Abläufe, in denen die Bausteine zusammenspielen</h3>
+    <p class="s-lead">Die Ketten zeigen, wo ein Baustein vorbereitet und wo ein Mensch entscheidet. Bausteine mit eigener Seite sind verlinkt, die übrigen führen zu ihrer Karte oben.</p>
+  </div>
+  <div class="ablauf" id="ablauf-1" data-ablauf>
+    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.currentScript.parentNode.classList.add("bewegt")</script>
+    <div class="ablauf-kopf">
+      <h3>Ablauf: Rezeptanfrage bis Rückmeldung</h3>
+      <p>Wie eine Rezeptanfrage geordnet bei der Ärztin ankommen könnte, ohne dass medizinische Entscheide aus der Hand gegeben werden.</p>
+      <ul class="ablauf-legende" aria-label="Legende"><li class="baustein"><span class="ablauf-punkt" aria-hidden="true"></span>Läuft automatisch, als Entwurf</li><li class="mensch"><span class="ablauf-punkt" aria-hidden="true"></span>Mensch entscheidet</li></ul>
+    </div>
+    <ol class="ablauf-liste">
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">1</span> Anfrage per Formular</h4>
+          <p>Ein Patient bittet im Formular um ein Folgerezept und nennt seine Apotheke.</p>
+          <a class="ablauf-link" href="#baustein-1">Zum Baustein 1: Sammler für Rezeptanfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">2</span> Zuordnung und Einwilligung</h4>
+          <p>Die Anfrage wird dem Patienten zugeordnet, und es ist sichtbar, ob eine Einwilligung zur Weitergabe an die Apotheke vorliegt.</p>
+          <a class="ablauf-link" href="#baustein-8">Zum Baustein 8: Patientenformular mit Information nach EDÖB <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">3</span> Ärztliche Prüfung</h4>
+          <p>Die Ärztin prüft Krankengeschichte und mögliche Wechselwirkungen.</p><p class="ablauf-hinweis">Medizinischer Entscheid.</p>
+          <a class="ablauf-link" href="#baustein-1">Zum Baustein 1: Sammler für Rezeptanfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">4</span> Rezeptentwurf</h4>
+          <p>Ein Rezeptentwurf mit den Angaben aus der Anfrage liegt bereit.</p>
+          <a class="ablauf-link" href="#baustein-1">Zum Baustein 1: Sammler für Rezeptanfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">5</span> Unterschrift</h4>
+          <p>Die Ärztin stellt das Rezept aus und unterschreibt.</p>
+          <a class="ablauf-link" href="#baustein-1">Zum Baustein 1: Sammler für Rezeptanfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">6</span> Rückmeldung</h4>
+          <p>Das Praxisteam gibt die vorbereitete Rückmeldung an den Patienten frei.</p><p class="ablauf-hinweis">Rückmeldung als Entwurf.</p>
+          <a class="ablauf-link" href="#baustein-1">Zum Baustein 1: Sammler für Rezeptanfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+    </ol>
+    <div class="ablauf-ende">
+      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>
+      <div class="ablauf-ziel">
+        <p class="ablauf-ziel-text">Ziel: Rezeptwünsche geordnet statt am Telefon. Ausgestellt und unterschrieben wird jedes Rezept von der Ärztin oder dem Arzt.</p>
+        <a class="btn-p ablauf-cta" href="#ablauf-anfrage" data-ablauf-wahl="Rezeptanfrage bis Rückmeldung (Arztpraxen)"><span>Diesen Ablauf für meine Praxis anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>
+      </div>
+    </div>
+    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
+    <figure class="ablauf-bild">
+      <img src="/assets/ablauf/arztpraxen-1.png" width="1200" height="1152" loading="lazy" decoding="async" alt="Ablauf Rezeptanfrage bis Rückmeldung für Arztpraxen als Grafik: 1. Anfrage per Formular (Läuft automatisch, als Entwurf); 2. Zuordnung und Einwilligung (Läuft automatisch, als Entwurf); 3. Ärztliche Prüfung (Mensch entscheidet); 4. Rezeptentwurf (Läuft automatisch, als Entwurf); 5. Unterschrift (Mensch entscheidet); 6. Rückmeldung (Mensch entscheidet).">
+      <figcaption>Der Ablauf als Bild zum Teilen: <a href="/assets/ablauf/arztpraxen-1.png" download>Grafik «Rezeptanfrage bis Rückmeldung» herunterladen (PNG)</a></figcaption>
+    </figure>
+  </div>
+  <div class="ablauf" id="ablauf-2" data-ablauf>
+    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.currentScript.parentNode.classList.add("bewegt")</script>
+    <div class="ablauf-kopf">
+      <h3>Ablauf: Behandlung bis bezahlte Rechnung</h3>
+      <p>Nach dem Tarifwechsel 2026: Prüfungen vor dem Versand und eine geordnete Mahnung, die Entscheide bleiben in der Praxis.</p>
+      <ul class="ablauf-legende" aria-label="Legende"><li class="mensch"><span class="ablauf-punkt" aria-hidden="true"></span>Mensch entscheidet</li><li class="baustein"><span class="ablauf-punkt" aria-hidden="true"></span>Läuft automatisch, als Entwurf</li></ul>
+    </div>
+    <ol class="ablauf-liste">
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">1</span> Leistungen erfassen</h4>
+          <p>Nach der Konsultation erfasst die Praxis die Leistungen wie bisher in der Praxissoftware.</p><p class="ablauf-hinweis">In Ihrer Praxissoftware.</p>
+          <a class="ablauf-link" href="#baustein-4">Zum Baustein 4: Plausibilitätsprüfung TARDOC und Pauschalen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">2</span> Plausibilitätsprüfung</h4>
+          <p>Der Baustein markiert eine Behandlung, in der TARDOC-Positionen und eine Pauschale gemischt sind.</p>
+          <a class="ablauf-link" href="#baustein-4">Zum Baustein 4: Plausibilitätsprüfung TARDOC und Pauschalen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">3</span> Markiertes klären</h4>
+          <p>Die MPA klärt die markierten Fälle mit der Ärztin.</p>
+          <a class="ablauf-link" href="#baustein-4">Zum Baustein 4: Plausibilitätsprüfung TARDOC und Pauschalen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">4</span> Vorprüfung der Rechnung</h4>
+          <p>Vor dem Versand meldet die Vorprüfung eine fehlende AHV-Nummer.</p>
+          <a class="ablauf-link" href="#baustein-5">Zum Baustein 5: Vorprüfung der Rechnung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">5</span> Freigabe und Versand</h4>
+          <p>Die Praxis korrigiert, gibt frei und versendet die Rechnung selbst.</p>
+          <a class="ablauf-link" href="#baustein-5">Zum Baustein 5: Vorprüfung der Rechnung <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">6</span> Zahlungsfrist überwachen</h4>
+          <p>Ist eine Rechnung im System Tiers garant überfällig, erscheint sie in der Liste offener Posten.</p>
+          <a class="ablauf-link" href="/produkte/mahnentwurf-arztpraxis/">Zum Baustein: Mahnentwurf für Arztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">7</span> Mahnung prüfen</h4>
+          <p>Die Praxis prüft den Mahnentwurf, berücksichtigt Härtefälle und entscheidet, ob er verschickt wird.</p><p class="ablauf-hinweis">Nur mit geklärter Rechtslage zum Berufsgeheimnis.</p>
+          <a class="ablauf-link" href="/produkte/mahnentwurf-arztpraxis/">Zum Baustein: Mahnentwurf für Arztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+    </ol>
+    <div class="ablauf-ende">
+      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>
+      <div class="ablauf-ziel">
+        <p class="ablauf-ziel-text">Ziel: weniger zurückgewiesene Rechnungen nach dem Tarifwechsel. Erfassung, Freigabe und Mahnung bleiben Sache der Praxis.</p>
+        <a class="btn-p ablauf-cta" href="#ablauf-anfrage" data-ablauf-wahl="Behandlung bis bezahlte Rechnung (Arztpraxen)"><span>Diesen Ablauf für meine Praxis anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>
+      </div>
+    </div>
+    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
+    <figure class="ablauf-bild">
+      <img src="/assets/ablauf/arztpraxen-2.png" width="1200" height="1252" loading="lazy" decoding="async" alt="Ablauf Behandlung bis bezahlte Rechnung für Arztpraxen als Grafik: 1. Leistungen erfassen (Mensch entscheidet); 2. Plausibilitätsprüfung (Läuft automatisch, als Entwurf); 3. Markiertes klären (Mensch entscheidet); 4. Vorprüfung der Rechnung (Läuft automatisch, als Entwurf); 5. Freigabe und Versand (Mensch entscheidet); 6. Zahlungsfrist überwachen (Läuft automatisch, als Entwurf); 7. Mahnung prüfen (Mensch entscheidet).">
+      <figcaption>Der Ablauf als Bild zum Teilen: <a href="/assets/ablauf/arztpraxen-2.png" download>Grafik «Behandlung bis bezahlte Rechnung» herunterladen (PNG)</a></figcaption>
+    </figure>
+  </div>
+  <div class="ablauf" id="ablauf-3" data-ablauf>
+    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.currentScript.parentNode.classList.add("bewegt")</script>
+    <div class="ablauf-kopf">
+      <h3>Ablauf: Neue Patientin bis Recall</h3>
+      <p>Vom ersten Kontakt bis zur nächsten Kontrolle, mit möglichst wenig Papier am Empfang.</p>
+      <ul class="ablauf-legende" aria-label="Legende"><li class="baustein"><span class="ablauf-punkt" aria-hidden="true"></span>Läuft automatisch, als Entwurf</li><li class="mensch"><span class="ablauf-punkt" aria-hidden="true"></span>Mensch entscheidet</li></ul>
+    </div>
+    <ol class="ablauf-liste">
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">1</span> Terminanfrage</h4>
+          <p>Eine neue Patientin fragt online einen Termin an, ohne Beschwerden anzugeben.</p>
+          <a class="ablauf-link" href="/produkte/online-terminanfrage-arztpraxis/">Zum Baustein: Online-Terminanfrage für Arztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">2</span> Termin bestätigen</h4>
+          <p>Die MPA wählt den Termin und gibt die Bestätigung frei.</p>
+          <a class="ablauf-link" href="/produkte/online-terminanfrage-arztpraxis/">Zum Baustein: Online-Terminanfrage für Arztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">3</span> Formular-Paket</h4>
+          <p>Die MPA gibt der Patientin das Formular mit getrennten Einwilligungen.</p>
+          <a class="ablauf-link" href="#baustein-8">Zum Baustein 8: Patientenformular mit Information nach EDÖB <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">4</span> Vollständigkeit prüfen</h4>
+          <p>Der Baustein zeigt, welche Angaben oder Einwilligungen noch fehlen.</p>
+          <a class="ablauf-link" href="#baustein-8">Zum Baustein 8: Patientenformular mit Information nach EDÖB <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">5</span> Übernahme</h4>
+          <p>Die Praxis übernimmt die Angaben in die Praxissoftware.</p>
+          <a class="ablauf-link" href="#baustein-8">Zum Baustein 8: Patientenformular mit Information nach EDÖB <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">6</span> Fälligkeit erkennen</h4>
+          <p>Ein Jahr später erkennt der Baustein, dass eine Kontrolle fällig ist.</p>
+          <a class="ablauf-link" href="#baustein-9">Zum Baustein 9: Recall für Vorsorge, Impfungen und Kontrollen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">7</span> Recall verschicken</h4>
+          <p>Die Praxis prüft den Briefentwurf ohne Diagnose und verschickt ihn selbst.</p>
+          <a class="ablauf-link" href="#baustein-9">Zum Baustein 9: Recall für Vorsorge, Impfungen und Kontrollen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+    </ol>
+    <div class="ablauf-ende">
+      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>
+      <div class="ablauf-ziel">
+        <p class="ablauf-ziel-text">Ziel: weniger Papier am Empfang und kein vergessener Recall. Jede Nachricht an Patientinnen und Patienten gibt die Praxis frei.</p>
+        <a class="btn-p ablauf-cta" href="#ablauf-anfrage" data-ablauf-wahl="Neue Patientin bis Recall (Arztpraxen)"><span>Diesen Ablauf für meine Praxis anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>
+      </div>
+    </div>
+    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
+    <figure class="ablauf-bild">
+      <img src="/assets/ablauf/arztpraxen-3.png" width="1200" height="1252" loading="lazy" decoding="async" alt="Ablauf Neue Patientin bis Recall für Arztpraxen als Grafik: 1. Terminanfrage (Läuft automatisch, als Entwurf); 2. Termin bestätigen (Mensch entscheidet); 3. Formular-Paket (Mensch entscheidet); 4. Vollständigkeit prüfen (Läuft automatisch, als Entwurf); 5. Übernahme (Mensch entscheidet); 6. Fälligkeit erkennen (Läuft automatisch, als Entwurf); 7. Recall verschicken (Mensch entscheidet).">
+      <figcaption>Der Ablauf als Bild zum Teilen: <a href="/assets/ablauf/arztpraxen-3.png" download>Grafik «Neue Patientin bis Recall» herunterladen (PNG)</a></figcaption>
+    </figure>
+  </div>
+  <form class="ablauf-form" id="ablauf-anfrage" action="https://formspree.io/f/xlgpzzew" method="POST">
+    <h4>Einen Ablauf für meine Praxis anfragen</h4>
+    <input type="hidden" name="_subject" value="Ablauf-Anfrage über meyssens.ch: Arztpraxen">
+    <input type="hidden" name="branche" value="Arztpraxen">
+    <div class="fgrp"><label class="flabel" for="ab-ablauf">Ablauf</label><select class="fselect" id="ab-ablauf" name="ablauf"><option>Rezeptanfrage bis Rückmeldung (Arztpraxen)</option><option>Behandlung bis bezahlte Rechnung (Arztpraxen)</option><option>Neue Patientin bis Recall (Arztpraxen)</option><option>Mehrere Abläufe oder einzelne Bausteine (Arztpraxen)</option></select></div>
+    <div class="frow"><div class="fgrp"><label class="flabel" for="ab-name">Name</label><input class="finput" type="text" id="ab-name" name="name" autocomplete="name" required></div><div class="fgrp"><label class="flabel" for="ab-email">E-Mail</label><input class="finput" type="email" id="ab-email" name="email" autocomplete="email" required></div></div>
+    <div class="fgrp"><label class="flabel" for="ab-nachricht">Nachricht (optional)</label><textarea class="ftextarea" id="ab-nachricht" name="nachricht" rows="3" placeholder="Zum Beispiel: welche Software Sie heute nutzen"></textarea></div>
+    <div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>
+    <button type="submit" class="btn-p"><span>Ablauf anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p role="status" aria-live="polite"></p>
+  </form>
+  </div>
+  <p class="auto-ratgeber r">Passend dazu im Ratgeber: <a href="/ratgeber/patientenformular-datenschutz/">Patientenformulare und Datenschutz</a></p>
+  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Alle zehn Bausteine auf dieser Seite sind in Planung, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand, zur Handarbeit von heute und zur Reihenfolge sind Einschätzungen, keine gemessenen Werte. Was mit «Noch zu klären» markiert ist, haben wir nicht belegt. Vor einem Einsatz mit Personendaten gelten ein Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung, und wir prüfen die rechtlichen Fragen im Einzelfall. Zuletzt geprüft am 28.10.2026.</p>
 </section>
+<a class="anfrage-fest" href="#ablauf-anfrage" data-anfrage-fest hidden>Ablauf anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 <section id="produkte" class="dunkel">
   <div class="r">
     <span class="s-label">Passende Produkte</span>
@@ -216,11 +614,11 @@
       <p>Patientinnen und Patienten fragen einen Termin über ein kurzes Formular an, ohne Feld für Beschwerden.</p>
       <span class="way-go">Mehr zu Online-Terminanfrage für Arztpraxen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
-    <a href="/ratgeber/ndsg-kmu-checkliste/" class="feat tile">
+    <a href="/ratgeber/patientenformular-datenschutz/" class="feat tile">
       <span class="status-chip">Ratgeber</span>
-      <h3>nDSG für KMU: Checkliste</h3>
-      <p>Was KMU nach dem Schweizer Datenschutzgesetz tun müssen: Datenschutzerklärung, Verzeichnis, Auftragsbearbeiter, Pannen.</p>
-      <span class="way-go">Mehr zu nDSG für KMU: Checkliste <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h3>Patientenformulare und Datenschutz</h3>
+      <p>Information, Einwilligung, sichere Übermittlung und nur nötige Felder: was der EDÖB von Patientenformularen in Arztpraxen erwartet.</p>
+      <span class="way-go">Mehr zu Patientenformulare und Datenschutz <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
     <a href="/produkte/website-chatbot/" class="feat tile">
       <span class="status-chip">Produkt</span>

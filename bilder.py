@@ -4,6 +4,7 @@
 - assets/og/branche-<slug>.png: Open-Graph-Bild 1200x630 pro Branche (Branchenname und Kurztext aus
   branchen.json bzw. artikel.json), im Markenstil mit Syne/Inter und Akzentfarbe
 - assets/ablauf/<slug>.png: die Ablauf-Kette der Branchen mit Abschnitt "Was sich automatisieren lässt" als Bild
+- assets/ablauf/<slug>-<n>.png: die drei Ketten der Branchen mit Abschnitt "Automatisierungen" (branchen.json)
 
 Werkzeug für die Entwicklung, nicht für build.py: braucht Playwright mit Chromium. build.py bindet die Bilder ein,
 sobald die Dateien vorhanden sind. Nach Änderungen an Branchennamen, Kurztexten oder Ketten neu ausführen.
@@ -108,8 +109,10 @@ def main():
             seite.screenshot(path=str(ziel), clip={"x": 0, "y": 0, "width": 1200, "height": 630})
             print("geschrieben:", ziel.relative_to(ROOT))
 
-        for a in (a for a in artikel if a.get("automatisierung")):
-            k = a["automatisierung"]["kette"]
+        ketten = [(a["slug"], a["name"], a["automatisierung"]["kette"]) for a in artikel if a.get("automatisierung")]
+        ketten += [("%s-%d" % (b["slug"], i), b["name"], k) for b in branchen if b.get("automatisierungen")
+                   for i, k in enumerate(b["automatisierungen"]["ketten"], 1)]
+        for slug, name, k in ketten:
             arten = []
             for st in k["schritte"]:
                 if st["art"] not in arten:
@@ -127,8 +130,8 @@ def main():
                        "dashed" if st["art"] == "spaeter" else "solid", rand, i, rand,
                        "#3b3bd6" if st["art"] in ("spaeter", "baustein") else "#6b4100" if st["art"] == "mensch" else "#3c3c60",
                        text, html.escape(st["titel"]), html.escape(st["beispiel"])))
-            zeige(ABLAUF % (STIL, html.escape(a["name"]), html.escape(k["titel"]), LOGO, legende, "".join(schritte)))
-            ziel = ROOT / "assets" / "ablauf" / ("%s.png" % a["slug"])
+            zeige(ABLAUF % (STIL, html.escape(name), html.escape(k["titel"]), LOGO, legende, "".join(schritte)))
+            ziel = ROOT / "assets" / "ablauf" / ("%s.png" % slug)
             seite.locator("#bild").screenshot(path=str(ziel))
             print("geschrieben:", ziel.relative_to(ROOT))
         b.close()

@@ -292,6 +292,8 @@ BEDINGUNGEN = ("Vertrag zur Auftragsbearbeitung, bevor echte Daten verarbeitet w
                "Datenminimierung: nur die Angaben, die der Ablauf wirklich braucht")
 KETTE_ART = {"baustein": "Läuft automatisch, als Entwurf", "mensch": "Mensch entscheidet", "spaeter": "Später geplant",
              "vorhanden": "Ihre Software"}
+# Possessivpronomen für den Anfrage-Knopf: "für mein Büro", "für meinen Betrieb", sonst "für meine Praxis"
+MEIN = {"Büro": "mein", "Betrieb": "meinen"}
 AUTO_WORTE = (450, 1300)  # 3 bis 4 Bausteinkarten mit Formular, Ablauf-Kette und Demo
 BAUSTEIN_WORTE = (450, 1000)
 
@@ -397,15 +399,18 @@ KETTE_SYMBOL = {
 }
 
 
-def kette(k, nach_slug, branche, formular_ziel, einwilligung, slug=None):
-    # Ablauf-Kette als Scroll-Animation: ohne JS eine lesbare Liste, mit JS (demos.js) erscheint Schritt für Schritt.
+def kette_teile(k, nach_slug, karten=None):
+    # Schritte und Legende einer Ablauf-Kette.
     # Schritte: {titel, art, seite (Bausteinseite oder null), beispiel (1 Satz), hinweis (optional)}
+    # karten: {nr: name} der Bausteinkarten auf derselben Seite; ein Schritt mit "karte" verweist auf die Karte
     schritte, arten = [], []
     for i, st in enumerate(k["schritte"], 1):
-        art, seite = st["art"], st.get("seite")
+        art, seite, nr = st["art"], st.get("seite"), st.get("karte")
         if art not in KETTE_ART:
             raise SystemExit("Kette %s: unbekannte Art %s" % (k["titel"], art))
-        if art == "baustein" and not seite:
+        if nr is not None and (seite or nr not in (karten or {})):
+            raise SystemExit("Kette %s: Schritt %s mit Seite und Karte oder unbekannter Karte" % (k["titel"], st["titel"]))
+        if art == "baustein" and not seite and nr is None:
             raise SystemExit("Kette %s: Schritt %s ohne Bausteinseite" % (k["titel"], st["titel"]))
         if seite and seite not in nach_slug:
             raise SystemExit("Kette %s: unbekannter Baustein %s" % (k["titel"], seite))
@@ -416,6 +421,9 @@ def kette(k, nach_slug, branche, formular_ziel, einwilligung, slug=None):
         if seite:
             link = '<a class="ablauf-link" href="/produkte/%s/">Zum Baustein: %s %s</a>' % (
                 seite, html.escape(nach_slug[seite]["name"]), PFEIL)
+        elif nr is not None:
+            link = '<a class="ablauf-link" href="#baustein-%d">Zum Baustein %d: %s %s</a>' % (
+                nr, nr, html.escape(karten[nr]), PFEIL)
         else:
             link = ('<a class="ablauf-link" href="#ablauf-anfrage" data-schritt="%s">Noch kein eigener Baustein: '
                     'Interesse melden %s</a>' % (html.escape(st["titel"]), PFEIL))
@@ -435,7 +443,10 @@ def kette(k, nach_slug, branche, formular_ziel, einwilligung, slug=None):
                              html.escape(st["beispiel"]), hinweis, link))
     legende = "".join('<li class="%s"><span class="ablauf-punkt" aria-hidden="true"></span>%s</li>' % (art, KETTE_ART[art])
                       for art in arten)
-    knopf = "Diesen Ablauf für meine %s anfragen" % k["betrieb"]
+    return schritte, legende
+
+
+def kette_bild(k, branche, slug):
     # Ablauf als teilbares Bild (bilder.py), Alt-Text mit allen Schritten
     bild = ""
     datei = ROOT / "assets" / "ablauf" / ("%s.png" % slug)
@@ -447,6 +458,14 @@ def kette(k, nach_slug, branche, formular_ziel, einwilligung, slug=None):
                 '      <img src="/assets/ablauf/%s.png" width="%d" height="%d" loading="lazy" decoding="async" alt="%s">\n'
                 '      <figcaption>Der Ablauf als Bild zum Teilen: <a href="/assets/ablauf/%s.png" download>Grafik «%s» herunterladen (PNG)</a></figcaption>\n'
                 '    </figure>\n' % (slug, breite, hoehe, html.escape(alt), slug, html.escape(k["titel"])))
+    return bild
+
+
+def kette(k, nach_slug, branche, formular_ziel, einwilligung, slug=None):
+    # Ablauf-Kette als Scroll-Animation: ohne JS eine lesbare Liste, mit JS (demos.js) erscheint Schritt für Schritt.
+    schritte, legende = kette_teile(k, nach_slug)
+    knopf = "Diesen Ablauf für %s %s anfragen" % (MEIN.get(k["betrieb"], "meine"), k["betrieb"])
+    bild = kette_bild(k, branche, slug)
     wert = "%s (%s)" % (k["titel"], branche)
     return ('  <div class="ablauf" id="ablauf" data-ablauf>\n'
             '    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)'
@@ -530,6 +549,157 @@ def automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
                             "\n".join(baustein_karte(p, a["name"], formular_ziel, einwilligung) for p in bausteine),
                             html.escape(STUFEN[d["status"]]["badge"]),
                             html.escape(d["name"]), html.escape(d["kurzbeschreibung"]), d["slug"], PFEIL, bild, datum))
+
+
+# Branchen ohne Langtext mit Feld "automatisierungen": 10 Bausteine (nur einige mit eigener Seite), 3 Ablauf-Ketten
+# und ein gemeinsames Anfrage-Formular
+AUTOMATISIERUNGEN_WORTE = (900, 2400)
+EINTRAG_FELDER = ("nr", "name", "heute", "auto", "mensch", "daten", "aufwand")
+
+
+def eintrag_karte(x, nach_slug):
+    # Kompakte Karte eines der 10 Bausteine: mit eigener Seite verlinkt, sonst Interesse über das Ablauf-Formular
+    s = x.get("seite")
+    name = html.escape(x["name"])
+    titel = '<a href="/produkte/%s/">%s</a>' % (s, name) if s else name
+    chips = '<span class="status-chip">%s</span>' % html.escape(STUFEN[nach_slug[s]["status"]]["badge"] if s else "In Planung")
+    if x.get("start"):
+        chips += '<span class="status-chip start-chip">Startempfehlung</span>'
+    offen = ('      <p class="baustein-offen"><strong>Noch zu klären:</strong> %s</p>\n' % html.escape(x["offen"])
+             if x.get("offen") else "")
+    link = ('      <a class="mehr" href="/produkte/%s/">Mehr erfahren %s</a>\n' % (s, PFEIL) if s else
+            '      <a class="mehr" href="#ablauf-anfrage" data-baustein="%s">Interesse an diesem Baustein melden %s</a>\n'
+            % (name, PFEIL))
+    return ('    <article class="baustein-karte kompakt r" id="baustein-%d">\n'
+            '      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">%d</span>%s'
+            '<span class="baustein-aufwand">Aufwand %s, Einschätzung</span></div>\n'
+            '      <h3>%s</h3>\n'
+            '      <dl class="baustein-teile">\n'
+            '        <div><dt>Heute von Hand, Einschätzung</dt><dd>%s</dd></div>\n'
+            '        <div><dt>Das übernimmt der Baustein</dt><dd>%s</dd></div>\n'
+            '        <div><dt>Das entscheidet der Mensch</dt><dd>%s</dd></div>\n'
+            '      </dl>\n'
+            '      <p class="baustein-daten"><strong>Daten:</strong> %s</p>\n'
+            '%s%s'
+            '    </article>' % (x["nr"], x["nr"], chips, html.escape(x["aufwand"]), titel, html.escape(x["heute"]),
+                               html.escape(x["auto"]), html.escape(x["mensch"]), html.escape(x["daten"]), offen, link))
+
+
+def ablauf_block(k, nach_slug, branche, nr, slug, karten):
+    # Eine von mehreren Ablauf-Ketten einer Seite; der Knopf wählt die Kette im gemeinsamen Formular vor
+    schritte, legende = kette_teile(k, nach_slug, karten)
+    wert = "%s (%s)" % (k["titel"], branche)
+    return ('  <div class="ablauf" id="ablauf-%d" data-ablauf>\n'
+            '    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)'
+            'document.currentScript.parentNode.classList.add("bewegt")</script>\n'
+            '    <div class="ablauf-kopf">\n'
+            '      <h3>Ablauf: %s</h3>\n'
+            '      <p>%s</p>\n'
+            '      <ul class="ablauf-legende" aria-label="Legende">%s</ul>\n'
+            '    </div>\n'
+            '    <ol class="ablauf-liste">\n%s\n    </ol>\n'
+            '    <div class="ablauf-ende">\n'
+            '      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>\n'
+            '      <div class="ablauf-ziel">\n'
+            '        <p class="ablauf-ziel-text">%s</p>\n'
+            '        <a class="btn-p ablauf-cta" href="#ablauf-anfrage" data-ablauf-wahl="%s"><span>Diesen Ablauf für %s %s anfragen</span> %s</a>\n'
+            '        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>\n'
+            '      </div>\n'
+            '    </div>\n'
+            '    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>\n'
+            '%s'
+            '  </div>' % (nr, html.escape(k["titel"]), html.escape(k["text"]), legende, "\n".join(schritte),
+                         html.escape(k["abschluss"]), html.escape(wert), MEIN.get(k["betrieb"], "meine"), html.escape(k["betrieb"]), PFEIL,
+                         kette_bild(k, branche, slug)))
+
+
+def automatisierungen(b, nach_slug, ratgeber, formular_ziel, einwilligung):
+    # Abschnitt "Automatisierungen" einer Branche ohne Langtext (branchen.json, Feld "automatisierungen")
+    au = b.get("automatisierungen")
+    if not au:
+        return ""
+    name = b["name"]
+    werte = ["%s (%s)" % (k["titel"], name) for k in au["ketten"]]
+    optionen = "".join('<option>%s</option>' % html.escape(w) for w in werte + ["Mehrere Abläufe oder einzelne Bausteine (%s)" % name])
+    betrieb = au["ketten"][0]["betrieb"]
+    r = ratgeber[au["ratgeber"]]
+    datum = datetime.date.fromisoformat(au["geprueft"]).strftime("%d.%m.%Y")
+    return ('<section id="automatisierung" class="dunkel">\n'
+            '  <div class="kopf-mitte r">\n'
+            '    <span class="s-label">Automatisierung</span>\n'
+            '    <h2>Automatisierungen für %s</h2>\n'
+            '    <p class="s-lead">%s</p>\n'
+            '  </div>\n'
+            '  <p class="regel r"><strong>%s</strong> %s</p>\n'
+            '  <p class="auto-start r">%s</p>\n'
+            '  <div class="baustein-raster">\n%s\n  </div>\n'
+            '  <div class="ablauf-gruppe" id="ablauf">\n'
+            '  <div class="kopf-mitte r">\n'
+            '    <h3 class="ablauf-gruppe-titel">Drei Abläufe, in denen die Bausteine zusammenspielen</h3>\n'
+            '    <p class="s-lead">%s</p>\n'
+            '  </div>\n'
+            '%s\n'
+            '  <form class="ablauf-form" id="ablauf-anfrage" action="%s" method="POST">\n'
+            '    <h4>Einen Ablauf für %s %s anfragen</h4>\n'
+            '    <input type="hidden" name="_subject" value="Ablauf-Anfrage über meyssens.ch: %s">\n'
+            '    <input type="hidden" name="branche" value="%s">\n'
+            '    <div class="fgrp"><label class="flabel" for="ab-ablauf">Ablauf</label>'
+            '<select class="fselect" id="ab-ablauf" name="ablauf">%s</select></div>\n'
+            '    <div class="frow"><div class="fgrp"><label class="flabel" for="ab-name">Name</label>'
+            '<input class="finput" type="text" id="ab-name" name="name" autocomplete="name" required></div>'
+            '<div class="fgrp"><label class="flabel" for="ab-email">E-Mail</label>'
+            '<input class="finput" type="email" id="ab-email" name="email" autocomplete="email" required></div></div>\n'
+            '    <div class="fgrp"><label class="flabel" for="ab-nachricht">Nachricht (optional)</label>'
+            '<textarea class="ftextarea" id="ab-nachricht" name="nachricht" rows="3" '
+            'placeholder="Zum Beispiel: welche Software Sie heute nutzen"></textarea></div>\n'
+            '    %s\n'
+            '    <button type="submit" class="btn-p"><span>Ablauf anfragen</span> %s</button>\n'
+            '    <p role="status" aria-live="polite"></p>\n'
+            '  </form>\n'
+            '  </div>\n'
+            '  <p class="auto-ratgeber r">Passend dazu im Ratgeber: <a href="/ratgeber/%s/">%s</a></p>\n'
+            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Alle zehn Bausteine auf dieser Seite '
+            'sind in Planung, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand, zur Handarbeit von heute '
+            'und zur Reihenfolge sind Einschätzungen, keine gemessenen Werte. Was mit «Noch zu klären» markiert ist, haben wir '
+            'nicht belegt. Vor einem Einsatz mit Personendaten gelten ein Vertrag zur Auftragsbearbeitung, Hosting in der '
+            'Schweiz und Datenminimierung, und wir prüfen die rechtlichen Fragen im Einzelfall. Zuletzt geprüft am %s.</p>\n'
+            '</section>\n'
+            '<a class="anfrage-fest" href="#ablauf-anfrage" data-anfrage-fest hidden>Ablauf anfragen %s</a>\n'
+            % (html.escape(name), html.escape(au["intro"]), REGEL[0], REGEL[1], html.escape(au["start"]),
+               "\n".join(eintrag_karte(x, nach_slug) for x in au["liste"]), html.escape(au["ketten_intro"]),
+               "\n".join(ablauf_block(k, nach_slug, name, i, "%s-%d" % (b["slug"], i), {x["nr"]: x["name"] for x in au["liste"]})
+                         for i, k in enumerate(au["ketten"], 1)),
+               formular_ziel, MEIN.get(betrieb, "meine"), html.escape(betrieb), html.escape(name), html.escape(name), optionen,
+               einwilligung.replace('id="', 'id="ab-').replace('for="', 'for="ab-'), PFEIL,
+               r["slug"], html.escape(r["name"]), datum, PFEIL))
+
+
+def pruefe_automatisierungen(b, nach_slug, ratgeber_slugs):
+    au = b["automatisierungen"]
+    fehlt = [f for f in ("intro", "start", "ketten_intro", "geprueft", "ratgeber") if not au.get(f)]
+    if len(au.get("liste", [])) != 10:
+        fehlt.append("liste (genau 10)")
+    if len(au.get("ketten", [])) != 3:
+        fehlt.append("ketten (genau 3)")
+    if fehlt:
+        raise SystemExit("Automatisierungen %s: %s" % (b["slug"], ", ".join(fehlt)))
+    if au["ratgeber"] not in ratgeber_slugs:
+        raise SystemExit("Automatisierungen %s: unbekannter Ratgeber %s" % (b["slug"], au["ratgeber"]))
+    for i, x in enumerate(au["liste"], 1):
+        fehlt = [f for f in EINTRAG_FELDER if not x.get(f)]
+        if x.get("nr") != i or x.get("aufwand") not in AUFWAND or fehlt:
+            raise SystemExit("Automatisierungen %s, Baustein %s: %s" % (b["slug"], i, ", ".join(fehlt) or "nr oder aufwand"))
+        s = x.get("seite")
+        if s and (s not in b.get("bausteine", []) or nach_slug[s]["aufwand"] != x["aufwand"]):
+            raise SystemExit("Automatisierungen %s: %s nicht in bausteine oder Aufwand weicht ab" % (b["slug"], s))
+    if sorted(x["seite"] for x in au["liste"] if x.get("seite")) != sorted(b.get("bausteine", [])):
+        raise SystemExit("Automatisierungen %s: jede Bausteinseite braucht genau einen Eintrag in der Liste" % b["slug"])
+    betriebe = {k.get("betrieb") for k in au["ketten"]}
+    if len(betriebe) != 1 or not all(k.get(f) for k in au["ketten"] for f in ("titel", "text", "abschluss", "schritte")):
+        raise SystemExit("Automatisierungen %s: Kette unvollständig oder Betrieb uneinheitlich" % b["slug"])
+    roh = json.dumps(au, ensure_ascii=False)
+    if "ß" in roh:
+        raise SystemExit("Automatisierungen %s: ß im Text" % b["slug"])
 
 
 def kurz(text, laenge=155, mindestens=120):
@@ -818,6 +988,9 @@ def main():
             if not q.get("frage") or not q.get("antwort"):
                 raise SystemExit("Baustein %s: FAQ unvollständig" % p["slug"])
     ratgeber = [a for a in artikel if a["art"] == "ratgeber"]
+    nach_ratgeber = {a["slug"]: a for a in ratgeber}
+    for b in (b for b in branchen if b.get("automatisierungen")):
+        pruefe_automatisierungen(b, nach_slug, nach_ratgeber)
 
     # Seiten und ihre Verknüpfungen aus den Daten: Branche ↔ Bausteine/Produkte ↔ Ratgeber
     info, netz = {}, {}
@@ -848,7 +1021,8 @@ def main():
                 verbinde(url_a, z)
     for r in ratgeber:
         for b in branchen:
-            if set(r["produkte"]) & set(b["produkte"] + b.get("bausteine", [])):
+            if set(r["produkte"]) & set(b["produkte"] + b.get("bausteine", [])) or \
+                    b.get("automatisierungen", {}).get("ratgeber") == r["slug"]:
                 verbinde("/ratgeber/%s/" % r["slug"], "/branchen/%s/" % b["slug"])
     ZIELNAMEN.update({u: x["name"] for u, x in info.items()})
     for p in (p for p in produkte if ist_baustein(p)):
@@ -931,7 +1105,8 @@ def main():
             "besonderheit_text": html.escape(b["besonderheit"]["text"]),
             "schweiz": html.escape(b["schweiz"]),
             "produkte": "\n".join(angebot(nach_slug[s]) for s in b["produkte"]),
-            "bausteine_abschnitt": ('<section id="bausteine">\n  <div class="r">\n    <span class="s-label">Automatisierung</span>\n'
+            "sprung_auto": '<a href="#automatisierung">Automatisierungen</a>' if b.get("automatisierungen") else "",
+            "bausteine_abschnitt": automatisierungen(b, nach_slug, nach_ratgeber, formular_ziel, einwilligung) if b.get("automatisierungen") else ('<section id="bausteine">\n  <div class="r">\n    <span class="s-label">Automatisierung</span>\n'
                                     '    <h2>Bausteine für %s</h2>\n    <p class="s-lead">%s Entwürfe ja, automatischer Versand nein: '
                                     'Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>\n  </div>\n  <div class="angebot-raster">\n%s\n  </div>\n'
                                     '</section>\n' % (html.escape(b["name"]), html.escape(b.get("bausteine_intro", "")),
@@ -942,7 +1117,12 @@ def main():
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
         })
-        schreibe("branchen/%s/index.html" % b["slug"], fuelle(vorlage_branche, werte))
+        seite = fuelle(vorlage_branche, werte)
+        if b.get("automatisierungen"):
+            n = worte(zwischen(seite, '<section id="automatisierung"', "</section>"))
+            hinweis = "" if AUTOMATISIERUNGEN_WORTE[0] <= n <= AUTOMATISIERUNGEN_WORTE[1] else "  ACHTUNG: ausserhalb %d bis %d" % AUTOMATISIERUNGEN_WORTE
+            print("Wörter /branchen/%s/#automatisierung: %d%s" % (b["slug"], n, hinweis))
+        schreibe("branchen/%s/index.html" % b["slug"], seite)
 
     # Alle Seiten, auf die Langtext-Seiten intern verlinken dürfen
     bekannte_seiten = {"/", "/gemeinden/", "/unternehmen/"}
@@ -1047,7 +1227,7 @@ def main():
             "name": e["name"],
             "branche": html.escape(b["name"]),
             "branche_url": "/branchen/%s/" % b["slug"],
-            "branche_anker": "#automatisierung" if langtext else "#bausteine",
+            "branche_anker": "#automatisierung" if langtext or b.get("automatisierungen") else "#bausteine",
             "status_badge": stufe["badge"],
             "status_text": stufe["text"],
             "knopf": stufe["knopf"],
@@ -1070,6 +1250,8 @@ def main():
                            else "Weitere Bausteine und passende Seiten" if andere else "Passend zum Thema",
                            'Ausgewählt für diese Branche, mit Ablauf-Grafik und Beispiel auf der <a href="/branchen/%s/#automatisierung">'
                            'Branchenseite</a>.' % b["slug"] if langtext else
+                           'Alle zehn geplanten Bausteine für %s und drei Abläufe stehen auf der <a href="/branchen/%s/#automatisierung">'
+                           'Branchenseite</a>.' % (html.escape(b["name"]), b["slug"]) if b.get("automatisierungen") else
                            'Alle Bausteine für %s stehen auf der <a href="/branchen/%s/#bausteine">Branchenseite</a>.'
                            % (html.escape(b["name"]), b["slug"]),
                            "\n".join([link_kachel("/produkte/%s/" % x["slug"], STUFEN[x["status"]]["badge"], x["name"],
@@ -1109,7 +1291,8 @@ def main():
                 for s in liste))
             for a, anker, liste in [(a, "#automatisierung", a["automatisierung"]["bausteine"])
                                     for a in artikel_branchen if a.get("automatisierung")] +
-                                   [(b, "#bausteine", b["bausteine"]) for b in branchen if b.get("bausteine")]),
+                                   [(b, "#automatisierung" if b.get("automatisierungen") else "#bausteine", b["bausteine"])
+                                    for b in branchen if b.get("bausteine")]),
         "ld": ld(*seitenld),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
                                for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
@@ -1139,8 +1322,8 @@ def main():
          "Bausteine wir planen. Alle Angaben beziehen sich auf die Schweiz.",
          abschnitt_html("alle", "Branchen", "Alle Branchen", raster([eintrag(u) for u in alle_branchen]))),
         ((START, STUFE_RATGEBER), "Ratgeber für Schweizer KMU: nDSG, Offerten | Meyssens",
-         "Ratgeber mit Quellen und Prüfdatum: nDSG für KMU, Offertanfragen, Online-Abstimmung im Verein, Mietformulare, "
-         "Spitex-Abrechnung. Jetzt lesen.",
+         "Ratgeber mit Quellen und Prüfdatum: nDSG, Aufbewahrungsfristen, Mängelrüge 2026, Patientenformulare, "
+         "Sicherheitsnachweis, Spitex und mehr. Jetzt lesen.",
          "Ratgeber", "Ratgeber mit <span class=\"hl\">Quellen.</span>",
          "Kurze Leitfäden zu Fragen aus dem Alltag Schweizer KMU, Praxen, Verwaltungen und Vereine. Jeder Ratgeber nennt "
          "seine Quellen und das Datum der letzten Prüfung. Allgemeine Information, keine Rechtsberatung.",
@@ -1256,7 +1439,7 @@ def main():
               ("/branchen/", "0.7", SEITEN_STAND), ("/produkte/", "0.7", SEITEN_STAND), ("/ratgeber/", "0.7", SEITEN_STAND),
               ("/ueber-uns/", "0.5", SEITEN_STAND)]
     seiten += [("/produkte/%s/" % p["slug"], "0.6", p.get("geprueft", SEITEN_STAND)) for p in produkte]
-    seiten += [("/branchen/%s/" % b["slug"], "0.6", SEITEN_STAND) for b in branchen]
+    seiten += [("/branchen/%s/" % b["slug"], "0.6", b.get("automatisierungen", {}).get("geprueft", SEITEN_STAND)) for b in branchen]
     seiten += [("/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]), "0.6", a["geprueft"]) for a in artikel]
     zeilen = ["  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>"
               % (DOMAIN, pfad, stand, prio) for pfad, prio, stand in seiten]
