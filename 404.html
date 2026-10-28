@@ -44,6 +44,7 @@
   <ul class="nav-items">
     <li><a href="/gemeinden/">Für Gemeinden</a></li>
     <li><a href="/unternehmen/">Für Unternehmen und Vereine</a></li>
+    <li><a href="/ueber-uns/">Über uns</a></li>
     <li><a href="mailto:lionel@meyssens.ch" class="nav-btn">Kontakt</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
@@ -51,6 +52,7 @@
 <div class="mobile-nav" id="mobile-nav">
   <a href="/gemeinden/">Für Gemeinden</a>
   <a href="/unternehmen/">Für Unternehmen und Vereine</a>
+  <a href="/ueber-uns/">Über uns</a>
   <a href="mailto:lionel@meyssens.ch" class="nav-btn">Kontakt</a>
 </div>
 
@@ -89,7 +91,7 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="/" class="flogo"><img src="/logo-web.png" width="701" height="96" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
+      <a href="/" class="flogo"><img src="/logo-web.png" width="701" height="96" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
       <p>Digitale Infrastruktur für Gemeinden, Unternehmen und Vereine.</p>
       <p style="color:rgba(255,255,255,0.7);font-size:.85rem;margin-top:.5rem">lionel@meyssens.ch</p>
     </div>
@@ -97,6 +99,9 @@
       <h3>Bereiche</h3>
       <a href="/gemeinden/">Für Gemeinden</a>
       <a href="/unternehmen/">Für Unternehmen und Vereine</a>
+      <a href="/branchen/">Branchen</a>
+      <a href="/ratgeber/">Ratgeber</a>
+      <a href="/ueber-uns/">Über uns</a>
       <a href="mailto:lionel@meyssens.ch">Kontakt</a>
     </div>
     <div class="footer-col">
@@ -108,7 +113,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <a href="/" class="flogo"><img src="/logo-web.png" width="701" height="96" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
+    <a href="/" class="flogo"><img src="/logo-web.png" width="701" height="96" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
     <p class="fcopy">© 2026 Meyssens · Lausen, Basel-Landschaft · Schweiz</p>
     <div class="footer-legal">
       <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'">Impressum</a>
@@ -120,7 +125,7 @@
 <div class="cookie-banner hidden" id="cookie-banner">
   <div class="cookie-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="7"/><circle cx="6" cy="6.5" r=".6" fill="var(--blue)" stroke="none"/><circle cx="10.5" cy="6" r=".6" fill="var(--blue)" stroke="none"/><circle cx="6.5" cy="10.5" r=".6" fill="var(--blue)" stroke="none"/><circle cx="10" cy="10.5" r=".6" fill="var(--blue)" stroke="none"/></svg></div>
   <div class="cookie-title" data-i18n="cookie.title">Ihre Privatsphäre ist uns wichtig</div>
-  <div class="cookie-text" data-i18n="cookie.text">Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Mehr erfahren</a></div>
+  <div class="cookie-text" data-i18n="cookie.text">Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Mehr erfahren<span class="sr-only"> zur Datenschutzerklärung</span></a></div>
   <div class="cookie-actions">
     <button class="cookie-btn cookie-decline" id="cookie-decline" data-i18n="cookie.decline">Ablehnen</button>
     <button class="cookie-btn cookie-accept" id="cookie-accept" data-i18n="cookie.accept">Akzeptieren</button>
@@ -165,7 +170,7 @@ document.addEventListener('click',(e)=>{if(!hamburger.contains(e.target)&&!mobil
 
 // --- Cookie consent for Google Analytics ---
 const COOKIE_I18N = {
-  de: {title:"Ihre Privatsphäre ist uns wichtig", accept:"Akzeptieren", decline:"Ablehnen", text:'Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Mehr erfahren</a>'},
+  de: {title:"Ihre Privatsphäre ist uns wichtig", accept:"Akzeptieren", decline:"Ablehnen", text:'Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Mehr erfahren<span class="sr-only"> zur Datenschutzerklärung</span></a>'},
   fr: {title:"Votre vie privée compte pour nous", accept:"Accepter", decline:"Refuser", text:'Ce site utilise Google Analytics pour analyser de manière anonyme le comportement des utilisateurs. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">En savoir plus</a>'},
   it: {title:"La vostra privacy è importante per noi", accept:"Accetta", decline:"Rifiuta", text:'Questo sito utilizza Google Analytics per analizzare in forma anonima il comportamento degli utenti. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Maggiori informazioni</a>'},
   en: {title:"Your privacy matters to us", accept:"Accept", decline:"Decline", text:'This website uses Google Analytics to anonymously analyse visitor behaviour. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Learn more</a>'}

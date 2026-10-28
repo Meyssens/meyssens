@@ -356,7 +356,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .stil .mobile-nav{background:#fff;-webkit-backdrop-filter:none;backdrop-filter:none}
 
 /* Seiten-Navigationen (Sprungmarken, Inhaltsverzeichnis) nicht wie die Kopfzeile fixieren */
-.stil nav.sprung,.stil nav.toc{position:static;top:auto;left:auto;right:auto;z-index:auto;height:auto;border:0;border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;transition:none}
+.stil nav.sprung,.stil nav.toc,.stil nav.brotkrumen{position:static;top:auto;left:auto;right:auto;z-index:auto;height:auto;border:0;border-radius:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;transition:none}
 .stil nav.sprung{background:none;padding:0}
 .stil nav.toc{display:block}
 
@@ -602,3 +602,16 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 /* 404-Seite */
 .links-404{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1rem;max-width:1180px;margin:0 auto}
 .note-schweiz{margin-top:1rem}
+
+/* Brotkrumen: sichtbar auf allen Unterseiten, gleiche Stufen wie BreadcrumbList im JSON-LD */
+.stil nav.brotkrumen{display:block;margin:0 auto 1.25rem;padding:0;max-width:100%;background:none;width:auto}
+.brotkrumen ol{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem .45rem;margin:0;padding:0;font-size:.82rem;line-height:1.5;color:var(--ink3)}
+.brotkrumen li{display:inline-flex;align-items:center;gap:.45rem;min-width:0}
+.brotkrumen li+li::before{content:"›";color:var(--ink4)}
+.brotkrumen a{color:var(--ink3);text-decoration:none;padding:.5rem 0}
+.brotkrumen a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.brotkrumen [aria-current="page"]{color:var(--ink2);overflow-wrap:anywhere}
+.ablauf-bild{margin:1.75rem 0 0 calc(48px + clamp(.85rem,2.5vw,1.5rem));max-width:620px}
+.ablauf-bild img{display:block;width:100%;height:auto;border-radius:16px;background:#fff}
+.ablauf-bild figcaption{font-size:.82rem;line-height:1.55;color:rgba(255,255,255,.7);margin-top:.6rem}
+@media(max-width:560px){.ablauf-bild{margin-left:0}}

@@ -24,6 +24,12 @@
 - Ratgeber und Bausteine: jede Seite endet mit dem Anfrage-Formular (Abschnitt #anfrage mit Formular und Knopf),
   Ratgeber sind von einer Branchenseite und der Übersicht verlinkt, Bausteine mit FAQ haben mindestens 3 Fragen,
   Branchen ohne Langtext zeigen ihre Bausteine im Abschnitt #bausteine
+- Technik (alle Seiten ausser /gemeinden/): sichtbare Brotkrumen gleich BreadcrumbList, WebPage mit ImageObject,
+  og:image und twitter:image auf vorhandene Datei, keine generischen Linktexte ohne Ziel, Bilder mit Massen und
+  lazy loading ausser dem ersten Bild, "Das könnte Sie auch interessieren" mit 3 Links auf Branchen-, Baustein- und
+  Ratgeberseiten, Über uns in Kopf und Fuss mit Person im JSON-LD, Article mit datePublished und dateModified,
+  keine SearchAction ohne Suche, jede Seite von der Startseite in höchstens 3 Klicks erreichbar, keine verwaiste
+  Seite, Sitemap mit lastmod (Prüfdatum, wo vorhanden)
 Nur Python-Standardbibliothek.
 """
 import html
@@ -309,7 +315,7 @@ for url, (text, parser) in sorted(seiten.items()):
     hat_faq = '<section id="fragen"' in text and '<div class="qa">' in text
     if hat_faq != ("FAQPage" in typen):
         fehler.append("%s: FAQPage passt nicht zu den sichtbaren Fragen" % url)
-    if url.startswith("/produkte/") and "Service" not in typen:
+    if url.startswith("/produkte/") and url != "/produkte/" and "Service" not in typen:
         fehler.append("%s: JSON-LD ohne Service" % url)
     if re.search(r"aggregateRating|\"Review\"|reviewRating", roh):
         fehler.append("%s: Bewertungen in JSON-LD" % url)
@@ -355,6 +361,99 @@ for b in (b for b in branchen_daten if b.get("bausteine")):
     for x in b["bausteine"]:
         if 'href="/produkte/%s/"' % x not in teil:
             fehler.append("/branchen/%s/: Baustein %s fehlt im Abschnitt #bausteine" % (b["slug"], x))
+
+# --- Technik: Brotkrumen, Bilder, verwandte Links, Über uns, Erreichbarkeit, Sitemap ---
+GENERISCH = re.compile(r"(?i)(hier|hier klicken|klicken sie hier|click here|mehr|mehr erfahren|weiter|weiterlesen|link|"
+                       r"details|beispielansicht|beispiel ausprobieren|unverbindlich vormerken)")
+lastmod = dict(re.findall(r"<loc>https://meyssens\.ch([^<]+)</loc><lastmod>([^<]+)</lastmod>", sitemap))
+for url, (text, parser) in sorted(seiten.items()):
+    if url == "/gemeinden/":
+        continue
+    graph = [g for blk in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, flags=re.S)
+             for g in json.loads(blk).get("@graph", [])]
+    typen = [g["@type"] for g in graph]
+    if "SearchAction" in json.dumps(graph):
+        fehler.append("%s: SearchAction ohne Suche" % url)
+    webseite = [g for g in graph if g["@type"] == "WebPage"]
+    if not webseite or webseite[0].get("primaryImageOfPage", {}).get("@type") != "ImageObject":
+        fehler.append("%s: WebPage mit ImageObject fehlt" % url)
+    if url != "/":
+        kette = next((g for g in graph if g["@type"] == "BreadcrumbList"), {"itemListElement": []})["itemListElement"]
+        soll = [(x["name"], x["item"].replace("https://meyssens.ch", "")) for x in kette]
+        nav = re.search(r'<nav class="brotkrumen" aria-label="Brotkrumen"><ol>(.*?)</ol></nav>', text)
+        ist = []
+        if nav:
+            ist = [(html.unescape(n), u) for u, n in re.findall(r'<li><a href="([^"]+)">([^<]+)</a></li>', nav.group(1))]
+            ist += [(html.unescape(n), url) for n in re.findall(r'<li aria-current="page">([^<]+)</li>', nav.group(1))]
+        if not nav or ist != soll or len(soll) < 2:
+            fehler.append("%s: sichtbare Brotkrumen fehlen oder passen nicht zum JSON-LD" % url)
+    og = re.search(r'<meta property="og:image" content="https://meyssens\.ch(/[^"]+)">', text)
+    tw = re.search(r'<meta name="twitter:image" content="https://meyssens\.ch(/[^"]+)">', text)
+    if not og or not tw or og.group(1) != tw.group(1) or not (ROOT / og.group(1).lstrip("/")).is_file():
+        fehler.append("%s: og:image/twitter:image fehlt, weicht ab oder Datei fehlt" % url)
+    for m in re.finditer(r"<a\b[^>]*>(.*?)</a>", text, flags=re.S):
+        sichtbar_link = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", m.group(1)))).strip(" →")
+        if GENERISCH.fullmatch(sichtbar_link):
+            fehler.append("%s: Linktext ohne Ziel: %s" % (url, sichtbar_link))
+    rumpf = text[text.index("<body"):]
+    bilder = re.findall(r"<img\b[^>]*>", rumpf)
+    for i, b in enumerate(bilder):
+        if not re.search(r'\bwidth="\d+"', b) or not re.search(r'\bheight="\d+"', b):
+            fehler.append("%s: Bild ohne width/height" % url)
+        if i > 0 and 'loading="lazy"' not in b:
+            fehler.append("%s: Bild %d ohne loading=lazy" % (url, i + 1))
+        if i == 0 and 'loading="lazy"' in b:
+            fehler.append("%s: erstes Bild darf nicht lazy sein" % url)
+    if 'href="/ueber-uns/"' not in zwischen(text, "<body", "<main") or \
+            'href="/ueber-uns/"' not in text[text.index("<footer"):] if "<footer" in text else True:
+        fehler.append("%s: Über uns nicht in Kopf und Fuss verlinkt" % url)
+    if url not in lastmod or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod.get(url, "")):
+        fehler.append("%s: lastmod fehlt in der Sitemap" % url)
+
+typen_ueber = json.dumps(re.findall(r'<script type="application/ld\+json">(.*?)</script>', seiten.get("/ueber-uns/", ("",))[0], flags=re.S))
+if '\\"@type\\": \\"Person\\"' not in typen_ueber or "AboutPage" not in typen_ueber:
+    fehler.append("/ueber-uns/: Seite fehlt oder ohne Person/AboutPage im JSON-LD")
+for a in artikel:
+    url = "/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"])
+    graph = [g for blk in re.findall(r'<script type="application/ld\+json">(.*?)</script>', seiten[url][0], flags=re.S)
+             for g in json.loads(blk).get("@graph", [])]
+    art = next((g for g in graph if g["@type"] == "Article"), {})
+    if art.get("datePublished") != a.get("veroeffentlicht") or art.get("dateModified") != a["geprueft"] or \
+            art.get("image", {}).get("@type") != "ImageObject":
+        fehler.append("%s: Article ohne datePublished/dateModified/ImageObject" % url)
+    if lastmod.get(url) != a["geprueft"]:
+        fehler.append("%s: lastmod nicht gleich Prüfdatum" % url)
+for p in (p for p in produkte if ist_baustein(p)):
+    if lastmod.get("/produkte/%s/" % p["slug"]) != p["geprueft"]:
+        fehler.append("/produkte/%s/: lastmod nicht gleich Prüfdatum" % p["slug"])
+
+# "Das könnte Sie auch interessieren": 3 verschiedene, vorhandene Ziele, nicht die Seite selbst
+for url, (text, parser) in seiten.items():
+    soll_block = url.startswith(("/branchen/", "/ratgeber/")) and url.count("/") == 3 or \
+                 (url.startswith("/produkte/") and url.count("/") == 3 and
+                  any(ist_baustein(p) and url == "/produkte/%s/" % p["slug"] for p in produkte))
+    if not soll_block:
+        continue
+    teil = zwischen(text, '<section id="verwandt">', "</section>") if '<section id="verwandt">' in text else ""
+    ziele = re.findall(r'<a href="([^"]+)" class="feat tile">', teil)
+    if len(ziele) != 3 or len(set(ziele)) != 3 or url in ziele or not all(z in seiten for z in ziele):
+        fehler.append("%s: 'Das könnte Sie auch interessieren' ohne 3 gültige Links" % url)
+
+# Erreichbarkeit: Breitensuche ab der Startseite über interne Links, höchstens 3 Klicks, keine verwaiste Seite
+tiefe, offen = {"/": 0}, ["/"]
+while offen:
+    u = offen.pop(0)
+    for ziel in seiten[u][1].links:
+        ziel = ziel.split("#")[0].split("?")[0]
+        if ziel in seiten and ziel not in tiefe:
+            tiefe[ziel] = tiefe[u] + 1
+            offen.append(ziel)
+for url in seiten:
+    if url not in tiefe:
+        fehler.append("%s: verwaist, von der Startseite nicht erreichbar" % url)
+    elif tiefe[url] > 3:
+        fehler.append("%s: %d Klicks von der Startseite entfernt" % (url, tiefe[url]))
+print("Klicktiefe ab Startseite:", dict(sorted(__import__("collections").Counter(tiefe.values()).items())))
 
 print("\n%d Seiten, %d interne Links geprüft" % (len(seiten), geprueft))
 if fehler:
