@@ -578,6 +578,11 @@
         "url": "/ratgeber/ndsg-kmu-checkliste/",
         "titel": "nDSG für KMU: Checkliste",
         "grund": "Datenschutzerklärung, Auftragsbearbeiter und Datensicherheit im Überblick."
+      },
+      {
+        "url": "/ratgeber/patientenformular-datenschutz/",
+        "titel": "Patientenformulare und Datenschutz",
+        "grund": "Was eine Praxis fragen darf und wann es eine Einwilligung braucht."
       }
     ]
   },
@@ -644,6 +649,11 @@
         "url": "/produkte/ausschreibungs-radar/",
         "titel": "Ausschreibungs-Radar",
         "grund": "Öffentliche Ausschreibungen von Bund, Kantonen und Gemeinden im Blick."
+      },
+      {
+        "url": "/ratgeber/maengelruege-abnahme-2026/",
+        "titel": "Mängelrüge und Abnahme ab 2026",
+        "grund": "60 Tage Rügefrist, SIA-Norm 118 und welche Verträge betroffen sind."
       }
     ]
   },
@@ -714,6 +724,509 @@
         "url": "/produkte/mail-assistent/",
         "titel": "Mail-Assistent",
         "grund": "Antwortentwürfe für wiederkehrende Mandantenfragen."
+      },
+      {
+        "url": "/ratgeber/aufbewahrungsfristen-buchhaltung/",
+        "titel": "Aufbewahrungsfristen für Buchhaltung und Belege",
+        "grund": "Zehn Jahre, 20 Jahre und was digital gilt, mit Quellen."
+      }
+    ]
+  },
+  {
+    "slug": "unterlagen-erinnerung-treuhand",
+    "branche": "treuhaender",
+    "name": "Unterlagen-Erinnerung für Treuhandbüros",
+    "kurzbeschreibung": "Der Baustein vergleicht pro Mandat und Periode, welche Unterlagen erwartet werden und welche eingegangen sind. Für jede Lücke liegt ein Mailentwurf mit den offenen Punkten bereit. Das Büro liest, passt an und versendet selbst.",
+    "problem": "Für Abschlüsse, MWST-Abrechnungen und Löhne braucht das Büro Unterlagen der Mandantinnen und Mandanten: Bankauszüge, Belege, Lohnmutationen. Run my Accounts nennt in seiner Partnerunterlage als typische Mandantenpflichten etwa Bankauszüge innert 10 Tagen nach Monatsende und Lohnmutationen bis zum 15. des Monats. Fehlt etwas, wird nachtelefoniert oder eine E-Mail einzeln geschrieben. Wie viel Zeit das in Schweizer Büros kostet, ist nicht belegt. Eine Umfrage von TREUHAND|SUISSE und bexio aus dem Jahr 2016 mit rund 80 Firmen ergab, dass 60 Prozent der Treuhänder einen grossen Teil ihrer Arbeitszeit mit Administration verbringen; die Zahl ist alt und nur ein Anhaltspunkt.",
+    "loesung": "Pro Mandat und Periode legt das Büro eine Checkliste fest: welche Konten, welche Belegarten, welche Lohnangaben. Der Baustein vergleicht die Checkliste mit dem, was im Eingang liegt, und zeigt pro Mandat die offenen Punkte. Daraus schreibt er einen Entwurf an die Mandantin oder den Mandanten, der die fehlenden Unterlagen einzeln aufzählt und den gewünschten Termin nennt. Der Entwurf liegt im Postausgang des Büros zur Prüfung bereit. Nach dem Versand merkt sich der Baustein das Datum und schlägt bei Bedarf eine zweite Erinnerung vor, wiederum als Entwurf.",
+    "mensch": "Welche Unterlagen ein Mandat braucht und bis wann, legt das Büro fest. Jeder Entwurf wird gelesen, angepasst und vom Büro selbst versendet; der Baustein verschickt nichts. Ob eine fehlende Unterlage ein Problem ist oder später nachgereicht werden kann, entscheidet die zuständige Person im Büro.",
+    "fuer_wen": "Für Treuhandbüros mit vielen kleinen Mandaten, bei denen Unterlagen regelmässig fehlen. Für Büros, die Nachfragen heute einzeln schreiben oder am Telefon erledigen.",
+    "aufwand": "klein bis mittel",
+    "personendaten": true,
+    "daten": "Die Entwürfe enthalten Namen, Kontaktangaben und die Liste der fehlenden Unterlagen, also Personendaten. Inhalte von Belegen oder Konten liest der Baustein für die Erinnerung nicht. Für die treuhänderische Tätigkeit gilt laut TREUHAND|SUISSE nicht das strafrechtliche Berufsgeheimnis nach Art. 321 StGB, sondern die Geheimhaltung als Treuepflicht aus dem Auftragsrecht und das Datenschutzgesetz. Deshalb gelten die Bedingungen unten.",
+    "quellen": [
+      {
+        "titel": "Run my Accounts, So arbeiten wir zusammen (Partnerversion, Juli 2026)",
+        "url": "https://www.runmyaccounts.ch/wp-content/uploads/2026/07/260713-So-arbeiten-wir-zusammen-Partnerversion.pdf"
+      },
+      {
+        "titel": "bexio, E-Book Digitalisierung im Treuhandwesen (Umfrage 2016)",
+        "url": "https://cdn.www.bexio.com/assets/content/documents/ebooks/digitalisierung-im-treuhandwesen.pdf"
+      },
+      {
+        "titel": "TREUHAND|SUISSE, Die Wahrung des Berufsgeheimnisses (2019)",
+        "url": "https://treuhandsuisse.rokka.io/dynamic/noop/43d2dfcabb4fa9619f39dcdb1ce3a543f1d1587a/th-und-recht-4-1-08-08-2019-die-wahrung-des-berufsgeheimniss.pdf"
+      },
+      {
+        "titel": "EDÖB, Das neue Datenschutzgesetz aus Sicht des EDÖB",
+        "url": "https://www.edoeb.admin.ch/de/das-neue-datenschutzgesetz-aus-sicht-des-edob"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Unterlagen-Erinnerung für Treuhandbüros | Meyssens",
+    "seo_beschreibung": "Fehlende Belege pro Mandat erkennen, Nachfragen als Mailentwurf vorbereiten, selbst versenden. Für Treuhandbüros in der Schweiz. Jetzt vormerken.",
+    "faq": [
+      {
+        "frage": "Verschickt der Baustein Erinnerungen automatisch?",
+        "antwort": "Nein. Er schreibt Entwürfe. Das Büro liest jeden Entwurf, passt ihn an und versendet ihn selbst."
+      },
+      {
+        "frage": "Liest der Baustein Kontoauszüge oder Belege?",
+        "antwort": "Für die Erinnerung nicht. Er prüft nur, ob eine erwartete Unterlage eingegangen ist, zum Beispiel der Auszug eines Kontos für einen bestimmten Monat."
+      },
+      {
+        "frage": "Gilt für Treuhandbüros das Berufsgeheimnis?",
+        "antwort": "Laut einem Beitrag von TREUHAND|SUISSE aus dem Jahr 2019 gilt Art. 321 StGB für die treuhänderische Tätigkeit nicht. Es gelten die Geheimhaltung als Treuepflicht aus dem Auftragsrecht und das Datenschutzgesetz. Für den Einzelfall ist das keine Rechtsberatung."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/aufbewahrungsfristen-buchhaltung/",
+        "titel": "Aufbewahrungsfristen für Buchhaltung und Belege",
+        "grund": "Zehn Jahre, 20 Jahre und was digital gilt, mit Quellen."
+      },
+      {
+        "url": "/ratgeber/ndsg-kmu-checkliste/",
+        "titel": "nDSG für KMU: Checkliste",
+        "grund": "Informationspflicht, Auftragsbearbeitung und Datensicherheit."
+      }
+    ]
+  },
+  {
+    "slug": "aufbewahrungsregister-treuhand",
+    "branche": "treuhaender",
+    "name": "Register für Aufbewahrungs- und Löschfristen",
+    "kurzbeschreibung": "Das Register führt pro Dossier das Geschäftsjahr und das Datum, bis zu dem die Unterlagen aufzubewahren sind. Es listet Dossiers, deren Frist abgelaufen ist, und schlägt die Prüfung vor. Gelöscht wird nie automatisch.",
+    "problem": "Geschäftsbücher, Buchungsbelege, Geschäftsbericht und Revisionsbericht sind zehn Jahre aufzubewahren, und die Frist beginnt mit dem Ablauf des Geschäftsjahres (Art. 958f Abs. 1 OR). Für bestimmte MWST-Unterlagen zu unbeweglichen Gegenständen nennt WEKA eine Aufbewahrung von 20 Jahren (Art. 70 Abs. 3 MWSTG). Auch Arbeitsanweisungen zur Buchführung sind so lange aufzubewahren wie die Bücher, die danach geführt wurden (Art. 4 Abs. 2 GeBüV). In vielen Büros steht trotzdem nirgends, wann ein Dossier gelöscht werden darf, und alte Ablagen bleiben einfach liegen. Das Letzte ist eine Einschätzung, Zahlen dazu haben wir nicht.",
+    "loesung": "Für jedes Dossier hält das Register fest: Mandat, Art der Unterlagen, Geschäftsjahr und die geltende Frist. Standard sind zehn Jahre ab Ende des Geschäftsjahres; für Unterlagen, die das Büro als MWST-Unterlagen zu Immobilien markiert, setzt das Register 20 Jahre. Die Regeln stellt das Büro selbst ein und kann sie pro Dossier ändern. Einmal im Jahr zeigt eine Liste die Dossiers, deren Frist abgelaufen ist, mit dem Hinweis, was vor einer Löschung zu prüfen ist, etwa laufende Verfahren oder ein noch aktives Mandat. Die Arbeitsanweisungen des Büros führt das Register als eigene Dossiers mit.",
+    "mensch": "Ob ein Dossier gelöscht, länger aufbewahrt oder dem Mandanten übergeben wird, entscheidet das Büro. Der Baustein löscht nie selbst und verschiebt keine Dateien. Welche Frist im Einzelfall gilt, etwa bei Immobilien oder bei offenen Steuerverfahren, prüft ein Mensch.",
+    "fuer_wen": "Für Treuhandbüros mit Archiven über viele Jahre und Mandate. Für Büros, die Aufbewahrung und Löschung bisher nicht systematisch geregelt haben.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Das Register enthält nur Metadaten: Dossierbezeichnung, Mandat, Geschäftsjahr, Frist und Status. Inhalte der Unterlagen liest es nicht. Weil Namen von Mandantinnen und Mandanten Personendaten sein können, gelten trotzdem die Bedingungen unten.",
+    "quellen": [
+      {
+        "titel": "Art. 958f OR, Führung und Aufbewahrung der Geschäftsbücher (droit-bilingue.ch, nicht amtlich)",
+        "url": "https://droit-bilingue.ch/de-en/2/22/220-958f-1336.html"
+      },
+      {
+        "titel": "WEKA, Aufbewahrungsfristen: Compliance-Anforderungen an die Geschäftsunterlagen",
+        "url": "https://www.weka.ch/themen/finanzen-controlling/rechnungswesen/buchfuehrung/article/aufbewahrungsfristen-compliance-anforderungen-an-die-geschaeftsunterlagen/"
+      },
+      {
+        "titel": "Geschäftsbücherverordnung (GeBüV), Fassung AS 2002 1399 (Fedlex, PDF)",
+        "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2002/216/de/pdf-a/fedlex-data-admin-ch-eli-oc-2002-216-de-pdf-a.pdf"
+      },
+      {
+        "titel": "KMU-Portal des Bundes, Elektronische Aufbewahrung der Geschäftsbücher",
+        "url": "https://www.kmu.admin.ch/de/elektronische-aufbewahrung-der-geschaeftsbuecher"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Register für Aufbewahrungsfristen Treuhand | Meyssens",
+    "seo_beschreibung": "Zehn Jahre nach Art. 958f OR, 20 Jahre für MWST-Unterlagen zu Immobilien: Fristen pro Dossier im Blick, Löschung entscheidet das Büro. Jetzt vormerken.",
+    "faq": [
+      {
+        "frage": "Wie lange muss die Buchhaltung aufbewahrt werden?",
+        "antwort": "Geschäftsbücher, Buchungsbelege, Geschäftsbericht und Revisionsbericht zehn Jahre ab Ablauf des Geschäftsjahres (Art. 958f OR). Für bestimmte MWST-Unterlagen zu Immobilien nennt WEKA 20 Jahre. Den geltenden Gesetzestext prüfen wir vor dem Einsatz."
+      },
+      {
+        "frage": "Löscht der Baustein abgelaufene Dossiers?",
+        "antwort": "Nein. Er listet sie nur auf. Löschen, länger aufbewahren oder übergeben entscheidet das Büro."
+      },
+      {
+        "frage": "Darf digital aufbewahrt werden?",
+        "antwort": "Ja, wenn die Übereinstimmung mit den Geschäftsvorfällen gewährleistet ist und die Unterlagen jederzeit lesbar gemacht werden können (Art. 958f Abs. 3 OR). Für veränderbare Träger wie eine Cloud verlangt die Geschäftsbücherverordnung zusätzlich unter anderem einen unverfälschbaren Nachweis des Speicherzeitpunkts (Art. 9 GeBüV)."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/aufbewahrungsfristen-buchhaltung/",
+        "titel": "Aufbewahrungsfristen für Buchhaltung und Belege",
+        "grund": "Zehn Jahre, 20 Jahre und was digital gilt, mit Quellen."
+      }
+    ]
+  },
+  {
+    "slug": "mahnentwurf-arztpraxis",
+    "branche": "arztpraxen",
+    "name": "Mahnentwurf für Arztpraxen",
+    "kurzbeschreibung": "Der Baustein erkennt überfällige Rechnungen im System Tiers garant und schreibt sachliche Mahnentwürfe ohne Angaben zur Behandlung. Die Praxis entscheidet, ob gemahnt wird. Wir empfehlen ihn erst, wenn die Rechtslage zum Berufsgeheimnis für die Praxis geklärt ist.",
+    "problem": "Im System Tiers garant, das nach dem KVG die Regel ist, geht die Rechnung an die Patientin oder den Patienten (FMH-Leitfaden, Kapitel 4.8). Bleibt sie unbezahlt, sucht jemand im Praxisteam die offenen Posten heraus und schreibt Mahnungen einzeln. Dabei ist Vorsicht geboten: Schon das Bestehen einer Behandlungsbeziehung kann nach dem EDÖB Rückschlüsse auf die Gesundheit erlauben, und das Berufsgeheimnis nach Art. 321 StGB gilt auch für die Hilfspersonen der Ärztin oder des Arztes (FMH-Leitfaden, Kapitel 7.1). Wie externe Dienstleister dabei einzuordnen sind, beantwortet der Leitfaden nicht ausdrücklich.",
+    "loesung": "Der Baustein liest eine Liste der offenen Rechnungen aus der Praxissoftware, mit Rechnungsnummer, Datum, Betrag und Fälligkeit. Ist eine Rechnung überfällig, erscheint sie in einer Liste, und der Baustein schreibt einen sachlichen Mahnentwurf: Rechnungsnummer, Datum, Betrag, neue Zahlungsfrist, keine Diagnose, keine Leistungen. Die Praxis sieht die Entwürfe gesammelt, kann einzelne zurückstellen, etwa bei einer Ratenvereinbarung, und druckt oder versendet die freigegebenen selbst. Der Baustein zeigt, wann eine zweite Mahnung fällig wäre, wiederum als Entwurf. Eine Weitergabe an ein Inkassobüro gehört nicht dazu.",
+    "mensch": "Ob und wann gemahnt wird, entscheidet die Praxis, auch bei Härtefällen und Ratenvereinbarungen. Jeder Entwurf wird geprüft und von der Praxis selbst versendet. Bevor echte Rechnungsdaten verarbeitet werden, klären wir mit der Praxis, wie ein externer Dienstleister unter dem Berufsgeheimnis eingebunden wird. Der Kanton Zürich beschreibt dafür IT-Dienstleister als mögliche Hilfspersonen mit Geheimhaltungsvereinbarung und vertraglich geregelter Bearbeitung.",
+    "fuer_wen": "Für Arztpraxen, die im System Tiers garant abrechnen und Mahnungen heute von Hand schreiben.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Name, Adresse, Rechnungsnummer, Betrag und Fälligkeit. Weil bei einer Arztpraxis schon die Behandlungsbeziehung sensibel ist, behandeln wir diese Daten als besonders schützenswert. Der Entwurf enthält keine Angaben zur Behandlung. Der Baustein setzt eine Liste der offenen Rechnungen als Export voraus; ob die Praxissoftware einen solchen Export bietet, ist noch zu klären.",
+    "quellen": [
+      {
+        "titel": "FMH, Rechtlicher Leitfaden, Kapitel 4.8 Rechnungsstellung KVG",
+        "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/4-leistungen-kvg/48-rechnungsstellung-kvg.pdf?c=24130"
+      },
+      {
+        "titel": "FMH, Rechtlicher Leitfaden, Kapitel 7.1 Berufsgeheimnis",
+        "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/7-berufsgeheimnis-datenschutz/71-berufsgeheimnis-arzt.pdf?c=46545"
+      },
+      {
+        "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen",
+        "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+      },
+      {
+        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
+        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Mahnentwurf für Arztpraxen, Tiers garant | Meyssens",
+    "seo_beschreibung": "Überfällige Rechnungen erkennen, sachliche Mahnentwürfe ohne Behandlungsangaben, Freigabe durch die Praxis. Für Schweizer Arztpraxen. Jetzt vormerken.",
+    "faq": [
+      {
+        "frage": "Stehen Diagnosen oder Leistungen in der Mahnung?",
+        "antwort": "Nein. Der Entwurf nennt Rechnungsnummer, Datum, Betrag und Frist. Was über die Behandlung bekannt ist, bleibt in der Praxis."
+      },
+      {
+        "frage": "Darf die Praxis die Weitergabe an ein Inkassobüro im Voraus vereinbaren?",
+        "antwort": "Der EDÖB hält in seinem Merkblatt zu Patientenformularen fest, dass eine vorgängige Einwilligung in die Weitergabe eines allfälligen Inkassoverfahrens an ein Drittunternehmen unzulässig ist. Der Baustein übernimmt keine Weitergabe an ein Inkassobüro."
+      },
+      {
+        "frage": "Warum empfehlen Sie den Baustein nicht sofort?",
+        "antwort": "Weil er mit Rechnungsdaten arbeitet und das Berufsgeheimnis auch für Hilfspersonen gilt. Wie ein externer Dienstleister eingebunden wird, klären wir mit jeder Praxis vor dem Einsatz. Das ist keine Rechtsberatung."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/patientenformular-datenschutz/",
+        "titel": "Patientenformulare und Datenschutz",
+        "grund": "Was eine Praxis fragen darf und wann es eine Einwilligung braucht."
+      }
+    ]
+  },
+  {
+    "slug": "dienstplan-material-arztpraxis",
+    "branche": "arztpraxen",
+    "name": "Dienstplan und Materialbestellung für Arztpraxen",
+    "kurzbeschreibung": "Der Baustein schlägt Dienstpläne für das Praxisteam nach Pensum und Abwesenheiten vor und erstellt Bestelllisten, sobald Verbrauchsmaterial den Mindestbestand erreicht. Patientendaten braucht er keine. Die Praxis entscheidet über Einsätze und Bestellungen.",
+    "problem": "Neben der Sprechstunde organisiert das Praxisteam Präsenzen, Ferien und Bestellungen. Dienstpläne entstehen oft in Tabellen, Material wird bestellt, wenn jemand bemerkt, dass es fehlt. Das ist eine Einschätzung aus unserer Recherche. Das BAG schreibt, dass es in der Schweiz keine systematischen Datenerhebungen zum Umfang administrativer Tätigkeiten im Gesundheitswesen gibt; eine Erhebung bei Hausärztinnen und Hausärzten ist im Mai 2026 gestartet, der Schlussbericht soll im Januar 2027 vorliegen.",
+    "loesung": "Für den Dienstplan erfasst die Praxis Pensen, fixe Freitage, Ferien und die Mindestbesetzung pro Halbtag. Der Baustein schlägt einen Plan für die nächsten Wochen vor und markiert Halbtage, an denen die Mindestbesetzung fehlt. Für das Material führt die Praxis eine Liste mit Artikel, Lieferant und Mindestbestand. Wer etwas entnimmt oder den Bestand zählt, trägt es kurz ein; ist der Mindestbestand erreicht, entsteht ein Bestellentwurf pro Lieferant. Beides läuft ohne Anbindung an die Praxissoftware und ohne Patientendaten.",
+    "mensch": "Den Dienstplan legt die Praxisleitung fest, der Vorschlag ist nur ein Entwurf. Bestellungen löst die Praxis selbst aus, nach Prüfung von Menge und Lieferant. Arbeitsrechtliche Fragen, etwa zu Ruhezeiten, beurteilt die Praxis; der Baustein ersetzt diese Prüfung nicht.",
+    "fuer_wen": "Für Arzt- und Gruppenpraxen mit mehreren MPA und Teilzeitpensen. Für Praxen, in denen Material oft kurzfristig nachbestellt wird.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Für den Dienstplan braucht der Baustein Namen, Pensen und Abwesenheiten der Mitarbeitenden, also Personendaten. Gründe für Abwesenheiten, etwa Krankheit, erfasst er nicht. Die Materialliste enthält weder Personendaten noch Patientendaten.",
+    "quellen": [
+      {
+        "titel": "BAG, Administrativer Aufwand im Gesundheitswesen",
+        "url": "https://www.bag.admin.ch/de/administrativer-aufwand-im-gesundheitswesen"
+      },
+      {
+        "titel": "EDÖB, Das neue Datenschutzgesetz aus Sicht des EDÖB",
+        "url": "https://www.edoeb.admin.ch/de/das-neue-datenschutzgesetz-aus-sicht-des-edob"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Dienstplan und Material für Arztpraxen | Meyssens",
+    "seo_beschreibung": "Dienstplan-Vorschläge nach Pensum, Bestellentwürfe bei Mindestbestand, ohne Patientendaten. Für Schweizer Arztpraxen. Jetzt unverbindlich vormerken.",
+    "faq": [
+      {
+        "frage": "Braucht der Baustein Zugriff auf die Praxissoftware?",
+        "antwort": "Nein. Dienstplan und Materialliste laufen getrennt von der Praxissoftware und ohne Patientendaten."
+      },
+      {
+        "frage": "Bestellt der Baustein selbst?",
+        "antwort": "Nein. Er erstellt einen Bestellentwurf pro Lieferant. Die Praxis prüft Menge und Lieferant und bestellt selbst."
+      },
+      {
+        "frage": "Werden Gründe für Abwesenheiten erfasst?",
+        "antwort": "Nein. Für den Plan genügt, dass jemand abwesend ist. Gründe wie Krankheit gehören nicht in den Dienstplan."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/patientenformular-datenschutz/",
+        "titel": "Patientenformulare und Datenschutz",
+        "grund": "Was eine Praxis fragen darf und wann es eine Einwilligung braucht."
+      },
+      {
+        "url": "/ratgeber/ndsg-kmu-checkliste/",
+        "titel": "nDSG für KMU: Checkliste",
+        "grund": "Informationspflicht, Auftragsbearbeitung und Datensicherheit."
+      }
+    ]
+  },
+  {
+    "slug": "leistungsverzeichnis-import-bau",
+    "branche": "bauunternehmen",
+    "name": "Leistungsverzeichnis-Import für die Offerte",
+    "kurzbeschreibung": "Der Baustein liest Positionen und Mengen aus einem Leistungsverzeichnis, legt eine Kalkulationstabelle an und schlägt Werte aus früheren Offerten vor. Preise, Zuschläge und die Abgabe bestimmt der Betrieb. Personendaten braucht er keine.",
+    "problem": "Für eine Offerte übertragen Bauunternehmen Positionen und Mengen aus dem Leistungsverzeichnis der Ausschreibung in ihre Kalkulation. Kommt das Verzeichnis als PDF, wird oft von Hand abgetippt, mit dem Risiko von Übertragungsfehlern und mit viel Zeit, die für die eigentliche Kalkulation fehlt. Das ist eine Einschätzung: Belegt ist nur, dass Softwareanbieter wie Abacus Offerte, Auftrag und Rechnung im Bauhauptgewerbe digital abbilden. Wie verbreitet die Handarbeit ist, wissen wir nicht.",
+    "loesung": "Der Betrieb lädt das Leistungsverzeichnis hoch. Der Baustein erkennt Positionsnummern, Texte, Einheiten und Mengen und legt daraus eine Kalkulationstabelle an. Unsichere Stellen, etwa schlecht lesbare Mengen, markiert er zur Kontrolle. Für jede Position sucht er ähnliche Positionen in früheren Offerten des Betriebs und zeigt die damaligen Ansätze als Vorschlag. Die Tabelle lässt sich in die bestehende Kalkulation übernehmen.",
+    "mensch": "Preise, Risikozuschläge und Varianten bestimmt der Betrieb. Ob eine Position richtig gelesen wurde, kontrolliert ein Mensch, bevor gerechnet wird. Die Offerte gibt der Betrieb selbst ab; der Baustein reicht nichts ein.",
+    "fuer_wen": "Für Bauunternehmen, die regelmässig auf Ausschreibungen offerieren und Leistungsverzeichnisse als PDF oder Tabelle erhalten.",
+    "aufwand": "mittel",
+    "personendaten": false,
+    "daten": "Der Baustein verarbeitet Positionen, Mengen und eigene Preise, keine Personendaten. Kalkulationen sind trotzdem Geschäftsgeheimnisse und bleiben im Konto des Betriebs. Welche Dateiformate eingelesen werden können, ist noch zu klären.",
+    "quellen": [
+      {
+        "titel": "Abacus, Branchenlösung für das Bauhauptgewerbe (englisch)",
+        "url": "https://www.abacus.ch/en/industry-solutions/construction-industry/primary-construction-industry"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Leistungsverzeichnis-Import für Bauofferten | Meyssens",
+    "seo_beschreibung": "Positionen und Mengen aus dem Leistungsverzeichnis einlesen, Vorschläge aus früheren Offerten, Preise bestimmt der Betrieb. Jetzt unverbindlich vormerken.",
+    "faq": [
+      {
+        "frage": "Welche Formate liest der Baustein?",
+        "antwort": "Das klären wir mit den ersten Pilotbetrieben. Geplant sind PDF und Tabellen; ob weitere Austauschformate nötig sind, ist offen."
+      },
+      {
+        "frage": "Setzt der Baustein Preise ein?",
+        "antwort": "Er zeigt Ansätze aus früheren Offerten als Vorschlag. Welcher Preis gilt, entscheidet der Betrieb."
+      },
+      {
+        "frage": "Wird die Offerte automatisch eingereicht?",
+        "antwort": "Nein. Der Baustein bereitet die Kalkulation vor. Abgabe und Unterschrift bleiben beim Betrieb."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/offertanfragen-beantworten/",
+        "titel": "Offertanfragen schneller beantworten",
+        "grund": "Was eine Offerte bindet und wie Anfragen schneller beantwortet werden."
+      },
+      {
+        "url": "/ratgeber/maengelruege-abnahme-2026/",
+        "titel": "Mängelrüge und Abnahme ab 2026",
+        "grund": "60 Tage Rügefrist, SIA-Norm 118 und welche Verträge betroffen sind."
+      }
+    ]
+  },
+  {
+    "slug": "materialbestellung-bau",
+    "branche": "bauunternehmen",
+    "name": "Materialbestellung aus Rapport und Plan",
+    "kurzbeschreibung": "Der Baustein erstellt Bestellentwürfe aus dem Bauzeitplan und den Mengen aus Plan und Rapport. Der Polier bestätigt Menge und Termin, erst dann geht die Bestellung hinaus. Personendaten braucht er keine.",
+    "problem": "Auf vielen Baustellen wird Material per Telefon oder Messenger bestellt, oft kurz bevor es gebraucht wird. Ob Menge und Liefertermin zum Bauzeitplan passen, hängt an einzelnen Personen, und was bestellt wurde, steht später nicht an einem Ort. Das ist eine Einschätzung aus unserer Recherche; Zahlen zur Verbreitung haben wir nicht. Belegt ist nur, dass Branchensoftware wie die Lösung von Abacus Materialwirtschaft und digitale Tagesrapporte für das Bauhauptgewerbe anbietet.",
+    "loesung": "Der Betrieb hinterlegt den Bauzeitplan mit den Arbeitsschritten und die Mengen aus Plan oder Ausmass. Rückt ein Arbeitsschritt näher, erstellt der Baustein einen Bestellentwurf: Artikel, Menge, Lieferadresse, gewünschter Termin und Lieferant. Meldet der Tagesrapport Verbrauch oder Änderungen, passt er den Vorschlag an. Der Polier sieht die Entwürfe auf dem Handy, ändert, bestätigt oder verwirft sie. Erst nach der Bestätigung entsteht die Bestellung, die der Betrieb selbst an den Lieferanten schickt.",
+    "mensch": "Menge, Termin und Lieferant bestätigt der Polier oder der Einkauf. Der Baustein bestellt nichts selbst. Bei Änderungen auf der Baustelle entscheidet ein Mensch, ob die Bestellung angepasst wird.",
+    "fuer_wen": "Für Bauunternehmen mit mehreren Baustellen, auf denen Polier und Büro Bestellungen abstimmen. Für Betriebe, die heute per Telefon oder Messenger bestellen.",
+    "aufwand": "klein",
+    "personendaten": false,
+    "daten": "Artikel, Mengen, Termine und Lieferadressen der Baustelle, keine Personendaten. Die Kontaktangaben der Lieferanten bleiben im Konto des Betriebs.",
+    "quellen": [
+      {
+        "titel": "Abacus, Branchenlösung für das Bauhauptgewerbe (englisch)",
+        "url": "https://www.abacus.ch/en/industry-solutions/construction-industry/primary-construction-industry"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Materialbestellung für Baustellen | Meyssens",
+    "seo_beschreibung": "Bestellentwürfe aus Bauzeitplan und Mengen, der Polier bestätigt Menge und Termin. Für Schweizer Bauunternehmen. Jetzt unverbindlich vormerken.",
+    "faq": [
+      {
+        "frage": "Bestellt der Baustein direkt beim Lieferanten?",
+        "antwort": "Nein. Er erstellt Bestellentwürfe. Erst wenn der Polier oder der Einkauf bestätigt, schickt der Betrieb die Bestellung selbst ab."
+      },
+      {
+        "frage": "Woher kommen die Mengen?",
+        "antwort": "Aus dem Plan oder Ausmass, das der Betrieb hinterlegt, und aus den Angaben im Tagesrapport. Unsichere Mengen markiert der Baustein zur Kontrolle."
+      },
+      {
+        "frage": "Braucht der Baustein eine bestimmte Software?",
+        "antwort": "Nein. Welche Exporte aus Bauzeitplan und Rapport-Software wir einlesen können, klären wir mit den ersten Pilotbetrieben."
+      }
+    ]
+  },
+  {
+    "slug": "subunternehmer-dossier-bau",
+    "branche": "bauunternehmen",
+    "name": "Subunternehmer-Dossier mit Sorgfaltsnachweis",
+    "kurzbeschreibung": "Pro Subunternehmer führt der Baustein eine Checkliste nach den Elementen der Sorgfaltspflicht, die das SECO zur Solidarhaftung beschreibt. Er zeigt fehlende und ablaufende Dokumente und bereitet Erinnerungen als Entwurf vor. Ob ein Subunternehmer eingesetzt wird, entscheidet der Betrieb.",
+    "problem": "Hält ein Subunternehmen die minimalen Lohn- und Arbeitsbedingungen eines allgemeinverbindlich erklärten Gesamtarbeitsvertrags nicht ein, kann das Erstunternehmen zivilrechtlich für die Forderungen der Arbeitnehmenden belangt werden, für jedes einzelne Subunternehmen der Vergabekette. Das gilt im Bauhaupt- und im Baunebengewerbe. Befreien kann sich das Erstunternehmen, wenn es nachweist, dass es bei jeder Weitervergabe die gebotene Sorgfalt angewendet hat (SECO). Die Unterlagen dazu liegen in der Praxis oft in E-Mails und Ordnern verstreut; das ist eine Einschätzung.",
+    "loesung": "Für jeden Subunternehmer legt der Baustein ein Dossier an, gegliedert nach den drei Elementen, die das SECO beschreibt: die Darlegung der Lohn- und Arbeitsbedingungen anhand von Dokumenten bei der Vergabe (Art. 8b EntsV), die vertragliche Regelung der Weitervergabe, die das Erstunternehmen genehmigen muss, und die organisatorischen Massnahmen auf der Baustelle. Zu jedem Dokument hält er das Datum fest und, wo nötig, ein Ablaufdatum. Fehlt etwas oder läuft es ab, entsteht ein Erinnerungsentwurf an den Subunternehmer. Eine Übersicht pro Baustelle zeigt, welche Subunternehmer dort arbeiten und ob ihr Dossier vollständig ist. Für die Deklarationen verweist der Baustein auf die freiwilligen Musterdokumente des SECO.",
+    "mensch": "Ob ein Subunternehmer eingesetzt wird, entscheidet der Betrieb. Ob die Unterlagen die Einhaltung glaubhaft darlegen, beurteilt ein Mensch: Laut SECO ist die Sorgfaltspflicht mit dem Einholen von Dokumenten allein nicht in jedem Fall erfüllt, massgebend sind die Umstände im Einzelfall. Erinnerungen gehen erst nach Freigabe hinaus.",
+    "fuer_wen": "Für Bauunternehmen im Bauhaupt- und Baunebengewerbe, die Arbeiten an Subunternehmer weitergeben. Für Betriebe, die ihre Sorgfalt heute nicht an einem Ort dokumentieren.",
+    "aufwand": "klein bis mittel",
+    "personendaten": true,
+    "daten": "Deklarationen und Lohnnachweise können Personendaten der Mitarbeitenden des Subunternehmers enthalten. Das Dossier speichert nur, was für den Nachweis der Sorgfalt nötig ist. Es gelten die Bedingungen unten.",
+    "quellen": [
+      {
+        "titel": "SECO, Solidarhaftung",
+        "url": "https://www.seco.admin.ch/de/solidarhaftung"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Subunternehmer-Dossier, Solidarhaftung | Meyssens",
+    "seo_beschreibung": "Checkliste nach den Sorgfaltselementen des SECO, Ablaufdaten und Erinnerungsentwürfe pro Subunternehmer. Für Schweizer Baubetriebe. Jetzt vormerken.",
+    "faq": [
+      {
+        "frage": "Wofür haftet das Erstunternehmen?",
+        "antwort": "Für die Einhaltung der minimalen Lohn- und Arbeitsbedingungen eines allgemeinverbindlich erklärten Gesamtarbeitsvertrags durch seine Subunternehmen, für jedes Subunternehmen der Vergabekette. Laut SECO haftet es subsidiär: Die Arbeitnehmenden müssen zuerst ihren eigenen Arbeitgeber belangen."
+      },
+      {
+        "frage": "Reicht es, Dokumente einzuholen?",
+        "antwort": "Nicht in jedem Fall. Laut SECO kommt es auf die Umstände im Einzelfall an. Das Dossier hilft, die Sorgfalt zu dokumentieren, ersetzt aber nicht die Beurteilung durch den Betrieb."
+      },
+      {
+        "frage": "Gibt es Vorlagen für die Deklarationen?",
+        "antwort": "Das SECO stellt freiwillige Musterdokumente zur Deklaration der Lohn- und Arbeitsbedingungen bereit. Branchenverbände und Unternehmen können auch eigene Dokumente verwenden."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/maengelruege-abnahme-2026/",
+        "titel": "Mängelrüge und Abnahme ab 2026",
+        "grund": "60 Tage Rügefrist, SIA-Norm 118 und welche Verträge betroffen sind."
+      }
+    ]
+  },
+  {
+    "slug": "faelligkeitsliste-kontrollen-elektro",
+    "branche": "elektro-handwerk",
+    "name": "Fälligkeitsliste für Kontrollen und Wartungen",
+    "kurzbeschreibung": "Der Baustein führt die Anlagen Ihrer Kundschaft mit Kontrollperiode und nächstem Kontrolldatum und legt rechtzeitig ein Anschreiben an die Eigentümerschaft als Entwurf an. Verschickt wird nichts automatisch. Der Betrieb entscheidet, wer angeschrieben wird.",
+    "problem": "Elektrische Installationen müssen periodisch kontrolliert werden, je nach Art der Installation alle 1, 5, 10 oder 20 Jahre. Mindestens sechs Monate vor Ablauf der Kontrollperiode fordert die Netzbetreiberin die Eigentümerschaft schriftlich auf, den Sicherheitsnachweis einzureichen; die Frist kann höchstens bis ein Jahr nach Ablauf der Kontrollperiode verlängert werden (ESTI, Infoblatt von 2017). Für die Fristen ist allein die Eigentümerschaft verantwortlich. Betriebe mit Wartungskundschaft führen die Termine trotzdem oft in Tabellen oder gar nicht, und Anschreiben entstehen einzeln; das ist eine Einschätzung.",
+    "loesung": "Der Betrieb erfasst pro Anlage Adresse, Eigentümerschaft, Art der Installation, Kontrollperiode und das Datum der letzten Kontrolle oder Abnahme. Der Baustein berechnet daraus das nächste Kontrolldatum und zeigt eine Liste, sortiert nach Fälligkeit. Für Anlagen, deren Kontrolle in den nächsten Monaten fällig wird, legt er ein Anschreiben an die Eigentümerschaft als Entwurf an. Der Entwurf weist darauf hin, dass die periodische Kontrolle ein unabhängiges Kontrollorgan macht. Bei Neuinstallationen mit einer Kontrollperiode unter 20 Jahren erinnert er an die Abnahmekontrolle innerhalb von sechs Monaten nach der Übernahme, wie sie die NIV in der von Swisscom zitierten Fassung verlangt.",
+    "mensch": "Wer angeschrieben wird und wann, entscheidet der Betrieb; er prüft jeden Entwurf und verschickt ihn selbst. Welche Kontrollperiode für eine Anlage gilt, steht im Anhang der NIV. Die Zuordnung prüft ein Mensch, der Baustein übernimmt nur den eingetragenen Wert. Wer eine Installation geplant, erstellt, geändert oder instand gestellt hat, darf sie laut ESTI nicht periodisch kontrollieren; das beachtet der Betrieb bei Wartungsverträgen.",
+    "fuer_wen": "Für Elektroinstallationsbetriebe mit Wartungs- und Servicekundschaft. Für Betriebe, die Kontrolltermine heute in Excel oder auf Papier führen.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Adressen der Anlagen und Namen der Eigentümerschaft, also Personendaten. Zugangsangaben wie Schlüssel oder Alarmcodes gehören nicht in die Liste. Es gelten die Bedingungen unten.",
+    "quellen": [
+      {
+        "titel": "ESTI, Infoblatt Periodische Kontrolle der elektrischen Installationen (Oktober 2017)",
+        "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/Infoblatt_Periodische_Kontrolle_de.pdf"
+      },
+      {
+        "titel": "Swisscom, Factsheet Sicherheitsnachweis (SiNa), Auszüge aus der NIV (Stand 14.06.2017)",
+        "url": "https://www.swisscom.ch/content/dam/assets/about/sicherheit/sicherheitskonzept-elektro/documents/siko-elektro-factsheet-003-sicherheitsnachweis.pdf"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Fälligkeitsliste für Elektrokontrollen | Meyssens",
+    "seo_beschreibung": "Kontrollperioden und nächste Termine pro Anlage, Anschreiben an die Eigentümerschaft als Entwurf, Versand durch den Betrieb. Jetzt unverbindlich vormerken.",
+    "faq": [
+      {
+        "frage": "Wie oft müssen elektrische Installationen kontrolliert werden?",
+        "antwort": "Je nach Art der Installation alle 1, 5, 10 oder 20 Jahre; die Zuordnung steht im Anhang der NIV. Installationen mit einer Periode von 10 oder 20 Jahren sind laut ESTI zusätzlich bei jeder Handänderung zu kontrollieren, wenn seit der letzten Kontrolle mehr als fünf Jahre vergangen sind."
+      },
+      {
+        "frage": "Wer ist für die Frist verantwortlich?",
+        "antwort": "Laut ESTI allein die Eigentümerin oder der Eigentümer, nicht das beauftragte Kontrollorgan. Die Netzbetreiberin fordert mindestens sechs Monate vor Ablauf schriftlich zum Sicherheitsnachweis auf."
+      },
+      {
+        "frage": "Verschickt der Baustein die Anschreiben?",
+        "antwort": "Nein. Er legt Entwürfe an. Der Betrieb prüft und versendet selbst."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/sicherheitsnachweis-periodische-kontrolle/",
+        "titel": "Sicherheitsnachweis und periodische Kontrolle",
+        "grund": "Wer wofür verantwortlich ist und welche Fristen gelten."
+      }
+    ]
+  },
+  {
+    "slug": "materialliste-elektro",
+    "branche": "elektro-handwerk",
+    "name": "Materialliste aus Offerte oder Auftrag",
+    "kurzbeschreibung": "Aus einer Offerte oder einem Auftrag erstellt der Baustein eine Materialliste und einen Bestellentwurf pro Lieferant. Mengen, Lager und das Abschicken bleiben beim Betrieb. Personendaten braucht er keine.",
+    "problem": "In vielen Elektro- und Handwerksbetrieben wird Material per Telefon bestellt, und Mengen werden aus der Offerte von Hand übertragen. Das ist eine Einschätzung aus unserer Recherche, eine Studie zum Ist-Zustand haben wir nicht gefunden. Belegt ist nur, dass Branchensoftware Offerte, Material und Rechnung abdeckt, etwa die Lösung von Abacus für das Baugewerbe mit Materialwirtschaft.",
+    "loesung": "Der Baustein liest die Positionen einer Offerte oder eines Auftrags und ordnet ihnen das Material zu, das der Betrieb für diese Positionen hinterlegt hat. Daraus entsteht eine Materialliste mit Mengen. Ist ein Lagerbestand erfasst, zieht er vorhandenes Material ab. Für den Rest legt er einen Bestellentwurf pro Lieferant an, mit Artikelnummern, Mengen, Lieferadresse und gewünschtem Termin. Der Betrieb sieht die Entwürfe gesammelt, passt sie an und schickt sie selbst ab.",
+    "mensch": "Mengen, Lieferant und Termin prüft der Betrieb, bevor etwas bestellt wird. Abweichungen zur Offerte, etwa bei geänderten Plänen, erkennt ein Mensch. Der Baustein bestellt nichts selbst.",
+    "fuer_wen": "Für Elektroinstallations- und Handwerksbetriebe, die Material pro Auftrag bestellen. Für Betriebe, bei denen Mengen heute von Hand aus der Offerte übertragen werden.",
+    "aufwand": "klein",
+    "personendaten": false,
+    "daten": "Artikel, Mengen, Lieferanten und Lieferadressen. Die Kundschaft erscheint in der Bestellung nur als Auftragsnummer, nicht mit Namen. Es werden keine Personendaten verarbeitet.",
+    "quellen": [
+      {
+        "titel": "Abacus, Branchenlösung für das Bauhauptgewerbe (englisch)",
+        "url": "https://www.abacus.ch/en/industry-solutions/construction-industry/primary-construction-industry"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Materialliste für Elektro und Handwerk | Meyssens",
+    "seo_beschreibung": "Aus Offerte oder Auftrag eine Materialliste und Bestellentwürfe pro Lieferant, die Mengen prüft der Betrieb. Jetzt unverbindlich vormerken.",
+    "faq": [
+      {
+        "frage": "Bestellt der Baustein beim Grosshändler?",
+        "antwort": "Nein. Er erstellt Bestellentwürfe pro Lieferant. Der Betrieb prüft und schickt sie selbst ab."
+      },
+      {
+        "frage": "Woher weiss der Baustein, welches Material zu einer Position gehört?",
+        "antwort": "Der Betrieb hinterlegt das Material für seine üblichen Positionen einmal. Fehlt eine Zuordnung, markiert der Baustein die Position zur Kontrolle."
+      },
+      {
+        "frage": "Kann der Baustein den Lagerbestand berücksichtigen?",
+        "antwort": "Ja, wenn der Betrieb einen Lagerbestand erfasst. Dann zieht er vorhandenes Material von der Bestellung ab."
+      }
+    ]
+  },
+  {
+    "slug": "zeitabgleich-rapporte-handwerk",
+    "branche": "elektro-handwerk",
+    "name": "Zeitabgleich zwischen Rapport und Arbeitszeit",
+    "kurzbeschreibung": "Der Baustein vergleicht die Stunden aus den Arbeitsrapporten mit der Arbeitszeiterfassung und markiert Tage, an denen beides nicht zusammenpasst. Korrekturen nehmen Mitarbeitende und Betrieb vor. Er setzt eine bestehende Zeiterfassung voraus.",
+    "problem": "Arbeitgebende müssen Dauer, Beginn und Ende der täglichen und wöchentlichen Arbeitszeit sowie Pausen von einer halben Stunde und mehr dokumentieren (Art. 46 ArG, Art. 73 ArGV 1, SECO). Die Unterlagen sind fünf Jahre aufzubewahren (KMU-Portal des Bundes). In Betrieben mit weniger als 50 Angestellten ist eine vereinfachte Erfassung auch mit einer individuellen schriftlichen Vereinbarung möglich (Art. 73b ArGV 1). Gleichzeitig halten die Arbeitsrapporte Stunden für die Rechnung fest. Ob beides zusammenpasst, prüft in vielen Betrieben niemand systematisch; das ist eine Einschätzung.",
+    "loesung": "Der Baustein liest die Rapportstunden pro Person und Tag und die Einträge der Arbeitszeiterfassung. Für jeden Tag vergleicht er die Summen und markiert Abweichungen, fehlende Einträge und Tage mit Rapport, aber ohne erfasste Arbeitszeit. Eine Liste pro Woche zeigt dem Betrieb, wo nachgefragt werden sollte, zusammen mit einem Entwurf für die Rückfrage an die betroffene Person. Die Daten bleiben in den bestehenden Systemen, und der Baustein ändert keine Einträge.",
+    "mensch": "Ob eine Abweichung korrigiert wird und in welchem System, entscheiden Mitarbeitende und Betrieb gemeinsam. Der Baustein ändert weder Rapporte noch Arbeitszeiten. Bevor er eingesetzt wird, informiert der Betrieb die Mitarbeitenden über den Abgleich; den Text dafür klären wir mit dem Betrieb.",
+    "fuer_wen": "Für Elektro- und Handwerksbetriebe, die Rapporte und Arbeitszeit getrennt erfassen. Für Betriebe, die bereits eine digitale Zeiterfassung nutzen.",
+    "aufwand": "klein",
+    "personendaten": true,
+    "daten": "Namen, Arbeitszeiten und Rapportstunden der Mitarbeitenden, also Personendaten. Der Abgleich dient der korrekten Erfassung, nicht der Überwachung von Personen. Es gelten die Bedingungen unten.",
+    "quellen": [
+      {
+        "titel": "SECO, Arbeitszeiterfassung",
+        "url": "https://www.seco.admin.ch/de/arbeitszeiterfassung"
+      },
+      {
+        "titel": "KMU-Portal des Bundes, Arbeitszeiterfassung: Pflicht für Arbeitgebende",
+        "url": "https://www.kmu.admin.ch/de/arbeitszeiterfassung-pflicht-fuer-arbeitgebende"
+      },
+      {
+        "titel": "EDÖB, Das neue Datenschutzgesetz aus Sicht des EDÖB",
+        "url": "https://www.edoeb.admin.ch/de/das-neue-datenschutzgesetz-aus-sicht-des-edob"
+      }
+    ],
+    "status": "In Planung",
+    "geprueft": "2026-10-28",
+    "seo_titel": "Zeitabgleich Rapport und Arbeitszeit | Meyssens",
+    "seo_beschreibung": "Rapportstunden mit der Arbeitszeiterfassung abgleichen, Lücken markieren, Rückfragen als Entwurf. Für Handwerksbetriebe in der Schweiz. Jetzt vormerken.",
+    "faq": [
+      {
+        "frage": "Wie lange sind Unterlagen zur Arbeitszeit aufzubewahren?",
+        "antwort": "Fünf Jahre, so das KMU-Portal des Bundes."
+      },
+      {
+        "frage": "Ändert der Baustein Einträge?",
+        "antwort": "Nein. Er markiert Abweichungen und schlägt Rückfragen als Entwurf vor. Korrigiert wird im bestehenden System."
+      },
+      {
+        "frage": "Brauchen wir eine bestimmte Zeiterfassung?",
+        "antwort": "Eine bestehende digitale Zeiterfassung mit Export. Welche Programme passen, klären wir mit den ersten Pilotbetrieben."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/sicherheitsnachweis-periodische-kontrolle/",
+        "titel": "Sicherheitsnachweis und periodische Kontrolle",
+        "grund": "Wer wofür verantwortlich ist und welche Fristen gelten."
+      },
+      {
+        "url": "/ratgeber/ndsg-kmu-checkliste/",
+        "titel": "nDSG für KMU: Checkliste",
+        "grund": "Informationspflicht, Auftragsbearbeitung und Datensicherheit."
       }
     ]
   }

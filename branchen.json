@@ -61,9 +61,284 @@
     "h1": "Bauunternehmen: Ausschreibungen und Anfragen digital im Griff",
     "schweiz": "Öffentliche Aufträge von Bund, Kantonen und Gemeinden werden in der Schweiz grösstenteils auf simap.ch publiziert, die Regeln stehen im BöB und in der IVöB. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
     "bausteine": [
+      "leistungsverzeichnis-import-bau",
+      "materialbestellung-bau",
+      "subunternehmer-dossier-bau",
       "maengelliste-bau"
     ],
-    "bausteine_intro": "Seit 2026 gelten neue Regeln für Baumängel. Dieser Baustein hilft, Mängel und Fristen sauber zu dokumentieren."
+    "automatisierungen": {
+      "intro": "Seit dem 1. Januar 2026 gilt für Werkverträge über Bauten eine Mängelrügefrist von mindestens 60 Tagen; für Verträge, die vorher abgeschlossen wurden, bleibt grundsätzlich das bisherige Recht. Dazu kommen Rapporte, Regie, Bestellungen und die Solidarhaftung für Subunternehmer. Wir haben zehn Bausteine geplant und beginnen mit denen, die ohne sensible Daten auskommen.",
+      "start": "Startempfehlung, Einschätzung: zuerst Baustein 4 (Leistungsverzeichnis-Import), 5 (Materialbestellung) und 7 (Subunternehmer-Dossier). 4 und 5 arbeiten ohne Personendaten. 7 hat einen belegten Nutzen, weil die Solidarhaftung eine dokumentierte Sorgfalt verlangt (SECO). Die Bausteine 1 und 2 rund um Rapporte und Stunden kommen später: Sie betreffen Personendaten, und die Regeln des Landesmantelvertrags sind am Vertragstext zu prüfen.",
+      "ketten_intro": "Die Ketten zeigen, wo ein Baustein vorbereitet und wo ein Mensch entscheidet. Bausteine mit eigener Seite sind verlinkt, die übrigen führen zu ihrer Karte oben.",
+      "geprueft": "2026-10-28",
+      "ratgeber": "maengelruege-abnahme-2026",
+      "liste": [
+        {
+          "nr": 1,
+          "name": "Bautagesrapport aus Sprach- und Fotonotizen",
+          "heute": "Der Bautagesrapport entsteht auf Papier und wird im Büro abgetippt.",
+          "auto": "Macht aus Sprachnotiz, Fotos und Wetterdaten einen Entwurf des Rapports.",
+          "mensch": "Der Polier prüft und gibt den Rapport frei.",
+          "daten": "Personendaten, zum Beispiel Namen der Mitarbeitenden.",
+          "aufwand": "mittel",
+          "offen": "die Anbindung an Rapport-Software wie AbaBuild."
+        },
+        {
+          "nr": 2,
+          "name": "Stundenzettel mit Saldo-Vorschau",
+          "heute": "Stundenzettel werden abgetippt, fehlende Tage fallen spät auf.",
+          "auto": "Digitalisiert Stundenmeldungen, erkennt fehlende Tage und Pausen und zeigt einen Saldo-Entwurf.",
+          "mensch": "Lohnbuchhaltung oder Geschäftsleitung entscheiden über Korrekturen.",
+          "daten": "Personendaten der Mitarbeitenden.",
+          "aufwand": "mittel bis gross",
+          "offen": "die Regeln zu Zeitkonto und Reisezeit im Landesmantelvertrag 2026 bis 2031; den Vertragstext prüfen wir vor dem Bau."
+        },
+        {
+          "nr": 3,
+          "name": "Wächter für Regierapporte",
+          "heute": "Regierapporte werden von Hand geschrieben, fehlende Unterschriften fallen erst bei der Rechnung auf.",
+          "auto": "Erstellt Entwürfe für Regierapporte aus dem Tagesrapport mit den Tarifansätzen und markiert Rapporte ohne Gegenzeichnung.",
+          "mensch": "Der Bauführer entscheidet, was Regie ist, und holt die Unterschrift.",
+          "daten": "Personendaten.",
+          "aufwand": "klein bis mittel"
+        },
+        {
+          "nr": 4,
+          "name": "Leistungsverzeichnis-Import für die Offerte",
+          "heute": "Positionen und Mengen aus Leistungsverzeichnissen werden für die Kalkulation von Hand übertragen.",
+          "auto": "Liest Positionen und Mengen ein, legt eine Kalkulationstabelle an und schlägt Werte aus früheren Offerten vor.",
+          "mensch": "Preise, Risikozuschläge und die Abgabe der Offerte bestimmt der Betrieb.",
+          "daten": "Keine Personendaten, nur Positionen, Mengen und eigene Preise.",
+          "aufwand": "mittel",
+          "offen": "die Dateiformate der Leistungsverzeichnisse.",
+          "seite": "leistungsverzeichnis-import-bau",
+          "start": true
+        },
+        {
+          "nr": 5,
+          "name": "Materialbestellung aus Rapport und Plan",
+          "heute": "Material wird per Telefon oder Messenger bestellt, oft kurzfristig.",
+          "auto": "Schreibt Bestellentwürfe aus Bauzeitplan und Mengen.",
+          "mensch": "Der Polier bestätigt Menge und Termin, erst dann geht die Bestellung hinaus.",
+          "daten": "Keine Personendaten.",
+          "aufwand": "klein",
+          "seite": "materialbestellung-bau",
+          "start": true
+        },
+        {
+          "nr": 6,
+          "name": "Lieferscheine abgleichen",
+          "heute": "Lieferscheine werden von Hand mit Bestellung und Rechnung verglichen.",
+          "auto": "Liest Lieferscheine per Foto, gleicht sie mit Bestellung und Rechnung ab und meldet Abweichungen.",
+          "mensch": "Der Einkauf klärt mit dem Lieferanten und gibt die Rechnung frei.",
+          "daten": "Keine Personendaten.",
+          "aufwand": "mittel"
+        },
+        {
+          "nr": 7,
+          "name": "Subunternehmer-Dossier mit Sorgfaltsnachweis",
+          "heute": "Unterlagen der Subunternehmer liegen in E-Mails und Ordnern verstreut.",
+          "auto": "Führt pro Subunternehmer eine Checkliste nach den Sorgfaltselementen der Entsendeverordnung, mit Ablaufdaten und Erinnerungsentwürfen bei fehlenden Dokumenten.",
+          "mensch": "Der Betrieb entscheidet, ob ein Subunternehmer eingesetzt wird.",
+          "daten": "Personendaten, zum Beispiel in Lohnnachweisen.",
+          "aufwand": "klein bis mittel",
+          "seite": "subunternehmer-dossier-bau",
+          "start": true
+        },
+        {
+          "nr": 8,
+          "name": "Bauzeitplan anpassen",
+          "heute": "Der Bauzeitplan in Excel wird bei Verzug oder Wetter von Hand nachgeführt.",
+          "auto": "Schlägt bei Verzug oder schlechtem Wetter Verschiebungen vor und zeigt die Auswirkungen.",
+          "mensch": "Der Bauführer entscheidet und informiert die Bauherrschaft.",
+          "daten": "Keine Personendaten.",
+          "aufwand": "mittel"
+        },
+        {
+          "nr": 9,
+          "name": "Mängelliste mit Foto und Fristen",
+          "heute": "Mängel stehen auf Zetteln, in Fotos auf dem Handy und in E-Mails.",
+          "auto": "Erfasst Mängel mit Foto und Notiz, verfolgt die Behebung und rechnet Fristen als Hinweis aus, etwa die 60 Tage Rügefrist für Verträge ab 2026.",
+          "mensch": "Ob ein Mangel anerkannt oder bestritten wird und welche Frist gilt, beurteilt ein Mensch, im Zweifel mit Rechtsberatung.",
+          "daten": "Namen von Ansprechpersonen und Fotos von der Baustelle.",
+          "aufwand": "mittel",
+          "offen": "die Vertragsgrundlage je Projekt: SIA-Norm 118 vereinbart oder nicht, Abschluss vor oder nach dem 1. Januar 2026.",
+          "seite": "maengelliste-bau"
+        },
+        {
+          "nr": 10,
+          "name": "Akonto- und Schlussrechnung aus dem Baufortschritt",
+          "heute": "Rechnungen nach Baufortschritt werden aus Rapporten, Regie und Ausmass von Hand zusammengestellt.",
+          "auto": "Verdichtet Rapporte, Regie und Ausmass zu einem Rechnungsentwurf, markiert Positionen ohne Beleg und zeigt die Frist von vier Monaten für das Bauhandwerkerpfandrecht.",
+          "mensch": "Der Betrieb gibt die Rechnung frei und entscheidet über ein Pfandrecht, mit Rechtsberatung.",
+          "daten": "Personendaten der Bauherrschaft.",
+          "aufwand": "gross",
+          "offen": "die Anbindung an das ERP."
+        }
+      ],
+      "ketten": [
+        {
+          "titel": "Von der Baustelle zur Rechnung",
+          "betrieb": "Betrieb",
+          "text": "Wie Notizen vom Abend zu Rapport, Regie und Rechnung werden könnten, mit Freigabe an jeder Stelle.",
+          "schritte": [
+            {
+              "titel": "Notizen einsprechen",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Der Polier spricht am Abend eine Notiz ein und lädt drei Fotos hoch.",
+              "karte": 1
+            },
+            {
+              "titel": "Rapport-Entwurf",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Aus Notiz, Fotos und Wetterdaten entsteht der Entwurf des Bautagesrapports.",
+              "karte": 1
+            },
+            {
+              "titel": "Freigabe",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Der Polier korrigiert eine Stundenangabe und gibt den Rapport frei.",
+              "karte": 1
+            },
+            {
+              "titel": "Regierapport-Entwurf",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Die zusätzlichen Arbeiten des Tages erscheinen als Entwurf eines Regierapports mit Tarifansätzen.",
+              "karte": 3
+            },
+            {
+              "titel": "Gegenzeichnung",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Der Bauführer holt die Unterschrift der Bauleitung ein.",
+              "karte": 3,
+              "hinweis": "Unterschrift beider Seiten."
+            },
+            {
+              "titel": "Rechnungsentwurf",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Am Monatsende fasst ein Entwurf Rapporte und Regie mit Belegen zusammen.",
+              "karte": 10
+            },
+            {
+              "titel": "Freigabe und Versand",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Der Betrieb prüft den Entwurf und verschickt die Rechnung selbst.",
+              "karte": 10
+            }
+          ],
+          "abschluss": "Ziel: keine Regiearbeit ohne Rapport und Unterschrift. Was verrechnet wird, entscheidet weiterhin der Betrieb."
+        },
+        {
+          "titel": "Lieferung bis Rechnungsprüfung",
+          "betrieb": "Betrieb",
+          "text": "Vom Bedarf im Bauzeitplan bis zur geprüften Lieferantenrechnung.",
+          "schritte": [
+            {
+              "titel": "Bedarf im Bauzeitplan",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Der Bauzeitplan zeigt, dass in zwei Wochen die Decke über dem zweiten Obergeschoss betoniert wird.",
+              "karte": 8
+            },
+            {
+              "titel": "Bestellentwurf",
+              "art": "baustein",
+              "seite": "materialbestellung-bau",
+              "beispiel": "Für diesen Termin liegt ein Bestellentwurf mit Mengen aus Plan und Rapport bereit."
+            },
+            {
+              "titel": "Bestätigung",
+              "art": "mensch",
+              "seite": "materialbestellung-bau",
+              "beispiel": "Der Polier passt die Menge an und bestätigt den Liefertermin."
+            },
+            {
+              "titel": "Lieferschein abgleichen",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Das Foto des Lieferscheins wird gelesen und mit der Bestellung verglichen.",
+              "karte": 6
+            },
+            {
+              "titel": "Abweichung melden",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Der Baustein meldet, dass weniger geliefert als bestellt wurde.",
+              "karte": 6
+            },
+            {
+              "titel": "Klärung",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Der Einkauf klärt die Abweichung mit dem Lieferanten, bevor die Rechnung freigegeben wird.",
+              "karte": 6
+            }
+          ],
+          "abschluss": "Ziel: weniger Telefon für Bestellungen und keine Rechnung ohne Abgleich. Bestellt und bezahlt wird nur mit Freigabe."
+        },
+        {
+          "titel": "Abnahme bis Fristenende",
+          "betrieb": "Betrieb",
+          "text": "Nach der Abnahme laufen mehrere Fristen. Die Kette zeigt, wo der Baustein rechnet und wo Menschen entscheiden.",
+          "schritte": [
+            {
+              "titel": "Abnahmetermin",
+              "art": "mensch",
+              "seite": "maengelliste-bau",
+              "beispiel": "Der Betrieb meldet die Fertigstellung und vereinbart den Termin für die gemeinsame Prüfung."
+            },
+            {
+              "titel": "Mängelliste",
+              "art": "baustein",
+              "seite": "maengelliste-bau",
+              "beispiel": "Bei der Abnahme entsteht eine Mängelliste mit Foto, Ort und Verantwortlichem."
+            },
+            {
+              "titel": "Abgleich mit der Bauherrschaft",
+              "art": "mensch",
+              "seite": "maengelliste-bau",
+              "beispiel": "Bauleitung und Bauherrschaft gehen die Liste gemeinsam durch."
+            },
+            {
+              "titel": "Fristen als Hinweis",
+              "art": "baustein",
+              "seite": "maengelliste-bau",
+              "beispiel": "Für jeden Mangel erscheint eine Frist als Hinweis, je nach Vertragsgrundlage.",
+              "hinweis": "Welche Frist gilt, prüft ein Mensch."
+            },
+            {
+              "titel": "Behebung zuteilen",
+              "art": "mensch",
+              "seite": "subunternehmer-dossier-bau",
+              "beispiel": "Die Bauleitung teilt die Behebung einem Subunternehmer zu, dessen Dossier vollständig ist."
+            },
+            {
+              "titel": "Schlussrechnung und Pfandrecht",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Der Entwurf der Schlussrechnung zeigt, bis wann ein Bauhandwerkerpfandrecht spätestens eingetragen sein müsste.",
+              "karte": 10
+            },
+            {
+              "titel": "Entscheid über die Eintragung",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Ob ein Pfandrecht eingetragen wird, entscheidet der Betrieb mit Rechtsberatung.",
+              "karte": 10,
+              "hinweis": "Mit Rechtsberatung."
+            }
+          ],
+          "abschluss": "Ziel: jede Frist nach der Abnahme sichtbar. Rüge, Anerkennung und Pfandrecht entscheidet ein Mensch."
+        }
+      ]
+    }
   },
   {
     "slug": "elektro-handwerk",
@@ -126,7 +401,285 @@
     "seo_titel": "Elektroinstallateur: Anfragen und Offerten ordnen | Meyssens",
     "seo_beschreibung": "Kundenanfragen ordnen, Offerten schneller vorbereiten und Ausschreibungen finden: Werkzeuge für Elektrobetriebe in der Schweiz. Jetzt anfragen.",
     "h1": "Elektroinstallateur: Anfragen und Offerten digital ordnen",
-    "schweiz": "Elektroinstallateure in der Schweiz arbeiten oft auch für Gemeinden und Kantone, die öffentliche Aufträge auf simap.ch ausschreiben. Für Kundendaten gilt das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+    "schweiz": "Elektroinstallateure in der Schweiz arbeiten oft auch für Gemeinden und Kantone, die öffentliche Aufträge auf simap.ch ausschreiben. Für Kundendaten gilt das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
+    "bausteine": [
+      "faelligkeitsliste-kontrollen-elektro",
+      "materialliste-elektro",
+      "zeitabgleich-rapporte-handwerk"
+    ],
+    "automatisierungen": {
+      "intro": "Im Elektro-Handwerk hängen viele Abläufe an Rapporten, Sicherheitsnachweisen und Kontrollterminen. Die Kontrollperioden legt die Verordnung über elektrische Niederspannungsinstallationen (NIV) fest, verantwortlich für die Fristen bleibt die Eigentümerschaft. Wir haben zehn Bausteine geplant und beginnen mit einer Fälligkeitsliste, bei der nichts automatisch versendet wird.",
+      "start": "Startempfehlung, Einschätzung: zuerst Baustein 4 (Fälligkeitsliste), dann 5 (Materialliste) und 9 (Zeitabgleich). Die Fälligkeitsliste beruht auf belegten Fristen und hat wenig Aufwand, die Materialliste arbeitet ohne Personendaten, und der Zeitabgleich bezieht sich auf die gesetzliche Pflicht zur Arbeitszeiterfassung, braucht aber eine bestehende Zeiterfassung. Rapport-Erfassung (2) und Entwurf des Sicherheitsnachweises (3) folgen mit Pilotbetrieben und nach rechtlicher Klärung der Unterschrift.",
+      "ketten_intro": "Die Ketten zeigen, wo ein Baustein vorbereitet und wo ein Mensch entscheidet. Bausteine mit eigener Seite sind verlinkt, die übrigen führen zu ihrer Karte oben.",
+      "geprueft": "2026-10-28",
+      "ratgeber": "sicherheitsnachweis-periodische-kontrolle",
+      "liste": [
+        {
+          "nr": 1,
+          "name": "Offert-Entwurf aus der Kundenanfrage",
+          "heute": "Offerten entstehen aus Vorlagen, Positionen werden von Hand zusammengesucht.",
+          "auto": "Liest die Anfrage und schlägt Positionen und Textbausteine aus eigenen früheren Offerten vor.",
+          "mensch": "Preise, Umfang und Versand bestimmt der Betrieb.",
+          "daten": "Personendaten der Kundschaft.",
+          "aufwand": "mittel"
+        },
+        {
+          "nr": 2,
+          "name": "Rapport aus Foto oder Sprachnotiz",
+          "heute": "Arbeitsrapporte werden auf Papier geschrieben und später abgetippt.",
+          "auto": "Macht aus Foto oder Sprachnotiz einen strukturierten Regie- oder Arbeitsrapport mit Datum, Kunde, Stunden und Material.",
+          "mensch": "Der Monteur prüft, holt die Unterschrift der Kundschaft und gibt frei.",
+          "daten": "Personendaten.",
+          "aufwand": "mittel",
+          "offen": "die rechtliche Klärung der Unterschrift und der Test mit Pilotbetrieben."
+        },
+        {
+          "nr": 3,
+          "name": "Entwurf des Sicherheitsnachweises",
+          "heute": "Der Sicherheitsnachweis wird von Hand ausgefüllt.",
+          "auto": "Füllt Adresse, Beschreibung, Installateur und Kontrollperiode vor und prüft die Pflichtangaben; er erklärt nie eine Installation für mängelfrei.",
+          "mensch": "Messresultate, Mängelfreiheit und Unterschrift verantworten die kontrollierende Person und der Inhaber der Installationsbewilligung.",
+          "daten": "Personendaten der Eigentümerschaft.",
+          "aufwand": "mittel",
+          "offen": "das Format für die Einreichung bei den Netzbetreiberinnen und der geltende Wortlaut der NIV."
+        },
+        {
+          "nr": 4,
+          "name": "Fälligkeitsliste für Kontrollen und Wartungen",
+          "heute": "Wartungs- und Kontrolltermine stehen in Excel oder gar nicht.",
+          "auto": "Führt die Anlagen mit Kontrollperiode und nächstem Datum und legt ein Anschreiben an die Eigentümerschaft als Entwurf an.",
+          "mensch": "Der Betrieb entscheidet, wer angeschrieben wird, und weist auf die Unabhängigkeit des Kontrollorgans hin.",
+          "daten": "Personendaten der Eigentümerschaft.",
+          "aufwand": "klein",
+          "offen": "die Zuordnung der Kontrollperioden aus dem Anhang der NIV.",
+          "seite": "faelligkeitsliste-kontrollen-elektro",
+          "start": true
+        },
+        {
+          "nr": 5,
+          "name": "Materialliste aus Offerte oder Auftrag",
+          "heute": "Material wird per Telefon bestellt, Mengen werden aus der Offerte von Hand übertragen.",
+          "auto": "Erstellt aus Offerte oder Auftrag eine Materialliste und einen Bestellentwurf pro Lieferant.",
+          "mensch": "Mengen, Lieferant, Abgleich mit dem Lager und das Abschicken bleiben beim Betrieb.",
+          "daten": "Keine Personendaten.",
+          "aufwand": "klein",
+          "seite": "materialliste-elektro",
+          "start": true
+        },
+        {
+          "nr": 6,
+          "name": "Tagesplan-Vorschlag für Monteure",
+          "heute": "Einsätze werden auf dem Whiteboard oder per Messenger geplant.",
+          "auto": "Schlägt aus offenen Aufträgen, Dauer und Standort eine Reihenfolge vor und schreibt die Tagesinfo als Entwurf.",
+          "mensch": "Zuteilung und Notfälle entscheidet die Disposition.",
+          "daten": "Personendaten der Monteure und der Kundschaft.",
+          "aufwand": "mittel"
+        },
+        {
+          "nr": 7,
+          "name": "Störungsmeldungen strukturieren",
+          "heute": "Störungsmeldungen landen auf Zetteln oder in E-Mails.",
+          "auto": "Wandelt E-Mails und Formulare in einen Entwurf für den Servicerapport um und fragt fehlende Angaben als Entwurf nach.",
+          "mensch": "Dringlichkeit und Notfalleinsatz entscheidet ein Mensch.",
+          "daten": "Personendaten der Kundschaft.",
+          "aufwand": "klein bis mittel"
+        },
+        {
+          "nr": 8,
+          "name": "Rechnungsentwurf aus Rapporten",
+          "heute": "Rechnungen verzögern sich, weil Rapporte fehlen.",
+          "auto": "Fasst unterzeichnete Rapporte pro Auftrag zusammen und weist auf fehlende hin.",
+          "mensch": "Tarife, Rabatte und Versand bestimmt der Betrieb.",
+          "daten": "Personendaten der Kundschaft.",
+          "aufwand": "mittel",
+          "offen": "die Anbindung an die Branchensoftware."
+        },
+        {
+          "nr": 9,
+          "name": "Zeitabgleich zwischen Rapport und Arbeitszeit",
+          "heute": "Ob Rapportstunden und erfasste Arbeitszeit zusammenpassen, prüft niemand systematisch.",
+          "auto": "Gleicht die Stunden aus den Rapporten mit der Arbeitszeiterfassung ab und markiert Lücken.",
+          "mensch": "Korrekturen nehmen Mitarbeitende und Betrieb gemeinsam vor.",
+          "daten": "Personendaten der Mitarbeitenden; Unterlagen zur Arbeitszeit sind fünf Jahre aufzubewahren.",
+          "aufwand": "klein",
+          "offen": "der Datenschutzhinweis an die Mitarbeitenden.",
+          "seite": "zeitabgleich-rapporte-handwerk",
+          "start": true
+        },
+        {
+          "nr": 10,
+          "name": "Mängelmeldung mit Fristprüfung",
+          "heute": "Mängelrügen kommen unstrukturiert per Telefon oder E-Mail.",
+          "auto": "Legt Auftrag, Abnahmedatum und Vertragsdatum vor oder nach dem 1. Januar 2026 bereit, berechnet Fristen als Hinweis und entwirft die Antwort.",
+          "mensch": "Rechtliche Würdigung, Anerkennung und Nachbesserung entscheidet der Betrieb, im Zweifel mit Rechtsberatung.",
+          "daten": "Personendaten der Kundschaft.",
+          "aufwand": "mittel",
+          "offen": "ob die Verjährung von fünf Jahren für Bauwerke auch für Elektroinstallationen gilt."
+        }
+      ],
+      "ketten": [
+        {
+          "titel": "Von der Anfrage zur Rechnung",
+          "betrieb": "Betrieb",
+          "text": "Ein kleiner Auftrag von der ersten Anfrage bis zur Rechnung, ohne dass etwas doppelt abgetippt wird.",
+          "schritte": [
+            {
+              "titel": "Anfrage strukturieren",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Die Anfrage einer Hausverwaltung für drei neue Steckdosen wird in einen strukturierten Auftrag übertragen.",
+              "karte": 7
+            },
+            {
+              "titel": "Offert-Entwurf",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Aus früheren Offerten schlägt der Baustein Positionen und Textbausteine vor.",
+              "karte": 1
+            },
+            {
+              "titel": "Preis und Versand",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Der Betrieb setzt die Preise ein und verschickt die Offerte selbst.",
+              "karte": 1
+            },
+            {
+              "titel": "Materialliste",
+              "art": "baustein",
+              "seite": "materialliste-elektro",
+              "beispiel": "Nach dem Auftrag liegt ein Bestellentwurf für den Grosshändler bereit, den der Betrieb freigibt."
+            },
+            {
+              "titel": "Rapport",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Nach dem Einsatz entsteht aus einer Sprachnotiz der Entwurf des Rapports, den die Kundschaft unterschreibt.",
+              "karte": 2
+            },
+            {
+              "titel": "Rechnungsentwurf",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Aus dem unterzeichneten Rapport entsteht ein Rechnungsentwurf.",
+              "karte": 8
+            },
+            {
+              "titel": "Freigabe",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Der Betrieb prüft Tarife und Rabatte und verschickt die Rechnung selbst.",
+              "karte": 8
+            }
+          ],
+          "abschluss": "Ziel: von der Anfrage bis zur Rechnung nichts doppelt abtippen. Preise und Versand bleiben beim Betrieb."
+        },
+        {
+          "titel": "Neuinstallation bis Kontrolltermin",
+          "betrieb": "Betrieb",
+          "text": "Von der Schlusskontrolle über den Sicherheitsnachweis bis zum Hinweis an die Eigentümerschaft.",
+          "schritte": [
+            {
+              "titel": "Schlusskontrolle",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Nach der Installation macht eine fachkundige Person die Schlusskontrolle.",
+              "karte": 3,
+              "hinweis": "Vor der Übergabe."
+            },
+            {
+              "titel": "Entwurf Sicherheitsnachweis",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Adresse, Beschreibung, Installateur und Kontrollperiode stehen im Entwurf bereits drin.",
+              "karte": 3
+            },
+            {
+              "titel": "Messwerte und Unterschrift",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Die kontrollierende Person trägt die Messwerte ein, bestätigt die Mängelfreiheit und unterschreibt.",
+              "karte": 3,
+              "hinweis": "Der Baustein erklärt nie «mängelfrei»."
+            },
+            {
+              "titel": "In die Fälligkeitsliste",
+              "art": "baustein",
+              "seite": "faelligkeitsliste-kontrollen-elektro",
+              "beispiel": "Die Anlage erscheint in der Fälligkeitsliste mit Kontrollperiode und nächstem Datum."
+            },
+            {
+              "titel": "Hinweis an die Eigentümerschaft",
+              "art": "baustein",
+              "seite": "faelligkeitsliste-kontrollen-elektro",
+              "beispiel": "Ein Entwurf erinnert die Eigentümerschaft an die Abnahmekontrolle durch ein unabhängiges Kontrollorgan."
+            },
+            {
+              "titel": "Versand",
+              "art": "mensch",
+              "seite": "faelligkeitsliste-kontrollen-elektro",
+              "beispiel": "Der Betrieb prüft den Hinweis und verschickt ihn selbst."
+            }
+          ],
+          "abschluss": "Ziel: kein Sicherheitsnachweis ohne Pflichtangaben und kein vergessener Kontrolltermin. Unterschrieben und versendet wird von Menschen."
+        },
+        {
+          "titel": "Service und Wartung",
+          "betrieb": "Betrieb",
+          "text": "Eine Störung von der Meldung bis zur Rechnung und zur nächsten Kontrolle.",
+          "schritte": [
+            {
+              "titel": "Störung strukturieren",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Eine Störungsmeldung per E-Mail wird zum Entwurf eines Servicerapports.",
+              "karte": 7
+            },
+            {
+              "titel": "Tagesplan",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Der Tagesplan-Vorschlag setzt den Einsatz zwischen zwei bestehende Termine in derselben Gemeinde.",
+              "karte": 6
+            },
+            {
+              "titel": "Zuteilung",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Die Disposition teilt den Einsatz einem Monteur zu.",
+              "karte": 6
+            },
+            {
+              "titel": "Servicerapport",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Nach dem Einsatz liegt der Servicerapport als Entwurf zur Freigabe bereit.",
+              "karte": 2
+            },
+            {
+              "titel": "Zeitabgleich",
+              "art": "baustein",
+              "seite": "zeitabgleich-rapporte-handwerk",
+              "beispiel": "Der Abgleich zeigt, dass im Rapport eine Stunde mehr steht als in der Arbeitszeiterfassung."
+            },
+            {
+              "titel": "Rechnung",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Aus dem freigegebenen Rapport entsteht ein Rechnungsentwurf, den der Betrieb freigibt.",
+              "karte": 8
+            },
+            {
+              "titel": "Folgekontrolle",
+              "art": "baustein",
+              "seite": "faelligkeitsliste-kontrollen-elektro",
+              "beispiel": "Steht für die Anlage eine periodische Kontrolle an, erscheint sie in der Fälligkeitsliste."
+            }
+          ],
+          "abschluss": "Ziel: jeder Serviceeinsatz mit Rapport, Zeitabgleich und Rechnung. Zuteilung, Korrekturen und Versand entscheidet der Betrieb."
+        }
+      ]
+    }
   },
   {
     "slug": "kindergaerten-schulen",
@@ -321,9 +874,287 @@
     "h1": "Arztpraxis digital entlasten: Werkzeuge für Praxen in der Schweiz",
     "schweiz": "Für Arztpraxen in der ganzen Schweiz gelten das Berufsgeheimnis nach Art. 321 StGB und das revidierte Datenschutzgesetz (nDSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
     "bausteine": [
-      "online-terminanfrage-arztpraxis"
+      "online-terminanfrage-arztpraxis",
+      "mahnentwurf-arztpraxis",
+      "dienstplan-material-arztpraxis"
     ],
-    "bausteine_intro": "Für Arztpraxen planen wir zuerst einen Baustein, der mit wenig Gesundheitsangaben auskommt."
+    "automatisierungen": {
+      "intro": "In einer Arztpraxis berührt fast jeder Ablauf Gesundheitsdaten, und das Berufsgeheimnis gilt auch für die Hilfspersonen der Ärztin oder des Arztes. Seit dem 1. Januar 2026 wird nach TARDOC und ambulanten Pauschalen abgerechnet. Wir haben zehn Bausteine geplant und beginnen mit denen, die keine Krankengeschichte brauchen.",
+      "start": "Startempfehlung, Einschätzung: zuerst Baustein 7 (Terminanfrage), 10 (Dienstplan und Material) und 6 (Mahnentwurf). Die Terminanfrage braucht keine Anbindung an die Krankengeschichte, Dienstplan und Material betreffen kaum Patientendaten. Der Mahnentwurf arbeitet mit Rechnungsdaten und ist der heikelste der drei: erst zu empfehlen, wenn die Rechtslage zu Dritten unter dem Berufsgeheimnis geklärt ist. Die Bausteine 4 und 5 sind wegen des Tarifwechsels interessant, brauchen aber Leistungsdaten und folgen in einer zweiten Stufe.",
+      "ketten_intro": "Die Ketten zeigen, wo ein Baustein vorbereitet und wo ein Mensch entscheidet. Bausteine mit eigener Seite sind verlinkt, die übrigen führen zu ihrer Karte oben.",
+      "geprueft": "2026-10-28",
+      "ratgeber": "patientenformular-datenschutz",
+      "liste": [
+        {
+          "nr": 1,
+          "name": "Sammler für Rezeptanfragen",
+          "heute": "Rezeptwünsche kommen per Telefon und werden auf Zetteln weitergegeben.",
+          "auto": "Ein Formular erfasst Medikament, Dosis und Apotheke, ordnet die Anfrage der Patientin oder dem Patienten zu und führt eine Liste für die Ärztin oder den Arzt.",
+          "mensch": "Die Ärztin oder der Arzt stellt das Rezept aus und unterschreibt.",
+          "daten": "Gesundheitsdaten, besonders schützenswert.",
+          "aufwand": "mittel",
+          "offen": "der Zugriff auf den Patientenstamm der Praxissoftware."
+        },
+        {
+          "nr": 2,
+          "name": "Entwurf für Überweisungsschreiben",
+          "heute": "Überweisungen werden aus Stammdaten und Notizen von Hand zusammengestellt.",
+          "auto": "Füllt eine Vorlage mit Stammdaten, Fragestellung und der Liste der Anlagen.",
+          "mensch": "Die Ärztin oder der Arzt verantwortet Inhalt und Versand.",
+          "daten": "Gesundheitsdaten, besonders schützenswert.",
+          "aufwand": "mittel",
+          "offen": "der Export aus der Praxissoftware."
+        },
+        {
+          "nr": 3,
+          "name": "Laborauftrag und Zuordnung der Befunde",
+          "heute": "Ob zu jedem Laborauftrag ein Befund zurückkam, wird von Hand verfolgt.",
+          "auto": "Bereitet Zuweisungen vor, gleicht eingehende Befunde mit offenen Aufträgen ab und meldet, was fehlt.",
+          "mensch": "Die medizinische Bewertung bleibt bei der Ärztin oder beim Arzt.",
+          "daten": "Gesundheitsdaten, besonders schützenswert.",
+          "aufwand": "gross",
+          "offen": "die Schnittstelle zum Labor."
+        },
+        {
+          "nr": 4,
+          "name": "Plausibilitätsprüfung TARDOC und Pauschalen",
+          "heute": "Leistungen werden vor der Rechnung von Hand auf Tarifregeln geprüft.",
+          "auto": "Prüft erfasste Leistungen auf bekannte Regeln, etwa dass pro Behandlung entweder nach TARDOC oder nach Pauschale abgerechnet wird, und markiert Auffälligkeiten.",
+          "mensch": "Die Praxis entscheidet über die endgültige Erfassung.",
+          "daten": "Leistungs- und Gesundheitsdaten, besonders schützenswert.",
+          "aufwand": "mittel",
+          "offen": "der Regelkatalog, der sich je Fachgebiet unterscheidet."
+        },
+        {
+          "nr": 5,
+          "name": "Vorprüfung der Rechnung",
+          "heute": "Fehlende Pflichtangaben fallen oft erst auf, wenn eine Rechnung zurückkommt.",
+          "auto": "Prüft Versichertenkarten- und AHV-Nummer sowie die XML-Version und führt eine Fehlerliste.",
+          "mensch": "Die Praxis korrigiert und gibt die Rechnung frei.",
+          "daten": "Rechnungs- und Gesundheitsdaten, besonders schützenswert.",
+          "aufwand": "mittel"
+        },
+        {
+          "nr": 6,
+          "name": "Mahnentwurf für Arztpraxen",
+          "heute": "Überfällige Rechnungen werden von Hand gesucht und Mahnungen einzeln geschrieben.",
+          "auto": "Erkennt überfällige Rechnungen im System Tiers garant und schreibt sachliche Mahnentwürfe ohne Angaben zur Behandlung.",
+          "mensch": "Die Praxis entscheidet, ob gemahnt wird, und berücksichtigt Härtefälle.",
+          "daten": "Rechnungsdaten, besonders schützenswert.",
+          "aufwand": "klein",
+          "offen": "der Export der offenen Rechnungen und die Einbindung externer Dienstleister unter dem Berufsgeheimnis.",
+          "seite": "mahnentwurf-arztpraxis",
+          "start": true
+        },
+        {
+          "nr": 7,
+          "name": "Online-Terminanfrage für Arztpraxen",
+          "heute": "Terminwünsche kommen per Telefon und per E-Mail, oft mit Beschwerden im Freitext.",
+          "auto": "Ein Webformular erfasst Terminwunsch und Dringlichkeit ohne medizinische Details und zeigt die Absageregel der Praxis an.",
+          "mensch": "Das Praxisteam vergibt den Termin und gibt die Antwort frei.",
+          "daten": "Name, Kontakt und Terminwunsch; auch das ist bei einer Arztpraxis sensibel, darum ein gesicherter Kanal.",
+          "aufwand": "klein",
+          "seite": "online-terminanfrage-arztpraxis",
+          "start": true
+        },
+        {
+          "nr": 8,
+          "name": "Patientenformular mit Information nach EDÖB",
+          "heute": "Anmeldeformulare auf Papier fragen oft mehr ab, als die Behandlung braucht.",
+          "auto": "Fragt nur Notwendiges ab und trennt die Einwilligungen, etwa für Tiers payant, für Weitergaben und für E-Mail.",
+          "mensch": "Die Praxis wählt die Felder und übernimmt die Angaben in die Krankengeschichte.",
+          "daten": "Gesundheitsdaten, besonders schützenswert.",
+          "aufwand": "mittel",
+          "offen": "das Hosting in der Schweiz und die Regelung zur Bearbeitung durch Dritte."
+        },
+        {
+          "nr": 9,
+          "name": "Recall für Vorsorge, Impfungen und Kontrollen",
+          "heute": "Wer zur Kontrolle oder Impfung fällig ist, wird aus Listen oder aus dem Gedächtnis zusammengesucht.",
+          "auto": "Schreibt Briefentwürfe aus Fälligkeitsdaten, ohne Diagnose im Text.",
+          "mensch": "Die Praxis entscheidet, wer angeschrieben wird, und versendet selbst.",
+          "daten": "Gesundheitsdaten, besonders schützenswert.",
+          "aufwand": "mittel"
+        },
+        {
+          "nr": 10,
+          "name": "Dienstplan und Materialbestellung für Arztpraxen",
+          "heute": "Dienstplan und Bestellungen entstehen in Tabellen und auf Zetteln.",
+          "auto": "Schlägt Dienstpläne nach Pensum und Abwesenheiten vor und erstellt Bestelllisten, sobald der Mindestbestand erreicht ist.",
+          "mensch": "Die Praxis entscheidet über Einsätze und löst Bestellungen selbst aus.",
+          "daten": "Personendaten der Mitarbeitenden, keine Patientendaten; Materiallisten sind nicht sensibel.",
+          "aufwand": "klein",
+          "seite": "dienstplan-material-arztpraxis",
+          "start": true
+        }
+      ],
+      "ketten": [
+        {
+          "titel": "Rezeptanfrage bis Rückmeldung",
+          "betrieb": "Praxis",
+          "text": "Wie eine Rezeptanfrage geordnet bei der Ärztin ankommen könnte, ohne dass medizinische Entscheide aus der Hand gegeben werden.",
+          "schritte": [
+            {
+              "titel": "Anfrage per Formular",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Ein Patient bittet im Formular um ein Folgerezept und nennt seine Apotheke.",
+              "karte": 1
+            },
+            {
+              "titel": "Zuordnung und Einwilligung",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Die Anfrage wird dem Patienten zugeordnet, und es ist sichtbar, ob eine Einwilligung zur Weitergabe an die Apotheke vorliegt.",
+              "karte": 8
+            },
+            {
+              "titel": "Ärztliche Prüfung",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Die Ärztin prüft Krankengeschichte und mögliche Wechselwirkungen.",
+              "karte": 1,
+              "hinweis": "Medizinischer Entscheid."
+            },
+            {
+              "titel": "Rezeptentwurf",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Ein Rezeptentwurf mit den Angaben aus der Anfrage liegt bereit.",
+              "karte": 1
+            },
+            {
+              "titel": "Unterschrift",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Die Ärztin stellt das Rezept aus und unterschreibt.",
+              "karte": 1
+            },
+            {
+              "titel": "Rückmeldung",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Das Praxisteam gibt die vorbereitete Rückmeldung an den Patienten frei.",
+              "karte": 1,
+              "hinweis": "Rückmeldung als Entwurf."
+            }
+          ],
+          "abschluss": "Ziel: Rezeptwünsche geordnet statt am Telefon. Ausgestellt und unterschrieben wird jedes Rezept von der Ärztin oder dem Arzt."
+        },
+        {
+          "titel": "Behandlung bis bezahlte Rechnung",
+          "betrieb": "Praxis",
+          "text": "Nach dem Tarifwechsel 2026: Prüfungen vor dem Versand und eine geordnete Mahnung, die Entscheide bleiben in der Praxis.",
+          "schritte": [
+            {
+              "titel": "Leistungen erfassen",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Nach der Konsultation erfasst die Praxis die Leistungen wie bisher in der Praxissoftware.",
+              "karte": 4,
+              "hinweis": "In Ihrer Praxissoftware."
+            },
+            {
+              "titel": "Plausibilitätsprüfung",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Der Baustein markiert eine Behandlung, in der TARDOC-Positionen und eine Pauschale gemischt sind.",
+              "karte": 4
+            },
+            {
+              "titel": "Markiertes klären",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Die MPA klärt die markierten Fälle mit der Ärztin.",
+              "karte": 4
+            },
+            {
+              "titel": "Vorprüfung der Rechnung",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Vor dem Versand meldet die Vorprüfung eine fehlende AHV-Nummer.",
+              "karte": 5
+            },
+            {
+              "titel": "Freigabe und Versand",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Die Praxis korrigiert, gibt frei und versendet die Rechnung selbst.",
+              "karte": 5
+            },
+            {
+              "titel": "Zahlungsfrist überwachen",
+              "art": "baustein",
+              "seite": "mahnentwurf-arztpraxis",
+              "beispiel": "Ist eine Rechnung im System Tiers garant überfällig, erscheint sie in der Liste offener Posten."
+            },
+            {
+              "titel": "Mahnung prüfen",
+              "art": "mensch",
+              "seite": "mahnentwurf-arztpraxis",
+              "beispiel": "Die Praxis prüft den Mahnentwurf, berücksichtigt Härtefälle und entscheidet, ob er verschickt wird.",
+              "hinweis": "Nur mit geklärter Rechtslage zum Berufsgeheimnis."
+            }
+          ],
+          "abschluss": "Ziel: weniger zurückgewiesene Rechnungen nach dem Tarifwechsel. Erfassung, Freigabe und Mahnung bleiben Sache der Praxis."
+        },
+        {
+          "titel": "Neue Patientin bis Recall",
+          "betrieb": "Praxis",
+          "text": "Vom ersten Kontakt bis zur nächsten Kontrolle, mit möglichst wenig Papier am Empfang.",
+          "schritte": [
+            {
+              "titel": "Terminanfrage",
+              "art": "baustein",
+              "seite": "online-terminanfrage-arztpraxis",
+              "beispiel": "Eine neue Patientin fragt online einen Termin an, ohne Beschwerden anzugeben."
+            },
+            {
+              "titel": "Termin bestätigen",
+              "art": "mensch",
+              "seite": "online-terminanfrage-arztpraxis",
+              "beispiel": "Die MPA wählt den Termin und gibt die Bestätigung frei."
+            },
+            {
+              "titel": "Formular-Paket",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Die MPA gibt der Patientin das Formular mit getrennten Einwilligungen.",
+              "karte": 8
+            },
+            {
+              "titel": "Vollständigkeit prüfen",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Der Baustein zeigt, welche Angaben oder Einwilligungen noch fehlen.",
+              "karte": 8
+            },
+            {
+              "titel": "Übernahme",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Die Praxis übernimmt die Angaben in die Praxissoftware.",
+              "karte": 8
+            },
+            {
+              "titel": "Fälligkeit erkennen",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Ein Jahr später erkennt der Baustein, dass eine Kontrolle fällig ist.",
+              "karte": 9
+            },
+            {
+              "titel": "Recall verschicken",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Die Praxis prüft den Briefentwurf ohne Diagnose und verschickt ihn selbst.",
+              "karte": 9
+            }
+          ],
+          "abschluss": "Ziel: weniger Papier am Empfang und kein vergessener Recall. Jede Nachricht an Patientinnen und Patienten gibt die Praxis frei."
+        }
+      ]
+    }
   },
   {
     "slug": "treuhaender",
@@ -388,9 +1219,278 @@
     "h1": "Treuhandbüro digital: Mandantenanfragen geordnet beantworten",
     "schweiz": "Treuhandbüros in der Schweiz bearbeiten Mandantendaten nach dem nDSG, oft zusätzlich unter vertraglicher Verschwiegenheit. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
     "bausteine": [
-      "fristenkalender-belegeingang-treuhand"
+      "fristenkalender-belegeingang-treuhand",
+      "unterlagen-erinnerung-treuhand",
+      "aufbewahrungsregister-treuhand"
     ],
-    "bausteine_intro": "Fristen und Belege über viele Mandate hinweg im Blick behalten."
+    "automatisierungen": {
+      "intro": "Treuhandbüros arbeiten mit Fristen, die je Kanton verschieden sind, und mit Finanz- und Personendaten ihrer Mandantinnen und Mandanten. Wir haben zehn Bausteine geplant. Drei davon empfehlen wir zuerst, weil sie mit wenigen Angaben auskommen: den Fristenkalender, die Unterlagen-Erinnerung und das Register für Aufbewahrungsfristen.",
+      "start": "Startempfehlung, Einschätzung: zuerst die Bausteine 1, 3 und 10. Baustein 1 braucht nur Mandat, Kanton und Mandatsart, Baustein 10 nur Metadaten, und bei Baustein 3 geht kein Entwurf automatisch hinaus. Für Büros mit Mandaten im Kanton Basel-Landschaft passt Baustein 2 dazu. Die Bausteine 4, 5 und 9 erst nach einer Datenschutzprüfung zu Auftragsbearbeitung, Speicherort und Zugriffen.",
+      "ketten_intro": "Die Ketten zeigen, wo ein Baustein vorbereitet und wo ein Mensch entscheidet. Bausteine mit eigener Seite sind verlinkt, die übrigen führen zu ihrer Karte oben.",
+      "geprueft": "2026-10-28",
+      "ratgeber": "aufbewahrungsfristen-buchhaltung",
+      "liste": [
+        {
+          "nr": 1,
+          "name": "Fristenkalender und Belegeingang für Treuhandbüros",
+          "heute": "Fristen pro Mandat stehen in Tabellen, Kalendern oder im Kopf: MWST, Steuererklärungen je Kanton, Lohndeklaration.",
+          "auto": "Erzeugt aus Kanton, Rechtsform und Mandatsart einen Kalender, etwa MWST innert 60 Tagen nach Periodenende oder Lohndeklaration bis 30. Januar, und zeigt pro Mandat, welche Unterlagen noch fehlen.",
+          "mensch": "Das Büro prüft die Regeln jedes Jahr gegen die Angaben der Steuerämter und entscheidet über Fristerstreckungen und Sonderfälle.",
+          "daten": "Mandat, Kanton und Mandatsart; für die Checkliste kommen Belege mit Finanz- und Personendaten dazu.",
+          "aufwand": "mittel",
+          "seite": "fristenkalender-belegeingang-treuhand",
+          "start": true
+        },
+        {
+          "nr": 2,
+          "name": "Massenfrist-Datei für Fristerstreckungen",
+          "heute": "Fristerstreckungen werden Mandat für Mandat beantragt.",
+          "auto": "Stellt eine CSV-Datei mit Steuernummern und gewünschten Fristen für die Funktion «Massenfristen» des Kantons Basel-Landschaft zusammen.",
+          "mensch": "Das Büro wählt die Fristen und lädt die Datei selbst beim Kanton hoch.",
+          "daten": "Steuernummern und Namen, also Personendaten.",
+          "aufwand": "klein",
+          "offen": "das genaue Dateiformat, das der Kanton verlangt."
+        },
+        {
+          "nr": 3,
+          "name": "Unterlagen-Erinnerung für Treuhandbüros",
+          "heute": "Fehlende Belege und Auszüge fordert das Büro per Telefon oder einzeln geschriebener E-Mail nach.",
+          "auto": "Vergleicht die Checkliste pro Mandat und Periode mit dem Eingang und schreibt Mailentwürfe mit den offenen Punkten.",
+          "mensch": "Das Büro liest jeden Entwurf, passt ihn an und versendet ihn selbst.",
+          "daten": "Namen, Kontakt und die Liste fehlender Unterlagen, also Personendaten.",
+          "aufwand": "klein bis mittel",
+          "seite": "unterlagen-erinnerung-treuhand",
+          "start": true
+        },
+        {
+          "nr": 4,
+          "name": "Belegeingang sortieren und ablegen",
+          "heute": "Belege kommen per E-Mail, Post und Foto und werden von Hand umbenannt und abgelegt.",
+          "auto": "Schlägt Mandat, Periode und Dateinamen vor, erkennt Duplikate und legt Kopien in die Ordnerstruktur; das Original bleibt unverändert.",
+          "mensch": "Das Büro bestätigt alles, was der Baustein nicht eindeutig zuordnen kann.",
+          "daten": "Finanz- und Personendaten, bei Lohn- oder Gesundheitsbelegen besonders schützenswerte Daten.",
+          "aufwand": "mittel",
+          "offen": "welche Archivlösung die Anforderungen der Geschäftsbücherverordnung erfüllt, und eine Datenschutzprüfung vor dem Einsatz."
+        },
+        {
+          "nr": 5,
+          "name": "MWST-Vorbereitung mit Plausibilitätsbericht",
+          "heute": "Fälligkeiten und Auffälligkeiten pro Periode werden von Hand zusammengetragen.",
+          "auto": "Listet pro Periode Fälligkeit, Abrechnungsart und Abweichungen zur Vorperiode aus einem Buchhaltungsexport auf.",
+          "mensch": "Das Büro prüft, rechnet ab und reicht die Abrechnung selbst im ePortal der ESTV ein.",
+          "daten": "Finanzdaten der Mandantinnen und Mandanten.",
+          "aufwand": "mittel",
+          "offen": "die Exportformate von Abacus, bexio und anderen Programmen, und eine Datenschutzprüfung vor dem Einsatz."
+        },
+        {
+          "nr": 6,
+          "name": "Vollständigkeitsprüfung der Bankauszüge",
+          "heute": "Ob für jedes Konto jeder Monat vorliegt, wird von Hand abgehakt.",
+          "auto": "Prüft nur, ob für jedes Konto und jeden Monat ein Auszug vorhanden ist, und erstellt eine Lückenliste mit einem Gerüst für die Nachfrage; Kontoinhalte liest er nicht.",
+          "mensch": "Das Büro klärt, ob eine Lücke ein Problem ist.",
+          "daten": "Nur Kontobezeichnung und Monat.",
+          "aufwand": "klein"
+        },
+        {
+          "nr": 7,
+          "name": "Paket für neue Mandate",
+          "heute": "Ordner, Checklisten und Vorlagen werden für jedes neue Mandat neu angelegt.",
+          "auto": "Legt aus einem Formular Ordnerstruktur, Checkliste und Entwürfe für Auftragsbestätigung und Datenschutzinformation an.",
+          "mensch": "Das Büro entscheidet über die Annahme des Mandats, prüft die Entwürfe und gibt sie frei.",
+          "daten": "Personendaten der neuen Mandantin oder des neuen Mandanten.",
+          "aufwand": "klein bis mittel",
+          "offen": "die juristische Prüfung der Vorlagetexte."
+        },
+        {
+          "nr": 8,
+          "name": "Honorarrechnung aus der Stundenerfassung",
+          "heute": "Stunden werden für die Rechnung von Hand zusammengezählt und beschrieben.",
+          "auto": "Verdichtet exportierte Stunden pro Mandat zu einem Rechnungsentwurf mit Positionen.",
+          "mensch": "Das Büro legt die Tarife fest, korrigiert und stellt die Rechnung aus.",
+          "daten": "Personendaten und Leistungsangaben.",
+          "aufwand": "klein bis mittel",
+          "offen": "welche Stundenexporte die Branchensoftware bietet."
+        },
+        {
+          "nr": 9,
+          "name": "Lohn: Mutationen und Jahresende-Checkliste",
+          "heute": "Lohnmutationen werden bei den Mandanten einzeln abgefragt, Termine zum Jahresende von Hand verfolgt.",
+          "auto": "Schreibt Entwürfe für Mutationsabfragen und eine Checkliste mit Fristen, etwa der Lohndeklaration bis 30. Januar; er verschickt nichts.",
+          "mensch": "Das Büro verantwortet Löhne, Abzüge und die Meldungen an die Ausgleichskasse.",
+          "daten": "Lohndaten, bei Krankheit oder Unfall möglicherweise besonders schützenswert.",
+          "aufwand": "klein",
+          "offen": "die Anbindung an Lohnsoftware mit ELM, und eine Datenschutzprüfung vor dem Einsatz."
+        },
+        {
+          "nr": 10,
+          "name": "Register für Aufbewahrungs- und Löschfristen",
+          "heute": "Wann ein Dossier gelöscht werden darf, steht selten irgendwo geschrieben.",
+          "auto": "Führt pro Dossier Geschäftsjahr und Ablaufdatum, in der Regel zehn Jahre, für bestimmte MWST-Unterlagen zu Immobilien 20 Jahre, und listet fällige Dossiers.",
+          "mensch": "Das Büro entscheidet über Löschung oder längere Aufbewahrung; der Baustein löscht nie selbst.",
+          "daten": "Nur Metadaten: Dossier, Mandat, Geschäftsjahr, Frist.",
+          "aufwand": "klein",
+          "seite": "aufbewahrungsregister-treuhand",
+          "start": true
+        }
+      ],
+      "ketten": [
+        {
+          "titel": "Jahresstart und Fristen",
+          "betrieb": "Büro",
+          "text": "So könnten Fristenkalender, Massenfrist-Datei und Unterlagen-Erinnerung zu Beginn des Jahres zusammenspielen.",
+          "schritte": [
+            {
+              "titel": "Fristenkalender",
+              "art": "baustein",
+              "seite": "fristenkalender-belegeingang-treuhand",
+              "beispiel": "Aus der aktualisierten Mandatsliste entsteht ein Kalender mit den Fristen jedes Mandats, nach Kanton und Rechtsform."
+            },
+            {
+              "titel": "Fristen und Sonderfälle prüfen",
+              "art": "mensch",
+              "seite": "fristenkalender-belegeingang-treuhand",
+              "beispiel": "Das Büro gleicht die Regeln mit den aktuellen Angaben der Steuerämter ab und markiert Mandate mit Sonderfällen.",
+              "hinweis": "Regeln jedes Jahr prüfen."
+            },
+            {
+              "titel": "Massenfrist-Datei",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Für die Mandate im Kanton Basel-Landschaft liegt eine CSV-Datei mit Steuernummern und gewünschten Fristen bereit.",
+              "karte": 2
+            },
+            {
+              "titel": "Datei hochladen",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Das Büro prüft die gewählten Fristen und lädt die Datei selbst beim Kanton hoch.",
+              "karte": 2,
+              "hinweis": "Dateiformat noch zu klären."
+            },
+            {
+              "titel": "Fehlende Unterlagen",
+              "art": "baustein",
+              "seite": "unterlagen-erinnerung-treuhand",
+              "beispiel": "Für jedes Mandat mit offenen Punkten entsteht ein Entwurf, der die fehlenden Unterlagen einzeln aufzählt."
+            },
+            {
+              "titel": "Versand",
+              "art": "mensch",
+              "seite": "unterlagen-erinnerung-treuhand",
+              "beispiel": "Das Büro liest die Entwürfe, passt sie an und verschickt sie selbst.",
+              "hinweis": "Kein automatischer Versand."
+            }
+          ],
+          "abschluss": "Ziel: alle Fristen des Jahres an einem Ort. Und keine Erinnerung geht hinaus, die das Büro nicht gelesen hat."
+        },
+        {
+          "titel": "MWST-Quartal",
+          "betrieb": "Büro",
+          "text": "Vom Quartalsende bis zur eingereichten Abrechnung: Die Bausteine sammeln und prüfen, das Büro klärt und reicht ein.",
+          "schritte": [
+            {
+              "titel": "Belege ablegen",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Nach dem Quartalsende liegen die eingegangenen Belege mit einem Vorschlag für Mandat und Periode in der Ablage.",
+              "karte": 4
+            },
+            {
+              "titel": "Bank-Lückenliste",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Die Prüfung zeigt, dass für ein Konto der Auszug vom September fehlt, ohne Kontoinhalte zu lesen.",
+              "karte": 6
+            },
+            {
+              "titel": "Nachfrage als Entwurf",
+              "art": "baustein",
+              "seite": "unterlagen-erinnerung-treuhand",
+              "beispiel": "Zur Lücke liegt ein Entwurf an die Mandantin bereit, der den fehlenden Auszug nennt."
+            },
+            {
+              "titel": "Versenden und klären",
+              "art": "mensch",
+              "seite": "unterlagen-erinnerung-treuhand",
+              "beispiel": "Das Büro verschickt die Nachfrage selbst und klärt, ob die Lücke ein Problem ist."
+            },
+            {
+              "titel": "Plausibilitätsbericht",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Ein Bericht zeigt die Fälligkeit 60 Tage nach Periodenende und Abweichungen zur Vorperiode.",
+              "karte": 5
+            },
+            {
+              "titel": "Abrechnen und einreichen",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Das Büro prüft den Bericht, rechnet ab und reicht die Abrechnung selbst im ePortal der ESTV ein.",
+              "karte": 5,
+              "hinweis": "Einreichung nur durch das Büro."
+            }
+          ],
+          "abschluss": "Ziel: weniger Nachtelefonieren vor der MWST-Frist. Abgerechnet und eingereicht wird weiterhin vom Büro."
+        },
+        {
+          "titel": "Neues Mandat bis Honorarrechnung",
+          "betrieb": "Büro",
+          "text": "Ein neues Mandat von der Annahme bis zur ersten Rechnung und zum Eintrag im Fristenregister.",
+          "schritte": [
+            {
+              "titel": "Mandat annehmen",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Das Büro entscheidet, ob es das Mandat übernimmt.",
+              "karte": 7,
+              "hinweis": "Entscheid des Büros."
+            },
+            {
+              "titel": "Paket für das Mandat",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Aus dem Formular entstehen Ordner, Checkliste und Entwürfe für Auftragsbestätigung und Datenschutzinformation.",
+              "karte": 7
+            },
+            {
+              "titel": "Prüfen und freigeben",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Das Büro prüft die Entwürfe und gibt sie frei.",
+              "karte": 7
+            },
+            {
+              "titel": "Belege laufend ablegen",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Während des Jahres landen Belege mit einem Ablagevorschlag im Ordner des neuen Mandats.",
+              "karte": 4
+            },
+            {
+              "titel": "Rechnungsentwurf",
+              "art": "baustein",
+              "seite": null,
+              "beispiel": "Aus den erfassten Stunden entsteht ein Rechnungsentwurf mit Positionen.",
+              "karte": 8
+            },
+            {
+              "titel": "Rechnung ausstellen",
+              "art": "mensch",
+              "seite": null,
+              "beispiel": "Das Büro legt den Tarif fest, korrigiert und stellt die Rechnung aus.",
+              "karte": 8
+            },
+            {
+              "titel": "Fristenregister",
+              "art": "baustein",
+              "seite": "aufbewahrungsregister-treuhand",
+              "beispiel": "Das abgeschlossene Geschäftsjahr erscheint im Register mit dem Datum, ab dem eine Löschung geprüft werden kann."
+            }
+          ],
+          "abschluss": "Ziel: jedes Mandat von Anfang an geordnet. Ob ein Dossier gelöscht wird, entscheidet weiterhin das Büro."
+        }
+      ]
+    }
   },
   {
     "slug": "hotels-gastronomie",

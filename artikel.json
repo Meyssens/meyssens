@@ -1172,5 +1172,317 @@
     "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
    }
   ]
+ },
+ {
+  "slug": "aufbewahrungsfristen-buchhaltung",
+  "art": "ratgeber",
+  "name": "Aufbewahrungsfristen für Buchhaltung und Belege",
+  "titel": "Aufbewahrungsfristen für Buchhaltung und Belege | Meyssens",
+  "beschreibung": "Zehn Jahre nach Art. 958f OR, 20 Jahre für MWST-Unterlagen zu Immobilien, digitale Ablage nach GeBüV: Überblick mit Quellen und Checkliste. Jetzt lesen.",
+  "h1": "Aufbewahrungsfristen für Buchhaltung und Belege: was in der Schweiz gilt",
+  "lead": "Wie lange müssen Geschäftsbücher, Belege und MWST-Unterlagen aufbewahrt werden, und was gilt für die digitale Ablage? Dieser Überblick fasst zusammen, was das Obligationenrecht, die Geschäftsbücherverordnung und Fachbeiträge sagen, und zeigt, wo die Angaben noch zu prüfen sind.",
+  "geprueft": "2026-10-28",
+  "veroeffentlicht": "2026-10-28",
+  "produkte": [
+   "aufbewahrungsregister-treuhand",
+   "fristenkalender-belegeingang-treuhand",
+   "unterlagen-erinnerung-treuhand"
+  ],
+  "faq": [
+   {
+    "frage": "Wie lange muss ich die Buchhaltung aufbewahren?",
+    "antwort": "Geschäftsbücher, Buchungsbelege, Geschäftsbericht und Revisionsbericht zehn Jahre. Die Frist beginnt mit dem Ablauf des Geschäftsjahres (Art. 958f Abs. 1 OR)."
+   },
+   {
+    "frage": "Gilt für MWST-Unterlagen eine längere Frist?",
+    "antwort": "Laut WEKA sind MWST-Unterlagen bis zur absoluten Verjährung der Steuerforderung aufzubewahren, also zehn Jahre nach Ablauf der Steuerperiode. Unterlagen zur Einlageentsteuerung und zum Eigenverbrauch bei Liegenschaften 20 Jahre (Art. 70 Abs. 3 MWSTG)."
+   },
+   {
+    "frage": "Darf ich Belege nur digital aufbewahren?",
+    "antwort": "Ja, wenn die Übereinstimmung mit den Geschäftsvorfällen gewährleistet ist und die Belege jederzeit lesbar gemacht werden können (Art. 958f Abs. 3 OR). Für veränderbare Träger wie eine Cloud stellt die Geschäftsbücherverordnung zusätzliche Anforderungen."
+   },
+   {
+    "frage": "Müssen Geschäftsbericht und Revisionsbericht auf Papier vorliegen?",
+    "antwort": "Ja. Sie sind schriftlich und unterzeichnet aufzubewahren (Art. 958f Abs. 2 OR)."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/treuhaender/",
+    "titel": "Treuhandbüros digital",
+    "grund": "Zehn geplante Bausteine und drei Abläufe für Fristen, Belege und Mandate."
+   },
+   {
+    "url": "/produkte/aufbewahrungsregister-treuhand/",
+    "titel": "Register für Aufbewahrungs- und Löschfristen",
+    "grund": "Frist und Status pro Dossier, gelöscht wird nie automatisch."
+   },
+   {
+    "url": "/produkte/fristenkalender-belegeingang-treuhand/",
+    "titel": "Fristenkalender und Belegeingang",
+    "grund": "MWST- und Steuerfristen pro Mandat im Blick."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Informationspflicht, Auftragsbearbeitung und Datensicherheit."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Art. 958f OR, Führung und Aufbewahrung der Geschäftsbücher (droit-bilingue.ch, nicht amtlich)",
+    "url": "https://droit-bilingue.ch/de-en/2/22/220-958f-1336.html"
+   },
+   {
+    "titel": "Geschäftsbücherverordnung (GeBüV), Fassung AS 2002 1399 (Fedlex, PDF)",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2002/216/de/pdf-a/fedlex-data-admin-ch-eli-oc-2002-216-de-pdf-a.pdf"
+   },
+   {
+    "titel": "KMU-Portal des Bundes, Elektronische Aufbewahrung der Geschäftsbücher",
+    "url": "https://www.kmu.admin.ch/de/elektronische-aufbewahrung-der-geschaeftsbuecher"
+   },
+   {
+    "titel": "WEKA, Aufbewahrungsfristen: Compliance-Anforderungen an die Geschäftsunterlagen",
+    "url": "https://www.weka.ch/themen/finanzen-controlling/rechnungswesen/buchfuehrung/article/aufbewahrungsfristen-compliance-anforderungen-an-die-geschaeftsunterlagen/"
+   }
+  ]
+ },
+ {
+  "slug": "patientenformular-datenschutz",
+  "art": "ratgeber",
+  "name": "Patientenformulare und Datenschutz",
+  "titel": "Patientenformular: Was die Praxis fragen darf | Meyssens",
+  "beschreibung": "Information, Einwilligung, sichere Übermittlung und nur nötige Felder: was der EDÖB von Patientenformularen in Arztpraxen erwartet. Überblick lesen.",
+  "h1": "Patientenformulare und Datenschutz: Was darf die Praxis fragen?",
+  "lead": "Viele Praxen verwenden Formulare, die mehr abfragen als nötig oder pauschale Einwilligungen enthalten. Der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB) hat in einem Merkblatt erklärt, was er erwartet. Dieser Ratgeber fasst es zusammen, mit Hinweisen der FMH zur Krankengeschichte und zum Berufsgeheimnis.",
+  "geprueft": "2026-10-28",
+  "veroeffentlicht": "2026-10-28",
+  "produkte": [
+   "online-terminanfrage-arztpraxis",
+   "mahnentwurf-arztpraxis"
+  ],
+  "faq": [
+   {
+    "frage": "Muss die Patientin unterschreiben, dass sie informiert wurde?",
+    "antwort": "Nein. Laut EDÖB ist die Bestätigung der Kenntnisnahme keine Gültigkeitsvoraussetzung. Er empfiehlt, keine Unterschrift zu verlangen, die Information aber zu dokumentieren."
+   },
+   {
+    "frage": "Braucht die Praxis für die Behandlung eine Einwilligung in die Datenbearbeitung?",
+    "antwort": "Nein. Daten, die im Rahmen der Behandlung bearbeitet werden, fallen unter den Behandlungsvertrag. Eine Einwilligung braucht es vor allem bei einer Bekanntgabe an Dritte, die nicht auf einem Gesetz beruht."
+   },
+   {
+    "frage": "Ist eine pauschale Einwilligung zur Weitergabe an andere Ärzte gültig?",
+    "antwort": "Nein. Der EDÖB nennt eine vorgängige Einwilligung in die Weitergabe des Dossiers an eine Fachärztin oder einen Facharzt ausdrücklich als ungültig. Die Einwilligung ist einzuholen, wenn sich die Frage konkret stellt."
+   },
+   {
+    "frage": "Darf die Praxis Termine per E-Mail bestätigen?",
+    "antwort": "Der EDÖB stuft auch Terminvereinbarungen als besonders schützenswert ein und verlangt eine sichere Übermittlung. Ungesichert geht es nur, wenn die Person über die Risiken informiert wurde und frei gewählt hat."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/arztpraxen/",
+    "titel": "Arztpraxen digital",
+    "grund": "Zehn geplante Bausteine und drei Abläufe, zuerst ohne Krankengeschichte."
+   },
+   {
+    "url": "/produkte/online-terminanfrage-arztpraxis/",
+    "titel": "Online-Terminanfrage für Arztpraxen",
+    "grund": "Terminwünsche ohne Beschwerdefeld, verschlüsselt übermittelt."
+   },
+   {
+    "url": "/branchen/zahnarztpraxen/",
+    "titel": "Zahnarztpraxis digital",
+    "grund": "Berufsgeheimnis, Cloud und Patientenkommunikation in der Zahnarztpraxis."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Informationspflicht, Auftragsbearbeitung und Datensicherheit."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen",
+    "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+   },
+   {
+    "titel": "FMH, Rechtlicher Leitfaden, Kapitel 3.5 Krankengeschichte",
+    "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/3-grundlagen-der-behandlung/35-krankengeschichte-arzt.pdf?c=56782"
+   },
+   {
+    "titel": "FMH, Rechtlicher Leitfaden, Kapitel 4.8 Rechnungsstellung KVG",
+    "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/4-leistungen-kvg/48-rechnungsstellung-kvg.pdf?c=24130"
+   },
+   {
+    "titel": "FMH, Rechtlicher Leitfaden, Kapitel 7.1 Berufsgeheimnis",
+    "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/7-berufsgeheimnis-datenschutz/71-berufsgeheimnis-arzt.pdf?c=46545"
+   },
+   {
+    "titel": "FMH, Minimalanforderungen IT-Grundschutz für Praxisärztinnen und Praxisärzte",
+    "url": "https://www.fmh.ch/files/pdf24/minimalanforderungen-it-grundschutz-praxisaerztinnen-praxisaerzte-d3.pdf"
+   },
+   {
+    "titel": "HIN, Empfehlungen für die E-Mail-Korrespondenz mit Patientinnen und Patienten (März 2025)",
+    "url": "https://www.hin.ch/files/pdf1/empfehlungen-mailkommunikation-patienten_de.pdf"
+   },
+   {
+    "titel": "Kanton Thurgau, Merkblatt zur Führung und Aufbewahrung der Patientendokumentationen",
+    "url": "https://gesundheit.tg.ch/public/upload/assets/162229/Merkblatt%20betreffend%20F%C3%BChrung%20und%20Aufbewahrung%20der%20Patientendokumentationen.pdf?fp=1"
+   },
+   {
+    "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
+    "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+   }
+  ]
+ },
+ {
+  "slug": "maengelruege-abnahme-2026",
+  "art": "ratgeber",
+  "name": "Mängelrüge und Abnahme ab 2026",
+  "titel": "Mängelrüge 60 Tage: Abnahme und Fristen ab 2026 | Meyssens",
+  "beschreibung": "Seit 1.1.2026 gilt bei Bauten eine Rügefrist von 60 Tagen. Was das für Abnahme, SIA-Norm 118 und ältere Verträge heisst, mit Checkliste. Jetzt lesen.",
+  "h1": "Mängelrüge und Abnahme nach der OR-Revision 2026",
+  "lead": "Seit dem 1. Januar 2026 haben Bauherrschaften für Mängel an Bauten mindestens 60 Tage Zeit für die Rüge. Für Bauunternehmen ändert sich damit, wie Abnahme, Mängelliste und Garantiearbeiten dokumentiert werden sollten. Dieser Ratgeber fasst die Änderungen, das Verhältnis zur SIA-Norm 118 und das Übergangsrecht zusammen.",
+  "geprueft": "2026-10-28",
+  "veroeffentlicht": "2026-10-28",
+  "produkte": [
+   "maengelliste-bau",
+   "subunternehmer-dossier-bau"
+  ],
+  "faq": [
+   {
+    "frage": "Wie lange ist die Rügefrist für Baumängel seit 2026?",
+    "antwort": "Für Verträge ab dem 1. Januar 2026 beträgt sie bei unbeweglichen Werken 60 Tage, bei versteckten Mängeln ab Entdeckung. Eine kürzere Frist kann nicht vereinbart werden (Art. 367 Abs. 1bis nOR)."
+   },
+   {
+    "frage": "Gilt die neue Frist auch für Verträge aus dem Jahr 2025?",
+    "antwort": "Grundsätzlich nein. Für Verträge, die vor dem 1. Januar 2026 abgeschlossen wurden, gilt das bisherige Recht mit der sofortigen Rüge, es sei denn, der Vertrag verweist ausdrücklich auf das neue Recht oder wird angepasst."
+   },
+   {
+    "frage": "Was gilt, wenn die SIA-Norm 118 vereinbart ist?",
+    "antwort": "In den ersten zwei Jahren nach der Abnahme können erkannte Mängel jederzeit gerügt werden (Art. 172 SIA 118). Für verdeckte Mängel ab dem dritten Jahr gilt bei Verträgen ab 2026 laut WEKA die gesetzliche Frist von 60 Tagen ab Entdeckung."
+   },
+   {
+    "frage": "Kann die Garantie auf zwei Jahre beschränkt werden?",
+    "antwort": "Die Verjährung von fünf Jahren für Mängel an Bauwerken darf zum Nachteil des Bestellers nicht mehr verkürzt werden (Art. 371 Abs. 3 nOR). Das gilt für Verträge ab dem 1. Januar 2026."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/bauunternehmen/",
+    "titel": "Bauunternehmen digital",
+    "grund": "Zehn geplante Bausteine und drei Abläufe von der Offerte bis zur Abnahme."
+   },
+   {
+    "url": "/produkte/maengelliste-bau/",
+    "titel": "Mängelliste mit Foto und Fristen",
+    "grund": "Mängel mit Datum der Entdeckung erfassen, Fristen als Hinweis."
+   },
+   {
+    "url": "/branchen/architekturbueros/",
+    "titel": "Architekturbüro digital",
+    "grund": "Auch Pläne und Berechnungen fallen unter die neue Rügefrist."
+   },
+   {
+    "url": "/ratgeber/sicherheitsnachweis-periodische-kontrolle/",
+    "titel": "Sicherheitsnachweis und periodische Kontrolle",
+    "grund": "Pflichten bei Elektroinstallationen nach der NIV."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Bundesamt für Justiz, Haftung für Baumängel",
+    "url": "https://www.bj.admin.ch/de/haftung-fuer-baumaengel"
+   },
+   {
+    "titel": "Walder Wyss, Newsletter Nr. 217: Teilrevision des Kauf- und Werkvertragsrechts (November 2025)",
+    "url": "https://www.walderwyss.com/assets/content/publications/Newsletter-Nr.-217-DE_-Teilrevision-des-kauf-und.pdf"
+   },
+   {
+    "titel": "WEKA, Mängelrügen: gesetzliche Änderungen ab 1. Januar 2026",
+    "url": "https://www.weka.ch/themen/bau-immobilien/bau/bauschaeden-und-haftung/article/maengelruegen-gesetzliche-aenderungen-ab-1-januar-2026/"
+   },
+   {
+    "titel": "WEKA, Rüge: das sind die Fristen gemäss OR und SIA-Norm 118",
+    "url": "https://www.weka.ch/themen/bau-immobilien/bau/bauschaeden-und-haftung/article/ruege-das-sind-die-fristen-gemaess-or-und-sia-norm-118/"
+   }
+  ]
+ },
+ {
+  "slug": "sicherheitsnachweis-periodische-kontrolle",
+  "art": "ratgeber",
+  "name": "Sicherheitsnachweis und periodische Kontrolle",
+  "titel": "Sicherheitsnachweis und periodische Kontrolle | Meyssens",
+  "beschreibung": "Wer stellt den Sicherheitsnachweis aus, wer kontrolliert periodisch, welche Fristen gelten? Überblick nach ESTI und NIV für Betriebe. Jetzt lesen.",
+  "h1": "Sicherheitsnachweis und periodische Kontrolle: wer ist wofür verantwortlich?",
+  "lead": "Bei elektrischen Installationen teilen sich Eigentümerschaft, Installationsbetrieb, Kontrollorgan und Netzbetreiberin die Pflichten. Dieser Ratgeber zeigt nach den Publikationen des Eidgenössischen Starkstrominspektorats (ESTI), wer den Sicherheitsnachweis ausstellt, wann kontrolliert wird und was bei fehlendem Nachweis geschieht.",
+  "geprueft": "2026-10-28",
+  "veroeffentlicht": "2026-10-28",
+  "produkte": [
+   "faelligkeitsliste-kontrollen-elektro"
+  ],
+  "faq": [
+   {
+    "frage": "Wer stellt den Sicherheitsnachweis aus?",
+    "antwort": "Bei neuen Installationen, Änderungen und Erweiterungen eine fachkundige Person des Installationsbetriebs nach der Schlusskontrolle, bei bestehenden Installationen das unabhängige Kontrollorgan."
+   },
+   {
+    "frage": "Wie oft wird kontrolliert?",
+    "antwort": "Je nach Art der Installation alle 1, 5, 10 oder 20 Jahre; die Zuordnung steht im Anhang der NIV. Installationen mit 10 oder 20 Jahren werden zusätzlich bei einer Handänderung kontrolliert, wenn die letzte Kontrolle mehr als fünf Jahre zurückliegt."
+   },
+   {
+    "frage": "Wer ist verantwortlich, wenn die Frist verpasst wird?",
+    "antwort": "Laut ESTI allein die Eigentümerin oder der Eigentümer, nicht das beauftragte Kontrollorgan."
+   },
+   {
+    "frage": "Darf der Installateur seine eigene Installation periodisch kontrollieren?",
+    "antwort": "Nein. Wer an Planung, Erstellung, Änderung oder Instandstellung beteiligt war, darf laut ESTI nicht mit der periodischen Kontrolle beauftragt werden."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/elektro-handwerk/",
+    "titel": "Elektro-Handwerk digital",
+    "grund": "Zehn geplante Bausteine und drei Abläufe von der Anfrage bis zur Kontrolle."
+   },
+   {
+    "url": "/produkte/faelligkeitsliste-kontrollen-elektro/",
+    "titel": "Fälligkeitsliste für Kontrollen und Wartungen",
+    "grund": "Kontrollperioden pro Anlage, Anschreiben als Entwurf."
+   },
+   {
+    "url": "/branchen/immobilienverwaltungen/",
+    "titel": "Immobilienverwaltung digital",
+    "grund": "Für Eigentümer und Verwaltungen: Fristen und Abläufe rund um Liegenschaften."
+   },
+   {
+    "url": "/ratgeber/maengelruege-abnahme-2026/",
+    "titel": "Mängelrüge und Abnahme ab 2026",
+    "grund": "Die neue Rügefrist von 60 Tagen bei Bauten."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "ESTI, Infoblatt Periodische Kontrolle der elektrischen Installationen (Oktober 2017)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/Infoblatt_Periodische_Kontrolle_de.pdf"
+   },
+   {
+    "titel": "Swisscom, Factsheet Sicherheitsnachweis (SiNa) mit Auszügen aus der NIV (Stand 14.06.2017)",
+    "url": "https://www.swisscom.ch/content/dam/assets/about/sicherheit/sicherheitskonzept-elektro/documents/siko-elektro-factsheet-003-sicherheitsnachweis.pdf"
+   },
+   {
+    "titel": "ESTI, Publikation zur NIV (August 2011)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2012_2011/2011-08_NIV_d.pdf"
+   },
+   {
+    "titel": "ESTI, Mitteilung: kein Sicherheitsnachweis (August 2013)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2014_2013/2013-08_kein_sina_d.pdf"
+   },
+   {
+    "titel": "ESTI, Mitteilung zu Stichprobenkontrollen (November 2013)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2014_2013/2013-11_stichproben_d.pdf"
+   }
+  ]
  }
 ]

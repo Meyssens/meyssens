@@ -79,7 +79,7 @@
   <h1>Bauunternehmen: <span class="hl">Ausschreibungen und Anfragen digital im Griff</span></h1>
   <p class="lead">Im Bauunternehmen entscheidet sich viel auf der Baustelle, die Büroarbeit läuft oft nebenher. Ausschreibungen suchen, Offertanfragen beantworten und Rückfragen von Bauherrschaften klären kostet Zeit, die im Tagesgeschäft fehlt. Digitale Werkzeuge können hier entlasten, wenn sie einfach bleiben und in bestehende Abläufe passen. Entscheidend ist, dass am Ende immer ein Mensch prüft und entscheidet, ob eine Ausschreibung passt oder eine Antwort hinausgeht.</p>
   <nav class="sprung" aria-label="Auf dieser Seite">
-    <a href="#alltag">Alltag</a><a href="#beispiele">Beispielszenarien</a><a href="#besonderheit">Besonderheit</a><a href="#fragen">Fragen</a><a href="#produkte">Passende Produkte</a><a href="#anfrage">Anfrage</a>
+    <a href="#alltag">Alltag</a><a href="#beispiele">Beispielszenarien</a><a href="#besonderheit">Besonderheit</a><a href="#fragen">Fragen</a><a href="#automatisierung">Automatisierungen</a><a href="#produkte">Passende Produkte</a><a href="#anfrage">Anfrage</a>
   </nav>
 </section>
 
@@ -159,24 +159,421 @@
   </div>
 </section>
 
-<section id="bausteine">
-  <div class="r">
+<section id="automatisierung" class="dunkel">
+  <div class="kopf-mitte r">
     <span class="s-label">Automatisierung</span>
-    <h2>Bausteine für Bauunternehmen</h2>
-    <p class="s-lead">Seit 2026 gelten neue Regeln für Baumängel. Dieser Baustein hilft, Mängel und Fristen sauber zu dokumentieren. Entwürfe ja, automatischer Versand nein: Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>
+    <h2>Automatisierungen für Bauunternehmen</h2>
+    <p class="s-lead">Seit dem 1. Januar 2026 gilt für Werkverträge über Bauten eine Mängelrügefrist von mindestens 60 Tagen; für Verträge, die vorher abgeschlossen wurden, bleibt grundsätzlich das bisherige Recht. Dazu kommen Rapporte, Regie, Bestellungen und die Solidarhaftung für Subunternehmer. Wir haben zehn Bausteine geplant und beginnen mit denen, die ohne sensible Daten auskommen.</p>
   </div>
-  <div class="angebot-raster">
-    <article class="angebot-karte r">
-      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Mängelliste mit Foto und Fristen</span></div>
-      <div class="angebot-inhalt">
-        <span class="status-chip">In Planung</span>
-        <h3><a href="/produkte/maengelliste-bau/">Mängelliste mit Foto und Fristen</a></h3>
-        <p>Mängel werden auf der Baustelle mit Foto, Ort, Verantwortlichem und Termin erfasst. Der Baustein führt die Liste nach, erinnert an Termine und zeigt, wann eine Rüge oder Nachbesserung fällig wird. Fristen setzt und prüft ein Mensch.</p>
-        <div class="angebot-links"><a class="mehr" href="/produkte/maengelliste-bau/">Mehr erfahren<span class="sr-only"> zu Mängelliste mit Foto und Fristen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/maengelliste-bau/#ansicht">Beispielansicht<span class="sr-only"> zu Mängelliste mit Foto und Fristen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="mehr" href="/produkte/maengelliste-bau/#anfrage">Unverbindlich vormerken<span class="sr-only"> zu Mängelliste mit Foto und Fristen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-      </div>
+  <p class="regel r"><strong>Entwürfe ja, automatischer Versand nein.</strong> Jeder Baustein bereitet vor: Entwürfe, Listen und Hinweise. Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>
+  <p class="auto-start r">Startempfehlung, Einschätzung: zuerst Baustein 4 (Leistungsverzeichnis-Import), 5 (Materialbestellung) und 7 (Subunternehmer-Dossier). 4 und 5 arbeiten ohne Personendaten. 7 hat einen belegten Nutzen, weil die Solidarhaftung eine dokumentierte Sorgfalt verlangt (SECO). Die Bausteine 1 und 2 rund um Rapporte und Stunden kommen später: Sie betreffen Personendaten, und die Regeln des Landesmantelvertrags sind am Vertragstext zu prüfen.</p>
+  <div class="baustein-raster">
+    <article class="baustein-karte kompakt r" id="baustein-1">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">1</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3>Bautagesrapport aus Sprach- und Fotonotizen</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Der Bautagesrapport entsteht auf Papier und wird im Büro abgetippt.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Macht aus Sprachnotiz, Fotos und Wetterdaten einen Entwurf des Rapports.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Der Polier prüft und gibt den Rapport frei.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Personendaten, zum Beispiel Namen der Mitarbeitenden.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> die Anbindung an Rapport-Software wie AbaBuild.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Bautagesrapport aus Sprach- und Fotonotizen">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-2">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">2</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel bis gross, Einschätzung</span></div>
+      <h3>Stundenzettel mit Saldo-Vorschau</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Stundenzettel werden abgetippt, fehlende Tage fallen spät auf.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Digitalisiert Stundenmeldungen, erkennt fehlende Tage und Pausen und zeigt einen Saldo-Entwurf.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Lohnbuchhaltung oder Geschäftsleitung entscheiden über Korrekturen.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Personendaten der Mitarbeitenden.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> die Regeln zu Zeitkonto und Reisezeit im Landesmantelvertrag 2026 bis 2031; den Vertragstext prüfen wir vor dem Bau.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Stundenzettel mit Saldo-Vorschau">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-3">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">3</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand klein bis mittel, Einschätzung</span></div>
+      <h3>Wächter für Regierapporte</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Regierapporte werden von Hand geschrieben, fehlende Unterschriften fallen erst bei der Rechnung auf.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Erstellt Entwürfe für Regierapporte aus dem Tagesrapport mit den Tarifansätzen und markiert Rapporte ohne Gegenzeichnung.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Der Bauführer entscheidet, was Regie ist, und holt die Unterschrift.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Personendaten.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Wächter für Regierapporte">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-4">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">4</span><span class="status-chip">In Planung</span><span class="status-chip start-chip">Startempfehlung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3><a href="/produkte/leistungsverzeichnis-import-bau/">Leistungsverzeichnis-Import für die Offerte</a></h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Positionen und Mengen aus Leistungsverzeichnissen werden für die Kalkulation von Hand übertragen.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Liest Positionen und Mengen ein, legt eine Kalkulationstabelle an und schlägt Werte aus früheren Offerten vor.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Preise, Risikozuschläge und die Abgabe der Offerte bestimmt der Betrieb.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Keine Personendaten, nur Positionen, Mengen und eigene Preise.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> die Dateiformate der Leistungsverzeichnisse.</p>
+      <a class="mehr" href="/produkte/leistungsverzeichnis-import-bau/">Mehr erfahren<span class="sr-only"> zu Leistungsverzeichnis-Import für die Offerte</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-5">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">5</span><span class="status-chip">In Planung</span><span class="status-chip start-chip">Startempfehlung</span><span class="baustein-aufwand">Aufwand klein, Einschätzung</span></div>
+      <h3><a href="/produkte/materialbestellung-bau/">Materialbestellung aus Rapport und Plan</a></h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Material wird per Telefon oder Messenger bestellt, oft kurzfristig.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Schreibt Bestellentwürfe aus Bauzeitplan und Mengen.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Der Polier bestätigt Menge und Termin, erst dann geht die Bestellung hinaus.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Keine Personendaten.</p>
+      <a class="mehr" href="/produkte/materialbestellung-bau/">Mehr erfahren<span class="sr-only"> zu Materialbestellung aus Rapport und Plan</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-6">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">6</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3>Lieferscheine abgleichen</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Lieferscheine werden von Hand mit Bestellung und Rechnung verglichen.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Liest Lieferscheine per Foto, gleicht sie mit Bestellung und Rechnung ab und meldet Abweichungen.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Der Einkauf klärt mit dem Lieferanten und gibt die Rechnung frei.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Keine Personendaten.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Lieferscheine abgleichen">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-7">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">7</span><span class="status-chip">In Planung</span><span class="status-chip start-chip">Startempfehlung</span><span class="baustein-aufwand">Aufwand klein bis mittel, Einschätzung</span></div>
+      <h3><a href="/produkte/subunternehmer-dossier-bau/">Subunternehmer-Dossier mit Sorgfaltsnachweis</a></h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Unterlagen der Subunternehmer liegen in E-Mails und Ordnern verstreut.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Führt pro Subunternehmer eine Checkliste nach den Sorgfaltselementen der Entsendeverordnung, mit Ablaufdaten und Erinnerungsentwürfen bei fehlenden Dokumenten.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Der Betrieb entscheidet, ob ein Subunternehmer eingesetzt wird.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Personendaten, zum Beispiel in Lohnnachweisen.</p>
+      <a class="mehr" href="/produkte/subunternehmer-dossier-bau/">Mehr erfahren<span class="sr-only"> zu Subunternehmer-Dossier mit Sorgfaltsnachweis</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-8">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">8</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3>Bauzeitplan anpassen</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Der Bauzeitplan in Excel wird bei Verzug oder Wetter von Hand nachgeführt.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Schlägt bei Verzug oder schlechtem Wetter Verschiebungen vor und zeigt die Auswirkungen.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Der Bauführer entscheidet und informiert die Bauherrschaft.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Keine Personendaten.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Bauzeitplan anpassen">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-9">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">9</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand mittel, Einschätzung</span></div>
+      <h3><a href="/produkte/maengelliste-bau/">Mängelliste mit Foto und Fristen</a></h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Mängel stehen auf Zetteln, in Fotos auf dem Handy und in E-Mails.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Erfasst Mängel mit Foto und Notiz, verfolgt die Behebung und rechnet Fristen als Hinweis aus, etwa die 60 Tage Rügefrist für Verträge ab 2026.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Ob ein Mangel anerkannt oder bestritten wird und welche Frist gilt, beurteilt ein Mensch, im Zweifel mit Rechtsberatung.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Namen von Ansprechpersonen und Fotos von der Baustelle.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> die Vertragsgrundlage je Projekt: SIA-Norm 118 vereinbart oder nicht, Abschluss vor oder nach dem 1. Januar 2026.</p>
+      <a class="mehr" href="/produkte/maengelliste-bau/">Mehr erfahren<span class="sr-only"> zu Mängelliste mit Foto und Fristen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </article>
+    <article class="baustein-karte kompakt r" id="baustein-10">
+      <div class="baustein-kopf"><span class="baustein-nr" aria-hidden="true">10</span><span class="status-chip">In Planung</span><span class="baustein-aufwand">Aufwand gross, Einschätzung</span></div>
+      <h3>Akonto- und Schlussrechnung aus dem Baufortschritt</h3>
+      <dl class="baustein-teile">
+        <div><dt>Heute von Hand, Einschätzung</dt><dd>Rechnungen nach Baufortschritt werden aus Rapporten, Regie und Ausmass von Hand zusammengestellt.</dd></div>
+        <div><dt>Das übernimmt der Baustein</dt><dd>Verdichtet Rapporte, Regie und Ausmass zu einem Rechnungsentwurf, markiert Positionen ohne Beleg und zeigt die Frist von vier Monaten für das Bauhandwerkerpfandrecht.</dd></div>
+        <div><dt>Das entscheidet der Mensch</dt><dd>Der Betrieb gibt die Rechnung frei und entscheidet über ein Pfandrecht, mit Rechtsberatung.</dd></div>
+      </dl>
+      <p class="baustein-daten"><strong>Daten:</strong> Personendaten der Bauherrschaft.</p>
+      <p class="baustein-offen"><strong>Noch zu klären:</strong> die Anbindung an das ERP.</p>
+      <a class="mehr" href="#ablauf-anfrage" data-baustein="Akonto- und Schlussrechnung aus dem Baufortschritt">Interesse an diesem Baustein melden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </article>
   </div>
+  <div class="ablauf-gruppe" id="ablauf">
+  <div class="kopf-mitte r">
+    <h3 class="ablauf-gruppe-titel">Drei Abläufe, in denen die Bausteine zusammenspielen</h3>
+    <p class="s-lead">Die Ketten zeigen, wo ein Baustein vorbereitet und wo ein Mensch entscheidet. Bausteine mit eigener Seite sind verlinkt, die übrigen führen zu ihrer Karte oben.</p>
+  </div>
+  <div class="ablauf" id="ablauf-1" data-ablauf>
+    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.currentScript.parentNode.classList.add("bewegt")</script>
+    <div class="ablauf-kopf">
+      <h3>Ablauf: Von der Baustelle zur Rechnung</h3>
+      <p>Wie Notizen vom Abend zu Rapport, Regie und Rechnung werden könnten, mit Freigabe an jeder Stelle.</p>
+      <ul class="ablauf-legende" aria-label="Legende"><li class="mensch"><span class="ablauf-punkt" aria-hidden="true"></span>Mensch entscheidet</li><li class="baustein"><span class="ablauf-punkt" aria-hidden="true"></span>Läuft automatisch, als Entwurf</li></ul>
+    </div>
+    <ol class="ablauf-liste">
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">1</span> Notizen einsprechen</h4>
+          <p>Der Polier spricht am Abend eine Notiz ein und lädt drei Fotos hoch.</p>
+          <a class="ablauf-link" href="#baustein-1">Zum Baustein 1: Bautagesrapport aus Sprach- und Fotonotizen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">2</span> Rapport-Entwurf</h4>
+          <p>Aus Notiz, Fotos und Wetterdaten entsteht der Entwurf des Bautagesrapports.</p>
+          <a class="ablauf-link" href="#baustein-1">Zum Baustein 1: Bautagesrapport aus Sprach- und Fotonotizen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">3</span> Freigabe</h4>
+          <p>Der Polier korrigiert eine Stundenangabe und gibt den Rapport frei.</p>
+          <a class="ablauf-link" href="#baustein-1">Zum Baustein 1: Bautagesrapport aus Sprach- und Fotonotizen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">4</span> Regierapport-Entwurf</h4>
+          <p>Die zusätzlichen Arbeiten des Tages erscheinen als Entwurf eines Regierapports mit Tarifansätzen.</p>
+          <a class="ablauf-link" href="#baustein-3">Zum Baustein 3: Wächter für Regierapporte <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">5</span> Gegenzeichnung</h4>
+          <p>Der Bauführer holt die Unterschrift der Bauleitung ein.</p><p class="ablauf-hinweis">Unterschrift beider Seiten.</p>
+          <a class="ablauf-link" href="#baustein-3">Zum Baustein 3: Wächter für Regierapporte <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">6</span> Rechnungsentwurf</h4>
+          <p>Am Monatsende fasst ein Entwurf Rapporte und Regie mit Belegen zusammen.</p>
+          <a class="ablauf-link" href="#baustein-10">Zum Baustein 10: Akonto- und Schlussrechnung aus dem Baufortschritt <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">7</span> Freigabe und Versand</h4>
+          <p>Der Betrieb prüft den Entwurf und verschickt die Rechnung selbst.</p>
+          <a class="ablauf-link" href="#baustein-10">Zum Baustein 10: Akonto- und Schlussrechnung aus dem Baufortschritt <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+    </ol>
+    <div class="ablauf-ende">
+      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>
+      <div class="ablauf-ziel">
+        <p class="ablauf-ziel-text">Ziel: keine Regiearbeit ohne Rapport und Unterschrift. Was verrechnet wird, entscheidet weiterhin der Betrieb.</p>
+        <a class="btn-p ablauf-cta" href="#ablauf-anfrage" data-ablauf-wahl="Von der Baustelle zur Rechnung (Bauunternehmen)"><span>Diesen Ablauf für meinen Betrieb anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>
+      </div>
+    </div>
+    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
+    <figure class="ablauf-bild">
+      <img src="/assets/ablauf/bauunternehmen-1.png" width="1200" height="1252" loading="lazy" decoding="async" alt="Ablauf Von der Baustelle zur Rechnung für Bauunternehmen als Grafik: 1. Notizen einsprechen (Mensch entscheidet); 2. Rapport-Entwurf (Läuft automatisch, als Entwurf); 3. Freigabe (Mensch entscheidet); 4. Regierapport-Entwurf (Läuft automatisch, als Entwurf); 5. Gegenzeichnung (Mensch entscheidet); 6. Rechnungsentwurf (Läuft automatisch, als Entwurf); 7. Freigabe und Versand (Mensch entscheidet).">
+      <figcaption>Der Ablauf als Bild zum Teilen: <a href="/assets/ablauf/bauunternehmen-1.png" download>Grafik «Von der Baustelle zur Rechnung» herunterladen (PNG)</a></figcaption>
+    </figure>
+  </div>
+  <div class="ablauf" id="ablauf-2" data-ablauf>
+    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.currentScript.parentNode.classList.add("bewegt")</script>
+    <div class="ablauf-kopf">
+      <h3>Ablauf: Lieferung bis Rechnungsprüfung</h3>
+      <p>Vom Bedarf im Bauzeitplan bis zur geprüften Lieferantenrechnung.</p>
+      <ul class="ablauf-legende" aria-label="Legende"><li class="baustein"><span class="ablauf-punkt" aria-hidden="true"></span>Läuft automatisch, als Entwurf</li><li class="mensch"><span class="ablauf-punkt" aria-hidden="true"></span>Mensch entscheidet</li></ul>
+    </div>
+    <ol class="ablauf-liste">
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">1</span> Bedarf im Bauzeitplan</h4>
+          <p>Der Bauzeitplan zeigt, dass in zwei Wochen die Decke über dem zweiten Obergeschoss betoniert wird.</p>
+          <a class="ablauf-link" href="#baustein-8">Zum Baustein 8: Bauzeitplan anpassen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">2</span> Bestellentwurf</h4>
+          <p>Für diesen Termin liegt ein Bestellentwurf mit Mengen aus Plan und Rapport bereit.</p>
+          <a class="ablauf-link" href="/produkte/materialbestellung-bau/">Zum Baustein: Materialbestellung aus Rapport und Plan <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">3</span> Bestätigung</h4>
+          <p>Der Polier passt die Menge an und bestätigt den Liefertermin.</p>
+          <a class="ablauf-link" href="/produkte/materialbestellung-bau/">Zum Baustein: Materialbestellung aus Rapport und Plan <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">4</span> Lieferschein abgleichen</h4>
+          <p>Das Foto des Lieferscheins wird gelesen und mit der Bestellung verglichen.</p>
+          <a class="ablauf-link" href="#baustein-6">Zum Baustein 6: Lieferscheine abgleichen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">5</span> Abweichung melden</h4>
+          <p>Der Baustein meldet, dass weniger geliefert als bestellt wurde.</p>
+          <a class="ablauf-link" href="#baustein-6">Zum Baustein 6: Lieferscheine abgleichen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">6</span> Klärung</h4>
+          <p>Der Einkauf klärt die Abweichung mit dem Lieferanten, bevor die Rechnung freigegeben wird.</p>
+          <a class="ablauf-link" href="#baustein-6">Zum Baustein 6: Lieferscheine abgleichen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+    </ol>
+    <div class="ablauf-ende">
+      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>
+      <div class="ablauf-ziel">
+        <p class="ablauf-ziel-text">Ziel: weniger Telefon für Bestellungen und keine Rechnung ohne Abgleich. Bestellt und bezahlt wird nur mit Freigabe.</p>
+        <a class="btn-p ablauf-cta" href="#ablauf-anfrage" data-ablauf-wahl="Lieferung bis Rechnungsprüfung (Bauunternehmen)"><span>Diesen Ablauf für meinen Betrieb anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>
+      </div>
+    </div>
+    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
+    <figure class="ablauf-bild">
+      <img src="/assets/ablauf/bauunternehmen-2.png" width="1200" height="1126" loading="lazy" decoding="async" alt="Ablauf Lieferung bis Rechnungsprüfung für Bauunternehmen als Grafik: 1. Bedarf im Bauzeitplan (Läuft automatisch, als Entwurf); 2. Bestellentwurf (Läuft automatisch, als Entwurf); 3. Bestätigung (Mensch entscheidet); 4. Lieferschein abgleichen (Läuft automatisch, als Entwurf); 5. Abweichung melden (Läuft automatisch, als Entwurf); 6. Klärung (Mensch entscheidet).">
+      <figcaption>Der Ablauf als Bild zum Teilen: <a href="/assets/ablauf/bauunternehmen-2.png" download>Grafik «Lieferung bis Rechnungsprüfung» herunterladen (PNG)</a></figcaption>
+    </figure>
+  </div>
+  <div class="ablauf" id="ablauf-3" data-ablauf>
+    <script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.currentScript.parentNode.classList.add("bewegt")</script>
+    <div class="ablauf-kopf">
+      <h3>Ablauf: Abnahme bis Fristenende</h3>
+      <p>Nach der Abnahme laufen mehrere Fristen. Die Kette zeigt, wo der Baustein rechnet und wo Menschen entscheiden.</p>
+      <ul class="ablauf-legende" aria-label="Legende"><li class="mensch"><span class="ablauf-punkt" aria-hidden="true"></span>Mensch entscheidet</li><li class="baustein"><span class="ablauf-punkt" aria-hidden="true"></span>Läuft automatisch, als Entwurf</li></ul>
+    </div>
+    <ol class="ablauf-liste">
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">1</span> Abnahmetermin</h4>
+          <p>Der Betrieb meldet die Fertigstellung und vereinbart den Termin für die gemeinsame Prüfung.</p>
+          <a class="ablauf-link" href="/produkte/maengelliste-bau/">Zum Baustein: Mängelliste mit Foto und Fristen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">2</span> Mängelliste</h4>
+          <p>Bei der Abnahme entsteht eine Mängelliste mit Foto, Ort und Verantwortlichem.</p>
+          <a class="ablauf-link" href="/produkte/maengelliste-bau/">Zum Baustein: Mängelliste mit Foto und Fristen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">3</span> Abgleich mit der Bauherrschaft</h4>
+          <p>Bauleitung und Bauherrschaft gehen die Liste gemeinsam durch.</p>
+          <a class="ablauf-link" href="/produkte/maengelliste-bau/">Zum Baustein: Mängelliste mit Foto und Fristen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">4</span> Fristen als Hinweis</h4>
+          <p>Für jeden Mangel erscheint eine Frist als Hinweis, je nach Vertragsgrundlage.</p><p class="ablauf-hinweis">Welche Frist gilt, prüft ein Mensch.</p>
+          <a class="ablauf-link" href="/produkte/maengelliste-bau/">Zum Baustein: Mängelliste mit Foto und Fristen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">5</span> Behebung zuteilen</h4>
+          <p>Die Bauleitung teilt die Behebung einem Subunternehmer zu, dessen Dossier vollständig ist.</p>
+          <a class="ablauf-link" href="/produkte/subunternehmer-dossier-bau/">Zum Baustein: Subunternehmer-Dossier mit Sorgfaltsnachweis <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt baustein">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Läuft automatisch, als Entwurf</span>
+          <h4><span class="ablauf-nr">6</span> Schlussrechnung und Pfandrecht</h4>
+          <p>Der Entwurf der Schlussrechnung zeigt, bis wann ein Bauhandwerkerpfandrecht spätestens eingetragen sein müsste.</p>
+          <a class="ablauf-link" href="#baustein-10">Zum Baustein 10: Akonto- und Schlussrechnung aus dem Baufortschritt <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+      <li class="ablauf-schritt mensch">
+        <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg></span>
+        <svg class="ablauf-linie" aria-hidden="true" viewBox="0 0 2 10" preserveAspectRatio="none"><line x1="1" y1="0" x2="1" y2="10" vector-effect="non-scaling-stroke"/></svg>
+        <div class="ablauf-karte">
+          <span class="ablauf-art">Mensch entscheidet</span>
+          <h4><span class="ablauf-nr">7</span> Entscheid über die Eintragung</h4>
+          <p>Ob ein Pfandrecht eingetragen wird, entscheidet der Betrieb mit Rechtsberatung.</p><p class="ablauf-hinweis">Mit Rechtsberatung.</p>
+          <a class="ablauf-link" href="#baustein-10">Zum Baustein 10: Akonto- und Schlussrechnung aus dem Baufortschritt <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </li>
+    </ol>
+    <div class="ablauf-ende">
+      <span class="ablauf-marke" aria-hidden="true"><svg viewBox="0 0 24 24"><path pathLength="1" d="m6 12.5 4 4 8-9"/></svg></span>
+      <div class="ablauf-ziel">
+        <p class="ablauf-ziel-text">Ziel: jede Frist nach der Abnahme sichtbar. Rüge, Anerkennung und Pfandrecht entscheidet ein Mensch.</p>
+        <a class="btn-p ablauf-cta" href="#ablauf-anfrage" data-ablauf-wahl="Abnahme bis Fristenende (Bauunternehmen)"><span>Diesen Ablauf für meinen Betrieb anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>
+      </div>
+    </div>
+    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>
+    <figure class="ablauf-bild">
+      <img src="/assets/ablauf/bauunternehmen-3.png" width="1200" height="1279" loading="lazy" decoding="async" alt="Ablauf Abnahme bis Fristenende für Bauunternehmen als Grafik: 1. Abnahmetermin (Mensch entscheidet); 2. Mängelliste (Läuft automatisch, als Entwurf); 3. Abgleich mit der Bauherrschaft (Mensch entscheidet); 4. Fristen als Hinweis (Läuft automatisch, als Entwurf); 5. Behebung zuteilen (Mensch entscheidet); 6. Schlussrechnung und Pfandrecht (Läuft automatisch, als Entwurf); 7. Entscheid über die Eintragung (Mensch entscheidet).">
+      <figcaption>Der Ablauf als Bild zum Teilen: <a href="/assets/ablauf/bauunternehmen-3.png" download>Grafik «Abnahme bis Fristenende» herunterladen (PNG)</a></figcaption>
+    </figure>
+  </div>
+  <form class="ablauf-form" id="ablauf-anfrage" action="https://formspree.io/f/xlgpzzew" method="POST">
+    <h4>Einen Ablauf für meinen Betrieb anfragen</h4>
+    <input type="hidden" name="_subject" value="Ablauf-Anfrage über meyssens.ch: Bauunternehmen">
+    <input type="hidden" name="branche" value="Bauunternehmen">
+    <div class="fgrp"><label class="flabel" for="ab-ablauf">Ablauf</label><select class="fselect" id="ab-ablauf" name="ablauf"><option>Von der Baustelle zur Rechnung (Bauunternehmen)</option><option>Lieferung bis Rechnungsprüfung (Bauunternehmen)</option><option>Abnahme bis Fristenende (Bauunternehmen)</option><option>Mehrere Abläufe oder einzelne Bausteine (Bauunternehmen)</option></select></div>
+    <div class="frow"><div class="fgrp"><label class="flabel" for="ab-name">Name</label><input class="finput" type="text" id="ab-name" name="name" autocomplete="name" required></div><div class="fgrp"><label class="flabel" for="ab-email">E-Mail</label><input class="finput" type="email" id="ab-email" name="email" autocomplete="email" required></div></div>
+    <div class="fgrp"><label class="flabel" for="ab-nachricht">Nachricht (optional)</label><textarea class="ftextarea" id="ab-nachricht" name="nachricht" rows="3" placeholder="Zum Beispiel: welche Software Sie heute nutzen"></textarea></div>
+    <div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>
+    <button type="submit" class="btn-p"><span>Ablauf anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p role="status" aria-live="polite"></p>
+  </form>
+  </div>
+  <p class="auto-ratgeber r">Passend dazu im Ratgeber: <a href="/ratgeber/maengelruege-abnahme-2026/">Mängelrüge und Abnahme ab 2026</a></p>
+  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Alle zehn Bausteine auf dieser Seite sind in Planung, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand, zur Handarbeit von heute und zur Reihenfolge sind Einschätzungen, keine gemessenen Werte. Was mit «Noch zu klären» markiert ist, haben wir nicht belegt. Vor einem Einsatz mit Personendaten gelten ein Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung, und wir prüfen die rechtlichen Fragen im Einzelfall. Zuletzt geprüft am 28.10.2026.</p>
 </section>
+<a class="anfrage-fest" href="#ablauf-anfrage" data-anfrage-fest hidden>Ablauf anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 <section id="produkte" class="dunkel">
   <div class="r">
     <span class="s-label">Passende Produkte</span>
