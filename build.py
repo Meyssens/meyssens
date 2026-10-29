@@ -28,6 +28,7 @@ import datetime
 import html
 import json
 import re
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -818,6 +819,163 @@ def png_masse(pfad):
     return int.from_bytes(kopf[16:20], "big"), int.from_bytes(kopf[20:24], "big")
 
 
+# Branchen-Übersicht /branchen/: Bereiche für die Filter, ein Symbol pro Branche (inline SVG, 24×24, Strich)
+BEREICHE = (("gesundheit", "Gesundheit"), ("bau", "Bau und Handwerk"), ("buero", "Büro und Beratung"),
+            ("immobilien", "Immobilien"), ("weitere", "Weitere"))
+BRANCHE_BEREICHE = {"zahnarztpraxen": ("gesundheit",), "arztpraxen": ("gesundheit",), "pflegeheime-spitex": ("gesundheit",),
+                    "bauunternehmen": ("bau",), "elektro-handwerk": ("bau",), "architekturbueros": ("bau", "buero"),
+                    "treuhaender": ("buero",), "immobilienverwaltungen": ("immobilien",),
+                    "kindergaerten-schulen": ("weitere",), "vereine": ("weitere",), "hotels-gastronomie": ("weitere",)}
+SYMBOLE = {
+    "zahnarztpraxen": '<path d="M7.5 3.5C5 3.5 3.5 5.4 3.5 7.6c0 2.2 1 3.5 1.6 5.2.6 1.7.8 3.4 1.2 5.1.3 1.3.8 2.6 1.8 2.6 1.3 0 1.5-2.2 1.9-3.7.3-1.2.7-2 2-2s1.7.8 2 2c.4 1.5.6 3.7 1.9 3.7 1 0 1.5-1.3 1.8-2.6.4-1.7.6-3.4 1.2-5.1.6-1.7 1.6-3 1.6-5.2 0-2.2-1.5-4.1-4-4.1-1.9 0-2.6 1-4.5 1s-2.6-1-4.5-1z"/>',
+    "arztpraxen": '<path d="M6 3.5H5v5a4 4 0 0 0 8 0v-5h-1"/><path d="M9 12.5v2.5a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2"/>',
+    "pflegeheime-spitex": '<path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/><path d="M7.5 12h2.2l1.2-2.2 2 4 1.2-1.8h2.4"/>',
+    "bauunternehmen": '<path d="M3 18.5h18"/><path d="M5 18.5V16a7 7 0 0 1 14 0v2.5"/><path d="M10 9.4V6.5h4v2.9"/><path d="M8.5 18.5v-3M15.5 18.5v-3"/>',
+    "elektro-handwerk": '<path d="M13.5 2.5 5 13.5h6.5l-1 8 8.5-11h-6.5z"/>',
+    "architekturbueros": '<path d="M4 20 20 4v16z"/><path d="M8 20v-2M12 20v-3M16 20v-2"/><path d="M14 14h2v2"/>',
+    "treuhaender": '<rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 6.5h7v3h-7z"/><path d="M8.7 13.5h.01M12 13.5h.01M15.3 13.5h.01M8.7 17h.01M12 17h.01M15.3 17h.01"/>',
+    "immobilienverwaltungen": '<path d="M4 20.5V8l8-4.5L20 8v12.5"/><path d="M2.5 20.5h19"/><path d="M8.5 10h1.5M14 10h1.5M8.5 13.5h1.5M14 13.5h1.5"/><path d="M10 20.5v-3.5h4v3.5"/>',
+    "kindergaerten-schulen": '<path d="M3 5.5c3-1.2 6-1 9 1 3-2 6-2.2 9-1v13c-3-1.2-6-1-9 1-3-2-6-2.2-9-1z"/><path d="M12 6.5v13"/>',
+    "vereine": '<circle cx="9" cy="8" r="3"/><path d="M3 19.5a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5 5.3"/>',
+    "hotels-gastronomie": '<path d="M3 18.5v-11"/><path d="M3 14h18v4.5"/><path d="M21 14v-1.5a3.5 3.5 0 0 0-3.5-3.5H11v5"/><circle cx="7" cy="11" r="2"/>',
+}
+
+
+def symbol(slug, klasse="bx-icon"):
+    return ('<span class="%s" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" '
+            'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false">%s</svg></span>'
+            % (klasse, SYMBOLE[slug]))
+
+
+def ohne_akzente(text):
+    return "".join(c for c in unicodedata.normalize("NFD", text.lower()) if not unicodedata.combining(c))
+
+
+def branchen_uebersicht(branchen, artikel_branchen, nach_slug):
+    # Karten, Vorschau-Panels und Filter der Seite /branchen/, alles aus branchen.json, artikel.json und produkte.json
+    namen = dict(BEREICHE)
+    eintraege = []
+    for b in branchen:
+        au = b.get("automatisierungen")
+        if au:
+            zahl = len(au["liste"])
+            status = "In Planung: %d Bausteine" % zahl
+            titel, liste, anker = "Startempfehlungen", b["bausteine"][:3], "#automatisierung"
+            alle = "Alle %d Bausteine ansehen" % zahl
+        else:
+            liste, anker = b["produkte"][:3], ""
+            status = "Passende Produkte: %d" % len(b["produkte"])
+            titel, alle = "Passende Produkte", ""
+        eintraege.append((b, status, titel, liste, anker, alle))
+    for a in artikel_branchen:
+        bs = a["automatisierung"]["bausteine"]
+        stati = sorted({nach_slug[s]["status"] for s in bs})
+        status = "%s: %d Bausteine" % (stati[0], len(bs)) if len(stati) == 1 else "%d Bausteine" % len(bs)
+        eintraege.append((a, status, "Geplante Bausteine", bs[:3], "#automatisierung", "Alle %d Bausteine ansehen" % len(bs)))
+    eintraege.sort(key=lambda e: e[0]["name"])
+    if any(p["status"] != "In Planung" for p in nach_slug.values() if ist_baustein(p)):
+        raise SystemExit("Nicht mehr alle Bausteine in Planung: Text \"Alle Bausteine sind in Planung\" auf /branchen/ anpassen")
+    for b, *_ in eintraege:
+        if b["slug"] not in BRANCHE_BEREICHE or b["slug"] not in SYMBOLE:
+            raise SystemExit("Branche %s: Bereich oder Symbol fehlt (BRANCHE_BEREICHE, SYMBOLE)" % b["slug"])
+    karten, vorlagen = [], []
+    for i, (b, status, titel, liste, anker, alle) in enumerate(eintraege):
+        s, name = b["slug"], b["name"]
+        bereiche = BRANCHE_BEREICHE[s]
+        suche = " ".join([name, b["kurz"]] + [namen[x] for x in bereiche] + [nach_slug[x]["name"] for x in liste])
+        karten.append(
+            '    <li class="bx-zelle" data-bereiche="%s" data-suche="%s" style="--i:%d">\n'
+            '      <a class="bx-karte" href="/branchen/%s/" data-vorschau="%s">\n'
+            '        %s\n'
+            '        <span class="bx-bereich">%s</span>\n'
+            '        <h3 class="bx-name">%s</h3>\n'
+            '        <p class="bx-nutzen">%s</p>\n'
+            '        <span class="bx-fuss"><span class="bx-status"><span class="bx-punkt" aria-hidden="true"></span>%s</span>'
+            '<span class="bx-pfeil" aria-hidden="true">%s</span></span>\n'
+            '      </a>\n    </li>'
+            % (" ".join(bereiche), html.escape(ohne_akzente(suche)), i % 6, s, s, symbol(s),
+               html.escape(" · ".join(namen[x] for x in bereiche)), html.escape(name), html.escape(b["kurz"]),
+               html.escape(status), PFEIL))
+        punkte = "\n".join(
+            '        <li><a class="bx-v-punkt" href="/produkte/%s/"><span class="bx-v-name">%s</span>'
+            '<span class="bx-v-text">%s</span><span class="bx-v-status">%s</span></a></li>'
+            % (x, html.escape(nach_slug[x]["name"]), html.escape(anfang(nach_slug[x]["kurzbeschreibung"], 60)),
+               html.escape(nach_slug[x]["status"])) for x in liste)
+        knoepfe = '<a class="bx-knopf" href="/branchen/%s/">Zur Seite für %s %s</a>' % (s, html.escape(name), PFEIL)
+        if alle:
+            knoepfe += '\n        <a class="bx-knopf zweit" href="/branchen/%s/%s">%s</a>' % (s, anker, alle)
+        vorlagen.append(
+            '<template id="bx-v-%s">\n      <div class="bx-v-kopf">%s<div><span class="bx-bereich">%s</span>\n'
+            '        <h2 id="bx-panel-titel">%s</h2></div></div>\n      <p class="bx-v-lead">%s</p>\n'
+            '      <h3 class="bx-v-titel">%s</h3>\n      <ul class="bx-v-liste">\n%s\n      </ul>\n'
+            '      <div class="bx-v-knoepfe">\n        %s\n      </div>\n</template>'
+            % (s, symbol(s), html.escape(" · ".join(namen[x] for x in bereiche)), html.escape(name),
+               html.escape(b["kurz"]), titel, punkte, knoepfe))
+    chips = "\n".join('      <button type="button" class="bx-chip" data-filter="%s" aria-pressed="%s">%s</button>'
+                      % (k, "true" if k == "alle" else "false", html.escape(n))
+                      for k, n in (("alle", "Alle"),) + BEREICHE)
+    bausteine = sum(len(e[0]["automatisierungen"]["liste"]) if e[0].get("automatisierungen")
+                    else len(e[0].get("automatisierung", {}).get("bausteine", [])) for e in eintraege)
+    schritte = (
+        ("entwurf", "Entwurf statt Versand",
+         "Unsere Bausteine bereiten vor: Antworten, Listen, Erinnerungen und Rechnungen liegen als Entwurf bereit. "
+         "Automatisch verschickt wird nichts."),
+        ("entscheid", "Sie entscheiden",
+         "Was Ihren Betrieb verlässt, gibt ein Mensch frei. Sie prüfen den Entwurf, ändern ihn und senden selbst."),
+        ("schweiz", "Daten in der Schweiz",
+         "Für Personendaten in unseren Bausteinen gelten drei Bedingungen: Hosting in der Schweiz, ein Vertrag zur "
+         "Auftragsbearbeitung, bevor echte Daten verarbeitet werden, und nur die Angaben, die der Ablauf wirklich braucht."))
+    bilder = {
+        "entwurf": '<svg viewBox="0 0 64 64" width="64" height="64" fill="none" aria-hidden="true" focusable="false">'
+                   '<rect class="bx-s-blatt" x="12" y="8" width="40" height="48" rx="6"/>'
+                   '<path class="bx-s-zeile z1" d="M20 22h24"/><path class="bx-s-zeile z2" d="M20 30h18"/>'
+                   '<path class="bx-s-zeile z3" d="M20 38h21"/><path class="bx-s-stift" d="M40 50l10-10 4 4-10 10h-4z"/></svg>',
+        "entscheid": '<svg viewBox="0 0 64 64" width="64" height="64" fill="none" aria-hidden="true" focusable="false">'
+                     '<circle class="bx-s-ring" cx="32" cy="32" r="22"/><path class="bx-s-haken" d="M22 33l7 7 14-15"/></svg>',
+        "schweiz": '<svg viewBox="0 0 64 64" width="64" height="64" fill="none" aria-hidden="true" focusable="false">'
+                   '<circle class="bx-s-puls" cx="32" cy="32" r="24"/><rect class="bx-s-flagge" x="16" y="16" width="32" height="32" rx="7"/>'
+                   '<path class="bx-s-kreuz" d="M29 22h6v7h7v6h-7v7h-6v-7h-7v-6h7z"/></svg>'}
+    schritt_html = "\n".join(
+        '    <li class="bx-schritt" style="--i:%d">\n      <div class="bx-s-bild">%s</div>\n'
+        '      <span class="bx-s-nr">Schritt %d</span>\n      <h3>%s</h3>\n      <p>%s</p>\n    </li>'
+        % (i, bilder[k], i + 1, html.escape(t), html.escape(x)) for i, (k, t, x) in enumerate(schritte))
+    inhalt = (
+        '<section class="bx-bereich-raster" id="alle" aria-labelledby="bx-raster-titel">\n'
+        '  <div class="bx-breite">\n'
+        '    <div class="bx-raster-kopf">\n      <h2 id="bx-raster-titel">Wählen Sie Ihre Branche</h2>\n'
+        '      <p class="bx-anzahl" id="bx-anzahl" aria-live="polite">%d Branchen</p>\n    </div>\n'
+        '    <div class="bx-steuer">\n'
+        '      <div class="bx-chips" role="group" aria-label="Branchen nach Bereich filtern">\n%s\n      </div>\n'
+        '      <div class="bx-suche">\n        <label for="bx-suchfeld" class="sr-only">Branche suchen</label>\n'
+        '        <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" '
+        'stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>\n'
+        '        <input type="search" id="bx-suchfeld" placeholder="Branche suchen" autocomplete="off" '
+        'enterkeyhint="search" aria-controls="bx-raster">\n      </div>\n    </div>\n'
+        '    <ul class="bx-raster" id="bx-raster">\n%s\n    </ul>\n'
+        '    <p class="bx-leer" id="bx-leer" hidden>Keine Branche gefunden. Ihre Branche fehlt? '
+        '<a href="mailto:lionel@meyssens.ch">Schreiben Sie uns</a>.</p>\n'
+        '  </div>\n</section>\n\n'
+        '<section class="bx-ablauf" id="so-laeuft-es" aria-labelledby="bx-ablauf-titel">\n'
+        '  <div class="bx-breite">\n    <h2 id="bx-ablauf-titel">So läuft Automatisierung bei uns</h2>\n'
+        '    <p class="bx-ablauf-lead">Drei Regeln gelten für jeden Baustein, in jeder Branche.</p>\n'
+        '    <ol class="bx-schritte">\n%s\n    </ol>\n'
+        '    <p class="bx-ablauf-fuss">Alle Bausteine sind in Planung, Angaben zum Aufwand sind Einschätzungen. '
+        'Ihre Branche fehlt? <a href="mailto:lionel@meyssens.ch">Schreiben Sie uns</a>.</p>\n'
+        '  </div>\n</section>\n\n'
+        '<dialog class="bx-panel" id="bx-panel" aria-labelledby="bx-panel-titel">\n'
+        '  <div class="bx-panel-innen">\n    <button type="button" class="bx-zu" aria-label="Vorschau schliessen">'
+        '<svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" '
+        'stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m5 5 10 10M15 5 5 15"/></svg></button>\n'
+        '    <div class="bx-panel-inhalt" id="bx-panel-inhalt"></div>\n  </div>\n</dialog>\n%s\n'
+        % (len(eintraege), chips, "\n".join(karten), schritt_html, "\n".join(vorlagen)))
+    zahlen = ('<ul class="bx-zahlen"><li><strong>%d</strong> Branchen</li><li><strong>%d</strong> Bausteine in Planung</li>'
+              '<li>Alle Angaben für die <strong>Schweiz</strong></li></ul>' % (len(eintraege), bausteine))
+    liste_ld = {"@type": "ItemList", "@id": DOMAIN + "/branchen/#liste", "name": "Branchen",
+                "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": e[0]["name"],
+                                     "url": DOMAIN + "/branchen/%s/" % e[0]["slug"]} for i, e in enumerate(eintraege)]}
+    return inhalt, zahlen, liste_ld
+
+
 def verwandt_abschnitt(links):
     # "Das könnte Sie auch interessieren": 3 Kacheln mit beschreibendem Linktext
     return ('<section id="verwandt">\n  <div class="r">\n    <span class="s-label">Weiterlesen</span>\n'
@@ -1317,7 +1475,7 @@ def main():
         ((START, STUFE_BRANCHEN), "Branchen: digitale Werkzeuge für Schweizer KMU | Meyssens",
          "Zahnarztpraxen, Immobilienverwaltungen, Architekturbüros, Pflege, Bau, Treuhand und mehr: Werkzeuge "
          "für Ihre Branche. Branche wählen und ansehen.",
-         "Branchen", "Werkzeuge für <span class=\"hl\">Ihre Branche.</span>",
+         "Branchen", "Werkzeuge für <span class=\"bx-verlauf\">Ihre Branche.</span>",
          "Für jede Branche zeigen wir, wo digitale Werkzeuge im Alltag entlasten können, was rechtlich gilt und welche "
          "Bausteine wir planen. Alle Angaben beziehen sich auf die Schweiz.",
          abschnitt_html("alle", "Branchen", "Alle Branchen", raster([eintrag(u) for u in alle_branchen]))),
@@ -1384,16 +1542,21 @@ def main():
         "Über uns", "Über <span class=\"hl\">Meyssens.</span>",
         "Ein Einzelunternehmen aus Lausen im Kanton Basel-Landschaft: digitale Werkzeuge für Gemeinden, Unternehmen und "
         "Vereine, persönlich begleitet.", ueber_inhalt))
+    bx_inhalt, bx_zahlen, bx_ld = branchen_uebersicht(branchen, artikel_branchen, nach_slug)
     for stufen, titel, beschreibung, chip, h1, lead, inhalt in uebersichten:
         pfad = stufen[-1][1]
         kopf, seitenld = seitenkopf(stufen, titel)
         extra = [{"@type": "AboutPage", "@id": DOMAIN + pfad + "#ueber", "url": DOMAIN + pfad, "about": {"@id": DOMAIN + "/#org"},
                   "mainEntity": {"@id": DOMAIN + "/ueber-uns/#person"}}] if pfad == "/ueber-uns/" else []
+        vorlage = vorlage_seite
+        if pfad == "/branchen/":
+            # Eigene Gestaltung: Raster mit Filter, Suche und Vorschau (vorlage_branchen.html, branchen.css/.js)
+            vorlage, inhalt, extra = lies("vorlage_branchen.html"), bx_inhalt, [bx_ld]
         werte = dict(gemeinsam, **kopf, **{
             "titel": html.escape(titel), "beschreibung": html.escape(beschreibung), "url": DOMAIN + pfad,
             "seo_kopf": seo_kopf(DOMAIN + pfad), "chip": chip, "h1": h1, "lead": html.escape(lead), "inhalt": inhalt,
-            "ld": ld(*seitenld, *extra)})
-        schreibe(pfad.strip("/") + "/index.html", fuelle(vorlage_seite, werte))
+            "zahlen": bx_zahlen, "ld": ld(*seitenld, *extra)})
+        schreibe(pfad.strip("/") + "/index.html", fuelle(vorlage, werte))
 
     # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
     werte = dict(gemeinsam, **{

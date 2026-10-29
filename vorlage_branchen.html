@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{titel}}</title>
+<meta name="description" content="{{beschreibung}}">
+<meta property="og:title" content="{{titel}}">
+<meta property="og:description" content="{{beschreibung}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{og_bild}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{og_alt}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{og_bild}}">
+<meta name="twitter:image:alt" content="{{og_alt}}">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Meyssens">
+<link rel="canonical" href="{{url}}">
+{{seo_kopf}}
+<link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
+{{head}}
+<link rel="stylesheet" href="/assets/stil.css">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="/assets/branchen.css">
+<script>if("IntersectionObserver" in window&&!matchMedia("(prefers-reduced-motion: reduce)").matches){document.documentElement.classList.add("bx-an");setTimeout(function(){if(!window.bxBereit)document.documentElement.classList.remove("bx-an")},3000)}</script>
+{{ld}}
+</head>
+<body class="stil bx-seite">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+{{kopf}}
+
+<main id="main">
+<section class="bx-held">
+  <div class="bx-breite">
+{{krumen}}
+    <p class="bx-augenbraue">{{chip}}</p>
+    <h1>{{h1}}</h1>
+    <p class="bx-lead">{{lead}}</p>
+    {{zahlen}}
+  </div>
+</section>
+
+{{inhalt}}
+</main>
+
+{{fuss}}
+
+{{rechtliches}}
+
+{{skripte}}
+<script src="/assets/demos.js" defer></script>
+<script src="/assets/branchen.js" defer></script>
+</body>
+</html>
