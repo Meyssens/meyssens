@@ -278,22 +278,117 @@ if(fest && ablaufForm){
   setze();
 }
 
-// --- /branchen/: Karten gestaffelt einblenden ---
-var bRaster = document.getElementById('branchen-raster');
-if(bRaster){
-  var bKarten = alle('.feat', bRaster);
+// --- /branchen/: Liste mit Vorschau ab 900px (Tabs: Hover, Fokus und Pfeiltasten wechseln, Klick öffnet die Seite),
+// darunter Akkordeon (Tippen klappt auf, nur eine Branche offen). Ohne JavaScript bleibt die verlinkte Liste. ---
+var bWahl = document.getElementById('branchen-wahl');
+if(bWahl){
+  var bListe = document.getElementById('branchen-liste');
+  var bPanel = document.getElementById('branchen-panel');
+  var bInhalt = bPanel.querySelector('.bpanel-inhalt');
+  var bLinks = alle('.bliste-link', bListe);
+  var breit = matchMedia('(min-width: 900px)');
+  var aktiv = bLinks[0], wechselZeit = 0, hoverZeit = 0;
+  var slug = function(l){ return l.getAttribute('data-branche'); };
+  var bereich = function(l){ return document.getElementById('ba-' + slug(l)); };
+  var kopie = function(l){ return document.getElementById('bv-' + slug(l)).content.cloneNode(true); };
+  var belebe = function(el){
+    if(ruhig) return;
+    el.classList.remove('bvor-an'); void el.offsetWidth; el.classList.add('bvor-an');
+  };
+  var waehle = function(l){
+    if(l === aktiv) return;
+    aktiv = l;
+    bLinks.forEach(function(x){
+      x.setAttribute('aria-selected', x === l ? 'true' : 'false');
+      x.tabIndex = x === l ? 0 : -1;
+    });
+    bPanel.setAttribute('aria-labelledby', l.id);
+    clearTimeout(wechselZeit);
+    var tausche = function(){
+      bInhalt.textContent = '';
+      bInhalt.appendChild(kopie(l));
+      bInhalt.classList.remove('wechsel');
+      belebe(bInhalt);
+    };
+    if(ruhig){ tausche(); return; }
+    bInhalt.classList.add('wechsel');
+    wechselZeit = setTimeout(tausche, 120);
+  };
+  var klappe = function(l){
+    var auf = l.getAttribute('aria-expanded') !== 'true';
+    bLinks.forEach(function(x){
+      var b = bereich(x), ja = auf && x === l;
+      x.setAttribute('aria-expanded', ja ? 'true' : 'false');
+      if(ja && !b.firstElementChild) b.appendChild(kopie(x));
+      b.hidden = !ja;
+      if(ja) belebe(b);
+    });
+    if(auf && l.getBoundingClientRect().top < 80) l.scrollIntoView({block: 'start', behavior: ruhig ? 'auto' : 'smooth'});
+  };
+  var modus = function(){
+    var tabs = breit.matches;
+    if(tabs){
+      bListe.setAttribute('role', 'tablist');
+      bListe.setAttribute('aria-orientation', 'vertical');
+      bListe.setAttribute('aria-describedby', 'branchen-hilfe');
+      bPanel.setAttribute('role', 'tabpanel');
+    } else {
+      ['role', 'aria-orientation', 'aria-describedby'].forEach(function(a){ bListe.removeAttribute(a); });
+      bPanel.removeAttribute('role');
+    }
+    bLinks.forEach(function(x){
+      if(tabs){
+        x.parentNode.setAttribute('role', 'presentation');
+        x.setAttribute('role', 'tab');
+        x.setAttribute('aria-controls', 'branchen-panel');
+        x.setAttribute('aria-selected', x === aktiv ? 'true' : 'false');
+        x.tabIndex = x === aktiv ? 0 : -1;
+        x.removeAttribute('aria-expanded');
+      } else {
+        x.parentNode.removeAttribute('role');
+        x.setAttribute('role', 'button');
+        x.setAttribute('aria-controls', 'ba-' + slug(x));
+        x.setAttribute('aria-expanded', bereich(x).hidden ? 'false' : 'true');
+        x.removeAttribute('aria-selected');
+        x.removeAttribute('tabindex');
+      }
+    });
+  };
+  modus();
+  if(breit.addEventListener) breit.addEventListener('change', modus); else breit.addListener(modus);
+
+  bLinks.forEach(function(l, i){
+    l.addEventListener('mouseenter', function(){
+      if(!breit.matches) return;
+      clearTimeout(hoverZeit);
+      hoverZeit = setTimeout(function(){ waehle(l); }, 70);
+    });
+    l.addEventListener('mouseleave', function(){ clearTimeout(hoverZeit); });
+    l.addEventListener('focus', function(){ if(breit.matches) waehle(l); });
+    l.addEventListener('click', function(e){
+      if(breit.matches || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      klappe(l);
+    });
+    l.addEventListener('keydown', function(e){
+      if(!breit.matches){
+        if(e.key === ' '){ e.preventDefault(); klappe(l); }
+        return;
+      }
+      var n = {ArrowDown: i + 1, ArrowRight: i + 1, ArrowUp: i - 1, ArrowLeft: i - 1, Home: 0, End: bLinks.length - 1}[e.key];
+      if(n === undefined) return;
+      e.preventDefault();
+      bLinks[(n + bLinks.length) % bLinks.length].focus();
+    });
+  });
+  // Kurzfassung des Ablaufs abspielen, sobald die Auswahl sichtbar wird
   if(!ruhig && hatIO){
     var bIo = new IntersectionObserver(function(e){
-      e.forEach(function(x){
-        if(!x.isIntersecting) return;
-        var k = x.target, verz = (bKarten.indexOf(k) % 3) * 80;
-        k.style.transitionDelay = verz + 'ms';
-        k.classList.remove('kommt');
-        setTimeout(function(){ k.style.transitionDelay = ''; }, verz + 500);
-        bIo.unobserve(k);
-      });
-    }, {threshold:.1});
-    bKarten.forEach(function(k){ k.classList.add('kommt'); bIo.observe(k); });
+      if(!e[0].isIntersecting) return;
+      belebe(breit.matches ? bInhalt : bereich(aktiv));
+      bIo.disconnect();
+    }, {threshold: .2});
+    bIo.observe(bWahl);
   }
 }
 

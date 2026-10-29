@@ -632,10 +632,61 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .auto-ratgeber{max-width:780px;margin:clamp(2rem,4vw,3rem) auto 0;text-align:center;font-size:.95rem;line-height:1.6}
 .stil .dunkel .auto-ratgeber{color:rgba(255,255,255,.85)}
 .stil .dunkel .auto-ratgeber a{color:var(--hellblau);text-underline-offset:4px}
-/* /branchen/: gestaffeltes Einblenden der Karten, leichtes Anheben, Tap-Effekt (Skript in demos.js) */
-#branchen-raster .feat{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease,opacity .5s ease}
-#branchen-raster .feat.kommt{opacity:0;transform:translateY(16px)}
-@media(hover:hover){#branchen-raster .feat:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,255,.06)}}
-@media(hover:none){#branchen-raster .feat:hover{transform:none;box-shadow:none}}
-#branchen-raster .feat:active{transform:scale(.98);transition-duration:.15s}
-:where(main:has(#branchen-raster) a,main:has(#branchen-raster) button){transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .25s ease,opacity .2s ease}
+/* /branchen/: Liste mit Vorschau ab 900px, Akkordeon darunter, ohne JavaScript verlinkte Liste mit Kurztext (Skript in demos.js) */
+.bliste{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.5rem}
+.bliste-link{display:flex;align-items:center;gap:.875rem;min-height:56px;padding:.75rem 1rem;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--white);color:var(--ink);text-decoration:none;transition:background .25s ease,border-color .25s ease,box-shadow .25s ease}
+.bliste-icon{flex:none;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:var(--r-md);background:var(--blue-8);border:1px solid var(--blue-12);color:var(--blue);transition:background .25s ease,border-color .25s ease,color .25s ease}
+.bliste-text{flex:1;min-width:0;display:flex;flex-direction:column}
+.bliste-name{font-family:'Syne','Syne Ersatz',sans-serif;font-size:1rem;font-weight:700;letter-spacing:-.01em;line-height:1.3;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+.bliste-kurz{font-size:.85rem;color:var(--ink3);line-height:1.6}
+.bliste-pfeil{flex:none;display:flex;color:var(--blue);transition:transform .25s ease}
+.bliste-link:hover{border-color:var(--blue-20);background:var(--surface)}
+.bliste-link:active{background:var(--blue-5)}
+.bliste-link:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.bliste-link[aria-selected="true"],.bliste-link[aria-expanded="true"]{border-color:var(--blue-35);background:var(--blue-5);box-shadow:var(--shadow-sm)}
+.bliste-link[aria-selected="true"] .bliste-icon,.bliste-link[aria-expanded="true"] .bliste-icon{background:var(--blue);border-color:var(--blue);color:#fff}
+.bliste-link[aria-selected="true"] .bliste-pfeil{transform:translateX(3px)}
+.bliste-link[aria-expanded="true"] .bliste-pfeil{transform:rotate(90deg)}
+.bpanel,.bliste-auf{display:none}
+.js .bliste-kurz{display:none}
+.bvor-name{font-family:'Syne','Syne Ersatz',sans-serif;font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--ink);margin:0 0 .5rem}
+.bvor-nutzen{font-size:.95rem;color:var(--ink2);line-height:1.65;margin:0 0 1.25rem}
+.bvor-label{font-size:.7rem;font-weight:600;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin:0 0 .625rem}
+.bvor-bausteine{list-style:none;margin:0 0 1.25rem;padding:0;display:flex;flex-direction:column;gap:.5rem}
+.bvor-bausteine li{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;padding:.7rem .9rem;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line)}
+.bvor-bausteine a{display:flex;flex-direction:column;min-width:0;color:var(--ink);text-decoration:none}
+.bvor-bausteine a:hover .bvor-titel{color:var(--blue)}
+.bvor-titel{font-size:.9rem;font-weight:500;line-height:1.4;transition:color .2s ease}
+.bvor-zeile{font-size:.8rem;color:var(--ink3);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bvor-bausteine .status-chip{flex:none;margin:.1rem 0 0;white-space:nowrap}
+.bvor-ablauf{margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--line)}
+.bvor-kette{list-style:none;margin:0 0 .75rem;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.bvor-schritt{display:inline-flex;align-items:center;gap:.45rem;padding:.3rem .7rem .3rem .55rem;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.8rem;color:var(--ink2);line-height:1.4}
+.bvor-punkt{display:inline-block;flex:none;width:8px;height:8px;border-radius:50%;background:var(--ink4)}
+.bvor-schritt.baustein .bvor-punkt,.bvor-punkt.baustein{background:var(--blue)}
+.bvor-schritt.mensch .bvor-punkt,.bvor-punkt.mensch{background:var(--mensch)}
+.bvor-schritt.vorhanden .bvor-punkt,.bvor-punkt.vorhanden{background:var(--blue-20)}
+.bvor-legende{display:flex;flex-wrap:wrap;gap:.35rem 1rem;font-size:.75rem;color:var(--ink3);margin:0 0 .75rem}
+.bvor-legende>span{display:inline-flex;align-items:center;gap:.4rem}
+.bvor-an .bvor-schritt{animation:bvor-ein .45s ease both;animation-delay:calc(var(--n) * 110ms)}
+@keyframes bvor-ein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.bvor-an .bvor-schritt .bvor-punkt{animation:bvor-puls .6s ease both;animation-delay:calc(var(--n) * 110ms + .25s)}
+@keyframes bvor-puls{0%{transform:scale(1)}50%{transform:scale(1.6)}100%{transform:scale(1)}}
+@media(max-width:899px){
+  .js .bliste-auf:not([hidden]){display:block;margin:.5rem 0 .75rem;padding:1.25rem 1.1rem 1.5rem;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--white);box-shadow:var(--shadow-sm)}
+  .bliste-auf .btn-p{width:100%;justify-content:center;min-height:48px}
+  .bliste-auf .bvor-name{display:none}
+  .bvor-bausteine li{flex-direction:column;gap:.4rem}
+}
+@media(min-width:900px){
+  .js .bliste-wahl{display:grid;grid-template-columns:minmax(260px,340px) minmax(0,1fr);gap:2rem;align-items:start}
+  .js .bpanel{display:block;position:sticky;top:96px;padding:2rem 2.25rem;border-radius:var(--r-xl);border:1px solid var(--line);background:var(--white);box-shadow:var(--shadow-lg)}
+  .bpanel-inhalt{transition:opacity .25s ease}
+  .bpanel-inhalt.wechsel{opacity:0}
+  .bvor-zeile{display:block;white-space:nowrap;text-overflow:ellipsis}
+}
+@media(min-width:900px) and (max-width:1099px){
+  .js .bliste-wahl{grid-template-columns:250px minmax(0,1fr);gap:1.5rem}
+  .js .bpanel{padding:1.75rem}
+}
+:where(main:has(#branchen-wahl) a,main:has(#branchen-wahl) button){transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .25s ease,opacity .2s ease}

@@ -818,6 +818,105 @@ def png_masse(pfad):
     return int.from_bytes(kopf[16:20], "big"), int.from_bytes(kopf[20:24], "big")
 
 
+# Branchen-Übersicht /branchen/: Liste mit Vorschau (ab 900px) bzw. Akkordeon (darunter), Skript in assets/demos.js.
+# Ein Symbol pro Branche (inline SVG, 24×24, Strich)
+SYMBOLE = {
+    "zahnarztpraxen": '<path d="M7.5 3.5C5 3.5 3.5 5.4 3.5 7.6c0 2.2 1 3.5 1.6 5.2.6 1.7.8 3.4 1.2 5.1.3 1.3.8 2.6 1.8 2.6 1.3 0 1.5-2.2 1.9-3.7.3-1.2.7-2 2-2s1.7.8 2 2c.4 1.5.6 3.7 1.9 3.7 1 0 1.5-1.3 1.8-2.6.4-1.7.6-3.4 1.2-5.1.6-1.7 1.6-3 1.6-5.2 0-2.2-1.5-4.1-4-4.1-1.9 0-2.6 1-4.5 1s-2.6-1-4.5-1z"/>',
+    "arztpraxen": '<path d="M6 3.5H5v5a4 4 0 0 0 8 0v-5h-1"/><path d="M9 12.5v2.5a5 5 0 0 0 10 0v-2"/><circle cx="19" cy="11" r="2"/>',
+    "pflegeheime-spitex": '<path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/><path d="M7.5 12h2.2l1.2-2.2 2 4 1.2-1.8h2.4"/>',
+    "bauunternehmen": '<path d="M3 18.5h18"/><path d="M5 18.5V16a7 7 0 0 1 14 0v2.5"/><path d="M10 9.4V6.5h4v2.9"/><path d="M8.5 18.5v-3M15.5 18.5v-3"/>',
+    "elektro-handwerk": '<path d="M13.5 2.5 5 13.5h6.5l-1 8 8.5-11h-6.5z"/>',
+    "architekturbueros": '<path d="M4 20 20 4v16z"/><path d="M8 20v-2M12 20v-3M16 20v-2"/><path d="M14 14h2v2"/>',
+    "treuhaender": '<rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8.5 6.5h7v3h-7z"/><path d="M8.7 13.5h.01M12 13.5h.01M15.3 13.5h.01M8.7 17h.01M12 17h.01M15.3 17h.01"/>',
+    "immobilienverwaltungen": '<path d="M4 20.5V8l8-4.5L20 8v12.5"/><path d="M2.5 20.5h19"/><path d="M8.5 10h1.5M14 10h1.5M8.5 13.5h1.5M14 13.5h1.5"/><path d="M10 20.5v-3.5h4v3.5"/>',
+    "kindergaerten-schulen": '<path d="M3 5.5c3-1.2 6-1 9 1 3-2 6-2.2 9-1v13c-3-1.2-6-1-9 1-3-2-6-2.2-9-1z"/><path d="M12 6.5v13"/>',
+    "vereine": '<circle cx="9" cy="8" r="3"/><path d="M3 19.5a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5 5.3"/>',
+    "hotels-gastronomie": '<path d="M3 18.5v-11"/><path d="M3 14h18v4.5"/><path d="M21 14v-1.5a3.5 3.5 0 0 0-3.5-3.5H11v5"/><circle cx="7" cy="11" r="2"/>',
+}
+
+
+KURZ_ART = {"baustein": "Baustein", "mensch": "Mensch entscheidet", "spaeter": "Später", "vorhanden": "Ihre Software"}
+
+
+def symbol(slug, groesse=20):
+    return ('<svg viewBox="0 0 24 24" width="%d" height="%d" fill="none" stroke="currentColor" stroke-width="1.6" '
+            'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">%s</svg>'
+            % (groesse, groesse, SYMBOLE[slug]))
+
+
+def erster_satz(text):
+    return re.split(r"(?<=[.!?])\s+", text.strip())[0]
+
+
+def branchen_liste(branchen, artikel_branchen, nach_slug):
+    # Liste aller Branchen; pro Branche eine Vorschau (Nutzen, 3 Beispiel-Bausteine, Kurzfassung von Kette A).
+    # Ohne JavaScript bleibt eine verlinkte Liste mit Kurztext.
+    eintraege = []
+    for b in branchen:
+        au = b.get("automatisierungen")
+        if au:
+            eintraege.append((b, "Beispiel-Bausteine", b["bausteine"][:3], au["ketten"][0], "#ablauf-1"))
+        else:
+            eintraege.append((b, "Passende Produkte", b["produkte"][:3], None, ""))
+    for a in artikel_branchen:
+        au = a["automatisierung"]
+        eintraege.append((a, "Beispiel-Bausteine", au["bausteine"][:3], au["kette"], "#ablauf"))
+    eintraege.sort(key=lambda e: e[0]["name"])
+    for b, *_ in eintraege:
+        if b["slug"] not in SYMBOLE:
+            raise SystemExit("Branche %s: Symbol fehlt (SYMBOLE in build.py)" % b["slug"])
+
+    def vorschau(b, titel, liste, kette, anker):
+        s, name = b["slug"], html.escape(b["name"])
+        punkte = "\n".join(
+            '        <li><a href="/produkte/%s/"><span class="bvor-titel">%s</span><span class="bvor-zeile">%s</span></a>'
+            '<span class="status-chip">%s</span></li>'
+            % (x, html.escape(nach_slug[x]["name"]), html.escape(erster_satz(nach_slug[x]["kurzbeschreibung"])),
+               html.escape(nach_slug[x]["status"])) for x in liste)
+        teile = ['      <h3 class="bvor-name">%s</h3>' % name,
+                 '      <p class="bvor-nutzen">%s</p>' % html.escape(b["kurz"]),
+                 '      <p class="bvor-label">%s</p>' % titel,
+                 '      <ul class="bvor-bausteine">\n%s\n      </ul>' % punkte,
+                 '      <a class="btn-p" href="/branchen/%s/">Mehr zu %s %s</a>' % (s, name, PFEIL)]
+        if kette:
+            schritte = "\n".join('          <li class="bvor-schritt %s" style="--n:%d"><span class="bvor-punkt" aria-hidden="true">'
+                                  '</span><span class="sr-only">%s: </span>%s</li>'
+                                  % (st["art"], i, KURZ_ART[st["art"]], html.escape(st["titel"]))
+                                  for i, st in enumerate(kette["schritte"]))
+            arten = []
+            for st in kette["schritte"]:
+                if st["art"] not in arten:
+                    arten.append(st["art"])
+            legende = "".join('<span><span class="bvor-punkt %s"></span>%s</span>' % (x, KURZ_ART[x]) for x in arten)
+            teile.append('      <div class="bvor-ablauf">\n        <p class="bvor-label">Ablauf: %s</p>\n'
+                         '        <ol class="bvor-kette">\n%s\n        </ol>\n'
+                         '        <p class="bvor-legende" aria-hidden="true">%s</p>\n'
+                         '        <a class="way-go" href="/branchen/%s/%s">Ganzen Ablauf ansehen %s</a>\n      </div>'
+                         % (html.escape(kette["titel"]), schritte, legende, s, anker, PFEIL))
+        return "\n".join(teile)
+
+    erste = eintraege[0][0]["slug"]
+    zeilen, vorlagen = [], []
+    for b, titel, liste, kette, anker in eintraege:
+        s = b["slug"]
+        inhalt = vorschau(b, titel, liste, kette, anker)
+        zeilen.append(
+            '    <li class="bliste-eintrag">\n'
+            '      <a class="bliste-link" id="bl-%s" href="/branchen/%s/" data-branche="%s">'
+            '<span class="bliste-icon" aria-hidden="true">%s</span><span class="bliste-text"><span class="bliste-name">%s</span>'
+            '<span class="bliste-kurz">%s</span></span><span class="bliste-pfeil" aria-hidden="true">%s</span></a>\n'
+            '      <div class="bliste-auf" id="ba-%s"%s>%s</div>\n    </li>'
+            % (s, s, s, symbol(s), html.escape(b["name"]), html.escape(b["kurz"]), PFEIL, s,
+               "" if s == erste else " hidden", "\n" + inhalt + "\n      " if s == erste else ""))
+        vorlagen.append('<template id="bv-%s">\n%s\n</template>' % (s, inhalt))
+    return ('  <div class="bliste-wahl r" id="branchen-wahl">\n'
+            '    <p class="sr-only" id="branchen-hilfe">Pfeiltasten wechseln die Vorschau, Enter öffnet die Branchenseite.</p>\n'
+            '    <ul class="bliste" id="branchen-liste" aria-label="Branchen">\n%s\n    </ul>\n'
+            '    <div class="bpanel" id="branchen-panel" aria-labelledby="bl-%s">\n      <div class="bpanel-inhalt">\n%s\n      </div>\n    </div>\n'
+            '  </div>\n%s'
+            % ("\n".join(zeilen), erste, vorschau(*eintraege[0]), "\n".join(vorlagen)))
+
+
 def verwandt_abschnitt(links):
     # "Das könnte Sie auch interessieren": 3 Kacheln mit beschreibendem Linktext
     return ('<section id="verwandt">\n  <div class="r">\n    <span class="s-label">Weiterlesen</span>\n'
@@ -1303,15 +1402,14 @@ def main():
 
     # Übersichtsseiten (Brotkrumen-Stufen) und Über uns, alle aus vorlage_seite.html
     vorlage_seite = lies("vorlage_seite.html")
-    def raster(eintraege, rid=""):
-        return '  <div class="feat-grid r"%s>\n%s\n  </div>' % (' id="%s"' % rid if rid else "", "\n".join(
-            link_kachel(u, art, name, text, "Mehr zu " + html.escape(name)) for u, art, name, text in eintraege))
+    def raster(eintraege):
+        return '  <div class="feat-grid r">\n%s\n  </div>' % "\n".join(
+            link_kachel(u, art, name, text, "Mehr zu " + html.escape(name)) for u, art, name, text in eintraege)
     def abschnitt_html(anker, label, titel, inhalt, klasse=""):
         return ('<section id="%s"%s>\n  <div class="r">\n    <span class="s-label">%s</span>\n    <h2>%s</h2>\n  </div>\n%s\n</section>\n'
                 % (anker, ' class="%s"' % klasse if klasse else "", label, titel, inhalt))
     def eintrag(u):
         return (u, info[u]["art"], info[u]["name"], info[u]["text"])
-    alle_branchen = sorted([u for u in info if info[u]["typ"] == "branche"], key=lambda u: info[u]["name"])
     pilot = sum(p["status"] == "Pilotphase" for p in allgemein)
     uebersichten = [
         ((START, STUFE_BRANCHEN), "Branchen: digitale Werkzeuge für Schweizer KMU | Meyssens",
@@ -1320,8 +1418,7 @@ def main():
          "Branchen", "Werkzeuge für <span class=\"hl\">Ihre Branche.</span>",
          "Für jede Branche zeigen wir, wo digitale Werkzeuge im Alltag entlasten können, was rechtlich gilt und welche "
          "Bausteine wir planen. Alle Angaben beziehen sich auf die Schweiz.",
-         abschnitt_html("alle", "Branchen", "Alle Branchen",
-                        raster([eintrag(u) for u in alle_branchen], "branchen-raster"))),
+         abschnitt_html("alle", "Branchen", "Alle Branchen", branchen_liste(branchen, artikel_branchen, nach_slug))),
         ((START, STUFE_RATGEBER), "Ratgeber für Schweizer KMU: nDSG, Offerten | Meyssens",
          "Ratgeber mit Quellen und Prüfdatum: nDSG, Aufbewahrungsfristen, Mängelrüge 2026, Patientenformulare, "
          "Sicherheitsnachweis, Spitex und mehr. Jetzt lesen.",

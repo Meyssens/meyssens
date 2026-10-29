@@ -34,6 +34,9 @@
   Ratgeberseiten, Über uns in Kopf und Fuss mit Person im JSON-LD, Article mit datePublished und dateModified,
   keine SearchAction ohne Suche, jede Seite von der Startseite in höchstens 3 Klicks erreichbar, keine verwaiste
   Seite, Sitemap mit lastmod (Prüfdatum, wo vorhanden)
+- /branchen/: Liste aller Branchen (Link, Symbol, Name, Kurztext aus den Daten), pro Branche eine Vorschau mit Nutzen,
+  1 bis 3 Bausteinen oder Produkten samt Status aus produkte.json, Knopf "Mehr zu <Branche>" und Kurzfassung von
+  Kette A (wo vorhanden, Schritte wie in den Daten); erste Branche im Panel und im Akkordeon vorgewählt; kein Suchfeld
 Nur Python-Standardbibliothek.
 """
 import html
@@ -559,6 +562,44 @@ for url, (text, parser) in seiten.items():
     ziele = re.findall(r'<a href="([^"]+)" class="feat tile">', teil)
     if len(ziele) != 3 or len(set(ziele)) != 3 or url in ziele or not all(z in seiten for z in ziele):
         fehler.append("%s: 'Das könnte Sie auch interessieren' ohne 3 gültige Links" % url)
+
+# /branchen/: Liste mit Vorschau-Panel bzw. Akkordeon
+text = seiten["/branchen/"][0]
+nach_p = {p["slug"]: p for p in produkte}
+alle_b = []
+for b in json.loads((ROOT / "branchen.json").read_text(encoding="utf-8")):
+    au = b.get("automatisierungen")
+    alle_b.append((b["slug"], b["name"], b["kurz"], b["bausteine"][:3] if au else b["produkte"][:3], au and au["ketten"][0]))
+for a in artikel:
+    if a["art"] == "branche":
+        alle_b.append((a["slug"], a["name"], a["kurz"], a["automatisierung"]["bausteine"][:3], a["automatisierung"]["kette"]))
+alle_b.sort(key=lambda x: x[1])
+zeilen = re.findall(r'<a class="bliste-link" id="bl-([^"]+)" href="/branchen/([^/]+)/" data-branche="\1">'
+                    r'<span class="bliste-icon" aria-hidden="true"><svg [^>]+>.*?</svg></span><span class="bliste-text">'
+                    r'<span class="bliste-name">([^<]+)</span><span class="bliste-kurz">([^<]+)</span>', text)
+if [(z[0], html.unescape(z[2]), html.unescape(z[3])) for z in zeilen] != [x[:3] for x in alle_b] or any(z[0] != z[1] for z in zeilen):
+    fehler.append("/branchen/: Liste passt nicht zu den Daten")
+for slug, name, kurz, liste, kette in alle_b:
+    v = re.search(r'<template id="bv-%s">(.*?)</template>' % re.escape(slug), text, re.S)
+    if not v:
+        fehler.append("/branchen/: Vorschau fehlt für %s" % slug)
+        continue
+    v = v.group(1)
+    punkte = re.findall(r'<li><a href="/produkte/([^/]+)/"><span class="bvor-titel">([^<]+)</span>.*?<span class="status-chip">([^<]+)</span></li>', v)
+    if [(x, nach_p[x]["name"], nach_p[x]["status"]) for x in liste] != [(p, html.unescape(t), st) for p, t, st in punkte]:
+        fehler.append("/branchen/: Vorschau %s: Bausteine oder Status passen nicht zu produkte.json" % slug)
+    if '<a class="btn-p" href="/branchen/%s/">Mehr zu %s ' % (slug, html.escape(name)) not in v or html.escape(kurz) not in v:
+        fehler.append("/branchen/: Vorschau %s ohne Nutzen oder Knopf 'Mehr zu'" % slug)
+    schritte = [html.unescape(t) for t in re.findall(r'<li class="bvor-schritt [a-z]+" style="--n:\d+">.*?</span>([^<]+)</li>', v)]
+    if schritte != ([st["titel"] for st in kette["schritte"]] if kette else []):
+        fehler.append("/branchen/: Vorschau %s: Kurzfassung des Ablaufs passt nicht zu Kette A" % slug)
+erste = alle_b[0][0]
+if ('<div class="bpanel" id="branchen-panel" aria-labelledby="bl-%s">' % erste not in text
+        or not re.search(r'<div class="bliste-auf" id="ba-%s">\s*<h3' % re.escape(erste), text)
+        or len(re.findall(r'<div class="bliste-auf" id="ba-[^"]+" hidden></div>', text)) != len(alle_b) - 1):
+    fehler.append("/branchen/: erste Branche nicht vorgewählt (Panel und Akkordeon)")
+if 'type="search"' in text or 'class="feat-grid' in text.split('id="alle"')[1].split("</section>")[0]:
+    fehler.append("/branchen/: Suchfeld oder Kachelraster noch vorhanden")
 
 # Erreichbarkeit: Breitensuche ab der Startseite über interne Links, höchstens 3 Klicks, keine verwaiste Seite
 tiefe, offen = {"/": 0}, ["/"]
