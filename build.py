@@ -1306,14 +1306,6 @@ def main():
     def raster(eintraege, rid=""):
         return '  <div class="feat-grid r"%s>\n%s\n  </div>' % (' id="%s"' % rid if rid else "", "\n".join(
             link_kachel(u, art, name, text, "Mehr zu " + html.escape(name)) for u, art, name, text in eintraege))
-    # Suchfeld über dem Branchen-Raster: filtert beim Tippen (assets/demos.js), ohne JavaScript ausgeblendet
-    branchen_suche = (
-        '  <div class="r" id="branchen-suche">\n'
-        '    <label class="sr-only" for="branchen-suchfeld">Branche suchen</label>\n'
-        '    <input class="finput" type="search" id="branchen-suchfeld" placeholder="Branche suchen" autocomplete="off" '
-        'aria-controls="branchen-raster">\n'
-        '    <p class="sr-only" id="branchen-treffer" aria-live="polite"></p>\n'
-        '    <p id="branchen-leer" hidden>Keine Branche gefunden.</p>\n  </div>\n')
     def abschnitt_html(anker, label, titel, inhalt, klasse=""):
         return ('<section id="%s"%s>\n  <div class="r">\n    <span class="s-label">%s</span>\n    <h2>%s</h2>\n  </div>\n%s\n</section>\n'
                 % (anker, ' class="%s"' % klasse if klasse else "", label, titel, inhalt))
@@ -1329,7 +1321,7 @@ def main():
          "Für jede Branche zeigen wir, wo digitale Werkzeuge im Alltag entlasten können, was rechtlich gilt und welche "
          "Bausteine wir planen. Alle Angaben beziehen sich auf die Schweiz.",
          abschnitt_html("alle", "Branchen", "Alle Branchen",
-                        branchen_suche + raster([eintrag(u) for u in alle_branchen], "branchen-raster"))),
+                        raster([eintrag(u) for u in alle_branchen], "branchen-raster"))),
         ((START, STUFE_RATGEBER), "Ratgeber für Schweizer KMU: nDSG, Offerten | Meyssens",
          "Ratgeber mit Quellen und Prüfdatum: nDSG, Aufbewahrungsfristen, Mängelrüge 2026, Patientenformulare, "
          "Sicherheitsnachweis, Spitex und mehr. Jetzt lesen.",

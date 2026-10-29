@@ -278,8 +278,7 @@ if(fest && ablaufForm){
   setze();
 }
 
-
-// --- /branchen/: Karten gestaffelt einblenden und Suchfeld, das beim Tippen filtert ---
+// --- /branchen/: Karten gestaffelt einblenden ---
 var bRaster = document.getElementById('branchen-raster');
 if(bRaster){
   var bKarten = alle('.feat', bRaster);
@@ -295,22 +294,6 @@ if(bRaster){
       });
     }, {threshold:.1});
     bKarten.forEach(function(k){ k.classList.add('kommt'); bIo.observe(k); });
-  }
-  var bFeld = document.getElementById('branchen-suchfeld');
-  var bTreffer = document.getElementById('branchen-treffer');
-  var bLeer = document.getElementById('branchen-leer');
-  var norm = function(t){ return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); };
-  if(bFeld){
-    bFeld.addEventListener('input', function(){
-      var worte = norm(bFeld.value.trim()).split(/\s+/).filter(Boolean), n = 0;
-      bKarten.forEach(function(k){
-        var text = norm(k.textContent);
-        k.hidden = !worte.every(function(w){ return text.indexOf(w) >= 0; });
-        if(!k.hidden){ n++; k.classList.remove('kommt'); }
-      });
-      bLeer.hidden = n > 0;
-      bTreffer.textContent = worte.length ? n + ' von ' + bKarten.length + ' Branchen' : '';
-    });
   }
 }
 
