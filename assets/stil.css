@@ -632,3 +632,15 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .auto-ratgeber{max-width:780px;margin:clamp(2rem,4vw,3rem) auto 0;text-align:center;font-size:.95rem;line-height:1.6}
 .stil .dunkel .auto-ratgeber{color:rgba(255,255,255,.85)}
 .stil .dunkel .auto-ratgeber a{color:var(--hellblau);text-underline-offset:4px}
+/* /branchen/: Suchfeld, gestaffeltes Einblenden der Karten, leichtes Anheben, Tap-Effekt (Skript in demos.js) */
+html:not(.js) #branchen-suche{display:none}
+#branchen-suche{margin-top:1.25rem;margin-bottom:1.5rem}
+#branchen-suche .finput{max-width:22rem}
+#branchen-leer{margin-top:1rem;color:var(--ink3)}
+#branchen-raster [hidden]{display:none}
+#branchen-raster .feat{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,background .3s ease,opacity .5s ease}
+#branchen-raster .feat.kommt{opacity:0;transform:translateY(16px)}
+@media(hover:hover){#branchen-raster .feat:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,255,.06)}}
+@media(hover:none){#branchen-raster .feat:hover{transform:none;box-shadow:none}}
+#branchen-raster .feat:active{transform:scale(.98);transition-duration:.15s}
+:where(main:has(#branchen-raster) a,main:has(#branchen-raster) button,main:has(#branchen-raster) input){transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .25s ease,opacity .2s ease}

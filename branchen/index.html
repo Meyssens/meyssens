@@ -85,7 +85,13 @@
     <span class="s-label">Branchen</span>
     <h2>Alle Branchen</h2>
   </div>
-  <div class="feat-grid r">
+  <div class="r" id="branchen-suche">
+    <label class="sr-only" for="branchen-suchfeld">Branche suchen</label>
+    <input class="finput" type="search" id="branchen-suchfeld" placeholder="Branche suchen" autocomplete="off" aria-controls="branchen-raster">
+    <p class="sr-only" id="branchen-treffer" aria-live="polite"></p>
+    <p id="branchen-leer" hidden>Keine Branche gefunden.</p>
+  </div>
+  <div class="feat-grid r" id="branchen-raster">
     <a href="/branchen/architekturbueros/" class="feat tile">
       <span class="status-chip">Branche</span>
       <h3>Architekturbüros</h3>
