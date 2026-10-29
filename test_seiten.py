@@ -34,9 +34,6 @@
   Ratgeberseiten, Über uns in Kopf und Fuss mit Person im JSON-LD, Article mit datePublished und dateModified,
   keine SearchAction ohne Suche, jede Seite von der Startseite in höchstens 3 Klicks erreichbar, keine verwaiste
   Seite, Sitemap mit lastmod (Prüfdatum, wo vorhanden)
-- /branchen/: eine Karte pro Branche (Link, Symbol, Bereich, Nutzen aus den Daten, Status), Vorschau mit 1 bis 3
-  Bausteinen oder Produkten und Link zur Branchenseite, Filter-Chips mit gültigen Bereichen, Suchfeld mit Label,
-  Dialog mit Schliessen-Knopf, drei Schritte, ItemList im JSON-LD, eigenes CSS/JS ohne externe Quellen, kein ß
 Nur Python-Standardbibliothek.
 """
 import html
@@ -562,55 +559,6 @@ for url, (text, parser) in seiten.items():
     ziele = re.findall(r'<a href="([^"]+)" class="feat tile">', teil)
     if len(ziele) != 3 or len(set(ziele)) != 3 or url in ziele or not all(z in seiten for z in ziele):
         fehler.append("%s: 'Das könnte Sie auch interessieren' ohne 3 gültige Links" % url)
-
-# /branchen/: Raster mit Filter, Suche und Vorschau
-text = seiten["/branchen/"][0]
-alle_b = sorted([(b["slug"], b["name"], b["kurz"]) for b in json.loads((ROOT / "branchen.json").read_text(encoding="utf-8"))] +
-                [(a["slug"], a["name"], a["kurz"]) for a in artikel if a["art"] == "branche"], key=lambda x: x[1])
-karten = re.findall(r'<li class="bx-zelle" data-bereiche="([^"]+)" data-suche="[^"]+" style="--i:\d+">\s*'
-                    r'<a class="bx-karte" href="/branchen/([^/]+)/" data-vorschau="\2">\s*'
-                    r'<span class="bx-icon" aria-hidden="true"><svg [^>]+>.*?</svg></span>\s*'
-                    r'<span class="bx-bereich">[^<]+</span>\s*<h3 class="bx-name">([^<]+)</h3>\s*'
-                    r'<p class="bx-nutzen">([^<]+)</p>\s*<span class="bx-fuss"><span class="bx-status">'
-                    r'<span class="bx-punkt" aria-hidden="true"></span>([^<]+)</span>', text, re.S)
-if [(k[1], html.unescape(k[2]), html.unescape(k[3])) for k in karten] != alle_b:
-    fehler.append("/branchen/: Karten passen nicht zu branchen.json/artikel.json")
-chips = re.findall(r'<button type="button" class="bx-chip" data-filter="([^"]+)" aria-pressed="(true|false)">', text)
-if not chips or chips[0] != ("alle", "true") or any(p == "true" for _, p in chips[1:]):
-    fehler.append("/branchen/: Filter-Chips fehlen oder 'Alle' nicht vorgewählt")
-for bereiche, slug, *_ in karten:
-    if not bereiche or any(x not in {c for c, _ in chips[1:]} for x in bereiche.split()):
-        fehler.append("/branchen/: Karte %s mit unbekanntem Bereich" % slug)
-for k in karten:
-    if not re.fullmatch(r"(In Planung|Pilotphase): \d+ Bausteine|Passende Produkte: \d+", k[4]):
-        fehler.append("/branchen/: Karte %s ohne gültigen Status (%s)" % (k[1], k[4]))
-for slug, name, _ in alle_b:
-    v = re.search(r'<template id="bx-v-%s">(.*?)</template>' % re.escape(slug), text, re.S)
-    if not v:
-        fehler.append("/branchen/: Vorschau fehlt für %s" % slug)
-        continue
-    punkte = re.findall(r'<a class="bx-v-punkt" href="/produkte/[^/]+/">', v.group(1))
-    if not 1 <= len(punkte) <= 3 or 'href="/branchen/%s/"' % slug not in v.group(1) or 'id="bx-panel-titel"' not in v.group(1):
-        fehler.append("/branchen/: Vorschau %s ohne 1 bis 3 Bausteine, Titel oder Link zur Branchenseite" % slug)
-for muss in ('<label for="bx-suchfeld" class="sr-only">', '<input type="search" id="bx-suchfeld"',
-             '<dialog class="bx-panel" id="bx-panel" aria-labelledby="bx-panel-titel">',
-             'class="bx-zu" aria-label="Vorschau schliessen"', 'aria-live="polite"',
-             '<link rel="stylesheet" href="/assets/branchen.css">', '<script src="/assets/branchen.js" defer></script>',
-             "So läuft Automatisierung bei uns", "Entwurf statt Versand", "Sie entscheiden", "Daten in der Schweiz"):
-    if muss not in text:
-        fehler.append("/branchen/: fehlt: %s" % muss)
-if text.count('<li class="bx-schritt"') != 3:
-    fehler.append("/branchen/: nicht genau 3 Schritte")
-graph = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', text, re.S).group(1))["@graph"]
-liste = [x for x in graph if x.get("@type") == "ItemList"]
-if not liste or [e["url"] for e in liste[0]["itemListElement"]] != ["https://meyssens.ch/branchen/%s/" % s for s, _, _ in alle_b]:
-    fehler.append("/branchen/: ItemList im JSON-LD fehlt oder passt nicht")
-for datei in ("assets/branchen.css", "assets/branchen.js"):
-    inhalt = (ROOT / datei).read_text(encoding="utf-8")
-    if re.search(r"https?://|@import|url\(", inhalt) or "ß" in inhalt:
-        fehler.append("%s: externe Quelle oder ß" % datei)
-if "ß" in text:
-    fehler.append("/branchen/: ß")
 
 # Erreichbarkeit: Breitensuche ab der Startseite über interne Links, höchstens 3 Klicks, keine verwaiste Seite
 tiefe, offen = {"/": 0}, ["/"]

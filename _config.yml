@@ -15,5 +15,4 @@ exclude:
   - vorlage_unternehmen.html
   - vorlage_404.html
   - vorlage_seite.html
-  - vorlage_branchen.html
   - bilder.py
