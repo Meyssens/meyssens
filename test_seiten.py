@@ -482,8 +482,8 @@ for b in (b for b in branchen_daten if b.get("automatisierungen")):
         fehler.append("%s#automatisierung: %d Wörter" % (url, n))
     if '<a href="#automatisierung">' not in text[:text.index('<section id="alltag"')]:
         fehler.append("%s: Sprungmarke zum Abschnitt fehlt" % url)
-    if lastmod_alle.get(url) != au["geprueft"]:
-        fehler.append("%s: lastmod nicht gleich Prüfdatum" % url)
+    if lastmod_alle.get(url) != max(au["geprueft"], b.get("aktualisiert", au["geprueft"])):
+        fehler.append("%s: lastmod nicht gleich Prüfdatum bzw. aktualisiert" % url)
     print("%-42s %d" % (url + "#automatisierung", n))
 
 # --- Technik: Brotkrumen, Bilder, verwandte Links, Über uns, Erreichbarkeit, Sitemap ---
@@ -542,14 +542,15 @@ for a in artikel:
     graph = [g for blk in re.findall(r'<script type="application/ld\+json">(.*?)</script>', seiten[url][0], flags=re.S)
              for g in json.loads(blk).get("@graph", [])]
     art = next((g for g in graph if g["@type"] == "Article"), {})
-    if art.get("datePublished") != a.get("veroeffentlicht") or art.get("dateModified") != a["geprueft"] or \
+    stand = max(a["geprueft"], a.get("aktualisiert", a["geprueft"]))
+    if art.get("datePublished") != a.get("veroeffentlicht") or art.get("dateModified") != stand or \
             art.get("image", {}).get("@type") != "ImageObject":
         fehler.append("%s: Article ohne datePublished/dateModified/ImageObject" % url)
-    if lastmod.get(url) != a["geprueft"]:
-        fehler.append("%s: lastmod nicht gleich Prüfdatum" % url)
+    if lastmod.get(url) != stand:
+        fehler.append("%s: lastmod nicht gleich Prüfdatum bzw. aktualisiert" % url)
 for p in (p for p in produkte if ist_baustein(p)):
-    if lastmod.get("/produkte/%s/" % p["slug"]) != p["geprueft"]:
-        fehler.append("/produkte/%s/: lastmod nicht gleich Prüfdatum" % p["slug"])
+    if lastmod.get("/produkte/%s/" % p["slug"]) != max(p["geprueft"], p.get("aktualisiert", p["geprueft"])):
+        fehler.append("/produkte/%s/: lastmod nicht gleich Prüfdatum bzw. aktualisiert" % p["slug"])
 
 # "Das könnte Sie auch interessieren": 3 verschiedene, vorhandene Ziele, nicht die Seite selbst
 for url, (text, parser) in seiten.items():
@@ -600,6 +601,40 @@ if ('<div class="bpanel" id="branchen-panel" aria-labelledby="bl-%s">' % erste n
     fehler.append("/branchen/: erste Branche nicht vorgewählt (Panel und Akkordeon)")
 if 'type="search"' in text or 'class="feat-grid' in text.split('id="alle"')[1].split("</section>")[0]:
     fehler.append("/branchen/: Suchfeld oder Kachelraster noch vorhanden")
+
+# Welle 2 (Branchen mit Abschnitt "Automatisierungen"): strengere SEO-Werte, eigenes OG-Bild, direkte Links von /branchen/
+welle2 = [b for b in branchen_daten if b.get("automatisierungen")]
+w2_bausteine = ["/produkte/%s/" % x for b in welle2 for x in b["bausteine"]]
+w2_ratgeber = ["/ratgeber/%s/" % a["slug"] for a in artikel if a["art"] == "ratgeber"
+               and set(a.get("produkte", [])) & {x for b in welle2 for x in b["bausteine"]}]
+# Hauptsuchbegriff aus der Recherche (Ratgeber-Ideen und Suchbegriffe), Kern muss in Title, H1 und erstem Absatz stehen
+SUCHBEGRIFF = {"/ratgeber/aufbewahrungsfristen-buchhaltung/": ["Aufbewahr", "Buchhaltung", "Schweiz"],
+               "/ratgeber/maengelruege-abnahme-2026/": ["Mängelrüge", "60 Tage"],
+               "/ratgeber/patientenformular-datenschutz/": ["Patientenformular", "Datenschutz"],
+               "/ratgeber/sicherheitsnachweis-periodische-kontrolle/": ["Sicherheitsnachweis", "Elektroinstallation"]}
+ohne_vorlagen = re.sub(r"<template\b.*?</template>", "", seiten["/branchen/"][0], flags=re.S)
+for url in ["/branchen/"] + ["/branchen/%s/" % b["slug"] for b in welle2] + w2_bausteine + w2_ratgeber:
+    text = seiten[url][0]
+    kopf = text[:text.index("</head>")]
+    t = kopf_wert(kopf, r"<title>(.*?)</title>") or ""
+    d = kopf_wert(kopf, r'<meta name="description" content="([^"]*)"') or ""
+    if not 50 <= len(t) <= 60 or not 120 <= len(d) <= 155:
+        fehler.append("%s: Title %d (50 bis 60) oder Description %d Zeichen (120 bis 155)" % (url, len(t), len(d)))
+    for k in ("title", "description", "url", "type", "image", "image:alt"):
+        if '<meta property="og:%s" content="' % k not in kopf:
+            fehler.append("%s: og:%s fehlt" % (url, k))
+    bild = kopf_wert(kopf, r'<meta property="og:image" content="https://meyssens\.ch([^"]+)"') or ""
+    if url in w2_bausteine + w2_ratgeber and not bild.startswith("/assets/og/%s-" % ("baustein" if "/produkte/" in url else "ratgeber")):
+        fehler.append("%s: kein eigenes OG-Bild" % url)
+    if url in w2_bausteine + w2_ratgeber and 'href="%s"' % url not in ohne_vorlagen:
+        fehler.append("%s: von /branchen/ nicht direkt verlinkt (ausserhalb der Vorschau-Vorlagen)" % url)
+    if url in SUCHBEGRIFF:
+        h1 = re.sub(r"<[^>]+>", "", re.search(r"<h1[^>]*>(.*?)</h1>", text, flags=re.S).group(1))
+        p1 = re.sub(r"<[^>]+>", "", re.search(r"</h1>.*?<p[^>]*>(.*?)</p>", text, flags=re.S).group(1))
+        for wort in SUCHBEGRIFF[url]:
+            for wo, inhalt in (("Title", t), ("H1", h1), ("ersten Absatz", p1)):
+                if wort.lower() not in html.unescape(inhalt).lower():
+                    fehler.append("%s: Suchbegriff %s fehlt in %s" % (url, wort, wo))
 
 # Erreichbarkeit: Breitensuche ab der Startseite über interne Links, höchstens 3 Klicks, keine verwaiste Seite
 tiefe, offen = {"/": 0}, ["/"]

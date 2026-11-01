@@ -342,11 +342,12 @@
   },
   {
     "slug": "elektro-handwerk",
+    "aktualisiert": "2026-11-01",
     "name": "Elektro-Handwerk",
     "fuer": "das Elektro-Handwerk",
     "kurz": "Kundenanfragen ordnen, Ausschreibungen finden und Fragen auf der Website beantworten.",
     "beschreibung": "Digitale Werkzeuge für Elektro-Handwerksbetriebe: Anfragen ordnen, Ausschreibungen finden, Fragen auf der Website beantworten. Mit Beispielszenarien.",
-    "intro": "Elektro-Handwerksbetriebe sind vor allem bei Kundinnen und Kunden vor Ort unterwegs. Gleichzeitig kommen laufend Anfragen herein: zu Installationen, Reparaturen, Terminen oder Themen wie Ladestationen und Photovoltaik. Wer diese Anfragen schnell einordnet, kann besser planen und verliert weniger Aufträge. Dabei geht es nicht darum, den persönlichen Kontakt zu ersetzen, sondern Routinearbeit im Büro zu verringern.",
+    "intro": "Elektroinstallateure und andere Elektro-Handwerksbetriebe sind vor allem bei Kundinnen und Kunden vor Ort unterwegs. Gleichzeitig kommen laufend Anfragen herein: zu Installationen, Reparaturen, Terminen oder Themen wie Ladestationen und Photovoltaik. Wer diese Anfragen schnell einordnet, kann besser planen und verliert weniger Aufträge. Dabei geht es nicht darum, den persönlichen Kontakt zu ersetzen, sondern Routinearbeit im Büro zu verringern.",
     "probleme": [
       {
         "titel": "Alles im selben Postfach",
