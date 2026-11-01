@@ -523,7 +523,7 @@
     "slug": "online-terminanfrage-arztpraxis",
     "branche": "arztpraxen",
     "name": "Online-Terminanfrage für Arztpraxen",
-    "kurzbeschreibung": "Patientinnen und Patienten fragen einen Termin über ein kurzes Formular an, ohne Feld für Beschwerden. Die Anfrage landet in einer geordneten Liste mit einem Entwurf für die Antwort. Das Praxisteam wählt den Termin und gibt die Antwort frei.",
+    "kurzbeschreibung": "Mit der Online-Terminanfrage fragen Patientinnen und Patienten einen Termin über ein kurzes Formular an, ohne Feld für Beschwerden. Die Anfrage landet in einer geordneten Liste mit einem Entwurf für die Antwort. Das Praxisteam wählt den Termin und gibt die Antwort frei.",
     "problem": "Viele Praxen sind am Telefon über Stunden besetzt, und Terminwünsche kommen zusätzlich per E-Mail, oft mit Beschwerden im Freitext. Solche E-Mails sind nicht verschlüsselt. Die FMH verlangt für den Austausch von Patientendaten per E-Mail eine Verschlüsselung (Minimalanforderungen IT-Grundschutz), und der EDÖB stuft schon Terminvereinbarungen als besonders schützenswert ein (Merkblatt Patientenformulare, 30.09.2025).",
     "loesung": "Ein Formular auf der Praxiswebsite fragt nur, was für die Terminplanung nötig ist: Art des Termins, neu oder bereits in Behandlung, bevorzugte Zeiten und Kontakt. Ein Freitextfeld für Beschwerden gibt es bewusst nicht, bei dringenden Anliegen verweist das Formular auf die Telefonnummer und den Notfalldienst. Die Übermittlung ist verschlüsselt, die Anfragen liegen geordnet in einer Liste, zusammen mit einem Antwortentwurf. Für die Antwort per E-Mail fragt das Formular, ob die Person über die Risiken informiert ist und einen ungesicherten Kanal wünscht.",
     "mensch": "Das Praxisteam entscheidet, welcher Termin passt, trägt ihn in die Praxissoftware ein und gibt die Antwort frei. Medizinische Fragen beantwortet die Ärztin oder der Arzt, nicht das Formular. Ob neue Patientinnen und Patienten aufgenommen werden, legt die Praxis fest.",
@@ -547,7 +547,8 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-27",
-    "seo_titel": "Online-Terminanfrage für Arztpraxen | Meyssens",
+    "aktualisiert": "2026-11-01",
+    "seo_titel": "Online-Terminanfrage Arztpraxis mit Datenschutz | Meyssens",
     "seo_beschreibung": "Termine per Formular statt Telefon, ohne Beschwerdefeld, verschlüsselt übermittelt. Das Praxisteam bestätigt jeden Termin. Jetzt unverbindlich vormerken.",
     "faq": [
       {
@@ -590,7 +591,7 @@
     "slug": "maengelliste-bau",
     "branche": "bauunternehmen",
     "name": "Mängelliste mit Foto und Fristen",
-    "kurzbeschreibung": "Mängel werden auf der Baustelle mit Foto, Ort, Verantwortlichem und Termin erfasst. Der Baustein führt die Liste nach, erinnert an Termine und zeigt, wann eine Rüge oder Nachbesserung fällig wird. Fristen setzt und prüft ein Mensch.",
+    "kurzbeschreibung": "In der Mängelliste werden Mängel auf der Baustelle mit Foto, Ort, Verantwortlichem und Termin erfasst. Der Baustein führt die Liste nach, erinnert an Termine und zeigt, wann eine Rüge oder Nachbesserung fällig wird. Fristen setzt und prüft ein Mensch.",
     "problem": "Mängel werden bei der Abnahme und danach auf Zetteln, in Fotos auf dem Handy und in E-Mails festgehalten. Wer was bis wann behebt, ist oft nur einer Person klar. Seit dem 1. Januar 2026 gilt für Werkverträge über Bauten eine Rügefrist von 60 Tagen ab Entdeckung, die nicht verkürzt werden kann (Art. 367 Abs. 1bis und Art. 370 Abs. 4 OR, Revision Baumängel, BJ). Wer das Datum der Entdeckung nicht festhält, kann es später schwer belegen.",
     "loesung": "Auf Handy oder Tablet erfasst die Bauleitung jeden Mangel mit Foto, Ort im Gebäude, Beschreibung, Datum der Entdeckung, verantwortlichem Unternehmen und Termin für die Behebung. Der Baustein führt die Liste pro Objekt, zeigt offene und überfällige Punkte und erinnert an Termine. Für jeden Mangel rechnet er das Datum aus, bis zu dem eine Rüge nach der eingestellten Frist spätestens erfolgen müsste, und legt einen Entwurf für die Mängelrüge oder die Aufforderung zur Nachbesserung an.",
     "mensch": "Ob etwas ein Mangel ist, wer dafür verantwortlich ist und welche Frist gilt, entscheidet die Bauleitung oder die Bauherrschaft. Welche Regel im konkreten Vertrag gilt, hängt vom Abschlussdatum und vom Vertrag ab, etwa wenn die SIA-Norm 118 vereinbart ist. Rügen und Aufforderungen gehen erst nach Prüfung und Freigabe hinaus.",
@@ -618,7 +619,8 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-27",
-    "seo_titel": "Mängelliste Bau mit Foto und Rügefrist | Meyssens",
+    "aktualisiert": "2026-11-01",
+    "seo_titel": "Mängelliste Bau mit Foto, Termin und Rügefrist | Meyssens",
     "seo_beschreibung": "Mängel mit Foto, Verantwortlichem und Termin erfassen, Rügefrist von 60 Tagen im Blick, Entwürfe für Rügen. Für Schweizer Baubetriebe. Jetzt vormerken.",
     "faq": [
       {
@@ -693,6 +695,7 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-27",
+    "aktualisiert": "2026-11-01",
     "seo_titel": "Fristenkalender und Belegeingang Treuhand | Meyssens",
     "seo_beschreibung": "MWST- und Steuerfristen pro Mandat im Blick, Belege geordnet mit Checkliste, Nachfragen als Entwurf. Für Treuhandbüros in der Schweiz. Jetzt vormerken.",
     "faq": [
@@ -736,7 +739,7 @@
     "slug": "unterlagen-erinnerung-treuhand",
     "branche": "treuhaender",
     "name": "Unterlagen-Erinnerung für Treuhandbüros",
-    "kurzbeschreibung": "Der Baustein vergleicht pro Mandat und Periode, welche Unterlagen erwartet werden und welche eingegangen sind. Für jede Lücke liegt ein Mailentwurf mit den offenen Punkten bereit. Das Büro liest, passt an und versendet selbst.",
+    "kurzbeschreibung": "Für die Unterlagen-Erinnerung vergleicht der Baustein pro Mandat und Periode, welche Unterlagen erwartet werden und welche eingegangen sind. Für jede Lücke liegt ein Mailentwurf mit den offenen Punkten bereit. Das Büro liest, passt an und versendet selbst.",
     "problem": "Für Abschlüsse, MWST-Abrechnungen und Löhne braucht das Büro Unterlagen der Mandantinnen und Mandanten: Bankauszüge, Belege, Lohnmutationen. Run my Accounts nennt in seiner Partnerunterlage als typische Mandantenpflichten etwa Bankauszüge innert 10 Tagen nach Monatsende und Lohnmutationen bis zum 15. des Monats. Fehlt etwas, wird nachtelefoniert oder eine E-Mail einzeln geschrieben. Wie viel Zeit das in Schweizer Büros kostet, ist nicht belegt. Eine Umfrage von TREUHAND|SUISSE und bexio aus dem Jahr 2016 mit rund 80 Firmen ergab, dass 60 Prozent der Treuhänder einen grossen Teil ihrer Arbeitszeit mit Administration verbringen; die Zahl ist alt und nur ein Anhaltspunkt.",
     "loesung": "Pro Mandat und Periode legt das Büro eine Checkliste fest: welche Konten, welche Belegarten, welche Lohnangaben. Der Baustein vergleicht die Checkliste mit dem, was im Eingang liegt, und zeigt pro Mandat die offenen Punkte. Daraus schreibt er einen Entwurf an die Mandantin oder den Mandanten, der die fehlenden Unterlagen einzeln aufzählt und den gewünschten Termin nennt. Der Entwurf liegt im Postausgang des Büros zur Prüfung bereit. Nach dem Versand merkt sich der Baustein das Datum und schlägt bei Bedarf eine zweite Erinnerung vor, wiederum als Entwurf.",
     "mensch": "Welche Unterlagen ein Mandat braucht und bis wann, legt das Büro fest. Jeder Entwurf wird gelesen, angepasst und vom Büro selbst versendet; der Baustein verschickt nichts. Ob eine fehlende Unterlage ein Problem ist oder später nachgereicht werden kann, entscheidet die zuständige Person im Büro.",
@@ -764,6 +767,7 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
+    "aktualisiert": "2026-11-01",
     "seo_titel": "Unterlagen-Erinnerung für Treuhandbüros | Meyssens",
     "seo_beschreibung": "Fehlende Belege pro Mandat erkennen, Nachfragen als Mailentwurf vorbereiten, selbst versenden. Für Treuhandbüros in der Schweiz. Jetzt vormerken.",
     "faq": [
@@ -825,6 +829,7 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
+    "aktualisiert": "2026-11-01",
     "seo_titel": "Register für Aufbewahrungsfristen Treuhand | Meyssens",
     "seo_beschreibung": "Zehn Jahre nach Art. 958f OR, 20 Jahre für MWST-Unterlagen zu Immobilien: Fristen pro Dossier im Blick, Löschung entscheidet das Büro. Jetzt vormerken.",
     "faq": [
@@ -881,6 +886,7 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
+    "aktualisiert": "2026-11-01",
     "seo_titel": "Mahnentwurf für Arztpraxen, Tiers garant | Meyssens",
     "seo_beschreibung": "Überfällige Rechnungen erkennen, sachliche Mahnentwürfe ohne Behandlungsangaben, Freigabe durch die Praxis. Für Schweizer Arztpraxen. Jetzt vormerken.",
     "faq": [
@@ -929,7 +935,8 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
-    "seo_titel": "Dienstplan und Material für Arztpraxen | Meyssens",
+    "aktualisiert": "2026-11-01",
+    "seo_titel": "Dienstplan und Materialbestellung für Arztpraxen | Meyssens",
     "seo_beschreibung": "Dienstplan-Vorschläge nach Pensum, Bestellentwürfe bei Mindestbestand, ohne Patientendaten. Für Schweizer Arztpraxen. Jetzt unverbindlich vormerken.",
     "faq": [
       {
@@ -978,6 +985,7 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
+    "aktualisiert": "2026-11-01",
     "seo_titel": "Leistungsverzeichnis-Import für Bauofferten | Meyssens",
     "seo_beschreibung": "Positionen und Mengen aus dem Leistungsverzeichnis einlesen, Vorschläge aus früheren Offerten, Preise bestimmt der Betrieb. Jetzt unverbindlich vormerken.",
     "faq": [
@@ -1011,7 +1019,7 @@
     "slug": "materialbestellung-bau",
     "branche": "bauunternehmen",
     "name": "Materialbestellung aus Rapport und Plan",
-    "kurzbeschreibung": "Der Baustein erstellt Bestellentwürfe aus dem Bauzeitplan und den Mengen aus Plan und Rapport. Der Polier bestätigt Menge und Termin, erst dann geht die Bestellung hinaus. Personendaten braucht er keine.",
+    "kurzbeschreibung": "Für die Materialbestellung erstellt der Baustein Entwürfe aus dem Bauzeitplan und den Mengen aus Plan und Rapport. Der Polier bestätigt Menge und Termin, erst dann geht die Bestellung hinaus. Personendaten braucht er keine.",
     "problem": "Auf vielen Baustellen wird Material per Telefon oder Messenger bestellt, oft kurz bevor es gebraucht wird. Ob Menge und Liefertermin zum Bauzeitplan passen, hängt an einzelnen Personen, und was bestellt wurde, steht später nicht an einem Ort. Das ist eine Einschätzung aus unserer Recherche; Zahlen zur Verbreitung haben wir nicht. Belegt ist nur, dass Branchensoftware wie die Lösung von Abacus Materialwirtschaft und digitale Tagesrapporte für das Bauhauptgewerbe anbietet.",
     "loesung": "Der Betrieb hinterlegt den Bauzeitplan mit den Arbeitsschritten und die Mengen aus Plan oder Ausmass. Rückt ein Arbeitsschritt näher, erstellt der Baustein einen Bestellentwurf: Artikel, Menge, Lieferadresse, gewünschter Termin und Lieferant. Meldet der Tagesrapport Verbrauch oder Änderungen, passt er den Vorschlag an. Der Polier sieht die Entwürfe auf dem Handy, ändert, bestätigt oder verwirft sie. Erst nach der Bestätigung entsteht die Bestellung, die der Betrieb selbst an den Lieferanten schickt.",
     "mensch": "Menge, Termin und Lieferant bestätigt der Polier oder der Einkauf. Der Baustein bestellt nichts selbst. Bei Änderungen auf der Baustelle entscheidet ein Mensch, ob die Bestellung angepasst wird.",
@@ -1027,7 +1035,8 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
-    "seo_titel": "Materialbestellung für Baustellen | Meyssens",
+    "aktualisiert": "2026-11-01",
+    "seo_titel": "Materialbestellung für Baustellen als Entwurf | Meyssens",
     "seo_beschreibung": "Bestellentwürfe aus Bauzeitplan und Mengen, der Polier bestätigt Menge und Termin. Für Schweizer Bauunternehmen. Jetzt unverbindlich vormerken.",
     "faq": [
       {
@@ -1064,7 +1073,8 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
-    "seo_titel": "Subunternehmer-Dossier, Solidarhaftung | Meyssens",
+    "aktualisiert": "2026-11-01",
+    "seo_titel": "Subunternehmer-Dossier für die Solidarhaftung | Meyssens",
     "seo_beschreibung": "Checkliste nach den Sorgfaltselementen des SECO, Ablaufdaten und Erinnerungsentwürfe pro Subunternehmer. Für Schweizer Baubetriebe. Jetzt vormerken.",
     "faq": [
       {
@@ -1092,7 +1102,7 @@
     "slug": "faelligkeitsliste-kontrollen-elektro",
     "branche": "elektro-handwerk",
     "name": "Fälligkeitsliste für Kontrollen und Wartungen",
-    "kurzbeschreibung": "Der Baustein führt die Anlagen Ihrer Kundschaft mit Kontrollperiode und nächstem Kontrolldatum und legt rechtzeitig ein Anschreiben an die Eigentümerschaft als Entwurf an. Verschickt wird nichts automatisch. Der Betrieb entscheidet, wer angeschrieben wird.",
+    "kurzbeschreibung": "Die Fälligkeitsliste führt die Anlagen Ihrer Kundschaft mit Kontrollperiode und nächstem Kontrolldatum und legt rechtzeitig ein Anschreiben an die Eigentümerschaft als Entwurf an. Verschickt wird nichts automatisch. Der Betrieb entscheidet, wer angeschrieben wird.",
     "problem": "Elektrische Installationen müssen periodisch kontrolliert werden, je nach Art der Installation alle 1, 5, 10 oder 20 Jahre. Mindestens sechs Monate vor Ablauf der Kontrollperiode fordert die Netzbetreiberin die Eigentümerschaft schriftlich auf, den Sicherheitsnachweis einzureichen; die Frist kann höchstens bis ein Jahr nach Ablauf der Kontrollperiode verlängert werden (ESTI, Infoblatt von 2017). Für die Fristen ist allein die Eigentümerschaft verantwortlich. Betriebe mit Wartungskundschaft führen die Termine trotzdem oft in Tabellen oder gar nicht, und Anschreiben entstehen einzeln; das ist eine Einschätzung.",
     "loesung": "Der Betrieb erfasst pro Anlage Adresse, Eigentümerschaft, Art der Installation, Kontrollperiode und das Datum der letzten Kontrolle oder Abnahme. Der Baustein berechnet daraus das nächste Kontrolldatum und zeigt eine Liste, sortiert nach Fälligkeit. Für Anlagen, deren Kontrolle in den nächsten Monaten fällig wird, legt er ein Anschreiben an die Eigentümerschaft als Entwurf an. Der Entwurf weist darauf hin, dass die periodische Kontrolle ein unabhängiges Kontrollorgan macht. Bei Neuinstallationen mit einer Kontrollperiode unter 20 Jahren erinnert er an die Abnahmekontrolle innerhalb von sechs Monaten nach der Übernahme, wie sie die NIV in der von Swisscom zitierten Fassung verlangt.",
     "mensch": "Wer angeschrieben wird und wann, entscheidet der Betrieb; er prüft jeden Entwurf und verschickt ihn selbst. Welche Kontrollperiode für eine Anlage gilt, steht im Anhang der NIV. Die Zuordnung prüft ein Mensch, der Baustein übernimmt nur den eingetragenen Wert. Wer eine Installation geplant, erstellt, geändert oder instand gestellt hat, darf sie laut ESTI nicht periodisch kontrollieren; das beachtet der Betrieb bei Wartungsverträgen.",
@@ -1112,7 +1122,8 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
-    "seo_titel": "Fälligkeitsliste für Elektrokontrollen | Meyssens",
+    "aktualisiert": "2026-11-01",
+    "seo_titel": "Fälligkeitsliste für periodische Kontrollen | Meyssens",
     "seo_beschreibung": "Kontrollperioden und nächste Termine pro Anlage, Anschreiben an die Eigentümerschaft als Entwurf, Versand durch den Betrieb. Jetzt unverbindlich vormerken.",
     "faq": [
       {
@@ -1156,7 +1167,8 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
-    "seo_titel": "Materialliste für Elektro und Handwerk | Meyssens",
+    "aktualisiert": "2026-11-01",
+    "seo_titel": "Materialliste aus Offerte für Elektro-Handwerk | Meyssens",
     "seo_beschreibung": "Aus Offerte oder Auftrag eine Materialliste und Bestellentwürfe pro Lieferant, die Mengen prüft der Betrieb. Jetzt unverbindlich vormerken.",
     "faq": [
       {
@@ -1177,7 +1189,7 @@
     "slug": "zeitabgleich-rapporte-handwerk",
     "branche": "elektro-handwerk",
     "name": "Zeitabgleich zwischen Rapport und Arbeitszeit",
-    "kurzbeschreibung": "Der Baustein vergleicht die Stunden aus den Arbeitsrapporten mit der Arbeitszeiterfassung und markiert Tage, an denen beides nicht zusammenpasst. Korrekturen nehmen Mitarbeitende und Betrieb vor. Er setzt eine bestehende Zeiterfassung voraus.",
+    "kurzbeschreibung": "Beim Zeitabgleich vergleicht der Baustein die Stunden aus den Arbeitsrapporten mit der Arbeitszeiterfassung und markiert Tage, an denen beides nicht zusammenpasst. Korrekturen nehmen Mitarbeitende und Betrieb vor. Er setzt eine bestehende Zeiterfassung voraus.",
     "problem": "Arbeitgebende müssen Dauer, Beginn und Ende der täglichen und wöchentlichen Arbeitszeit sowie Pausen von einer halben Stunde und mehr dokumentieren (Art. 46 ArG, Art. 73 ArGV 1, SECO). Die Unterlagen sind fünf Jahre aufzubewahren (KMU-Portal des Bundes). In Betrieben mit weniger als 50 Angestellten ist eine vereinfachte Erfassung auch mit einer individuellen schriftlichen Vereinbarung möglich (Art. 73b ArGV 1). Gleichzeitig halten die Arbeitsrapporte Stunden für die Rechnung fest. Ob beides zusammenpasst, prüft in vielen Betrieben niemand systematisch; das ist eine Einschätzung.",
     "loesung": "Der Baustein liest die Rapportstunden pro Person und Tag und die Einträge der Arbeitszeiterfassung. Für jeden Tag vergleicht er die Summen und markiert Abweichungen, fehlende Einträge und Tage mit Rapport, aber ohne erfasste Arbeitszeit. Eine Liste pro Woche zeigt dem Betrieb, wo nachgefragt werden sollte, zusammen mit einem Entwurf für die Rückfrage an die betroffene Person. Die Daten bleiben in den bestehenden Systemen, und der Baustein ändert keine Einträge.",
     "mensch": "Ob eine Abweichung korrigiert wird und in welchem System, entscheiden Mitarbeitende und Betrieb gemeinsam. Der Baustein ändert weder Rapporte noch Arbeitszeiten. Bevor er eingesetzt wird, informiert der Betrieb die Mitarbeitenden über den Abgleich; den Text dafür klären wir mit dem Betrieb.",
@@ -1201,7 +1213,8 @@
     ],
     "status": "In Planung",
     "geprueft": "2026-10-28",
-    "seo_titel": "Zeitabgleich Rapport und Arbeitszeit | Meyssens",
+    "aktualisiert": "2026-11-01",
+    "seo_titel": "Zeitabgleich zwischen Rapport und Arbeitszeit | Meyssens",
     "seo_beschreibung": "Rapportstunden mit der Arbeitszeiterfassung abgleichen, Lücken markieren, Rückfragen als Entwurf. Für Handwerksbetriebe in der Schweiz. Jetzt vormerken.",
     "faq": [
       {

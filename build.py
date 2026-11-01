@@ -782,6 +782,13 @@ STUFE_UEBER = ("Über uns", "/ueber-uns/")
 OG_STANDARD = ("/og-image.png", "Meyssens – Digitale Infrastruktur für Organisationen")
 # Stand der Seiten ohne eigenes Prüfdatum (Startseite, Übersichten, Über uns, Produkte): bei inhaltlichen Änderungen anpassen
 SEITEN_STAND = "2026-10-28"
+# Übersichten, die seither geändert wurden (lastmod in der Sitemap)
+SEITEN_GEAENDERT = {"/branchen/": "2026-11-01"}
+
+
+def stand(eintrag, pruef):
+    # lastmod: das spätere von Prüfdatum und "aktualisiert" (Änderung an Titel oder Text ohne neue Prüfung der Inhalte)
+    return max(pruef, eintrag.get("aktualisiert", pruef))
 
 
 def krumen(*stufen):
@@ -809,6 +816,12 @@ def og_branche(slug, name):
     # Teilbares Bild pro Branche (bilder.py), sonst das allgemeine Bild
     pfad = "/assets/og/branche-%s.png" % slug
     return (pfad, "%s: digitale Werkzeuge von Meyssens" % name) if (ROOT / pfad.lstrip("/")).is_file() else OG_STANDARD
+
+
+def og_eigen(art, slug, alt, ersatz):
+    # Eigenes teilbares Bild für Ratgeber und Bausteinseiten (bilder.py), sonst das Ersatzbild
+    pfad = "/assets/og/%s-%s.png" % (art, slug)
+    return (pfad, alt) if (ROOT / pfad.lstrip("/")).is_file() else ersatz
 
 
 def png_masse(pfad):
@@ -1244,7 +1257,8 @@ def main():
             raise SystemExit("Artikel %s: Platzhalter [Status ...] oder ß im Text" % a["slug"])
         datum = datetime.date.fromisoformat(a["geprueft"])
         stufe_a = STUFE_BRANCHEN if a["art"] == "branche" else STUFE_RATGEBER
-        bild_a = og_branche(a["slug"], a["name"]) if a["art"] == "branche" else OG_STANDARD
+        bild_a = (og_branche(a["slug"], a["name"]) if a["art"] == "branche"
+                  else og_eigen("ratgeber", a["slug"], "Ratgeber von Meyssens: %s" % a["name"], OG_STANDARD))
         kopf, seitenld = seitenkopf((START, stufe_a, (a["name"], pfad)), a["titel"], bild_a)
         werte = dict(gemeinsam, **kopf, **{
             "verwandt": verwandt_abschnitt(verwandte(netz, info, pfad)),
@@ -1280,7 +1294,7 @@ def main():
             # Article und FAQPage nur aus dem sichtbaren Inhalt der Seite
             "ld": ld(*seitenld,
                      {"@type": "Article", "headline": a["h1"], "description": a["beschreibung"],
-                      "inLanguage": "de-CH", "datePublished": a["veroeffentlicht"], "dateModified": a["geprueft"],
+                      "inLanguage": "de-CH", "datePublished": a["veroeffentlicht"], "dateModified": stand(a, a["geprueft"]),
                       "mainEntityOfPage": {"@id": DOMAIN + pfad}, "author": {"@id": DOMAIN + "/ueber-uns/#person"},
                       "publisher": {"@id": DOMAIN + "/#org"}, "image": bild_objekt(bild_a)},
                      {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
@@ -1316,7 +1330,8 @@ def main():
         daten = ('    <ul class="bedingungen">\n%s\n    </ul>\n' % "\n".join("      <li>%s</li>" % html.escape(x) for x in BEDINGUNGEN)
                  if p["personendaten"] else "")
         kopf, seitenld = seitenkopf((START, STUFE_BRANCHEN, (b["name"], "/branchen/%s/" % b["slug"]), (p["name"], pfad)),
-                               p.get("seo_titel") or "%s – Meyssens" % p["name"], og_branche(b["slug"], b["name"]))
+                               p.get("seo_titel") or "%s – Meyssens" % p["name"],
+                               og_eigen("baustein", p["slug"], "Baustein für %s: %s" % (b["name"], p["name"]), og_branche(b["slug"], b["name"])))
         werte = dict(gemeinsam, **kopf, **{
             "verwandt": verwandt_abschnitt(verwandte(netz, info, pfad)),
             "titel": html.escape(p.get("seo_titel") or "%s – Meyssens" % p["name"]),
@@ -1373,6 +1388,25 @@ def main():
         print("Wörter %s: %d%s" % (pfad, n, hinweis))
         schreibe(pfad.strip("/") + "/index.html", seite)
 
+    def bausteine_gruppen(mit_ratgeber=False):
+        # Bausteine nach Branche: zuerst die Branchen mit Abschnitt "Was sich automatisieren lässt", dann die übrigen.
+        # Auf /branchen/ zusätzlich die Ratgeber, die auf Bausteine der Branche verweisen (direkte Links für alle Unterseiten)
+        gruppen = []
+        for a, anker, liste in ([(a, "#automatisierung", a["automatisierung"]["bausteine"])
+                                 for a in artikel_branchen if a.get("automatisierung")] +
+                                [(b, "#automatisierung" if b.get("automatisierungen") else "#bausteine", b["bausteine"])
+                                 for b in branchen if b.get("bausteine")]):
+            zeilen = ['        <li><a href="/produkte/%s/">%s %s</a><span class="status-chip">%s</span></li>'
+                      % (s, html.escape(nach_slug[s]["name"]), PFEIL, html.escape(STUFEN[nach_slug[s]["status"]]["badge"]))
+                      for s in liste]
+            if mit_ratgeber:
+                zeilen += ['        <li><a href="/ratgeber/%s/">%s %s</a><span class="status-chip">Ratgeber</span></li>'
+                           % (r["slug"], html.escape(r["name"]), PFEIL)
+                           for r in ratgeber if set(r.get("produkte", [])) & set(liste)]
+            gruppen.append('    <div class="auto-gruppe r">\n      <h3><a href="/branchen/%s/%s">%s</a></h3>\n      <ul>\n%s\n      </ul>\n    </div>'
+                           % (a["slug"], anker, html.escape(a["name"]), "\n".join(zeilen)))
+        return "\n".join(gruppen)
+
     kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens")
     werte = dict(gemeinsam, **kopf, **{
         "titel": "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens",
@@ -1381,17 +1415,7 @@ def main():
         "url": DOMAIN + "/unternehmen/",
         "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
         "produkte": scrolly(ansichten, allgemein, mehr=True),
-        # Bausteine nach Branche: zuerst die Branchen mit Abschnitt "Was sich automatisieren lässt", dann die übrigen
-        "bausteine": "\n".join(
-            '    <div class="auto-gruppe r">\n      <h3><a href="/branchen/%s/%s">%s</a></h3>\n      <ul>\n%s\n      </ul>\n    </div>'
-            % (a["slug"], anker, html.escape(a["name"]), "\n".join(
-                '        <li><a href="/produkte/%s/">%s %s</a><span class="status-chip">%s</span></li>'
-                % (s, html.escape(nach_slug[s]["name"]), PFEIL, html.escape(STUFEN[nach_slug[s]["status"]]["badge"]))
-                for s in liste))
-            for a, anker, liste in [(a, "#automatisierung", a["automatisierung"]["bausteine"])
-                                    for a in artikel_branchen if a.get("automatisierung")] +
-                                   [(b, "#automatisierung" if b.get("automatisierungen") else "#bausteine", b["bausteine"])
-                                    for b in branchen if b.get("bausteine")]),
+        "bausteine": bausteine_gruppen(),
         "ld": ld(*seitenld),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
                                for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
@@ -1418,7 +1442,11 @@ def main():
          "Branchen", "Werkzeuge für <span class=\"hl\">Ihre Branche.</span>",
          "Für jede Branche zeigen wir, wo digitale Werkzeuge im Alltag entlasten können, was rechtlich gilt und welche "
          "Bausteine wir planen. Alle Angaben beziehen sich auf die Schweiz.",
-         abschnitt_html("alle", "Branchen", "Alle Branchen", branchen_liste(branchen, artikel_branchen, nach_slug))),
+         abschnitt_html("alle", "Branchen", "Alle Branchen", branchen_liste(branchen, artikel_branchen, nach_slug)) + "\n" +
+         '<section id="bausteine" class="dunkel">\n  <div class="kopf-mitte r">\n    <span class="s-label">Bausteine und Ratgeber</span>\n'
+         '    <h2>Bausteine und Ratgeber nach Branche</h2>\n    <p class="s-lead">Alle Bausteinseiten und die passenden Ratgeber auf '
+         'einen Blick. Entwürfe ja, automatischer Versand nein: Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>\n  </div>\n'
+         '  <div class="auto-gruppen">\n%s\n  </div>\n</section>\n' % bausteine_gruppen(mit_ratgeber=True)),
         ((START, STUFE_RATGEBER), "Ratgeber für Schweizer KMU: nDSG, Offerten | Meyssens",
          "Ratgeber mit Quellen und Prüfdatum: nDSG, Aufbewahrungsfristen, Mängelrüge 2026, Patientenformulare, "
          "Sicherheitsnachweis, Spitex und mehr. Jetzt lesen.",
@@ -1534,11 +1562,11 @@ def main():
 
     # lastmod: Prüfdatum der Seite, sonst SEITEN_STAND (Startseite, Übersichten, Über uns, Produkte ohne Prüfdatum)
     seiten = [("/", "1.0", SEITEN_STAND), ("/gemeinden/", "0.9", SEITEN_STAND), ("/unternehmen/", "0.8", SEITEN_STAND),
-              ("/branchen/", "0.7", SEITEN_STAND), ("/produkte/", "0.7", SEITEN_STAND), ("/ratgeber/", "0.7", SEITEN_STAND),
+              ("/branchen/", "0.7", SEITEN_GEAENDERT["/branchen/"]), ("/produkte/", "0.7", SEITEN_STAND), ("/ratgeber/", "0.7", SEITEN_STAND),
               ("/ueber-uns/", "0.5", SEITEN_STAND)]
-    seiten += [("/produkte/%s/" % p["slug"], "0.6", p.get("geprueft", SEITEN_STAND)) for p in produkte]
-    seiten += [("/branchen/%s/" % b["slug"], "0.6", b.get("automatisierungen", {}).get("geprueft", SEITEN_STAND)) for b in branchen]
-    seiten += [("/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]), "0.6", a["geprueft"]) for a in artikel]
+    seiten += [("/produkte/%s/" % p["slug"], "0.6", stand(p, p.get("geprueft", SEITEN_STAND))) for p in produkte]
+    seiten += [("/branchen/%s/" % b["slug"], "0.6", stand(b, b.get("automatisierungen", {}).get("geprueft", SEITEN_STAND))) for b in branchen]
+    seiten += [("/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]), "0.6", stand(a, a["geprueft"])) for a in artikel]
     zeilen = ["  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>"
               % (DOMAIN, pfad, stand, prio) for pfad, prio, stand in seiten]
     schreibe("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'

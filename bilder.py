@@ -3,6 +3,8 @@
 
 - assets/og/branche-<slug>.png: Open-Graph-Bild 1200x630 pro Branche (Branchenname und Kurztext aus
   branchen.json bzw. artikel.json), im Markenstil mit Syne/Inter und Akzentfarbe
+- assets/og/ratgeber-<slug>.png, assets/og/baustein-<slug>.png: Open-Graph-Bild 1200x630 für die Ratgeber und
+  Bausteinseiten der Branchen mit Abschnitt "Automatisierungen" (Titel und Beschreibung aus artikel.json bzw. produkte.json)
 - assets/ablauf/<slug>.png: die Ablauf-Kette der Branchen mit Abschnitt "Was sich automatisieren lässt" als Bild
 - assets/ablauf/<slug>-<n>.png: die drei Ketten der Branchen mit Abschnitt "Automatisierungen" (branchen.json)
 
@@ -14,6 +16,7 @@ import json
 import tempfile
 from pathlib import Path
 
+from PIL import Image
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parent
@@ -38,10 +41,12 @@ OG = """<!doctype html><html lang="de-CH"><head><meta charset="utf-8"><style>%s
 h1{font-family:'Syne',sans-serif;font-weight:800;font-size:%dpx;line-height:1.02;letter-spacing:-.03em;margin-top:22px;max-width:1056px;white-space:nowrap}
 p{font-size:30px;line-height:1.35;color:#3c3c60;margin-top:20px;max-width:960px}
 .fuss{display:flex;justify-content:space-between;align-items:center;margin-top:34px;font-size:22px;color:#50507a}
+.zwei h1{white-space:normal;font-size:60px;line-height:1.06}
+.zwei p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .balken{position:absolute;left:0;right:0;bottom:0;height:12px;background:#0000ff}
-</style></head><body><div class="og">
+</style></head><body><div class="og %s">
 <img class="logo" src="%s" alt="">
-<span class="chip">Branche · Schweiz</span>
+<span class="chip">%s</span>
 <h1>%s</h1>
 <p>%s</p>
 <div class="fuss"><span>Digitale Werkzeuge für Schweizer KMU und Vereine</span><span>meyssens.ch</span></div>
@@ -81,6 +86,21 @@ def punkt(art):
         farbe, rand, "border-style:dashed" if art == "spaeter" else "")
 
 
+def verkleinere(ziel):
+    # Flache Grafik ohne Verläufe im Text: 128 Farben ohne Dithering, gut ein Drittel der Dateigrösse
+    Image.open(ziel).convert("RGB").quantize(colors=128, dither=Image.Dither.NONE).save(ziel, optimize=True)
+
+
+def ohne_aufruf(text):
+    # Beschreibung ohne den Schlusssatz "Jetzt ... ." für das Bild
+    # und ohne "Für ... ." bei langen Texten, damit zwei Zeilen reichen
+    for anfang, ab in ((("Jetzt", "Überblick"), 0), (("Für",), 120)):
+        teile = text.rsplit(". ", 1)
+        if len(teile) == 2 and teile[1].startswith(anfang) and len(text) > ab:
+            text = teile[0] + "."
+    return text
+
+
 def main():
     branchen = json.loads((ROOT / "branchen.json").read_text(encoding="utf-8"))
     artikel = json.loads((ROOT / "artikel.json").read_text(encoding="utf-8"))
@@ -101,12 +121,26 @@ def main():
 
         for slug, name, kurz in eintraege:
             groesse = 96 if len(name) <= 18 else 80 if len(name) <= 26 else 66
-            zeige(OG % (STIL, groesse, LOGO, html.escape(name), html.escape(kurz)))
+            zeige(OG % (STIL, groesse, "", LOGO, "Branche · Schweiz", html.escape(name), html.escape(kurz)))
             # Titel auf eine Zeile einpassen: Syne ist breit, lange Namen werden verkleinert
             seite.evaluate("""() => { const h = document.querySelector('h1'); let g = parseFloat(getComputedStyle(h).fontSize);
                 while (h.scrollWidth > 1056 && g > 40) { g -= 2; h.style.fontSize = g + 'px'; } }""")
             ziel = ROOT / "assets" / "og" / ("branche-%s.png" % slug)
             seite.screenshot(path=str(ziel), clip={"x": 0, "y": 0, "width": 1200, "height": 630})
+            print("geschrieben:", ziel.relative_to(ROOT))
+
+        # Ratgeber und Bausteinseiten der Branchen mit Abschnitt "Automatisierungen": Titel darf umbrechen
+        produkte = json.loads((ROOT / "produkte.json").read_text(encoding="utf-8"))
+        neu = {s for b in branchen if b.get("automatisierungen") for s in b["bausteine"]}
+        seiten = [("ratgeber-" + a["slug"], "Ratgeber · Schweiz", a["name"], ohne_aufruf(a["beschreibung"]))
+                  for a in artikel if a["art"] == "ratgeber" and neu & set(a.get("produkte", []))]
+        seiten += [("baustein-" + p["slug"], "Baustein · " + p["status"], p["name"],
+                    ohne_aufruf(p["seo_beschreibung"])) for p in produkte if p["slug"] in neu]
+        for datei, chip, titel, text in seiten:
+            zeige(OG % (STIL, 60, "zwei", LOGO, html.escape(chip), html.escape(titel), html.escape(text)))
+            ziel = ROOT / "assets" / "og" / ("%s.png" % datei)
+            seite.screenshot(path=str(ziel), clip={"x": 0, "y": 0, "width": 1200, "height": 630})
+            verkleinere(ziel)
             print("geschrieben:", ziel.relative_to(ROOT))
 
         ketten = [(a["slug"], a["name"], a["automatisierung"]["kette"]) for a in artikel if a.get("automatisierung")]
@@ -133,6 +167,7 @@ def main():
             zeige(ABLAUF % (STIL, html.escape(name), html.escape(k["titel"]), LOGO, legende, "".join(schritte)))
             ziel = ROOT / "assets" / "ablauf" / ("%s.png" % slug)
             seite.locator("#bild").screenshot(path=str(ziel))
+            verkleinere(ziel)
             print("geschrieben:", ziel.relative_to(ROOT))
         b.close()
 
