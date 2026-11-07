@@ -13,7 +13,7 @@
   einem Link (Bausteinseite oder Anfrage), Abschluss, Anfrage-Knopf mit Betrieb, kurzes Formular (Name, E-Mail,
   Freitext) mit vorausgefüllter Branche und Kette, fester Anfrage-Knopf, Animation nur ohne reduzierte Bewegung
 - Abschnitt "Automatisierungen" (Branchen mit Feld "automatisierungen"): genau 10 Bausteinkarten mit Status
-  In Planung, Einschätzung zur Handarbeit, Mensch-Entscheid, Daten, offene Punkte, Link auf die eigene Seite oder auf
+  Status-Badge, Einschätzung zur Handarbeit, Mensch-Entscheid, Daten, offene Punkte, Link auf die eigene Seite oder auf
   das Formular; genau 3 Ablauf-Ketten wie oben (Links auf Bausteinseite, Karte oder Anfrage), ein gemeinsames Formular
   mit Auswahl der Kette, fester Anfrage-Knopf, Ratgeber-Link, Regel, Hinweise, Prüfdatum, Wortzahl
 - Bausteinseiten (produkte.json mit Feld "branche"): Hinweise, Regel, Status, Einschätzung, bei Personendaten
@@ -46,7 +46,7 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
-from build import (ARTEN, AUTO_WORTE, AUTOMATISIERUNGEN_WORTE, MEIN, KETTE_ART, BAUSTEIN_WORTE, BEDINGUNGEN, REGEL, WORTE, ist_baustein, ohne_automatisierung,
+from build import (ARTEN, STUFEN, AUTO_WORTE, AUTOMATISIERUNGEN_WORTE, MEIN, KETTE_ART, BAUSTEIN_WORTE, BEDINGUNGEN, REGEL, WORTE, ist_baustein, ohne_automatisierung,
                    worte, zwischen)
 
 ROOT = Path(__file__).resolve().parent
@@ -257,7 +257,7 @@ for a in artikel:
         fehler.append("%s: Demo mit Beschriftung Beispiel fehlt" % url)
     for muss in ("Was sich automatisieren lässt", regel, "keine Rechtsberatung", "zuletzt geprüft am " + datum(au["geprueft"]),
                  "Einschätzung",
-                 "in Planung", "keine Kunden und keine Referenzen"):
+                 "individuell auf Anfrage", "keine Kunden und keine Referenzen"):
         if muss.lower() not in s:
             fehler.append("%s#automatisierung: fehlt: %s" % (url, muss))
     if "ß" in s:
@@ -283,7 +283,7 @@ for p in (p for p in produkte if ist_baustein(p)):
     for m in muss:
         if m.lower() not in s:
             fehler.append("%s: fehlt: %s" % (url, m))
-    if p["status"] not in ("Pilotphase", "In Planung"):
+    if p["status"] not in ("Pilotphase", "Individuell auf Anfrage"):
         fehler.append("%s: Status %s" % (url, p["status"]))
     if "ß" in s:
         fehler.append("%s: ß" % url)
@@ -418,13 +418,13 @@ for b in (b for b in branchen_daten if b.get("automatisierungen")):
         fehler.append("%s: nicht genau 10 Bausteinkarten 1 bis 10" % url)
     for (n, karte), x in zip(karten, au["liste"]):
         ks = sichtbar_text(karte)
-        stand = nach_slug[x["seite"]]["status"] if x.get("seite") else "In Planung"
-        for muss in ("In Planung", "Heute von Hand, Einschätzung", "Das übernimmt der Baustein", "Das entscheidet der Mensch",
+        stand = nach_slug[x["seite"]]["status"] if x.get("seite") else "Individuell auf Anfrage"
+        for muss in (STUFEN[stand]["badge"], "Heute von Hand, Einschätzung", "Das übernimmt der Baustein", "Das entscheidet der Mensch",
                      "Daten:", "Aufwand %s, Einschätzung" % x["aufwand"]):
             if muss.lower() not in ks:
                 fehler.append("%s#baustein-%s: fehlt: %s" % (url, n, muss))
-        if stand != "In Planung":
-            fehler.append("%s#baustein-%s: Status %s statt In Planung" % (url, n, stand))
+        if stand not in STUFEN:
+            fehler.append("%s#baustein-%s: unbekannter Status %s" % (url, n, stand))
         if x.get("offen") and ("noch zu klären" not in ks or sichtbar_text(html.escape(x["offen"])) not in ks):
             fehler.append("%s#baustein-%s: offener Punkt fehlt" % (url, n))
         ziel = 'href="/produkte/%s/"' % x["seite"] if x.get("seite") else 'href="#ablauf-anfrage" data-baustein='
@@ -470,7 +470,7 @@ for b in (b for b in branchen_daten if b.get("automatisierungen")):
     if 'href="/ratgeber/%s/"' % au["ratgeber"] not in teil:
         fehler.append("%s: Ratgeber-Link fehlt" % url)
     for muss in ["Automatisierungen für", regel, "keine Rechtsberatung", "zuletzt geprüft am " + datum(au["geprueft"]),
-                 "Einschätzung", "in Planung", "keine Kunden und keine Referenzen", "Startempfehlung"] + list(BEDINGUNGEN[1:2]):
+                 "Einschätzung", "auf Anfrage", "keine Kunden und keine Referenzen", "Startempfehlung"] + list(BEDINGUNGEN[1:2]):
         if muss.lower() not in s:
             fehler.append("%s#automatisierung: fehlt: %s" % (url, muss))
     if "vertrag zur auftragsbearbeitung" not in s or "datenminimierung" not in s:

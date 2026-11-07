@@ -41,12 +41,21 @@ STUFEN = {
                 "Sie erhalten die Einrichtung kostenlos und gestalten das Produkt mit.",
         "knopf": "Pilotpartner werden",
     },
-    "In Planung": {
-        "badge": "In Planung",
-        "text": "Dieses Produkt ist in Planung. Mit Ihrer Anfrage merken wir Sie unverbindlich vor.",
-        "knopf": "Unverbindlich vormerken",
+    "Individuell auf Anfrage": {
+        "badge": "Individuell auf Anfrage",
+        "text": "Diesen Ablauf richten wir individuell für Ihren Betrieb ein. Ihre Anfrage ist unverbindlich.",
+        "knopf": "Unverbindlich anfragen",
     },
 }
+# Pilot-Angebot auf jeder Produktseite. Der Preis steht nur hier und ausdrücklich als "ab".
+PILOT_ANGEBOT = ("Wir richten diesen Ablauf für Ihren Betrieb ein und betreuen ihn im Pilot drei Monate persönlich, "
+                 "kostenlos und unverbindlich. Danach ab CHF 79 pro Monat und Ablauf, jederzeit kündbar.")
+ANGEBOT_GEPRUEFT = "2026-11-07"
+
+
+def pilot_angebot():
+    return ('<div class="note r pilot-angebot"><p>%s</p><p class="geprueft">Angebot zuletzt geprüft am %s.</p></div>'
+            % (html.escape(PILOT_ANGEBOT), datetime.date.fromisoformat(ANGEBOT_GEPRUEFT).strftime("%d.%m.%Y")))
 PFEIL = ('<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" '
          'stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
@@ -92,7 +101,7 @@ def fuelle(vorlage, werte):
 
 # Namen der Zielseiten für beschreibende Linktexte (in main() gefüllt)
 ZIELNAMEN = {"#datenschutz": "zur Datenschutzerklärung"}
-GENERISCH = re.compile(r'(<a\b[^>]*href="([^"]*)"[^>]*>)(Mehr erfahren|Unverbindlich vormerken|Beispielansicht|Beispiel ausprobieren)'
+GENERISCH = re.compile(r'(<a\b[^>]*href="([^"]*)"[^>]*>)(Mehr erfahren|Unverbindlich vormerken|Unverbindlich anfragen|Beispielansicht|Beispiel ausprobieren)'
                        r'(\s*(?:<svg\b.*?</svg>)?\s*)</a>', re.S)
 
 
@@ -195,11 +204,11 @@ def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
                      '  <div class="demo-bild">\n%s\n  </div>\n'
                      '</article>' % (html.escape(STUFEN[p["status"]]["badge"]), html.escape(p["name"]),
                                      html.escape(p["kurzbeschreibung"]), p["slug"], PFEIL, bild))
-    geplant = [p for p in produkte if p["status"] == "In Planung"]
+    geplant = [p for p in produkte if p["status"] == "Individuell auf Anfrage"]
     planung = scrolly(ansichten, geplant)
     zahlen = [(len(produkte), "Produkte"),
               (sum(p["status"] == "Pilotphase" for p in produkte), "in der Pilotphase"),
-              (len(geplant), "in Planung"),
+              (len(geplant), "individuell auf Anfrage"),
               (anzahl_branchen, "Branchenseiten"),
               (anzahl_ratgeber, "Ratgeber")]
     zahlen = ('<div class="zahlen r">\n%s\n</div>\n'
@@ -276,9 +285,10 @@ def inhaltsverzeichnis(inhalt, mit_automatisierung=False):
 
 def produkt_ansicht(ansichten, p):
     bild, interaktiv = ansicht(ansichten, p)
-    stand = "in Planung" if p["status"] == "In Planung" else "in der Pilotphase"
-    hinweis = ("Interaktives Beispiel mit erfundenen Inhalten. Das Produkt ist %s." % stand if interaktiv else
-               "Beispielansicht, wie das Produkt aussehen könnte. Das Produkt ist %s." % stand)
+    stand = ("Wir richten es individuell auf Anfrage ein." if p["status"] == "Individuell auf Anfrage"
+             else "Das Produkt ist in der Pilotphase.")
+    hinweis = ("Interaktives Beispiel mit erfundenen Inhalten. %s" % stand if interaktiv else
+               "Beispielansicht, wie das Produkt aussehen könnte. %s" % stand)
     return '<div class="r">\n%s\n</div>\n<p class="ansicht-hinweis">%s</p>' % (bild, hinweis)
 
 
@@ -481,7 +491,7 @@ def kette(k, nach_slug, branche, formular_ziel, einwilligung, slug=None):
             '      <div class="ablauf-ziel">\n'
             '        <p class="ablauf-ziel-text">%s</p>\n'
             '        <a class="btn-p ablauf-cta" href="#ablauf-anfrage"><span>%s</span> %s</a>\n'
-            '        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>\n'
+            '        <p class="ablauf-mikro">Wir richten die Bausteine individuell für Ihren Betrieb ein. Die Anfrage ist unverbindlich, wir antworten per E-Mail.</p>\n'
             '      </div>\n'
             '    </div>\n'
             '    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>\n'
@@ -540,8 +550,8 @@ def automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
             '    </div>\n'
             '    <div class="demo-bild">\n%s\n    </div>\n'
             '  </article>\n'
-            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Alle Bausteine auf dieser Seite sind '
-            'in Planung, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand und zur Reihenfolge sind '
+            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Die Bausteine auf dieser Seite '
+            'richten wir individuell auf Anfrage ein, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand und zur Reihenfolge sind '
             'Einschätzungen, keine gemessenen Werte. Vor einem Einsatz mit Personendaten prüfen wir die rechtlichen Fragen '
             'im Einzelfall. Zuletzt geprüft am %s.</p>\n'
             '</section>' % (html.escape(au["intro"]), REGEL[0], REGEL[1],
@@ -562,7 +572,7 @@ def eintrag_karte(x, nach_slug):
     s = x.get("seite")
     name = html.escape(x["name"])
     titel = '<a href="/produkte/%s/">%s</a>' % (s, name) if s else name
-    chips = '<span class="status-chip">%s</span>' % html.escape(STUFEN[nach_slug[s]["status"]]["badge"] if s else "In Planung")
+    chips = '<span class="status-chip">%s</span>' % html.escape(STUFEN[nach_slug[s]["status"]]["badge"] if s else "Individuell auf Anfrage")
     if x.get("start"):
         chips += '<span class="status-chip start-chip">Startempfehlung</span>'
     offen = ('      <p class="baustein-offen"><strong>Noch zu klären:</strong> %s</p>\n' % html.escape(x["offen"])
@@ -603,7 +613,7 @@ def ablauf_block(k, nach_slug, branche, nr, slug, karten):
             '      <div class="ablauf-ziel">\n'
             '        <p class="ablauf-ziel-text">%s</p>\n'
             '        <a class="btn-p ablauf-cta" href="#ablauf-anfrage" data-ablauf-wahl="%s"><span>Diesen Ablauf für %s %s anfragen</span> %s</a>\n'
-            '        <p class="ablauf-mikro">Die Bausteine sind in Planung. Wir merken Ihren Betrieb unverbindlich vor und antworten per E-Mail.</p>\n'
+            '        <p class="ablauf-mikro">Wir richten die Bausteine individuell für Ihren Betrieb ein. Die Anfrage ist unverbindlich, wir antworten per E-Mail.</p>\n'
             '      </div>\n'
             '    </div>\n'
             '    <p class="kette-legende">Die Verknüpfung ist eine Einschätzung aus unserer Recherche, kein erprobter Ablauf.</p>\n'
@@ -658,8 +668,8 @@ def automatisierungen(b, nach_slug, ratgeber, formular_ziel, einwilligung):
             '  </form>\n'
             '  </div>\n'
             '  <p class="auto-ratgeber r">Passend dazu im Ratgeber: <a href="/ratgeber/%s/">%s</a></p>\n'
-            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Alle zehn Bausteine auf dieser Seite '
-            'sind in Planung, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand, zur Handarbeit von heute '
+            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Die zehn Bausteine auf dieser Seite '
+            'richten wir individuell auf Anfrage ein, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand, zur Handarbeit von heute '
             'und zur Reihenfolge sind Einschätzungen, keine gemessenen Werte. Was mit «Noch zu klären» markiert ist, haben wir '
             'nicht belegt. Vor einem Einsatz mit Personendaten gelten ein Vertrag zur Auftragsbearbeitung, Hosting in der '
             'Schweiz und Datenminimierung, und wir prüfen die rechtlichen Fragen im Einzelfall. Zuletzt geprüft am %s.</p>\n'
@@ -1011,7 +1021,7 @@ def ehrlich(produkte):
     def liste(namen):
         return " und ".join([", ".join(namen[:-1]), namen[-1]] if len(namen) > 1 else namen)
     teile = []
-    for stufe, text in (("Pilotphase", "in der Pilotphase"), ("In Planung", "in Planung")):
+    for stufe, text in (("Pilotphase", "in der Pilotphase"), ("Individuell auf Anfrage", "individuell auf Anfrage")):
         namen = [p["name"] for p in produkte if p["status"] == stufe]
         if namen:
             teile.append("%s %s" % (liste(namen), text))
@@ -1174,6 +1184,7 @@ def main():
             "h1": html.escape(p.get("h1") or p["name"]),
             "status_badge": stufe["badge"],
             "status_text": stufe["text"],
+            "pilot_angebot": pilot_angebot(),
             "knopf": stufe["knopf"],
             "kurzbeschreibung": e["kurzbeschreibung"],
             "problem": e["problem"],
@@ -1344,6 +1355,7 @@ def main():
             "branche_anker": "#automatisierung" if langtext or b.get("automatisierungen") else "#bausteine",
             "status_badge": stufe["badge"],
             "status_text": stufe["text"],
+            "pilot_angebot": pilot_angebot(),
             "knopf": stufe["knopf"],
             "kurzbeschreibung": e["kurzbeschreibung"],
             "problem": e["problem"],
@@ -1457,10 +1469,10 @@ def main():
              [eintrag("/ratgeber/%s/" % a["slug"]) for a in ratgeber]))),
         ((START, STUFE_PRODUKTE), "Produkte und Bausteine für Schweizer KMU | Meyssens",
          "Umfragen, Newsletter, Website-Chatbot und Bausteine für Praxen, Verwaltungen, Büros und Spitex. Status ehrlich "
-         "angegeben. Jetzt ansehen und vormerken.",
+         "angegeben. Jetzt ansehen und anfragen.",
          "Produkte", "Produkte und <span class=\"hl\">Bausteine.</span>",
-         "%d Produkte sind in der Pilotphase, alle weiteren Produkte und Bausteine sind in Planung. Den Stand nennen wir auf "
-         "jeder Seite." % pilot,
+         "%d Produkte und Bausteine sind in der Pilotphase, alle weiteren richten wir individuell auf Anfrage ein. Den Stand "
+         "nennen wir auf jeder Seite." % pilot,
          abschnitt_html("produkte", "Produkte", "Werkzeuge für Unternehmen und Vereine",
                         raster([eintrag("/produkte/%s/" % p["slug"]) for p in allgemein])) + "\n" +
          abschnitt_html("bausteine", "Bausteine", "Bausteine nach Branche",
@@ -1479,7 +1491,7 @@ def main():
             'verwalteten Dienst mit Hosting, Updates, Backups und Sicherheit. Mehr dazu auf der Seite '
             '<a href="/gemeinden/">Für Gemeinden</a>.</p>\n'
             '    <p>Für Unternehmen und Vereine entwickeln wir schlanke Werkzeuge. Stand heute sind %d von %d Produkten in der '
-            'Pilotphase, die übrigen und alle %d Bausteine sind in Planung. Die Übersicht steht unter '
+            'Pilotphase, die übrigen und alle %d Bausteine richten wir individuell auf Anfrage ein. Die Übersicht steht unter '
             '<a href="/produkte/">Produkte und Bausteine</a>, die Branchen unter <a href="/branchen/">Branchen</a>.</p>\n'
             '  </div>' % (pilot, len(allgemein), len(bausteine_alle)), "flaeche") + "\n" +
         abschnitt_html("arbeitsweise", "Arbeitsweise", "Wie wir arbeiten",
