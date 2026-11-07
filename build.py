@@ -263,7 +263,7 @@ def angebot(p):
             '      </div>\n'
             '    </article>' % (html.escape(p["name"]), html.escape(stufe["badge"]), p["slug"], html.escape(p["name"]),
                                html.escape(p["kurzbeschreibung"]), p["slug"], PFEIL, p["slug"],
-                               "Beispiel ausprobieren" if p["status"] == "Pilotphase" else "Beispielansicht", PFEIL,
+                               "Beispiel ausprobieren" if p["status"] == "Pilotphase" and not ist_baustein(p) else "Beispielansicht", PFEIL,
                                p["slug"], stufe["knopf"], PFEIL))
 
 
@@ -521,7 +521,22 @@ def kette(k, nach_slug, branche, formular_ziel, einwilligung, slug=None):
                einwilligung.replace('id="', 'id="ab-').replace('for="', 'for="ab-'), PFEIL, PFEIL))
 
 
+def stand_bausteine(slugs, nach_slug, alle):
+    # Satz zum Stand der Bausteine einer Seite, aus produkte.json: Pilotphase namentlich, die übrigen auf Anfrage
+    pilot = [nach_slug[s]["name"] for s in slugs if s in nach_slug and nach_slug[s]["status"] == "Pilotphase"]
+    if not pilot:
+        return "%s richten wir individuell auf Anfrage ein" % alle
+    return "%s %s in der Pilotphase, die übrigen Bausteine auf dieser Seite richten wir individuell auf Anfrage ein" % (
+        " und ".join("«%s»" % html.escape(n) for n in pilot), "ist" if len(pilot) == 1 else "sind")
+
+
 def automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
+    au = a.get("automatisierung")
+    roh = _automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung)
+    return roh.replace("{{STAND_BAUSTEINE}}", stand_bausteine(au["bausteine"], nach_slug, "Die Bausteine auf dieser Seite")) if au else roh
+
+
+def _automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
     # Abschnitt "Was sich automatisieren lässt" einer Branchenseite (artikel.json, Feld "automatisierung")
     au = a.get("automatisierung")
     if not au:
@@ -550,8 +565,7 @@ def automatisierung(a, nach_slug, ansichten, formular_ziel, einwilligung):
             '    </div>\n'
             '    <div class="demo-bild">\n%s\n    </div>\n'
             '  </article>\n'
-            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Die Bausteine auf dieser Seite '
-            'richten wir individuell auf Anfrage ein, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand und zur Reihenfolge sind '
+            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. {{STAND_BAUSTEINE}}, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand und zur Reihenfolge sind '
             'Einschätzungen, keine gemessenen Werte. Vor einem Einsatz mit Personendaten prüfen wir die rechtlichen Fragen '
             'im Einzelfall. Zuletzt geprüft am %s.</p>\n'
             '</section>' % (html.escape(au["intro"]), REGEL[0], REGEL[1],
@@ -624,6 +638,13 @@ def ablauf_block(k, nach_slug, branche, nr, slug, karten):
 
 
 def automatisierungen(b, nach_slug, ratgeber, formular_ziel, einwilligung):
+    au = b.get("automatisierungen")
+    roh = _automatisierungen(b, nach_slug, ratgeber, formular_ziel, einwilligung)
+    return roh.replace("{{STAND_BAUSTEINE}}", stand_bausteine([x["seite"] for x in au["liste"] if x.get("seite")], nach_slug,
+                                                             "Die zehn Bausteine auf dieser Seite")) if au else roh
+
+
+def _automatisierungen(b, nach_slug, ratgeber, formular_ziel, einwilligung):
     # Abschnitt "Automatisierungen" einer Branche ohne Langtext (branchen.json, Feld "automatisierungen")
     au = b.get("automatisierungen")
     if not au:
@@ -668,8 +689,7 @@ def automatisierungen(b, nach_slug, ratgeber, formular_ziel, einwilligung):
             '  </form>\n'
             '  </div>\n'
             '  <p class="auto-ratgeber r">Passend dazu im Ratgeber: <a href="/ratgeber/%s/">%s</a></p>\n'
-            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. Die zehn Bausteine auf dieser Seite '
-            'richten wir individuell auf Anfrage ein, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand, zur Handarbeit von heute '
+            '  <p class="auto-hinweis r">Allgemeine Information, keine Rechtsberatung. {{STAND_BAUSTEINE}}, Meyssens hat noch keine Kunden und keine Referenzen. Angaben zum Aufwand, zur Handarbeit von heute '
             'und zur Reihenfolge sind Einschätzungen, keine gemessenen Werte. Was mit «Noch zu klären» markiert ist, haben wir '
             'nicht belegt. Vor einem Einsatz mit Personendaten gelten ein Vertrag zur Auftragsbearbeitung, Hosting in der '
             'Schweiz und Datenminimierung, und wir prüfen die rechtlichen Fragen im Einzelfall. Zuletzt geprüft am %s.</p>\n'
@@ -1447,6 +1467,7 @@ def main():
     def eintrag(u):
         return (u, info[u]["art"], info[u]["name"], info[u]["text"])
     pilot = sum(p["status"] == "Pilotphase" for p in allgemein)
+    pilot_b = sum(p["status"] == "Pilotphase" for p in produkte if ist_baustein(p))
     uebersichten = [
         ((START, STUFE_BRANCHEN), "Branchen: digitale Werkzeuge für Schweizer KMU | Meyssens",
          "Zahnarztpraxen, Immobilienverwaltungen, Architekturbüros, Pflege, Bau, Treuhand und mehr: Werkzeuge "
@@ -1472,7 +1493,7 @@ def main():
          "angegeben. Jetzt ansehen und anfragen.",
          "Produkte", "Produkte und <span class=\"hl\">Bausteine.</span>",
          "%d Produkte und Bausteine sind in der Pilotphase, alle weiteren richten wir individuell auf Anfrage ein. Den Stand "
-         "nennen wir auf jeder Seite." % pilot,
+         "nennen wir auf jeder Seite." % (pilot + pilot_b),
          abschnitt_html("produkte", "Produkte", "Werkzeuge für Unternehmen und Vereine",
                         raster([eintrag("/produkte/%s/" % p["slug"]) for p in allgemein])) + "\n" +
          abschnitt_html("bausteine", "Bausteine", "Bausteine nach Branche",
@@ -1490,10 +1511,10 @@ def main():
             '    <p>Für Gemeinden betreiben wir eine Beteiligungsplattform auf Basis der Open-Source-Software Decidim, als '
             'verwalteten Dienst mit Hosting, Updates, Backups und Sicherheit. Mehr dazu auf der Seite '
             '<a href="/gemeinden/">Für Gemeinden</a>.</p>\n'
-            '    <p>Für Unternehmen und Vereine entwickeln wir schlanke Werkzeuge. Stand heute sind %d von %d Produkten in der '
-            'Pilotphase, die übrigen und alle %d Bausteine richten wir individuell auf Anfrage ein. Die Übersicht steht unter '
+            '    <p>Für Unternehmen und Vereine entwickeln wir schlanke Werkzeuge. Stand heute sind %d von %d Produkten und %d von %d '
+            'Bausteinen in der Pilotphase, die übrigen richten wir individuell auf Anfrage ein. Die Übersicht steht unter '
             '<a href="/produkte/">Produkte und Bausteine</a>, die Branchen unter <a href="/branchen/">Branchen</a>.</p>\n'
-            '  </div>' % (pilot, len(allgemein), len(bausteine_alle)), "flaeche") + "\n" +
+            '  </div>' % (pilot, len(allgemein), pilot_b, len(bausteine_alle)), "flaeche") + "\n" +
         abschnitt_html("arbeitsweise", "Arbeitsweise", "Wie wir arbeiten",
             '  <div class="artikel-text r">\n    <ul>\n'
             '      <li><strong>Persönlich:</strong> Sie erreichen uns direkt, ohne Ticketsystem.</li>\n'
