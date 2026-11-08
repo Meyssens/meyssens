@@ -737,7 +737,7 @@
   "beschreibung": "Was eine Offerte nach OR bindet, welche Fristen gelten und wie Sie Anfragen schneller beantworten, mit Textbausteinen. Leitfaden und Checkliste lesen.",
   "h1": "Offertanfragen schneller beantworten: Leitfaden für kleine Betriebe",
   "lead": "Die Anfrage kam am Montag, die Offerte ist am Freitag noch nicht geschrieben, und am Telefon haben Sie schon einen Preis genannt. Gilt der jetzt? Dieser Leitfaden erklärt, wann eine Offerte nach Schweizer Recht bindet, wie Sie Fristen setzen und wie Sie Anfragen mit Textbausteinen schneller und sauberer beantworten.",
-  "geprueft": "2026-10-25",
+  "geprueft": "2026-11-08",
   "veroeffentlicht": "2026-10-25",
   "produkte": [
    "mail-assistent"
@@ -745,7 +745,7 @@
   "faq": [
    {
     "frage": "Bin ich an meine Offerte gebunden?",
-    "antwort": "In der Regel ja. Mit Frist sind Sie bis zu deren Ablauf gebunden (Art. 3 OR). Ohne Frist hängt es davon ab, ob die Offerte unter Anwesenden (auch am Telefon) oder unter Abwesenden gemacht wurde (Art. 4 und 5 OR). Ein ausdrücklicher Vorbehalt wie «unverbindlich» hebt die Bindung auf (Art. 7 OR)."
+    "antwort": "In der Regel ja. Mit Frist sollten Sie davon ausgehen, bis zu deren Ablauf gebunden zu sein. Ohne Frist hängt es davon ab, ob die Offerte unter Anwesenden (auch am Telefon) oder unter Abwesenden gemacht wurde (Art. 4 und 5 OR). Ein ausdrücklicher Vorbehalt wie «unverbindlich» hebt die Bindung auf (Art. 7 OR)."
    },
    {
     "frage": "Wie lange gilt eine Offerte ohne Frist?",
@@ -757,7 +757,7 @@
    },
    {
     "frage": "Was gilt, wenn die Kundin nach Ablauf der Frist annimmt?",
-    "antwort": "Nach Ablauf der Frist sind Sie nicht mehr gebunden (Art. 3 OR). Ob Sie zu den alten Bedingungen zusagen, entscheiden Sie neu."
+    "antwort": "Nach Ablauf der Frist können Sie in der Regel neu entscheiden. Ob Sie zu den alten Bedingungen zusagen, entscheiden Sie neu."
    },
    {
     "frage": "Was passiert, wenn ein ungefährer Preis deutlich überschritten wird?",
@@ -787,10 +787,6 @@
    }
   ],
   "quellen": [
-   {
-    "titel": "Obligationenrecht, Art. 3 (Fedlex)",
-    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_3"
-   },
    {
     "titel": "droit-bilingue.ch, Art. 4 bis 7 OR",
     "url": "https://www.droit-bilingue.ch/en-de/2/22/220-4-7.html"
@@ -829,7 +825,7 @@
   "beschreibung": "Wann ist eine Online-Abstimmung im Schweizer Verein verbindlich? Statuten, Art. 66 ZGB, Datenschutz und Checkliste. Jetzt lesen und umsetzen.",
   "h1": "Online-Abstimmungen im Verein rechtssicher durchführen",
   "lead": "Die Generalversammlung ist schlecht besucht, der Vorstand möchte über das neue Jahresprogramm lieber online abstimmen lassen. Geht das, und ist das Ergebnis dann verbindlich? Die Antwort steht zum grössten Teil in Ihren Statuten. Dieser Ratgeber erklärt, was das ZGB verlangt, warum eine einzige Gegenstimme reichen kann und wie eine Statutenklausel aussehen könnte.",
-  "geprueft": "2026-10-25",
+  "geprueft": "2026-11-08",
   "veroeffentlicht": "2026-10-25",
   "produkte": [
    "umfragen-abstimmungen",
@@ -899,10 +895,6 @@
    {
     "titel": "droit-bilingue.ch, Art. 75 ZGB (englische Fassung)",
     "url": "https://www.droit-bilingue.ch/en-fr/2/21/210-75-98.html"
-   },
-   {
-    "titel": "Kanton Zürich, Muster-Statuten Verein mit Kommentar",
-    "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/wirtschaft-arbeit/handelsregister/verein/verein_vorlage_statuten_kurz_mit_Kommentar.pdf"
    },
    {
     "titel": "Bundesamt für Justiz, FAQ Generalversammlung COVID-19 (Archivkopie)",
@@ -1018,7 +1010,7 @@
   "beschreibung": "Welche Fragen ein Anmeldeformular für Mietwohnungen stellen darf, nach dem Merkblatt des EDÖB 2025: Einkommen, Betreibungen, Löschung. Checkliste lesen.",
   "h1": "Anmeldeformular für Mietwohnungen: was zulässig ist",
   "lead": "Zivilstand, Nationalität, bisheriger Mietzins: Viele Anmeldeformulare fragen mehr, als sie dürfen. Der EDÖB hat 2025 präzisiert, welche Angaben Vermieter und Verwaltungen in der Schweiz verlangen dürfen, welche erst beim Vertragsabschluss und welche gar nicht.",
-  "geprueft": "2026-10-27",
+  "geprueft": "2026-11-08",
   "veroeffentlicht": "2026-10-27",
   "produkte": [
    "besichtigungstermine-mietobjekt",
@@ -1071,12 +1063,12 @@
     "url": "https://www.edoeb.admin.ch/dam/en/sd-web/F7ojQw99LBH-/Merkblatt%20zu%20Anmeldeformularen%20f%C3%BCr%20Mietwohnungen%20DE_20250715.pdf"
    },
    {
-    "titel": "Bundesgesetz über den Datenschutz (DSG), Art. 19 und 21 (Fedlex)",
-    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+    "titel": "Onlinekommentar, Kommentierung zu Art. 19 DSG",
+    "url": "https://onlinekommentar.ch/de/kommentare/dsg19"
    },
    {
-    "titel": "Obligationenrecht, Art. 254 (Fedlex)",
-    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_254"
+    "titel": "Onlinekommentar, Kommentierung zu Art. 21 DSG",
+    "url": "https://onlinekommentar.ch/de/kommentare/dsg21"
    },
    {
     "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E (Übersichtsseite)",
@@ -1089,10 +1081,10 @@
   "art": "ratgeber",
   "name": "Spitex-Abrechnung ab 2026 nach Kanton",
   "titel": "Elektronische Spitex-Abrechnung 2026 nach Kanton | Meyssens",
-  "beschreibung": "Restfinanzierung elektronisch: was Basel-Stadt, Solothurn, Nidwalden und Zürich ab 2026 verlangen, XML, MediData, H-Net. Überblick und Checkliste lesen.",
+  "beschreibung": "Restfinanzierung elektronisch: was Basel-Stadt, Solothurn und Nidwalden ab 2026 verlangen, XML, MediData, H-Net. Überblick und Checkliste lesen.",
   "h1": "Elektronische Spitex-Abrechnung ab 2026: was in welchem Kanton gilt",
-  "lead": "Mehrere Kantone stellen die Abrechnung der Restfinanzierung auf elektronische XML-Rechnungen um, mit unterschiedlichen Stichtagen und Regeln. Dieser Überblick zeigt, was die Merkblätter von Basel-Stadt, Solothurn, Nidwalden und Zürich verlangen und was der Bund beschlossen hat.",
-  "geprueft": "2026-10-27",
+  "lead": "Mehrere Kantone stellen die Abrechnung der Restfinanzierung auf elektronische XML-Rechnungen um, mit unterschiedlichen Stichtagen und Regeln. Dieser Überblick zeigt, was die Merkblätter von Basel-Stadt, Solothurn und Nidwalden verlangen und was der Bund beschlossen hat.",
+  "geprueft": "2026-11-08",
   "veroeffentlicht": "2026-10-27",
   "produkte": [
    "abrechnung-vorpruefung",
@@ -1109,7 +1101,7 @@
    },
    {
     "frage": "Welcher Kanton ist für eine Spitex zuständig?",
-    "antwort": "Für die ambulante Pflege gelten die Regeln der Restfinanzierung des Standortkantons der Spitex, wie das Kreisschreiben des Kantons Zürich festhält."
+    "antwort": "Für die ambulante Pflege gelten die Regeln der Restfinanzierung des Standortkantons der Spitex, wie das Faktenblatt des BAG festhält."
    },
    {
     "frage": "Gibt es Ausnahmen für kleine Anbieter?",
@@ -1156,8 +1148,8 @@
     "url": "https://www.nw.ch/_docn/456682/01_Merkblatt_zur_elektronischen_Abrechnung_Spitex.PDF"
    },
    {
-    "titel": "Kanton Zürich, Kreisschreiben Normdefizite 2026 und Rechnungslegung",
-    "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/gesundheit/gesundheitsversorgung/heime_spitex/pflegefinanzierung/normdefizit/2025/Kreisschreiben%20Normdefizite%202026%20und%20Rechnungslegung.pdf"
+    "titel": "BAG, Faktenblatt Pflegefinanzierung (8. Mai 2024)",
+    "url": "https://www.bag.admin.ch/dam/de/sd-web/4Osw6p748w-R/fb-pflegefinanzierung.pdf"
    },
    {
     "titel": "BAG, KVG-Änderung: Massnahmen zur Kostendämpfung, Paket 2",
@@ -1168,8 +1160,12 @@
     "url": "https://www.edoeb.admin.ch/de/arztrechnungskopien"
    },
    {
-    "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-    "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+    "titel": "EDÖB, Bekanntgabe von Patientendaten",
+    "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+   },
+   {
+    "titel": "EDÖB, Schlussbericht vom 16.03.2023 zu Covid-Testzentren (vertragliche Regelung der Geheimhaltung)",
+    "url": "https://www.newsd.admin.ch/newsd/message/attachments/77556.pdf"
    }
   ]
  },
@@ -1181,8 +1177,8 @@
   "beschreibung": "Zehn Jahre nach Art. 958f OR, 20 Jahre für MWST-Unterlagen zu Immobilien, digitale Ablage nach GeBüV: Überblick mit Quellen und Checkliste. Jetzt lesen.",
   "h1": "Aufbewahrungsfristen für Buchhaltung und Belege: was in der Schweiz gilt",
   "lead": "Wie lange müssen Buchhaltung, Geschäftsbücher, Belege und MWST-Unterlagen in der Schweiz aufbewahrt werden, und was gilt für die digitale Ablage? Dieser Überblick fasst zusammen, was das Obligationenrecht, die Geschäftsbücherverordnung und Fachbeiträge sagen, und zeigt, wo die Angaben noch zu prüfen sind.",
-  "geprueft": "2026-10-28",
-  "aktualisiert": "2026-11-01",
+  "geprueft": "2026-11-08",
+  "aktualisiert": "2026-11-08",
   "veroeffentlicht": "2026-10-28",
   "produkte": [
    "aufbewahrungsregister-treuhand",
@@ -1235,10 +1231,6 @@
     "url": "https://droit-bilingue.ch/de-en/2/22/220-958f-1336.html"
    },
    {
-    "titel": "Geschäftsbücherverordnung (GeBüV), Fassung AS 2002 1399 (Fedlex, PDF)",
-    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2002/216/de/pdf-a/fedlex-data-admin-ch-eli-oc-2002-216-de-pdf-a.pdf"
-   },
-   {
     "titel": "KMU-Portal des Bundes, Elektronische Aufbewahrung der Geschäftsbücher",
     "url": "https://www.kmu.admin.ch/de/elektronische-aufbewahrung-der-geschaeftsbuecher"
    },
@@ -1256,8 +1248,8 @@
   "beschreibung": "Information, Einwilligung, sichere Übermittlung und nur nötige Felder: was der EDÖB von Patientenformularen in Arztpraxen erwartet. Überblick lesen.",
   "h1": "Patientenformulare und Datenschutz: Was darf die Praxis fragen?",
   "lead": "Viele Arztpraxen verwenden Patientenformulare, die mehr abfragen als nötig oder pauschale Einwilligungen enthalten. Der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (EDÖB) hat in einem Merkblatt erklärt, was er erwartet. Dieser Ratgeber fasst es zusammen, mit Hinweisen der FMH zur Krankengeschichte und zum Berufsgeheimnis.",
-  "geprueft": "2026-10-28",
-  "aktualisiert": "2026-11-01",
+  "geprueft": "2026-11-08",
+  "aktualisiert": "2026-11-08",
   "veroeffentlicht": "2026-10-28",
   "produkte": [
    "online-terminanfrage-arztpraxis",
@@ -1333,8 +1325,12 @@
     "url": "https://gesundheit.tg.ch/public/upload/assets/162229/Merkblatt%20betreffend%20F%C3%BChrung%20und%20Aufbewahrung%20der%20Patientendokumentationen.pdf?fp=1"
    },
    {
-    "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-    "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+    "titel": "EDÖB, Bekanntgabe von Patientendaten",
+    "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+   },
+   {
+    "titel": "EDÖB, Schlussbericht vom 16.03.2023 zu Covid-Testzentren (vertragliche Regelung der Geheimhaltung)",
+    "url": "https://www.newsd.admin.ch/newsd/message/attachments/77556.pdf"
    }
   ]
  },
@@ -1420,8 +1416,8 @@
   "beschreibung": "Wer stellt den Sicherheitsnachweis aus, wer kontrolliert periodisch, welche Fristen gelten? Überblick nach ESTI und NIV für Betriebe. Jetzt lesen.",
   "h1": "Sicherheitsnachweis und periodische Kontrolle der Elektroinstallation: wer ist wofür verantwortlich?",
   "lead": "Beim Sicherheitsnachweis und bei der periodischen Kontrolle einer Elektroinstallation teilen sich Eigentümerschaft, Installationsbetrieb, Kontrollorgan und Netzbetreiberin die Pflichten. Dieser Ratgeber zeigt nach den Publikationen des Eidgenössischen Starkstrominspektorats (ESTI), wer den Sicherheitsnachweis ausstellt, wann kontrolliert wird und was bei fehlendem Nachweis geschieht.",
-  "geprueft": "2026-10-28",
-  "aktualisiert": "2026-11-01",
+  "geprueft": "2026-11-08",
+  "aktualisiert": "2026-11-08",
   "veroeffentlicht": "2026-10-28",
   "produkte": [
    "faelligkeitsliste-kontrollen-elektro"
@@ -1433,7 +1429,7 @@
    },
    {
     "frage": "Wie oft wird kontrolliert?",
-    "antwort": "Je nach Art der Installation alle 1, 5, 10 oder 20 Jahre; die Zuordnung steht im Anhang der NIV. Installationen mit 10 oder 20 Jahren werden zusätzlich bei einer Handänderung kontrolliert, wenn die letzte Kontrolle mehr als fünf Jahre zurückliegt."
+    "antwort": "Je nach Art der Installation alle 1, 5, 10 oder 20 Jahre. Welche Periode für welche Installation gilt, ist noch zu klären. Installationen mit 10 oder 20 Jahren werden zusätzlich bei einer Handänderung kontrolliert, wenn die letzte Kontrolle mehr als fünf Jahre zurückliegt."
    },
    {
     "frage": "Wer ist verantwortlich, wenn die Frist verpasst wird?",
@@ -1472,8 +1468,12 @@
     "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/Infoblatt_Periodische_Kontrolle_de.pdf"
    },
    {
-    "titel": "Swisscom, Factsheet Sicherheitsnachweis (SiNa) mit Auszügen aus der NIV (Stand 14.06.2017)",
-    "url": "https://www.swisscom.ch/content/dam/assets/about/sicherheit/sicherheitskonzept-elektro/documents/siko-elektro-factsheet-003-sicherheitsnachweis.pdf"
+    "titel": "ESTI, Häufige Fragen: Periodische Kontrollen, Sicherheitsnachweise",
+    "url": "https://www.esti.admin.ch/de/themen/faq/periodische-kontrollen-sicherheitsnachweise"
+   },
+   {
+    "titel": "ESTI, Mitteilung Nr. 2019-0701 zur NIV bei Zusammenschlüssen zum Eigenverbrauch (18.07.2019), mit Art. 35 Abs. 3 NIV",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2019-2020/2019-0701_zev_niv_d.pdf"
    },
    {
     "titel": "ESTI, Publikation zur NIV (August 2011)",

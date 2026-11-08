@@ -120,19 +120,23 @@
     "fuer_wen": "Für Zahnarztpraxen, deren Telefon zu Stosszeiten besetzt ist. Für Praxen, die online erreichbar sein möchten, ohne eine Direktbuchung in die Praxissoftware einzurichten.",
     "aufwand": "klein",
     "personendaten": true,
-    "daten": "Schon eine Terminanfrage kann zeigen, dass jemand Patientin oder Patient einer Praxis ist. Das EDÖB empfiehlt dafür eine gesicherte Übermittlung oder eine Einwilligung nach vorheriger Information, und nur die nötigen Angaben. Arbeitet ein IT-Dienstleister mit, braucht es zusätzlich eine Geheimhaltungsvereinbarung wegen des Berufsgeheimnisses.",
+    "daten": "Schon eine Terminanfrage kann zeigen, dass jemand Patientin oder Patient einer Praxis ist. Das EDÖB empfiehlt dafür eine gesicherte Übermittlung oder eine Einwilligung nach vorheriger Information, und nur die nötigen Angaben. Arbeitet ein IT-Dienstleister mit, braucht es zusätzlich vertragliche Regelungen zur Geheimhaltung wegen des Berufsgeheimnisses (EDÖB).",
     "quellen": [
       {
         "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen",
         "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erläuterungen%20Patientenformularen%20ärztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
       },
       {
-        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+        "titel": "EDÖB, Bekanntgabe von Patientendaten",
+        "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+      },
+      {
+        "titel": "EDÖB, Schlussbericht vom 16.03.2023 zu Covid-Testzentren (vertragliche Regelung der Geheimhaltung)",
+        "url": "https://www.newsd.admin.ch/newsd/message/attachments/77556.pdf"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-26",
+    "geprueft": "2026-11-08",
     "seo_titel": "Online-Terminanfrage für Zahnarztpraxen | Meyssens",
     "seo_beschreibung": "Patienten fragen Termine per Formular an, die MPA bestätigt. Ohne Symptomfeld, Hosting in der Schweiz, nDSG im Blick. Jetzt unverbindlich anfragen."
   },
@@ -150,12 +154,12 @@
     "daten": "Der Auftrag nennt eine Fall-Nummer statt des Namens. Die Zuordnung zur Person bleibt in der Praxissoftware. Auch eine Fall-Nummer mit Angaben zur Arbeit bleibt für die Praxis ein Personenbezug, deshalb gelten die Bedingungen unten.",
     "quellen": [
       {
-        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+        "titel": "EDÖB, Bekanntgabe von Patientendaten",
+        "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-26",
+    "geprueft": "2026-11-08",
     "seo_titel": "Laborauftrag Zahnarztpraxis digital vorbereiten | Meyssens",
     "seo_beschreibung": "Laboraufträge und Materialbestellungen aus Vorlagen, mit Fall-Nummer statt Namen. Die MPA prüft und versendet. Jetzt unverbindlich anfragen."
   },
@@ -173,12 +177,12 @@
     "daten": "Die Sammlung selbst enthält keine Patientendaten. Für Antwortentwürfe auf E-Mails von Patientinnen und Patienten gelten die Bedingungen unten.",
     "quellen": [
       {
-        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+        "titel": "EDÖB, Bekanntgabe von Patientendaten",
+        "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-26",
+    "geprueft": "2026-11-08",
     "seo_titel": "Textbausteine für Praxis-Telefon und E-Mail | Meyssens",
     "seo_beschreibung": "Geprüfte Antworten zu Öffnungszeiten, Notfalldienst und Dentalhygiene an einem Ort, E-Mails als Entwurf. Jetzt unverbindlich anfragen."
   },
@@ -375,14 +379,10 @@
       {
         "titel": "Kanton Basel-Stadt, Merkblatt Pflegeplatzvermittlung (ab 1.1.2026)",
         "url": "https://media.bs.ch/original_file/fbf29e2106c8e290be8a25851d07821081592536/merkblatt-pflegeplatzvermittlung-2026-01-01.pdf"
-      },
-      {
-        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-26",
+    "geprueft": "2026-11-08",
     "seo_titel": "Besichtigung im Pflegeheim online buchen | Meyssens",
     "seo_beschreibung": "Angehörige buchen Besichtigungen und Informationsgespräche online, ohne Gesundheitsangaben, Bestätigung als Entwurf. Jetzt unverbindlich anfragen."
   },
@@ -408,12 +408,12 @@
         "url": "https://so.ch/fileadmin/internet/ddi/ddi-gesa/PDF/Behandlung_und_Pflege/APH/Restkostenfinanzierung/2025-11-19_Informationsschreiben_II_Projekt_ePflege--Kopie-20260105.pdf"
       },
       {
-        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+        "titel": "EDÖB, Bekanntgabe von Patientendaten",
+        "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-26",
+    "geprueft": "2026-11-08",
     "seo_titel": "Spitex-Abrechnung vor dem Versand prüfen | Meyssens",
     "seo_beschreibung": "Prüft den Export der Pflegesoftware auf fehlende Pflichtfelder und Widersprüche, bevor Sie über MediData oder H-Net abrechnen. Jetzt anfragen."
   },
@@ -439,12 +439,12 @@
         "url": "https://www.bakom.admin.ch/de/wann-ist-der-massenversand-erlaubt"
       },
       {
-        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+        "titel": "EDÖB, Bekanntgabe von Patientendaten",
+        "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-27",
+    "geprueft": "2026-11-08",
     "seo_titel": "Terminerinnerung und Recall Zahnarztpraxis | Meyssens",
     "seo_beschreibung": "Erinnerungen und Recalls als Entwürfe, nur mit Einwilligung und ohne Behandlungsangaben. Die MPA gibt jede Nachricht frei. Jetzt unverbindlich anfragen.",
     "faq": [
@@ -479,7 +479,7 @@
     "branche": "architekturbueros",
     "name": "Honorarofferte nach SIA 102",
     "kurzbeschreibung": "Aus Bausteinen für Leistungen, Phasen und Stundenansätze entsteht ein Entwurf der Honorarofferte im Layout Ihres Büros. Die Projektleitung prüft Leistungsumfang und Berechnung und gibt die Offerte frei.",
-    "problem": "Jede Honorarofferte wird oft neu zusammengesetzt: Leistungsbeschrieb aus einer alten Offerte kopiert, Stunden pro Phase geschätzt, Ansätze nachgeschlagen, Nebenkosten und Mehrwertsteuer ergänzt. Das kostet Zeit, und Unterschiede zwischen Offerten desselben Büros fallen erst später auf. Gleichzeitig ist eine Offerte mit Frist verbindlich, bis die Frist abläuft (Art. 3 OR).",
+    "problem": "Jede Honorarofferte wird oft neu zusammengesetzt: Leistungsbeschrieb aus einer alten Offerte kopiert, Stunden pro Phase geschätzt, Ansätze nachgeschlagen, Nebenkosten und Mehrwertsteuer ergänzt. Das kostet Zeit, und Unterschiede zwischen Offerten desselben Büros fallen erst später auf. Gleichzeitig kann eine Offerte mit Frist bis zu deren Ablauf binden; das ist im Einzelfall zu prüfen.",
     "loesung": "Das Büro hinterlegt seine Leistungsbausteine, gegliedert nach den Phasen, mit denen es arbeitet, etwa angelehnt an SIA 102 und SIA 112, dazu Kategorien und Stundenansätze. Für eine neue Anfrage wählt die Projektleitung die Bausteine aus und schätzt die Stunden pro Phase. Der Baustein rechnet Honorar, Nebenkosten und Mehrwertsteuer zusammen, setzt eine Gültigkeitsfrist und legt den Entwurf im Layout des Büros ab. Ein Vergleich mit früheren Offerten zeigt, wo die Schätzung stark abweicht.",
     "mensch": "Leistungsumfang, Stundenschätzung, Ansätze und Honorarmodell legt das Büro fest, nicht der Baustein. Die Projektleitung prüft jede Berechnung und gibt die Offerte frei. Den Versand übernimmt das Büro selbst.",
     "fuer_wen": "Für Architekturbüros, die regelmässig Honorarofferten für private oder öffentliche Bauherrschaften erstellen. Für Büros, die nach Zeitaufwand oder mit Pauschalen offerieren und ihre Leistungsbeschriebe vereinheitlichen möchten.",
@@ -494,14 +494,10 @@
       {
         "titel": "SIA, Leistungs- und Honorarkultur",
         "url": "https://www.sia.ch/de/cms/dienstleistungen/leistungs-und-honorarkultur"
-      },
-      {
-        "titel": "Obligationenrecht, Art. 3 (Fedlex)",
-        "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_3"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-27",
+    "geprueft": "2026-11-08",
     "seo_titel": "Honorarofferte nach SIA 102 erstellen | Meyssens",
     "seo_beschreibung": "Honorarofferten aus Leistungsbausteinen, Phasen und Stundenansätzen als Entwurf. Die Projektleitung prüft und gibt frei. Jetzt unverbindlich anfragen.",
     "faq": [
@@ -515,7 +511,7 @@
       },
       {
         "frage": "Wie lange ist eine Offerte verbindlich?",
-        "antwort": "Wer in der Offerte eine Frist setzt, ist bis zum Ablauf dieser Frist gebunden (Art. 3 OR). Der Baustein setzt die Frist, die Ihr Büro vorgibt, sichtbar in den Entwurf."
+        "antwort": "Das ist im Einzelfall zu prüfen. Wer in der Offerte eine Frist setzt, sollte davon ausgehen, bis zu deren Ablauf gebunden zu sein. Der Baustein setzt die Frist, die Ihr Büro vorgibt, sichtbar in den Entwurf."
       }
     ]
   },
@@ -541,13 +537,13 @@
         "url": "https://www.fmh.ch/files/pdf24/minimalanforderungen-it-grundschutz-praxisaerztinnen-praxisaerzte-d3.pdf"
       },
       {
-        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+        "titel": "EDÖB, Bekanntgabe von Patientendaten",
+        "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-27",
-    "aktualisiert": "2026-11-01",
+    "geprueft": "2026-11-08",
+    "aktualisiert": "2026-11-08",
     "seo_titel": "Online-Terminanfrage Arztpraxis mit Datenschutz | Meyssens",
     "seo_beschreibung": "Termine per Formular statt Telefon, ohne Beschwerdefeld, verschlüsselt übermittelt. Das Praxisteam bestätigt jeden Termin. Jetzt unverbindlich anfragen.",
     "faq": [
@@ -790,7 +786,7 @@
     "branche": "treuhaender",
     "name": "Register für Aufbewahrungs- und Löschfristen",
     "kurzbeschreibung": "Das Register führt pro Dossier das Geschäftsjahr und das Datum, bis zu dem die Unterlagen aufzubewahren sind. Es listet Dossiers, deren Frist abgelaufen ist, und schlägt die Prüfung vor. Gelöscht wird nie automatisch.",
-    "problem": "Geschäftsbücher, Buchungsbelege, Geschäftsbericht und Revisionsbericht sind zehn Jahre aufzubewahren, und die Frist beginnt mit dem Ablauf des Geschäftsjahres (Art. 958f Abs. 1 OR). Für bestimmte MWST-Unterlagen zu unbeweglichen Gegenständen nennt WEKA eine Aufbewahrung von 20 Jahren (Art. 70 Abs. 3 MWSTG). Auch Arbeitsanweisungen zur Buchführung sind so lange aufzubewahren wie die Bücher, die danach geführt wurden (Art. 4 Abs. 2 GeBüV). In vielen Büros steht trotzdem nirgends, wann ein Dossier gelöscht werden darf, und alte Ablagen bleiben einfach liegen. Das Letzte ist eine Einschätzung, Zahlen dazu haben wir nicht.",
+    "problem": "Geschäftsbücher, Buchungsbelege, Geschäftsbericht und Revisionsbericht sind zehn Jahre aufzubewahren, und die Frist beginnt mit dem Ablauf des Geschäftsjahres (Art. 958f Abs. 1 OR). Für bestimmte MWST-Unterlagen zu unbeweglichen Gegenständen nennt WEKA eine Aufbewahrung von 20 Jahren (Art. 70 Abs. 3 MWSTG). In vielen Büros steht trotzdem nirgends, wann ein Dossier gelöscht werden darf, und alte Ablagen bleiben einfach liegen. Das Letzte ist eine Einschätzung, Zahlen dazu haben wir nicht.",
     "loesung": "Für jedes Dossier hält das Register fest: Mandat, Art der Unterlagen, Geschäftsjahr und die geltende Frist. Standard sind zehn Jahre ab Ende des Geschäftsjahres; für Unterlagen, die das Büro als MWST-Unterlagen zu Immobilien markiert, setzt das Register 20 Jahre. Die Regeln stellt das Büro selbst ein und kann sie pro Dossier ändern. Einmal im Jahr zeigt eine Liste die Dossiers, deren Frist abgelaufen ist, mit dem Hinweis, was vor einer Löschung zu prüfen ist, etwa laufende Verfahren oder ein noch aktives Mandat. Die Arbeitsanweisungen des Büros führt das Register als eigene Dossiers mit.",
     "mensch": "Ob ein Dossier gelöscht, länger aufbewahrt oder dem Mandanten übergeben wird, entscheidet das Büro. Der Baustein löscht nie selbst und verschiebt keine Dateien. Welche Frist im Einzelfall gilt, etwa bei Immobilien oder bei offenen Steuerverfahren, prüft ein Mensch.",
     "fuer_wen": "Für Treuhandbüros mit Archiven über viele Jahre und Mandate. Für Büros, die Aufbewahrung und Löschung bisher nicht systematisch geregelt haben.",
@@ -807,17 +803,13 @@
         "url": "https://www.weka.ch/themen/finanzen-controlling/rechnungswesen/buchfuehrung/article/aufbewahrungsfristen-compliance-anforderungen-an-die-geschaeftsunterlagen/"
       },
       {
-        "titel": "Geschäftsbücherverordnung (GeBüV), Fassung AS 2002 1399 (Fedlex, PDF)",
-        "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2002/216/de/pdf-a/fedlex-data-admin-ch-eli-oc-2002-216-de-pdf-a.pdf"
-      },
-      {
         "titel": "KMU-Portal des Bundes, Elektronische Aufbewahrung der Geschäftsbücher",
         "url": "https://www.kmu.admin.ch/de/elektronische-aufbewahrung-der-geschaeftsbuecher"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-28",
-    "aktualisiert": "2026-11-01",
+    "geprueft": "2026-11-08",
+    "aktualisiert": "2026-11-08",
     "seo_titel": "Register für Aufbewahrungsfristen Treuhand | Meyssens",
     "seo_beschreibung": "Zehn Jahre nach Art. 958f OR, 20 Jahre für MWST-Unterlagen zu Immobilien: Fristen pro Dossier im Blick, Löschung entscheidet das Büro. Jetzt anfragen.",
     "faq": [
@@ -831,7 +823,7 @@
       },
       {
         "frage": "Darf digital aufbewahrt werden?",
-        "antwort": "Ja, wenn die Übereinstimmung mit den Geschäftsvorfällen gewährleistet ist und die Unterlagen jederzeit lesbar gemacht werden können (Art. 958f Abs. 3 OR). Für veränderbare Träger wie eine Cloud verlangt die Geschäftsbücherverordnung zusätzlich unter anderem einen unverfälschbaren Nachweis des Speicherzeitpunkts (Art. 9 GeBüV)."
+        "antwort": "Ja, wenn die Übereinstimmung mit den Geschäftsvorfällen gewährleistet ist und die Unterlagen jederzeit lesbar gemacht werden können (Art. 958f Abs. 3 OR). Für veränderbare Träger wie eine Cloud verlangt die Geschäftsbücherverordnung zusätzlich unter anderem einen unverfälschbaren Nachweis des Speicherzeitpunkts (KMU-Portal des Bundes)."
       }
     ],
     "weiterlesen": [
@@ -849,7 +841,7 @@
     "kurzbeschreibung": "Der Baustein erkennt überfällige Rechnungen im System Tiers garant und schreibt sachliche Mahnentwürfe ohne Angaben zur Behandlung. Die Praxis entscheidet, ob gemahnt wird. Wir empfehlen ihn erst, wenn die Rechtslage zum Berufsgeheimnis für die Praxis geklärt ist.",
     "problem": "Im System Tiers garant, das nach dem KVG die Regel ist, geht die Rechnung an die Patientin oder den Patienten (FMH-Leitfaden, Kapitel 4.8). Bleibt sie unbezahlt, sucht jemand im Praxisteam die offenen Posten heraus und schreibt Mahnungen einzeln. Dabei ist Vorsicht geboten: Schon das Bestehen einer Behandlungsbeziehung kann nach dem EDÖB Rückschlüsse auf die Gesundheit erlauben, und das Berufsgeheimnis nach Art. 321 StGB gilt auch für die Hilfspersonen der Ärztin oder des Arztes (FMH-Leitfaden, Kapitel 7.1). Wie externe Dienstleister dabei einzuordnen sind, beantwortet der Leitfaden nicht ausdrücklich.",
     "loesung": "Der Baustein liest eine Liste der offenen Rechnungen aus der Praxissoftware, mit Rechnungsnummer, Datum, Betrag und Fälligkeit. Ist eine Rechnung überfällig, erscheint sie in einer Liste, und der Baustein schreibt einen sachlichen Mahnentwurf: Rechnungsnummer, Datum, Betrag, neue Zahlungsfrist, keine Diagnose, keine Leistungen. Die Praxis sieht die Entwürfe gesammelt, kann einzelne zurückstellen, etwa bei einer Ratenvereinbarung, und druckt oder versendet die freigegebenen selbst. Der Baustein zeigt, wann eine zweite Mahnung fällig wäre, wiederum als Entwurf. Eine Weitergabe an ein Inkassobüro gehört nicht dazu.",
-    "mensch": "Ob und wann gemahnt wird, entscheidet die Praxis, auch bei Härtefällen und Ratenvereinbarungen. Jeder Entwurf wird geprüft und von der Praxis selbst versendet. Bevor echte Rechnungsdaten verarbeitet werden, klären wir mit der Praxis, wie ein externer Dienstleister unter dem Berufsgeheimnis eingebunden wird. Der Kanton Zürich beschreibt dafür IT-Dienstleister als mögliche Hilfspersonen mit Geheimhaltungsvereinbarung und vertraglich geregelter Bearbeitung.",
+    "mensch": "Ob und wann gemahnt wird, entscheidet die Praxis, auch bei Härtefällen und Ratenvereinbarungen. Jeder Entwurf wird geprüft und von der Praxis selbst versendet. Bevor echte Rechnungsdaten verarbeitet werden, klären wir mit der Praxis, wie ein externer Dienstleister unter dem Berufsgeheimnis eingebunden wird. Der EDÖB nennt IT-Dienstleister als Beispiel für Hilfspersonen und verlangt, Geheimhaltungspflichten vertraglich sicherzustellen.",
     "fuer_wen": "Für Arztpraxen, die im System Tiers garant abrechnen und Mahnungen heute von Hand schreiben.",
     "aufwand": "klein",
     "personendaten": true,
@@ -868,13 +860,17 @@
         "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
       },
       {
-        "titel": "Kanton Zürich, Datenschutz, Berufsgeheimnis und die Cloud",
-        "url": "https://www.zh.ch/de/wirtschaft-arbeit/wirtschaftsstandort/innovation-sandbox/phase-ii/medizinische-dokumentation/2-datenschutz-berufsgeheimnis-und-die-cloud.html"
+        "titel": "EDÖB, Bekanntgabe von Patientendaten",
+        "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+      },
+      {
+        "titel": "EDÖB, Schlussbericht vom 16.03.2023 zu Covid-Testzentren (vertragliche Regelung der Geheimhaltung)",
+        "url": "https://www.newsd.admin.ch/newsd/message/attachments/77556.pdf"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-28",
-    "aktualisiert": "2026-11-01",
+    "geprueft": "2026-11-08",
+    "aktualisiert": "2026-11-08",
     "seo_titel": "Mahnentwurf für Arztpraxen, Tiers garant | Meyssens",
     "seo_beschreibung": "Überfällige Rechnungen erkennen, sachliche Mahnentwürfe ohne Behandlungsangaben, Freigabe durch die Praxis. Für Schweizer Arztpraxen. Jetzt anfragen.",
     "faq": [
