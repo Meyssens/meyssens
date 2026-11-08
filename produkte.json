@@ -120,7 +120,7 @@
     "fuer_wen": "Für Zahnarztpraxen, deren Telefon zu Stosszeiten besetzt ist. Für Praxen, die online erreichbar sein möchten, ohne eine Direktbuchung in die Praxissoftware einzurichten.",
     "aufwand": "klein",
     "personendaten": true,
-    "daten": "Schon eine Terminanfrage kann zeigen, dass jemand Patientin oder Patient einer Praxis ist. Das EDÖB empfiehlt dafür eine gesicherte Übermittlung oder eine Einwilligung nach vorheriger Information, und nur die nötigen Angaben. Arbeitet ein IT-Dienstleister mit, braucht es zusätzlich vertragliche Regelungen zur Geheimhaltung wegen des Berufsgeheimnisses (EDÖB).",
+    "daten": "Schon eine Terminanfrage kann zeigen, dass jemand Patientin oder Patient einer Praxis ist. Das EDÖB empfiehlt dafür eine gesicherte Übermittlung oder eine Einwilligung nach vorheriger Information, und nur die nötigen Angaben. Arbeitet ein IT-Dienstleister mit, ist zu klären, wie die Geheimhaltung geregelt wird. Als Beispiel: In einem Schlussbericht von 2023 zu Covid-Testzentren hielt der EDÖB fest, dass sie dort vertraglich sicherzustellen war.",
     "quellen": [
       {
         "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen",
@@ -131,7 +131,7 @@
         "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
       },
       {
-        "titel": "EDÖB, Schlussbericht vom 16.03.2023 zu Covid-Testzentren (vertragliche Regelung der Geheimhaltung)",
+        "titel": "EDÖB, Schlussbericht vom 16.03.2023 zu Covid-Testzentren (Einzelfall)",
         "url": "https://www.newsd.admin.ch/newsd/message/attachments/77556.pdf"
       }
     ],
@@ -841,7 +841,7 @@
     "kurzbeschreibung": "Der Baustein erkennt überfällige Rechnungen im System Tiers garant und schreibt sachliche Mahnentwürfe ohne Angaben zur Behandlung. Die Praxis entscheidet, ob gemahnt wird. Wir empfehlen ihn erst, wenn die Rechtslage zum Berufsgeheimnis für die Praxis geklärt ist.",
     "problem": "Im System Tiers garant, das nach dem KVG die Regel ist, geht die Rechnung an die Patientin oder den Patienten (FMH-Leitfaden, Kapitel 4.8). Bleibt sie unbezahlt, sucht jemand im Praxisteam die offenen Posten heraus und schreibt Mahnungen einzeln. Dabei ist Vorsicht geboten: Schon das Bestehen einer Behandlungsbeziehung kann nach dem EDÖB Rückschlüsse auf die Gesundheit erlauben, und das Berufsgeheimnis nach Art. 321 StGB gilt auch für die Hilfspersonen der Ärztin oder des Arztes (FMH-Leitfaden, Kapitel 7.1). Wie externe Dienstleister dabei einzuordnen sind, beantwortet der Leitfaden nicht ausdrücklich.",
     "loesung": "Der Baustein liest eine Liste der offenen Rechnungen aus der Praxissoftware, mit Rechnungsnummer, Datum, Betrag und Fälligkeit. Ist eine Rechnung überfällig, erscheint sie in einer Liste, und der Baustein schreibt einen sachlichen Mahnentwurf: Rechnungsnummer, Datum, Betrag, neue Zahlungsfrist, keine Diagnose, keine Leistungen. Die Praxis sieht die Entwürfe gesammelt, kann einzelne zurückstellen, etwa bei einer Ratenvereinbarung, und druckt oder versendet die freigegebenen selbst. Der Baustein zeigt, wann eine zweite Mahnung fällig wäre, wiederum als Entwurf. Eine Weitergabe an ein Inkassobüro gehört nicht dazu.",
-    "mensch": "Ob und wann gemahnt wird, entscheidet die Praxis, auch bei Härtefällen und Ratenvereinbarungen. Jeder Entwurf wird geprüft und von der Praxis selbst versendet. Bevor echte Rechnungsdaten verarbeitet werden, klären wir mit der Praxis, wie ein externer Dienstleister unter dem Berufsgeheimnis eingebunden wird. Der EDÖB nennt IT-Dienstleister als Beispiel für Hilfspersonen und verlangt, Geheimhaltungspflichten vertraglich sicherzustellen.",
+    "mensch": "Ob und wann gemahnt wird, entscheidet die Praxis, auch bei Härtefällen und Ratenvereinbarungen. Jeder Entwurf wird geprüft und von der Praxis selbst versendet. Bevor echte Rechnungsdaten verarbeitet werden, klären wir mit der Praxis, wie ein externer Dienstleister unter dem Berufsgeheimnis eingebunden wird. Der EDÖB nennt IT-Dienstleister als Beispiel für Hilfspersonen. Als Beispiel: In einem Schlussbericht von 2023 zu Covid-Testzentren hielt er fest, dass die Geheimhaltung dort vertraglich sicherzustellen war.",
     "fuer_wen": "Für Arztpraxen, die im System Tiers garant abrechnen und Mahnungen heute von Hand schreiben.",
     "aufwand": "klein",
     "personendaten": true,
@@ -864,7 +864,7 @@
         "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
       },
       {
-        "titel": "EDÖB, Schlussbericht vom 16.03.2023 zu Covid-Testzentren (vertragliche Regelung der Geheimhaltung)",
+        "titel": "EDÖB, Schlussbericht vom 16.03.2023 zu Covid-Testzentren (Einzelfall)",
         "url": "https://www.newsd.admin.ch/newsd/message/attachments/77556.pdf"
       }
     ],
