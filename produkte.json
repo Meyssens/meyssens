@@ -664,7 +664,7 @@
     "branche": "treuhaender",
     "name": "Fristenkalender und Belegeingang für Treuhandbüros",
     "kurzbeschreibung": "Ein Fristenkalender pro Mandat für MWST-Abrechnungen, Steuererklärungen und eigene Termine, dazu ein geordneter Belegeingang mit Checkliste. Der Baustein erinnert und bereitet Nachfragen als Entwurf vor. Die Treuhänderin oder der Treuhänder entscheidet.",
-    "problem": "Fristen sind über viele Mandate verteilt: MWST-Abrechnungen innert 60 Tagen nach Ablauf der Abrechnungsperiode (Art. 71 MWSTG), Steuererklärungen mit kantonal verschiedenen Fristen, etwa im Kanton Zürich bis 31. März für natürliche und bis 30. September für juristische Personen (Zürcher Steuerbuch Nr. 133.1). Belege kommen per E-Mail, Post und Foto, oft unvollständig. Nachfragen bei Mandantinnen und Mandanten kosten viel Zeit.",
+    "problem": "Fristen sind über viele Mandate verteilt: MWST-Abrechnungen innert 60 Tagen nach Ablauf der Abrechnungsperiode (ESTV), dazu Steuererklärungen und eigene Termine. Belege kommen per E-Mail, Post und Foto, oft unvollständig. Nachfragen bei Mandantinnen und Mandanten kosten viel Zeit.",
     "loesung": "Pro Mandat legt das Büro fest, welche Fristen gelten: Abrechnungsperiode der MWST, Steuerfristen des Kantons, eigene interne Termine. Der Baustein zeigt einen gemeinsamen Kalender, erinnert rechtzeitig und markiert Mandate, bei denen Unterlagen fehlen. Belege kommen über einen geordneten Eingang pro Mandat herein, eine Checkliste zeigt, was für den Abschluss noch fehlt, und eine Nachfrage an die Mandantin oder den Mandanten liegt als Entwurf bereit. Abgelegt wird in einem archivtauglichen Format wie PDF/A.",
     "mensch": "Welche Fristen für ein Mandat gelten und ob eine Fristverlängerung beantragt wird, entscheidet das Treuhandbüro. Belege prüft und verbucht ein Mensch. Nachfragen an Mandantinnen und Mandanten gehen erst nach Freigabe hinaus. Ob die Ablage den Anforderungen der Geschäftsbücherverordnung an veränderbare Datenträger genügt, prüfen wir vor dem Einsatz.",
     "fuer_wen": "Für Treuhandbüros mit vielen kleinen Mandaten, Lohn- und MWST-Abrechnungen. Für Büros, bei denen Belege auf vielen Wegen eintreffen und Fristen in Tabellen oder Köpfen stehen.",
@@ -673,20 +673,8 @@
     "daten": "Belege und Mandatsdaten enthalten Finanz- und Personendaten. Geschäftsbücher und Buchungsbelege sind zehn Jahre aufzubewahren (Art. 958f OR). Eine Cloud gilt nach der KMU-Seite des Bundes nicht als unveränderbarer Datenträger, deshalb gelten die strengeren Regeln der Geschäftsbücherverordnung und die Bedingungen unten.",
     "quellen": [
       {
-        "titel": "Mehrwertsteuergesetz, Art. 71 (Fedlex)",
-        "url": "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_71"
-      },
-      {
         "titel": "ESTV, Fristverlängerung für die Einreichung der MWST-Abrechnung",
         "url": "https://www.estv.admin.ch/de/mwst-fristverlaengerung-einreichung-abrechnung"
-      },
-      {
-        "titel": "Kanton Zürich, Zürcher Steuerbuch Nr. 133.1, Aufforderung zur Einreichung 2026",
-        "url": "https://www.zh.ch/de/steuern-finanzen/steuern/treuhaender/steuerbuch/steuerbuch-definition/zstb-133-1.html"
-      },
-      {
-        "titel": "Kanton Bern, TaxInfo: Abgabefrist und Fristverlängerung",
-        "url": "https://www.taxinfo.sv.fin.be.ch/taxinfo/1cce120a-05da-45e8-8968-b66ae236fee5"
       },
       {
         "titel": "KMU-Portal des Bundes, Elektronische Aufbewahrung der Geschäftsbücher",
@@ -694,18 +682,18 @@
       }
     ],
     "status": "Pilotphase",
-    "geprueft": "2026-10-27",
-    "aktualisiert": "2026-11-01",
+    "geprueft": "2026-11-08",
+    "aktualisiert": "2026-11-08",
     "seo_titel": "Fristenkalender und Belegeingang Treuhand | Meyssens",
     "seo_beschreibung": "MWST- und Steuerfristen pro Mandat im Blick, Belege geordnet mit Checkliste, Nachfragen als Entwurf. Für Treuhandbüros in der Schweiz. Jetzt anfragen.",
     "faq": [
       {
         "frage": "Bis wann muss die MWST abgerechnet werden?",
-        "antwort": "Innert 60 Tagen nach Ablauf der Abrechnungsperiode, ohne Aufforderung (Art. 71 MWSTG). Bei der jährlichen Abrechnung gilt bis Ende Februar des Folgejahres. Fristverlängerungen beantragt man elektronisch über das ESTV-Portal."
+        "antwort": "Innert 60 Tagen nach Ablauf der Abrechnungsperiode, ohne Aufforderung (ESTV). Fristverlängerungen beantragt man elektronisch über das ESTV-Portal."
       },
       {
-        "frage": "Gelten in allen Kantonen dieselben Steuerfristen?",
-        "antwort": "Nein. Im Kanton Zürich gilt für die Steuererklärung 2026 der 31. März 2027 für natürliche und der 30. September 2027 für juristische Personen. Im Kanton Bern nennt TaxInfo den 15. März für Unselbständigerwerbende, den 15. Mai für Selbständigerwerbende und für juristische Personen den 31. Juli beziehungsweise sieben Monate nach Geschäftsabschluss. Der Fristenkalender wird deshalb pro Mandat und Kanton eingestellt."
+        "frage": "Sind Steuerfristen im Fristenkalender schon eingetragen?",
+        "antwort": "Nein. Steuerfristen trägt das Büro pro Mandat selbst ein. Der Fristenkalender enthält dafür keine Werte und ersetzt keine Prüfung der geltenden Frist."
       },
       {
         "frage": "Dürfen Belege nur elektronisch aufbewahrt werden?",
@@ -1034,8 +1022,8 @@
       }
     ],
     "status": "Pilotphase",
-    "geprueft": "2026-10-28",
-    "aktualisiert": "2026-11-01",
+    "geprueft": "2026-11-08",
+    "aktualisiert": "2026-11-08",
     "seo_titel": "Materialbestellung für Baustellen als Entwurf | Meyssens",
     "seo_beschreibung": "Bestellentwürfe aus Bauzeitplan und Mengen, der Polier bestätigt Menge und Termin. Für Schweizer Bauunternehmen. Jetzt unverbindlich anfragen.",
     "faq": [
@@ -1104,8 +1092,8 @@
     "name": "Fälligkeitsliste für Kontrollen und Wartungen",
     "kurzbeschreibung": "Die Fälligkeitsliste führt die Anlagen Ihrer Kundschaft mit Kontrollperiode und nächstem Kontrolldatum und legt rechtzeitig ein Anschreiben an die Eigentümerschaft als Entwurf an. Verschickt wird nichts automatisch. Der Betrieb entscheidet, wer angeschrieben wird.",
     "problem": "Elektrische Installationen müssen periodisch kontrolliert werden, je nach Art der Installation alle 1, 5, 10 oder 20 Jahre. Mindestens sechs Monate vor Ablauf der Kontrollperiode fordert die Netzbetreiberin die Eigentümerschaft schriftlich auf, den Sicherheitsnachweis einzureichen; die Frist kann höchstens bis ein Jahr nach Ablauf der Kontrollperiode verlängert werden (ESTI, Infoblatt von 2017). Für die Fristen ist allein die Eigentümerschaft verantwortlich. Betriebe mit Wartungskundschaft führen die Termine trotzdem oft in Tabellen oder gar nicht, und Anschreiben entstehen einzeln; das ist eine Einschätzung.",
-    "loesung": "Der Betrieb erfasst pro Anlage Adresse, Eigentümerschaft, Art der Installation, Kontrollperiode und das Datum der letzten Kontrolle oder Abnahme. Der Baustein berechnet daraus das nächste Kontrolldatum und zeigt eine Liste, sortiert nach Fälligkeit. Für Anlagen, deren Kontrolle in den nächsten Monaten fällig wird, legt er ein Anschreiben an die Eigentümerschaft als Entwurf an. Der Entwurf weist darauf hin, dass die periodische Kontrolle ein unabhängiges Kontrollorgan macht. Bei Neuinstallationen mit einer Kontrollperiode unter 20 Jahren erinnert er an die Abnahmekontrolle innerhalb von sechs Monaten nach der Übernahme, wie sie die NIV in der von Swisscom zitierten Fassung verlangt.",
-    "mensch": "Wer angeschrieben wird und wann, entscheidet der Betrieb; er prüft jeden Entwurf und verschickt ihn selbst. Welche Kontrollperiode für eine Anlage gilt, steht im Anhang der NIV. Die Zuordnung prüft ein Mensch, der Baustein übernimmt nur den eingetragenen Wert. Wer eine Installation geplant, erstellt, geändert oder instand gestellt hat, darf sie laut ESTI nicht periodisch kontrollieren; das beachtet der Betrieb bei Wartungsverträgen.",
+    "loesung": "Der Betrieb erfasst pro Anlage Adresse, Eigentümerschaft, Art der Installation, Kontrollperiode und das Datum der letzten Kontrolle oder Abnahme. Der Baustein berechnet daraus das nächste Kontrolldatum und zeigt eine Liste, sortiert nach Fälligkeit. Für Anlagen, deren Kontrolle in den nächsten Monaten fällig wird, legt er ein Anschreiben an die Eigentümerschaft als Entwurf an. Der Entwurf weist darauf hin, dass die periodische Kontrolle ein unabhängiges Kontrollorgan macht.",
+    "mensch": "Wer angeschrieben wird und wann, entscheidet der Betrieb; er prüft jeden Entwurf und verschickt ihn selbst. Welche Kontrollperiode für eine Anlage gilt, prüft ein Mensch, der Baustein übernimmt nur den eingetragenen Wert. Wer eine Installation geplant, erstellt, geändert oder instand gestellt hat, darf sie laut ESTI nicht periodisch kontrollieren; das beachtet der Betrieb bei Wartungsverträgen.",
     "fuer_wen": "Für Elektroinstallationsbetriebe mit Wartungs- und Servicekundschaft. Für Betriebe, die Kontrolltermine heute in Excel oder auf Papier führen.",
     "aufwand": "klein",
     "personendaten": true,
@@ -1114,21 +1102,17 @@
       {
         "titel": "ESTI, Infoblatt Periodische Kontrolle der elektrischen Installationen (Oktober 2017)",
         "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/Infoblatt_Periodische_Kontrolle_de.pdf"
-      },
-      {
-        "titel": "Swisscom, Factsheet Sicherheitsnachweis (SiNa), Auszüge aus der NIV (Stand 14.06.2017)",
-        "url": "https://www.swisscom.ch/content/dam/assets/about/sicherheit/sicherheitskonzept-elektro/documents/siko-elektro-factsheet-003-sicherheitsnachweis.pdf"
       }
     ],
     "status": "Pilotphase",
-    "geprueft": "2026-10-28",
-    "aktualisiert": "2026-11-01",
+    "geprueft": "2026-11-08",
+    "aktualisiert": "2026-11-08",
     "seo_titel": "Fälligkeitsliste für periodische Kontrollen | Meyssens",
     "seo_beschreibung": "Kontrollperioden und nächste Termine pro Anlage, Anschreiben an die Eigentümerschaft als Entwurf, Versand durch den Betrieb. Jetzt unverbindlich anfragen.",
     "faq": [
       {
         "frage": "Wie oft müssen elektrische Installationen kontrolliert werden?",
-        "antwort": "Je nach Art der Installation alle 1, 5, 10 oder 20 Jahre; die Zuordnung steht im Anhang der NIV. Installationen mit einer Periode von 10 oder 20 Jahren sind laut ESTI zusätzlich bei jeder Handänderung zu kontrollieren, wenn seit der letzten Kontrolle mehr als fünf Jahre vergangen sind."
+        "antwort": "Je nach Art der Installation alle 1, 5, 10 oder 20 Jahre. Installationen mit einer Periode von 10 oder 20 Jahren sind laut ESTI zusätzlich bei jeder Handänderung zu kontrollieren, wenn seit der letzten Kontrolle mehr als fünf Jahre vergangen sind."
       },
       {
         "frage": "Wer ist für die Frist verantwortlich?",
