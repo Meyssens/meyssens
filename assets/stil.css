@@ -239,8 +239,10 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .scrolly.an .schritt{display:contents}
   .scrolly.an .schritt-text{grid-column:1;grid-row:1 / -1;position:sticky;top:calc(50vh - 9rem);align-self:start;opacity:0;transform:translateY(16px);transition:opacity .5s var(--weich),transform .5s var(--weich);pointer-events:none;margin:0}
   .scrolly.an .schritt.aktiv .schritt-text,.scrolly.an .schritt-text:focus-within{opacity:1;transform:none;pointer-events:auto}
-  .scrolly.an .schritt-bild{grid-column:2;min-height:78vh;display:flex;align-items:center;opacity:.35;transform:scale(.96);transition:opacity .6s var(--weich),transform .6s var(--weich)}
-  .scrolly.an .schritt.aktiv .schritt-bild{opacity:1;transform:none}
+  /* Nicht aktive Ansichten: leicht abgeblendet, entsättigt und verkleinert. Deckkraft nicht unter .9,
+     sonst fällt der Text darin unter 4.5:1 (gemessen mit kontrast_buttons.py und Lighthouse) */
+  .scrolly.an .schritt-bild{grid-column:2;min-height:78vh;display:flex;align-items:center;opacity:.9;filter:saturate(.35);transform:scale(.94);transition:opacity .6s var(--weich),filter .6s var(--weich),transform .6s var(--weich)}
+  .scrolly.an .schritt.aktiv .schritt-bild{opacity:1;filter:none;transform:none}
   .scrolly.an .schritt-bild{grid-row:var(--z)}
   .scrolly.an .schritt:last-child .schritt-bild{min-height:0;padding-top:clamp(3rem,10vh,6rem)}
   .scrolly.an .schritt-bild .geraet{width:100%}
@@ -690,3 +692,68 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .js .bpanel{padding:1.75rem}
 }
 :where(main:has(#branchen-wahl) a,main:has(#branchen-wahl) button){transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .25s ease,opacity .2s ease}
+
+/* Unternehmen: Abschnitt "Apps für Ihr Unternehmen" (Zeitachse, Handy-Beispiel, Ideen-Kacheln).
+   Bewegung nur ohne prefers-reduced-motion; alle Grössen fest, damit nichts springt. */
+.apps-raster{display:grid;gap:clamp(2.5rem,5vw,4rem);align-items:center}
+@media(min-width:900px){.apps-raster{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}}
+.apps .s-lead{margin-bottom:0}
+.apps-plattformen{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:1.5rem 0 0;padding:0}
+.apps-plattformen li{font-size:.85rem;font-weight:500;color:var(--ink2);background:var(--grau);border:1px solid var(--rand);border-radius:999px;padding:.35rem .9rem}
+.stil .apps-zeit-titel{font-size:1.15rem;margin:2.5rem 0 1.25rem}
+.apps-zeit{list-style:none;margin:0;padding:0;position:relative;max-width:34rem}
+.apps-zeit li{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr);gap:1rem;padding-bottom:1.5rem}
+.apps-zeit li:last-child{padding-bottom:0}
+.apps-zeit li:not(:last-child)::before{content:"";position:absolute;left:19px;top:46px;bottom:6px;width:2px;border-radius:1px;background:linear-gradient(var(--blue),var(--blue-20));transform-origin:top}
+.apps-marke{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:600;font-size:.95rem;box-shadow:0 0 0 6px #fff}
+.stil .apps-zeit h4{font-size:1.05rem;font-weight:600;margin:.45rem 0 .25rem;color:var(--ink)}
+.apps-zeit p{margin:0;color:var(--ink2);line-height:1.65}
+.apps-cta{margin:2rem 0 0}
+
+/* Handy-Beispiel in reinem CSS */
+.apps-handy{margin:0;display:flex;flex-direction:column;align-items:center;gap:1rem}
+.handy{width:min(270px,66vw);aspect-ratio:9/18.5;background:var(--nacht);border-radius:44px;padding:11px;box-shadow:0 2px 4px rgba(10,10,60,.08),0 40px 90px -40px rgba(10,10,60,.55);position:relative}
+.handy::before{content:"";position:absolute;top:20px;left:50%;width:78px;height:22px;margin-left:-39px;border-radius:999px;background:var(--nacht);z-index:1}
+.handy-schirm{height:100%;border-radius:34px;background:linear-gradient(180deg,#f3f3ff 0%,#fff 38%);padding:60px 16px 18px;display:flex;flex-direction:column;gap:14px;overflow:hidden;font-size:.82rem;color:var(--ink)}
+.handy-kopf{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.handy-titel{font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
+.handy-beispiel{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);background:#fff;border:1px solid var(--blue-20);border-radius:999px;padding:.2rem .55rem}
+.handy-karte{background:#fff;border:1px solid var(--rand);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 8px 20px -14px rgba(10,10,60,.35)}
+.handy-klein{font-size:.72rem;font-weight:600;color:var(--ink3);text-transform:uppercase;letter-spacing:.06em}
+.handy-balken{display:block;height:8px;width:var(--w);border-radius:4px;background:#e4e4ef}
+.handy-liste{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.handy-liste li{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--rand);border-radius:12px;padding:9px 10px;color:var(--ink2)}
+.handy-liste li::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;border:1.5px solid #9a9ab8;box-sizing:border-box}
+.handy-liste li.ok::before{border:0;background:var(--blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4.5 8.2 2.3 2.3 4.7-4.9' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.handy-fotos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.handy-fotos i{aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,#dcdcff,#f0f0f7)}
+.handy-fotos i:nth-child(2){background:linear-gradient(135deg,#e6e6f2,#c9c9ff)}
+.handy-fotos i:nth-child(3){background:linear-gradient(135deg,#f0f0f7,#d6d6ee)}
+.handy-knopf{margin-top:auto;display:block;text-align:center;background:var(--blue);color:#fff;font-weight:600;border-radius:14px;padding:11px}
+.apps-hinweis{font-size:.8rem;color:var(--ink3)}
+
+/* Ideen-Kacheln */
+.apps-ideen{margin-top:clamp(3rem,6vw,4.5rem)}
+.stil .apps-ideen h3{font-size:1.15rem;margin:0 0 1.25rem}
+.apps-kacheln{list-style:none;margin:0;padding:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.apps-kacheln li{background:var(--grau);border:1px solid var(--rand);border-radius:20px;padding:1.4rem 1.3rem;transition:box-shadow .3s var(--weich),border-color .3s}
+.apps-kacheln li:hover{border-color:var(--blue-20);box-shadow:0 18px 40px -26px rgba(10,10,60,.35)}
+.apps-ic{color:var(--blue);display:block;margin-bottom:.9rem}
+.stil .apps-kacheln h4{font-size:1rem;font-weight:600;margin:0 0 .35rem;color:var(--ink)}
+.apps-kacheln p{margin:0;font-size:.93rem;line-height:1.6;color:var(--ink2)}
+
+@media (prefers-reduced-motion:no-preference){
+  .handy{animation:apps-schweben 7s ease-in-out infinite}
+  .js .apps-zeit li::before{transform:scaleY(0);transition:transform .5s var(--weich)}
+  .js .apps-zeit.on li::before{transform:none}
+  .js .apps-zeit.on li:nth-child(1)::before{transition-delay:.4s}
+  .js .apps-zeit.on li:nth-child(2)::before{transition-delay:.8s}
+  .js .apps-zeit li{opacity:0;transform:translateY(14px);transition:opacity .6s var(--weich),transform .6s var(--weich)}
+  .js .apps-zeit .apps-marke{transform:scale(.4);transition:transform .5s var(--weich)}
+  .js .apps-zeit.on li{opacity:1;transform:none}
+  .js .apps-zeit.on .apps-marke{transform:none}
+  .js .apps-zeit.on li:nth-child(1),.js .apps-zeit.on li:nth-child(1) .apps-marke{transition-delay:.15s}
+  .js .apps-zeit.on li:nth-child(2),.js .apps-zeit.on li:nth-child(2) .apps-marke{transition-delay:.55s}
+  .js .apps-zeit.on li:nth-child(3),.js .apps-zeit.on li:nth-child(3) .apps-marke{transition-delay:.95s}
+}
+@keyframes apps-schweben{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}

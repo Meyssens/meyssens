@@ -44,6 +44,8 @@ h1 .hl{background:linear-gradient(90deg,#0000ff 0%,#4444ff 40%,#0000ff 80%);back
 .btns{display:flex;gap:.875rem;flex-wrap:wrap;margin-bottom:3rem}
 .btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:.875rem 1.75rem;border-radius:var(--r-sm);font-size:.9rem;font-weight:500;text-decoration:none;border:none;cursor:pointer;font-family:'Inter','Inter Ersatz',sans-serif;transition:background .2s,transform .15s;}
 .btn-p:hover{background:var(--blue-h);transform:translateY(-1px)}
+/* Weisser Text auf Buttons in allen Zuständen, auch wenn eine Linkfarb-Regel spezifischer ist */
+a.btn-p:is(:link,:visited,:hover,:focus,:active),button.btn-p{color:#fff}
 .btn-s{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--ink);border:1px solid var(--line);padding:.875rem 1.75rem;border-radius:var(--r-sm);font-size:.9rem;font-weight:400;text-decoration:none;transition:border-color .2s,color .2s,transform .15s;}
 .btn-s:hover{border-color:var(--blue-20);color:var(--blue);transform:translateY(-1px)}
 .proof{display:flex;align-items:center;gap:10px}
@@ -378,7 +380,8 @@ a.feat.tile{text-decoration:none;color:inherit;cursor:pointer}
 .artikel-text p{margin-bottom:1rem}
 .artikel-text ul,.artikel-text ol{margin:0 0 1.25rem 1.3rem}
 .artikel-text li{margin-bottom:.45rem;padding-left:.2rem}
-.artikel-text a{color:var(--blue);text-underline-offset:2px}
+/* Textlinks blau, Buttons behalten ihre eigene Textfarbe */
+.artikel-text a:not(.btn-p):not(.btn-s):not(.nav-btn){color:var(--blue);text-underline-offset:2px}
 .artikel-text strong{font-weight:600;color:var(--ink)}
 .artikel-text .note{margin:1.5rem 0}
 .artikel-text .note p:last-child{margin-bottom:0}

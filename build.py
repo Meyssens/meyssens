@@ -813,7 +813,7 @@ OG_STANDARD = ("/og-image.png", "Meyssens – Digitale Infrastruktur für Organi
 # Stand der Seiten ohne eigenes Prüfdatum (Startseite, Übersichten, Über uns, Produkte): bei inhaltlichen Änderungen anpassen
 SEITEN_STAND = "2026-10-28"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/branchen/": "2026-11-01"}
+SEITEN_GEAENDERT = {"/branchen/": "2026-11-01", "/unternehmen/": "2026-11-11"}
 
 
 def stand(eintrag, pruef):
@@ -1594,7 +1594,7 @@ def main():
                 print("Hinweis: %s/%s steht nicht in %s" % (ordner, d.name, quelle))
 
     # lastmod: Prüfdatum der Seite, sonst SEITEN_STAND (Startseite, Übersichten, Über uns, Produkte ohne Prüfdatum)
-    seiten = [("/", "1.0", SEITEN_STAND), ("/gemeinden/", "0.9", SEITEN_STAND), ("/unternehmen/", "0.8", SEITEN_STAND),
+    seiten = [("/", "1.0", SEITEN_STAND), ("/gemeinden/", "0.9", SEITEN_STAND), ("/unternehmen/", "0.8", SEITEN_GEAENDERT["/unternehmen/"]),
               ("/branchen/", "0.7", SEITEN_GEAENDERT["/branchen/"]), ("/produkte/", "0.7", SEITEN_STAND), ("/ratgeber/", "0.7", SEITEN_STAND),
               ("/ueber-uns/", "0.5", SEITEN_STAND)]
     seiten += [("/produkte/%s/" % p["slug"], "0.6", stand(p, p.get("geprueft", SEITEN_STAND))) for p in produkte]
