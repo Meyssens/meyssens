@@ -16,3 +16,4 @@ exclude:
   - vorlage_404.html
   - vorlage_seite.html
   - bilder.py
+  - kontrast_buttons.py
