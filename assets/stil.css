@@ -239,8 +239,10 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .scrolly.an .schritt{display:contents}
   .scrolly.an .schritt-text{grid-column:1;grid-row:1 / -1;position:sticky;top:calc(50vh - 9rem);align-self:start;opacity:0;transform:translateY(16px);transition:opacity .5s var(--weich),transform .5s var(--weich);pointer-events:none;margin:0}
   .scrolly.an .schritt.aktiv .schritt-text,.scrolly.an .schritt-text:focus-within{opacity:1;transform:none;pointer-events:auto}
-  .scrolly.an .schritt-bild{grid-column:2;min-height:78vh;display:flex;align-items:center;opacity:.35;transform:scale(.96);transition:opacity .6s var(--weich),transform .6s var(--weich)}
-  .scrolly.an .schritt.aktiv .schritt-bild{opacity:1;transform:none}
+  /* Nicht aktive Ansichten: leicht abgeblendet, entsättigt und verkleinert. Deckkraft nicht unter .9,
+     sonst fällt der Text darin unter 4.5:1 (gemessen mit kontrast_buttons.py und Lighthouse) */
+  .scrolly.an .schritt-bild{grid-column:2;min-height:78vh;display:flex;align-items:center;opacity:.9;filter:saturate(.35);transform:scale(.94);transition:opacity .6s var(--weich),filter .6s var(--weich),transform .6s var(--weich)}
+  .scrolly.an .schritt.aktiv .schritt-bild{opacity:1;filter:none;transform:none}
   .scrolly.an .schritt-bild{grid-row:var(--z)}
   .scrolly.an .schritt:last-child .schritt-bild{min-height:0;padding-top:clamp(3rem,10vh,6rem)}
   .scrolly.an .schritt-bild .geraet{width:100%}

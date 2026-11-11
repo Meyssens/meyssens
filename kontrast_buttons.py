@@ -11,7 +11,8 @@ Elemente: button, input[type=submit|button|reset], [role=button], Links mit "btn
 Zustände: normal, hover, focus, active (per DevTools-Protokoll erzwungen, inkl. Vorfahren),
 Breiten: 1280 px (Desktop) und 390 px (Handy), jeweils hell und mit prefers-color-scheme: dark.
 Textfarbe: jede Textstelle im Element (auch in <span>), Hintergrund: Farben der Vorfahren übereinander
-gelegt; bei Verläufen zählt die ungünstigste Verlaufsfarbe. Grenze 4.5:1 (Text), 3:1 für Buttons nur mit Symbol.
+gelegt; bei Verläufen zählt die ungünstigste Verlaufsfarbe. Abgeblendete Vorfahren (opacity) werden eingerechnet,
+fast unsichtbare (unter 5 %) übersprungen; Einblende-Elemente (.r) gelten als eingeblendet. Grenze 4.5:1 (Text), 3:1 für Buttons nur mit Symbol.
 Ausgabe: alles unter der Grenze, gruppiert. Exitcode 1, wenn etwas unter der Grenze liegt.
 Nur sichtbare Elemente; geschlossene Dialoge und das zugeklappte Handy-Menü werden nicht geprüft.
 """
@@ -97,9 +98,23 @@ MESSEN = r"""
     return {basis, bild};
   };
 
+  // Deckkraft: Produkt aller opacity-Werte bis zur Wurzel; der abgeblendete Teil wird über den Hintergrund
+  // hinter dem obersten abgeblendeten Vorfahren gelegt (wie im Browser sichtbar)
+  const abblendung = e => {
+    let o = 1, oberster = null;
+    for (let n = e; n && n.nodeType === 1; n = n.parentElement) {
+      const op = parseFloat(getComputedStyle(n).opacity);
+      if (op < 1) { o *= op; oberster = n; }
+    }
+    if (!oberster) return {o: 1, aussen: null};
+    const aussen = oberster.parentElement ? hintergruende(oberster.parentElement).basis : [[255, 255, 255, 1]];
+    return {o, aussen};
+  };
   const raus = [];
   document.querySelectorAll('[data-ka]').forEach(e => {
     const {basis, bild} = hintergruende(e);
+    const {o, aussen} = abblendung(e);
+    if (o < 0.05) return;  // praktisch unsichtbar (z. B. ausgeblendeter Schritt), wie bei axe nicht gewertet
     // Textfarben: Elternelemente aller sichtbaren Textstellen
     const farben = new Map();
     const tw = document.createTreeWalker(e, NodeFilter.SHOW_TEXT);
@@ -119,11 +134,12 @@ MESSEN = r"""
       const fg = parse(c);
       if (!fg) continue;
       for (const b of basis) {
-        const fgDeckend = fg[3] < 1 ? ueber(fg, b) : fg;
-        const k = kontrast(fgDeckend, b);
-        if (!schlechtest || k < schlechtest.k) {
-          // Hintergrund des Textes selbst (z. B. Span mit eigenem Hintergrund) berücksichtigen
-          schlechtest = {k, fg: hex(fgDeckend), bg: hex(b)};
+        const fg0 = fg[3] < 1 ? ueber(fg, b) : fg;
+        for (const a of (aussen || [null])) {
+          const fgDeckend = a ? ueber([...fg0.slice(0, 3), o], a) : fg0;
+          const bgDeckend = a ? ueber([...b.slice(0, 3), o], a) : b;
+          const k = kontrast(fgDeckend, bgDeckend);
+          if (!schlechtest || k < schlechtest.k) schlechtest = {k, fg: hex(fgDeckend), bg: hex(bgDeckend)};
         }
       }
     }
@@ -169,6 +185,8 @@ async def pruefe_seite(context, basis, pfad):
     page = await context.new_page()
     await page.goto(basis + pfad, wait_until="load")
     await page.add_style_tag(content="*,*::before,*::after{transition:none!important;animation:none!important}")
+    # Einblende-Elemente (.r) als eingeblendet behandeln, sonst wären sie beim Messen noch unsichtbar
+    await page.evaluate("document.querySelectorAll('.r').forEach(e => e.classList.add('on'))")
     await page.evaluate(MARKIEREN)
     cdp = await context.new_cdp_session(page)
     await cdp.send("DOM.enable")
