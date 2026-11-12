@@ -214,7 +214,7 @@ def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
     zahlen = ('<div class="zahlen r">\n%s\n</div>\n'
               '<p class="zahlen-hinweis">Gezählt aus den Angaben dieser Website. Meyssens ist ein Einzelunternehmen '
               'in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen.</p>'
-              % "\n".join('  <div class="zahl"><strong>%d</strong><span>%s</span></div>' % z for z in zahlen))
+              % "\n".join('  <div class="zahl"><strong data-zaehler="%d">%d</strong><span>%s</span></div>' % (z[0], z[0], z[1]) for z in zahlen))
     for name, inhalt in (("held", held), ("demos", "\n".join(demos)), ("planung", planung), ("zahlen", zahlen)):
         start = setze_auto(start, name, inhalt)
     return start
@@ -813,7 +813,7 @@ OG_STANDARD = ("/og-image.png", "Meyssens – Digitale Infrastruktur für Organi
 # Stand der Seiten ohne eigenes Prüfdatum (Startseite, Übersichten, Über uns, Produkte): bei inhaltlichen Änderungen anpassen
 SEITEN_STAND = "2026-10-28"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/branchen/": "2026-11-01", "/unternehmen/": "2026-11-11"}
+SEITEN_GEAENDERT = {"/": "2026-11-12", "/branchen/": "2026-11-01", "/unternehmen/": "2026-11-11"}
 
 
 def stand(eintrag, pruef):
@@ -1594,7 +1594,7 @@ def main():
                 print("Hinweis: %s/%s steht nicht in %s" % (ordner, d.name, quelle))
 
     # lastmod: Prüfdatum der Seite, sonst SEITEN_STAND (Startseite, Übersichten, Über uns, Produkte ohne Prüfdatum)
-    seiten = [("/", "1.0", SEITEN_STAND), ("/gemeinden/", "0.9", SEITEN_STAND), ("/unternehmen/", "0.8", SEITEN_GEAENDERT["/unternehmen/"]),
+    seiten = [("/", "1.0", SEITEN_GEAENDERT["/"]), ("/gemeinden/", "0.9", SEITEN_STAND), ("/unternehmen/", "0.8", SEITEN_GEAENDERT["/unternehmen/"]),
               ("/branchen/", "0.7", SEITEN_GEAENDERT["/branchen/"]), ("/produkte/", "0.7", SEITEN_STAND), ("/ratgeber/", "0.7", SEITEN_STAND),
               ("/ueber-uns/", "0.5", SEITEN_STAND)]
     seiten += [("/produkte/%s/" % p["slug"], "0.6", stand(p, p.get("geprueft", SEITEN_STAND))) for p in produkte]

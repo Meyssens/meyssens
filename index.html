@@ -59,32 +59,31 @@
 <body class="stil">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <!-- kopf:start -->
-<nav id="nav">
-  <a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
+<nav id="nav" aria-label="Hauptnavigation">
+  <a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – zur Startseite"></a>
   <ul class="nav-items">
     <li><a href="/gemeinden/">Für Gemeinden</a></li>
-    <li><a href="/unternehmen/">Für Unternehmen und Vereine</a></li>
+    <li><a href="/unternehmen/">Für Unternehmen</a></li>
     <li><a href="/ueber-uns/">Über uns</a></li>
-    <li><a href="mailto:lionel@meyssens.ch" class="nav-btn">Kontakt</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  <a href="mailto:lionel@meyssens.ch" class="nav-btn nav-kontakt">Kontakt</a>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <a href="/gemeinden/">Für Gemeinden</a>
   <a href="/unternehmen/">Für Unternehmen und Vereine</a>
   <a href="/ueber-uns/">Über uns</a>
-  <a href="mailto:lionel@meyssens.ch" class="nav-btn">Kontakt</a>
 </div>
 <!-- kopf:ende -->
 
 <main id="main">
 <section class="page-hero held">
-  <div class="chip"><span class="chip-dot"></span><span>Jetzt Pilotpartner werden</span></div>
-  <h1>Digitale Infrastruktur<br>für <span class="hl">Organisationen.</span></h1>
-  <p class="lead">Meyssens entwickelt digitale Werkzeuge, die den Alltag von Organisationen einfacher machen: Bürgerbeteiligung für Gemeinden und schlanke Lösungen für Unternehmen und Vereine. Persönlich begleitet, ohne unnötigen Aufwand.</p>
+  <div class="chip"><span class="chip-dot"></span><span>Pilot: drei Monate kostenlos</span></div>
+  <h1>Mehr <span class="hl">Mitwirkung,</span> weniger Büroarbeit.</h1>
+  <p class="lead">Meyssens richtet für Gemeinden eine Beteiligungsplattform und für Unternehmen und Vereine schlanke digitale Abläufe ein, persönlich begleitet.</p>
   <div class="held-knoepfe">
-    <a href="#ausprobieren" class="btn-p">Ausprobieren <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a href="#wege" class="btn-s">Bereiche ansehen</a>
+    <a href="/gemeinden/" class="btn-p held-wahl"><svg class="wahl-symbol" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>Für Gemeinden <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="/unternehmen/" class="btn-p btn-dunkel held-wahl"><svg class="wahl-symbol" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Für Unternehmen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </section>
 
@@ -95,21 +94,28 @@
   <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Meyssens</span><span class="beispiel">Beispiel</span></div>
   <div class="geraet-inhalt">
 <div class="held-raster">
-  <div class="held-karte held-umfrage">
-    <p class="held-titel">Abstimmung</p>
-    <p class="held-frage">Soll das Vereinsfest am Samstag stattfinden?</p>
-    <div class="held-balken" style="--w:62"><span>Ja</span><b>62 %</b></div>
-    <div class="held-balken" style="--w:27"><span>Nein</span><b>27 %</b></div>
-    <div class="held-balken" style="--w:11"><span>Enthaltung</span><b>11 %</b></div>
-  </div>
   <div class="held-karte held-plan">
-    <p class="held-titel">Wärme-Interessenkarte</p>
-    <svg viewBox="0 0 200 120" aria-hidden="true" focusable="false"><rect width="200" height="120" rx="8" class="plan-land"/><path class="plan-wald" d="M0 0H58Q50 30 60 52Q30 56 0 50Z"/><path class="plan-feld" d="M168 0H200V120H170Q164 60 168 0Z"/><g class="plan-strasse"><path d="M0 70H200"/><path d="M110 0V120"/></g><g class="plan-haeuser"><rect class="haus" x="70" y="54" width="12" height="10" rx="1"/><rect class="haus" x="88" y="54" width="12" height="10" rx="1"/><rect class="haus" x="122" y="54" width="12" height="10" rx="1"/><rect class="haus" x="140" y="54" width="12" height="10" rx="1"/><rect class="haus" x="72" y="77" width="14" height="10" rx="1"/><rect class="haus" x="124" y="77" width="12" height="10" rx="1"/><rect class="haus" x="142" y="77" width="14" height="10" rx="1"/><rect class="haus" x="94" y="20" width="10" height="10" rx="1"/><rect class="haus" x="116" y="22" width="10" height="10" rx="1"/><rect class="haus" x="94" y="96" width="10" height="10" rx="1"/></g><g class="held-pins"><path d="M94 59c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z" transform="translate(-5 -10)"/><path d="M94 59c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z" transform="translate(49 13)"/><path d="M94 59c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z" transform="translate(21 -42)"/></g></svg>
+    <p class="held-titel">Gemeinde · Ideen auf der Karte</p>
+    <div class="held-plan-bild">
+    <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="200" height="120" rx="8" class="plan-land"/><path class="plan-wald" d="M0 0H58Q50 30 60 52Q30 56 0 50Z"/><path class="plan-feld" d="M168 0H200V120H170Q164 60 168 0Z"/><path class="plan-bach" d="M0 104Q40 92 70 104T140 106T200 98"/><g class="plan-strasse"><path d="M0 70H200"/><path d="M110 0V120"/></g><g class="plan-haeuser"><rect class="haus" x="70" y="54" width="12" height="10" rx="1"/><rect class="haus" x="88" y="54" width="12" height="10" rx="1"/><rect class="haus" x="122" y="54" width="12" height="10" rx="1"/><rect class="haus" x="140" y="54" width="12" height="10" rx="1"/><rect class="haus" x="72" y="77" width="14" height="10" rx="1"/><rect class="haus" x="124" y="77" width="12" height="10" rx="1"/><rect class="haus" x="142" y="77" width="14" height="10" rx="1"/><rect class="haus" x="94" y="20" width="10" height="10" rx="1"/><rect class="haus" x="116" y="22" width="10" height="10" rx="1"/><rect class="haus" x="94" y="84" width="10" height="10" rx="1"/></g><g class="held-pins"><g class="held-pin" style="--i:0" transform="translate(84 46)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g><g class="held-pin" style="--i:1" transform="translate(138 64)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g><g class="held-pin" style="--i:2" transform="translate(110 18)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g><g class="held-pin" style="--i:3" transform="translate(76 86)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g><g class="held-pin" style="--i:4" transform="translate(150 92)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g></g></svg>
+    <p class="held-blase"><b>Sitzbank am Bach</b><span>Idee · 12 Unterstützungen</span></p>
+    </div>
   </div>
-  <div class="held-karte held-chat">
-    <p class="held-titel">Website-Chatbot</p>
-    <p class="msg ich">Welche Produkte sind in der Pilotphase?</p>
-    <p class="msg bot">Umfragen &amp; Abstimmungen, der Website-Chatbot und die Wärme-Interessenkarte, dazu drei Bausteine für Elektro, Treuhand und Bau.</p>
+  <div class="held-karte held-umfrage">
+    <p class="held-titel">Gemeinde · Abstimmung</p>
+    <p class="held-frage">Soll der Dorfplatz an Markttagen autofrei sein?</p>
+    <div class="held-balken" style="--w:64;--i:0"><span>Ja</span><b>64 %</b></div>
+    <div class="held-balken" style="--w:29;--i:1"><span>Nein</span><b>29 %</b></div>
+    <div class="held-balken" style="--w:7;--i:2"><span>Enthaltung</span><b>7 %</b></div>
+  </div>
+  <div class="held-karte held-ablauf">
+    <p class="held-titel">Betrieb · Belegeingang</p>
+    <ul class="held-schritte">
+      <li style="--i:0"><span class="held-haken"></span>Beleg per E-Mail erhalten</li>
+      <li style="--i:1"><span class="held-haken"></span>Frist im Kalender eingetragen</li>
+      <li style="--i:2"><span class="held-haken"></span>Erinnerung an Kundin vorbereitet</li>
+    </ul>
+    <p class="held-notiz">Sie prüfen und geben frei.</p>
   </div>
 </div>
   </div>
@@ -119,20 +125,49 @@
 </section>
 
 <section id="wege">
+  <div class="kopf-mitte r">
+    <span class="s-label">Zwei Bereiche</span>
+    <h2>Was suchen Sie?</h2>
+  </div>
   <div class="ways r">
     <a href="/gemeinden/" class="way blue">
       <span class="s-label">Für Gemeinden</span>
-      <h2>Digitale Bürgerbeteiligung</h2>
-      <p>Eine Beteiligungsplattform auf Basis von Decidim: Ideen und Hinweise auf der Karte, Umfragen, partizipatives Budget und Wärmeplanung mit Bürgerbeteiligung. Zum Einstieg mit einem unverbindlichen Pilot.</p>
-      <span class="way-go">Zur Gemeinden-Seite <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h3>Digitale Bürgerbeteiligung</h3>
+      <p>Eine Beteiligungsplattform auf Basis von Decidim, für Einwohnerinnen und Einwohner einfach zu bedienen, für die Verwaltung an einem Ort.</p>
+      <ul class="way-liste">
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ideen und Hinweise auf der Karte</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Umfragen, Abstimmungen und Mängelmelder</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Partizipatives Budget</span></li>
+      </ul>
+      <span class="way-go">Zur Gemeinden-Seite <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
     <a href="/unternehmen/" class="way">
       <span class="s-label">Für Unternehmen und Vereine</span>
-      <h2>Werkzeuge für den Alltag</h2>
-      <p>Umfragen, Newsletter, Vereinswebsite, Mail-Assistent und weitere Werkzeuge für Kommunikation und Organisation. Für einige Produkte suchen wir jetzt Pilotpartner, weitere richten wir individuell auf Anfrage ein.</p>
-      <span class="way-go">Zu den Produkten <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h3>Werkzeuge für den Alltag</h3>
+      <p>Digitale Abläufe, die wiederkehrende Büroarbeit abnehmen, abgestimmt auf Ihre Branche.</p>
+      <ul class="way-liste">
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Umfragen, Newsletter und Website-Chatbot</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bausteine für Treuhand, Elektro, Bau und Praxen</span></li>
+        <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Apps nach Mass für Ihren Betrieb</span></li>
+      </ul>
+      <span class="way-go">Zu den Produkten <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
   </div>
+</section>
+
+<section id="einstieg" class="flaeche">
+  <div class="kopf-mitte r">
+    <span class="s-label">So starten Sie</span>
+    <h2>In vier Schritten zum Pilot.</h2>
+    <p class="s-lead">Für Gemeinden und Betriebe gleich: Sie testen drei Monate kostenlos und entscheiden danach, ob es weitergeht.</p>
+  </div>
+  <ol class="zeitachse" data-zeitachse>
+    <li class="r"><span class="za-punkt" aria-hidden="true">1</span><h3>Kurzes Gespräch</h3><p>Sie schildern Ihr Vorhaben per E-Mail oder in einem Gespräch. Wir klären, was sinnvoll ist.</p></li>
+    <li class="r"><span class="za-punkt" aria-hidden="true">2</span><h3>Einrichtung</h3><p>Wir richten die Plattform oder den Ablauf mit einem ersten konkreten Projekt für Sie ein.</p></li>
+    <li class="r"><span class="za-punkt" aria-hidden="true">3</span><h3>Drei Monate Pilot</h3><p>Kostenlos und persönlich begleitet. Sie sehen im Alltag, ob es Ihnen Arbeit abnimmt.</p></li>
+    <li class="r"><span class="za-punkt" aria-hidden="true">4</span><h3>Entscheid</h3><p>Weiterführen oder beenden, ganz wie Sie möchten. Danach jederzeit kündbar.</p></li>
+  </ol>
+  <div class="mitte-knopf r"><a href="mailto:lionel@meyssens.ch" class="btn-p">Pilot anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
 </section>
 
 <section id="ausprobieren" class="flaeche">
@@ -423,14 +458,22 @@
   </div>
 <!-- auto:zahlen:start -->
 <div class="zahlen r">
-  <div class="zahl"><strong>8</strong><span>Produkte</span></div>
-  <div class="zahl"><strong>3</strong><span>in der Pilotphase</span></div>
-  <div class="zahl"><strong>5</strong><span>individuell auf Anfrage</span></div>
-  <div class="zahl"><strong>11</strong><span>Branchenseiten</span></div>
-  <div class="zahl"><strong>10</strong><span>Ratgeber</span></div>
+  <div class="zahl"><strong data-zaehler="8">8</strong><span>Produkte</span></div>
+  <div class="zahl"><strong data-zaehler="3">3</strong><span>in der Pilotphase</span></div>
+  <div class="zahl"><strong data-zaehler="5">5</strong><span>individuell auf Anfrage</span></div>
+  <div class="zahl"><strong data-zaehler="11">11</strong><span>Branchenseiten</span></div>
+  <div class="zahl"><strong data-zaehler="10">10</strong><span>Ratgeber</span></div>
 </div>
 <p class="zahlen-hinweis">Gezählt aus den Angaben dieser Website. Meyssens ist ein Einzelunternehmen in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen.</p>
 <!-- auto:zahlen:ende -->
+</section>
+
+<section id="gespraech" class="schluss">
+  <div class="schluss-karte r">
+    <h2>Fragen oder ein konkretes Vorhaben?</h2>
+    <p>Schreiben Sie uns. Sie erhalten eine persönliche Antwort von Lionel Nickelsen.</p>
+    <div class="held-knoepfe"><a href="mailto:lionel@meyssens.ch" class="btn-p btn-hell">lionel@meyssens.ch <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  </div>
 </section>
 </main>
 
@@ -515,9 +558,16 @@ const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target
 document.querySelectorAll('.r').forEach(el=>io.observe(el))
 const hamburger=document.getElementById('hamburger')
 const mobileNav=document.getElementById('mobile-nav')
-hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileNav.classList.toggle('open')})
-function closeMobileNav(){hamburger.classList.remove('open');mobileNav.classList.remove('open')}
+function setMobileNav(auf){hamburger.classList.toggle('open',auf);mobileNav.classList.toggle('open',auf);hamburger.setAttribute('aria-expanded',auf?'true':'false')}
+function closeMobileNav(){setMobileNav(false)}
+hamburger.addEventListener('click',()=>{const auf=!mobileNav.classList.contains('open');setMobileNav(auf);if(auf){const a=mobileNav.querySelector('a');if(a)a.focus()}})
 document.addEventListener('click',(e)=>{if(!hamburger.contains(e.target)&&!mobileNav.contains(e.target))closeMobileNav()})
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mobileNav.classList.contains('open')){closeMobileNav();hamburger.focus()}})
+mobileNav.addEventListener('click',(e)=>{if(e.target.closest('a'))closeMobileNav()})
+// Aktuellen Bereich in der Navigation markieren
+document.querySelectorAll('#nav .nav-items a,#mobile-nav a').forEach(a=>{const h=a.getAttribute('href');if(h.charAt(0)==='/'&&h!=='/'&&location.pathname.indexOf(h)===0){a.classList.add('active');a.setAttribute('aria-current','page')}})
+// Zähler: nur echte Zahlen aus dem HTML, ohne reduzierte Bewegung von 0 hochzählen
+if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const zio=new IntersectionObserver(e=>e.forEach(x=>{if(!x.isIntersecting)return;zio.unobserve(x.target);const el=x.target,ziel=+el.getAttribute('data-zaehler'),t0=performance.now(),d=900;(function f(t){const k=Math.min(1,(t-t0)/d);el.textContent=Math.round(ziel*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});document.querySelectorAll('[data-zaehler]').forEach(el=>zio.observe(el))}
 
 // --- Cookie consent for Google Analytics ---
 const COOKIE_I18N = {

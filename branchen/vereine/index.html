@@ -55,21 +55,20 @@
 </head>
 <body class="stil lang">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
-<nav id="nav">
-  <a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
+<nav id="nav" aria-label="Hauptnavigation">
+  <a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – zur Startseite"></a>
   <ul class="nav-items">
     <li><a href="/gemeinden/">Für Gemeinden</a></li>
-    <li><a href="/unternehmen/">Für Unternehmen und Vereine</a></li>
+    <li><a href="/unternehmen/">Für Unternehmen</a></li>
     <li><a href="/ueber-uns/">Über uns</a></li>
-    <li><a href="mailto:lionel@meyssens.ch" class="nav-btn">Kontakt</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  <a href="mailto:lionel@meyssens.ch" class="nav-btn nav-kontakt">Kontakt</a>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <a href="/gemeinden/">Für Gemeinden</a>
   <a href="/unternehmen/">Für Unternehmen und Vereine</a>
   <a href="/ueber-uns/">Über uns</a>
-  <a href="mailto:lionel@meyssens.ch" class="nav-btn">Kontakt</a>
 </div>
 
 <main id="main" class="branche">
@@ -337,9 +336,16 @@ const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target
 document.querySelectorAll('.r').forEach(el=>io.observe(el))
 const hamburger=document.getElementById('hamburger')
 const mobileNav=document.getElementById('mobile-nav')
-hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');mobileNav.classList.toggle('open')})
-function closeMobileNav(){hamburger.classList.remove('open');mobileNav.classList.remove('open')}
+function setMobileNav(auf){hamburger.classList.toggle('open',auf);mobileNav.classList.toggle('open',auf);hamburger.setAttribute('aria-expanded',auf?'true':'false')}
+function closeMobileNav(){setMobileNav(false)}
+hamburger.addEventListener('click',()=>{const auf=!mobileNav.classList.contains('open');setMobileNav(auf);if(auf){const a=mobileNav.querySelector('a');if(a)a.focus()}})
 document.addEventListener('click',(e)=>{if(!hamburger.contains(e.target)&&!mobileNav.contains(e.target))closeMobileNav()})
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mobileNav.classList.contains('open')){closeMobileNav();hamburger.focus()}})
+mobileNav.addEventListener('click',(e)=>{if(e.target.closest('a'))closeMobileNav()})
+// Aktuellen Bereich in der Navigation markieren
+document.querySelectorAll('#nav .nav-items a,#mobile-nav a').forEach(a=>{const h=a.getAttribute('href');if(h.charAt(0)==='/'&&h!=='/'&&location.pathname.indexOf(h)===0){a.classList.add('active');a.setAttribute('aria-current','page')}})
+// Zähler: nur echte Zahlen aus dem HTML, ohne reduzierte Bewegung von 0 hochzählen
+if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const zio=new IntersectionObserver(e=>e.forEach(x=>{if(!x.isIntersecting)return;zio.unobserve(x.target);const el=x.target,ziel=+el.getAttribute('data-zaehler'),t0=performance.now(),d=900;(function f(t){const k=Math.min(1,(t-t0)/d);el.textContent=Math.round(ziel*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});document.querySelectorAll('[data-zaehler]').forEach(el=>zio.observe(el))}
 
 // --- Cookie consent for Google Analytics ---
 const COOKIE_I18N = {

@@ -9,7 +9,7 @@ function alle(sel, wo){ return Array.prototype.slice.call((wo || document).query
 
 // --- Produktansicht unter dem Hero: --p wächst beim Scrollen von 0 auf 1 ---
 alle('[data-buehne]').forEach(function(b){
-  if(ruhig || !hatIO){ b.style.setProperty('--p', 1); return; }
+  if(ruhig || !hatIO){ b.style.setProperty('--p', 1); b.classList.add('lebt'); return; }
   var an = false, raf = 0;
   function rechne(){
     raf = 0;
@@ -20,6 +20,7 @@ alle('[data-buehne]').forEach(function(b){
   function beimScrollen(){ if(!raf) raf = requestAnimationFrame(rechne); }
   rechne();
   new IntersectionObserver(function(e){
+    if(e[0].isIntersecting) b.classList.add('lebt');
     if(e[0].isIntersecting && !an){ window.addEventListener('scroll', beimScrollen, {passive:true}); an = true; rechne(); }
     else if(!e[0].isIntersecting && an){ window.removeEventListener('scroll', beimScrollen); an = false; }
   }).observe(b);
