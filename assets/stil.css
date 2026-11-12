@@ -949,7 +949,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 @media(max-width:900px){.pilot-raster{grid-template-columns:1fr}}
 
 /* Etappe 2b: Textwerte statt Zahlen in Hero- und Über-uns-Karte */
-.stil .hcard-val.hcard-val-text{font-size:clamp(1.1rem,4.6vw,1.4rem);overflow-wrap:anywhere;line-height:1.15;letter-spacing:-.02em}
+.stil .hcard-val.hcard-val-text{font-size:clamp(.85rem,3.6vw,1.4rem);line-height:1.15;letter-spacing:-.02em}
 .stil .astat-val[data-i18n="about.stat1.val"]{font-size:1.4rem;line-height:1.15;letter-spacing:-.02em}
 
 /* Etappe 3: Unternehmen- und Branchenseiten */
