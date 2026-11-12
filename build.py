@@ -246,11 +246,30 @@ def scrolly(ansichten, liste, mehr=False):
             '%s\n</div>') % (len(liste), "\n".join(schritte))
 
 
-def angebot(p):
+def vorschau(ansichten, p):
+    # Verkleinerte, nicht bedienbare Beispielansicht für Angebotskarten (Branchenseiten): Knöpfe, Links und
+    # Eingabefelder werden zu reinem Text, data-Attribute entfallen, damit assets/demos.js nichts daran bindet
+    inhalt = teil(ansichten, "demo-" + p["slug"]) or teil(ansichten, "ansicht-" + p["slug"])
+    if not inhalt:
+        return ""
+    inhalt = re.sub(r'<dl class="chat-antworten">.*?</dl>|<p class="(?:demo-hinweis|sr-only)[^"]*"[^>]*>.*?</p>|<p class="umfrage-stand".*?</p>', "", inhalt, flags=re.S)
+    inhalt = inhalt.replace('class="umfrage"', 'class="umfrage abgestimmt"')
+    inhalt = re.sub(r'<input\b[^>]*>', '<i class="vorschau-wahl"></i>', inhalt)
+    def als_text(m):
+        klasse = re.search(r'class="([^"]*)"', m.group(1))
+        return '<span class="%s">' % (klasse.group(1) if klasse else "vorschau-knopf")
+    inhalt = re.sub(r'<(?:button|a)\b([^>]*)>', als_text, inhalt)
+    inhalt = re.sub(r'</(button|a)>', '</span>', inhalt)
+    inhalt = re.sub(r'\s(?:data-[a-z-]+|aria-[a-z]+|role|name|value|type)(?:="[^"]*")?', "", inhalt)
+    return ('      <div class="angebot-vorschau" aria-hidden="true" inert><div class="angebot-vorschau-flaeche">\n%s\n'
+            '      </div></div>\n' % inhalt.strip())
+
+
+def angebot(p, ansichten=None):
     # Angebotskarte im Gerätefenster-Stil (Branchen- und Ratgeberseiten): gleiche Texte und Links wie die Kachel,
-    # dazu der Weg zur Beispielansicht und zur Anfrage
+    # dazu der Weg zur Beispielansicht und zur Anfrage; mit ansichten zusätzlich eine verkleinerte Beispielansicht
     stufe = STUFEN[p["status"]]
-    return ('    <article class="angebot-karte r">\n'
+    karte = ('    <article class="angebot-karte r">\n'
             '      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>'
             '<span class="geraet-titel">%s</span></div>\n'
             '      <div class="angebot-inhalt">\n'
@@ -265,6 +284,13 @@ def angebot(p):
                                html.escape(p["kurzbeschreibung"]), p["slug"], PFEIL, p["slug"],
                                "Beispiel ausprobieren" if p["status"] == "Pilotphase" and not ist_baustein(p) else "Beispielansicht", PFEIL,
                                p["slug"], stufe["knopf"], PFEIL))
+    if ansichten:
+        bild = vorschau(ansichten, p)
+        if bild:
+            karte = karte.replace('</span></div>\n', '</span><span class="beispiel">%s</span></div>\n'
+                                  % ("Beispiel" if p["status"] == "Pilotphase" else "Beispielansicht"), 1)
+            karte = karte.replace('      <div class="angebot-inhalt">', bild + '      <div class="angebot-inhalt">', 1)
+    return karte
 
 
 def inhaltsverzeichnis(inhalt, mit_automatisierung=False):
@@ -813,7 +839,7 @@ OG_STANDARD = ("/og-image.png", "Meyssens – Digitale Infrastruktur für Organi
 # Stand der Seiten ohne eigenes Prüfdatum (Startseite, Übersichten, Über uns, Produkte): bei inhaltlichen Änderungen anpassen
 SEITEN_STAND = "2026-10-28"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/": "2026-11-12", "/gemeinden/": "2026-11-12", "/branchen/": "2026-11-01", "/unternehmen/": "2026-11-11"}
+SEITEN_GEAENDERT = {"/": "2026-11-12", "/gemeinden/": "2026-11-12", "/branchen/": "2026-11-01", "/unternehmen/": "2026-11-12"}
 
 
 def stand(eintrag, pruef):
@@ -1247,7 +1273,7 @@ def main():
             "besonderheit_titel": html.escape(b["besonderheit"]["titel"]),
             "besonderheit_text": html.escape(b["besonderheit"]["text"]),
             "schweiz": html.escape(b["schweiz"]),
-            "produkte": "\n".join(angebot(nach_slug[s]) for s in b["produkte"]),
+            "produkte": "\n".join(angebot(nach_slug[s], ansichten) for s in b["produkte"]),
             "sprung_auto": '<a href="#automatisierung">Automatisierungen</a>' if b.get("automatisierungen") else "",
             "bausteine_abschnitt": automatisierungen(b, nach_slug, nach_ratgeber, formular_ziel, einwilligung) if b.get("automatisierungen") else ('<section id="bausteine">\n  <div class="r">\n    <span class="s-label">Automatisierung</span>\n'
                                     '    <h2>Bausteine für %s</h2>\n    <p class="s-lead">%s Entwürfe ja, automatischer Versand nein: '

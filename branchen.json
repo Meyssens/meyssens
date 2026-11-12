@@ -1,6 +1,7 @@
 [
   {
     "slug": "bauunternehmen",
+    "aktualisiert": "2026-11-12",
     "name": "Bauunternehmen",
     "fuer": "Bauunternehmen",
     "kurz": "Ausschreibungen im Blick behalten und Anfragen von Bauherrschaften schneller beantworten.",
@@ -342,7 +343,7 @@
   },
   {
     "slug": "elektro-handwerk",
-    "aktualisiert": "2026-11-08",
+    "aktualisiert": "2026-11-12",
     "name": "Elektro-Handwerk",
     "fuer": "das Elektro-Handwerk",
     "kurz": "Kundenanfragen ordnen, Ausschreibungen finden und Fragen auf der Website beantworten.",
@@ -684,6 +685,7 @@
   },
   {
     "slug": "kindergaerten-schulen",
+    "aktualisiert": "2026-11-12",
     "name": "Kindergärten und Schulen",
     "fuer": "Kindergärten und Schulen",
     "kurz": "Eltern befragen und informieren, mit besonderer Sorgfalt beim Datenschutz.",
@@ -746,6 +748,7 @@
   },
   {
     "slug": "vereine",
+    "aktualisiert": "2026-11-12",
     "demo": {
       "titel": "Beispielplattform ansehen",
       "text": "Wie digitale Mitwirkung im Verein aussehen kann, zeigt unsere Beispielplattform des erfundenen FC Rheinstadt Basel: eine Ideenkarte für Anliegen rund um Platz und Clubhaus, eine Abstimmung zum Vereinsausflug, eine Übersicht der Anlässe und Helfereinsätze, für die sich Mitglieder eintragen können. Die Plattform ist eine Vorschau der Möglichkeiten, kein fertiges Produkt.",
@@ -815,6 +818,7 @@
   },
   {
     "slug": "arztpraxen",
+    "aktualisiert": "2026-11-12",
     "name": "Arztpraxen",
     "fuer": "Arztpraxen",
     "kurz": "Allgemeine Fragen beantworten und das Praxisteam entlasten, ohne Patientendaten preiszugeben.",
@@ -1159,6 +1163,7 @@
   },
   {
     "slug": "treuhaender",
+    "aktualisiert": "2026-11-12",
     "name": "Treuhandbüros",
     "fuer": "Treuhandbüros",
     "kurz": "Mandantenanfragen schneller beantworten und Mandanten regelmässig informieren.",
@@ -1495,6 +1500,7 @@
   },
   {
     "slug": "hotels-gastronomie",
+    "aktualisiert": "2026-11-12",
     "name": "Hotels und Gastronomie",
     "fuer": "Hotels und Gastronomiebetriebe",
     "kurz": "Gästefragen auf der Website beantworten, Anfragen ordnen und Stammgäste informieren.",

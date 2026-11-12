@@ -406,7 +406,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .stil .dunkel .angebot-karte h3 a{color:var(--ink)!important;text-decoration:none}
 .stil .dunkel .angebot-karte h3 a:hover{text-decoration:underline;text-underline-offset:4px}
 .stil .dunkel .angebot-karte .mehr{color:var(--blue)!important}
-.stil .dunkel .angebot-karte p{color:var(--ink3)}
+.stil .dunkel .angebot-inhalt p{color:var(--ink3)}
 .stil .dunkel .angebot-karte .status-chip{background:var(--blue-8);border-color:var(--blue-20);color:var(--blue)}
 
 /* Impressum und Datenschutz (Dialoge mit Inline-Stilen) */
@@ -947,3 +947,32 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .pk-liste b{color:var(--ink);font-weight:600}
 .pk-knopf{width:100%;justify-content:center;min-height:52px!important;font-size:1rem!important}
 @media(max-width:900px){.pilot-raster{grid-template-columns:1fr}}
+
+/* Etappe 2b: Textwerte statt Zahlen in Hero- und Über-uns-Karte */
+.stil .hcard-val.hcard-val-text{font-size:clamp(1.1rem,4.6vw,1.4rem);overflow-wrap:anywhere;line-height:1.15;letter-spacing:-.02em}
+.stil .astat-val[data-i18n="about.stat1.val"]{font-size:1.4rem;line-height:1.15;letter-spacing:-.02em}
+
+/* Etappe 3: Unternehmen- und Branchenseiten */
+.wege-u{padding-top:clamp(1rem,3vw,2rem)}
+.ways-drei{grid-template-columns:repeat(3,1fr);max-width:1180px;margin:0 auto}
+@media(max-width:980px){.ways-drei{grid-template-columns:1fr}}
+.ways-drei .way{display:flex;flex-direction:column;align-items:flex-start;padding:clamp(1.5rem,3vw,2.25rem);text-decoration:none}
+.ways-drei .way h3{font-size:clamp(1.3rem,2vw,1.6rem)}
+.ways-drei .way p{color:var(--ink3);flex:1}
+.ways-drei .way.blue p,.ways-drei .way.blue .way-go{color:#fff}
+.way-ic{color:var(--blue);margin-bottom:1rem}
+.way.blue .way-ic{color:#fff}
+.page-hero .held-knoepfe + .sprung{margin-top:1.5rem}
+/* Verkleinerte Beispielansicht in Angebotskarten */
+.angebot-vorschau{position:relative;height:190px;overflow:hidden;background:var(--grau,#f4f5f8);border-bottom:1px solid rgba(0,0,40,.06)}
+.angebot-vorschau-flaeche{zoom:.62;padding:1.5rem 1.75rem;pointer-events:none;user-select:none}
+.angebot-vorschau::after{content:"";position:absolute;inset:auto 0 0 0;height:56px;background:linear-gradient(transparent,var(--grau,#f4f5f8))}
+.angebot-karte .geraet-leiste .beispiel{margin-left:auto}
+.angebot-vorschau .vorschau-wahl{display:inline-block;width:14px;height:14px;border:2px solid #9aa0b8;border-radius:50%;flex:none;margin-right:.5rem}
+.stil .dunkel .angebot-vorschau{color:var(--ink)}
+.angebot-vorschau .opt{display:flex}
+.angebot-vorschau .chat-fragen .vorschau-knopf{display:inline-flex;align-items:center;border:1px solid var(--blue-20);background:#fff;color:var(--blue);border-radius:999px;padding:.55rem 1rem;font-size:.85rem;font-weight:500;min-height:44px}
+@media(prefers-reduced-motion:no-preference){
+  .angebot-karte .angebot-vorschau-flaeche{transition:transform .5s var(--weich)}
+  .angebot-karte:hover .angebot-vorschau-flaeche{transform:translateY(-12px)}
+}
