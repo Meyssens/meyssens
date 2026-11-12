@@ -3,7 +3,7 @@
    ANFRAGE_ZIEL ist die einzige Einstellung: die Adresse, an die das Formular sendet,
    zum Beispiel ein Formspree-Endpoint wie "https://formspree.io/f/XXXXXXXX".
    Solange sie leer ist, öffnet das Formular ein vorbefülltes E-Mail an lionel@meyssens.ch. */
-var ANFRAGE_ZIEL = "";
+var ANFRAGE_ZIEL = "https://formspree.io/f/xlgpzzew";
 
 (function () {
   var MAIL = "lionel@meyssens.ch";
