@@ -78,8 +78,8 @@
   <h1>Weniger Büroarbeit für <span class="hl">KMU und Vereine.</span></h1>
   <p class="lead">Digitale Werkzeuge für Kommunikation und Organisation, schlank eingerichtet und persönlich begleitet.</p>
   <div class="held-knoepfe">
-    <a href="#produkte" class="btn-p">Produkte ansehen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a href="/ueber-uns/#kontakt" class="btn-s">Kontakt aufnehmen</a>
+    <a href="#anfrage" class="btn-p">Pilot anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="#produkte" class="btn-s">Produkte ansehen</a>
   </div>
 </section>
 
@@ -562,11 +562,36 @@
     <a href="/ratgeber/sicherheitsnachweis-periodische-kontrolle/">Sicherheitsnachweis und periodische Kontrolle <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </section>
-<section id="gespraech" class="schluss">
-  <div class="schluss-karte r">
-    <h2>Nicht das Passende dabei?</h2>
-    <p>Beschreiben Sie uns Ihren Ablauf. Sie erhalten eine persönliche Antwort von Lionel Nickelsen.</p>
-    <div class="held-knoepfe"><a href="mailto:lionel@meyssens.ch" class="btn-p btn-hell">lionel@meyssens.ch <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+<section id="kontakt" class="flaeche">
+  <div class="contact-grid">
+    <div class="r">
+      <span class="s-label">Kontakt</span>
+      <h2>Interesse an einem Pilot?</h2>
+      <p class="kontakt-lead">Beschreiben Sie kurz Ihr Vorhaben. Sie erhalten eine persönliche Antwort von Lionel Nickelsen.</p>
+      <div class="cinfo-item">
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="3.5" width="14" height="10" rx="2"/><path d="M1.5 5.5l7 4.5 7-4.5"/></svg></div>
+        <div><div class="clabel">Lieber per E-Mail</div><div class="cval"><a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></div></div>
+      </div>
+    </div>
+    <div class="ccard r d1">
+<div class="anfrage" id="anfrage">
+  <form class="anfrage-form" data-anfrage action="mailto:lionel@meyssens.ch" method="post" enctype="text/plain" novalidate aria-labelledby="anfrage-titel">
+    <h3 class="anfrage-titel" id="anfrage-titel">Pilot anfragen</h3>
+    <p class="anfrage-hinweis">Felder mit * sind Pflichtfelder.</p>
+    <input type="hidden" name="_subject" value="Pilot anfragen über meyssens.ch (Unternehmen)">
+    <input type="hidden" name="seite" value="Unternehmen">
+    <div class="fgrp"><label class="flabel" for="anf-organisation"><span>Unternehmen / Organisation</span> <span class="anfrage-stern" aria-hidden="true">*</span></label><input class="finput" id="anf-organisation" name="organisation" data-leer="Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an." type="text" autocomplete="organization" required aria-describedby="anf-organisation-fehler"><p class="ffehler" id="anf-organisation-fehler" hidden></p></div>
+    <div class="fgrp"><label class="flabel" for="anf-name"><span>Name</span> <span class="anfrage-stern" aria-hidden="true">*</span></label><input class="finput" id="anf-name" name="name" type="text" autocomplete="name" required aria-describedby="anf-name-fehler"><p class="ffehler" id="anf-name-fehler" hidden></p></div>
+    <div class="fgrp"><label class="flabel" for="anf-email"><span>E-Mail</span> <span class="anfrage-stern" aria-hidden="true">*</span></label><input class="finput" id="anf-email" name="email" type="email" autocomplete="email" required aria-describedby="anf-email-fehler"><p class="ffehler" id="anf-email-fehler" hidden></p></div>
+    <div class="fgrp"><label class="flabel" for="anf-thema"><span>Thema oder Anliegen (optional)</span></label><textarea class="ftextarea" id="anf-thema" name="thema"></textarea></div>
+    <div class="anfrage-hp" aria-hidden="true"><label for="anf-hp">Dieses Feld bitte leer lassen</label><input id="anf-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+    <div class="fgrp anfrage-einw"><input type="checkbox" id="anf-einwilligung" name="einwilligung" value="ja" required aria-describedby="anf-einwilligung-fehler"><label for="anf-einwilligung">Ich bin einverstanden, dass Meyssens meine Angaben zur Bearbeitung dieser Anfrage verarbeitet. Mehr dazu in der <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Datenschutzerklärung</a>.</label><p class="ffehler" id="anf-einwilligung-fehler" hidden></p></div>
+    <button type="submit" class="btn-p anfrage-senden"><span>Anfrage senden</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p class="anfrage-status" role="status" aria-live="polite"></p>
+  </form>
+  <div class="anfrage-dank" tabindex="-1" hidden><h3></h3><p></p></div>
+</div>
+    </div>
   </div>
 </section>
 </main>
@@ -636,6 +661,7 @@
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Schriftarten</strong><br>Die Website verwendet die Schriftarten Syne und Inter. Sie werden zusammen mit der Website ausgeliefert; eine Verbindung zu Google Fonts oder anderen Drittanbietern findet dabei nicht statt.</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Google Analytics</strong><br>Wir setzen Google Analytics (Google Ireland Limited, ggf. Google LLC, USA) nur mit Ihrer Einwilligung über das Cookie-Banner ein. Verarbeitet werden pseudonymisierte Nutzungsdaten wie besuchte Seiten, ungefähre Herkunft und Gerätetyp. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können sie jederzeit widerrufen, indem Sie die Website-Daten Ihres Browsers löschen und das Banner erneut mit «Ablehnen» beantworten.</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Kontaktformular</strong><br>Wenn Sie das Formular nutzen, verarbeiten wir Ihre Angaben (Name, Gemeinde, E-Mail, Land, Nachricht), um Ihre Anfrage zu beantworten. Bei Produktanfragen erfassen wir zusätzlich Organisation, Branche und das gewünschte Produkt. Das Formular wird über Formspree (Formspree, Inc., USA) als E-Mail an uns weitergeleitet. Rechtsgrundlage ist die Anbahnung eines Vertrags und unser berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO). Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformular «Pilot anfragen»</strong><br>Wenn Sie das Formular «Pilot anfragen» auf den Seiten für Gemeinden und für Unternehmen nutzen, verarbeiten wir Ihre Angaben (Gemeinde oder Organisation, Name, E-Mail-Adresse und, falls angegeben, Ihr Thema oder Anliegen), um Ihre Anfrage zu beantworten. Die Übermittlung erfolgt über [DIENSTLEISTER: Name, Sitz, Land]. Ist kein Dienstleister eingerichtet, öffnet das Formular stattdessen Ihr E-Mail-Programm mit einer vorbereiteten Nachricht; Ihre Angaben werden dann erst übermittelt, wenn Sie diese E-Mail selbst absenden. Rechtsgrundlage ist Ihre Einwilligung und die Anbahnung eines Vertrags (Art. 6 Abs. 1 lit. a und b DSGVO). Sie können Ihre Einwilligung jederzeit per E-Mail an lionel@meyssens.ch widerrufen. Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Ihre Rechte</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Schreiben Sie uns dazu an lionel@meyssens.ch. Sie können sich ausserdem bei der zuständigen Datenschutzbehörde beschweren (in der Schweiz der EDÖB, in Deutschland die Aufsichtsbehörde Ihres Bundeslandes).</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8"><strong>Kontakt</strong><br>Bei Fragen zum Datenschutz: lionel@meyssens.ch</p>
   </div>
@@ -709,5 +735,6 @@ document.addEventListener('keydown', function(e){
 
 </script>
 <script src="/assets/demos.js" defer></script>
+<script src="/assets/anfrage.js" defer></script>
 </body>
 </html>

@@ -263,7 +263,7 @@
     <h1 data-i18n-html="hero.title">Digitale Beteiligung<br>für <span class="hl">Ihre Gemeinde.</span></h1>
     <p class="lead" data-i18n="hero.lead">Meyssens bringt Städten und Gemeinden eine fertig eingerichtete Bürgerbeteiligungs-Plattform — Start in der Regel innerhalb weniger Wochen, persönlich begleitet, fester Jahrespreis nach Grösse der Gemeinde.</p>
     <div class="btns">
-      <a href="#kontakt" class="btn-p"><span data-i18n="pilot.cta">Pilot anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#anfrage" class="btn-p"><span data-i18n="pilot.cta">Pilot anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       <a href="https://demo.meyssens.ch" target="_blank" rel="noopener" class="btn-s"><span data-i18n="hero.btn1">Live-Demo ansehen</span><span class="sr-only"> (öffnet in neuem Fenster)</span></a>
     </div>
   </div>
@@ -576,7 +576,7 @@
         <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="currentColor" opacity=".15"/><path d="M5.5 9.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b data-i18n="pilot.f2.h">Drei Monate persönliche Begleitung</b> <span data-i18n="pilot.f2.p">Wir begleiten Ihr erstes Verfahren drei Monate persönlich.</span></span></li>
         <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="currentColor" opacity=".15"/><path d="M5.5 9.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b data-i18n="pilot.f3.h">Ohne Vertrag, ohne Verpflichtung</b> <span data-i18n="pilot.f3.p">Der Pilot ist unverbindlich. Sie entscheiden danach, ob Sie weitermachen.</span></span></li>
       </ul>
-      <a href="#kontakt" class="btn-p pk-knopf"><span data-i18n="pilot.cta">Pilot anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="#anfrage" class="btn-p pk-knopf"><span data-i18n="pilot.cta">Pilot anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
 </section>
@@ -702,38 +702,25 @@
       </div>
     </div>
     <div class="ccard r d1">
-      <form action="https://formspree.io/f/xlgpzzew" method="POST">
-        <input type="hidden" name="_subject" value="Neue Anfrage über meyssens.ch">
-        <div class="frow">
-          <div class="fgrp"><label class="flabel" data-i18n="contact.form.vorname">Vorname</label><input class="finput" type="text" name="vorname" placeholder="Max" required></div>
-          <div class="fgrp"><label class="flabel" data-i18n="contact.form.nachname">Nachname</label><input class="finput" type="text" name="nachname" placeholder="Muster" required></div>
-        </div>
-        <div class="fgrp"><label class="flabel" data-i18n="contact.form.gemeinde">Gemeinde / Organisation</label><input class="finput" type="text" name="gemeinde" placeholder="Gemeinde Musterstadt" required></div>
-        <div class="fgrp"><label class="flabel" data-i18n="contact.email.label">E-Mail</label><input class="finput" type="email" name="email" placeholder="ihre.adresse@gemeinde" required></div>
-        <div class="fgrp">
-          <label class="flabel" for="land-select" data-i18n="contact.form.land">Land</label>
-          <select class="fselect" id="land-select" name="land">
-            <option data-i18n="land.ch">Schweiz</option>
-            <option data-i18n="land.de">Deutschland</option>
-            <option data-i18n="land.at">Österreich</option>
-            <option data-i18n="land.other">Anderes Land</option>
-          </select>
-        </div>
-        <div class="fgrp">
-          <label class="flabel" for="anliegen-select" data-i18n="contact.form.anliegen">Anliegen</label>
-          <select class="fselect" id="anliegen-select" name="anliegen">
-            <option data-i18n="contact.form.anl1">Pilot anfragen</option>
-            <option data-i18n="contact.form.anl2">Andere Frage</option>
-          </select>
-        </div>
-        <div class="fgrp"><label class="flabel" data-i18n="contact.form.nachricht">Nachricht (optional)</label><textarea class="ftextarea" name="nachricht" placeholder="Ihre Fragen oder Wünsche..." data-i18n-placeholder="contact.form.nachricht.ph"></textarea></div>
-        <div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>
-        <button type="submit" class="btn-p" id="sbtn" style="width:100%;justify-content:center;border-radius:var(--r-sm)">
-          <span data-i18n="contact.form.submit">Anfrage senden</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <p id="form-msg" role="status" aria-live="polite"></p>
-      </form>
+<!-- auto:anfrage:start -->
+<div class="anfrage" id="anfrage">
+  <form class="anfrage-form" data-anfrage action="mailto:lionel@meyssens.ch" method="post" enctype="text/plain" novalidate aria-labelledby="anfrage-titel">
+    <h3 class="anfrage-titel" id="anfrage-titel" data-i18n="anf.titel">Pilot anfragen</h3>
+    <p class="anfrage-hinweis" data-i18n="anf.pflicht">Felder mit * sind Pflichtfelder.</p>
+    <input type="hidden" name="_subject" value="Pilot anfragen über meyssens.ch (Gemeinden)">
+    <input type="hidden" name="seite" value="Gemeinden">
+    <div class="fgrp"><label class="flabel" for="anf-organisation"><span data-i18n="anf.org">Gemeinde / Organisation</span> <span class="anfrage-stern" aria-hidden="true">*</span></label><input class="finput" id="anf-organisation" name="organisation" type="text" autocomplete="organization" required aria-describedby="anf-organisation-fehler"><p class="ffehler" id="anf-organisation-fehler" hidden></p></div>
+    <div class="fgrp"><label class="flabel" for="anf-name"><span data-i18n="anf.name">Name</span> <span class="anfrage-stern" aria-hidden="true">*</span></label><input class="finput" id="anf-name" name="name" type="text" autocomplete="name" required aria-describedby="anf-name-fehler"><p class="ffehler" id="anf-name-fehler" hidden></p></div>
+    <div class="fgrp"><label class="flabel" for="anf-email"><span data-i18n="anf.email">E-Mail</span> <span class="anfrage-stern" aria-hidden="true">*</span></label><input class="finput" id="anf-email" name="email" type="email" autocomplete="email" required aria-describedby="anf-email-fehler"><p class="ffehler" id="anf-email-fehler" hidden></p></div>
+    <div class="fgrp"><label class="flabel" for="anf-thema"><span data-i18n="anf.thema">Thema oder Anliegen (optional)</span></label><textarea class="ftextarea" id="anf-thema" name="thema"></textarea></div>
+    <div class="anfrage-hp" aria-hidden="true"><label for="anf-hp">Dieses Feld bitte leer lassen</label><input id="anf-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+    <div class="fgrp anfrage-einw"><input type="checkbox" id="anf-einwilligung" name="einwilligung" value="ja" required aria-describedby="anf-einwilligung-fehler"><label for="anf-einwilligung" data-i18n-html="anf.einw">Ich bin einverstanden, dass Meyssens meine Angaben zur Bearbeitung dieser Anfrage verarbeitet. Mehr dazu in der <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Datenschutzerklärung</a>.</label><p class="ffehler" id="anf-einwilligung-fehler" hidden></p></div>
+    <button type="submit" class="btn-p anfrage-senden"><span data-i18n="anf.senden">Anfrage senden</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p class="anfrage-status" role="status" aria-live="polite"></p>
+  </form>
+  <div class="anfrage-dank" tabindex="-1" hidden><h3></h3><p></p></div>
+</div>
+<!-- auto:anfrage:ende -->
     </div>
   </div>
 </section>
@@ -842,6 +829,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Schriftarten</strong><br>Die Website verwendet die Schriftarten Syne und Inter. Sie werden zusammen mit der Website ausgeliefert; eine Verbindung zu Google Fonts oder anderen Drittanbietern findet dabei nicht statt.</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Google Analytics</strong><br>Wir setzen Google Analytics (Google Ireland Limited, ggf. Google LLC, USA) nur mit Ihrer Einwilligung über das Cookie-Banner ein. Verarbeitet werden pseudonymisierte Nutzungsdaten wie besuchte Seiten, ungefähre Herkunft und Gerätetyp. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können sie jederzeit widerrufen, indem Sie die Website-Daten Ihres Browsers löschen und das Banner erneut mit «Ablehnen» beantworten.</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Kontaktformular</strong><br>Wenn Sie das Formular nutzen, verarbeiten wir Ihre Angaben (Name, Gemeinde, E-Mail, Land, Nachricht), um Ihre Anfrage zu beantworten. Bei Produktanfragen erfassen wir zusätzlich Organisation, Branche und das gewünschte Produkt. Das Formular wird über Formspree (Formspree, Inc., USA) als E-Mail an uns weitergeleitet. Rechtsgrundlage ist die Anbahnung eines Vertrags und unser berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO). Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformular «Pilot anfragen»</strong><br>Wenn Sie das Formular «Pilot anfragen» auf den Seiten für Gemeinden und für Unternehmen nutzen, verarbeiten wir Ihre Angaben (Gemeinde oder Organisation, Name, E-Mail-Adresse und, falls angegeben, Ihr Thema oder Anliegen), um Ihre Anfrage zu beantworten. Die Übermittlung erfolgt über [DIENSTLEISTER: Name, Sitz, Land]. Ist kein Dienstleister eingerichtet, öffnet das Formular stattdessen Ihr E-Mail-Programm mit einer vorbereiteten Nachricht; Ihre Angaben werden dann erst übermittelt, wenn Sie diese E-Mail selbst absenden. Rechtsgrundlage ist Ihre Einwilligung und die Anbahnung eines Vertrags (Art. 6 Abs. 1 lit. a und b DSGVO). Sie können Ihre Einwilligung jederzeit per E-Mail an lionel@meyssens.ch widerrufen. Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Ihre Rechte</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Schreiben Sie uns dazu an lionel@meyssens.ch. Sie können sich ausserdem bei der zuständigen Datenschutzbehörde beschweren (in der Schweiz der EDÖB, in Deutschland die Aufsichtsbehörde Ihres Bundeslandes).</p>
     <p style="font-size:.875rem;color:#3c3c60;line-height:1.8"><strong>Kontakt</strong><br>Bei Fragen zum Datenschutz: lionel@meyssens.ch</p>
   </div>
@@ -953,5 +941,6 @@ document.querySelectorAll('form[action*="formspree.io"]').forEach(function(conta
 })();
 </script>
 <script src="/assets/demos.js" defer></script>
+<script src="/assets/anfrage.js" defer></script>
 </body>
 </html>

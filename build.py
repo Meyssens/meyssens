@@ -265,6 +265,48 @@ def vorschau(ansichten, p):
             '      </div></div>\n' % inhalt.strip())
 
 
+def anfrage_formular(seite, org_label, i18n, org_leer=None):
+    # Anfrageformular "Pilot anfragen" (Gemeinden- und Unternehmen-Seite). Das Ziel steht nur in assets/anfrage.js
+    # (ANFRAGE_ZIEL); ohne JavaScript öffnet das Formular das E-Mail-Programm. i18n: data-i18n-Schlüssel für die Gemeinden-Seite
+    def k(schluessel):
+        return ' data-i18n="%s"' % schluessel if i18n else ""
+    pfeil = ('<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" '
+             'stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>')
+    stern = ' <span class="anfrage-stern" aria-hidden="true">*</span>'
+    def feld(name, label, schluessel, typ, auto):
+        return ('    <div class="fgrp"><label class="flabel" for="anf-%s"><span%s>%s</span>%s</label>'
+                '<input class="finput" id="anf-%s" name="%s" type="%s" autocomplete="%s" required aria-describedby="anf-%s-fehler">'
+                '<p class="ffehler" id="anf-%s-fehler" hidden></p></div>\n'
+                % (name, k(schluessel), label, stern, name, name, typ, auto, name, name))
+    einw = ('Ich bin einverstanden, dass Meyssens meine Angaben zur Bearbeitung dieser Anfrage verarbeitet. Mehr dazu in der '
+            '<a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Datenschutzerklärung</a>.')
+    return ('<div class="anfrage" id="anfrage">\n'
+            '  <form class="anfrage-form" data-anfrage action="mailto:lionel@meyssens.ch" method="post" enctype="text/plain" novalidate aria-labelledby="anfrage-titel">\n'
+            '    <h3 class="anfrage-titel" id="anfrage-titel"%s>Pilot anfragen</h3>\n'
+            '    <p class="anfrage-hinweis"%s>Felder mit * sind Pflichtfelder.</p>\n'
+            '    <input type="hidden" name="_subject" value="Pilot anfragen über meyssens.ch (%s)">\n'
+            '    <input type="hidden" name="seite" value="%s">\n'
+            '%s%s%s'
+            '    <div class="fgrp"><label class="flabel" for="anf-thema"><span%s>Thema oder Anliegen (optional)</span></label>'
+            '<textarea class="ftextarea" id="anf-thema" name="thema"></textarea></div>\n'
+            '    <div class="anfrage-hp" aria-hidden="true"><label for="anf-hp">Dieses Feld bitte leer lassen</label>'
+            '<input id="anf-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>\n'
+            '    <div class="fgrp anfrage-einw"><input type="checkbox" id="anf-einwilligung" name="einwilligung" value="ja" required '
+            'aria-describedby="anf-einwilligung-fehler"><label for="anf-einwilligung"%s>%s%s</label>'
+            '<p class="ffehler" id="anf-einwilligung-fehler" hidden></p></div>\n'
+            '    <button type="submit" class="btn-p anfrage-senden"><span%s>Anfrage senden</span> %s</button>\n'
+            '    <p class="anfrage-status" role="status" aria-live="polite"></p>\n'
+            '  </form>\n'
+            '  <div class="anfrage-dank" tabindex="-1" hidden><h3></h3><p></p></div>\n'
+            '</div>' % (k("anf.titel"), k("anf.pflicht"), seite, seite,
+                        feld("organisation", org_label, "anf.org", "text", "organization").replace(
+            'name="organisation"', 'name="organisation" data-leer="%s"' % org_leer if org_leer else 'name="organisation"'),
+                        feld("name", "Name", "anf.name", "text", "name"),
+                        feld("email", "E-Mail", "anf.email", "email", "email"),
+                        k("anf.thema"), ' data-i18n-html="anf.einw"' if i18n else "", einw, "" if i18n else "",
+                        k("anf.senden"), pfeil))
+
+
 def angebot(p, ansichten=None):
     # Angebotskarte im Gerätefenster-Stil (Branchen- und Ratgeberseiten): gleiche Texte und Links wie die Kachel,
     # dazu der Weg zur Beispielansicht und zur Anfrage; mit ansichten zusätzlich eine verkleinerte Beispielansicht
@@ -837,6 +879,10 @@ STUFE_PRODUKTE = ("Produkte", "/produkte/")
 STUFE_UEBER = ("Über uns", "/ueber-uns/")
 OG_STANDARD = ("/og-image.png", "Meyssens – Digitale Infrastruktur für Organisationen")
 # Stand der Seiten ohne eigenes Prüfdatum (Startseite, Übersichten, Über uns, Produkte): bei inhaltlichen Änderungen anpassen
+# Formspree-Ziel und Einwilligung der Produkt-, Baustein- und Branchenformulare (vorher aus dem Gemeinden-Formular gelesen)
+FORMULAR_ZIEL = "https://formspree.io/f/xlgpzzew"
+EINWILLIGUNG = '<div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>'
+
 SEITEN_STAND = "2026-10-28"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
 SEITEN_GEAENDERT = {"/": "2026-11-12", "/gemeinden/": "2026-11-12", "/branchen/": "2026-11-01", "/unternehmen/": "2026-11-12"}
@@ -1203,11 +1249,9 @@ def main():
     gemeinden = lies("gemeinden/index.html")
     gemeinsam = {name: abschnitt(start, name) for name in ("head", "kopf", "fuss", "rechtliches", "skripte")}
 
-    # Kontaktformular der Gemeinden-Seite: gleiches Ziel, gleiche Einwilligung, gleiches Absende-Skript
-    formular_ziel = re.search(r'<form action="(https://formspree\.io/[^"]+)"', gemeinden).group(1)
-    einwilligung = zwischen(gemeinden, '<div class="fgrp"><label style="display:flex', "</label></div>", True)
-    if 'name="datenschutz-gelesen"' not in einwilligung:
-        raise SystemExit("Einwilligung im Gemeinden-Formular nicht gefunden")
+    # Produkt-, Baustein- und Branchenformulare: Ziel und Einwilligung (FORMULAR_ZIEL, EINWILLIGUNG), Absende-Skript aus der Gemeinden-Seite
+    formular_ziel = FORMULAR_ZIEL
+    einwilligung = EINWILLIGUNG
     formular_skript = zwischen(gemeinden, "// --- Kontaktformular", "</script>")
 
     ansichten = lies("ansichten.html")
@@ -1474,6 +1518,8 @@ def main():
         "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
         "produkte": scrolly(ansichten, allgemein, mehr=True),
         "bausteine": bausteine_gruppen(),
+        "anfrage": anfrage_formular("Unternehmen", "Unternehmen / Organisation", False,
+                                    "Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an."),
         "ld": ld(*seitenld),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
                                for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
@@ -1602,6 +1648,7 @@ def main():
         neu_g = setze_auto(neu_g, "ablauf-%d" % i, geraet(
             '<span data-i18n="g.ablauf%d.titel">%s</span>' % (i, teil(ansichten, "gemeinden-ablauf-%d-titel" % i)),
             teil(ansichten, "gemeinden-ablauf-%d" % i), '<span data-i18n="g.beispielansicht">Beispielansicht</span>'))
+    neu_g = setze_auto(neu_g, "anfrage", anfrage_formular("Gemeinden", "Gemeinde / Organisation", True))
     if neu_g != gemeinden:
         schreibe("gemeinden/index.html", neu_g)
 

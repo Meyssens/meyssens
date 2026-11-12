@@ -976,3 +976,35 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .angebot-karte .angebot-vorschau-flaeche{transition:transform .5s var(--weich)}
   .angebot-karte:hover .angebot-vorschau-flaeche{transform:translateY(-12px)}
 }
+
+/* Anfrageformular "Pilot anfragen" */
+.anfrage-titel{font-family:'Syne','Syne Ersatz',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-.02em;line-height:1.2;margin-bottom:.35rem;color:var(--ink)}
+.anfrage-hinweis{font-size:.85rem;color:var(--ink3);margin-bottom:1.25rem}
+.anfrage-form .flabel{font-size:.875rem;font-weight:500;color:var(--ink2)}
+.anfrage-stern{color:#b3001b}
+.anfrage-form .finput,.anfrage-form .ftextarea{background:#fff;border-color:#8a8fa8}
+.anfrage-form .finput:focus-visible,.anfrage-form .ftextarea:focus-visible,.anfrage-einw input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.anfrage-form [aria-invalid="true"]{border-color:#b3001b;box-shadow:0 0 0 1px #b3001b}
+.ffehler{color:#b3001b;font-size:.85rem;line-height:1.5;margin-top:.4rem}
+.ffehler::before{content:"! ";font-weight:700}
+.anfrage-einw{display:flex;flex-wrap:wrap;gap:.65rem;align-items:flex-start;font-size:.875rem;line-height:1.6;color:var(--ink2)}
+.anfrage-einw input{width:22px;height:22px;margin-top:.1rem;flex:none;accent-color:var(--blue)}
+.anfrage-einw label{flex:1;min-width:0;cursor:pointer}
+.anfrage-einw .ffehler{flex-basis:100%;margin-top:0}
+.anfrage-einw a{color:var(--blue);text-decoration:underline;text-underline-offset:2px}
+.anfrage-senden{width:100%;justify-content:center;min-height:48px;margin-top:.5rem}
+.anfrage-senden:disabled{opacity:.7;cursor:progress}
+.anfrage-status{font-size:.9rem;line-height:1.6;margin-top:1rem}
+.anfrage-status:empty{display:none}
+.anfrage-status.err{background:#fdecec;color:#7f1d1d;padding:.8rem 1rem;border-radius:10px}
+.anfrage-status a{color:#7f1d1d;text-decoration:underline}
+.anfrage-hp{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.anfrage{position:relative}
+.anfrage-dank{background:#e8f7ee;color:#14532d;border-radius:16px;padding:1.5rem}
+.anfrage-dank:focus{outline:3px solid var(--blue);outline-offset:3px}
+.anfrage-dank h3{font-family:'Syne','Syne Ersatz',sans-serif;font-weight:800;font-size:1.25rem;color:#14532d;margin-bottom:.5rem}
+.anfrage-dank a{color:#14532d;text-decoration:underline;font-weight:500}
+.kontakt-lead{color:var(--ink3);margin-bottom:2.5rem;line-height:1.8;font-size:.975rem}
+.cval a{color:var(--blue);font-weight:500;text-decoration:none}
+.cval a:hover{text-decoration:underline}
+.anfrage-form input,.anfrage-form textarea,.anfrage-form button,.anfrage-dank,#anfrage{scroll-margin-top:110px}
