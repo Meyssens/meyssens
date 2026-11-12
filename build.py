@@ -21,7 +21,7 @@ Quellen:
                            (Produktansicht, Demos, In Planung, Zahlen) schreibt build.py selbst neu.
   ansichten.html           Demos (Pilotphase) und Beispielansichten (In Planung) im Gerätefenster
   gemeinden/index.html     Formspree-Ziel, Einwilligung und Formular-Skript des bestehenden Kontaktformulars.
-                           build.py schreibt dort die Bereiche auto:buehne und auto:ablauf-1 bis -4 neu
+                           build.py schreibt dort die Bereiche auto:buehne und auto:ablauf-1 bis -3 neu
                            (Beispielansichten aus ansichten.html), alles andere bleibt von Hand gepflegt.
 """
 import datetime
@@ -813,7 +813,7 @@ OG_STANDARD = ("/og-image.png", "Meyssens – Digitale Infrastruktur für Organi
 # Stand der Seiten ohne eigenes Prüfdatum (Startseite, Übersichten, Über uns, Produkte): bei inhaltlichen Änderungen anpassen
 SEITEN_STAND = "2026-10-28"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/": "2026-11-12", "/branchen/": "2026-11-01", "/unternehmen/": "2026-11-11"}
+SEITEN_GEAENDERT = {"/": "2026-11-12", "/gemeinden/": "2026-11-12", "/branchen/": "2026-11-01", "/unternehmen/": "2026-11-11"}
 
 
 def stand(eintrag, pruef):
@@ -1572,7 +1572,7 @@ def main():
     neu_g = setze_auto(gemeinden, "buehne", '<div class="buehne" data-buehne>\n%s\n</div>' % geraet(
         '<span data-i18n="g.demo.titel">Mitwirken in Beispielgemeinde</span>', teil(ansichten, "gemeinden-held"),
         '<span data-i18n="g.beispiel">Beispiel</span>'))
-    for i in range(1, 5):
+    for i in range(1, 4):
         neu_g = setze_auto(neu_g, "ablauf-%d" % i, geraet(
             '<span data-i18n="g.ablauf%d.titel">%s</span>' % (i, teil(ansichten, "gemeinden-ablauf-%d-titel" % i)),
             teil(ansichten, "gemeinden-ablauf-%d" % i), '<span data-i18n="g.beispielansicht">Beispielansicht</span>'))
@@ -1594,7 +1594,7 @@ def main():
                 print("Hinweis: %s/%s steht nicht in %s" % (ordner, d.name, quelle))
 
     # lastmod: Prüfdatum der Seite, sonst SEITEN_STAND (Startseite, Übersichten, Über uns, Produkte ohne Prüfdatum)
-    seiten = [("/", "1.0", SEITEN_GEAENDERT["/"]), ("/gemeinden/", "0.9", SEITEN_STAND), ("/unternehmen/", "0.8", SEITEN_GEAENDERT["/unternehmen/"]),
+    seiten = [("/", "1.0", SEITEN_GEAENDERT["/"]), ("/gemeinden/", "0.9", SEITEN_GEAENDERT["/gemeinden/"]), ("/unternehmen/", "0.8", SEITEN_GEAENDERT["/unternehmen/"]),
               ("/branchen/", "0.7", SEITEN_GEAENDERT["/branchen/"]), ("/produkte/", "0.7", SEITEN_STAND), ("/ratgeber/", "0.7", SEITEN_STAND),
               ("/ueber-uns/", "0.5", SEITEN_STAND)]
     seiten += [("/produkte/%s/" % p["slug"], "0.6", stand(p, p.get("geprueft", SEITEN_STAND))) for p in produkte]
