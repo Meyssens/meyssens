@@ -896,7 +896,7 @@ EINWILLIGUNG = '<div class="fgrp"><label style="display:flex;gap:.6rem;align-ite
 
 SEITEN_STAND = "2026-11-13"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/": "2026-11-12", "/gemeinden/": "2026-11-12", "/branchen/": "2026-11-01", "/unternehmen/": "2026-11-12"}
+SEITEN_GEAENDERT = {"/": "2026-11-13", "/gemeinden/": "2026-11-13", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-13"}
 
 
 def stand(eintrag, pruef):
