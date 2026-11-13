@@ -733,35 +733,35 @@
   "slug": "offertanfragen-beantworten",
   "art": "ratgeber",
   "name": "Offertanfragen schneller beantworten",
-  "titel": "Offertanfragen schneller beantworten: Leitfaden | Meyssens",
-  "beschreibung": "Was eine Offerte nach OR bindet, welche Fristen gelten und wie Sie Anfragen schneller beantworten, mit Textbausteinen. Leitfaden und Checkliste lesen.",
-  "h1": "Offertanfragen schneller beantworten: Leitfaden für kleine Betriebe",
-  "lead": "Die Anfrage kam am Montag, die Offerte ist am Freitag noch nicht geschrieben, und am Telefon haben Sie schon einen Preis genannt. Gilt der jetzt? Dieser Leitfaden erklärt, wann eine Offerte nach Schweizer Recht bindet, wie Sie Fristen setzen und wie Sie Anfragen mit Textbausteinen schneller und sauberer beantworten.",
-  "geprueft": "2026-11-08",
+  "titel": "Offertanfrage beantworten: Muster und Regeln | Meyssens",
+  "beschreibung": "Offertanfrage beantworten: Muster für Antwort und Absage, was Richtofferte und Gegenofferte bedeuten, wann eine Offerte nach OR bindet. Jetzt lesen.",
+  "h1": "Offertanfragen beantworten: Muster, Richtofferte und Bindung nach OR",
+  "lead": "Die Offertanfrage kam am Montag, die Offerte ist am Freitag noch nicht geschrieben, und am Telefon haben Sie schon einen Preis genannt. Gilt der jetzt? Dieser Leitfaden erklärt Offertanfrage, Richtofferte und Gegenofferte, wann eine Offerte nach Schweizer Recht bindet und wie Sie Anfragen mit Mustertexten schneller beantworten oder absagen.",
+  "geprueft": "2026-11-13",
   "veroeffentlicht": "2026-10-25",
   "produkte": [
    "mail-assistent"
   ],
   "faq": [
    {
+    "frage": "Was ist eine Richtofferte?",
+    "antwort": "Laut einem Ratgeber der UBS ein Kostenvoranschlag für einen ersten Preisüberblick, der in aller Regel rechtlich nicht bindend ist, was klar festgehalten werden sollte. Schreiben Sie deshalb dazu, was verbindlich ist."
+   },
+   {
     "frage": "Bin ich an meine Offerte gebunden?",
-    "antwort": "In der Regel ja. Mit Frist sollten Sie davon ausgehen, bis zu deren Ablauf gebunden zu sein. Ohne Frist hängt es davon ab, ob die Offerte unter Anwesenden (auch am Telefon) oder unter Abwesenden gemacht wurde (Art. 4 und 5 OR). Ein ausdrücklicher Vorbehalt wie «unverbindlich» hebt die Bindung auf (Art. 7 OR)."
+    "antwort": "In der Regel ja. Mit Frist bleiben Sie bis zu deren Ablauf gebunden (Art. 3 OR). Ohne Frist hängt es davon ab, ob die Offerte unter Anwesenden (auch am Telefon) oder unter Abwesenden gemacht wurde (Art. 4 und 5 OR). Ein ausdrücklicher Vorbehalt wie «unverbindlich» hebt die Bindung auf (Art. 7 OR)."
    },
    {
-    "frage": "Wie lange gilt eine Offerte ohne Frist?",
-    "antwort": "Unter Anwesenden nur, wenn sie sogleich angenommen wird. Unter Abwesenden, etwa per E-Mail, bis Sie den Eingang einer rechtzeitig abgesandten Antwort erwarten dürfen. Weil das unscharf ist, lohnt sich immer ein Gültigkeitsdatum."
+    "frage": "Was ist eine Gegenofferte?",
+    "antwort": "Eine Antwort auf Ihre Offerte mit geänderten Bedingungen, etwa einem tieferen Preis oder einem anderen Termin. Laut WEKA sind Sie an Ihr ursprüngliches Angebot dann grundsätzlich nicht mehr gebunden. Sie entscheiden, ob Sie die Gegenofferte annehmen, ablehnen oder neu offerieren."
    },
    {
-    "frage": "Sind Preise auf meiner Website verbindlich?",
-    "antwort": "Preislisten und Tarife gelten nach Art. 7 OR an sich nicht als Antrag. Ob das für eine bestimmte Preisangabe auf Ihrer Website gleich gilt, haben wir nicht geprüft. Ein ausdrücklicher Vorbehalt schafft Klarheit."
+    "frage": "Muss man eine Offerte absagen?",
+    "antwort": "In der Regel nicht, denn die Bindung endet mit Ablauf der Frist oder ohne Frist nach Art. 4 und 5 OR. Ist wegen der besonderen Natur des Geschäfts oder nach den Umständen aber keine ausdrückliche Annahme zu erwarten, gilt der Vertrag als abgeschlossen, wenn der Antrag nicht binnen angemessener Frist abgelehnt wird (Art. 6 OR). Eine kurze Absage schafft Klarheit."
    },
    {
     "frage": "Was gilt, wenn die Kundin nach Ablauf der Frist annimmt?",
-    "antwort": "Nach Ablauf der Frist können Sie in der Regel neu entscheiden. Ob Sie zu den alten Bedingungen zusagen, entscheiden Sie neu."
-   },
-   {
-    "frage": "Was passiert, wenn ein ungefährer Preis deutlich überschritten wird?",
-    "antwort": "Wird ein ungefährer Kostenansatz unverhältnismässig überschritten, kann der Besteller vom Werkvertrag zurücktreten (Art. 375 OR). Informieren Sie deshalb früh, wenn die Kosten aus dem Rahmen laufen."
+    "antwort": "Ist bis zum Ablauf keine Annahme bei Ihnen eingetroffen, sind Sie wieder frei (Art. 3 Abs. 2 OR). Ob Sie zu den alten Bedingungen zusagen, entscheiden Sie neu."
    }
   ],
   "weiterlesen": [
@@ -771,14 +771,14 @@
     "grund": "Wie Entwürfe für Offertanfragen vorbereitet werden könnten, die ein Mensch prüft und selbst sendet."
    },
    {
+    "url": "/produkte/leistungsverzeichnis-import-bau/",
+    "titel": "Leistungsverzeichnis-Import für die Offerte",
+    "grund": "Wie Positionen aus einem Leistungsverzeichnis in eine Offerte übernommen werden könnten."
+   },
+   {
     "url": "/ratgeber/ndsg-kmu-checkliste/",
     "titel": "nDSG für KMU: Checkliste",
     "grund": "Kundenanfragen enthalten Personendaten. Was das Datenschutzgesetz dafür verlangt."
-   },
-   {
-    "url": "/ratgeber/online-abstimmung-verein/",
-    "titel": "Online-Abstimmungen im Verein",
-    "grund": "Ein zweiter Ratgeber dieser Reihe, für alle, die neben dem Betrieb einen Verein führen."
    },
    {
     "url": "/branchen/bauunternehmen/",
@@ -787,6 +787,22 @@
    }
   ],
   "quellen": [
+   {
+    "titel": "Fedlex, Obligationenrecht (SR 220), Art. 1 bis 7 und 373 bis 375, Stand 1. Oktober 2026",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+   },
+   {
+    "titel": "EnergieSchweiz, Solar-Offerte-Check für Photovoltaik-Anlagen: Erläuterungen",
+    "url": "https://pubdb.bfe.admin.ch/de/publication/download/9943"
+   },
+   {
+    "titel": "Stiftung für Konsumentenschutz, Kostenvoranschlag: Wie teuer ist er und wann ist er verbindlich? (24.02.2026)",
+    "url": "https://www.konsumentenschutz.ch/online-ratgeber/ist-ein-kostenvoranschlag-verbindlich/"
+   },
+   {
+    "titel": "HEV Schweiz, Günstig oder billig? Die Kunst des Vergleichens im Offertendschungel (10.09.2026)",
+    "url": "https://www.hev-schweiz.ch/news/detail/News/guenstig-oder-billig-die-kunst-des-vergleichens-im-offertendschungel"
+   },
    {
     "titel": "droit-bilingue.ch, Art. 4 bis 7 OR",
     "url": "https://www.droit-bilingue.ch/en-de/2/22/220-4-7.html"
@@ -810,10 +826,6 @@
    {
     "titel": "UBS, Sind Handwerkerofferten verbindlich? (13.06.2024)",
     "url": "https://www.ubs.com/ch/de/services/guide/mortgages-and-financing/articles/are-craftmens-offers-binding.html"
-   },
-   {
-    "titel": "Deutsche Handwerks Zeitung, Kundenanfragen schneller beantwortet (18.10.2024)",
-    "url": "https://www.deutsche-handwerks-zeitung.de/kundenanfragen-schneller-beantwortet-349790/"
    }
   ]
  },
@@ -1412,24 +1424,32 @@
   "slug": "sicherheitsnachweis-periodische-kontrolle",
   "art": "ratgeber",
   "name": "Sicherheitsnachweis und periodische Kontrolle",
-  "titel": "Sicherheitsnachweis Elektroinstallation: Pflicht | Meyssens",
-  "beschreibung": "Wer stellt den Sicherheitsnachweis aus, wer kontrolliert periodisch, welche Fristen gelten? Überblick nach ESTI und NIV für Betriebe. Jetzt lesen.",
-  "h1": "Sicherheitsnachweis und periodische Kontrolle der Elektroinstallation: wer ist wofür verantwortlich?",
-  "lead": "Beim Sicherheitsnachweis und bei der periodischen Kontrolle einer Elektroinstallation teilen sich Eigentümerschaft, Installationsbetrieb, Kontrollorgan und Netzbetreiberin die Pflichten. Dieser Ratgeber zeigt nach den Publikationen des Eidgenössischen Starkstrominspektorats (ESTI), wer den Sicherheitsnachweis ausstellt, wann kontrolliert wird und was bei fehlendem Nachweis geschieht.",
-  "geprueft": "2026-11-08",
-  "aktualisiert": "2026-11-08",
+  "titel": "Sicherheitsnachweis Elektroinstallation: Fristen | Meyssens",
+  "beschreibung": "Sicherheitsnachweis und periodische Kontrolle der Elektroinstallation: Liste der Kontrollperioden nach NIV, Fristen, Pflichten. Jetzt lesen.",
+  "h1": "Sicherheitsnachweis und periodische Kontrolle der Elektroinstallation: Liste, Fristen, Pflichten",
+  "lead": "Mit dem Sicherheitsnachweis belegt die Eigentümerschaft, dass eine Elektroinstallation den Vorschriften entspricht und kontrolliert wurde. Wann die periodische Kontrolle fällig ist, hängt von der Art der Installation ab: Der Anhang der Verordnung über elektrische Niederspannungsinstallationen (NIV) nennt Kontrollperioden von 1, 3, 5, 10 und 20 Jahren. Dieser Ratgeber zeigt die Liste, wer den Sicherheitsnachweis ausstellt, welche Fristen gelten und was bei fehlendem Nachweis geschieht.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
   "veroeffentlicht": "2026-10-28",
   "produkte": [
    "faelligkeitsliste-kontrollen-elektro"
   ],
   "faq": [
    {
+    "frage": "Was ist ein Sicherheitsnachweis?",
+    "antwort": "Ein Dokument nach Art. 37 NIV. Es enthält mindestens Adresse der Installation und der Eigentümerschaft, Beschreibung der Installation, Kontrollperiode, Name und Adresse des Installateurs, das Ergebnis der Schlusskontrolle und bei Abnahme- und periodischen Kontrollen Name, Adresse und Ergebnis des Kontrollorgans."
+   },
+   {
     "frage": "Wer stellt den Sicherheitsnachweis aus?",
-    "antwort": "Bei neuen Installationen, Änderungen und Erweiterungen eine fachkundige Person des Installationsbetriebs nach der Schlusskontrolle, bei bestehenden Installationen das unabhängige Kontrollorgan."
+    "antwort": "Bei neuen Installationen, Änderungen und Erweiterungen hält die Person, welche die Schlusskontrolle durchführt, das Ergebnis im Sicherheitsnachweis fest (Art. 24 Abs. 4 NIV). Bei Abnahme- und periodischen Kontrollen stellt ihn das unabhängige Kontrollorgan oder die akkreditierte Inspektionsstelle aus (Art. 32 Abs. 1 NIV)."
    },
    {
     "frage": "Wie oft wird kontrolliert?",
-    "antwort": "Je nach Art der Installation alle 1, 5, 10 oder 20 Jahre. Welche Periode für welche Installation gilt, ist noch zu klären. Installationen mit 10 oder 20 Jahren werden zusätzlich bei einer Handänderung kontrolliert, wenn die letzte Kontrolle mehr als fünf Jahre zurückliegt."
+    "antwort": "Nach Anhang NIV jährlich etwa Baustellen und Märkte, alle drei Jahre Tankstellen in explosionsgefährdeten Bereichen, alle fünf Jahre unter anderem Hotels, Gaststätten und Schulhäuser, alle zehn Jahre unter anderem Bürogebäude und gewerbliche Werkstätten, alle 20 Jahre alle übrigen Installationen."
+   },
+   {
+    "frage": "Muss bei einem Verkauf kontrolliert werden?",
+    "antwort": "Installationen mit einer Kontrollperiode von 10 oder 20 Jahren müssen bei jeder Handänderung kontrolliert werden, wenn seit der letzten Kontrolle mehr als fünf Jahre vergangen sind (Anhang Ziff. 3 NIV)."
    },
    {
     "frage": "Wer ist verantwortlich, wenn die Frist verpasst wird?",
@@ -1437,7 +1457,7 @@
    },
    {
     "frage": "Darf der Installateur seine eigene Installation periodisch kontrollieren?",
-    "antwort": "Nein. Wer an Planung, Erstellung, Änderung oder Instandstellung beteiligt war, darf laut ESTI nicht mit der periodischen Kontrolle beauftragt werden."
+    "antwort": "Nein. Wer an Planung, Erstellung, Änderung oder Instandstellung beteiligt war, darf nach Art. 31 NIV nicht mit der Abnahmekontrolle, der periodischen Kontrolle oder mit Stichprobenkontrollen beauftragt werden."
    }
   ],
   "weiterlesen": [
@@ -1463,6 +1483,10 @@
    }
   ],
   "quellen": [
+   {
+    "titel": "Verordnung über elektrische Niederspannungsinstallationen (NIV, SR 734.27), Stand 31. Oktober 2025, mit Anhang Kontrollperioden",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2002/22/de"
+   },
    {
     "titel": "ESTI, Infoblatt Periodische Kontrolle der elektrischen Installationen (Oktober 2017)",
     "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/Infoblatt_Periodische_Kontrolle_de.pdf"

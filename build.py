@@ -894,7 +894,7 @@ OG_STANDARD = ("/og-image.png", "Meyssens – Digitale Infrastruktur für Organi
 FORMULAR_ZIEL = "https://formspree.io/f/xlgpzzew"
 EINWILLIGUNG = '<div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>'
 
-SEITEN_STAND = "2026-10-28"
+SEITEN_STAND = "2026-11-13"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
 SEITEN_GEAENDERT = {"/": "2026-11-12", "/gemeinden/": "2026-11-12", "/branchen/": "2026-11-01", "/unternehmen/": "2026-11-12"}
 
@@ -1052,6 +1052,20 @@ def ratgeber_abschnitt(slug, ratgeber, flaeche=False):
             '    <h2>Ratgeber zum Thema</h2>\n  </div>\n  <div class="branch-list r">\n%s\n  </div>\n</section>\n\n'
             % (' class="flaeche"' if flaeche else "",
                "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (r["slug"], html.escape(r["name"]), PFEIL) for r in passend)))
+
+
+def branchen_quellen(b):
+    # Quellen einer Branchenseite (Feld "quellen" in branchen.json), wenn vorhanden
+    if not b.get("quellen"):
+        return ""
+    if not all(q["url"].startswith("https://") for q in b["quellen"]):
+        raise SystemExit("Branche %s: Quellen brauchen https-Links" % b["slug"])
+    return ('<section id="quellen-branche">\n  <div class="artikel-text r">\n    <span class="s-label">Quellen</span>\n'
+            '    <h2>Quellen</h2>\n    <div class="note"><strong>Allgemeine Information, keine Rechtsberatung.</strong> '
+            'Die rechtlichen Angaben auf dieser Seite stützen sich auf diese Quellen.</div>\n    <ul class="quellen">\n%s\n    </ul>\n'
+            '  </div>\n</section>\n\n'
+            % "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (html.escape(q["url"]), html.escape(q["titel"]))
+                        for q in b["quellen"]))
 
 
 def verwandt_abschnitt(links):
@@ -1321,7 +1335,7 @@ def main():
         kopf, seitenld = seitenkopf((START, STUFE_BRANCHEN, (b["name"], burl)), b.get("seo_titel") or titel_branche(b),
                                og_branche(b["slug"], b["name"]))
         werte = dict(gemeinsam, **kopf, **{
-            "verwandt": verwandt_abschnitt(verwandte(netz, info, burl)),
+            "verwandt": branchen_quellen(b) + verwandt_abschnitt(verwandte(netz, info, burl)),
             "titel": html.escape(b.get("seo_titel") or titel_branche(b)),
             "beschreibung": html.escape(b.get("seo_beschreibung") or b["beschreibung"]),
             "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),
