@@ -287,7 +287,18 @@
         "antwort": "Nein. Der Baustein schlägt Kategorie und Dringlichkeit vor. Die Bewirtschaftung prüft den Vorschlag, entscheidet über den Auftrag und gibt jede Antwort an die Mieterschaft frei."
       }
     ],
-    "weiterlesen": []
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/schadenmeldung-mietwohnung/",
+        "titel": "Schadenmeldung in der Mietwohnung",
+        "grund": "Schritt für Schritt: was in eine Meldung gehört und wer zuständig ist."
+      },
+      {
+        "url": "/ratgeber/wohnungsabnahme-uebergabeprotokoll/",
+        "titel": "Wohnungsabnahme und Übergabeprotokoll",
+        "grund": "Mängel beim Auszug festhalten und sofort melden."
+      }
+    ]
   },
   {
     "slug": "besichtigungstermine-mietobjekt",
@@ -441,7 +452,23 @@
         "antwort": "Der SIA hat den Entwurf prSIA 102:2024-11 bis zum 28. Februar 2025 in die Vernehmlassung gegeben. Laut SIA hat der Entwurf keine Gültigkeit und darf nicht angewendet werden. Er sieht unter anderem eine Phase 0 Initialisierung und eine neue Teilphase 41 Ausschreibungsplanung vor. Den aktuellen Stand der Revision veröffentlicht der SIA. Die Phasenliste im Baustein lässt sich an die Ausgabe anpassen, die Ihr Büro verwendet."
       }
     ],
-    "weiterlesen": []
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/sia-phasen-102/",
+        "titel": "SIA-Phasen nach SIA 102",
+        "grund": "Alle Phasen und Teilphasen von der Strategischen Planung bis zur Bewirtschaftung."
+      },
+      {
+        "url": "/ratgeber/honorar-sia-102-berechnen/",
+        "titel": "Honorar nach SIA 102 berechnen",
+        "grund": "Wie Zeitaufwand und Phasen in die Honorarberechnung einfliessen."
+      },
+      {
+        "url": "/ratgeber/kbob-honorare-stundenansaetze/",
+        "titel": "KBOB-Honorare und Stundenansätze",
+        "grund": "Was die KBOB zu Stundenansätzen für öffentliche Aufträge empfiehlt."
+      }
+    ]
   },
   {
     "slug": "akontorechnung-architektur",
@@ -679,7 +706,23 @@
         "antwort": "Das ist im Einzelfall zu prüfen. Wer in der Offerte eine Frist setzt, sollte davon ausgehen, bis zu deren Ablauf gebunden zu sein. Der Baustein setzt die Frist, die Ihr Büro vorgibt, sichtbar in den Entwurf."
       }
     ],
-    "weiterlesen": []
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/honorar-sia-102-berechnen/",
+        "titel": "Honorar nach SIA 102 berechnen",
+        "grund": "Schritt für Schritt von den Stunden pro Phase zum Honorar."
+      },
+      {
+        "url": "/ratgeber/sia-phasen-102/",
+        "titel": "Die SIA-Phasen erklärt",
+        "grund": "Was in welche Phase gehört, als Grundlage der Leistungstabelle."
+      },
+      {
+        "url": "/ratgeber/kbob-honorare-stundenansaetze/",
+        "titel": "KBOB-Honorare und Stundenansätze",
+        "grund": "Kategorien, Stufen und Nebenkosten nach den Empfehlungen 2026."
+      }
+    ]
   },
   {
     "slug": "online-terminanfrage-arztpraxis",
