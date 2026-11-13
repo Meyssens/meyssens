@@ -17,3 +17,4 @@ exclude:
   - vorlage_seite.html
   - bilder.py
   - kontrast_buttons.py
+  - pruefdaten.md
