@@ -829,7 +829,10 @@ def titel_branche(b):
 # Organisation und Website: auf jeder erzeugten Seite, nur belegte Angaben (Impressum), keine Bewertungen
 ORG = {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "Meyssens", "url": DOMAIN + "/", "logo": DOMAIN + "/logo.png",
        "email": "lionel@meyssens.ch", "founder": {"@id": DOMAIN + "/ueber-uns/#person"},
-       "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}
+       "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"},
+       "areaServed": {"@type": "Country", "name": "Schweiz"}, "knowsLanguage": "de-CH",
+       "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "lionel@meyssens.ch",
+                        "availableLanguage": "de"}}
 WEBSITE = {"@type": "WebSite", "@id": DOMAIN + "/#website", "name": "Meyssens", "url": DOMAIN + "/", "inLanguage": "de-CH",
            "publisher": {"@id": DOMAIN + "/#org"}}
 SCHWEIZ = {"@type": "Country", "name": "Schweiz"}
@@ -859,6 +862,14 @@ def dienst(p, url, branche=None):
     if p.get("status"):
         d["additionalProperty"] = {"@type": "PropertyValue", "name": "Status", "value": p["status"]}
     return d
+
+
+def software(p, url):
+    # SoftwareApplication für Produkt- und Bausteinseiten (webbasiert); bewusst ohne offers und aggregateRating:
+    # keine Preise auf der Website und keine Bewertungen (Meyssens hat noch keine Kunden)
+    return {"@type": "SoftwareApplication", "@id": url + "#software", "name": p["name"], "description": p["kurzbeschreibung"],
+            "url": url, "applicationCategory": "BusinessApplication", "operatingSystem": "Web (Browser)",
+            "inLanguage": "de-CH", "publisher": {"@id": DOMAIN + "/#org"}, "provider": {"@id": DOMAIN + "/#org"}}
 
 
 def h1_html(text):
@@ -1284,7 +1295,7 @@ def main():
             "schweiz": e["schweiz"],
             "demo": demo(p.get("demo"), "produkt"),
             "ansicht": produkt_ansicht(ansichten, p),
-            "ld": ld(*seitenld, dienst(p, url)),
+            "ld": ld(*seitenld, dienst(p, url), software(p, url)),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -1479,7 +1490,7 @@ def main():
                               % qa_liste(p["faq"]) if p.get("faq") else ""),
             "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
                                  % (html.escape(q["url"]), html.escape(q["titel"])) for q in p["quellen"]),
-            "ld": ld(*seitenld, dienst(p, DOMAIN + pfad, b["name"]), *([faq_ld(p["faq"])] if p.get("faq") else [])),
+            "ld": ld(*seitenld, dienst(p, DOMAIN + pfad, b["name"]), software(p, DOMAIN + pfad), *([faq_ld(p["faq"])] if p.get("faq") else [])),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
