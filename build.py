@@ -1054,6 +1054,20 @@ def ratgeber_abschnitt(slug, ratgeber, flaeche=False):
                "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (r["slug"], html.escape(r["name"]), PFEIL) for r in passend)))
 
 
+def branchen_ratgeber(b, ratgeber):
+    # Alle Ratgeber zur Branche: gemeinsame Produkte/Bausteine oder Weiterlesen-Link auf die Branchenseite
+    eigene = set(b.get("produkte", []) + b.get("bausteine", []))
+    url = "/branchen/%s/" % b["slug"]
+    passend = [r for r in ratgeber if set(r["produkte"]) & eigene or any(l["url"] == url for l in r["weiterlesen"])
+               or b.get("automatisierungen", {}).get("ratgeber") == r["slug"]]
+    if not passend:
+        return ""
+    return ('<section id="ratgeber-branche">\n  <div class="r">\n    <span class="s-label">Ratgeber</span>\n'
+            '    <h2>Ratgeber für %s</h2>\n  </div>\n  <div class="branch-list r">\n%s\n  </div>\n</section>\n\n'
+            % (html.escape(b["name"]),
+               "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (r["slug"], html.escape(r["name"]), PFEIL) for r in passend)))
+
+
 def branchen_quellen(b):
     # Quellen einer Branchenseite (Feld "quellen" in branchen.json), wenn vorhanden
     if not b.get("quellen"):
@@ -1335,7 +1349,7 @@ def main():
         kopf, seitenld = seitenkopf((START, STUFE_BRANCHEN, (b["name"], burl)), b.get("seo_titel") or titel_branche(b),
                                og_branche(b["slug"], b["name"]))
         werte = dict(gemeinsam, **kopf, **{
-            "verwandt": branchen_quellen(b) + verwandt_abschnitt(verwandte(netz, info, burl)),
+            "verwandt": branchen_ratgeber(b, ratgeber) + branchen_quellen(b) + verwandt_abschnitt(verwandte(netz, info, burl)),
             "titel": html.escape(b.get("seo_titel") or titel_branche(b)),
             "beschreibung": html.escape(b.get("seo_beschreibung") or b["beschreibung"]),
             "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),

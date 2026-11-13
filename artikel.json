@@ -1512,5 +1512,2935 @@
     "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2014_2013/2013-11_stichproben_d.pdf"
    }
   ]
+ },
+ {
+  "slug": "elektrokontrolle-handaenderung",
+  "art": "ratgeber",
+  "name": "Elektrokontrolle bei Handänderung",
+  "titel": "Elektrokontrolle bei Handänderung: wer zahlt? | Meyssens",
+  "beschreibung": "Wann ist die Elektrokontrolle beim Verkauf einer Liegenschaft nach NIV fällig, welche Fälle zählen, wer beauftragt und wer zahlt? Jetzt lesen.",
+  "h1": "Elektrokontrolle bei Handänderung: wann ist sie fällig und wer bezahlt sie?",
+  "lead": "Wird eine Liegenschaft verkauft, verschenkt oder in einer Erbteilung zugeteilt, kann eine Elektrokontrolle nach der Niederspannungs-Installationsverordnung (NIV) fällig werden. Dieser Ratgeber zeigt nach den Publikationen des ESTI, wann die Kontrolle bei Handänderung nötig ist, welche Vorgänge zählen und wer sie veranlasst und bezahlt.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "faelligkeitsliste-kontrollen-elektro",
+   "materialliste-elektro"
+  ],
+  "faq": [
+   {
+    "frage": "Wann ist bei einer Handänderung eine Elektrokontrolle nötig?",
+    "antwort": "Laut ESTI, wenn die Installation eine Kontrollperiode von 10 oder 20 Jahren hat und die letzte Kontrolle mehr als fünf Jahre zurückliegt (Ziffer 3 Anhang NIV)."
+   },
+   {
+    "frage": "Wer bezahlt die Elektrokontrolle bei Handänderung?",
+    "antwort": "Die NIV verpflichtet die Eigentümerschaft; sie beauftragt das unabhängige Kontrollorgan. Ob Verkäufer oder Käufer die Kosten trägt, regeln die Quellen des ESTI nicht. Das wird im Kaufvertrag vereinbart und ist im Einzelfall zu prüfen."
+   },
+   {
+    "frage": "Löst ein Erbgang eine Kontrolle aus?",
+    "antwort": "Nein. Laut ESTI ist der Erbgang keine Handänderung im Sinne der NIV. Die Erbteilung, die Schenkung und der Erbvorbezug eines Grundstücks gelten dagegen als Handänderung."
+   },
+   {
+    "frage": "Gilt das auch beim Verkauf einer Stockwerkeinheit?",
+    "antwort": "Ja. Die Veräusserung einer Stockwerkeinheit mit Sonderrecht nach Art. 712a ZGB ist laut ESTI eine Handänderung. Die Veräusserung eines gewöhnlichen Miteigentumsanteils dagegen nicht."
+   },
+   {
+    "frage": "Gelten in Obwalden oder St. Gallen andere Regeln?",
+    "antwort": "Nein. Die NIV ist Bundesrecht und gilt in allen Kantonen gleich. Ansprechpartnerin ist die Netzbetreiberin, aus deren Netz die Liegenschaft versorgt wird."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/elektro-handwerk/",
+    "titel": "Elektro-Handwerk digital",
+    "grund": "Geplante Bausteine und Abläufe von der Anfrage bis zur Kontrolle."
+   },
+   {
+    "url": "/produkte/faelligkeitsliste-kontrollen-elektro/",
+    "titel": "Fälligkeitsliste für Kontrollen und Wartungen",
+    "grund": "Kontrollperioden und Fälligkeiten pro Anlage, Anschreiben als Entwurf."
+   },
+   {
+    "url": "/ratgeber/sicherheitsnachweis-periodische-kontrolle/",
+    "titel": "Sicherheitsnachweis und periodische Kontrolle",
+    "grund": "Rollen, Fristen und Unabhängigkeit bei der periodischen Kontrolle."
+   },
+   {
+    "url": "/ratgeber/kontrollbericht-elektro-maengel/",
+    "titel": "Kontrollbericht nach der Elektrokontrolle",
+    "grund": "Was nach einem Mängelbericht zu tun ist."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "ESTI, Periodische Kontrolle bei Handänderung (Bulletin 3/2019)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2019-2020/2019-03_handaenderung_d_3.pdf"
+   },
+   {
+    "titel": "ESTI, Infoblatt Periodische Kontrolle der elektrischen Installationen (Oktober 2017)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/Infoblatt_Periodische_Kontrolle_de.pdf"
+   },
+   {
+    "titel": "ESTI, Teilrevision der NIV: Kontrollperioden (Bulletin 6/2018)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/2018-06_teilrevision-niv_kontrollperioden_d.pdf"
+   },
+   {
+    "titel": "ESTI, Unterbrechen der Stromzufuhr statt periodische Kontrolle (Bulletin 12/2017)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/2017-12_unterbrechen_stromzufuhr_d.pdf"
+   },
+   {
+    "titel": "ESTI, Niederspannungsinstallationen",
+    "url": "https://www.esti.admin.ch/de/themen/niederspannungsinstallationen"
+   },
+   {
+    "titel": "ESTI, Formular Sicherheitsnachweis Elektroinstallationen (SiNa)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Gesuche_NIV/Sicherheitsnachweis_Elektroinstallationen__SiNa_.pdf"
+   },
+   {
+    "titel": "BFE, NIV Fact-Sheet (7) Kontrolle bei Handänderung, aufgehoben per 1.5.2020",
+    "url": "https://pubdb.bfe.admin.ch/de/publication/download/5069"
+   },
+   {
+    "titel": "UVEK, Erläuternder Bericht zum Vorentwurf der NIV-Revision (Mai 2024)",
+    "url": "https://pubdb.bfe.admin.ch/de/publication/download/11505"
+   }
+  ]
+ },
+ {
+  "slug": "kontrollbericht-elektro-maengel",
+  "art": "ratgeber",
+  "name": "Kontrollbericht und Mängelbehebung",
+  "titel": "Kontrollbericht Elektro: Mängel richtig beheben | Meyssens",
+  "beschreibung": "Mängelbericht nach der Elektrokontrolle: wer die Mängel beheben darf, welche Fristen gelten und wie der Sicherheitsnachweis folgt. Checkliste lesen.",
+  "h1": "Kontrollbericht nach der Elektrokontrolle: wie behebe ich die Mängel fristgerecht?",
+  "lead": "Findet das Kontrollorgan bei der Elektrokontrolle Mängel, erhält die Eigentümerschaft statt des Sicherheitsnachweises einen Kontrollbericht mit Mängelliste. Dieser Ratgeber zeigt nach den Publikationen des ESTI, wer die Mängel beheben darf, welche Fristen gelten und wie danach der Sicherheitsnachweis zustande kommt.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "faelligkeitsliste-kontrollen-elektro",
+   "zeitabgleich-rapporte-handwerk"
+  ],
+  "faq": [
+   {
+    "frage": "Darf das Kontrollorgan die Mängel gleich selbst beheben?",
+    "antwort": "Nein. Laut ESTI darf das Kontrollorgan, das die Mängel festgestellt hat, sie nicht selbst beheben (Art. 31 NIV). Die Eigentümerschaft beauftragt dafür einen unabhängigen Betrieb mit Installationsbewilligung."
+   },
+   {
+    "frage": "Bis wann müssen die Mängel behoben sein?",
+    "antwort": "Massgebend ist die Frist der Netzbetreiberin für den Sicherheitsnachweis. Sie kann bis längstens ein Jahr nach Ablauf der Kontrollperiode verlängert werden. Mängel, die Personen oder Sachen gefährden können, sind unverzüglich zu beheben."
+   },
+   {
+    "frage": "Wie kommt nach der Mängelbehebung der Sicherheitsnachweis zustande?",
+    "antwort": "Der Installateur bestätigt auf dem Mängelbericht, dass die Mängel behoben sind. Gestützt darauf erstellt das Kontrollorgan, allenfalls nach einer Nachkontrolle, den Sicherheitsnachweis. Die Eigentümerschaft reicht ihn bei der Netzbetreiberin ein."
+   },
+   {
+    "frage": "Ab wann läuft die nächste Kontrollperiode?",
+    "antwort": "Laut ESTI ab dem Datum der periodischen Kontrolle, nicht ab der Mängelbehebung und nicht ab dem Datum des Sicherheitsnachweises."
+   },
+   {
+    "frage": "Was geschieht, wenn der Sicherheitsnachweis nicht eingereicht wird?",
+    "antwort": "Wird der Nachweis trotz zweimaliger Mahnung nicht eingereicht, übergibt die Netzbetreiberin die Durchsetzung laut ESTI dem ESTI. Dieses setzt die Kontrolle als allerletztes Mittel per Verfügung durch."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/elektro-handwerk/",
+    "titel": "Elektro-Handwerk digital",
+    "grund": "Geplante Bausteine und Abläufe von der Anfrage bis zur Kontrolle."
+   },
+   {
+    "url": "/produkte/faelligkeitsliste-kontrollen-elektro/",
+    "titel": "Fälligkeitsliste für Kontrollen und Wartungen",
+    "grund": "Fristen pro Anlage im Blick, Anschreiben als Entwurf."
+   },
+   {
+    "url": "/ratgeber/sicherheitsnachweis-periodische-kontrolle/",
+    "titel": "Sicherheitsnachweis und periodische Kontrolle",
+    "grund": "Wer den Nachweis ausstellt und welche Fristen gelten."
+   },
+   {
+    "url": "/ratgeber/elektrokontrolle-handaenderung/",
+    "titel": "Elektrokontrolle bei Handänderung",
+    "grund": "Wann ein Verkauf die Kontrolle auslöst und wer sie bezahlt."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "ESTI, Keine Mängelbehebung durch Kontrollorgane (Bulletin 5/2012)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2012_2011/2012-05_kontrollorgane_d.pdf"
+   },
+   {
+    "titel": "ESTI, Infoblatt Periodische Kontrolle der elektrischen Installationen (Oktober 2017)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/Infoblatt_Periodische_Kontrolle_de.pdf"
+   },
+   {
+    "titel": "ESTI, Häufige Fragen: Periodische Kontrollen, Sicherheitsnachweise",
+    "url": "https://www.esti.admin.ch/de/themen/faq/periodische-kontrollen-sicherheitsnachweise"
+   },
+   {
+    "titel": "ESTI, Teilrevision der NIV: Kontrollperioden (Bulletin 6/2018)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Publikationen/2017_2018/2018-06_teilrevision-niv_kontrollperioden_d.pdf"
+   },
+   {
+    "titel": "ESTI, Niederspannungsinstallationen",
+    "url": "https://www.esti.admin.ch/de/themen/niederspannungsinstallationen"
+   },
+   {
+    "titel": "ESTI, Formular Sicherheitsnachweis Elektroinstallationen (SiNa)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Gesuche_NIV/Sicherheitsnachweis_Elektroinstallationen__SiNa_.pdf"
+   },
+   {
+    "titel": "ESTI, Mitteilung Nr. 2024-0802: Sicherheitsnachweise nach Konkursen (1. August 2024)",
+    "url": "https://www.esti.admin.ch/inhalte/2024-0802_Sina_nach_Konkursen_bzw._bei_Wegfall_der_Aufsicht_des_fachkundigen_Leiters.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "offerte-elektroinstallation",
+  "art": "ratgeber",
+  "name": "Offerte für Elektroinstallationen",
+  "titel": "Offerte Elektroinstallation: Aufbau, Checkliste | Meyssens",
+  "beschreibung": "Offerte für Elektroinstallationen erstellen: Aufbau, Positionen nach NPK, Sicherheitsnachweis, Regie, MWST und Excel-Tipps. Checkliste lesen.",
+  "h1": "Offerte für Elektroinstallationen erstellen: Aufbau, Positionen und Checkliste",
+  "lead": "Eine Offerte für Elektroinstallationen beschreibt Leistung, Preis und Annahmen und sollte auch die Pflichten aus der NIV abbilden, von der Erstprüfung bis zum Sicherheitsnachweis. Dieser Ratgeber zeigt einen praktischen Aufbau, typische Positionen, den Umgang mit Excel und öffentlichen Aufträgen sowie eine Checkliste vor dem Versand.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "materialliste-elektro",
+   "ausschreibungs-radar",
+   "zeitabgleich-rapporte-handwerk"
+  ],
+  "faq": [
+   {
+    "frage": "Muss ich Positionen nach NPK verwenden?",
+    "antwort": "Liegt einer Anfrage ein Leistungsverzeichnis nach NPK bei, füllt man dieses aus. Für private Offerten ohne Vorgabe haben wir keine Pflicht gefunden. CRB und KBOB nennen als Vorteil des NPK vergleichbare Offerten."
+   },
+   {
+    "frage": "Gehört der Sicherheitsnachweis in die Offerte?",
+    "antwort": "Ja, als Leistung. Vor der Übergabe ist eine Schlusskontrolle durchzuführen und ihr Ergebnis im Sicherheitsnachweis festzuhalten, der der Netzbetreiberin zuzustellen ist (nach ESTI)."
+   },
+   {
+    "frage": "Welcher Mehrwertsteuersatz gilt?",
+    "antwort": "Seit dem 1. Januar 2024 beträgt der Normalsatz laut ESTV 8,1 Prozent, der reduzierte Satz 2,6 Prozent und der Sondersatz für Beherbergung 3,8 Prozent. Welcher Satz für eine Leistung gilt, ist im Einzelfall zu prüfen."
+   },
+   {
+    "frage": "Wo finde ich öffentliche Aufträge für Elektriker?",
+    "antwort": "Viele öffentliche Ausschreibungen erscheinen auf simap.ch. Laut KMU-Portal sind die Publikationen ohne Anmeldung suchbar; die Angebotsfrist beträgt in der Regel 40 Tage im offenen und 25 Tage im selektiven Verfahren. Massgebend ist die Frist in der Ausschreibung."
+   },
+   {
+    "frage": "Reicht Excel für Offerten?",
+    "antwort": "Für kleine Betriebe oft ja, mit einer geschützten Vorlage, festen Positionsnummern und klaren Versionen. Hängen Offerte, Material und Rechnung eng zusammen, lohnt sich ein Vergleich mit Branchensoftware."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/elektro-handwerk/",
+    "titel": "Elektro-Handwerk digital",
+    "grund": "Geplante Bausteine und Abläufe von der Anfrage bis zur Kontrolle."
+   },
+   {
+    "url": "/produkte/materialliste-elektro/",
+    "titel": "Materialliste aus Offerte oder Auftrag",
+    "grund": "Aus den Positionen der Offerte eine Materialliste und Bestellentwürfe."
+   },
+   {
+    "url": "/produkte/ausschreibungs-radar/",
+    "titel": "Ausschreibungs-Radar",
+    "grund": "Öffentliche Ausschreibungen nach Stichworten und Regionen sammeln."
+   },
+   {
+    "url": "/ratgeber/offertanfragen-beantworten/",
+    "titel": "Offertanfragen schneller beantworten",
+    "grund": "Was eine Offerte rechtlich bedeutet und wie lange sie bindet."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "CRB, Normpositionen-Katalog NPK",
+    "url": "https://www.crb.ch/de/normen-standards/normpositionen/normpositionen-katalog-npk"
+   },
+   {
+    "titel": "KBOB, Leitfaden zur Beschaffung von Werkleistungen (V2.0, 17. November 2025)",
+    "url": "https://www.kbob.admin.ch/dam/de/sd-web/w3-hSjqwNOzp/20251125_KBOB-Leitfaden%20zur%20Beschaffung%20von%20Werkleistungen_V2.0_Publikation_DE.pdf"
+   },
+   {
+    "titel": "ESTV, Schweizer Mehrwertsteuersätze",
+    "url": "https://www.estv.admin.ch/estv/de/home/mehrwertsteuer/mwst-steuersaetze.html"
+   },
+   {
+    "titel": "KMU-Portal des Bundes, Teilnahme an einer Ausschreibung",
+    "url": "https://www.kmu.admin.ch/de/teilnahme-an-einer-ausschreibung"
+   },
+   {
+    "titel": "ESTI, Mitteilung Nr. 2024-0802: Sicherheitsnachweise nach Konkursen (1. August 2024)",
+    "url": "https://www.esti.admin.ch/inhalte/2024-0802_Sina_nach_Konkursen_bzw._bei_Wegfall_der_Aufsicht_des_fachkundigen_Leiters.pdf"
+   },
+   {
+    "titel": "ESTI, Häufige Fragen: Periodische Kontrollen, Sicherheitsnachweise",
+    "url": "https://www.esti.admin.ch/de/themen/faq/periodische-kontrollen-sicherheitsnachweise"
+   },
+   {
+    "titel": "ESTI, Niederspannungsinstallationen",
+    "url": "https://www.esti.admin.ch/de/themen/niederspannungsinstallationen"
+   },
+   {
+    "titel": "ESTI, Formular Sicherheitsnachweis Elektroinstallationen (SiNa)",
+    "url": "https://www.esti.admin.ch/inhalte/pdf/NIV_I/Deutsch/Gesuche_NIV/Sicherheitsnachweis_Elektroinstallationen__SiNa_.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "sia-phasen-102",
+  "art": "ratgeber",
+  "name": "SIA-Phasen nach SIA 102 im Überblick",
+  "titel": "SIA-Phasen nach SIA 102: Teilphasen im Überblick | Meyssens",
+  "beschreibung": "SIA 102 Phasen von der strategischen Planung bis zum Abschluss: Teilphasen 11 bis 62, Grundleistungen, Leistungstabelle und Revision. Jetzt lesen.",
+  "h1": "SIA-Phasen nach SIA 102: welche Leistungen gehören in welche Phase?",
+  "lead": "Die SIA-Phasen gliedern ein Bauvorhaben von der strategischen Planung bis zur Bewirtschaftung in sechs Phasen und zwölf Teilphasen. Dieser Überblick zeigt nach SIA 102, SIA 112 und dem KBOB-Planervertrag, was in welche Teilphase gehört, was Grundleistungen sind und was die laufende Revision ändern soll.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "zeiterfassung-sia-phasen",
+   "honorarofferte-sia-102",
+   "protokoll-pendenzen"
+  ],
+  "faq": [
+   {
+    "frage": "Welche Phasen kennt die SIA 102?",
+    "antwort": "Nach dem Modell Bauplanung SIA 112 gibt es sechs Phasen: 1 Strategische Planung, 2 Vorstudien, 3 Projektierung, 4 Ausschreibung, 5 Realisierung und 6 Bewirtschaftung, mit den Teilphasen 11 bis 62. So stehen sie im KBOB-Planervertrag, der sich auf SIA 102/2020 und SIA 112/2014 stützt."
+   },
+   {
+    "frage": "Was umfasst ein Architekturauftrag ohne besondere Vereinbarung?",
+    "antwort": "Der Vernehmlassungsentwurf der neuen SIA 102 nennt in der Regel die Grundleistungen der Phasen 3 Projektierung, 4 Ausschreibung und 5 Realisierung. Für die Phasen 1, 2 und 6 sind die Leistungen besonders zu vereinbaren. Massgebend ist immer der Vertrag."
+   },
+   {
+    "frage": "Gibt es feste Prozentanteile pro Phase?",
+    "antwort": "Nicht mehr verbindlich vom Verband. Die Honorarberechnung nach aufwandbestimmenden Baukosten mit Prozentanteilen musste laut SIA nach einer Intervention der WEKO zurückgezogen werden. Der Revisionsentwurf nennt Bereiche als Ausgangslage, etwa ca. 28 bis 40 Prozent für die Projektierung. Das ist eine Orientierung, nicht verbindlich: Der Entwurf hat keine Gültigkeit, und die Anteile sind im Einzelfall zu vereinbaren."
+   },
+   {
+    "frage": "Was ändert die Revision der SIA 102?",
+    "antwort": "Laut Entwurf und Faktenblatt des SIA kommen eine Phase 0 Initialisierung und eine Teilphase 41 Ausschreibungsplanung dazu, die Vergabe rückt in Teilphase 42, und Leistungen werden den Funktionen Gesamtleitung, Fachplanung und Bauleitung zugeordnet. Ein Datum für die neue Ausgabe haben wir nicht gefunden."
+   },
+   {
+    "frage": "Darf eine Teilphase ausgelassen werden?",
+    "antwort": "Ja, Leistungen können je nach Aufgabe verschoben oder ausgelassen werden. Wird eine ganze Teilphase ausgelassen, ist zu prüfen, ob einzelne ihrer Leistungen in anderen Phasen trotzdem nötig sind, weil die Phasen aufeinander aufbauen."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/architekturbueros/",
+    "titel": "Architekturbüro digital",
+    "grund": "Ausschreibungen auf simap, Schwellenwerte und Abläufe im Büroalltag."
+   },
+   {
+    "url": "/produkte/zeiterfassung-sia-phasen/",
+    "titel": "Zeiterfassung nach Projekt und Phase",
+    "grund": "Stunden direkt der Teilphase zuordnen, Monatsrapport pro Projekt und Phase."
+   },
+   {
+    "url": "/ratgeber/honorar-sia-102-berechnen/",
+    "titel": "Architektenhonorar nach SIA 102 berechnen",
+    "grund": "Honorierungsarten, altes Baukostenmodell und Ablauf der Honorarofferte."
+   },
+   {
+    "url": "/ratgeber/maengelruege-abnahme-2026/",
+    "titel": "Mängelrüge und Abnahme ab 2026",
+    "grund": "Die neue Rügefrist von 60 Tagen bei Bauten in der Realisierungsphase."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "SIA, Ordnung SIA 112 Leistungsmodell (2001), Auszug mit Erläuterungen",
+    "url": "https://shop.sia.ch/3eacfeb5-6c16-428c-8002-b19db1322f82/D/DownloadAnhang"
+   },
+   {
+    "titel": "Kanton Schwyz, Hochbauamt: KBOB-Planervertrag Dokument Nr. 30 (Version 2023) mit AVB",
+    "url": "https://www.sz.ch/public/upload/assets/67927/Planervertrag_Vorlage.pdf?fp=3"
+   },
+   {
+    "titel": "KBOB, Empfehlungen zur Honorierung von Planerinnen und Planern 2026 (Fassung 7. September 2026)",
+    "url": "https://www.kbob.admin.ch/dam/de/sd-web/HGbaiE3U2uo5/20260907_KBOB-Empfehlungen%20Honorierung%202026_September%202026_Publikation_DE.pdf"
+   },
+   {
+    "titel": "SIA, Revision der Leistungs- und Honorarordnungen SIA 102, 103, 105, 108: Das Wichtigste in Kürze (Faktenblatt, November 2024)",
+    "url": "https://cms.sia.ch/de/api/getMedia/1004"
+   },
+   {
+    "titel": "SIA, Vernehmlassungsentwurf prSIA 102:2024-11 (ohne Gültigkeit)",
+    "url": "https://cms.sia.ch/de/api/getMedia/990"
+   },
+   {
+    "titel": "KBOB, Unterschiede zwischen dem Planervertrag KBOB und dem Planervertrag SIA (Dezember 2016)",
+    "url": "https://www.kbob.admin.ch/dam/de/sd-web/RSjjWRN1gLB1/20170223_Unterschiede_zwischen_dem_KBOB-Vertrag_f%C3%BCr_Planungsleistungen_und_dem_SIA-Planervertrag_Publikation_DE.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "honorar-sia-102-berechnen",
+  "art": "ratgeber",
+  "name": "Architektenhonorar nach SIA 102 berechnen",
+  "titel": "Architektenhonorar nach SIA 102 berechnen | Meyssens",
+  "beschreibung": "Honorarberechnung nach SIA 102: Zeitaufwand, Pauschale, altes Baukostenmodell, Nebenkosten, MWST und Teuerung, mit Anleitung zur Offerte. Jetzt lesen.",
+  "h1": "Architektenhonorar nach SIA 102 berechnen: wie funktioniert die Honorarermittlung?",
+  "lead": "Eine verbindliche Honorarformel des SIA gibt es seit dem Rückzug der Berechnung nach Baukosten nicht mehr. Dieser Ratgeber zeigt nach den Empfehlungen der KBOB und den Unterlagen des SIA, welche Honorierungsarten üblich sind, wie das alte Modell funktionierte und wie Sie eine Honorarofferte Schritt für Schritt aufbauen.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "honorarofferte-sia-102",
+   "zeiterfassung-sia-phasen",
+   "akontorechnung-architektur"
+  ],
+  "faq": [
+   {
+    "frage": "Gibt es eine offizielle Honorarformel nach SIA 102?",
+    "antwort": "Nein. Die Berechnung nach aufwandbestimmenden Baukosten in Art. 7 der Ausgabe 2014 musste laut SIA nach einer Intervention der WEKO zurückgezogen werden. Der Revisionsentwurf hält fest, dass der SIA aufgrund des Wettbewerbsrechts keine Honorarkalkulationen vorgibt."
+   },
+   {
+    "frage": "Welche Honorierungsarten sind üblich?",
+    "antwort": "Die KBOB nennt das Honorar nach effektivem Zeitaufwand, Festpreise als Pauschale ohne oder als Globale mit Teuerung und individuell vereinbarte Modelle, etwa einen Prozentsatz der Baukosten. Nach Zeitaufwand wird in der Regel ein Kostendach vereinbart."
+   },
+   {
+    "frage": "Sind Nebenkosten im Honorar enthalten?",
+    "antwort": "In der Regel nicht. Laut KBOB sind Nebenkosten und Drittleistungen gesondert zu vergüten, am besten als Pauschale in Prozent der Honorarsumme, sonst mit Kostendach. Die Art der Vergütung ist vor der Leistung zu vereinbaren."
+   },
+   {
+    "frage": "Wie wird die Teuerung beim Honorar berücksichtigt?",
+    "antwort": "Nur wenn sie im Vertrag ausdrücklich vereinbart ist, etwa nach der Vertragsnorm SIA 126. Die KBOB veröffentlicht dazu jährlich eine Tabelle mit den Preisänderungen; Stichtag ist der Tag der Einreichung des Angebots."
+   },
+   {
+    "frage": "Gibt es einen SIA-Honorarrechner?",
+    "antwort": "Der SIA gibt keine Kalkulation vor. Laut Revisionsentwurf können unabhängige Stellen Kalkulationshilfen auf Basis statistischer Daten entwickeln. Die beste Grundlage bleiben die nach Teilphase erfassten Stunden abgeschlossener Projekte des eigenen Büros."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/architekturbueros/",
+    "titel": "Architekturbüro digital",
+    "grund": "Ausschreibungen auf simap, Schwellenwerte und Abläufe im Büroalltag."
+   },
+   {
+    "url": "/produkte/honorarofferte-sia-102/",
+    "titel": "Honorarofferte nach SIA 102",
+    "grund": "Entwurf der Offerte aus Leistungsbausteinen, Stunden pro Phase und Ansätzen."
+   },
+   {
+    "url": "/ratgeber/kbob-honorare-stundenansaetze/",
+    "titel": "KBOB-Honorarempfehlungen und Stundenansätze",
+    "grund": "Kategorien A bis G, Nebenkosten und Teuerung bei Aufträgen der öffentlichen Hand."
+   },
+   {
+    "url": "/ratgeber/offertanfragen-beantworten/",
+    "titel": "Offertanfragen schneller beantworten",
+    "grund": "Ein Leitfaden, wie Anfragen geordnet und rasch zu einer Offerte werden."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "KBOB, Empfehlungen zur Honorierung von Planerinnen und Planern 2026 (Fassung 7. September 2026)",
+    "url": "https://www.kbob.admin.ch/dam/de/sd-web/HGbaiE3U2uo5/20260907_KBOB-Empfehlungen%20Honorierung%202026_September%202026_Publikation_DE.pdf"
+   },
+   {
+    "titel": "SIA, Revision der Leistungs- und Honorarordnungen SIA 102, 103, 105, 108: Das Wichtigste in Kürze (Faktenblatt, November 2024)",
+    "url": "https://cms.sia.ch/de/api/getMedia/1004"
+   },
+   {
+    "titel": "SIA, Vernehmlassungsentwurf prSIA 102:2024-11 (ohne Gültigkeit)",
+    "url": "https://cms.sia.ch/de/api/getMedia/990"
+   },
+   {
+    "titel": "Stadt Bern, Hochbau: Honorierung von Planungsleistungen 2026 (FD_201.02)",
+    "url": "https://www.bern.ch/politik-und-verwaltung/stadtverwaltung/prd/hochbau-stadt-bern/downloads-fur-planer/planungsleistungen/Honorierung%20von%20Planungsleistungen%202026/at_download/file"
+   },
+   {
+    "titel": "Kanton Schwyz, Hochbauamt: KBOB-Planervertrag Dokument Nr. 30 (Version 2023) mit AVB",
+    "url": "https://www.sz.ch/public/upload/assets/67927/Planervertrag_Vorlage.pdf?fp=3"
+   },
+   {
+    "titel": "ESTV, Schweizer Mehrwertsteuersätze",
+    "url": "https://www.estv.admin.ch/de/mwst-steuersaetze-schweiz"
+   }
+  ]
+ },
+ {
+  "slug": "kbob-honorare-stundenansaetze",
+  "art": "ratgeber",
+  "name": "KBOB-Honorarempfehlungen und Stundenansätze",
+  "titel": "KBOB-Stundenansätze 2026: was die Empfehlung sagt | Meyssens",
+  "beschreibung": "KBOB-Stundenansätze 2026: warum es keine festen Beträge gibt, Kategorien A bis G, Nebenkosten, Teuerung SIA 126 und Planervertrag. Überblick lesen.",
+  "h1": "KBOB-Stundenansätze und Honorarempfehlungen: was gilt bei Aufträgen der öffentlichen Hand?",
+  "lead": "Die KBOB veröffentlicht jedes Jahr Empfehlungen zur Honorierung von Planerinnen und Planern. Dieser Ratgeber zeigt nach der Ausgabe 2026, was zu Stundenansätzen, Kategorien, Nebenkosten und Teuerung darin steht, was der KBOB-Planervertrag regelt und worauf Architekturbüros bei Angeboten an die öffentliche Hand achten.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "honorarofferte-sia-102",
+   "zeiterfassung-sia-phasen",
+   "ausschreibungs-radar"
+  ],
+  "faq": [
+   {
+    "frage": "Gibt es feste KBOB-Stundenansätze für 2026?",
+    "antwort": "Nein. Laut den Empfehlungen 2026 sind die Stundenansätze im freihändigen Verfahren auftragsbezogen zu verhandeln. Die einzelnen Beschaffungsstellen von Gemeinden, Städten, Kantonen oder Bund können eigene Höchstansätze vorgeben oder darauf verzichten."
+   },
+   {
+    "frage": "Nach welchen Kategorien wird abgerechnet?",
+    "antwort": "Die KBOB ordnet die Funktionen im Projekt den Kategorien A bis G zu, je in drei Stufen nach Ausbildung und Erfahrung. Massgebend ist die Funktion im Auftrag, nicht die Stellung in der Firma."
+   },
+   {
+    "frage": "Gilt die KBOB-Empfehlung auch bei offenen Ausschreibungen?",
+    "antwort": "Im offenen, selektiven und im Einladungsverfahren werden die Honorare im Wettbewerb unter den Anbietenden ermittelt. Massgebend ist das Angebot mit dem Zuschlag, und die Kalkulation bleibt grundsätzlich den Anbietenden überlassen."
+   },
+   {
+    "frage": "Welche Nebenkosten werden nicht entschädigt?",
+    "antwort": "Laut KBOB in der Regel nicht produktive Reisezeit sowie EDV-Aufwendungen und Anpassungen an die CAD-Richtlinien der Bauherrschaft. Reisen ausserhalb des Rayons werden nur ausnahmsweise und nach vorheriger Bewilligung vergütet."
+   },
+   {
+    "frage": "Wann wird ein Angebot als ungewöhnlich niedrig geprüft?",
+    "antwort": "Wenn der Gesamtpreis im Vergleich zu den anderen Angeboten ungewöhnlich niedrig erscheint, muss die Vergabestelle Erkundigungen einholen. Der KBOB-Leitfaden nennt als ein mögliches Indiz einen Preisunterschied von zum Beispiel 30 Prozent zur nächst günstigeren Anbieterin."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/architekturbueros/",
+    "titel": "Architekturbüro digital",
+    "grund": "Ausschreibungen auf simap, Schwellenwerte und Abläufe im Büroalltag."
+   },
+   {
+    "url": "/produkte/honorarofferte-sia-102/",
+    "titel": "Honorarofferte nach SIA 102",
+    "grund": "Kategorien, Ansätze und Stunden pro Teilphase hinterlegen und als Entwurf berechnen."
+   },
+   {
+    "url": "/ratgeber/sia-phasen-102/",
+    "titel": "SIA-Phasen nach SIA 102 im Überblick",
+    "grund": "Welche Teilphasen der KBOB-Planervertrag aufführt und was dazugehört."
+   },
+   {
+    "url": "/ratgeber/aufbewahrungsfristen-buchhaltung/",
+    "titel": "Aufbewahrungsfristen für Buchhaltung und Belege",
+    "grund": "Wie lange Rechnungen, Offerten und Verträge aufzubewahren sind."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "KBOB, Empfehlungen zur Honorierung von Planerinnen und Planern 2026 (Fassung 7. September 2026)",
+    "url": "https://www.kbob.admin.ch/dam/de/sd-web/HGbaiE3U2uo5/20260907_KBOB-Empfehlungen%20Honorierung%202026_September%202026_Publikation_DE.pdf"
+   },
+   {
+    "titel": "KBOB, Beschaffungs- und Vertragswesen (Empfehlungen, Leitfäden, Musterverträge)",
+    "url": "https://www.kbob.admin.ch/de/beschaffungs-und-vertragswesen"
+   },
+   {
+    "titel": "KBOB, Leitfaden zur Beschaffung von Planungsleistungen (Leistungsofferten), V2.0 vom 17. November 2025",
+    "url": "https://www.kbob.admin.ch/dam/de/sd-web/SUTau8ZwuhEv/20251125_KBOB-Leitfaden%20zur%20Beschaffung%20von%20Planerleistungen_V2.0_Publikation_DE.pdf"
+   },
+   {
+    "titel": "Kanton Schwyz, Hochbauamt: KBOB-Planervertrag Dokument Nr. 30 (Version 2023) mit AVB",
+    "url": "https://www.sz.ch/public/upload/assets/67927/Planervertrag_Vorlage.pdf?fp=3"
+   },
+   {
+    "titel": "KBOB, Unterschiede zwischen dem Planervertrag KBOB und dem Planervertrag SIA (Dezember 2016)",
+    "url": "https://www.kbob.admin.ch/dam/de/sd-web/RSjjWRN1gLB1/20170223_Unterschiede_zwischen_dem_KBOB-Vertrag_f%C3%BCr_Planungsleistungen_und_dem_SIA-Planervertrag_Publikation_DE.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "bausitzung-protokoll",
+  "art": "ratgeber",
+  "name": "Bausitzung und Bausitzungsprotokoll",
+  "titel": "Bausitzung und Bausitzungsprotokoll: Anleitung | Meyssens",
+  "beschreibung": "Bausitzung leiten, Bausitzungsprotokoll schreiben, offene Pendenzen nachführen: Traktanden, Inhalte und Verbindlichkeit nach OR. Anleitung lesen.",
+  "h1": "Bausitzung und Bausitzungsprotokoll: wie führen Sie Protokoll und Pendenzenliste verbindlich?",
+  "lead": "Eine gute Bausitzung endet mit einem Bausitzungsprotokoll, das Beschlüsse festhält, und einer Pendenzenliste, in der jede offene Pendenz eine verantwortliche Person und einen Termin hat. Diese Anleitung zeigt Traktanden und Inhalte nach den Vorgaben öffentlicher Bauherren und erklärt, was das Obligationenrecht zur Verbindlichkeit von Bauprotokollen sagt.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "protokoll-pendenzen",
+   "maengelliste-bau"
+  ],
+  "faq": [
+   {
+    "frage": "Wer schreibt das Bausitzungsprotokoll?",
+    "antwort": "Das regelt der Vertrag oder die Bauherrschaft. Das BBL verpflichtet bei Bauprojekten über 10 Millionen Franken die beauftragte Bauleitung, ein Protokoll der Bausitzungen mit Entscheid- und Pendenzenliste zu führen. Im Leitfaden des Hochbauamts Solothurn protokolliert je nach Gremium die Projektleitung der Auftraggeberschaft, die der Beauftragten oder die Nutzervertretung."
+   },
+   {
+    "frage": "Ist ein Bausitzungsprotokoll ohne Unterschrift verbindlich?",
+    "antwort": "Es kann sein. Verträge brauchen nach Art. 11 OR nur dann eine besondere Form, wenn das Gesetz sie vorschreibt. Haben die Parteien aber eine Form vorbehalten, etwa Schriftlichkeit für Bestellungsänderungen, wird vermutet, dass sie vorher nicht gebunden sein wollen (Art. 16 OR). Massgebend ist der einzelne Vertrag."
+   },
+   {
+    "frage": "Was gehört in eine Pendenzenliste?",
+    "antwort": "Mindestens eine laufende Nummer, das Datum der Sitzung, eine kurze Beschreibung, die verantwortliche Person oder Firma, ein Termin und der Status. Das ist unsere Empfehlung. Das BBL sieht für seine Projekte eine eigene Pendenzen- und Entscheidungsliste als Muster vor."
+   },
+   {
+    "frage": "Darf ich eine Bausitzung aufnehmen?",
+    "antwort": "Nur mit Einwilligung aller Beteiligten. Wer als Gesprächsteilnehmer ein nichtöffentliches Gespräch ohne Einwilligung der anderen aufnimmt, macht sich nach Art. 179ter StGB auf Antrag strafbar."
+   },
+   {
+    "frage": "Genügt eine Abmahnung im Protokoll?",
+    "antwort": "Das OR verlangt eine ausdrückliche Abmahnung (Art. 369 OR) und bei gefährdeter Ausführung eine Anzeige ohne Verzug (Art. 365 Abs. 3 OR). Ein Vermerk im Protokoll hilft beim Nachweis. Wir empfehlen, die Abmahnung zusätzlich schriftlich zuzustellen."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/bauunternehmen/",
+    "titel": "Bauunternehmen digital",
+    "grund": "Zehn geplante Bausteine und drei Abläufe von der Offerte bis zur Abnahme."
+   },
+   {
+    "url": "/produkte/protokoll-pendenzen/",
+    "titel": "Sitzungsprotokoll und Pendenzenliste",
+    "grund": "Feste Vorlage, offene Pendenzen wandern ins nächste Protokoll."
+   },
+   {
+    "url": "/produkte/maengelliste-bau/",
+    "titel": "Mängelliste mit Foto und Fristen",
+    "grund": "Mängel aus der Bausitzung mit Datum der Entdeckung erfassen."
+   },
+   {
+    "url": "/ratgeber/maengelruege-abnahme-2026/",
+    "titel": "Mängelrüge und Abnahme ab 2026",
+    "grund": "Welche Fristen für Mängel an Bauten gelten."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "BBL, Anweisungen für beauftragte Bauleitungen (K1P41_A05d)",
+    "url": "https://www.bbl.admin.ch/dam/de/sd-web/IVp00KoM7rWf/K1P41_A05d_Anweisungen%20f%C3%BCr%20beauftragte%20Bauleitungen.docx"
+   },
+   {
+    "titel": "Kanton Solothurn, Hochbauamt, Leitfaden für Planende (Version vom 1. März 2025)",
+    "url": "https://so.ch/fileadmin/internet/bjd/bjd-hba/04-Ueber-uns/20250701_BES_Leitfaden_fuer_Planende.pdf"
+   },
+   {
+    "titel": "Obligationenrecht (OR), SR 220, Art. 11, 16, 32, 33, 365 und 369, Fedlex",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+   },
+   {
+    "titel": "Strafgesetzbuch (StGB), SR 311.0, Art. 179ter, Fedlex",
+    "url": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de"
+   }
+  ]
+ },
+ {
+  "slug": "subunternehmer-solidarhaftung",
+  "art": "ratgeber",
+  "name": "Subunternehmer und Solidarhaftung",
+  "titel": "Subunternehmer: Solidarhaftung und Sorgfalt | Meyssens",
+  "beschreibung": "Subunternehmer beauftragen: wann der Erstunternehmer nach Entsendegesetz haftet und welche Dokumente den Sorgfaltsnachweis stützen. Checkliste lesen.",
+  "h1": "Subunternehmer beauftragen: wie weisen Sie die Sorgfalt bei der Solidarhaftung nach?",
+  "lead": "Wer im Bauhaupt- oder Baunebengewerbe einen Subunternehmer beauftragt, kann als Erstunternehmer solidarisch haften, wenn dieser die minimalen Lohn- und Arbeitsbedingungen nicht einhält. Befreien kann er sich mit dem Nachweis der gebotenen Sorgfalt. Dieser Ratgeber zeigt nach Entsendegesetz, Entsendeverordnung und SECO, welche Dokumente und Vorkehrungen dazugehören.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "subunternehmer-dossier-bau"
+  ],
+  "faq": [
+   {
+    "frage": "Gilt die Solidarhaftung auch für Subunternehmer aus der Schweiz?",
+    "antwort": "Ja. Das Entsendegesetz regelt auch die solidarische Haftung des Erstunternehmers für Subunternehmer allgemein (Art. 1 Abs. 2 EntsG), und das SECO stellt Musterdokumente für Subunternehmer mit Sitz in der Schweiz und im Ausland bereit. Sie gilt im Bauhaupt- und Baunebengewerbe."
+   },
+   {
+    "frage": "Hafte ich auch für den Subunternehmer meines Subunternehmers?",
+    "antwort": "Ja. Der Erstunternehmer haftet solidarisch für sämtliche ihm nachfolgenden Subunternehmer in einer Auftragskette, allerdings nur, wenn der Subunternehmer zuvor erfolglos belangt wurde oder nicht belangt werden kann (Art. 5 Abs. 2 EntsG)."
+   },
+   {
+    "frage": "Reicht eine unterschriebene Deklaration des Subunternehmers?",
+    "antwort": "Nicht in jedem Fall. Das SECO hält fest, dass Dokumente allein die Sorgfaltspflicht nicht immer erfüllen und die Einhaltung glaubhaft erscheinen muss. Die Expertengruppe des SECO empfiehlt bei Schweizer Subunternehmern mit allgemeinverbindlich erklärtem GAV zuerst eine GAV-Bescheinigung und je nach Ergebnis zusätzlich eine Deklaration."
+   },
+   {
+    "frage": "Muss ich bei jedem Auftrag neue Unterlagen verlangen?",
+    "antwort": "Hat derselbe Subunternehmer die Einhaltung bei früheren Vergaben glaubhaft dargelegt, ist eine erneute Darlegung nur aus begründetem Anlass nötig, etwa bei wichtigen Änderungen im GAV oder einem bekannten Verstoss (Art. 8b Abs. 4 und 5 EntsV)."
+   },
+   {
+    "frage": "Welche Sanktionen drohen bei fehlender Sorgfalt?",
+    "antwort": "Neben der zivilrechtlichen Haftung kann die kantonale Behörde eine Belastung bis 5000 Franken oder ein Verbot von ein bis fünf Jahren aussprechen, in der Schweiz Dienste anzubieten, und Kontrollkosten auferlegen (Art. 5 Abs. 4 und Art. 9 Abs. 2 Bst. d und g EntsG)."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/bauunternehmen/",
+    "titel": "Bauunternehmen digital",
+    "grund": "Zehn geplante Bausteine und drei Abläufe von der Offerte bis zur Abnahme."
+   },
+   {
+    "url": "/produkte/subunternehmer-dossier-bau/",
+    "titel": "Subunternehmer-Dossier mit Sorgfaltsnachweis",
+    "grund": "Unterlagen pro Subunternehmer nach den drei Elementen des SECO ordnen."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Deklarationen enthalten Namen von Arbeitnehmenden."
+   },
+   {
+    "url": "/ratgeber/bausitzung-protokoll/",
+    "titel": "Bausitzung und Bausitzungsprotokoll",
+    "grund": "Pendenzen und Beschlüsse mit Subunternehmern festhalten."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "SECO, Solidarhaftung",
+    "url": "https://www.seco.admin.ch/de/solidarhaftung"
+   },
+   {
+    "titel": "Entsendegesetz (EntsG), SR 823.20, Art. 1, 2, 5 und 9, Fedlex",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2003/231/de"
+   },
+   {
+    "titel": "Entsendeverordnung (EntsV), SR 823.201, Art. 8a bis 8c, Fedlex",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2003/232/de"
+   },
+   {
+    "titel": "SECO, Empfehlungen der Expertengruppe zur Erfüllung der Sorgfaltspflicht (24. Mai 2022)",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/gs1JPdPjU48K/Empfehlungen%20Expertengruppe%20zur%20Erf%C3%BCllung%20der%20Sorgfaltspflicht.pdf"
+   },
+   {
+    "titel": "Obligationenrecht (OR), SR 220, Art. 364, Fedlex",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+   }
+  ]
+ },
+ {
+  "slug": "leistungsverzeichnis-npk",
+  "art": "ratgeber",
+  "name": "Leistungsverzeichnis nach NPK",
+  "titel": "Leistungsverzeichnis nach NPK offerieren | Meyssens",
+  "beschreibung": "Leistungsverzeichnis nach NPK lesen und offerieren: Aufbau, Version, R-Positionen, Mauerwerk nach NPK 314, Regeln der SIA 118 und des BöB. Anleitung lesen.",
+  "h1": "Leistungsverzeichnis nach NPK: wie lesen und offerieren Bauunternehmen richtig?",
+  "lead": "Ein Leistungsverzeichnis nach NPK folgt einer festen Systematik mit Kapiteln, Bedingungen und Normpositionen. Wer sie kennt, kalkuliert schneller und vermeidet Angebote, die nicht vergleichbar sind. Diese Anleitung zeigt nach den Unterlagen von CRB und KBOB, wie Sie ein Leistungsverzeichnis lesen, am Beispiel Mauerwerk prüfen und regelkonform offerieren.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "leistungsverzeichnis-import-bau",
+   "materialbestellung-bau"
+  ],
+  "faq": [
+   {
+    "frage": "Wer erstellt das Leistungsverzeichnis?",
+    "antwort": "In der Regel die Planenden. Nach dem CRB-Merkblatt zum Devisieren ist es Aufgabe des Projektverfassers, die Projektgrundlagen in Ausschreibungsunterlagen umzusetzen. Das Bauunternehmen kalkuliert und offeriert auf dieser Grundlage."
+   },
+   {
+    "frage": "Was bedeutet «314 D/13 (V’25)»?",
+    "antwort": "In dieser Kennzeichnung steht 314 für das NPK-Kapitel «Maurerarbeiten», D/13 für die deutsche Ausgabe von 2013 und V’25 für das Versionsjahr 2025. Welche Ausgabe gilt, steht in der Ausschreibung. Jedes Kapitel erhält laut CRB jährlich ein neues Versionsjahr mit den laufenden Korrekturen."
+   },
+   {
+    "frage": "Was sind R-Positionen?",
+    "antwort": "Reservepositionen, die der Ausschreibende im individuellen Bereich, dem Reservefenster, selbst formuliert oder angepasst hat. Laut CRB sollen sie auf ein Minimum beschränkt bleiben. Beim Offerieren lohnt es sich, sie besonders genau zu lesen."
+   },
+   {
+    "frage": "Darf ich im Leistungsverzeichnis Positionen ändern?",
+    "antwort": "Gilt die Norm SIA 118, nimmt der Unternehmer im Leistungsverzeichnis weder Ergänzungen noch Änderungen vor. Bemerkungen, Vorschläge und Unternehmervarianten reicht er gesondert als Beilage ein (Art. 15 Abs. 3 SIA 118, zitiert nach KBOB)."
+   },
+   {
+    "frage": "Was passiert mit Rechenfehlern in einem öffentlichen Angebot?",
+    "antwort": "Bei Vergaben nach BöB werden offensichtliche Rechenfehler von Amtes wegen berichtigt. Die Auftraggeberin kann Erläuterungen verlangen und hält Anfrage und Antwort schriftlich fest (Art. 38 BöB)."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/bauunternehmen/",
+    "titel": "Bauunternehmen digital",
+    "grund": "Zehn geplante Bausteine und drei Abläufe von der Offerte bis zur Abnahme."
+   },
+   {
+    "url": "/produkte/leistungsverzeichnis-import-bau/",
+    "titel": "Leistungsverzeichnis-Import für die Offerte",
+    "grund": "Positionen und Mengen aus dem Leistungsverzeichnis in eine Kalkulationstabelle übernehmen."
+   },
+   {
+    "url": "/produkte/materialbestellung-bau/",
+    "titel": "Materialbestellung aus Rapport und Plan",
+    "grund": "Bestellentwürfe aus Bauzeitplan und Mengen, der Polier bestätigt."
+   },
+   {
+    "url": "/ratgeber/offertanfragen-beantworten/",
+    "titel": "Offertanfragen beantworten",
+    "grund": "Anfragen schneller und vollständig beantworten."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "CRB, Merkblätter zum Devisieren Nr. 1 D/25: Datenkennzeichnung beim NPK, Grundsätze der Devisierung",
+    "url": "https://www.crb.ch/_Resources/Persistent/e/3/0/c/e30c1a0f94418a7ce596684c510a46473a84dc7d/Merkblatt_01_2025_de.pdf"
+   },
+   {
+    "titel": "CRB, NPK 314 D/2013 Maurerarbeiten, Anwendung",
+    "url": "https://www.crb.ch/_Resources/Persistent/1/9/4/c/194ce0f5284c546755292d3e7522dbc5ccce98b7/Anwendung_314D13.pdf"
+   },
+   {
+    "titel": "CRB, Factsheet CRB – Standards für das Bauwesen",
+    "url": "https://www.crb.ch/_Resources/Persistent/3/0/b/b/30bba60b613e9745e74f627245a5bebf068d2a14/CRB_Factsheet_DE.pdf"
+   },
+   {
+    "titel": "KBOB, Empfehlungen zum Umgang mit Umlagerungen von Kosten in Angeboten für Arbeiten im Bauhauptgewerbe, Erläuternder Bericht (V2.0, 1. März 2024)",
+    "url": "https://www.kbob.admin.ch/dam/de/sd-web/YvNPqz-HpMQ2/20240214_Erl%C3%A4uterungen_zu_den_KBOB-Empfehlungen_zum_Umgang_mit_Umlagerung_von_Kosten_in_Angeboten_f%C3%BCr_Arbeiten_im_Bauhauptgewerbe_Revision_20240301_Publikation_DE%20(1).pdf"
+   },
+   {
+    "titel": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB), SR 172.056.1, Art. 33, 34, 38 und 39, Fedlex",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2020/126/de"
+   }
+  ]
+ },
+ {
+  "slug": "arbeitszeiterfassung-pflege",
+  "art": "ratgeber",
+  "name": "Arbeitszeiterfassung in Pflegeheim und Spitex",
+  "titel": "Zeiterfassung Pflege und Spitex: was gilt? | Meyssens",
+  "beschreibung": "Was Pflegeheime und Spitex nach Arbeitsgesetz erfassen müssen: Pausen, Sonderregeln, Wegzeit, mobile Erfassung, 5 Jahre Aufbewahrung. Jetzt lesen.",
+  "h1": "Arbeitszeiterfassung in Pflegeheim und Spitex: was verlangt das Arbeitsgesetz?",
+  "lead": "Pflegeheime und Spitex-Organisationen müssen die Arbeitszeit ihrer Mitarbeitenden so erfassen, dass Beginn, Pausen und Ende für jede Person nachvollziehbar sind. Dieser Ratgeber zeigt nach Arbeitsgesetz und den Wegleitungen des SECO, welche Angaben nötig sind, welche Sonderregeln für Heime und Spitex gelten und welche Formen der Zeiterfassung zulässig sind, auch mobil unterwegs.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "arbeitszeit-pflege",
+   "abrechnung-vorpruefung"
+  ],
+  "faq": [
+   {
+    "frage": "Muss ein Pflegeheim die Arbeitszeit erfassen?",
+    "antwort": "Ja, wenn es dem Arbeitsgesetz untersteht. Nach Art. 46 ArG und Art. 73 ArGV 1 müssen unter anderem die tägliche und wöchentliche Arbeitszeit mit ihrer Lage, die Pausen ab einer halben Stunde sowie Ruhetage und Zuschläge ersichtlich sein. Nicht unterstellt sind etwa Verwaltungen von Bund, Kantonen und Gemeinden sowie Personen mit einer höheren leitenden Tätigkeit."
+   },
+   {
+    "frage": "Ist eine Zeiterfassung per Smartphone zulässig?",
+    "antwort": "Ja. Das SECO nennt die Erfassung per Smartphone ausdrücklich als ortsunabhängige Stempeluhr, die besonders für Mitarbeitende mit vielen Ausseneinsätzen sinnvoll sein kann. Auch Papier, Tabellen oder ein fixer Schichtplan mit dokumentierten Abweichungen sind möglich."
+   },
+   {
+    "frage": "Wie lange müssen Zeiterfassungen aufbewahrt werden?",
+    "antwort": "Mindestens fünf Jahre nach Ablauf ihrer Gültigkeit (Art. 73 Abs. 2 ArGV 1). Auch elektronisch geführte Angaben müssen während dieser Zeit den Behörden vorgelegt werden können."
+   },
+   {
+    "frage": "Zählt eine Pause als Arbeitszeit, wenn ich auf der Abteilung bleiben muss?",
+    "antwort": "Sie wird an die Arbeitszeit angerechnet. Pausen gelten als Arbeitszeit, wenn die Mitarbeitenden ihren Arbeitsplatz nicht verlassen dürfen (Art. 15 Abs. 2 ArG). Arbeitsplatz ist jeder Ort, an dem sie sich für die zugewiesene Arbeit aufhalten müssen (Art. 18 Abs. 5 ArGV 1)."
+   },
+   {
+    "frage": "Welche Sonderregeln gelten für Spitex-Betriebe?",
+    "antwort": "Spitex-Betriebe dürfen Nacht- und Sonntagsarbeit ohne Bewilligung anordnen, soweit sie für die Pflege und Betreuung zu Hause nötig ist (Art. 17 ArGV 2). Das gilt für das Personal in Pflege, Hauswirtschaft und Betreuung, nicht für die Administration. Die übrigen Vorschriften zu Nacht- und Sonntagsarbeit bleiben anwendbar."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/pflegeheime-spitex/",
+    "titel": "Pflegeheim und Spitex digital",
+    "grund": "Berufsgeheimnis, nDSG und der Ablauf vom Einsatz bis zur Rechnung."
+   },
+   {
+    "url": "/produkte/arbeitszeit-pflege/",
+    "titel": "Arbeitszeiterfassung für Pflege und Spitex",
+    "grund": "Erfassung am Handy oder Terminal, Abgleich mit dem Dienstplan, Monatsabschluss als Entwurf."
+   },
+   {
+    "url": "/ratgeber/spitex-abrechnung-2026/",
+    "titel": "Elektronische Spitex-Abrechnung 2026",
+    "grund": "Was Basel-Stadt, Solothurn und Nidwalden bei der Restfinanzierung verlangen."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Information der Mitarbeitenden und Datensicherheit bei Zeitdaten."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "SECO, Arbeitszeiterfassung",
+    "url": "https://www.seco.admin.ch/seco/de/home/Arbeit/Arbeitsbedingungen/Arbeitnehmerschutz/Arbeits-und-Ruhezeiten/Arbeitszeiterfassung.html"
+   },
+   {
+    "titel": "SECO, Modalitäten der Arbeitszeiterfassung (Version 23.10.2018)",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/IsFAjEMHuYeX/Modalitaeten-arbeitszeiterfassung-SECO-AB-2019-DE.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 73 ArGV 1: Verzeichnisse und andere Unterlagen",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/KYcyETv05vIg/ArGV1_art73_de.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 73a ArGV 1: Verzicht auf die Arbeitszeiterfassung",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/tb2y04nc5qdU/ArGV1_art73a_de.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 73b ArGV 1: Vereinfachte Arbeitszeiterfassung",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/eusH7p61bF8V/ArGV1-Artikel-73b-SECO-AB-2016-DE.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 46 ArG: Verzeichnisse und andere Unterlagen",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/tnjpF1kR107p/ArG-Artikel-46-SECO-AB-2012-DE.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 15 ArG: Pausen (Oktober 2022)",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/G5Osf8QBls5l/ArG-Artikel-15-SECO-AB-2022-DE.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 18 ArGV 1: Pausen",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/jXQQUhVJHpN6/ArGV1_art18_de.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 13 ArGV 1: Begriff der Arbeitszeit",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/mHoYBtoivFLS/ArGV1_art13_de.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 16 ArGV 2: Heime und Internate (Juli 2023)",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/qwkuiH4Aw9Ke/ArGV2-Artikel-16-SECO-AB-2023-DE.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 17 ArGV 2: Spitex-Betriebe",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/P5wl8ltO3Rnm/ArGV2-Artikel-17-SECO-AB-2012-DE.pdf"
+   },
+   {
+    "titel": "SECO, Wegleitung zu Art. 2 ArG: Ausnahmen vom Geltungsbereich",
+    "url": "https://www.seco.admin.ch/dam/de/sd-web/BuCumN73qXZb/ArG-Artikel-02-SECO-AB-2025-DE.pdf"
+   },
+   {
+    "titel": "ARTISET, Merkblatt Unterstellung unter das Arbeitsgesetz (2024)",
+    "url": "https://artiset.ch/files/artiset/themen_03_betriebsfuehrung_und_recht_umsetzen/unterstellung_arbeitsgesetz_merkblatt_insos_youvita_2024.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "datenschutz-pflege",
+  "art": "ratgeber",
+  "name": "Datenschutz in der Pflege",
+  "titel": "Datenschutz in der Pflege: Doku und Weitergabe | Meyssens",
+  "beschreibung": "Was Heim und Spitex bei Pflegedokumentation, Auskunft an Angehörige und Dokumentenversand nach DSG und Berufsgeheimnis beachten. Checkliste lesen.",
+  "h1": "Datenschutz in der Pflege: was gilt für Pflegedokumentation und die Weitergabe von Gesundheitsdaten?",
+  "lead": "Pflegeheime und Spitex-Organisationen bearbeiten Gesundheitsdaten, die das Datenschutzgesetz besonders schützt und die unter das Berufsgeheimnis fallen. Dieser Ratgeber zeigt nach DSG, Strafgesetzbuch, ZGB und Stellungnahmen von EDÖB und kantonalen Stellen, wer Einsicht erhält, was an Angehörige, Ärzte und Versicherer gehen darf und wie Dokumente sicher versendet werden.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "besichtigung-pflegeheim",
+   "abrechnung-vorpruefung"
+  ],
+  "faq": [
+   {
+    "frage": "Gilt das Berufsgeheimnis auch für Pflegefachpersonen?",
+    "antwort": "Ja. Seit dem 1. Februar 2020 nennt Art. 321 StGB ausdrücklich Pflegefachpersonen und ihre Hilfspersonen. Gesundheitsberufe, die nicht darunter fallen, unterstehen laut EDÖB der beruflichen Schweigepflicht nach Art. 62 DSG."
+   },
+   {
+    "frage": "Dürfen Angehörige die Pflegedokumentation einsehen?",
+    "antwort": "Nicht automatisch. Es braucht grundsätzlich die Zustimmung der betroffenen Person, im Kanton Aargau etwa ausdrücklich und schriftlich, auch für Ehepartner und Kinder. Ist die Person urteilsunfähig, bleibt das Einsichtsrecht laut Leitfaden der Zürcher Gesundheitsdirektion den Personen vorbehalten, die sie bei medizinischen Massnahmen vertreten dürfen (Art. 378 ZGB). Kantonale Regeln können abweichen."
+   },
+   {
+    "frage": "Dürfen Pflegeberichte per E-Mail verschickt werden?",
+    "antwort": "Laut EDÖB nur mit Sicherheitsvorkehrungen wie einer Verschlüsselung. Darauf verzichtet werden darf nur, wenn die Person umfassend über die Risiken informiert wurde und eingewilligt hat. Cloud-Dienste im Ausland sind laut EDÖB zu vermeiden."
+   },
+   {
+    "frage": "Darf eine externe Physiotherapie auf die Pflegesoftware zugreifen?",
+    "antwort": "Die Datenschutzbeauftragte des Kantons Zürich hielt 2025 für ein Pflegeheim fest, dass für einen umfassenden Zugang und eine gemeinsame Dokumentation die gesetzliche Grundlage fehlt. Möglich ist eine klar beschränkte Auskunft zu einzelnen Bewohnenden, nur mit den Daten, die die Therapie braucht."
+   },
+   {
+    "frage": "Wie lange muss eine Spitex die Klientendokumentation aufbewahren?",
+    "antwort": "Das regelt das kantonale Recht. Im Kanton Aargau sind es mindestens 10 Jahre, aus medizinischen Gründen höchstens 20 Jahre seit Erstellung. In anderen Kantonen kann das abweichen."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/pflegeheime-spitex/",
+    "titel": "Pflegeheim und Spitex digital",
+    "grund": "Berufsgeheimnis, nDSG und der Ablauf vom Einsatz bis zur Rechnung."
+   },
+   {
+    "url": "/produkte/besichtigung-pflegeheim/",
+    "titel": "Besichtigungen und Informationsgespräche",
+    "grund": "Termine online buchen, Bestätigungen ohne Gesundheitsdaten."
+   },
+   {
+    "url": "/ratgeber/patientenformular-datenschutz/",
+    "titel": "Patientenformulare und Datenschutz",
+    "grund": "Was ein Formular fragen darf und wann es eine Einwilligung braucht."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Bearbeitungsverzeichnis, Auftragsbearbeiter und Datenpannen."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG), SR 235.1",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   },
+   {
+    "titel": "Schweizerisches Strafgesetzbuch, Art. 321 Verletzung des Berufsgeheimnisses, SR 311.0",
+    "url": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de"
+   },
+   {
+    "titel": "Schweizerisches Zivilgesetzbuch, Art. 378 und 386, SR 210",
+    "url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de"
+   },
+   {
+    "titel": "EDÖB, Bekanntgabe von Patientendaten",
+    "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+   },
+   {
+    "titel": "Kanton Aargau, Merkblatt über den Datenschutz für Klientinnen und Klienten von Spitexorganisationen (9. Februar 2026)",
+    "url": "https://www.ag.ch/media/kanton-aargau/dgs/dokumente/gesundheit/gesundheitsversorgung/pflegeheime-und-spitex/spitex/merkblatt-datenschutz-klienten-2026.pdf"
+   },
+   {
+    "titel": "Datenschutzbeauftragte des Kantons Zürich, Tätigkeitsbericht 2023: Datenschutzprobleme in Alters- und Pflegezentren",
+    "url": "https://www.datenschutz.ch/tb/2023/datenschutzprobleme-in-alters-und-pflegezentren"
+   },
+   {
+    "titel": "Datenschutzbeauftragte des Kantons Zürich, Tätigkeitsbericht 2025: Externe Gesundheitsdienstleistungen im Pflegeheim",
+    "url": "https://www.datenschutz.ch/tb/2025/externe-gesundheitsdienstleistungen-im-pflegeheim"
+   },
+   {
+    "titel": "Kanton Zürich, Gesundheitsdirektion, Leitfaden neues Erwachsenenschutzrecht für Pflegeheime (November 2012)",
+    "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/gesundheit/gesundheitsversorgung/heime_spitex/pflegefinanzierung/leitfaden_erwachsenenschutzrecht_pflegeheime.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "pflegeheim-eintritt",
+  "art": "ratgeber",
+  "name": "Eintritt ins Pflegeheim",
+  "titel": "Eintritt ins Pflegeheim: Unterlagen und Kosten | Meyssens",
+  "beschreibung": "Pflegebedarf, Heimwahl, Patientenverfügung, Heimvertrag, Kosten, Ergänzungsleistungen: was vor dem Eintritt ins Pflegeheim zu klären ist. Checkliste lesen.",
+  "h1": "Eintritt ins Pflegeheim: welche Unterlagen, Abklärungen und Kosten sind zu klären?",
+  "lead": "Vor dem Eintritt ins Pflegeheim sind Pflegebedarf, Vertretung, Heimvertrag und Finanzierung zu klären, oft unter Zeitdruck. Dieser Ratgeber zeigt nach Bundesrecht und den Merkblättern von AHV/IV, BAG und den Kantonen Basel-Stadt und Zürich, wie der Ablauf aussieht, wer welche Kosten trägt und welche Unterlagen bereitliegen sollten.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "besichtigung-pflegeheim"
+  ],
+  "faq": [
+   {
+    "frage": "Wer bezahlt die Pflege im Pflegeheim?",
+    "antwort": "Die Krankenversicherung zahlt einen Tagesbeitrag nach Pflegestufe, von 9.60 bis 115.20 Franken (Art. 7a Abs. 3 KLV). Die Bewohnerin oder der Bewohner zahlt höchstens 20 Prozent des höchsten Beitrags (Art. 25a Abs. 5 KVG), den Rest der Pflegekosten deckt die öffentliche Hand, je nach Kanton Kanton oder Gemeinden. Pension und Betreuung trägt in der Regel die Person selbst, im Kanton Zürich etwa nach § 12 Pflegegesetz."
+   },
+   {
+    "frage": "Kann ich mich direkt in einem Pflegeheim anmelden?",
+    "antwort": "Das ist je nach Kanton unterschiedlich. In Basel-Stadt etwa ist ein Beratungsgespräch mit der Abteilung Langzeitpflege obligatorisch (für Riehen und Bettingen mit der Fachstelle Alter Riehen), und die Anmeldung auf die Warteliste läuft über die behördliche Pflegeberatung. Wie es in Ihrem Kanton geregelt ist, klären Sie am besten bei der Gemeinde oder direkt beim Heim."
+   },
+   {
+    "frage": "Ab wann gibt es Ergänzungsleistungen?",
+    "antwort": "Der Anspruch besteht grundsätzlich ab dem Monat, in dem die Anmeldung eingereicht wurde und die Voraussetzungen erfüllt sind. Eine frühe Anmeldung bei der zuständigen EL-Stelle lohnt sich deshalb."
+   },
+   {
+    "frage": "Wer unterschreibt den Heimvertrag, wenn die Person urteilsunfähig ist?",
+    "antwort": "Die Person, die sie bei medizinischen Massnahmen vertreten darf, nach der Reihenfolge von Art. 378 ZGB (Art. 382 Abs. 3 ZGB). Der Betreuungsvertrag muss schriftlich die Leistungen und das Entgelt festlegen. Handelt ein Beistand, braucht es laut Zürcher Leitfaden zusätzlich die Zustimmung der KESB."
+   },
+   {
+    "frage": "Gibt es die Hilflosenentschädigung auch im Heim?",
+    "antwort": "Ja, bei mittlerem und schwerem Grad, mit 630 oder 1008 Franken pro Monat laut Merkblatt 3.01 (Stand 2026). Die Entschädigung leichten Grades der AHV gibt es nur bei einem Aufenthalt zu Hause."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/pflegeheime-spitex/",
+    "titel": "Pflegeheim und Spitex digital",
+    "grund": "Berufsgeheimnis, nDSG und der Ablauf vom Einsatz bis zur Rechnung."
+   },
+   {
+    "url": "/produkte/besichtigung-pflegeheim/",
+    "titel": "Besichtigungen und Informationsgespräche",
+    "grund": "Angehörige wählen online einen Termin für eine Besichtigung."
+   },
+   {
+    "url": "/ratgeber/datenschutz-pflege/",
+    "titel": "Datenschutz in der Pflege",
+    "grund": "Wer beim Eintritt Auskunft erhält und welche Daten weitergegeben werden dürfen."
+   },
+   {
+    "url": "/ratgeber/spitex-abrechnung-2026/",
+    "titel": "Elektronische Spitex-Abrechnung 2026",
+    "grund": "Wie Pflegebeiträge, Eigenanteil und Restfinanzierung abgerechnet werden."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Kanton Basel-Stadt, Gesundheitsdepartement, Merkblatt Anmelde- und Vermittlungsprozess für Pflegeheimplätze (1. Januar 2026)",
+    "url": "https://media.bs.ch/original_file/fbf29e2106c8e290be8a25851d07821081592536/merkblatt-pflegeplatzvermittlung-2026-01-01.pdf"
+   },
+   {
+    "titel": "Kanton Basel-Stadt, Eintritt ins Pflegeheim vorbereiten",
+    "url": "https://www.bs.ch/themen/persoenliches-und-wohnen/wohnen/wohnen-im-alter/eintritt-ins-pflegeheim"
+   },
+   {
+    "titel": "BAG, Faktenblatt Pflegefinanzierung (8. Mai 2024)",
+    "url": "https://www.bag.admin.ch/dam/de/sd-web/4Osw6p748w-R/fb-pflegefinanzierung.pdf"
+   },
+   {
+    "titel": "Krankenpflege-Leistungsverordnung (KLV), Art. 7a und 8a, SR 832.112.31",
+    "url": "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/de"
+   },
+   {
+    "titel": "Kanton Zürich, Gesundheitsdirektion, Kreisschreiben Normdefizite 2027 und Rechnungslegung (26. August 2026)",
+    "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/gesundheit/gesundheitsversorgung/heime_spitex/pflegefinanzierung/Kreisschreiben%20Normdefizite%202027%20und%20Rechnungslegung.pdf"
+   },
+   {
+    "titel": "Kanton Zürich, Gesundheitsdirektion, Leitfaden neues Erwachsenenschutzrecht für Pflegeheime (November 2012)",
+    "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/gesundheit/gesundheitsversorgung/heime_spitex/pflegefinanzierung/leitfaden_erwachsenenschutzrecht_pflegeheime.pdf"
+   },
+   {
+    "titel": "Schweizerisches Zivilgesetzbuch, Art. 360 bis 386, SR 210",
+    "url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de"
+   },
+   {
+    "titel": "Informationsstelle AHV/IV, Merkblatt 5.01 Ergänzungsleistungen zur AHV und IV (Stand 1. Januar 2025)",
+    "url": "https://www.ahv-iv.ch/p/5.01.d"
+   },
+   {
+    "titel": "Informationsstelle AHV/IV, Merkblatt 3.01 Altersrenten und Hilflosenentschädigungen der AHV (Stand 1. Januar 2026)",
+    "url": "https://www.ahv-iv.ch/p/3.01.d"
+   }
+  ]
+ },
+ {
+  "slug": "praxistelefon-entlasten",
+  "art": "ratgeber",
+  "name": "Praxistelefon entlasten",
+  "titel": "Praxistelefon entlasten: Telefonservice prüfen | Meyssens",
+  "beschreibung": "Welche Anrufe die Arztpraxis anders lösen kann und was für Telefonservice und Callcenter gilt: Berufsgeheimnis, nDSG. Checkliste lesen.",
+  "h1": "Praxistelefon entlasten: Welche Anliegen lassen sich anders lösen?",
+  "lead": "Das Praxistelefon entlasten, ohne Patientinnen und Patienten zu verlieren: Das gelingt, wenn allgemeine Fragen und Terminwünsche einen anderen Weg finden und dringende Anliegen sicher beim Praxisteam ankommen. Dieser Ratgeber zeigt, was sich verlagern lässt und was bei einem externen Telefonservice oder Callcenter für Arztpraxen nach Berufsgeheimnis und Datenschutzgesetz gilt.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "online-terminanfrage-arztpraxis",
+   "dienstplan-material-arztpraxis"
+  ],
+  "faq": [
+   {
+    "frage": "Darf eine Arztpraxis einen externen Telefonservice einsetzen?",
+    "antwort": "Grundsätzlich ja, wenn der Dienstleister die Daten nur so bearbeitet, wie die Praxis es selbst dürfte, und keine Geheimhaltungspflicht die Übertragung verbietet (Art. 9 DSG). Die FMH empfiehlt dafür eine Vereinbarung zur Auftragsbearbeitung und eine Geheimhaltungsvereinbarung. Wie das Berufsgeheimnis gewahrt wird, ist im Einzelfall zu prüfen."
+   },
+   {
+    "frage": "Gilt das Berufsgeheimnis auch für die MPA am Telefon?",
+    "antwort": "Ja. Art. 321 StGB gilt auch für die Hilfspersonen von Ärztinnen und Ärzten, etwa medizinische Praxisassistentinnen. Schon die Tatsache, dass jemand in Behandlung ist, fällt nach dem FMH-Leitfaden unter das Geheimnis."
+   },
+   {
+    "frage": "Dürfen am Telefon Auskünfte an Angehörige gegeben werden?",
+    "antwort": "Nur mit Einwilligung der Patientin oder des Patienten oder wenn eine andere Rechtfertigung besteht. Der FMH-Leitfaden hält fest, dass das Berufsgeheimnis auch gegenüber Angehörigen gilt und telefonische Auskünfte nur an auskunftsberechtigte Personen gehen dürfen."
+   },
+   {
+    "frage": "Dürfen Terminwünsche per E-Mail kommen?",
+    "antwort": "Der EDÖB stuft auch Terminvereinbarungen als besonders schützenswert ein und verlangt eine sichere Übermittlung. Ungesichert geht es nur, wenn die Person über die Risiken informiert wurde und frei gewählt hat. Die FMH verlangt für Patientendaten per E-Mail eine Verschlüsselung."
+   },
+   {
+    "frage": "Was muss die Praxis für Notfälle angeben?",
+    "antwort": "Ärztinnen und Ärzte leisten in dringenden Fällen Beistand und wirken nach kantonalen Vorschriften im Notfalldienst mit (Art. 40 MedBG). Ansage und Website sollten deshalb nennen, wie man die Praxis dringend erreicht, wo der Notfalldienst zu finden ist und wann 144 zu wählen ist."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/arztpraxen/",
+    "titel": "Arztpraxen digital",
+    "grund": "Berufsgeheimnis, nDSG und die geplanten Bausteine für Praxen."
+   },
+   {
+    "url": "/produkte/online-terminanfrage-arztpraxis/",
+    "titel": "Online-Terminanfrage für Arztpraxen",
+    "grund": "Terminwünsche per Formular statt Telefon, ohne Beschwerdefeld."
+   },
+   {
+    "url": "/ratgeber/patientenformular-datenschutz/",
+    "titel": "Patientenformulare und Datenschutz",
+    "grund": "Was eine Praxis fragen darf und wann es eine Einwilligung braucht."
+   },
+   {
+    "url": "/ratgeber/website-chatbot-recht/",
+    "titel": "Website-Chatbot: was er darf",
+    "grund": "Wenn allgemeine Fragen auf der Website beantwortet werden sollen."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "FMH/SAMW, Rechtlicher Leitfaden, Kapitel 7.1 Berufsgeheimnis (Stand 12.08.2026)",
+    "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/7-berufsgeheimnis-datenschutz/71-berufsgeheimnis-arzt.pdf?c=46545"
+   },
+   {
+    "titel": "FMH, Minimalanforderungen IT-Grundschutz für Praxisärztinnen und Praxisärzte",
+    "url": "https://www.fmh.ch/files/pdf24/minimalanforderungen-it-grundschutz-praxisaerztinnen-praxisaerzte-d3.pdf"
+   },
+   {
+    "titel": "FMH, Leitfaden Geheimhaltungs- und Auftragsbearbeitungsvereinbarung (März 2023)",
+    "url": "https://fmh.ch/files/pdf29/leitfaden-geheimhaltungs--und-auftragsbearbeitungsvereinbarung.pdf"
+   },
+   {
+    "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen (30.09.2025)",
+    "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+   },
+   {
+    "titel": "EDÖB, Bekanntgabe von Patientendaten",
+    "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+   },
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1), Art. 5, 6, 9, 16, 19",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   },
+   {
+    "titel": "Schweizerisches Strafgesetzbuch (StGB, SR 311.0), Art. 321",
+    "url": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de"
+   },
+   {
+    "titel": "Medizinalberufegesetz (MedBG, SR 811.11), Art. 40",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2007/537/de"
+   },
+   {
+    "titel": "Kanton Schwyz, Ärztlicher Notfalldienst",
+    "url": "https://www.sz.ch/departement-des-innern/amt-fuer-gesundheit-und-soziales/gesundheit/notfall-und-rettung/aerztlicher-notfalldienst.html/8756-8758-8802-9316-9317-9443-9683-10426"
+   }
+  ]
+ },
+ {
+  "slug": "arztrechnung-mahnen",
+  "art": "ratgeber",
+  "name": "Unbezahlte Arztrechnung mahnen",
+  "titel": "Unbezahlte Arztrechnung mahnen: so geht es | Meyssens",
+  "beschreibung": "Tiers garant, Verzug, Verzugszins, Verjährung und Betreibung: wie eine Arztpraxis korrekt mahnt und wann das Berufsgeheimnis zählt. Jetzt lesen.",
+  "h1": "Unbezahlte Arztrechnung: Wie mahnt eine Praxis korrekt?",
+  "lead": "Bleibt eine Arztrechnung unbezahlt, gelten zuerst die Regeln des Obligationenrechts zu Mahnung, Verzug und Verjährung. Vor einer Betreibung kommt in der Arztpraxis ein Schritt dazu, den die meisten anderen Betriebe nicht kennen: das Berufsgeheimnis. Dieser Ratgeber zeigt den Weg von der Zahlungserinnerung bis zum Zahlungsbefehl.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "mahnentwurf-arztpraxis"
+  ],
+  "faq": [
+   {
+    "frage": "Ab wann ist eine Patientin mit der Zahlung in Verzug?",
+    "antwort": "Ist die Rechnung fällig, setzt die Mahnung die Schuldnerin in Verzug (Art. 102 Abs. 1 OR). Bei einem verabredeten Verfalltag tritt der Verzug schon mit Ablauf dieses Tages ein (Art. 102 Abs. 2 OR)."
+   },
+   {
+    "frage": "Wie hoch ist der Verzugszins?",
+    "antwort": "Das OR sieht fünf Prozent pro Jahr vor (Art. 104 Abs. 1 OR). Von Verzugszinsen dürfen keine Verzugszinsen berechnet werden (Art. 105 Abs. 3 OR)."
+   },
+   {
+    "frage": "Wann verjährt eine Arztrechnung?",
+    "antwort": "Forderungen aus ärztlicher Besorgung verjähren nach fünf Jahren (Art. 128 Ziff. 3 OR), gerechnet ab Fälligkeit. Unterbrochen wird die Verjährung etwa durch Anerkennung, zum Beispiel eine Abschlagszahlung, oder durch Betreibung (Art. 135 OR)."
+   },
+   {
+    "frage": "Darf die Praxis ohne Weiteres eine Betreibung einleiten?",
+    "antwort": "Nein, in der Regel nicht. Schon das Behandlungsverhältnis fällt unter das Berufsgeheimnis. Nach dem FMH-Leitfaden braucht es die Einwilligung der Person oder eine Entbindung durch die kantonale Aufsichtsbehörde. Einzelne Kantone, etwa Basel-Stadt und Schaffhausen, sehen eine Ausnahme vor."
+   },
+   {
+    "frage": "Kann die Praxis die Weitergabe an ein Inkassobüro im Anmeldeformular vereinbaren?",
+    "antwort": "Nein. Der EDÖB hält eine vorgängige Einwilligung in die Weitergabe eines allfälligen Inkassoverfahrens an ein Drittunternehmen für unzulässig."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/arztpraxen/",
+    "titel": "Arztpraxen digital",
+    "grund": "Berufsgeheimnis, nDSG und die geplanten Bausteine für Praxen."
+   },
+   {
+    "url": "/produkte/mahnentwurf-arztpraxis/",
+    "titel": "Mahnentwurf für Arztpraxen",
+    "grund": "Sachliche Mahnentwürfe ohne Behandlungsangaben, Freigabe durch die Praxis."
+   },
+   {
+    "url": "/ratgeber/patientenformular-datenschutz/",
+    "titel": "Patientenformulare und Datenschutz",
+    "grund": "Warum eine Inkasso-Klausel im Formular nicht genügt."
+   },
+   {
+    "url": "/ratgeber/aufbewahrungsfristen-buchhaltung/",
+    "titel": "Aufbewahrungsfristen in der Buchhaltung",
+    "grund": "Wie lange Rechnungen und Belege aufzubewahren sind."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "FMH/SAMW, Rechtlicher Leitfaden, Kapitel 4.8 Rechnungsstellung nach KVG (Stand 12.08.2026)",
+    "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/4-leistungen-kvg/48-rechnungsstellung-kvg.pdf?c=24130"
+   },
+   {
+    "titel": "FMH/SAMW, Rechtlicher Leitfaden, Kapitel 7.1 Berufsgeheimnis (Stand 12.08.2026)",
+    "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/7-berufsgeheimnis-datenschutz/71-berufsgeheimnis-arzt.pdf?c=46545"
+   },
+   {
+    "titel": "Bundesgesetz über die Krankenversicherung (KVG, SR 832.10), Art. 42",
+    "url": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/de"
+   },
+   {
+    "titel": "Obligationenrecht (OR, SR 220), Art. 102 bis 106, 128, 130 und 135",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+   },
+   {
+    "titel": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG, SR 281.1), Art. 46, 67, 69, 74, 78, 79, 82, 88",
+    "url": "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/de"
+   },
+   {
+    "titel": "Schweizerisches Strafgesetzbuch (StGB, SR 311.0), Art. 321",
+    "url": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de"
+   },
+   {
+    "titel": "Datenschutzbeauftragte des Kantons Zürich, Einleitung einer Betreibung für eine Arztrechnung (Juni 2025)",
+    "url": "https://docs.datenschutz.ch/u/d/publikationen/webartikel/webartikel_einleitung_einer_betreibung_fuer_eine_arztrechnung.pdf"
+   },
+   {
+    "titel": "Kanton Zürich, Gesundheitsberufe: Entbindung von der Schweigepflicht",
+    "url": "https://www.zh.ch/de/gesundheit/gesundheitsberufe.html"
+   },
+   {
+    "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen (30.09.2025)",
+    "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+   },
+   {
+    "titel": "KMU-Portal des Bundes, Was tun bei Zahlungsverzug und Zahlungsausfällen?",
+    "url": "https://www.kmu.admin.ch/de/was-tun-bei-zahlungsverzug-und-zahlungsausfaellen"
+   }
+  ]
+ },
+ {
+  "slug": "terminerinnerung-sms-datenschutz",
+  "art": "ratgeber",
+  "name": "Terminerinnerung per SMS und Datenschutz",
+  "titel": "Terminerinnerung per SMS in der Arztpraxis | Meyssens",
+  "beschreibung": "SMS oder E-Mail zur Terminerinnerung, Recall-Verfahren und Self Check-in: was EDÖB, DSG und FMH für Arztpraxen verlangen. Checkliste lesen.",
+  "h1": "Terminerinnerung per SMS oder E-Mail: Was erlaubt der Datenschutz?",
+  "lead": "Eine Terminerinnerung per SMS oder E-Mail scheint harmlos, doch in der Arztpraxis kann schon ein Termin auf die Gesundheit schliessen lassen. Dieser Ratgeber zeigt, was der EDÖB, das Datenschutzgesetz und die FMH für Erinnerungen, das Recall-Verfahren in der Arztpraxis, den Self Check-in und die papierlose Praxis verlangen.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "online-terminanfrage-arztpraxis",
+   "terminerinnerung-recall-zahnarztpraxis"
+  ],
+  "faq": [
+   {
+    "frage": "Darf eine Arztpraxis Termine per SMS bestätigen?",
+    "antwort": "Ja, wenn der Kanal gesichert ist oder die Patientin über die Risiken informiert wurde und freiwillig zugestimmt hat. Der EDÖB stuft auch Terminvereinbarungen als besonders schützenswert ein und verlangt eine echte Wahlmöglichkeit, etwa ein Kästchen zum Ankreuzen."
+   },
+   {
+    "frage": "Was darf in der Erinnerung stehen?",
+    "antwort": "Nur, was für die Erinnerung nötig ist: Datum, Uhrzeit und ein Kontakt zum Verschieben. Diagnose, Behandlung und Untersuchungsart gehören nicht hinein (Grundsatz der Verhältnismässigkeit, Art. 6 Abs. 2 DSG)."
+   },
+   {
+    "frage": "Ist ein Recall Werbung?",
+    "antwort": "Das ist nicht abschliessend geklärt. Für Massenwerbung per SMS oder E-Mail verlangt Art. 3 Abs. 1 Bst. o UWG eine Einwilligung und eine Abmeldemöglichkeit, wie das BAKOM erklärt. Sicher ist der Recall mit dokumentierter Einwilligung und Abmeldung in jeder Nachricht."
+   },
+   {
+    "frage": "Braucht es einen Vertrag mit dem SMS-Anbieter?",
+    "antwort": "Der Anbieter bearbeitet Personendaten im Auftrag der Praxis (Art. 9 DSG). Die FMH empfiehlt eine Vereinbarung zur Auftragsbearbeitung und eine Geheimhaltungsvereinbarung. Bei Daten im Ausland gilt zusätzlich Art. 16 DSG."
+   },
+   {
+    "frage": "Kann die Patientin die Einwilligung zurückziehen?",
+    "antwort": "Ja, jederzeit und ohne Begründung. Der EDÖB verlangt, dass die Praxis einfache Möglichkeiten zum Widerruf bietet."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/arztpraxen/",
+    "titel": "Arztpraxen digital",
+    "grund": "Berufsgeheimnis, nDSG und die geplanten Bausteine für Praxen."
+   },
+   {
+    "url": "/produkte/terminerinnerung-recall-zahnarztpraxis/",
+    "titel": "Terminerinnerung und Recall",
+    "grund": "Erinnerungen als Entwürfe, nur mit Einwilligung, Freigabe durch die MPA."
+   },
+   {
+    "url": "/ratgeber/patientenformular-datenschutz/",
+    "titel": "Patientenformulare und Datenschutz",
+    "grund": "Einwilligung, Information und sichere Übermittlung nach dem EDÖB."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Datenschutzerklärung, Auftragsbearbeiter und Datensicherheit."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "EDÖB, Merkblatt zu Patientenformularen für ärztliche und therapeutische Konsultationen (30.09.2025)",
+    "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+   },
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1), Art. 5, 6, 9, 16, 19",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   },
+   {
+    "titel": "FMH, Minimalanforderungen IT-Grundschutz für Praxisärztinnen und Praxisärzte",
+    "url": "https://www.fmh.ch/files/pdf24/minimalanforderungen-it-grundschutz-praxisaerztinnen-praxisaerzte-d3.pdf"
+   },
+   {
+    "titel": "FMH, Leitfaden Geheimhaltungs- und Auftragsbearbeitungsvereinbarung (März 2023)",
+    "url": "https://fmh.ch/files/pdf29/leitfaden-geheimhaltungs--und-auftragsbearbeitungsvereinbarung.pdf"
+   },
+   {
+    "titel": "FMH/SAMW, Rechtlicher Leitfaden, Kapitel 7.1 Berufsgeheimnis (Stand 12.08.2026)",
+    "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/7-berufsgeheimnis-datenschutz/71-berufsgeheimnis-arzt.pdf?c=46545"
+   },
+   {
+    "titel": "FMH/SAMW, Rechtlicher Leitfaden, Kapitel 4.8 Rechnungsstellung nach KVG (Stand 12.08.2026)",
+    "url": "https://leitfaden.fmh.ch/rechtlicher-leitfaden/4-leistungen-kvg/48-rechnungsstellung-kvg.pdf?c=24130"
+   },
+   {
+    "titel": "BAKOM, Wann ist der Massenversand erlaubt?",
+    "url": "https://www.bakom.admin.ch/de/wann-ist-der-massenversand-erlaubt"
+   },
+   {
+    "titel": "Medizinalberufegesetz (MedBG, SR 811.11), Art. 40",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2007/537/de"
+   },
+   {
+    "titel": "EDÖB, Bekanntgabe von Patientendaten",
+    "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+   },
+   {
+    "titel": "Kanton Thurgau, Merkblatt zur Führung und Aufbewahrung der Patientendokumentationen (1. Juli 2024)",
+    "url": "https://gesundheit.tg.ch/public/upload/assets/162229/Merkblatt%20betreffend%20F%C3%BChrung%20und%20Aufbewahrung%20der%20Patientendokumentationen.pdf?fp=1"
+   }
+  ]
+ },
+ {
+  "slug": "laborauftrag-zahnarzt",
+  "art": "ratgeber",
+  "name": "Laborauftrag in der Zahnarztpraxis",
+  "titel": "Laborauftrag Zahnarzt: Inhalt, digital erfassen | Meyssens",
+  "beschreibung": "Was gehört in den Laborauftrag, wer verantwortet was bei der Sonderanfertigung, und wie erfassen Sie ihn digital und sicher? Checkliste lesen.",
+  "h1": "Laborauftrag in der Zahnarztpraxis: was gehört hinein und wie erfassen Sie ihn digital?",
+  "lead": "Der Laborauftrag ist die schriftliche Verordnung, nach der das Dentallabor eine Sonderanfertigung herstellt. Dieser Ratgeber zeigt nach der Medizinprodukteverordnung und den Merkblättern von Swissmedic, welche Angaben in den Laborauftrag gehören, wer wofür verantwortlich ist und worauf Sie beim digitalen Laborauftrag achten.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "laborauftrag-zahnarztpraxis"
+  ],
+  "faq": [
+   {
+    "frage": "Ist ein Laborauftrag Pflicht?",
+    "antwort": "Zahnersatz in der Zahntechnik nennt Swissmedic als typisches Beispiel einer Sonderanfertigung. Eine Sonderanfertigung wird laut Swissmedic speziell gemäss einer schriftlichen Verordnung einer dazu berechtigten Person angefertigt. In der Praxis übernimmt der Laborauftrag diese Rolle. Eine bestimmte Form schreiben die geprüften Quellen nicht vor."
+   },
+   {
+    "frage": "Wer ist für die Arbeit verantwortlich, Praxis oder Labor?",
+    "antwort": "Nach dem Merkblatt von Swissmedic trägt die verordnende Zahnärztin oder der verordnende Zahnarzt die Verantwortung für Auslegung und Zweckbestimmung, das Labor als Hersteller für die Einhaltung der grundlegenden Sicherheits- und Leistungsanforderungen."
+   },
+   {
+    "frage": "Darf ich den Laborauftrag per E-Mail schicken?",
+    "antwort": "Ein Laborauftrag enthält Gesundheitsdaten. Nach dem EDÖB muss die Bekanntgabe gesichert sein, etwa durch Verschlüsselung. Eine unverschlüsselte E-Mail mit Patientenangaben ist deshalb nicht der richtige Weg. Nutzen Sie den gesicherten Kanal Ihres Labors."
+   },
+   {
+    "frage": "Was muss mit der fertigen Arbeit zurückkommen?",
+    "antwort": "Der Sonderanfertigung ist beim Inverkehrbringen eine Erklärung des Herstellers beizufügen (Art. 10 Abs. 1 MepV). Ein Konformitätskennzeichen darf nicht angebracht werden (Art. 13 Abs. 2 MepV), und Swissmedic nennt die Aufschrift «Sonderanfertigung» bei der Kennzeichnung."
+   },
+   {
+    "frage": "Muss die Praxis Sonderanfertigungen bei Swissmedic melden?",
+    "antwort": "Die Meldepflicht nach Art. 19 MepV trifft, wer Sonderanfertigungen in der Schweiz auf dem Markt bereitstellt. Laut Swissmedic sind das Hersteller, Bevollmächtigte, Importeure oder Händler mit Sitz in der Schweiz oder in Liechtenstein, bei einem Schweizer Labor also in der Regel das Labor. Fertigt die Praxis selbst an, gelten je nach Fall Art. 9 und Art. 18 MepV für Produkte, die in einer Gesundheitseinrichtung hergestellt und nur dort verwendet werden. Das ist im Einzelfall zu prüfen."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/zahnarztpraxen/",
+    "titel": "Zahnarztpraxen: Recht und Praxis",
+    "grund": "Berufsgeheimnis, nDSG und die ganze Patientenreise mit vier geplanten Bausteinen."
+   },
+   {
+    "url": "/produkte/laborauftrag-zahnarztpraxis/",
+    "titel": "Labor- und Materialbestellung",
+    "grund": "Laboraufträge aus Vorlagen mit Fall-Nummer statt Namen, offene Arbeiten im Blick."
+   },
+   {
+    "url": "/ratgeber/kostenvoranschlag-zahnarzt/",
+    "titel": "Kostenvoranschlag beim Zahnarzt",
+    "grund": "Wie der Laboranteil in den Kostenvoranschlag kommt."
+   },
+   {
+    "url": "/ratgeber/patientenformular-datenschutz/",
+    "titel": "Patientenformular und Datenschutz",
+    "grund": "Einwilligung, Information und sichere Übermittlung in der Praxis."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Swissmedic, Merkblatt 3D Drucker Medizinprodukte (MU600_00_017, Version 1.2, gültig ab 26.03.2026)",
+    "url": "https://www.swissmedic.ch/dam/swissmedic/de/dokumente/medizinprodukte/mep_urr/mu600_00_017d_mb_3d-drucker_mep.pdf.download.pdf/MU600_00_017d_MB_3D_Drucker_Medizinprodukte.pdf"
+   },
+   {
+    "titel": "Swissmedic, Pflichten des Herstellers, Online-Veranstaltung zur Medizinprodukte-Regulierung (2. September 2021)",
+    "url": "https://www.swissmedic.ch/dam/swissmedic/de/dokumente/stab/veranstaltung/mep-2021/hersteller-pflichten.pdf.download.pdf/3_hersteller-pflichten_wirtschaftsakteure_ch.pdf"
+   },
+   {
+    "titel": "Swissmedic, Merkblatt FAQ Medizinprodukte Notifikationen (BW630_30_009)",
+    "url": "https://www.swissmedic.ch/dam/swissmedic/de/dokumente/medizinprodukte/mep_urr/bw630_30_009d_mb_faq_mep_notifikationen.pdf.download.pdf/BW630_30_009d_MB_FAQ_Notifikationen.pdf"
+   },
+   {
+    "titel": "Medizinprodukteverordnung (MepV, SR 812.213), Art. 9, 10, 13, 17, 18 und 19",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2020/552/de"
+   },
+   {
+    "titel": "EDÖB, Bekanntgabe von Patientendaten",
+    "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+   },
+   {
+    "titel": "EDÖB, Merkblatt «Erläuterungen zu Patientenformularen für ärztliche und therapeutische Konsultationen»",
+    "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+   },
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1), Art. 5, 6 und 8",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   },
+   {
+    "titel": "SSO, Zahnarzttarif Schweiz (Taxpunkte, Rechnung, zahntechnische Leistungen)",
+    "url": "https://www.sso.ch/de/zahnarzttarif"
+   }
+  ]
+ },
+ {
+  "slug": "recall-zahnarztpraxis",
+  "art": "ratgeber",
+  "name": "Recall in der Zahnarztpraxis",
+  "titel": "Recall Zahnarztpraxis: Intervall und Datenschutz | Meyssens",
+  "beschreibung": "Wie oft erinnern, welcher Kanal ist erlaubt und wann braucht es eine Einwilligung? Recall-Verfahren nach SSO, EDÖB und DSG Schritt für Schritt lesen.",
+  "h1": "Recall in der Zahnarztpraxis: wie oft erinnern und was gilt beim Datenschutz?",
+  "lead": "Ein gutes Recall-Verfahren holt Patientinnen und Patienten rechtzeitig zur Kontrolle zurück, ohne mehr über sie zu verraten als nötig. Dieser Ratgeber zeigt, welche Intervalle die Qualitätsleitlinien der SSO nennen, welche Kanäle der EDÖB zulässt und wann eine Einwilligung nötig ist.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "terminerinnerung-recall-zahnarztpraxis",
+   "online-terminanfrage-zahnarztpraxis"
+  ],
+  "faq": [
+   {
+    "frage": "Wie oft sollte eine Zahnarztpraxis zum Recall einladen?",
+    "antwort": "Einen einheitlichen Rhythmus gibt es nicht. Die Qualitätsleitlinien der SSO nennen für die Parodontologie Recall-Sitzungen je nach Risiko alle drei bis zwölf Monate, bei Implantaten als Minimum eine jährliche klinische Kontrolle. Das Intervall legt die behandelnde Person pro Patientin oder Patient fest."
+   },
+   {
+    "frage": "Darf ich den Recall per SMS oder E-Mail verschicken?",
+    "antwort": "Nach dem Merkblatt des EDÖB zu Patientenformularen ist schon der administrative Austausch wie eine Terminvereinbarung besonders schützenswert und braucht eine sichere Übermittlung. Ein ungesicherter Kanal ist möglich, wenn die Person vorher über die Risiken informiert wurde und freiwillig zugestimmt hat, etwa mit einem Kästchen auf dem Formular."
+   },
+   {
+    "frage": "Braucht es für den Recall eine Einwilligung?",
+    "antwort": "Für den ungesicherten Kanal ja, nach dem EDÖB. Ist eine Einwilligung nötig, muss sie nach Art. 6 DSG für bestimmte Bearbeitungen nach angemessener Information freiwillig und bei Gesundheitsdaten ausdrücklich erfolgen. Dokumentiert ist sie aus Beweisgründen vorzuziehen."
+   },
+   {
+    "frage": "Ist ein Recall Werbung nach UWG?",
+    "antwort": "Das ist nicht abschliessend geklärt. Massenwerbung per E-Mail oder SMS braucht nach Art. 3 Abs. 1 Bst. o UWG grundsätzlich eine vorherige Einwilligung, einen korrekten Absender und einen Hinweis auf eine kostenlose Ablehnungsmöglichkeit. Eine Ausnahme gilt für Werbung für eigene ähnliche Leistungen an Kundinnen und Kunden, deren Kontaktdaten beim Verkauf mit Hinweis auf die Ablehnungsmöglichkeit erhoben wurden. Mit Einwilligung und Abmeldemöglichkeit sind Sie auf der sicheren Seite."
+   },
+   {
+    "frage": "Was darf in der Recall-Nachricht stehen?",
+    "antwort": "Nur was nötig ist: Praxis als Absender, die fällige Kontrolle, ein Weg zur Terminvereinbarung und zur Abmeldung. Diagnose und Behandlung gehören nicht hinein, das folgt aus dem Grundsatz der Verhältnismässigkeit nach Art. 6 DSG."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/zahnarztpraxen/",
+    "titel": "Zahnarztpraxen: Recht und Praxis",
+    "grund": "Berufsgeheimnis, nDSG und die ganze Patientenreise mit vier geplanten Bausteinen."
+   },
+   {
+    "url": "/produkte/terminerinnerung-recall-zahnarztpraxis/",
+    "titel": "Terminerinnerung und Recall für Zahnarztpraxen",
+    "grund": "Erinnerungen als Entwürfe, nur mit Einwilligung, die MPA gibt jede Nachricht frei."
+   },
+   {
+    "url": "/produkte/online-terminanfrage-zahnarztpraxis/",
+    "titel": "Online-Terminanfrage für Zahnarztpraxen",
+    "grund": "Der Weg vom Recall zum Termin, ohne Freitext für Beschwerden."
+   },
+   {
+    "url": "/ratgeber/patientenformular-datenschutz/",
+    "titel": "Patientenformular und Datenschutz",
+    "grund": "Wie die Einwilligung in einen Kanal auf dem Formular aussehen kann."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "SSO, Qualitätsleitlinien Parodontologie",
+    "url": "https://www.sso.ch/de/media/1532/download"
+   },
+   {
+    "titel": "SSO, Qualitätsleitlinien Restaurative Zahnmedizin",
+    "url": "https://www.sso.ch/de/media/1529/download"
+   },
+   {
+    "titel": "SSO, Qualitätsleitlinien Präventivzahnmedizin",
+    "url": "https://www.sso.ch/de/media/1534/download"
+   },
+   {
+    "titel": "SSO, Qualitätsleitlinien Orale Chirurgie, Implantologie, Stomatologie",
+    "url": "https://www.sso.ch/de/media/1542/download"
+   },
+   {
+    "titel": "SSO, Zahnarzttarif Schweiz (Taxpunkte, Rechnung, zahntechnische Leistungen)",
+    "url": "https://www.sso.ch/de/zahnarzttarif"
+   },
+   {
+    "titel": "EDÖB, Merkblatt «Erläuterungen zu Patientenformularen für ärztliche und therapeutische Konsultationen»",
+    "url": "https://www.edoeb.admin.ch/dam/de/sd-web/aM0429bnFlib/Merkblatt_Erl%C3%A4uterungen%20Patientenformularen%20%C3%A4rztliche%20und%20therapeutische%20Konsultationen_DE.pdf"
+   },
+   {
+    "titel": "EDÖB, Bekanntgabe von Patientendaten",
+    "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+   },
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1), Art. 5, 6 und 8",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   },
+   {
+    "titel": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG, SR 241), Art. 3 Abs. 1 Bst. o",
+    "url": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/de"
+   },
+   {
+    "titel": "BAKOM, Wann ist der Massenversand erlaubt?",
+    "url": "https://www.bakom.admin.ch/de/wann-ist-der-massenversand-erlaubt"
+   }
+  ]
+ },
+ {
+  "slug": "kostenvoranschlag-zahnarzt",
+  "art": "ratgeber",
+  "name": "Kostenvoranschlag beim Zahnarzt",
+  "titel": "Kostenvoranschlag Zahnarzt: Inhalt und wann nötig | Meyssens",
+  "beschreibung": "Was gehört in einen Kostenvoranschlag beim Zahnarzt, wann verlangen Krankenkasse, IV oder Sozialhilfe ihn vorher und was gilt bei Mehrkosten? Jetzt lesen.",
+  "h1": "Kostenvoranschlag beim Zahnarzt: was muss er enthalten und wann ist er nötig?",
+  "lead": "Ein Kostenvoranschlag zeigt vor der Behandlung, was sie voraussichtlich kostet, und ist für manche Kostenträger Voraussetzung für die Zahlung. Dieser Ratgeber zeigt nach Standesordnung und Tarif der SSO, dem Krankenversicherungsrecht und dem Beispiel des Kantons Zürich, was hineingehört und wann er vorher eingereicht werden muss.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "praxis-textbausteine",
+   "laborauftrag-zahnarztpraxis"
+  ],
+  "faq": [
+   {
+    "frage": "Muss der Zahnarzt einen Kostenvoranschlag machen?",
+    "antwort": "Eine allgemeine gesetzliche Pflicht nennen die geprüften Quellen nicht. Die Standesordnung der SSO verpflichtet ihre Mitglieder aber, in verständlicher Form über Befund, Diagnose, vorgesehene Behandlung und deren Kosten zu informieren (Art. 7). Je nach Fall verlangen Krankenkasse, IV, Ergänzungsleistungen oder Sozialhilfe vorher einen Behandlungsvorschlag, einen Kostenvoranschlag oder eine Gutsprache."
+   },
+   {
+    "frage": "Wie genau muss der Kostenvoranschlag stimmen?",
+    "antwort": "Nach Art. 7 der SSO-Standesordnung muss die Zahnärztin oder der Zahnarzt umgehend informieren, wenn absehbar wird, dass die Kosten die Kostenschätzung um mehr als 15 Prozent übersteigen."
+   },
+   {
+    "frage": "Sind die Laborkosten im Kostenvoranschlag enthalten?",
+    "antwort": "Sie gehören hinein, aber als eigener Posten. Der Zahnarzttarif enthält die zahntechnischen Arbeiten nicht, sie werden nach der SSO zusätzlich verrechnet. Für Gesuche in der Sozialhilfe verlangt etwa der Kanton Zürich gegebenenfalls den Kostenvoranschlag des Zahntechnikers."
+   },
+   {
+    "frage": "Zahlt die Krankenkasse, wenn ich einen Kostenvoranschlag einreiche?",
+    "antwort": "Die Grundversicherung zahlt zahnärztliche Behandlungen nur in den Fällen von Art. 31 KVG: bei schweren, nicht vermeidbaren Erkrankungen des Kausystems und schweren Allgemeinerkrankungen, die die KLV in Art. 17 bis 19 aufzählt, bei bestimmten Geburtsgebrechen (Art. 19a KLV) und bei Unfallschäden, soweit kein anderer Versicherer zuständig ist. Für Behandlungen nach Art. 18 KLV braucht es eine vorgängige besondere Gutsprache. Ein Kostenvoranschlag allein begründet keine Leistungspflicht."
+   },
+   {
+    "frage": "Was gilt bei Sozialhilfe oder Ergänzungsleistungen?",
+    "antwort": "Das regelt jeder Kanton. Bei den Ergänzungsleistungen muss nach der SSO ab einem kantonal unterschiedlichen Betrag vorher ein Kostenvoranschlag eingereicht werden, ausser für Jahreskontrollen. Im Kanton Zürich ist in der Sozialhilfe ausser in Notfällen vor jeder Behandlung ein Kostenvoranschlag zu verlangen."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/zahnarztpraxen/",
+    "titel": "Zahnarztpraxen: Recht und Praxis",
+    "grund": "Berufsgeheimnis, nDSG und die ganze Patientenreise mit vier geplanten Bausteinen."
+   },
+   {
+    "url": "/produkte/praxis-textbausteine/",
+    "titel": "Textbausteine für Telefon und Mail",
+    "grund": "Geprüfte Erläuterungen zu Kostenschätzung und Gutsprache, als Entwurf für das Team."
+   },
+   {
+    "url": "/ratgeber/laborauftrag-zahnarzt/",
+    "titel": "Laborauftrag in der Zahnarztpraxis",
+    "grund": "Was in den Auftrag ans Labor gehört und wer wofür verantwortlich ist."
+   },
+   {
+    "url": "/ratgeber/aufbewahrungsfristen-buchhaltung/",
+    "titel": "Aufbewahrungsfristen in der Buchhaltung",
+    "grund": "Wie lange Rechnungen und Geschäftsunterlagen aufzubewahren sind."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "SSO, Standesordnung (Ausgabe 2016), Art. 7 bis 10 und 26",
+    "url": "https://www.sso.ch/de/media/154/download"
+   },
+   {
+    "titel": "SSO, Zahnarzttarif Schweiz (Taxpunkte, Rechnung, zahntechnische Leistungen)",
+    "url": "https://www.sso.ch/de/zahnarzttarif"
+   },
+   {
+    "titel": "SSO, Versicherungen und Zahngesundheit",
+    "url": "https://www.sso.ch/de/versicherungen"
+   },
+   {
+    "titel": "Bundesgesetz über die Krankenversicherung (KVG, SR 832.10), Art. 31",
+    "url": "https://www.fedlex.admin.ch/eli/cc/1995/1328_1328_1328/de"
+   },
+   {
+    "titel": "Krankenpflege-Leistungsverordnung (KLV, SR 832.112.31), Art. 17 bis 19a",
+    "url": "https://www.fedlex.admin.ch/eli/cc/1995/4964_4964_4964/de"
+   },
+   {
+    "titel": "Kanton Zürich, Sozialhilfehandbuch 10.1.02 Zahnbehandlungen: Kostengutsprache und Rechnungsstellung (Stand 04.01.2021)",
+    "url": "https://www.zh.ch/de/soziales/sozialhilfe/sozialhilfehandbuch/flexdata-definition/10-kostengutsprachegesuche/10-1-direkte-kostengutsprache/10-1-02-zahnbehandlungen--kostengutsprache-und-rechnungsstellung.html"
+   },
+   {
+    "titel": "Kanton Zürich, Sozialhilfehandbuch 7.3.04 Zahnbehandlungskosten (Stand 01.03.2021)",
+    "url": "https://www.zh.ch/de/soziales/sozialhilfe/sozialhilfehandbuch/flexdata-definition/7-materielle-grundsicherung-wsh/7-3-medizinische-grundversorgung/7-3-04-zahnbehandlungskosten.html"
+   }
+  ]
+ },
+ {
+  "slug": "schadenmeldung-mietwohnung",
+  "art": "ratgeber",
+  "name": "Schaden in der Mietwohnung melden und beheben",
+  "titel": "Schaden in der Mietwohnung: wer meldet, wer zahlt | Meyssens",
+  "beschreibung": "Meldepflicht, kleiner Unterhalt, Mietzinsminderung und Fristen nach OR: was Mieterschaft und Verwaltung bei einem Schaden tun müssen. Anleitung lesen.",
+  "h1": "Schaden in der Mietwohnung: wer muss was wann melden und beheben?",
+  "lead": "Die Mieterschaft muss Mängel melden, kleine Reparaturen selbst erledigen und den Rest der Vermieterschaft überlassen. So regelt es das Obligationenrecht. Dieser Ratgeber zeigt, was nach Gesetz und nach den Gerichten des Kantons Zürich gilt, und wie eine Verwaltung eine Schadenmeldung Schritt für Schritt bearbeitet.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "schadenmeldung-triage",
+   "uebergabeprotokoll"
+  ],
+  "faq": [
+   {
+    "frage": "Muss die Mieterschaft jeden Schaden melden?",
+    "antwort": "Sie muss alle Mängel melden, die sie nicht selbst zu beseitigen hat (Art. 257g OR). Unterlässt sie die Meldung, haftet sie für den Schaden, der daraus entsteht. Ob das auch für selbst verursachte Schäden gilt, ist im Einzelfall zu prüfen; eine Meldung ist in der Praxis trotzdem sinnvoll."
+   },
+   {
+    "frage": "Welche Reparaturen bezahlt die Mieterschaft selbst?",
+    "antwort": "Kleine Reinigungen und Ausbesserungen für den gewöhnlichen Unterhalt (Art. 259 OR), etwa den Ersatz einer Sicherung. Braucht es Fachwissen, gehört die Arbeit nicht mehr dazu. Schlichtungsbehörden und Mietgerichte im Kanton Zürich orientieren sich an etwa 150 Franken pro Reparatur."
+   },
+   {
+    "frage": "Ab wann gilt eine Mietzinsminderung?",
+    "antwort": "Ab dem Zeitpunkt, in dem die Vermieterschaft vom Mangel erfahren hat, bis zu seiner Behebung (Art. 259d OR). Ein Verschulden der Vermieterschaft ist nicht nötig. Feste Prozentsätze nennt das Gesetz nicht."
+   },
+   {
+    "frage": "Wie schnell muss die Verwaltung einen Mangel beheben?",
+    "antwort": "Innert angemessener Frist. Eine Zahl von Tagen nennt das Gesetz nicht, sie hängt von der Art des Mangels ab. Wird ein bekannter Mangel nicht rechtzeitig behoben, kann die Mieterschaft je nach Schwere fristlos kündigen, den Mangel auf Kosten der Vermieterschaft beheben lassen oder nach schriftlicher Fristsetzung den Mietzins hinterlegen."
+   },
+   {
+    "frage": "Muss die Mieterschaft Handwerker in die Wohnung lassen?",
+    "antwort": "Ja, für Arbeiten, die zur Beseitigung von Mängeln oder zur Vermeidung von Schäden notwendig sind (Art. 257h OR). Die Vermieterschaft muss die Arbeiten rechtzeitig anzeigen und auf die Interessen der Mieterschaft Rücksicht nehmen."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/immobilienverwaltungen/",
+    "titel": "Immobilienverwaltung digital",
+    "grund": "Mieteranfragen, Schadenmeldungen und die Neuvermietung als Ablauf."
+   },
+   {
+    "url": "/produkte/schadenmeldung-triage/",
+    "titel": "Schadenmeldung mit Triage",
+    "grund": "Ein Formular mit Foto, Notfallnummer und Vorschlag für die Dringlichkeit."
+   },
+   {
+    "url": "/ratgeber/wohnungsabnahme-uebergabeprotokoll/",
+    "titel": "Wohnungsabnahme und Übergabeprotokoll",
+    "grund": "Was bei der Rückgabe gilt: normale Abnützung, Mängelrüge und Kaution."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Fotos und Kontaktdaten aus Schadenmeldungen datenschutzkonform ablegen."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Obligationenrecht (OR, SR 220), Art. 127, 128, 256–259i, 266l, 267, 267a und 958f",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+   },
+   {
+    "titel": "Gerichte des Kantons Zürich, Miete: Mängel an der Mietsache",
+    "url": "https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/maengel-der-mietsache/mangel"
+   },
+   {
+    "titel": "Gerichte des Kantons Zürich, Miete: Kleiner Unterhalt",
+    "url": "https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/maengel-der-mietsache/kleiner-unterhalt"
+   },
+   {
+    "titel": "Gerichte des Kantons Zürich, Miete: Beseitigung des Mangels",
+    "url": "https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/maengel-der-mietsache/beseitigung-des-mangels"
+   },
+   {
+    "titel": "Gerichte des Kantons Zürich, Miete: Mietzinsminderung",
+    "url": "https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/maengel-der-mietsache/mietzinsminderung"
+   },
+   {
+    "titel": "Gerichte des Kantons Zürich, Miete: Schadenersatz",
+    "url": "https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/maengel-der-mietsache/schadenersatz"
+   },
+   {
+    "titel": "Gerichte des Kantons Zürich, Miete: Hinterlegung des Mietzinses",
+    "url": "https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/maengel-der-mietsache/hinterlegung"
+   },
+   {
+    "titel": "Mieterinnen- und Mieterverband, Merkblatt «Auszug: Für welche Schäden müssen Mieter*innen aufkommen?»",
+    "url": "https://www.mieterverband.ch/dam/jcr%3A4ba00755-1344-4bea-9d03-2481ea35bad2/Merkblatt_Auszug_Schaeden.pdf"
+   },
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1)",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   }
+  ]
+ },
+ {
+  "slug": "wohnungsabnahme-uebergabeprotokoll",
+  "art": "ratgeber",
+  "name": "Wohnungsabnahme und Übergabeprotokoll",
+  "titel": "Wohnungsabnahme und Übergabeprotokoll | Meyssens",
+  "beschreibung": "Wohnungsabnahme nach Art. 267a OR: Übergabeprotokoll, normale Abnützung, Mängelrüge innert Tagen, digital und per E-Mail, Kaution. Checkliste lesen.",
+  "h1": "Wohnungsabnahme und Übergabeprotokoll: wie laufen Ablauf, Mängelrüge und Fristen?",
+  "lead": "Bei der Rückgabe einer Mietwohnung muss die Verwaltung den Zustand prüfen und Mängel sofort rügen, sonst verliert sie ihre Ansprüche. Dieser Ratgeber zeigt nach Obligationenrecht, den Gerichten des Kantons Zürich und dem Mieterverband, was ins Übergabeprotokoll gehört, was «sofort» heisst und ob ein digitales Protokoll genügt.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "uebergabeprotokoll",
+   "schadenmeldung-triage"
+  ],
+  "faq": [
+   {
+    "frage": "Ist ein Übergabeprotokoll Pflicht?",
+    "antwort": "Nein, das Gesetz schreibt es nicht vor. Es ist aber nach dem Mieterverband vor allem für die Vermieterschaft ein wichtiges Beweismittel, denn sie muss im Streitfall beweisen, dass ein Schaden während der Mietdauer entstanden ist."
+   },
+   {
+    "frage": "Wie schnell muss die Mängelrüge erfolgen?",
+    "antwort": "Sofort bei der Rückgabe (Art. 267a OR). Das Mietgericht Zürich geht in einem nicht rechtskräftigen Urteil vom 5. März 2026 in der Regel von zwei bis drei Werktagen aus (Stand: November 2026). Versteckte Mängel sind sofort nach ihrer Entdeckung zu melden."
+   },
+   {
+    "frage": "Genügt ein digitales Protokoll oder eine Rüge per E-Mail?",
+    "antwort": "Das Gesetz sieht für die Rüge keine besondere Form vor. Nach dem Mietgericht Zürich ist auch eine E-Mail möglich, wenn nachgewiesen wird, dass sie der Mieterschaft zuging. Ein digitales Protokoll muss die Mängel genauso konkret bezeichnen wie eines auf Papier."
+   },
+   {
+    "frage": "Muss die Mieterschaft das Protokoll unterschreiben?",
+    "antwort": "Nein. Nach dem Mieterverband gibt es keine Pflicht dazu. Die Mieterschaft kann auch Vorbehalte anbringen, etwa «Haftung bestritten» bei einzelnen Posten."
+   },
+   {
+    "frage": "Wie viel muss die Mieterschaft bei einem Schaden zahlen?",
+    "antwort": "Für normale Abnützung nichts. Bei einem Schaden höchstens die Reparaturkosten oder den Zeitwert, den die Gerichte Zürich mit der paritätischen Lebensdauertabelle von Hauseigentümer- und Mieterverband bestimmen. Ist die Lebensdauer abgelaufen, ist in der Regel nichts mehr geschuldet."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/immobilienverwaltungen/",
+    "titel": "Immobilienverwaltung digital",
+    "grund": "Mieteranfragen, Schadenmeldungen und die Neuvermietung als Ablauf."
+   },
+   {
+    "url": "/produkte/uebergabeprotokoll/",
+    "titel": "Digitales Übergabeprotokoll",
+    "grund": "Raum für Raum mit Fotos, Zählerständen, Schlüsseln und Unterschrift vor Ort."
+   },
+   {
+    "url": "/ratgeber/schadenmeldung-mietwohnung/",
+    "titel": "Schaden in der Mietwohnung",
+    "grund": "Meldepflicht, kleiner Unterhalt und Mietzinsminderung während der Mietdauer."
+   },
+   {
+    "url": "/ratgeber/maengelruege-abnahme-2026/",
+    "titel": "Mängelrüge am Bau ab 2026",
+    "grund": "Zum Vergleich: Abnahme und Rügefrist beim Werkvertrag, nicht bei der Miete."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Obligationenrecht (OR, SR 220), Art. 127, 128, 256–259i, 266l, 267, 267a und 958f",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+   },
+   {
+    "titel": "Gerichte des Kantons Zürich, Miete: Mängelrüge bei der Rückgabe",
+    "url": "https://www.gerichte-zh.ch/de/themen/miete/kuendigung-rueckgabe/rueckgabe-und-ausweisung/maengelruege"
+   },
+   {
+    "titel": "Gerichte des Kantons Zürich, Miete: Haftung für Schäden bei der Rückgabe",
+    "url": "https://www.gerichte-zh.ch/de/themen/miete/kuendigung-rueckgabe/rueckgabe-und-ausweisung/haftung-fuer-schaeden"
+   },
+   {
+    "titel": "Gerichte des Kantons Zürich, Miete: Auflösung des Mietdepots",
+    "url": "https://www.gerichte-zh.ch/de/themen/miete/kuendigung-rueckgabe/rueckgabe-und-ausweisung/aufloesung-des-mietdepots"
+   },
+   {
+    "titel": "Mietgericht Zürich, Urteil MJ240004-L vom 5. März 2026 (nicht rechtskräftig), ZMP 2026 Nr. 5",
+    "url": "https://www.gerichte-zh.ch/fileadmin/user_upload/entscheide/oeffentlich/ZMP_2026_Nr_5.pdf"
+   },
+   {
+    "titel": "Mieterinnen- und Mieterverband, Merkblatt «Auszug: Für welche Schäden müssen Mieter*innen aufkommen?»",
+    "url": "https://www.mieterverband.ch/dam/jcr%3A4ba00755-1344-4bea-9d03-2481ea35bad2/Merkblatt_Auszug_Schaeden.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "mieterakte-aufbewahrung",
+  "art": "ratgeber",
+  "name": "Mieterakte: Unterlagen und Aufbewahrung",
+  "titel": "Mieterakte: Unterlagen und Aufbewahrung | Meyssens",
+  "beschreibung": "Welche Nachweise eine Verwaltung verlangen darf und wie lange die Mieterakte aufbewahrt wird, nach DSG, OR und EDÖB. Mit Checkliste. Jetzt lesen.",
+  "h1": "Mieterakte: welche Unterlagen darf die Verwaltung erheben und wie lange aufbewahren?",
+  "lead": "Ausweiskopie, Lohnausweis, Kaution, Protokolle: Eine Mieterakte sammelt viele Personendaten. Dieser Ratgeber zeigt nach Datenschutzgesetz, Obligationenrecht und dem Merkblatt des EDÖB, welche Nachweise eine Verwaltung wann verlangen darf und woran sie die Aufbewahrungsfristen festmacht.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "besichtigungstermine-mietobjekt",
+   "uebergabeprotokoll",
+   "schadenmeldung-triage"
+  ],
+  "faq": [
+   {
+    "frage": "Welche Nachweise darf der Vermieter verlangen?",
+    "antwort": "Nach dem Merkblatt des EDÖB von der ausgewählten Person, wenn sich der Vertragsabschluss konkretisiert: etwa eine Ausweiskopie, Belege zum Einkommen, wenn nötig das Original des Betreibungsregisterauszugs, Referenzen mit Einwilligung, die Bankverbindung oder den Nachweis einer Hausratversicherung. Eine Kopie des Betreibungsregisterauszugs darf dagegen schon von allen Bewerbenden verlangt werden."
+   },
+   {
+    "frage": "Wie lange darf eine Mieterakte aufbewahrt werden?",
+    "antwort": "Eine einheitliche Frist nennt das Gesetz nicht. Daten sind zu vernichten oder zu anonymisieren, sobald sie für den Zweck nicht mehr nötig sind (Art. 6 DSG). Anhaltspunkte geben etwa die Verjährung von Mietzinsforderungen nach fünf Jahren (Art. 128 OR) und die zehnjährige Aufbewahrung von Buchungsbelegen (Art. 958f OR)."
+   },
+   {
+    "frage": "Was geschieht mit den Bewerbungen der anderen Interessierten?",
+    "antwort": "Nach der Unterzeichnung des Mietvertrags sind sie nach dem EDÖB mit allen Beilagen zu vernichten, ausser es liegt ein Rechtfertigungsgrund vor, etwa ein Eintrag in eine Warteliste mit Einwilligung."
+   },
+   {
+    "frage": "Darf die Mieterakte digital bei einem Anbieter liegen?",
+    "antwort": "Ja, der Anbieter ist dann Auftragsbearbeiter. Die Verwaltung muss sich vergewissern, dass er die Datensicherheit gewährleisten kann (Art. 9 DSG), und eine dem Risiko angemessene Datensicherheit sicherstellen (Art. 8 DSG)."
+   },
+   {
+    "frage": "Wie schnell muss die Verwaltung eine Auskunft erteilen?",
+    "antwort": "Innerhalb von 30 Tagen seit Eingang des Begehrens (Art. 18 DSV). Mitzuteilen sind unter anderem die bearbeiteten Daten, der Zweck und die Aufbewahrungsdauer oder die Kriterien dafür (Art. 25 DSG)."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/immobilienverwaltungen/",
+    "titel": "Immobilienverwaltung digital",
+    "grund": "Mieteranfragen, Schadenmeldungen und die Neuvermietung als Ablauf."
+   },
+   {
+    "url": "/ratgeber/anmeldeformular-mietwohnung/",
+    "titel": "Anmeldeformular für Mietwohnungen",
+    "grund": "Welche Fragen im Formular der ersten Stufe zulässig sind."
+   },
+   {
+    "url": "/produkte/besichtigungstermine-mietobjekt/",
+    "titel": "Besichtigungstermine online buchen",
+    "grund": "Buchung nur mit Name und Kontakt, ohne Bewerbungsunterlagen."
+   },
+   {
+    "url": "/ratgeber/aufbewahrungsfristen-buchhaltung/",
+    "titel": "Aufbewahrungsfristen für Buchhaltung",
+    "grund": "Die zehnjährige Frist für Buchungsbelege im Überblick."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1)",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   },
+   {
+    "titel": "Verordnung über den Datenschutz (DSV, SR 235.11), Art. 16, 18 und 24",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/568/de"
+   },
+   {
+    "titel": "Obligationenrecht (OR, SR 220), Art. 127, 128, 256–259i, 266l, 267, 267a und 958f",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+   },
+   {
+    "titel": "EDÖB, Merkblatt zu Anmeldeformularen für Mietwohnungen (aktualisiert 15.07.2025)",
+    "url": "https://www.edoeb.admin.ch/dam/en/sd-web/F7ojQw99LBH-/Merkblatt%20zu%20Anmeldeformularen%20f%C3%BCr%20Mietwohnungen%20DE_20250715.pdf"
+   },
+   {
+    "titel": "EDÖB, 33. Tätigkeitsbericht 2025/2026, Kap. 1.3",
+    "url": "https://www.edoeb.admin.ch/dam/de/sd-web/ZgZZm5CLxIFF/33_T%C3%A4tigkeitsbericht%202025-2026%20DE_Web.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "website-verein-erstellen",
+  "art": "ratgeber",
+  "name": "Website für einen Verein erstellen",
+  "titel": "Website für Vereine erstellen: Inhalte und Recht | Meyssens",
+  "beschreibung": "Website für einen Verein erstellen: welche Inhalte, wer sie pflegt, wann Impressum und Datenschutzerklärung nötig sind. Anleitung lesen.",
+  "h1": "Website für einen Verein erstellen: was braucht es praktisch und rechtlich?",
+  "lead": "Eine Website für Vereine soll Mitgliedern und Interessierten die wichtigsten Fragen beantworten und auch nach einem Vorstandswechsel aktuell bleiben. Dieser Ratgeber zeigt, welche Inhalte auf die Homepage eines Vereins gehören, wann ein Impressum nötig ist und was die Datenschutzerklärung nach Art. 19 DSG enthalten muss.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "website-fuer-vereine",
+   "newsletter"
+  ],
+  "faq": [
+   {
+    "frage": "Braucht eine Vereinswebsite ein Impressum?",
+    "antwort": "Massgebend ist vor allem Art. 3 Abs. 1 lit. s UWG: Wer im elektronischen Geschäftsverkehr Waren, Werke oder Leistungen anbietet, muss klare und vollständige Angaben zu Identität und Kontaktadresse einschliesslich E-Mail machen. Ob das für eine reine Informationsseite gilt, ist im Einzelfall zu prüfen. Die Information nach Art. 19 DSG muss Identität und Kontaktdaten ohnehin nennen."
+   },
+   {
+    "frage": "Braucht ein Verein eine Datenschutzerklärung?",
+    "antwort": "Ja, sobald die Website Personendaten beschafft, etwa über ein Formular. Nach Art. 19 DSG informiert der Verein mindestens über seine Identität und Kontaktdaten, den Zweck und gegebenenfalls die Empfänger. Der EDÖB empfiehlt zudem Angaben zur Aufbewahrungsdauer und zu eingebundenen Diensten Dritter."
+   },
+   {
+    "frage": "Dürfen wir Protokolle der Generalversammlung online stellen?",
+    "antwort": "Laut EDÖB müssen Protokolle nur den Mitgliedern zugehen, eine Veröffentlichung im Internet wäre unverhältnismässig. Ein passwortgeschützter Mitgliederbereich ist dafür besser geeignet als eine öffentliche Seite."
+   },
+   {
+    "frage": "Dürfen wir Fotos von Anlässen veröffentlichen?",
+    "antwort": "Grundlage ist laut EDÖB in der Regel die Einwilligung der abgebildeten Personen. Sie kann jederzeit widerrufen werden. Besteht kein anderer Rechtfertigungsgrund, sind die Fotos dann unverzüglich zu entfernen."
+   },
+   {
+    "frage": "Was gilt, wenn unser Hosting in den USA liegt?",
+    "antwort": "Eine Bekanntgabe ins Ausland richtet sich nach Art. 16 DSG. Für die USA dürfen seit dem 15. September 2024 Daten an Unternehmen übermittelt werden, die nach dem Swiss-U.S. Data Privacy Framework zertifiziert sind. Den Staat nennen Sie in der Datenschutzerklärung (Art. 19 Abs. 4 DSG)."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/vereine/",
+    "titel": "Vereinssoftware für Schweizer Vereine",
+    "grund": "Website, Umfragen und Newsletter für den Vereinsalltag, mit Hinweisen zum Vereinsrecht."
+   },
+   {
+    "url": "/produkte/website-fuer-vereine/",
+    "titel": "Website für Vereine",
+    "grund": "Anlässe, Neuigkeiten und Kontakt, vom Vorstand selbst gepflegt."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Die Pflichten aus dem Datenschutzgesetz Schritt für Schritt."
+   },
+   {
+    "url": "/ratgeber/newsletter-verein-datenschutz/",
+    "titel": "Newsletter im Verein versenden",
+    "grund": "Einwilligung, Abmeldung und Versanddienst für den Vereinsnewsletter."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Fedlex, Bundesgesetz über den Datenschutz (DSG)",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20230901/de/html/fedlex-data-admin-ch-eli-cc-2022-491-20230901-de-html.html"
+   },
+   {
+    "titel": "Fedlex, Bundesgesetz gegen den unlauteren Wettbewerb (UWG), Stand 1. Januar 2025",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1988/223_223_223/20250101/de/html/fedlex-data-admin-ch-eli-cc-1988-223_223_223-20250101-de-html.html"
+   },
+   {
+    "titel": "EDÖB, Datenschutzerklärungen im Internet",
+    "url": "https://www.edoeb.admin.ch/de/datenschutzerklaerungen-im-internet"
+   },
+   {
+    "titel": "EDÖB, Datenschutz in Vereinen",
+    "url": "https://www.edoeb.admin.ch/de/datenschutz-in-vereinen"
+   },
+   {
+    "titel": "Bundesrat, Medienmitteilung zum Swiss-US Data Privacy Framework (14. August 2024)",
+    "url": "https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen/bundesrat.msg-id-102054.html"
+   },
+   {
+    "titel": "Fedlex, Schweizerisches Zivilgesetzbuch (ZGB), Art. 60–79 (Stand 1. Januar 2026)",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/24/233_245_233/20260101/de/html/fedlex-data-admin-ch-eli-cc-24-233_245_233-20260101-de-html.html"
+   }
+  ]
+ },
+ {
+  "slug": "generalversammlung-verein",
+  "art": "ratgeber",
+  "name": "Generalversammlung im Verein",
+  "titel": "Generalversammlung im Verein: Einladung, Fristen | Meyssens",
+  "beschreibung": "Generalversammlung im Verein nach ZGB: wer einberuft, welche Frist gilt, Traktanden, Mehrheiten, Protokoll und Anfechtung. Checkliste lesen.",
+  "h1": "Generalversammlung im Verein: wie laden Sie richtig ein und fassen gültige Beschlüsse?",
+  "lead": "Die Generalversammlung ist das oberste Organ des Vereins. Das ZGB regelt nur wenige Punkte fest, vieles bestimmen die Statuten. Dieser Ratgeber zeigt, wer einberuft, welche Einladungsfrist gilt, warum jedes Traktandum angekündigt sein muss und worauf es bei Beschlüssen und Protokoll ankommt.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "umfragen-abstimmungen",
+   "website-fuer-vereine",
+   "newsletter"
+  ],
+  "faq": [
+   {
+    "frage": "Welche Einladungsfrist gilt für die Generalversammlung?",
+    "antwort": "Das ZGB nennt keine feste Frist, massgebend sind die Statuten. Die Musterstatuten der Fachstelle vitamin B sehen eine frei wählbare Frist von mindestens 10 Tagen vor und erklären Einladungen per E-Mail für gültig. Das ist ein Muster, keine gesetzliche Vorgabe."
+   },
+   {
+    "frage": "Können Mitglieder eine ausserordentliche Generalversammlung verlangen?",
+    "antwort": "Ja. Verlangt ein Fünftel der Mitglieder die Einberufung, muss sie von Gesetzes wegen erfolgen (Art. 64 Abs. 3 ZGB). Laut den Musterstatuten von vitamin B dürfen die Statuten diesen Anteil tiefer, aber nicht höher ansetzen."
+   },
+   {
+    "frage": "Darf unter «Verschiedenes» abgestimmt werden?",
+    "antwort": "Über Gegenstände, die nicht gehörig angekündigt sind, darf nur beschlossen werden, wenn die Statuten es ausdrücklich gestatten (Art. 67 Abs. 3 ZGB)."
+   },
+   {
+    "frage": "Welche Mehrheit braucht ein Beschluss?",
+    "antwort": "Nach Art. 67 Abs. 2 ZGB die Mehrheit der Stimmen der anwesenden Mitglieder, sofern die Statuten nichts anderes bestimmen. Ob das einfache oder das absolute Mehr gilt, legen Sie am besten in den Statuten fest."
+   },
+   {
+    "frage": "Wie lange kann ein Beschluss angefochten werden?",
+    "antwort": "Ein Mitglied, das nicht zugestimmt hat, kann einen Beschluss, der Gesetz oder Statuten verletzt, innert einem Monat ab Kenntnis beim Gericht anfechten (Art. 75 ZGB)."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/vereine/",
+    "titel": "Vereinssoftware für Schweizer Vereine",
+    "grund": "Website, Umfragen und Newsletter für den Vereinsalltag, mit Hinweisen zum Vereinsrecht."
+   },
+   {
+    "url": "/produkte/umfragen-abstimmungen/",
+    "titel": "Umfragen und Abstimmungen",
+    "grund": "Meinungsbilder zwischen zwei Versammlungen einholen, Ergebnisse fürs Protokoll exportieren."
+   },
+   {
+    "url": "/ratgeber/online-abstimmung-verein/",
+    "titel": "Online-Abstimmungen im Verein",
+    "grund": "Wann ein Beschluss ohne Versammlung gilt und wie eine Statutenklausel aussehen könnte."
+   },
+   {
+    "url": "/ratgeber/website-verein-erstellen/",
+    "titel": "Website für einen Verein erstellen",
+    "grund": "Wo Protokolle und Statuten auf der Vereinswebsite hingehören."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Fedlex, Schweizerisches Zivilgesetzbuch (ZGB), Art. 60–79 (Stand 1. Januar 2026)",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/24/233_245_233/20260101/de/html/fedlex-data-admin-ch-eli-cc-24-233_245_233-20260101-de-html.html"
+   },
+   {
+    "titel": "KMU-Portal des Bundes, Verein: Gewerbe ohne Gewinnorientierung",
+    "url": "https://www.kmu.admin.ch/de/verein-gewerbe-ohne-gewinnorientierung"
+   },
+   {
+    "titel": "Fachstelle vitamin B, Musterstatuten für Vereine (Mai 2026)",
+    "url": "https://www.vitaminb.ch/uploads/media/default/3543/Musterstatuten_2026.pdf"
+   },
+   {
+    "titel": "EDÖB, Datenschutz in Vereinen",
+    "url": "https://www.edoeb.admin.ch/de/datenschutz-in-vereinen"
+   }
+  ]
+ },
+ {
+  "slug": "newsletter-verein-datenschutz",
+  "art": "ratgeber",
+  "name": "Newsletter im Verein versenden",
+  "titel": "Newsletter im Verein: Einwilligung und Abmeldung | Meyssens",
+  "beschreibung": "Newsletter im Verein versenden: wann es eine Einwilligung braucht, wie die Abmeldung funktioniert und was UWG und DSG verlangen. Checkliste lesen.",
+  "h1": "Newsletter im Verein versenden: wie regeln Sie Einwilligung, Abmeldung und Datenschutz?",
+  "lead": "Ein Newsletter hält Mitglieder, Gönner und Interessierte auf dem Laufenden. Damit er rechtlich sauber ist, müssen Einwilligung, Absender und Abmeldung stimmen. Dieser Ratgeber erklärt, was das UWG und das Datenschutzgesetz für den Vereinsnewsletter verlangen, und endet mit einer Checkliste für den ersten Versand.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "newsletter",
+   "website-fuer-vereine"
+  ],
+  "faq": [
+   {
+    "frage": "Braucht ein Vereinsnewsletter eine Einwilligung?",
+    "antwort": "Für Massenwerbung per E-Mail verlangt Art. 3 Abs. 1 lit. o UWG eine vorherige Einwilligung. Ob ein Vereinsnewsletter Werbung ist, hängt vom Inhalt ab und ist im Einzelfall zu prüfen. Am einfachsten ist es, bei jedem Newsletter eine Einwilligung einzuholen."
+   },
+   {
+    "frage": "Muss jeder Newsletter einen Abmeldelink enthalten?",
+    "antwort": "Nach Art. 3 Abs. 1 lit. o UWG muss auf eine problemlose und kostenlose Ablehnungsmöglichkeit hingewiesen werden. Laut BAKOM muss sie bei jeder Nachricht bestehen. In der Praxis dient dazu ein Abmeldelink, der ohne Login und ohne Kosten funktioniert."
+   },
+   {
+    "frage": "Ist ein Bestätigungslink (Double-Opt-in) Pflicht?",
+    "antwort": "Ein bestimmtes technisches Verfahren schreibt das UWG nicht vor. Ein Bestätigungslink hilft aber nachzuweisen, dass die Anmeldung von der Inhaberin oder dem Inhaber der Adresse stammt."
+   },
+   {
+    "frage": "Dürfen wir Mitglieder ohne Anmeldung anschreiben?",
+    "antwort": "Laut EDÖB darf ein Verein Mitgliederdaten ohne Einwilligung bearbeiten, soweit dies für den Vereinszweck erforderlich ist. Vereinsinterne Mitteilungen können darunter fallen. Für werbende Inhalte gelten die Bedingungen des UWG."
+   },
+   {
+    "frage": "Was gilt bei einem Versanddienst mit Servern in den USA?",
+    "antwort": "Der Dienst ist in der Regel Auftragsbearbeiter nach Art. 9 DSG. Für die Bekanntgabe in die USA gilt Art. 16 DSG. Seit dem 15. September 2024 ist sie an Unternehmen zulässig, die nach dem Swiss-U.S. Data Privacy Framework zertifiziert sind."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/vereine/",
+    "titel": "Vereinssoftware für Schweizer Vereine",
+    "grund": "Website, Umfragen und Newsletter für den Vereinsalltag, mit Hinweisen zum Vereinsrecht."
+   },
+   {
+    "url": "/produkte/newsletter/",
+    "titel": "Newsletter",
+    "grund": "Anmeldung mit Bestätigungslink, automatische Abmeldung und eine übersichtliche Empfängerliste."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Auftragsbearbeiter, Datensicherheit und Informationspflicht im Überblick."
+   },
+   {
+    "url": "/ratgeber/generalversammlung-verein/",
+    "titel": "Generalversammlung im Verein",
+    "grund": "Einladung, Fristen und Traktanden, wenn der Newsletter zur GV einlädt."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Fedlex, Bundesgesetz gegen den unlauteren Wettbewerb (UWG), Stand 1. Januar 2025",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1988/223_223_223/20250101/de/html/fedlex-data-admin-ch-eli-cc-1988-223_223_223-20250101-de-html.html"
+   },
+   {
+    "titel": "BAKOM, Wann ist der Massenversand erlaubt?",
+    "url": "https://www.bakom.admin.ch/de/wann-ist-der-massenversand-erlaubt"
+   },
+   {
+    "titel": "BAKOM, Was ist Spam?",
+    "url": "https://www.bakom.admin.ch/de/was-ist-spam"
+   },
+   {
+    "titel": "Fedlex, Bundesgesetz über den Datenschutz (DSG)",
+    "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2022/491/20230901/de/html/fedlex-data-admin-ch-eli-cc-2022-491-20230901-de-html.html"
+   },
+   {
+    "titel": "EDÖB, Datenschutz in Vereinen",
+    "url": "https://www.edoeb.admin.ch/de/datenschutz-in-vereinen"
+   },
+   {
+    "titel": "Bundesrat, Medienmitteilung zum Swiss-US Data Privacy Framework (14. August 2024)",
+    "url": "https://www.admin.ch/gov/de/start/dokumentation/medienmitteilungen/bundesrat.msg-id-102054.html"
+   }
+  ]
+ },
+ {
+  "slug": "mwst-abrechnung-fristen",
+  "art": "ratgeber",
+  "name": "MWST-Abrechnung: Perioden, Fristen und Verzugszins",
+  "titel": "MWST-Abrechnung: Fristen, Perioden, Verzugszins | Meyssens",
+  "beschreibung": "60 Tage nach der Abrechnungsperiode, Quartal, Semester oder Jahr, Fristverlängerung und 4 Prozent Verzugszins: Überblick und Checkliste lesen.",
+  "h1": "MWST-Abrechnung: welche Fristen gelten und wie überwacht man sie?",
+  "lead": "Wann ist die MWST-Abrechnung fällig, welche Abrechnungsperiode gilt und was kostet eine verspätete Zahlung? Dieser Überblick fasst zusammen, was das Mehrwertsteuergesetz und die ESTV zu Perioden, Fristen, Fristverlängerung und Verzugszins sagen, mit einer Checkliste für die Fristenüberwachung im Treuhandbüro.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "fristenkalender-belegeingang-treuhand",
+   "unterlagen-erinnerung-treuhand"
+  ],
+  "faq": [
+   {
+    "frage": "Bis wann muss die MWST-Abrechnung eingereicht werden?",
+    "antwort": "Innert 60 Tagen nach Ablauf der Abrechnungsperiode, unaufgefordert (Art. 71 Abs. 1 MWSTG). In derselben Frist ist die Steuer zu bezahlen (Art. 86 Abs. 1 MWSTG). Die ESTV nennt als Beispiel: Das 1. Quartal ist am 31. Mai fällig."
+   },
+   {
+    "frage": "Rechnet man vierteljährlich oder halbjährlich ab?",
+    "antwort": "Grundsätzlich vierteljährlich, mit Saldosteuersätzen halbjährlich (Art. 35 Abs. 1 MWSTG). Auf Antrag ist bei regelmässigem Vorsteuerüberschuss die monatliche und bei höchstens 5 005 000 Franken Umsatz aus steuerbaren Leistungen die jährliche Abrechnung möglich."
+   },
+   {
+    "frage": "Wie hoch ist der Verzugszins bei der Mehrwertsteuer?",
+    "antwort": "Laut ESTV-Mitteilung vom 22. September 2026 beträgt er für 2027 weiterhin 4.00 Prozent. Er ist ohne Mahnung geschuldet (Art. 87 MWSTG) und wird vom Fälligkeitsdatum bis zum Zahlungseingang berechnet, grundsätzlich erst ab 100 Franken."
+   },
+   {
+    "frage": "Wie beantragt man eine Fristverlängerung?",
+    "antwort": "Für die Einreichung elektronisch über den Service «MWST abrechnen» im ESTV-Portal, andere Gesuche bewilligt die ESTV nicht. Die Zahlungsfrist lässt sich dort online um drei Monate nach Fälligkeit verlängern, für mehr braucht es ein begründetes Gesuch."
+   },
+   {
+    "frage": "Bis wann lassen sich Fehler korrigieren, die beim Jahresabschluss auffallen?",
+    "antwort": "Spätestens in der Abrechnung über die Periode, in die der 180. Tag seit Ende des Geschäftsjahres fällt (Art. 72 Abs. 1 MWSTG). Die ESTV nennt dafür die Berichtigungsabrechnung."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/treuhaender/",
+    "titel": "Treuhandbüros digital",
+    "grund": "Geplante Bausteine und Abläufe für Fristen, Belege und Mandate."
+   },
+   {
+    "url": "/produkte/fristenkalender-belegeingang-treuhand/",
+    "titel": "Fristenkalender und Belegeingang",
+    "grund": "MWST- und Steuerfristen pro Mandat im Blick, in der Pilotphase."
+   },
+   {
+    "url": "/ratgeber/aufbewahrungsfristen-buchhaltung/",
+    "titel": "Aufbewahrungsfristen für Buchhaltung und Belege",
+    "grund": "Zehn Jahre nach Art. 958f OR und was digital gilt."
+   },
+   {
+    "url": "/ratgeber/jahresabschluss-unterlagen-checkliste/",
+    "titel": "Jahresabschluss: Checkliste der Unterlagen",
+    "grund": "Welche Unterlagen das Büro vom Kunden braucht, mit Gesetzesbezug."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Bundesgesetz über die Mehrwertsteuer (MWSTG, SR 641.20), Stand 31. März 2025, Fedlex",
+    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2009/615/20250331/de/pdf-a/fedlex-data-admin-ch-eli-cc-2009-615-20250331-de-pdf-a-1.pdf"
+   },
+   {
+    "titel": "ESTV, Fristverlängerung für die Einreichung der MWST-Abrechnung",
+    "url": "https://www.estv.admin.ch/de/mwst-fristverlaengerung-einreichung-abrechnung"
+   },
+   {
+    "titel": "ESTV, Mehrwertsteuer bezahlen",
+    "url": "https://www.estv.admin.ch/de/mwst-bezahlen"
+   },
+   {
+    "titel": "ESTV, Keine Änderung der Vergütungs- und Verzugszinssätze für 2027 (22. September 2026)",
+    "url": "https://www.estv.admin.ch/de/newnsb/bCxrY5LSQCuF"
+   },
+   {
+    "titel": "ESTV, Saldosteuersätze und Pauschalsteuersätze",
+    "url": "https://www.estv.admin.ch/de/mwst-saldosteuersaetze-pauschalsteuersaetze"
+   }
+  ]
+ },
+ {
+  "slug": "fristerstreckung-steuererklaerung",
+  "art": "ratgeber",
+  "name": "Fristerstreckung für die Steuererklärung im Treuhandbüro",
+  "titel": "Fristerstreckung Steuererklärung für Treuhänder | Meyssens",
+  "beschreibung": "Fristerstreckung für Mandanten in Basel-Landschaft, Zürich und Bern: Fristen, Gebühren, Sammelgesuche und Online-Wege. Überblick und Ablauf lesen.",
+  "h1": "Fristerstreckung für die Steuererklärung: wie läuft sie für Treuhandbüros?",
+  "lead": "Wie beantragt ein Treuhandbüro die Fristerstreckung für die Steuererklärung seiner Mandantinnen und Mandanten? Die Regeln sind kantonal. Dieser Überblick zeigt, was Basel-Landschaft, Zürich und Bern zu Fristen, Gebühren und Sammelgesuchen festhalten, mit einem Ablauf für das Büro.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "fristenkalender-belegeingang-treuhand",
+   "unterlagen-erinnerung-treuhand"
+  ],
+  "faq": [
+   {
+    "frage": "Kann ein Treuhandbüro die Frist für mehrere Mandate auf einmal verlängern?",
+    "antwort": "In den drei geprüften Kantonen ja: in Basel-Landschaft mit der CSV-Vorlage «Massenfristen», in Zürich für Privatpersonen als Sammelgesuch mit Excel-Vorlage über das Treuhand-Register (Februar und März), in Bern mit der Sammel-Fristverlängerung im BE-Login."
+   },
+   {
+    "frage": "Was kostet eine Fristerstreckung in Basel-Landschaft?",
+    "antwort": "Bis zwei Monate über die aufgedruckte Frist ist sie kostenlos und wird stillschweigend gewährt. Darüber beträgt die Gebühr 40 Franken. Gesuche über mehr als acht Monate sind zu begründen (Kurzmitteilung Nr. 551)."
+   },
+   {
+    "frage": "Bis wann kann im Kanton Zürich verlängert werden?",
+    "antwort": "Das Gesuch muss vor Ablauf der Frist gestellt werden, spätere Gesuche werden nicht berücksichtigt. Juristische Personen können bis 30. September online eine Verlängerung bis 30. November beantragen, darüber hinaus nur ausnahmsweise bei ausserordentlichen Gründen."
+   },
+   {
+    "frage": "Welche Stufen und Gebühren gelten im Kanton Bern?",
+    "antwort": "Für Privatpersonen bis 15. Juli (online gebührenfrei), bis 15. September (online 20 Franken) oder bis 15. November (online 40 Franken). Schriftlich, per Telefon oder am Schalter kostet jede Stufe 20 Franken mehr."
+   },
+   {
+    "frage": "Gilt eine Fristerstreckung des Wohnsitzkantons auch in Zürich?",
+    "antwort": "Ja, wenn der Entscheid der zuständigen Zürcher Behörde vor Ablauf der Zürcher Frist mitgeteilt wird (Zürcher Steuerbuch Nr. 133.1)."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/treuhaender/",
+    "titel": "Treuhandbüros digital",
+    "grund": "Geplante Bausteine und Abläufe für Fristen, Belege und Mandate."
+   },
+   {
+    "url": "/produkte/fristenkalender-belegeingang-treuhand/",
+    "titel": "Fristenkalender und Belegeingang",
+    "grund": "MWST- und Steuerfristen pro Mandat im Blick, in der Pilotphase."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Mandantendaten, Auftragsbearbeitung und Datensicherheit."
+   },
+   {
+    "url": "/ratgeber/mwst-abrechnung-fristen/",
+    "titel": "MWST-Abrechnung: Fristen und Verzugszins",
+    "grund": "Perioden, Fristverlängerung und Verzugszins bei der Mehrwertsteuer."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Steuerverwaltung Basel-Landschaft, Kurzmitteilung Nr. 551: Einreichungsfristen und Fristgewährungspraxis (10. September 2024)",
+    "url": "https://kanton.baselland.ch/finanz-und-kirchendirektion/steuerverwaltung-kurzmitteilungen/kurzmitteilungen-der-kantonalen-steuerverwaltung-2024/downloads-6/km551_fristgewaehrung.pdf"
+   },
+   {
+    "titel": "Kanton Zürich, Zürcher Steuerbuch Nr. 133.1: Aufforderung zur Einreichung von Steuererklärungen im Jahr 2027",
+    "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/steuern-finanzen/steuern/vertreter/steuerbuch/zstb-nr-133-1/ZStB-Nr-133-1_Aufforderung-2027.pdf"
+   },
+   {
+    "titel": "Kanton Zürich, Steuerberater und Vertreter (Treuhand-Register, Fristerstreckungsgesuche)",
+    "url": "https://www.zh.ch/de/steuern-finanzen/steuern/treuhaender.html"
+   },
+   {
+    "titel": "Kanton Zürich, Steuererklärung für Unternehmen",
+    "url": "https://www.zh.ch/de/steuern-finanzen/steuern/steuern-juristische-personen/steuererklaerung-juristische-personen.html"
+   },
+   {
+    "titel": "Steuerverwaltung des Kantons Bern, BE-Login für Treuhänder/-innen und Vertreter/-innen",
+    "url": "https://www.sv.fin.be.ch/de/start/e-services/belogin-vertreter.html"
+   },
+   {
+    "titel": "Steuerverwaltung des Kantons Bern, Frist als Privatperson verlängern",
+    "url": "https://www.sv.fin.be.ch/de/start/themen/frist-verlaengern/fristverlaengerung-privatpersonen.html"
+   }
+  ]
+ },
+ {
+  "slug": "jahresabschluss-unterlagen-checkliste",
+  "art": "ratgeber",
+  "name": "Jahresabschluss: Unterlagen vom Kunden, Checkliste",
+  "titel": "Jahresabschluss: Unterlagen-Checkliste Treuhand | Meyssens",
+  "beschreibung": "Bank, Debitoren, Inventar, Löhne, MWST: welche Unterlagen das Treuhandbüro für den Jahresabschluss braucht, mit Bezug zum OR. Checkliste lesen.",
+  "h1": "Jahresabschluss: welche Unterlagen braucht das Treuhandbüro vom Kunden?",
+  "lead": "Welche Unterlagen braucht das Treuhandbüro, um den Jahresabschluss zu erstellen? Diese Checkliste ordnet Bank, offene Rechnungen, Inventar, Löhne und Mehrwertsteuer und zeigt, auf welche Vorgaben des Obligationenrechts sie zurückgehen. Dazu ein Ablauf, wie das Büro die Unterlagen einholt.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "unterlagen-erinnerung-treuhand",
+   "fristenkalender-belegeingang-treuhand",
+   "aufbewahrungsregister-treuhand"
+  ],
+  "faq": [
+   {
+    "frage": "Wer muss einen Jahresabschluss mit Bilanz und Erfolgsrechnung erstellen?",
+    "antwort": "Juristische Personen sowie Einzelunternehmen und Personengesellschaften mit mindestens 500 000 Franken Umsatzerlös im letzten Geschäftsjahr (Art. 957 Abs. 1 OR). Kleinere Einzelunternehmen und Personengesellschaften führen nur über Einnahmen, Ausgaben und Vermögenslage Buch."
+   },
+   {
+    "frage": "Woraus besteht die Jahresrechnung?",
+    "antwort": "Aus Bilanz, Erfolgsrechnung und Anhang (Art. 958 Abs. 2 OR). Neben den Zahlen des Geschäftsjahres sind die Vorjahreswerte anzugeben (Art. 958d Abs. 2 OR)."
+   },
+   {
+    "frage": "Bis wann muss der Jahresabschluss vorliegen?",
+    "antwort": "Der Geschäftsbericht muss innerhalb von sechs Monaten nach Ablauf des Geschäftsjahres erstellt und dem zuständigen Organ zur Genehmigung vorgelegt werden (Art. 958 Abs. 3 OR). Die Frist für die Steuererklärung legt der Kanton fest."
+   },
+   {
+    "frage": "Braucht es ein Inventar?",
+    "antwort": "Der Bestand der einzelnen Positionen in Bilanz und Anhang ist durch ein Inventar oder auf andere Art nachzuweisen (Art. 958c Abs. 2 OR). Bei einem Warenlager heisst das in der Praxis meist: am Stichtag zählen und bewerten."
+   },
+   {
+    "frage": "Bis wann geht die Lohndeklaration an die Ausgleichskasse?",
+    "antwort": "Spätestens bis 30. Januar nach Ende des Beitragsjahres. Bei verspäteter Einreichung sind Verzugszinsen auf allfälligen Differenzen geschuldet (Merkblatt 2.01 der Informationsstelle AHV/IV)."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/treuhaender/",
+    "titel": "Treuhandbüros digital",
+    "grund": "Geplante Bausteine und Abläufe für Fristen, Belege und Mandate."
+   },
+   {
+    "url": "/produkte/unterlagen-erinnerung-treuhand/",
+    "titel": "Unterlagen-Erinnerung für Treuhandbüros",
+    "grund": "Fehlende Unterlagen pro Mandat erkennen, Nachfrage als Entwurf."
+   },
+   {
+    "url": "/ratgeber/aufbewahrungsfristen-buchhaltung/",
+    "titel": "Aufbewahrungsfristen für Buchhaltung und Belege",
+    "grund": "Zehn Jahre nach Art. 958f OR und was digital gilt."
+   },
+   {
+    "url": "/ratgeber/fristerstreckung-steuererklaerung/",
+    "titel": "Fristerstreckung für die Steuererklärung",
+    "grund": "Wenn die Unterlagen nicht rechtzeitig kommen: Wege in BL, ZH und BE."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Obligationenrecht (OR, SR 220), Art. 957 bis 958f, Stand 1. Januar 2026, Fedlex",
+    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/27/317_321_377/20260101/de/pdf-a/fedlex-data-admin-ch-eli-cc-27-317_321_377-20260101-de-pdf-a-1.pdf"
+   },
+   {
+    "titel": "KMU-Portal des Bundes, Buchhaltungspflicht für Handelsgesellschaften",
+    "url": "https://www.kmu.admin.ch/de/buchhaltungspflicht-fuer-handelsgesellschaften"
+   },
+   {
+    "titel": "Informationsstelle AHV/IV, Merkblatt 2.01 Lohnbeiträge an die AHV, die IV und die EO (Stand 1. Januar 2026)",
+    "url": "https://www.ahv-iv.ch/p/2.01.d"
+   },
+   {
+    "titel": "ESTV, Fristverlängerung für die Einreichung der MWST-Abrechnung",
+    "url": "https://www.estv.admin.ch/de/mwst-fristverlaengerung-einreichung-abrechnung"
+   },
+   {
+    "titel": "Bundesgesetz über die Mehrwertsteuer (MWSTG, SR 641.20), Stand 31. März 2025, Fedlex",
+    "url": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2009/615/20250331/de/pdf-a/fedlex-data-admin-ch-eli-cc-2009-615-20250331-de-pdf-a-1.pdf"
+   }
+  ]
+ },
+ {
+  "slug": "allergene-restaurant",
+  "art": "ratgeber",
+  "name": "Allergene im Restaurant",
+  "titel": "Allergene im Restaurant: Pflichten für Betriebe | Meyssens",
+  "beschreibung": "Schriftlich oder mündlich mit Hinweis? Die 14 Allergene, der korrekte Hinweis auf der Karte und eine Checkliste nach LIV und LGV. Jetzt lesen.",
+  "h1": "Allergene im Restaurant: wie informieren Betriebe ihre Gäste korrekt?",
+  "lead": "Restaurants, Hotels und Take-aways müssen ihre Gäste über 14 Allergene informieren, schriftlich oder mündlich mit einem gut sichtbaren schriftlichen Hinweis. Dieser Ratgeber zeigt nach LGV, LIV und den Unterlagen von BLV und Kantonalem Laboratorium Basel-Stadt, was gilt und wie Sie die Kommunikation mit den Gästen einrichten.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "website-chatbot",
+   "mail-assistent"
+  ],
+  "faq": [
+   {
+    "frage": "Müssen Restaurants Allergene auf der Speisekarte angeben?",
+    "antwort": "Nicht zwingend. Die Allergene können schriftlich, etwa in der Speisekarte, angegeben werden. Eine mündliche Auskunft ist nach Art. 5 Abs. 1 Bst. d LIV zulässig, wenn schriftlich gut sichtbar darauf hingewiesen wird und die Informationen dem Personal schriftlich vorliegen oder eine fachkundige Person sie unmittelbar erteilen kann."
+   },
+   {
+    "frage": "Welche Allergene müssen angegeben werden?",
+    "antwort": "Die 14 Zutaten nach Anhang 6 LIV: glutenhaltiges Getreide, Krebstiere, Eier, Fische, Erdnüsse, Soja, Milch einschliesslich Laktose, Hartschalenobst, Sellerie, Senf, Sesam, Schwefeldioxid und Sulfite über 10 mg/kg oder 10 mg/l, Lupinen und Weichtiere, jeweils mit daraus gewonnenen Erzeugnissen und den im Anhang genannten Ausnahmen."
+   },
+   {
+    "frage": "Muss ein Restaurant auf Spuren von Allergenen hinweisen?",
+    "antwort": "Nein. Nach Art. 5 Abs. 1 Bst. f LIV muss bei offen abgegebenen Lebensmitteln auf unbeabsichtigte Vermischungen nicht hingewiesen werden. Die Auskunft über die verwendeten Zutaten muss aber wahrheitsgemäss sein."
+   },
+   {
+    "frage": "Wo muss der Hinweis auf die mündliche Auskunft stehen?",
+    "antwort": "Er muss schriftlich und gut sichtbar sein. Restaurants können schriftliche Angaben nach Art. 5 Abs. 2 LIV in der Speisekarte oder auf einem Plakat anbringen. Die Informationen müssen zum Zeitpunkt des Anbietens verfügbar sein."
+   },
+   {
+    "frage": "Darf ein Chatbot verbindlich Auskunft über Allergene geben?",
+    "antwort": "Wir empfehlen das nicht. Ein Chatbot kann allgemeine Hinweise geben, etwa dass die Allergenliste im Betrieb aufliegt. Ob ein bestimmtes Gericht an einem bestimmten Tag frei von einem Allergen ist, sollte eine fachkundige Person beantworten, weil sich Rezepte und Zutaten ändern können."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/hotels-gastronomie/",
+    "titel": "Hotel und Restaurant digital",
+    "grund": "Gästefragen beantworten, Anfragen ordnen und Stammgäste informieren."
+   },
+   {
+    "url": "/produkte/website-chatbot/",
+    "titel": "Website-Chatbot",
+    "grund": "Beantwortet allgemeine Gästefragen aus Ihren freigegebenen Inhalten, Pilotphase."
+   },
+   {
+    "url": "/produkte/mail-assistent/",
+    "titel": "Mail-Assistent",
+    "grund": "Antwortentwürfe für Gruppen- und Bankettanfragen, der Versand bleibt beim Team."
+   },
+   {
+    "url": "/ratgeber/website-chatbot-recht/",
+    "titel": "Website-Chatbot: was er darf und was nicht",
+    "grund": "Kennzeichnung, Datenschutz und Grenzen eines Chatbots."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "BLV, Informationen im Offenverkauf",
+    "url": "https://www.blv.admin.ch/de/informationen-im-offenverkauf"
+   },
+   {
+    "titel": "Lebensmittel- und Gebrauchsgegenständeverordnung (LGV, SR 817.02), Art. 39",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2017/63/de"
+   },
+   {
+    "titel": "Verordnung des EDI betreffend die Information über Lebensmittel (LIV, SR 817.022.16), Art. 5, 10, 11 und Anhang 6",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2017/158/de"
+   },
+   {
+    "titel": "Kantonales Laboratorium Basel-Stadt, Merkblatt Vorgeschriebene schriftliche Angaben in Speisekarten oder auf Plakaten (3. März 2025)",
+    "url": "https://media.bs.ch/original_file/0adfcf985f1d9d39724d2190bf1c9fe6cdee8166/250303-merkblatt-vorgeschriebene-schriftliche-angaben.pdf"
+   },
+   {
+    "titel": "Kantonales Laboratorium Basel-Stadt, Zusammenstellung Allergengesetzgebung in der Schweiz (in Kraft seit 1.7.2020)",
+    "url": "https://media.bs.ch/original_file/d8db3116f9bb81e44418ed1216e0e8d4d3e77865/allergenrecht-2020-merkblatt.pdf"
+   },
+   {
+    "titel": "Kantonales Laboratorium Basel-Stadt, Gerichte aus Restaurants: Allergene, Gluten und GVO (16. Oktober 2025)",
+    "url": "https://media.bs.ch/original_file/595e1a1db8b29da34ff41de86040c35c9dae25b3/2025-gerichte-aus-restaurants.pdf"
+   },
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1), Art. 5 Bst. c",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   }
+  ]
+ },
+ {
+  "slug": "gaestemeldung-hotel",
+  "art": "ratgeber",
+  "name": "Gästemeldung im Hotel",
+  "titel": "Gästemeldung im Hotel: Meldeschein nach Kanton | Meyssens",
+  "beschreibung": "Welche Daten der Meldeschein braucht und wohin er geht: Bundesrecht, Reform 2026 und die Regeln in Basel-Stadt, Schaffhausen und Zürich. Jetzt lesen.",
+  "h1": "Gästemeldung im Hotel: welche Daten sind zu erfassen und wohin gehen sie?",
+  "lead": "Beherbergungsbetriebe müssen ihre Gäste melden: ausländische Gäste nach Bundesrecht, je nach Kanton auch alle übrigen Gäste. Dieser Ratgeber zeigt, was AIG und VZAE verlangen, was der Bundesrat 2026 vorschlägt und wie Basel-Stadt, Schaffhausen und Zürich die Gästekontrolle regeln.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "website-chatbot",
+   "newsletter"
+  ],
+  "faq": [
+   {
+    "frage": "Muss jedes Hotel seine Gäste der Polizei melden?",
+    "antwort": "Für ausländische Gäste verlangt Art. 16 AIG eine Meldung an die zuständige kantonale Behörde, wenn sie gewerbsmässig beherbergt werden. Kantone können zusätzlich eine Gästekontrolle für alle Gäste vorschreiben, zum Beispiel Basel-Stadt im Gastgewerbegesetz und Zürich im Polizeigesetz. Die Einzelheiten sind je nach Kanton unterschiedlich."
+   },
+   {
+    "frage": "Muss der Gast den Meldeschein unterschreiben?",
+    "antwort": "Nach Art. 18 VZAE unterschreibt die ausländische Person den Meldeschein und legt ihre Ausweispapiere vor. Schaffhausen verzichtet beim elektronischen Meldeschein auf die Unterschrift. Der Bundesrat schlägt in einer Vernehmlassung bis 27. November 2026 vor, dass Meldungen schweizweit ohne Unterschrift möglich werden."
+   },
+   {
+    "frage": "Welche Daten enthält ein Meldeschein?",
+    "antwort": "Das bestimmt der Kanton. Schaffhausen nennt unter anderem Ankunft, Abreise, Zimmernummer, Name, Vorname, Geschlecht, Geburtsdatum, Nationalität, Adresse, Ausweisart, Ausweisnummer und Fahrzeugkennzeichen. Für ausländische Gäste sind die Angaben gemäss Ausweispapier zu erfassen."
+   },
+   {
+    "frage": "Sind Ferienwohnungen und Airbnb-Unterkünfte auch meldepflichtig?",
+    "antwort": "In Schaffhausen und Zürich ja: Beide Kantone nennen ausdrücklich auch Privatwohnungen, die über Online-Plattformen vermietet werden, Zürich bei gewerbsmässiger Vermietung gegen Entgelt. Für andere Kantone ist das bei der zuständigen Stelle zu klären."
+   },
+   {
+    "frage": "Darf ich Meldedaten für den Newsletter verwenden?",
+    "antwort": "Nach Art. 6 DSG dürfen Personendaten nur so bearbeitet werden, wie es mit dem erkennbaren Zweck ihrer Beschaffung vereinbar ist. Meldedaten werden für die Gästekontrolle erhoben. Für einen Newsletter sollten Sie die Voraussetzungen separat klären, zum Beispiel mit einer eigenen Anmeldung."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/hotels-gastronomie/",
+    "titel": "Hotel und Restaurant digital",
+    "grund": "Gästefragen beantworten, Anfragen ordnen und Stammgäste informieren."
+   },
+   {
+    "url": "/produkte/newsletter/",
+    "titel": "Newsletter",
+    "grund": "Stammgäste informieren, nur mit bestätigter Anmeldung."
+   },
+   {
+    "url": "/produkte/website-chatbot/",
+    "titel": "Website-Chatbot",
+    "grund": "Beantwortet allgemeine Gästefragen aus Ihren freigegebenen Inhalten, Pilotphase."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG für KMU: Checkliste",
+    "grund": "Gästedaten, Zweckbindung und Datensicherheit im Betrieb."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (AIG, SR 142.20), Art. 16",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2007/758/de"
+   },
+   {
+    "titel": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE, SR 142.201), Art. 18",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2007/759/de"
+   },
+   {
+    "titel": "Der Bundesrat, Medienmitteilung vom 26. August 2026: Vernehmlassung zur Digitalisierung des Meldewesens in der Beherbergung",
+    "url": "https://www.admin.ch/de/newnsb/STwblroLhJ4-"
+   },
+   {
+    "titel": "Kanton Basel-Stadt, Gastgewerbegesetz (SG 563.100, Stand 25. August 2022), § 10 und § 35",
+    "url": "https://bs.lexwork.naz.ch/de/dta/563.100.pdf"
+   },
+   {
+    "titel": "Schaffhauser Polizei und Volkswirtschaftsdepartement, Elektronisches Gästemeldewesen im Kanton Schaffhausen (Stand November 2023)",
+    "url": "https://sh.ch/CMS/get/file/96725471-280e-4db5-9f69-bc493fbfa8b0"
+   },
+   {
+    "titel": "Stadtpolizei Zürich, Merkblatt Rechtliche Informationen für Beherbergende (veröffentlicht beim BWO)",
+    "url": "https://www.bwo.admin.ch/dam/fr/sd-web/4LKnAP3IVAhG/merkblatt-rechtliche-informationen-fuer-beherbergende.pdf"
+   },
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1), Art. 6 und 8",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   }
+  ]
+ },
+ {
+  "slug": "reservation-no-show",
+  "art": "ratgeber",
+  "name": "No-Show und Stornierung bei Reservationen",
+  "titel": "No-Show und Stornierung: was Betriebe verlangen | Meyssens",
+  "beschreibung": "Darf ein Restaurant oder Hotel eine No-Show-Gebühr verlangen? Was das OR zu Schadenersatz und Konventionalstrafe sagt, mit Checkliste. Jetzt lesen.",
+  "h1": "No-Show und Stornierung bei Reservationen: was dürfen Restaurants und Hotels verlangen?",
+  "lead": "Eine Reservation ist ein Vertrag, auch wenn sie am Telefon gemacht wurde. Ob ein Restaurant oder Hotel bei Nichterscheinen oder kurzfristiger Absage Geld verlangen darf, hängt vor allem davon ab, was vorher vereinbart wurde. Dieser Ratgeber erklärt die Regeln des Obligationenrechts und zeigt, wie Sie Annullationsbedingungen klar mitteilen.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "mail-assistent",
+   "website-chatbot"
+  ],
+  "faq": [
+   {
+    "frage": "Darf ein Restaurant eine No-Show-Gebühr verlangen?",
+    "antwort": "Wenn sie vorher vereinbart wurde, kann sie geschuldet sein. GastroSuisse spricht dabei von Konventionalstrafe oder Pauschalzahlung. Wie eine konkrete Gebühr rechtlich einzuordnen ist, hängt von der Abrede ab und ist im Einzelfall zu prüfen. Für Konventionalstrafen gilt nach Art. 163 Abs. 3 OR, dass ein Gericht übermässig hohe Beträge herabsetzen kann."
+   },
+   {
+    "frage": "Was gilt, wenn keine Gebühr vereinbart wurde?",
+    "antwort": "Dann kommt Schadenersatz nach Art. 97 OR in Frage. Der Betrieb muss den Schaden aber belegen, laut GastroSuisse etwa damit, dass der Tisch nicht anderweitig besetzt werden konnte, Lebensmittel nicht verwertbar waren oder höhere Personalkosten entstanden."
+   },
+   {
+    "frage": "Ist eine telefonische Reservation verbindlich?",
+    "antwort": "Ja. Ein Vertrag entsteht nach Art. 1 OR durch übereinstimmende Willensäusserungen, ausdrücklich oder stillschweigend. GastroSuisse empfiehlt trotzdem, Reservationen schriftlich bestätigen zu lassen und die Annullationsbedingungen schriftlich mitzuteilen."
+   },
+   {
+    "frage": "Darf ein Hotel eine Anzahlung bei Stornierung behalten?",
+    "antwort": "Wenn das vereinbart wurde, ist die Abrede nach Art. 162 OR nach den Vorschriften über die Konventionalstrafe zu beurteilen. Auch eine einbehaltene Anzahlung kann also bei übermässiger Höhe herabgesetzt werden."
+   },
+   {
+    "frage": "Muss der Gast zahlen, wenn er krank wird?",
+    "antwort": "Das hängt von der Abrede ab und ist im Einzelfall zu prüfen. Gilt die Gebühr als Konventionalstrafe, kann sie mangels anderer Abrede nach Art. 163 Abs. 2 OR nicht gefordert werden, wenn die Erfüllung durch einen Umstand unmöglich geworden ist, den der Gast nicht zu vertreten hat."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/hotels-gastronomie/",
+    "titel": "Hotel und Restaurant digital",
+    "grund": "Gästefragen beantworten, Anfragen ordnen und Stammgäste informieren."
+   },
+   {
+    "url": "/produkte/mail-assistent/",
+    "titel": "Mail-Assistent",
+    "grund": "Antwortentwürfe für Gruppen- und Bankettanfragen, der Versand bleibt beim Team."
+   },
+   {
+    "url": "/produkte/website-chatbot/",
+    "titel": "Website-Chatbot",
+    "grund": "Beantwortet allgemeine Gästefragen aus Ihren freigegebenen Inhalten, Pilotphase."
+   },
+   {
+    "url": "/ratgeber/offertanfragen-beantworten/",
+    "titel": "Offertanfragen schneller beantworten",
+    "grund": "Anfragen vollständig und rasch beantworten, mit Vorlagen."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Obligationenrecht (OR, SR 220), Art. 1, 97 und 160 bis 163",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+   },
+   {
+    "titel": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG, SR 241), Art. 8 und 8a",
+    "url": "https://www.fedlex.admin.ch/eli/cc/1988/223_223_223/de"
+   },
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1), Art. 6 und 8",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   },
+   {
+    "titel": "GastroSuisse, Branchenwissen A bis Z: Reservationen",
+    "url": "https://gastrosuisse.ch/de/branchenwissen/wissenswertes/a-bis-z/reservationen"
+   },
+   {
+    "titel": "GastroSuisse, Branchenwissen A bis Z: Annullationsbedingungen",
+    "url": "https://gastrosuisse.ch/de/branchenwissen/wissenswertes/a-bis-z/annullationsbedingungen"
+   }
+  ]
+ },
+ {
+  "slug": "elternkommunikation-datenschutz",
+  "art": "ratgeber",
+  "name": "Elternkommunikation und Datenschutz",
+  "titel": "Elternkommunikation datenschutzkonform: Kanäle | Meyssens",
+  "beschreibung": "E-Mail, WhatsApp, Schul-App oder Brief? Welche Kanäle Schule und Kita für Elterninformation nutzen dürfen, nach kantonalen Leitfäden. Checkliste lesen.",
+  "h1": "Elternkommunikation in Schule und Kita: Welche Kanäle sind datenschutzkonform?",
+  "lead": "Schulen und Kitas informieren Eltern per Brief, E-Mail, Messenger oder Plattform. Welcher Kanal sich eignet, hängt davon ab, welche Daten fliessen und welches Datenschutzrecht gilt. Dieser Ratgeber fasst zusammen, was die Leitfäden der Kantone Basel-Landschaft und Thurgau und das Dossier von educa.ch dazu sagen.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "umfragen-abstimmungen"
+  ],
+  "faq": [
+   {
+    "frage": "Darf eine Lehrperson Eltern über WhatsApp informieren?",
+    "antwort": "Die Kantone Thurgau und Basel-Landschaft empfehlen ausdrücklich, WhatsApp im Schulbereich nicht zu verwenden, weil der Dienst die datenschutzrechtlichen Anforderungen nicht erfüllt. Laut educa.ch reagieren die Kantone unterschiedlich, einige untersagen die Nutzung, andere halten sie unter Bedingungen für möglich. Massgebend ist die Vorgabe Ihres Kantons."
+   },
+   {
+    "frage": "Ist E-Mail an Eltern erlaubt?",
+    "antwort": "Für Sachinformationen ohne Personendaten ist E-Mail nach dem Leitfaden Basel-Landschaft grundsätzlich unproblematisch. Besondere Personendaten, etwa zur Gesundheit eines Kindes, sollen nicht per Mail an private Adressen gehen. Der Thurgauer Leitfaden empfiehlt, externe Mails vorwiegend für Sachdaten zu nutzen."
+   },
+   {
+    "frage": "Müssen Eltern eine Schul-App benutzen?",
+    "antwort": "In Basel-Landschaft ist der Einsatz solcher Kommunikationsplattformen mangels Rechtsgrundlage nur mit Einwilligung und damit freiwillig zulässig. Wer nicht mitmacht, darf keine Nachteile haben und muss die Informationen auf einem anderen Weg erhalten."
+   },
+   {
+    "frage": "Gilt für eine private Kita das gleiche Recht wie für die Volksschule?",
+    "antwort": "In der Regel nicht. Öffentliche Schulen unterstehen dem kantonalen Datenschutzrecht. Private Organisationen wie private Kitas oder Elternvereine unterstehen in der Regel dem Datenschutzgesetz des Bundes; bei Einrichtungen mit öffentlichem Auftrag ist das im Einzelfall zu prüfen. Die Grundsätze der Zweckbindung, Transparenz und Verhältnismässigkeit gelten in beiden Fällen."
+   },
+   {
+    "frage": "Wer ist verantwortlich, wenn ein Dienst nicht datenschutzkonform ist?",
+    "antwort": "Nach dem Leitfaden Basel-Landschaft trägt die Schulleitung die datenschutzrechtliche Verantwortung für ein Produkt, das sie einsetzt. Im Thurgau sind die Schulgemeinden für die Einhaltung des Datenschutzgesetzes verantwortlich."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/kindergaerten-schulen/",
+    "titel": "Kita und Schule: Eltern digital befragen und informieren",
+    "grund": "Szenarien für Terminabfrage, Befragung und Elterninformation mit Sorgfalt beim Datenschutz."
+   },
+   {
+    "url": "/produkte/newsletter/",
+    "titel": "Newsletter",
+    "grund": "Regelmässige Elterninformation mit Anmeldung per Bestätigungslink."
+   },
+   {
+    "url": "/ratgeber/fotos-kinder-schule-einwilligung/",
+    "titel": "Fotos von Kindern auf der Schulwebsite",
+    "grund": "Wann eine Einwilligung nötig ist und wie ein Formular aussieht."
+   },
+   {
+    "url": "/ratgeber/online-abstimmung-verein/",
+    "titel": "Online-Abstimmungen im Verein",
+    "grund": "Für Elternvereine: Rückmeldungen und Beschlüsse digital einholen."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Kanton Basel-Landschaft, Leitfaden Datenschutz für die Schulen des Kantons Basel-Landschaft (August 2024)",
+    "url": "https://kanton.baselland.ch/bildungs-kultur-und-sportdirektion/bildung-handbuch/rechtsstaatliches-handeln/datenschutz/formulare-zum-thema-1/leitfaden-datenschutz-schulen_stand-august-2024.pdf"
+   },
+   {
+    "titel": "Kanton Thurgau, Amt für Volksschule und Datenschutzbeauftragter, Modularer Leitfaden Datenschutz: Modul Digitale Kommunikation (Version 1.2, 1. Dezember 2024)",
+    "url": "https://av.tg.ch/public/upload/assets/100145/Modul_Digitale_Kommunikation.pdf"
+   },
+   {
+    "titel": "educa.ch, Messenger-Dienste im schulischen Kontext",
+    "url": "https://www.educa.ch/de/themen/informations-und-rechtssicherheit/messenger-dienste-im-schulischen-kontext"
+   },
+   {
+    "titel": "EDÖB, Datenschutz in Vereinen",
+    "url": "https://www.edoeb.admin.ch/de/datenschutz-in-vereinen"
+   }
+  ]
+ },
+ {
+  "slug": "fotos-kinder-schule-einwilligung",
+  "art": "ratgeber",
+  "name": "Fotos von Kindern auf der Schulwebsite",
+  "titel": "Kinderfotos auf der Schulwebsite: Einwilligung | Meyssens",
+  "beschreibung": "Wann Schule und Kita Fotos von Kindern online zeigen dürfen, wer einwilligt, Widerruf und Formular nach kantonalen Merkblättern. Jetzt lesen.",
+  "h1": "Fotos von Kindern auf der Schulwebsite: Wann braucht es eine Einwilligung?",
+  "lead": "Fotos vom Sporttag oder vom Ausflug machen eine Schulwebsite lebendig. Sobald Kinder darauf erkennbar sind, braucht es in aller Regel eine Einwilligung. Dieser Ratgeber zeigt nach den Merkblättern der Kantone Solothurn, St. Gallen und Basel-Landschaft, wer einwilligen muss, was eine gültige Einwilligung ausmacht und wann es ohne geht.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "umfragen-abstimmungen"
+  ],
+  "faq": [
+   {
+    "frage": "Braucht eine Schule für Fotos auf der Website immer eine Einwilligung?",
+    "antwort": "Für Fotos, auf denen Kinder erkennbar sind, in aller Regel ja. Solothurn und St. Gallen halten fest, dass es keine Rechtsgrundlage für die Publikation gibt und deshalb nur die Einwilligung in Frage kommt. Basel-Landschaft verlangt für jede Veröffentlichung durch die Schule eine Einwilligung."
+   },
+   {
+    "frage": "Wer muss bei Kindern einwilligen?",
+    "antwort": "Bei Minderjährigen die Eltern. Ist das Kind urteilsfähig, braucht es nach dem Solothurner Merkblatt auch seine eigene Einwilligung. St. Gallen geht in Bezug auf Personendaten von etwa 12 Jahren aus, beurteilt aber im Einzelfall."
+   },
+   {
+    "frage": "Reicht eine Einwilligung für die ganze Schulzeit?",
+    "antwort": "Basel-Landschaft hält eine Dauereinwilligung für möglich, wenn Daten und Weitergabe klar umschrieben sind und auf das Widerrufsrecht hingewiesen wird. St. Gallen empfiehlt eine generelle Einwilligung zu Beginn jedes Schuljahres, die jederzeit widerrufbar ist."
+   },
+   {
+    "frage": "Was geschieht, wenn Eltern die Einwilligung zurückziehen?",
+    "antwort": "Das Foto muss von der Website entfernt werden. Bei bereits gedruckten Publikationen wirkt der Widerruf nach dem Leitfaden Basel-Landschaft nur für die künftige Nutzung."
+   },
+   {
+    "frage": "Dürfen Gruppenfotos ohne Einwilligung online?",
+    "antwort": "Nicht automatisch. Auch auf Gruppenbildern können Kinder erkennbar sein. Ohne Einwilligung zulässig sind nach St. Gallen Bilder von Menschenansammlungen oder Personen als Beiwerk, nicht aber eine Gruppe beim Arbeiten."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/kindergaerten-schulen/",
+    "titel": "Kita und Schule: Eltern digital befragen und informieren",
+    "grund": "Szenarien für Terminabfrage, Befragung und Elterninformation mit Sorgfalt beim Datenschutz."
+   },
+   {
+    "url": "/produkte/umfragen-abstimmungen/",
+    "titel": "Umfragen & Abstimmungen",
+    "grund": "Terminabfragen und Befragungen per Link, wahlweise anonym (Pilotphase)."
+   },
+   {
+    "url": "/ratgeber/elternkommunikation-datenschutz/",
+    "titel": "Elternkommunikation und Datenschutz",
+    "grund": "Welche Kanäle für welche Informationen an Eltern geeignet sind."
+   },
+   {
+    "url": "/ratgeber/elternumfrage-durchfuehren/",
+    "titel": "Elternumfrage durchführen",
+    "grund": "Einwilligungen und Rückmeldungen einholen, anonym ausgewertet."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Kanton Solothurn, Beauftragte für Information und Datenschutz, Merkblatt Fotos auf den Webseiten von Schulen (2015, aktualisiert 2018)",
+    "url": "https://so.ch/fileadmin/internet/staatskanzlei/stk-info-ds/05_Muster__Merkblaetter_und_Publikationen/Merkblaetter/Merkblatt_Fotos_Schulwebseiten_01.pdf"
+   },
+   {
+    "titel": "Kanton St. Gallen, Fachstelle für Datenschutz, Merkblatt Websites von Schulen (Juni 2023)",
+    "url": "https://www.sg.ch/sicherheit/datenschutz/merkblaetter-und-arbeitshilfen/_jcr_content/Par/sgch_downloadlist_234390286/DownloadListPar/sgch_download_649709041.ocFile/Websites%20von%20Schulen.pdf"
+   },
+   {
+    "titel": "Kanton Basel-Landschaft, Leitfaden Datenschutz für die Schulen des Kantons Basel-Landschaft (August 2024)",
+    "url": "https://kanton.baselland.ch/bildungs-kultur-und-sportdirektion/bildung-handbuch/rechtsstaatliches-handeln/datenschutz/formulare-zum-thema-1/leitfaden-datenschutz-schulen_stand-august-2024.pdf"
+   },
+   {
+    "titel": "EDÖB, Datenschutz in Vereinen",
+    "url": "https://www.edoeb.admin.ch/de/datenschutz-in-vereinen"
+   }
+  ]
+ },
+ {
+  "slug": "elternumfrage-durchfuehren",
+  "art": "ratgeber",
+  "name": "Elternumfrage durchführen",
+  "titel": "Elternumfrage in Schule und Kita: Anleitung | Meyssens",
+  "beschreibung": "Elternumfrage planen, anonym durchführen und auswerten: Zweck, Rechtsgrundlage, Fragen, Information der Eltern und Ergebnisse. Anleitung lesen.",
+  "h1": "Elternumfrage in Schule oder Kita durchführen: Anleitung von der Frage bis zur Auswertung",
+  "lead": "Eine Elternumfrage zeigt, wie Familien zu Betreuungszeiten, Anlässen oder Angeboten stehen. Damit sie verwertbare Antworten liefert und den Datenschutz einhält, braucht sie eine klare Zuständigkeit, wenige gute Fragen und eine anonyme Auswertung. Diese Anleitung führt in sieben Schritten durch den Ablauf.",
+  "geprueft": "2026-11-13",
+  "aktualisiert": "2026-11-13",
+  "veroeffentlicht": "2026-11-13",
+  "produkte": [
+   "umfragen-abstimmungen"
+  ],
+  "faq": [
+   {
+    "frage": "Darf eine Schule Eltern ohne Einwilligung befragen?",
+    "antwort": "Das hängt von der Rechtsgrundlage ab. Im Kanton Zug lassen sich Umfragen im Rahmen der Qualitätsentwicklung auf das Schulgesetz stützen. Ausserhalb dieses Rahmens sind sie nach der Zuger Datenschutzstelle nur nach hinreichender Information und mit ausdrücklicher Einwilligung zulässig. Für Ihren Kanton ist das im Einzelfall zu prüfen."
+   },
+   {
+    "frage": "Wann ist eine Umfrage wirklich anonym?",
+    "antwort": "Erst wenn keinerlei Rückschlüsse auf Personen mehr möglich sind. Dann handelt es sich nach der Zuger Datenschutzstelle nicht mehr um Personendaten. Kleine Gruppen, Kombinationen von Angaben oder die Handschrift auf Papier können die Anonymität aufheben."
+   },
+   {
+    "frage": "Müssen Eltern über die Umfrage informiert werden?",
+    "antwort": "In der Regel ja, wenn Personendaten beschafft werden. Für öffentliche Organe in Basel-Stadt nennt das Merkblatt der Datenschutzbeauftragten Umfragen ausdrücklich als Beispiel und verlangt unter anderem Angaben zur verantwortlichen Stelle, zum Zweck, zur Rechtsgrundlage und zu Empfängern der Daten. Für private Organisationen gilt Art. 19 DSG."
+   },
+   {
+    "frage": "Dürfen Freitextantworten weitergegeben werden?",
+    "antwort": "Nur mit Vorsicht. Nach der Zuger Datenschutzstelle sind Personendaten spätestens vor der Bekanntgabe von Ergebnissen vollständig zu anonymisieren, und Namen von Kindern, Eltern oder Lehrpersonen dürfen in Auswertungen nicht erscheinen."
+   },
+   {
+    "frage": "Wer sollte eine Elternumfrage durchführen?",
+    "antwort": "Im Kanton Zug sind Qualitätsentwicklung und interne Evaluation Sache der Rektorin oder des Rektors und der Schulleitung, Feedbacks einzelner Lehrpersonen sollen sich auf den eigenen Unterricht beschränken. Umfragen des Elternrats oder einzelner Lehrpersonen stimmen Sie deshalb sinnvollerweise mit der Schulleitung ab."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/kindergaerten-schulen/",
+    "titel": "Kita und Schule: Eltern digital befragen und informieren",
+    "grund": "Szenarien für Terminabfrage, Befragung und Elterninformation mit Sorgfalt beim Datenschutz."
+   },
+   {
+    "url": "/produkte/umfragen-abstimmungen/",
+    "titel": "Umfragen & Abstimmungen",
+    "grund": "Terminabfragen und Befragungen per Link, wahlweise anonym (Pilotphase)."
+   },
+   {
+    "url": "/ratgeber/online-abstimmung-verein/",
+    "titel": "Online-Abstimmungen im Verein",
+    "grund": "Für Elternvereine: wann eine Online-Abstimmung verbindlich ist."
+   },
+   {
+    "url": "/ratgeber/elternkommunikation-datenschutz/",
+    "titel": "Elternkommunikation und Datenschutz",
+    "grund": "Über welchen Kanal Sie zur Umfrage einladen und Ergebnisse mitteilen."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Kanton Zug, Praxis der Datenschutzstelle: Umfrage bei Schülerinnen und Schülern einer Oberstufenklasse",
+    "url": "https://decwork.zg.ch/api/main/v1/de/decrees_pdf/114"
+   },
+   {
+    "titel": "Datenschutzbeauftragte des Kantons Basel-Stadt, Merkblatt zur Informationspflicht bei der Beschaffung von Personendaten (§ 15 IDG), Stand 4. September 2025",
+    "url": "https://media.bs.ch/original_file/14dddfad166bbfab2b4ce6101a9127265332a82a/merkblatt-informationspflicht-1.pdf"
+   },
+   {
+    "titel": "Kanton Basel-Landschaft, Leitfaden Datenschutz für die Schulen des Kantons Basel-Landschaft (August 2024)",
+    "url": "https://kanton.baselland.ch/bildungs-kultur-und-sportdirektion/bildung-handbuch/rechtsstaatliches-handeln/datenschutz/formulare-zum-thema-1/leitfaden-datenschutz-schulen_stand-august-2024.pdf"
+   },
+   {
+    "titel": "EDÖB, Datenschutz in Vereinen",
+    "url": "https://www.edoeb.admin.ch/de/datenschutz-in-vereinen"
+   }
+  ]
  }
 ]
