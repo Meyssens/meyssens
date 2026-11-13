@@ -1043,6 +1043,17 @@ def branchen_liste(branchen, artikel_branchen, nach_slug):
             % ("\n".join(zeilen), erste, vorschau(*eintraege[0]), "\n".join(vorlagen)))
 
 
+def ratgeber_abschnitt(slug, ratgeber, flaeche=False):
+    # Rückverweis von Produkt- und Bausteinseiten auf alle Ratgeber, die das Produkt im Feld "produkte" nennen
+    passend = [r for r in ratgeber if slug in r["produkte"]]
+    if not passend:
+        return ""
+    return ('<section id="ratgeber"%s>\n  <div class="r">\n    <span class="s-label">Ratgeber</span>\n'
+            '    <h2>Ratgeber zum Thema</h2>\n  </div>\n  <div class="branch-list r">\n%s\n  </div>\n</section>\n\n'
+            % (' class="flaeche"' if flaeche else "",
+               "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (r["slug"], html.escape(r["name"]), PFEIL) for r in passend)))
+
+
 def verwandt_abschnitt(links):
     # "Das könnte Sie auch interessieren": 3 Kacheln mit beschreibendem Linktext
     return ('<section id="verwandt">\n  <div class="r">\n    <span class="s-label">Weiterlesen</span>\n'
@@ -1296,6 +1307,7 @@ def main():
             "demo": demo(p.get("demo"), "produkt"),
             "ansicht": produkt_ansicht(ansichten, p),
             "ld": ld(*seitenld, dienst(p, url), software(p, url)),
+            "ratgeber_links": ratgeber_abschnitt(p["slug"], ratgeber),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -1445,7 +1457,7 @@ def main():
                                p.get("seo_titel") or "%s – Meyssens" % p["name"],
                                og_eigen("baustein", p["slug"], "Baustein für %s: %s" % (b["name"], p["name"]), og_branche(b["slug"], b["name"])))
         werte = dict(gemeinsam, **kopf, **{
-            "verwandt": verwandt_abschnitt(verwandte(netz, info, pfad)),
+            "verwandt": ratgeber_abschnitt(p["slug"], ratgeber) + verwandt_abschnitt(verwandte(netz, info, pfad)),
             "titel": html.escape(p.get("seo_titel") or "%s – Meyssens" % p["name"]),
             "beschreibung": html.escape(p.get("seo_beschreibung") or kurz(p["kurzbeschreibung"])),
             "url": DOMAIN + pfad,
