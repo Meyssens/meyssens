@@ -343,16 +343,16 @@
   },
   {
     "slug": "elektro-handwerk",
-    "aktualisiert": "2026-11-12",
+    "aktualisiert": "2026-11-13",
     "name": "Elektro-Handwerk",
     "fuer": "das Elektro-Handwerk",
-    "kurz": "Kundenanfragen ordnen, Ausschreibungen finden und Fragen auf der Website beantworten.",
+    "kurz": "Aufträge finden, Kundenanfragen ordnen und Offerten vorbereiten.",
     "beschreibung": "Digitale Werkzeuge für Elektro-Handwerksbetriebe: Anfragen ordnen, Ausschreibungen finden, Fragen auf der Website beantworten. Mit Beispielszenarien.",
-    "intro": "Elektroinstallateure und andere Elektro-Handwerksbetriebe sind vor allem bei Kundinnen und Kunden vor Ort unterwegs. Gleichzeitig kommen laufend Anfragen herein: zu Installationen, Reparaturen, Terminen oder Themen wie Ladestationen und Photovoltaik. Wer diese Anfragen schnell einordnet, kann besser planen und verliert weniger Aufträge. Dabei geht es nicht darum, den persönlichen Kontakt zu ersetzen, sondern Routinearbeit im Büro zu verringern.",
+    "intro": "Aufträge für Elektroinstallationen kommen auf zwei Wegen in den Betrieb: als Anfragen von Privaten, Hausverwaltungen und Firmen per Telefon, E-Mail oder Website und als öffentliche Ausschreibungen von Gemeinden und Kantonen auf simap.ch. Elektroinstallateure sind dabei meist bei der Kundschaft vor Ort unterwegs. Wer Anfragen schnell einordnet, passende Ausschreibungen rechtzeitig sieht und Offerten nicht jedes Mal neu zusammensucht, kann besser planen und verliert weniger Aufträge. Es geht nicht darum, den persönlichen Kontakt zu ersetzen, sondern Routinearbeit im Büro zu verringern, ob die Offerte heute in Excel oder in einer Branchensoftware entsteht.",
     "probleme": [
       {
         "titel": "Alles im selben Postfach",
-        "text": "Terminwünsche, Offertanfragen, Lieferantenmails und Rückfragen zu Rechnungen landen ungeordnet im gleichen Postfach. Was dringend ist und was warten kann, ist auf den ersten Blick nicht erkennbar. Wichtiges wird dadurch manchmal erst spät bemerkt."
+        "text": "Terminwünsche, Offertanfragen, Lieferantenmails und Rückfragen zu Rechnungen landen ungeordnet im gleichen Postfach. Was dringend ist und was warten kann, ist auf den ersten Blick nicht erkennbar. Offerten entstehen danach nach unserer Einschätzung oft aus Vorlagen in Excel oder Word, und Positionen werden von Hand zusammengesucht."
       },
       {
         "titel": "Gleiche Fragen am Telefon",
@@ -360,7 +360,7 @@
       },
       {
         "titel": "Öffentliche Aufträge nebenbei suchen",
-        "text": "Gemeinden und andere öffentliche Stellen schreiben auch Elektroarbeiten aus. Die Suche danach fällt im Alltag eines kleinen Betriebs oft weg. Passende Ausschreibungen werden deshalb häufig gar nicht erst entdeckt."
+        "text": "Gemeinden und Kantone schreiben auch Elektroarbeiten aus. Bei offenen und selektiven Verfahren veröffentlichen sie die Ausschreibung auf simap.ch, unterhalb bestimmter Schwellenwerte dürfen sie im Einladungsverfahren oder freihändig vergeben, also ohne öffentliche Ausschreibung. Die Suche nach Ausschreibungen fällt im Alltag eines kleinen Betriebs oft weg, und passende Aufträge werden gar nicht erst entdeckt."
       }
     ],
     "szenarien": [
@@ -369,12 +369,12 @@
         "text": "Eine Besucherin möchte wissen, ob der Betrieb auch Ladestationen für Elektroautos installiert. Der Chatbot findet die Antwort auf der Leistungsseite der Website, nennt die Seite und verweist für eine Offerte auf das Kontaktformular."
       },
       {
-        "titel": "Postfach am Morgen geordnet",
-        "text": "Vor Arbeitsbeginn sind neue E-Mails nach Themen geordnet: Offertanfragen, Terminwünsche, Rechnungsfragen. Für einfache Anfragen liegen Antwortentwürfe bereit, die nur noch geprüft und abgeschickt werden."
+        "titel": "Von der Anfrage zum Offert-Entwurf",
+        "text": "Vor Arbeitsbeginn sind neue E-Mails nach Themen geordnet: Offertanfragen, Terminwünsche, Rechnungsfragen. Zur Anfrage einer Hausverwaltung für drei neue Steckdosen liegt ein Entwurf mit Positionen aus früheren Offerten bereit. Preise und Versand bestimmt der Betrieb."
       },
       {
         "titel": "Ausschreibung aus der Region",
-        "text": "Eine Gemeinde schreibt die Erneuerung der Beleuchtung in einem Schulhaus aus. Die Ausschreibung erscheint in der Trefferliste des Betriebs, weil Stichworte und Region passen."
+        "text": "Eine Gemeinde schreibt die Erneuerung der Beleuchtung in einem Schulhaus öffentlich aus. Die Ausschreibung erscheint mit Frist und Link zur Originalquelle in der Trefferliste des Betriebs, weil Stichworte und Region passen. Ob er offeriert, entscheidet der Betrieb."
       }
     ],
     "besonderheit": {
@@ -383,16 +383,16 @@
     },
     "faq": [
       {
-        "frage": "Kann der Chatbot Termine vergeben?",
-        "antwort": "Nein, das ist nicht vorgesehen. Der Website-Chatbot soll Fragen auf Grundlage Ihrer Website beantworten und auf die richtige Seite oder Kontaktmöglichkeit verweisen. Er befindet sich derzeit in der Pilotphase."
+        "frage": "Wo finden Elektriker öffentliche Aufträge?",
+        "antwort": "Auf simap.ch, der Beschaffungsplattform von Bund, Kantonen und Gemeinden. Bei offenen und selektiven Verfahren müssen Ausschreibung, Zuschlag und Abbruch dort veröffentlicht werden (Art. 48 Abs. 1 IVöB). Das Ausschreibungs-Radar soll passende Treffer nach Stichworten und Region zusammenstellen; ob simap.ch automatisiert abgefragt werden darf, klären wir vor dem Start."
       },
       {
-        "frage": "Woher weiss der Chatbot, was er antworten darf?",
-        "antwort": "Er soll nur Inhalte verwenden, die Sie freigeben, zum Beispiel Ihre Website und ausgewählte Dokumente. Kann er eine Frage nicht beantworten, sagt er das und nennt Ihre Kontaktmöglichkeiten."
+        "frage": "Ab welchem Auftragswert wird ein öffentlicher Auftrag ausgeschrieben?",
+        "antwort": "Das hängt von der Auftragsart ab. Für den Kanton Basel-Landschaft nennt die Zentrale Beschaffungsstelle für 2026 und 2027 nach der IVöB ausserhalb des Staatsvertragsbereichs im Baunebengewerbe: freihändig bis CHF 150'000, Einladungsverfahren bis CHF 250'000, ab CHF 250'000 offenes oder selektives Verfahren. Im Bauhauptgewerbe liegen die Werte bei CHF 300'000 und CHF 500'000. Die Mehrwertsteuer wird bei der Schätzung nicht berücksichtigt. Massgebend sind die Angaben Ihres Kantons."
       },
       {
-        "frage": "Was bedeutet Pilotpartner?",
-        "antwort": "Für Produkte in der Pilotphase suchen wir Betriebe, die von Anfang an mitmachen. Pilotpartner erhalten die Einrichtung kostenlos und bringen ihre Erfahrungen in die Entwicklung ein."
+        "frage": "Kann ich meine Offerten weiter in Excel schreiben?",
+        "antwort": "Ja, das bleibt Ihre Entscheidung. Der Baustein «Offert-Entwurf aus der Kundenanfrage» ist geplant und soll Positionen und Textbausteine aus Ihren eigenen früheren Offerten vorschlagen; Preise, Umfang und Versand bestimmt der Betrieb. Ob die Vorlagen in Excel, Word oder einer Branchensoftware liegen und wie sie eingelesen werden, klären wir im Einzelfall. Interessierte Betriebe können sich über das Anfrageformular melden."
       }
     ],
     "produkte": [
@@ -400,10 +400,10 @@
       "mail-assistent",
       "ausschreibungs-radar"
     ],
-    "seo_titel": "Elektroinstallateur: Anfragen und Offerten ordnen | Meyssens",
-    "seo_beschreibung": "Kundenanfragen ordnen, Offerten schneller vorbereiten und Ausschreibungen finden: Werkzeuge für Elektrobetriebe in der Schweiz. Jetzt anfragen.",
-    "h1": "Elektroinstallateur: Anfragen und Offerten digital ordnen",
-    "schweiz": "Elektroinstallateure in der Schweiz arbeiten oft auch für Gemeinden und Kantone, die öffentliche Aufträge auf simap.ch ausschreiben. Für Kundendaten gilt das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
+    "seo_titel": "Aufträge für Elektriker finden und offerieren | Meyssens",
+    "seo_beschreibung": "Aufträge für Elektroinstallationen finden: Ausschreibungen auf simap.ch, Anfragen ordnen, Offerten vorbereiten. Bausteine für Elektrobetriebe ansehen.",
+    "h1": "Elektro-Aufträge: Anfragen ordnen, Ausschreibungen finden, Offerten vorbereiten",
+    "schweiz": "Wer elektrische Installationen erstellt, ändert oder instand stellt, braucht eine Bewilligung des Eidgenössischen Starkstrominspektorats ESTI, das auch elektronische Verzeichnisse der Installations- und Kontrollbewilligungen führt. Öffentliche Aufträge stehen auf simap.ch, der Beschaffungsplattform, die Bund und Kantone gemeinsam betreiben. Für Kundendaten gilt das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
     "bausteine": [
       "faelligkeitsliste-kontrollen-elektro",
       "materialliste-elektro",
@@ -681,7 +681,25 @@
           "abschluss": "Ziel: jeder Serviceeinsatz mit Rapport, Zeitabgleich und Rechnung. Zuteilung, Korrekturen und Versand entscheidet der Betrieb."
         }
       ]
-    }
+    },
+    "quellen": [
+      {
+        "titel": "ESTI: Bewilligungen nach NIV",
+        "url": "https://www.esti.admin.ch/de/themen/bewilligungen-niv-uebersicht/bewilligungen-niv"
+      },
+      {
+        "titel": "Kanton Aargau: Beschaffungswesen (simap.ch, Art. 48 IVöB, Verfahren)",
+        "url": "https://www.ag.ch/de/themen/planen-bauen/beschaffungswesen"
+      },
+      {
+        "titel": "Kanton Basel-Landschaft: Schwellenwerte IVöB 2026–2027",
+        "url": "https://bl-api.webcloud7.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/generalsekretariat/oeffentliche-beschaffungen/downloads/schwellenwerte_2026-2027.pdf"
+      },
+      {
+        "titel": "simap.ch",
+        "url": "https://www.simap.ch/de"
+      }
+    ]
   },
   {
     "slug": "kindergaerten-schulen",
@@ -759,7 +777,7 @@
     "fuer": "Vereine",
     "kurz": "Website, Mitgliederinformation und Umfragen für den Vereinsalltag.",
     "beschreibung": "Digitale Werkzeuge für Vereine: Vereinswebsite, Newsletter für Mitglieder und Online-Umfragen. Mit Hinweisen zum Vereinsrecht und Beispielszenarien.",
-    "intro": "Vereine leben vom Engagement Freiwilliger. Vorstandsarbeit findet abends und am Wochenende statt, und die Zeit dafür ist knapp. Werkzeuge für Vereine müssen deshalb einfach zu bedienen sein und auch dann funktionieren, wenn der Vorstand wechselt. Wichtig ist auch, dass Mitglieder jeden Alters die Angebote ohne Hürden nutzen können.",
+    "intro": "Eine Website für Vereine zeigt Interessierten, was der Verein macht, wann der nächste Anlass stattfindet und wie man Mitglied wird. Gepflegt wird sie meist ehrenamtlich, abends und am Wochenende. Die Vereinshomepage muss deshalb einfach zu bedienen sein, einen Vorstandswechsel überstehen und für Mitglieder jeden Alters ohne Hürden funktionieren. Auf dieser Seite finden Sie, was auf eine Vereinswebsite gehört, was Datenschutz und Vereinsrecht dafür bedeuten und welche Werkzeuge wir auf Anfrage einrichten.",
     "probleme": [
       {
         "titel": "Die Website ist veraltet",
@@ -789,21 +807,21 @@
       }
     ],
     "besonderheit": {
-      "titel": "Vereinsrecht und Statuten",
-      "text": "Ob ein Verein Beschlüsse online fassen darf, ergibt sich aus seinen Statuten und dem anwendbaren Vereinsrecht. Eine Online-Umfrage eignet sich gut für Meinungsbilder und organisatorische Fragen. Für verbindliche Beschlüsse, etwa Wahlen oder Statutenänderungen, sollten Sie vorher prüfen, ob die Statuten eine schriftliche oder elektronische Beschlussfassung zulassen. Im Zweifel lohnt sich eine Rückfrage bei einer fachkundigen Stelle oder beim Dachverband."
+      "titel": "Was auf eine Website für Vereine gehört",
+      "text": "Fünf Inhalte beantworten die meisten Fragen von Interessierten und Mitgliedern: erstens Zweck und Angebot des Vereins; zweitens die nächsten Anlässe, Trainings- oder Probezeiten; drittens Kontakt und Vorstand; viertens der Weg zur Mitgliedschaft mit Beitrag und Anmeldung; fünftens Dokumente wie Statuten und Jahresprogramm. Beschafft der Verein über die Website Personendaten, etwa mit einem Kontakt- oder Anmeldeformular, muss er die betroffenen Personen angemessen darüber informieren (Art. 19 DSG); dafür dient in der Regel die Datenschutzerklärung. Ob Beschlüsse online gefasst werden dürfen, regeln die Statuten und das Vereinsrecht, nicht die Website."
     },
     "faq": [
       {
+        "frage": "Was gehört auf eine Website für Vereine?",
+        "antwort": "Zweck und Angebot des Vereins, aktuelle Anlässe, Kontakt und Vorstand, der Weg zur Mitgliedschaft sowie Dokumente wie die Statuten. Werden über die Website Personendaten beschafft, etwa mit einem Anmeldeformular, gehört eine Datenschutzerklärung dazu."
+      },
+      {
+        "frage": "Braucht eine Vereinswebsite eine Datenschutzerklärung?",
+        "antwort": "In der Regel ja, sobald der Verein über die Website Personendaten beschafft, zum Beispiel mit einem Kontakt- oder Anmeldeformular. Nach Art. 19 DSG muss er die betroffenen Personen angemessen informieren, mindestens über Identität und Kontaktdaten des Verantwortlichen, den Bearbeitungszweck und gegebenenfalls die Empfänger der Daten. Der EDÖB empfiehlt zudem Angaben zur Aufbewahrungsdauer, zu eingebundenen Diensten Dritter und eine Kontaktadresse für Fragen und Auskunftsbegehren."
+      },
+      {
         "frage": "Ersetzt eine Online-Abstimmung die Mitgliederversammlung?",
-        "antwort": "Nicht automatisch, das hängt von Ihren Statuten ab. Für Meinungsbilder und organisatorische Fragen eignet sich eine Online-Umfrage gut. Für verbindliche Beschlüsse sollten Sie die Statuten prüfen."
-      },
-      {
-        "frage": "Wer kann die Vereinswebsite bearbeiten?",
-        "antwort": "Vorgesehen ist, dass mehrere Personen Inhalte pflegen können und Zugänge bei einem Vorstandswechsel einfach übergeben werden. Die Website für Vereine richten wir individuell auf Anfrage ein."
-      },
-      {
-        "frage": "Können wir Pilotpartner werden?",
-        "antwort": "Für Umfragen & Abstimmungen suchen wir derzeit Pilotpartner. Die übrigen Produkte richten wir individuell auf Anfrage ein, Ihre Anfrage ist unverbindlich."
+        "antwort": "Nicht automatisch. Vereinsbeschlüsse fasst nach Art. 66 ZGB die Vereinsversammlung; gleichgestellt ist die schriftliche Zustimmung aller Mitglieder zu einem Antrag. Ob die Statuten weitere Formen wie eine elektronische Abstimmung zulassen, sollten Sie vor einem verbindlichen Beschluss prüfen. Für Meinungsbilder und organisatorische Fragen eignet sich eine Online-Umfrage gut."
       }
     ],
     "produkte": [
@@ -811,10 +829,24 @@
       "umfragen-abstimmungen",
       "newsletter"
     ],
-    "seo_titel": "Vereinssoftware Schweiz: Website und Umfragen | Meyssens",
-    "seo_beschreibung": "Vereinswebsite, Newsletter und Online-Umfragen für Schweizer Vereine, mit Hinweisen zu Statuten und ZGB. Beispiele ansehen und Pilotpartner werden.",
-    "h1": "Vereinssoftware für Schweizer Vereine: Website, Umfragen, Newsletter",
-    "schweiz": "Für Schweizer Vereine gelten Art. 60 ff. ZGB und die eigenen Statuten, für Mitgliederdaten das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+    "seo_titel": "Website für Vereine: Inhalte, Datenschutz | Meyssens",
+    "seo_beschreibung": "Website für Vereine in der Schweiz: was auf die Vereinshomepage gehört, Datenschutzerklärung nach DSG, Online-Umfragen. Beispiel ansehen und anfragen.",
+    "h1": "Website für Vereine: Anlässe, Mitglieder und Umfragen an einem Ort",
+    "schweiz": "Vereine nach Art. 60 ff. ZGB brauchen schriftliche Statuten, die über Zweck, Mittel und Organisation Aufschluss geben. Oberstes Organ ist die Versammlung der Mitglieder (Art. 64 ZGB). Für Mitgliederdaten gilt das DSG, bei der Beschaffung mit der Informationspflicht nach Art. 19. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
+    "quellen": [
+      {
+        "titel": "Schweizerisches Zivilgesetzbuch (ZGB, SR 210), Art. 60 ff. Vereine",
+        "url": "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de"
+      },
+      {
+        "titel": "Bundesgesetz über den Datenschutz (DSG, SR 235.1), Art. 19 Informationspflicht",
+        "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+      },
+      {
+        "titel": "EDÖB, Datenschutzerklärungen im Internet",
+        "url": "https://www.edoeb.admin.ch/de/datenschutzerklaerungen-im-internet"
+      }
+    ]
   },
   {
     "slug": "arztpraxen",

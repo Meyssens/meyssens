@@ -829,7 +829,10 @@ def titel_branche(b):
 # Organisation und Website: auf jeder erzeugten Seite, nur belegte Angaben (Impressum), keine Bewertungen
 ORG = {"@type": "Organization", "@id": DOMAIN + "/#org", "name": "Meyssens", "url": DOMAIN + "/", "logo": DOMAIN + "/logo.png",
        "email": "lionel@meyssens.ch", "founder": {"@id": DOMAIN + "/ueber-uns/#person"},
-       "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}
+       "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"},
+       "areaServed": {"@type": "Country", "name": "Schweiz"}, "knowsLanguage": "de-CH",
+       "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "lionel@meyssens.ch",
+                        "availableLanguage": "de"}}
 WEBSITE = {"@type": "WebSite", "@id": DOMAIN + "/#website", "name": "Meyssens", "url": DOMAIN + "/", "inLanguage": "de-CH",
            "publisher": {"@id": DOMAIN + "/#org"}}
 SCHWEIZ = {"@type": "Country", "name": "Schweiz"}
@@ -861,6 +864,14 @@ def dienst(p, url, branche=None):
     return d
 
 
+def software(p, url):
+    # SoftwareApplication für Produkt- und Bausteinseiten (webbasiert); bewusst ohne offers und aggregateRating:
+    # keine Preise auf der Website und keine Bewertungen (Meyssens hat noch keine Kunden)
+    return {"@type": "SoftwareApplication", "@id": url + "#software", "name": p["name"], "description": p["kurzbeschreibung"],
+            "url": url, "applicationCategory": "BusinessApplication", "operatingSystem": "Web (Browser)",
+            "inLanguage": "de-CH", "publisher": {"@id": DOMAIN + "/#org"}, "provider": {"@id": DOMAIN + "/#org"}}
+
+
 def h1_html(text):
     # Teil nach dem Doppelpunkt hervorgehoben, wie im bisherigen Stil
     vor, _, nach = text.partition(": ")
@@ -883,9 +894,9 @@ OG_STANDARD = ("/og-image.png", "Meyssens – Digitale Infrastruktur für Organi
 FORMULAR_ZIEL = "https://formspree.io/f/xlgpzzew"
 EINWILLIGUNG = '<div class="fgrp"><label style="display:flex;gap:.6rem;align-items:flex-start;font-size:.8rem;line-height:1.6;color:var(--ink3);cursor:pointer"><input type="checkbox" name="datenschutz-gelesen" required style="margin-top:.25rem;flex:none"><span data-i18n-html="contact.form.consent">Ich habe die <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'" style="color:var(--blue)">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage einverstanden.</span></label></div>'
 
-SEITEN_STAND = "2026-10-28"
+SEITEN_STAND = "2026-11-13"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/": "2026-11-12", "/gemeinden/": "2026-11-12", "/branchen/": "2026-11-01", "/unternehmen/": "2026-11-12"}
+SEITEN_GEAENDERT = {"/": "2026-11-13", "/gemeinden/": "2026-11-13", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-13"}
 
 
 def stand(eintrag, pruef):
@@ -1030,6 +1041,31 @@ def branchen_liste(branchen, artikel_branchen, nach_slug):
             '    <div class="bpanel" id="branchen-panel" aria-labelledby="bl-%s">\n      <div class="bpanel-inhalt">\n%s\n      </div>\n    </div>\n'
             '  </div>\n%s'
             % ("\n".join(zeilen), erste, vorschau(*eintraege[0]), "\n".join(vorlagen)))
+
+
+def ratgeber_abschnitt(slug, ratgeber, flaeche=False):
+    # Rückverweis von Produkt- und Bausteinseiten auf alle Ratgeber, die das Produkt im Feld "produkte" nennen
+    passend = [r for r in ratgeber if slug in r["produkte"]]
+    if not passend:
+        return ""
+    return ('<section id="ratgeber"%s>\n  <div class="r">\n    <span class="s-label">Ratgeber</span>\n'
+            '    <h2>Ratgeber zum Thema</h2>\n  </div>\n  <div class="branch-list r">\n%s\n  </div>\n</section>\n\n'
+            % (' class="flaeche"' if flaeche else "",
+               "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (r["slug"], html.escape(r["name"]), PFEIL) for r in passend)))
+
+
+def branchen_quellen(b):
+    # Quellen einer Branchenseite (Feld "quellen" in branchen.json), wenn vorhanden
+    if not b.get("quellen"):
+        return ""
+    if not all(q["url"].startswith("https://") for q in b["quellen"]):
+        raise SystemExit("Branche %s: Quellen brauchen https-Links" % b["slug"])
+    return ('<section id="quellen-branche">\n  <div class="artikel-text r">\n    <span class="s-label">Quellen</span>\n'
+            '    <h2>Quellen</h2>\n    <div class="note"><strong>Allgemeine Information, keine Rechtsberatung.</strong> '
+            'Die rechtlichen Angaben auf dieser Seite stützen sich auf diese Quellen.</div>\n    <ul class="quellen">\n%s\n    </ul>\n'
+            '  </div>\n</section>\n\n'
+            % "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (html.escape(q["url"]), html.escape(q["titel"]))
+                        for q in b["quellen"]))
 
 
 def verwandt_abschnitt(links):
@@ -1284,7 +1320,8 @@ def main():
             "schweiz": e["schweiz"],
             "demo": demo(p.get("demo"), "produkt"),
             "ansicht": produkt_ansicht(ansichten, p),
-            "ld": ld(*seitenld, dienst(p, url)),
+            "ld": ld(*seitenld, dienst(p, url), software(p, url)),
+            "ratgeber_links": ratgeber_abschnitt(p["slug"], ratgeber),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,
@@ -1298,7 +1335,7 @@ def main():
         kopf, seitenld = seitenkopf((START, STUFE_BRANCHEN, (b["name"], burl)), b.get("seo_titel") or titel_branche(b),
                                og_branche(b["slug"], b["name"]))
         werte = dict(gemeinsam, **kopf, **{
-            "verwandt": verwandt_abschnitt(verwandte(netz, info, burl)),
+            "verwandt": branchen_quellen(b) + verwandt_abschnitt(verwandte(netz, info, burl)),
             "titel": html.escape(b.get("seo_titel") or titel_branche(b)),
             "beschreibung": html.escape(b.get("seo_beschreibung") or b["beschreibung"]),
             "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),
@@ -1434,7 +1471,7 @@ def main():
                                p.get("seo_titel") or "%s – Meyssens" % p["name"],
                                og_eigen("baustein", p["slug"], "Baustein für %s: %s" % (b["name"], p["name"]), og_branche(b["slug"], b["name"])))
         werte = dict(gemeinsam, **kopf, **{
-            "verwandt": verwandt_abschnitt(verwandte(netz, info, pfad)),
+            "verwandt": ratgeber_abschnitt(p["slug"], ratgeber) + verwandt_abschnitt(verwandte(netz, info, pfad)),
             "titel": html.escape(p.get("seo_titel") or "%s – Meyssens" % p["name"]),
             "beschreibung": html.escape(p.get("seo_beschreibung") or kurz(p["kurzbeschreibung"])),
             "url": DOMAIN + pfad,
@@ -1479,7 +1516,7 @@ def main():
                               % qa_liste(p["faq"]) if p.get("faq") else ""),
             "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
                                  % (html.escape(q["url"]), html.escape(q["titel"])) for q in p["quellen"]),
-            "ld": ld(*seitenld, dienst(p, DOMAIN + pfad, b["name"]), *([faq_ld(p["faq"])] if p.get("faq") else [])),
+            "ld": ld(*seitenld, dienst(p, DOMAIN + pfad, b["name"]), software(p, DOMAIN + pfad), *([faq_ld(p["faq"])] if p.get("faq") else [])),
             "formular_ziel": formular_ziel,
             "einwilligung": einwilligung,
             "formular_skript": formular_skript,

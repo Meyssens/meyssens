@@ -99,15 +99,26 @@
   {
     "slug": "ausschreibungs-radar",
     "name": "Ausschreibungs-Radar",
-    "kurzbeschreibung": "Ein Dienst, der öffentliche Ausschreibungen nach Ihren Stichworten und Regionen durchsucht und passende Treffer zusammenstellt. Sie erhalten eine übersichtliche Liste statt vieler einzelner Suchen. So entgehen Ihnen weniger Aufträge, die zu Ihrem Unternehmen passen.",
-    "problem": "Öffentliche Aufträge werden auf verschiedenen Plattformen veröffentlicht, oft mit unterschiedlichen Begriffen und Kategorien. Wer passende Ausschreibungen finden will, muss regelmässig mehrere Portale durchsuchen. Für kleine Unternehmen ist das zeitaufwendig, und Fristen werden leicht verpasst.",
-    "loesung": "Sie hinterlegen Stichworte, Fachgebiete und Regionen, die für Sie relevant sind. Das Ausschreibungs-Radar prüft neue Veröffentlichungen und stellt passende Treffer mit Frist und Link zur Originalquelle zusammen. Sie entscheiden selbst, auf welche Ausschreibungen Sie sich bewerben.",
-    "fuer_wen": "Für kleine und mittlere Unternehmen, die sich um öffentliche Aufträge bewerben. Für Handwerks-, Planungs- und Dienstleistungsbetriebe mit regionalem Schwerpunkt. Für Unternehmen, die bisher wenig Zeit für die Suche nach Ausschreibungen haben.",
+    "kurzbeschreibung": "Öffentliche Ausschreibungen finden, ohne jeden Tag selbst zu suchen: Das Ausschreibungs-Radar durchsucht neue Veröffentlichungen nach Ihren Stichworten und Regionen und stellt passende Treffer mit Frist und Link zur Originalquelle zusammen. Sie erhalten eine übersichtliche Liste statt vieler einzelner Suchen.",
+    "problem": "simap.ch bezeichnet sich als Beschaffungsplattform von Bund und bundesnahen Organisationen, Kantonen und Gemeinden der Schweiz. Für Aufträge des Bundes schreibt Art. 48 BöB vor, dass Ausschreibungen im offenen und im selektiven Verfahren auf der gemeinsamen Internetplattform von Bund und Kantonen erscheinen. Im Einladungsverfahren und im freihändigen Verfahren gibt es keine öffentliche Ausschreibung (Art. 20 und 21 BöB). Wer Ausschreibungen suchen will, muss regelmässig mit wechselnden Begriffen und Kategorien suchen. Die Fristen sind knapp: Beim Bund beträgt die Angebotsfrist ausserhalb des Staatsvertragsbereichs in der Regel mindestens 20 Tage (Art. 46 Abs. 4 BöB).",
+    "loesung": "So funktioniert die automatische Ausschreibungssuche in drei Schritten. Erstens hinterlegen Sie Stichworte, Fachgebiete und Regionen, zum Beispiel «Sonnenschutz», «Elektroinstallation» oder einen Kanton. Zweitens prüft das Ausschreibungs-Radar neue Veröffentlichungen und stellt passende Treffer mit Eingabefrist und Link zur Originalquelle zusammen. Drittens lesen Sie die Unterlagen in der Originalquelle und entscheiden selbst, ob Sie ein Angebot einreichen. Massgebend sind immer Frist und Bedingungen in der Ausschreibung selbst.",
+    "fuer_wen": "Für kleine und mittlere Unternehmen, die sich in der Schweiz um öffentliche Aufträge bewerben, etwa Bauunternehmen, Elektroinstallationsbetriebe sowie Architektur- und Planungsbüros. Für Handwerks- und Dienstleistungsbetriebe mit regionalem Schwerpunkt, die Ausschreibungen in bestimmten Kantonen suchen. Für Unternehmen, die bisher wenig Zeit haben, simap.ch regelmässig zu durchsuchen.",
     "status": "Individuell auf Anfrage",
-    "seo_titel": "Öffentliche Ausschreibungen Schweiz finden | Meyssens",
-    "seo_beschreibung": "Öffentliche Ausschreibungen nach Stichworten und Regionen sammeln, passende Treffer auf einen Blick. Für KMU, Handwerk und Planung. Jetzt anfragen.",
-    "h1": "Ausschreibungs-Radar: öffentliche Ausschreibungen finden",
-    "schweiz": "Für Ausschreibungen von Bund, Kantonen und Gemeinden. Ob und wie simap.ch automatisiert abgefragt werden darf, klären wir vor dem Start. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+    "seo_titel": "Öffentliche Ausschreibungen automatisch finden | Meyssens",
+    "seo_beschreibung": "Öffentliche Ausschreibungen in der Schweiz finden: Stichworte und Regionen hinterlegen, neue Treffer mit Frist und Link erhalten. Jetzt anfragen.",
+    "h1": "Ausschreibungs-Radar: öffentliche Ausschreibungen in der Schweiz finden",
+    "schweiz": "Für Ausschreibungen von Bund, Kantonen und Gemeinden. Auf simap.ch selbst lassen sich aus einer Suche Suchaufträge im Abo anlegen. Ob und wie simap.ch automatisiert abgefragt werden darf, klären wir vor dem Start. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
+    "hinweis": "Rechtsgrundlage für Aufträge des Bundes: Bundesgesetz über das öffentliche Beschaffungswesen (BöB, SR 172.056.1), Art. 18 bis 21, 46 und 48, Stand am 1. Januar 2026 auf fedlex.admin.ch. Plattform: simap.ch. Kantone und Gemeinden können eigene Regeln haben; massgebend sind die Angaben in der jeweiligen Ausschreibung.",
+    "quellen": [
+      {
+        "titel": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB, SR 172.056.1), Stand 1. Januar 2026",
+        "url": "https://www.fedlex.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/2020/126/20260101/de/html/fedlex-data-admin-ch-eli-cc-2020-126-20260101-de-html-1.html"
+      },
+      {
+        "titel": "simap.ch – Beschaffungsplattform von Bund, Kantonen und Gemeinden",
+        "url": "https://www.simap.ch/de"
+      }
+    ]
   },
   {
     "slug": "online-terminanfrage-zahnarztpraxis",
@@ -166,33 +177,75 @@
   {
     "slug": "praxis-textbausteine",
     "branche": "zahnarztpraxen",
-    "name": "Textbausteine für Telefon und Mail",
-    "kurzbeschreibung": "Eine gemeinsame Sammlung geprüfter Antworten auf wiederkehrende Fragen: Öffnungszeiten, Anfahrt, Notfalldienst, Ablauf einer Dentalhygiene, was zur ersten Konsultation mitzubringen ist. Das Praxisteam findet die passende Antwort schnell und passt sie an. Eine Sprach-KI, die Patientenanrufe entgegennimmt, gehört ausdrücklich nicht dazu.",
-    "problem": "Viele Anrufe und E-Mails drehen sich um dieselben Fragen. Jede Person im Team antwortet etwas anders, und Angaben wie die Nummer des Notfalldienstes oder die Ferienabwesenheit sind an mehreren Orten notiert und nicht immer aktuell. Neue Mitarbeitende fragen nach, bis sie die Antworten kennen.",
-    "loesung": "Die Praxis hinterlegt ihre Antworten einmal, geordnet nach Thema. Am Telefon dient die Sammlung als Nachschlagewerk, bei E-Mails entsteht aus dem passenden Textbaustein ein Antwortentwurf. Ändert sich eine Angabe, wird sie an einer Stelle angepasst und gilt danach in allen Textbausteinen.",
-    "mensch": "Die Praxis entscheidet, welche Antworten in die Sammlung kommen und wer sie ändern darf. Jeder E-Mail-Entwurf wird gelesen und von einer Person abgeschickt. Fragen zur Behandlung beantwortet weiterhin die Zahnärztin oder der Zahnarzt.",
-    "fuer_wen": "Für Praxisteams mit mehreren MPA oder wechselnden Teilzeitpensen. Für Praxen, die einheitlich antworten und neue Mitarbeitende schneller einarbeiten möchten.",
+    "name": "Textbausteine für Praxistelefon und E-Mail",
+    "kurzbeschreibung": "Eine gemeinsame Sammlung geprüfter Antworten auf wiederkehrende Fragen am Praxistelefon und per E-Mail: Öffnungszeiten, Anfahrt, Notfalldienst, Ablauf einer Dentalhygiene, was zur ersten Konsultation mitzubringen ist. Das eigene Praxisteam findet die passende Antwort schnell und passt sie an. Meyssens ist kein externer Telefonservice und kein Callcenter; eine Sprach-KI, die Patientenanrufe entgegennimmt, gehört ausdrücklich nicht dazu.",
+    "problem": "Viele Anrufe und E-Mails drehen sich um dieselben Fragen. Jede Person im Team antwortet etwas anders, und Angaben wie die Nummer des Notfalldienstes oder die Ferienabwesenheit sind an mehreren Orten notiert und nicht immer aktuell. Neue Mitarbeitende fragen nach, bis sie die Antworten kennen, und das Telefon klingelt währenddessen weiter.",
+    "loesung": "Die Praxis hinterlegt ihre Antworten einmal, geordnet nach Thema, zum Beispiel: Öffnungszeiten und Ferien, Anfahrt und Parkplätze, Notfalldienst ausserhalb der Sprechstunde, Ablauf einer Dentalhygiene, Unterlagen für die erste Konsultation, Absage und Verschiebung eines Termins. Am Telefon dient die Sammlung als Nachschlagewerk, bei E-Mails entsteht aus dem passenden Textbaustein ein Antwortentwurf. Ändert sich eine Angabe, wird sie an einer Stelle angepasst und gilt danach in allen Textbausteinen.",
+    "mensch": "Die Praxis entscheidet, welche Antworten in die Sammlung kommen und wer sie ändern darf. Anrufe nimmt weiterhin das eigene Team entgegen. Jeder E-Mail-Entwurf wird gelesen und von einer Person abgeschickt. Fragen zur Behandlung beantwortet weiterhin die Zahnärztin oder der Zahnarzt.",
+    "fuer_wen": "Für Praxisteams mit mehreren MPA oder wechselnden Teilzeitpensen. Für Praxen, die einheitlich antworten und neue Mitarbeitende schneller einarbeiten möchten. Und für Praxen in der Planung oder bei einer Übernahme, die von Anfang an festlegen wollen, wie das Team am Telefon und per Mail antwortet.",
     "aufwand": "klein",
     "personendaten": true,
-    "daten": "Die Sammlung selbst enthält keine Patientendaten. Für Antwortentwürfe auf E-Mails von Patientinnen und Patienten gelten die Bedingungen unten.",
+    "daten": "Die Sammlung selbst enthält keine Patientendaten. Nach Art. 321 StGB unterstehen Zahnärztinnen und Zahnärzte sowie ihre Hilfspersonen dem Berufsgeheimnis; der EDÖB nennt als Beispiele für Hilfspersonen im Gesundheitswesen unter anderem Praxisassistenzen und IT-Dienstleister. Für Antwortentwürfe auf E-Mails von Patientinnen und Patienten gelten die Bedingungen unten.",
     "quellen": [
       {
         "titel": "EDÖB, Bekanntgabe von Patientendaten",
         "url": "https://www.edoeb.admin.ch/de/bekanntgabe-von-patientendaten"
+      },
+      {
+        "titel": "Schweizerisches Strafgesetzbuch, Art. 321 Verletzung des Berufsgeheimnisses (SR 311.0)",
+        "url": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_321"
+      },
+      {
+        "titel": "SSO, Notfälle: kantonale Notfalldienste",
+        "url": "https://www.sso.ch/de/notfaelle"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-11-08",
-    "seo_titel": "Textbausteine für Praxis-Telefon und E-Mail | Meyssens",
-    "seo_beschreibung": "Geprüfte Antworten zu Öffnungszeiten, Notfalldienst und Dentalhygiene an einem Ort, E-Mails als Entwurf. Jetzt unverbindlich anfragen."
+    "geprueft": "2026-11-13",
+    "seo_titel": "Textbausteine für Praxistelefon und E-Mail | Meyssens",
+    "seo_beschreibung": "Kein Callcenter: geprüfte Antworten zu Öffnungszeiten, Notfalldienst und Dentalhygiene für Ihr Praxisteam am Telefon. Jetzt unverbindlich anfragen.",
+    "faq": [
+      {
+        "frage": "Ist das ein Telefonservice oder Callcenter für Arzt- und Zahnarztpraxen?",
+        "antwort": "Nein. Meyssens nimmt keine Anrufe für Praxen entgegen und betreibt kein Callcenter. Die Textbausteine sind ein Nachschlagewerk für das eigene Praxisteam am Telefon und eine Vorlage für E-Mail-Entwürfe, die eine Person aus der Praxis prüft und abschickt."
+      },
+      {
+        "frage": "Was gilt beim Berufsgeheimnis, wenn Dritte am Praxistelefon mithelfen?",
+        "antwort": "Nach Art. 321 StGB unterstehen Zahnärztinnen und Zahnärzte sowie ihre Hilfspersonen dem Berufsgeheimnis. Der EDÖB nennt als Beispiele für Hilfspersonen unter anderem medizinische Sekretariate, Praxisassistenzen und IT-Dienstleister und hält fest, dass nur Daten bekanntgegeben werden dürfen, die für die Aufgabe des Empfängers notwendig sind. Ob ein externer Dienst eingebunden werden kann, ist im Einzelfall zu klären."
+      },
+      {
+        "frage": "Welche Nummer gehört in den Textbaustein zum Notfalldienst?",
+        "antwort": "Die SSO schreibt, dass bei Zahnunfällen oder Zahnschmerzen die Notfalldienste der kantonalen SSO-Sektionen erreichbar sind, und führt die Nummern nach Kanton auf, in einzelnen Kantonen nach Region. Die Praxis hinterlegt die für sie geltende Nummer einmal; ändert sie sich, wird sie an einer Stelle angepasst."
+      },
+      {
+        "frage": "Dürfen Antworten mit Patientenangaben per E-Mail verschickt werden?",
+        "antwort": "Nach dem EDÖB muss die Bekanntgabe von Patientendaten per E-Mail durch Massnahmen wie Verschlüsselung gesichert werden, ausser die Patientin oder der Patient wurde über die Risiken aufgeklärt und hat eingewilligt. Der Baustein erstellt deshalb nur Entwürfe; den Versand entscheidet die Praxis."
+      },
+      {
+        "frage": "Gehört eine Laboranbindung dazu?",
+        "antwort": "Nein. Eine technische Anbindung an ein Labor ist nicht Teil dieses Bausteins. Laboraufträge und Materialbestellungen aus einer festen Vorlage beschreibt der Baustein «Labor- und Materialbestellung» für Zahnarztpraxen."
+      }
+    ],
+    "weiterlesen": [
+      {
+        "url": "/ratgeber/patientenformular-datenschutz/",
+        "titel": "Patientenformulare und Datenschutz",
+        "grund": "Ratgeber: was beim Erfassen von Patientenangaben in der Praxis gilt."
+      },
+      {
+        "url": "/branchen/arztpraxen/",
+        "titel": "Arztpraxen",
+        "grund": "Allgemeine Fragen beantworten und das Praxisteam entlasten, ohne Patientendaten preiszugeben."
+      }
+    ]
   },
   {
     "slug": "schadenmeldung-triage",
     "branche": "immobilienverwaltungen",
-    "name": "Schadenmeldung mit Triage",
-    "kurzbeschreibung": "Mieterinnen und Mieter melden Schäden und Anliegen über ein einziges Formular mit Foto. Der Baustein schlägt Kategorie und Dringlichkeit vor und zeigt bei Notfällen sofort die Notfallnummer an. Ob und wer einen Auftrag erhält, entscheidet die Bewirtschaftung.",
-    "problem": "Schadenmeldungen kommen per Telefon, E-Mail, Brief oder über den Hauswart, oft ohne Foto, Wohnungsnummer oder Angabe, seit wann das Problem besteht. Die Bewirtschafterin fragt nach, sortiert von Hand und schätzt ein, was dringend ist. Bei vielen Liegenschaften gehen einzelne Meldungen zwischen anderen E-Mails unter.",
-    "loesung": "Ein Formular fragt die nötigen Angaben strukturiert ab: Liegenschaft, Wohnung, Art des Schadens, seit wann, Foto und Erreichbarkeit. Bei Notfällen wie austretendem Wasser zeigt es sofort die Notfallnummer an, statt nur eine Meldung anzulegen. Jede Meldung erhält einen Vorschlag für Kategorie und Dringlichkeit, damit die Liste nach Wichtigkeit geordnet ist, und einen Entwurf für die Antwort an die Mieterschaft.",
+    "name": "Schadenmeldung für Mieter mit Triage",
+    "kurzbeschreibung": "Mieterinnen und Mieter melden einen Schaden in der Mietwohnung über ein einziges Online-Formular mit Foto. Der Baustein schlägt Kategorie und Dringlichkeit vor und zeigt bei Notfällen sofort die Notfallnummer an. Ob und wer einen Auftrag erhält, entscheidet die Bewirtschaftung.",
+    "problem": "Schadenmeldungen kommen per Telefon, E-Mail, Brief oder über den Hauswart, oft ohne Foto, Wohnungsnummer oder Angabe, seit wann das Problem besteht. Die Bewirtschafterin fragt nach, sortiert von Hand und schätzt ein, was dringend ist. Bei vielen Liegenschaften gehen einzelne Meldungen zwischen anderen E-Mails unter, obwohl Mieterinnen und Mieter Mängel melden müssen, die sie nicht selber beheben (Art. 257g OR).",
+    "loesung": "Ein Formular fragt die nötigen Angaben strukturiert ab, in vier Schritten: Liegenschaft und Wohnung, Art des Schadens, seit wann, Foto und Erreichbarkeit. Bei Notfällen wie austretendem Wasser zeigt es sofort die Notfallnummer an, statt nur eine Meldung anzulegen. Jede Meldung erhält Eingangsdatum, einen Vorschlag für Kategorie und Dringlichkeit, damit die Liste nach Wichtigkeit geordnet ist, und einen Entwurf für die Antwort an die Mieterschaft.",
     "mensch": "Die Bewirtschaftung prüft den Vorschlag, ändert Kategorie oder Dringlichkeit bei Bedarf und entscheidet, ob und welcher Handwerker beauftragt wird. Antworten an die Mieterschaft gehen erst nach Freigabe hinaus. Der Vorschlag ist eine Hilfe zum Sortieren, kein Entscheid.",
     "fuer_wen": "Für Immobilienverwaltungen mit mehreren Liegenschaften, bei denen Meldungen über viele Kanäle eingehen. Für Verwaltungen, die Hauswart und Bewirtschaftung auf denselben Stand bringen möchten.",
     "aufwand": "klein bis mittel",
@@ -202,25 +255,52 @@
       {
         "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E (Übersichtsseite)",
         "url": "https://www.svit.ch/de/datenschutzgesetz"
+      },
+      {
+        "titel": "Obligationenrecht (SR 220), Mietrecht Art. 256 bis 259g und 267 bis 267a (Fedlex)",
+        "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-26",
-    "seo_titel": "Schadenmeldung für Mieter online mit Triage | Meyssens",
-    "seo_beschreibung": "Mieter melden Schäden per Formular mit Foto, der Baustein schlägt Dringlichkeit vor, die Verwaltung entscheidet. Jetzt unverbindlich anfragen."
+    "geprueft": "2026-11-13",
+    "seo_titel": "Schadenmeldung Mietwohnung online mit Triage | Meyssens",
+    "seo_beschreibung": "Schadenmeldung für Mieter: Formular mit Foto, Vorschlag zur Dringlichkeit, Entscheid bei der Verwaltung. Pflichten nach OR erklärt. Jetzt anfragen.",
+    "faq": [
+      {
+        "frage": "Muss ich als Mieter einen Schaden in der Wohnung melden?",
+        "antwort": "Ja. Nach Art. 257g OR muss die Mieterschaft Mängel, die sie nicht selber zu beseitigen hat, dem Vermieter melden. Unterlässt sie die Meldung, haftet sie für den Schaden, der dem Vermieter daraus entsteht."
+      },
+      {
+        "frage": "Welche Schäden muss der Mieter selber beheben?",
+        "antwort": "Mängel, die sich durch kleine, für den gewöhnlichen Unterhalt erforderliche Reinigungen oder Ausbesserungen beheben lassen, beseitigt die Mieterschaft nach Ortsgebrauch auf eigene Kosten (Art. 259 OR). Im Übrigen muss der Vermieter die Wohnung in einem zum vorausgesetzten Gebrauch tauglichen Zustand erhalten (Art. 256 OR)."
+      },
+      {
+        "frage": "Was kann der Mieter verlangen, wenn ein gemeldeter Mangel bleibt?",
+        "antwort": "Nach Art. 259a OR kann er verlangen, dass der Vermieter den Mangel beseitigt, den Mietzins verhältnismässig herabsetzt oder Schadenersatz leistet; bei einer Wohnung kann er zudem den Mietzins hinterlegen. Die Herabsetzung gilt ab dem Zeitpunkt, in dem der Vermieter vom Mangel erfahren hat, bis zur Behebung (Art. 259d OR). Vor einer Hinterlegung muss er dem Vermieter schriftlich eine angemessene Frist zur Beseitigung setzen und die Hinterlegung androhen (Art. 259g OR)."
+      },
+      {
+        "frage": "Was gilt bei einem Mieterschaden beim Auszug?",
+        "antwort": "Die Mieterschaft gibt die Wohnung in dem Zustand zurück, der sich aus dem vertragsgemässen Gebrauch ergibt (Art. 267 OR). Der Vermieter prüft bei der Rückgabe den Zustand und meldet Mängel, für die die Mieterschaft einzustehen hat, sofort. Versäumt er das, verliert er seine Ansprüche, ausser für Mängel, die bei übungsgemässer Untersuchung nicht erkennbar waren (Art. 267a OR)."
+      },
+      {
+        "frage": "Entscheidet der Baustein, welcher Handwerker kommt?",
+        "antwort": "Nein. Der Baustein schlägt Kategorie und Dringlichkeit vor. Die Bewirtschaftung prüft den Vorschlag, entscheidet über den Auftrag und gibt jede Antwort an die Mieterschaft frei."
+      }
+    ],
+    "weiterlesen": []
   },
   {
     "slug": "besichtigungstermine-mietobjekt",
     "branche": "immobilienverwaltungen",
     "name": "Besichtigungstermine für Mietobjekte",
-    "kurzbeschreibung": "Interessierte wählen einen freien Besichtigungstermin auf einer Buchungsseite, statt per Telefon oder E-Mail einen Termin auszuhandeln. Die Verwaltung legt die Zeitfenster fest und sieht jederzeit, wer kommt. Erinnerungen und Absagen liegen als Entwurf bereit und gehen mit Ihrer Freigabe hinaus.",
-    "problem": "Für eine freie Wohnung melden sich je nach Lage viele Interessierte. Termine werden per Telefon und E-Mail vereinbart, verschoben und abgesagt, und die Teilnehmerliste entsteht von Hand. Wer nicht erscheint, fällt erst vor Ort auf.",
-    "loesung": "Pro Objekt legen Sie Zeitfenster und die Anzahl Plätze fest. Interessierte buchen über einen Link, den Sie im Inserat angeben, und geben nur Name und Kontakt an. Die Teilnehmerliste ist laufend aktuell. Erinnerungen am Vortag und Mitteilungen bei Absagen liegen als Entwürfe bereit. Bewerbungsunterlagen werden bei der Buchung bewusst nicht verlangt.",
-    "mensch": "Sie entscheiden, wann besichtigt wird und ob ein Termin abgesagt wird. Wer die Wohnung erhält, entscheidet ein Mensch, nie die Buchungsseite. Das Anmeldeformular für die Wohnung ist ein eigener Schritt mit eigenen Regeln.",
+    "kurzbeschreibung": "Interessierte wählen einen freien Besichtigungstermin auf einer Buchungsseite, statt per Telefon oder E-Mail einen Termin auszuhandeln. Die Verwaltung legt die Zeitfenster für Objektbesichtigungen fest, auch als Sammelbesichtigung, und sieht jederzeit, wer kommt. Erinnerungen und Absagen liegen als Entwurf bereit und gehen mit Ihrer Freigabe hinaus.",
+    "problem": "Für eine freie Wohnung melden sich je nach Lage viele Interessierte. Termine werden per Telefon und E-Mail vereinbart, verschoben und abgesagt, und die Teilnehmerliste entsteht von Hand. Wer nicht erscheint, fällt erst vor Ort auf. Ist die Wohnung noch bewohnt, kommt die Abstimmung mit der bisherigen Mieterschaft dazu: Die Vermieterschaft hat Anspruch auf eine Besichtigung zur Wiedervermietung (Art. 257h Abs. 2 OR), muss sie aber vorher und rechtzeitig anzeigen und die Störung auf ein Minimum beschränken. Ist die Mieterin oder der Mieter verhindert, ist der Termin laut Mieterinnen- und Mieterverband zu verschieben.",
+    "loesung": "Pro Objekt legen Sie Zeitfenster und die Anzahl Plätze fest, für Einzeltermine oder eine gemeinsame Besichtigung mit mehreren Interessierten. Interessierte buchen über einen Link, den Sie im Inserat angeben, und geben nur Name und Kontakt an. Die Teilnehmerliste ist laufend aktuell. Erinnerungen am Vortag, Mitteilungen bei Absagen und die Ankündigung an die bisherige Mieterschaft liegen als Entwürfe bereit. Bewerbungsunterlagen werden bei der Buchung bewusst nicht verlangt: Das Anmeldeformular folgt gewöhnlich erst nach der Besichtigung.",
+    "mensch": "Sie entscheiden, wann besichtigt wird und ob ein Termin abgesagt wird. Ob ein Zeitfenster für die bisherige Mieterschaft zumutbar ist, klären Sie mit ihr, bevor Sie es freigeben. Wer die Wohnung erhält, entscheidet ein Mensch, nie die Buchungsseite. Das Anmeldeformular für die Wohnung ist ein eigener Schritt mit eigenen Regeln.",
     "fuer_wen": "Für Verwaltungen, die regelmässig Wohnungen oder Geschäftsräume neu vermieten. Für Bewirtschaftungen, die Sammelbesichtigungen planbar machen möchten.",
     "aufwand": "klein",
     "personendaten": true,
-    "daten": "Für die Buchung genügen Name, E-Mail und Telefon. Geplant ist, diese Angaben nach der Besichtigung zu löschen, wenn keine Anmeldung folgt.",
+    "daten": "Für die Buchung genügen Name, E-Mail und Telefon. Geplant ist, diese Angaben nach der Besichtigung zu löschen, wenn keine Anmeldung folgt. Fotos aus einer bewohnten Wohnung, auf denen persönliche Gegenstände zu sehen sind, brauchen laut Mieterinnen- und Mieterverband das Einverständnis der Mieterschaft.",
     "quellen": [
       {
         "titel": "EDÖB, Merkblatt zu Anmeldeformularen für Mietwohnungen (15.07.2025)",
@@ -229,12 +309,46 @@
       {
         "titel": "SVIT Schweiz, Branchenempfehlung Datenschutz, Anhang E (Übersichtsseite)",
         "url": "https://www.svit.ch/de/datenschutzgesetz"
+      },
+      {
+        "titel": "Gerichte des Kantons Zürich, Duldungspflichten des Mieters (Art. 257h OR)",
+        "url": "https://www.gerichte-zh.ch/de/themen/miete/rechte-und-pflichten/duldungspflichten-des-mieters"
+      },
+      {
+        "titel": "Mieterinnen- und Mieterverband Schweiz, Miettipp Zutrittsrecht",
+        "url": "https://www.mieterverband.ch/news/miettipp-zutrittsrecht/"
+      },
+      {
+        "titel": "Mieterinnen- und Mieterverband Schweiz, Fallbeispiele Wohnungsbesichtigung",
+        "url": "https://mieterverband.ch/mv/mietrecht-beratung/ratgeber-mietrecht/fallbeispiele/v-z/wohnungsbesichtigung.html"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-26",
-    "seo_titel": "Besichtigungstermine online buchen lassen | Meyssens",
-    "seo_beschreibung": "Interessenten buchen freie Besichtigungstermine selbst, nur mit Name und Kontakt. Weniger Telefon für die Verwaltung. Jetzt unverbindlich anfragen."
+    "geprueft": "2026-11-13",
+    "seo_titel": "Besichtigungstermin für Mietobjekte online buchen | Meyssens",
+    "seo_beschreibung": "Besichtigungstermine ohne Hin und Her am Telefon: Interessierte buchen selbst, die Verwaltung legt Zeitfenster fest. Jetzt unverbindlich anfragen.",
+    "faq": [
+      {
+        "frage": "Muss die Mieterschaft einen Besichtigungstermin für die Wiedervermietung zulassen?",
+        "antwort": "Art. 257h Abs. 2 OR gibt der Vermieterschaft Anspruch auf Besichtigung zum Zweck der Wiedervermietung. Laut Mieterinnen- und Mieterverband muss die Mieterschaft sie dulden, wenn das Mietverhältnis gekündigt ist oder das Ende eines befristeten Mietverhältnisses kurz bevorsteht. Die Besichtigung ist vorher und rechtzeitig anzuzeigen, die Störung auf ein Minimum zu beschränken."
+      },
+      {
+        "frage": "Wie früh muss ein Besichtigungstermin angekündigt werden?",
+        "antwort": "Art. 257h OR verlangt eine rechtzeitige Anzeige. Der Mieterinnen- und Mieterverband nennt in der Regel mindestens 24 bis 48 Stunden, in Standardverträgen seien häufig 48 Stunden vorgesehen. Einen spontanen Besuch ohne Ankündigung muss die Mieterschaft laut Mieterverband nicht hinnehmen."
+      },
+      {
+        "frage": "Ist ein Begehungstermin für den Unterhalt auch ohne Schaden zulässig?",
+        "antwort": "Art. 257h Abs. 2 OR nennt neben Verkauf und Wiedervermietung auch den Unterhalt. Laut Mieterinnen- und Mieterverband setzt eine solche Besichtigung keinen Schaden voraus, ist aber nur in grösseren Abständen zulässig, etwa alle ein bis zwei Jahre. Kontrollen, ob aufgeräumt und geputzt ist, sind nicht zulässig."
+      },
+      {
+        "frage": "Können mehrere Interessierte zur gleichen Objektbesichtigung kommen?",
+        "antwort": "Ja. Die Mieterschaft kann laut Mieterinnen- und Mieterverband sogar verlangen, dass Besichtigungen mit mehreren Interessierten gemeinsam durchgeführt werden, damit die Störung gering bleibt. Der Baustein sieht dafür Zeitfenster mit mehreren Plätzen vor."
+      },
+      {
+        "frage": "Wann füllen Interessierte das Anmeldeformular aus?",
+        "antwort": "Gewöhnlich nach der Wohnungsbesichtigung, wie der EDÖB in seinem Merkblatt zu Anmeldeformularen festhält. Bei der Buchung des Besichtigungstermins fragt der Baustein deshalb nur Name und Kontakt ab."
+      }
+    ]
   },
   {
     "slug": "uebergabeprotokoll",
@@ -266,12 +380,12 @@
   {
     "slug": "zeiterfassung-sia-phasen",
     "branche": "architekturbueros",
-    "name": "Zeiterfassung nach Projekt und Phase",
-    "kurzbeschreibung": "Stunden werden direkt dem Projekt und der Phase zugeordnet, am Computer oder unterwegs auf dem Handy. Am Monatsende liegt ein Rapport pro Projekt und Phase als Entwurf bereit. Er dient als Grundlage für Zeithonorar und Akontorechnung.",
-    "problem": "Stunden werden oft am Ende der Woche aus dem Gedächtnis in eine Tabelle übertragen, nicht immer mit klarer Zuordnung zu Projekt und Phase. Am Monatsende sucht jemand die Zahlen zusammen, um Honorar und Projektstand zu beurteilen. Fehlende Einträge fallen erst auf, wenn die Rechnung ansteht.",
-    "loesung": "Alle Mitarbeitenden erfassen Stunden mit Projekt, Phase und kurzer Tätigkeit, die Phasen so, wie Ihr Büro sie verwendet, etwa angelehnt an SIA 102. Der Baustein weist auf fehlende Zuordnungen und Lücken in der Woche hin und fasst am Monatsende alles zu einem Rapport pro Projekt und Phase zusammen. Der Rapport lässt sich als Tabelle exportieren.",
+    "name": "Zeiterfassung im Architekturbüro nach SIA-Phasen",
+    "kurzbeschreibung": "Stunden werden direkt dem Projekt und der Phase nach SIA 102 zugeordnet, etwa 31 Vorprojekt oder 32 Bauprojekt, am Computer oder unterwegs auf dem Handy. Am Monatsende liegt ein Rapport pro Projekt und Phase als Entwurf bereit. Er dient als Grundlage für Zeithonorar und Akontorechnung.",
+    "problem": "Stunden werden oft am Ende der Woche aus dem Gedächtnis in eine Tabelle übertragen, nicht immer mit klarer Zuordnung zu Projekt und Phase. Wann etwa das Bauprojekt endete und das Bewilligungsverfahren begann, lässt sich im Nachhinein schwer nachvollziehen. Am Monatsende sucht jemand die Zahlen zusammen, um Honorar und Projektstand zu beurteilen. Fehlende Einträge fallen erst auf, wenn die Rechnung ansteht.",
+    "loesung": "Alle Mitarbeitenden erfassen Stunden mit Projekt, Phase und kurzer Tätigkeit. Als Vorlage dienen die sechs Phasen der Ordnung SIA 102:2020, auf Wunsch mit Teilphasen wie 31 Vorprojekt, 32 Bauprojekt oder 33 Bewilligungsverfahren. Ihr Büro kann die Liste kürzen oder eigene Phasen ergänzen. Der Baustein weist auf fehlende Zuordnungen und Lücken in der Woche hin und fasst am Monatsende alles zu einem Rapport pro Projekt und Phase zusammen. Der Rapport lässt sich als Tabelle exportieren.",
     "mensch": "Die Projektleitung prüft den Monatsrapport, korrigiert falsche Zuordnungen und gibt ihn frei. Welche Stunden verrechnet werden, entscheidet das Büro. Der Baustein bewertet keine Leistung einzelner Personen.",
-    "fuer_wen": "Für Architekturbüros mit mehreren laufenden Projekten, die nach Zeitaufwand oder nach Phasen abrechnen. Für Büros, die bisher mit Tabellen oder Papierrapporten arbeiten.",
+    "fuer_wen": "Für Architekturbüros mit mehreren laufenden Projekten, die nach Zeitaufwand oder nach Phasen abrechnen, auch wenn sie nur einzelne Phasen übernehmen. Für Büros, die bisher mit Tabellen oder Papierrapporten arbeiten.",
     "aufwand": "klein",
     "personendaten": true,
     "daten": "Erfasst werden Arbeitszeiten von Mitarbeitenden, also Personendaten. Einsehen sollen sie nur die Person selbst und die Projektleitung.",
@@ -283,12 +397,51 @@
       {
         "titel": "WEKA, Auftragsbearbeitung: was KMU beim Einsatz von Dienstleistern beachten müssen",
         "url": "https://www.weka.ch/themen/datenschutz-und-it-recht/datenschutz-umsetzen/article/auftragsbearbeitung-was-muessen-kmu-beim-einsatz-von-auslaendischen-dienstleistern-beachten/"
+      },
+      {
+        "titel": "SIA, Ordnung SIA 102:2020, Leseprobe mit Inhaltsverzeichnis und Gültigkeit",
+        "url": "https://shop.sia.ch/067cf248-b2aa-4424-8508-74e9efabacab/D/DownloadAnhang"
+      },
+      {
+        "titel": "KBOB/IPB, Informationsfluss-Schema SIA 112/SIA 113, Projektdokumentation (2014)",
+        "url": "https://www.kbob.admin.ch/dam/de/sd-web/IhaOr56CsWe6/20140501_Informationsfluss-Schema_PD-V_DE.pdf"
+      },
+      {
+        "titel": "SIA Sektion Bern, Fachgerecht bauen: Ein Leitfaden",
+        "url": "https://orgacms.sia.ch/de/api/getMedia/1801"
+      },
+      {
+        "titel": "SIA, Entwurf prSIA 102:2024-11 (Vernehmlassung, nicht gültig)",
+        "url": "https://cms.sia.ch/de/api/getMedia/990"
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-10-26",
-    "seo_titel": "Zeiterfassung Architekturbüro nach SIA-Phasen | Meyssens",
-    "seo_beschreibung": "Stunden pro Projekt und Phase erfassen, angelehnt an SIA 102, mit Monatsrapport für die Abrechnung. Für Büros in der Schweiz. Jetzt anfragen."
+    "geprueft": "2026-11-13",
+    "seo_titel": "Zeiterfassung im Architekturbüro nach SIA-Phasen | Meyssens",
+    "seo_beschreibung": "Stunden pro Projekt und SIA-Phase erfassen, vom Vorprojekt bis zur Ausführung, mit Monatsrapport fürs Zeithonorar. Für Architekturbüros. Jetzt anfragen.",
+    "faq": [
+      {
+        "frage": "Welche Phasen hat die SIA 102?",
+        "antwort": "Die Ordnung SIA 102:2020 für Leistungen und Honorare der Architektinnen und Architekten gilt seit dem 1. Januar 2020. Ihr Leistungsbeschrieb ist in sechs Phasen gegliedert: 1 Strategische Planung, 2 Vorstudien, 3 Projektierung, 4 Ausschreibung, 5 Realisierung und 6 Bewirtschaftung."
+      },
+      {
+        "frage": "Was bedeuten Nummern wie 31, 32 oder 53?",
+        "antwort": "Es sind Teilphasen, die erste Ziffer nennt die Phase. Im Informationsfluss-Schema SIA 112/SIA 113 von KBOB und IPB (2014) sind es unter anderem 21 Machbarkeitsstudie, Projektdefinition, 22 Auswahlverfahren, 31 Vorprojekt, 32 Bauprojekt, 33 Bewilligungsverfahren, 41 Ausschreibung, Offertvergleich, Vergabeantrag und 53 Inbetriebnahme, Abschluss."
+      },
+      {
+        "frage": "Was unterscheidet Vorprojekt und Bauprojekt?",
+        "antwort": "Nach dem Leitfaden «Fachgerecht bauen» der SIA-Sektion Bern werden im Vorprojekt (31) Konzept, Form, Materialien und Tragwerk festgelegt. Die Kostenschätzung hat eine Genauigkeit von plus/minus 15 Prozent, wenn nichts anderes vereinbart ist. Im Bauprojekt (32) entstehen die Pläne für das Baugesuch und ein Kostenvoranschlag mit plus/minus 10 Prozent. Das Baugesuch gehört zur Teilphase 33."
+      },
+      {
+        "frage": "Warum Stunden nach Phase erfassen?",
+        "antwort": "Die SIA 102:2020 regelt in Art. 6 die Honorarberechnung nach dem effektiven Zeitaufwand, nach Qualifikationskategorien, mittleren Stundenansätzen oder Gehältern. Mit Stunden pro Phase sieht das Büro, wie viel Aufwand in welcher Phase steckt, und kann ihn mit der Honorarofferte vergleichen."
+      },
+      {
+        "frage": "Wird die SIA 102 überarbeitet?",
+        "antwort": "Der SIA hat den Entwurf prSIA 102:2024-11 bis zum 28. Februar 2025 in die Vernehmlassung gegeben. Laut SIA hat der Entwurf keine Gültigkeit und darf nicht angewendet werden. Er sieht unter anderem eine Phase 0 Initialisierung und eine neue Teilphase 41 Ausschreibungsplanung vor. Den aktuellen Stand der Revision veröffentlicht der SIA. Die Phasenliste im Baustein lässt sich an die Ausgabe anpassen, die Ihr Büro verwendet."
+      }
+    ],
+    "weiterlesen": []
   },
   {
     "slug": "akontorechnung-architektur",
@@ -478,11 +631,11 @@
     "slug": "honorarofferte-sia-102",
     "branche": "architekturbueros",
     "name": "Honorarofferte nach SIA 102",
-    "kurzbeschreibung": "Aus Bausteinen für Leistungen, Phasen und Stundenansätze entsteht ein Entwurf der Honorarofferte im Layout Ihres Büros. Die Projektleitung prüft Leistungsumfang und Berechnung und gibt die Offerte frei.",
-    "problem": "Jede Honorarofferte wird oft neu zusammengesetzt: Leistungsbeschrieb aus einer alten Offerte kopiert, Stunden pro Phase geschätzt, Ansätze nachgeschlagen, Nebenkosten und Mehrwertsteuer ergänzt. Das kostet Zeit, und Unterschiede zwischen Offerten desselben Büros fallen erst später auf. Gleichzeitig kann eine Offerte mit Frist bis zu deren Ablauf binden; das ist im Einzelfall zu prüfen.",
-    "loesung": "Das Büro hinterlegt seine Leistungsbausteine, gegliedert nach den Phasen, mit denen es arbeitet, etwa angelehnt an SIA 102 und SIA 112, dazu Kategorien und Stundenansätze. Für eine neue Anfrage wählt die Projektleitung die Bausteine aus und schätzt die Stunden pro Phase. Der Baustein rechnet Honorar, Nebenkosten und Mehrwertsteuer zusammen, setzt eine Gültigkeitsfrist und legt den Entwurf im Layout des Büros ab. Ein Vergleich mit früheren Offerten zeigt, wo die Schätzung stark abweicht.",
-    "mensch": "Leistungsumfang, Stundenschätzung, Ansätze und Honorarmodell legt das Büro fest, nicht der Baustein. Die Projektleitung prüft jede Berechnung und gibt die Offerte frei. Den Versand übernimmt das Büro selbst.",
-    "fuer_wen": "Für Architekturbüros, die regelmässig Honorarofferten für private oder öffentliche Bauherrschaften erstellen. Für Büros, die nach Zeitaufwand oder mit Pauschalen offerieren und ihre Leistungsbeschriebe vereinheitlichen möchten.",
+    "kurzbeschreibung": "Aus Bausteinen für Leistungen pro SIA-Phase, Kategorien und Stundenansätzen entsteht ein Entwurf der Honorarofferte im Layout Ihres Büros. Die Projektleitung prüft Leistungsumfang und Honorarberechnung und gibt die Offerte frei.",
+    "problem": "Jede Honorarofferte wird oft neu zusammengesetzt: Leistungsbeschrieb aus einer alten Offerte kopiert, Stunden pro Phase in einer eigenen Excel-Tabelle geschätzt, Ansätze nachgeschlagen, Nebenkosten und Mehrwertsteuer ergänzt. Das kostet Zeit, und Unterschiede zwischen Offerten desselben Büros fallen erst später auf. Feste Frankenbeträge pro Kategorie nennen die KBOB-Empfehlungen 2026 nicht: Im freihändigen Verfahren sind die Stundenansätze exkl. MWST auftragsbezogen zu verhandeln, und öffentliche Beschaffungsstellen können eigene Höchstansätze empfehlen oder vorgeben. Gleichzeitig kann eine Offerte mit Frist bis zu deren Ablauf binden; das ist im Einzelfall zu prüfen.",
+    "loesung": "Das Büro hinterlegt seine Leistungsbausteine, gegliedert nach den Phasen, mit denen es arbeitet, etwa angelehnt an SIA 102 und SIA 112: strategische Planung, Vorstudien, Projektierung, Ausschreibung, Realisierung und Bewirtschaftung. Dazu kommen die Qualifikationskategorien A bis G und die Stundenansätze des Büros. Für eine neue Anfrage wählt die Projektleitung die Leistungen pro Phase, schätzt die Stunden pro Kategorie, wählt das Honorarmodell (Zeitaufwand mit Kostendach, Pauschale oder Globale) und legt Nebenkosten und Gültigkeitsfrist fest. Der Baustein rechnet Honorar, Nebenkosten und Mehrwertsteuer zusammen und legt den Entwurf mit einer Leistungstabelle pro Phase im Layout des Büros ab. Ein Vergleich mit früheren Offerten zeigt, wo die Schätzung stark abweicht.",
+    "mensch": "Leistungsumfang, Stundenschätzung, Ansätze und Honorarmodell legt das Büro fest, nicht der Baustein. Ob eine Teuerung nach SIA 126 verrechnet wird, muss im Vertrag ausdrücklich vereinbart werden; das klärt das Büro mit der Bauherrschaft. Die Projektleitung prüft jede Berechnung und gibt die Offerte frei. Den Versand übernimmt das Büro selbst.",
+    "fuer_wen": "Für Architekturbüros, die regelmässig Honorarofferten für private oder öffentliche Bauherrschaften erstellen, auch wenn eine Beschaffungsstelle Höchstansätze oder einen Anforderungsfaktor vorgibt. Für Büros, die nach Zeitaufwand oder mit Pauschalen offerieren und ihre Leistungsbeschriebe vereinheitlichen möchten.",
     "aufwand": "mittel",
     "personendaten": false,
     "daten": "Der Baustein arbeitet mit Leistungsbausteinen, Ansätzen und Projektangaben. Personendaten kommen nur als Kontaktangaben der Bauherrschaft vor. Die Bedingungen für Personendaten gelten trotzdem, sobald solche Angaben gespeichert werden.",
@@ -497,13 +650,25 @@
       }
     ],
     "status": "Individuell auf Anfrage",
-    "geprueft": "2026-11-08",
-    "seo_titel": "Honorarofferte nach SIA 102 erstellen | Meyssens",
-    "seo_beschreibung": "Honorarofferten aus Leistungsbausteinen, Phasen und Stundenansätzen als Entwurf. Die Projektleitung prüft und gibt frei. Jetzt unverbindlich anfragen.",
+    "geprueft": "2026-11-13",
+    "seo_titel": "Honorarofferte nach SIA 102: Phasen und Honorar | Meyssens",
+    "seo_beschreibung": "Honorar nach SIA 102 berechnen: Phasen, KBOB-Kategorien, Nebenkosten und MWST als Offertentwurf. Die Projektleitung gibt frei. Jetzt anfragen.",
     "faq": [
       {
         "frage": "Wie wird ein Architektenhonorar heute berechnet?",
-        "antwort": "Die KBOB-Empfehlungen 2026 nennen drei Wege: nach effektivem Zeitaufwand, mit Festpreisen als Pauschale oder Globale, oder nach einem individuell vereinbarten Modell. Das Modell nach aufwandbestimmenden Baukosten betrifft nur noch Verträge, die vor Ende 2019 abgeschlossen wurden."
+        "antwort": "Die KBOB-Empfehlungen 2026 nennen drei Wege: nach effektivem Zeitaufwand, mit Festpreisen als Pauschale oder Globale, oder nach einem individuell vereinbarten Modell. Das bis 2019 empfohlene Modell nach aufwandbestimmenden Baukosten behandeln sie nur noch für Verträge, die vor Ende 2019 abgeschlossen wurden."
+      },
+      {
+        "frage": "Wie berechnet sich ein Honorar nach mittlerem Stundenansatz?",
+        "antwort": "Nach den KBOB-Empfehlungen 2026 für Planungsgruppen: Summe der Arbeitsstunden aller direkt am Auftrag eingesetzten Mitarbeitenden mal angebotener mittlerer Stundenansatz mal Anforderungsfaktor gemäss Vorgabe der Beschaffungsstelle. Nebenkosten sind generell als Pauschale in Prozent der Honorarsumme festzulegen, sonst mit einem Kostendach."
+      },
+      {
+        "frage": "Gibt es die KBOB-Stundenansätze 2026 in Franken?",
+        "antwort": "Nein. Im freihändigen Verfahren sind die Stundenansätze exkl. MWST nach Kategorien auftragsbezogen zu verhandeln. Die Beschaffungsstellen von Gemeinden, Städten, Kantonen oder des Bundes können eigene Höchstansätze empfehlen oder vorgeben oder darauf verzichten."
+      },
+      {
+        "frage": "Welche SIA-Grundlagen empfiehlt die KBOB für die Leistungsbeschreibung?",
+        "antwort": "Die Verständigungsnormen SIA 111 (Modell Planung und Beratung) und SIA 112 (Modell Bauplanung) sowie die Ordnungen SIA 102, 103, 104, 105, 108 und 110 für Leistungen und Honorare, Ausgaben 2020."
       },
       {
         "frage": "Rechnet der Baustein Honorare nach Baukosten?",
@@ -513,7 +678,8 @@
         "frage": "Wie lange ist eine Offerte verbindlich?",
         "antwort": "Das ist im Einzelfall zu prüfen. Wer in der Offerte eine Frist setzt, sollte davon ausgehen, bis zu deren Ablauf gebunden zu sein. Der Baustein setzt die Frist, die Ihr Büro vorgibt, sichtbar in den Entwurf."
       }
-    ]
+    ],
+    "weiterlesen": []
   },
   {
     "slug": "online-terminanfrage-arztpraxis",
