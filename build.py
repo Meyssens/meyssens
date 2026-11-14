@@ -266,8 +266,10 @@ def vorschau(ansichten, p):
 
 
 def anfrage_formular(seite, org_label, i18n, org_leer=None):
-    # Anfrageformular "Pilot anfragen" (Gemeinden- und Unternehmen-Seite). Das Ziel steht nur in assets/anfrage.js
-    # (ANFRAGE_ZIEL); ohne JavaScript öffnet das Formular das E-Mail-Programm. i18n: data-i18n-Schlüssel für die Gemeinden-Seite
+    # Anfrageformular "Pilot anfragen" (Gemeinden- und Unternehmen-Seite). Mit JavaScript sendet assets/anfrage.js an
+    # ANFRAGE_ZIEL und öffnet nur bei einem Fehler ein E-Mail (mailto-Rückfall nur im Skript, nicht im action:
+    # Chrome wertet ein mailto-action als unsichere Anfrage). Ohne JavaScript geht das Formular direkt an FORMULAR_ZIEL.
+    # i18n: data-i18n-Schlüssel für die Gemeinden-Seite
     def k(schluessel):
         return ' data-i18n="%s"' % schluessel if i18n else ""
     pfeil = ('<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" '
@@ -281,7 +283,7 @@ def anfrage_formular(seite, org_label, i18n, org_leer=None):
     einw = ('Ich bin einverstanden, dass Meyssens meine Angaben zur Bearbeitung dieser Anfrage verarbeitet. Mehr dazu in der '
             '<a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Datenschutzerklärung</a>.')
     return ('<div class="anfrage" id="anfrage">\n'
-            '  <form class="anfrage-form" data-anfrage action="mailto:lionel@meyssens.ch" method="post" enctype="text/plain" novalidate aria-labelledby="anfrage-titel">\n'
+            '  <form class="anfrage-form" data-anfrage action="%s" method="post" novalidate aria-labelledby="anfrage-titel">\n'
             '    <h3 class="anfrage-titel" id="anfrage-titel"%s>Pilot anfragen</h3>\n'
             '    <p class="anfrage-hinweis"%s>Felder mit * sind Pflichtfelder.</p>\n'
             '    <input type="hidden" name="_subject" value="Pilot anfragen über meyssens.ch (%s)">\n'
@@ -298,7 +300,7 @@ def anfrage_formular(seite, org_label, i18n, org_leer=None):
             '    <p class="anfrage-status" role="status" aria-live="polite"></p>\n'
             '  </form>\n'
             '  <div class="anfrage-dank" tabindex="-1" hidden><h3></h3><p></p></div>\n'
-            '</div>' % (k("anf.titel"), k("anf.pflicht"), seite, seite,
+            '</div>' % (FORMULAR_ZIEL, k("anf.titel"), k("anf.pflicht"), seite, seite,
                         feld("organisation", org_label, "anf.org", "text", "organization").replace(
             'name="organisation"', 'name="organisation" data-leer="%s"' % org_leer if org_leer else 'name="organisation"'),
                         feld("name", "Name", "anf.name", "text", "name"),
