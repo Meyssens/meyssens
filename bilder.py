@@ -2,7 +2,7 @@
 """Erzeugt die teilbaren Bilder aus den Daten. Aufruf im Projektordner: python3 bilder.py
 
 - assets/og/branche-<slug>.png: Open-Graph-Bild 1200x630 pro Branche (Branchenname und Kurztext aus
-  branchen.json bzw. artikel.json), im Markenstil mit Syne/Inter und Akzentfarbe
+  branchen.json bzw. artikel.json), im Markenstil mit Inter und Akzentfarbe
 - assets/og/ratgeber-<slug>.png, assets/og/baustein-<slug>.png: Open-Graph-Bild 1200x630 für die Ratgeber und
   Bausteinseiten der Branchen mit Abschnitt "Automatisierungen" (Titel und Beschreibung aus artikel.json bzw. produkte.json)
 - assets/ablauf/<slug>.png: die Ablauf-Kette der Branchen mit Abschnitt "Was sich automatisieren lässt" als Bild
@@ -26,7 +26,7 @@ ART = {"baustein": ("Läuft automatisch, als Entwurf", "#5b5bff", "#ffffff"), "m
        "spaeter": ("Später geplant", "transparent", "#3b3bd6"), "vorhanden": ("Ihre Software", "#d9d9e6", "#07071a")}
 
 STIL = """
-@font-face{font-family:'Syne';font-weight:600 800;src:url(%s/syne-latin.woff2) format('woff2')}
+@font-face{font-family:'Inter';font-weight:800;src:url(%s/inter-800-latin.woff2) format('woff2')}
 @font-face{font-family:'Inter';font-weight:300 500;src:url(%s/inter-latin.woff2) format('woff2')}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Inter',sans-serif;color:#07071a;background:#f5f5f7;-webkit-font-smoothing:antialiased}
@@ -38,7 +38,7 @@ OG = """<!doctype html><html lang="de-CH"><head><meta charset="utf-8"><style>%s
 .logo{height:44px;width:auto;align-self:flex-start}
 .chip{margin-top:auto;align-self:flex-start;font-size:22px;font-weight:500;color:#0000ff;background:rgba(0,0,255,.08);
       border:1px solid rgba(0,0,255,.2);border-radius:999px;padding:8px 20px}
-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:%dpx;line-height:1.02;letter-spacing:-.03em;margin-top:22px;max-width:1056px;white-space:nowrap}
+h1{font-family:'Inter',sans-serif;font-weight:800;font-size:%dpx;line-height:1.02;letter-spacing:-.045em;margin-top:22px;max-width:1056px;white-space:nowrap}
 p{font-size:30px;line-height:1.35;color:#3c3c60;margin-top:20px;max-width:960px}
 .fuss{display:flex;justify-content:space-between;align-items:center;margin-top:34px;font-size:22px;color:#50507a}
 .zwei h1{white-space:normal;font-size:60px;line-height:1.06}
@@ -58,7 +58,7 @@ ABLAUF = """<!doctype html><html lang="de-CH"><head><meta charset="utf-8"><style
 .kopf{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
 .logo{height:34px;width:auto}
 .label{font-size:18px;font-weight:500;color:#0000ff;letter-spacing:.08em;text-transform:uppercase}
-h1{font-family:'Syne',sans-serif;font-weight:800;font-size:46px;line-height:1.08;letter-spacing:-.03em;margin:10px 0 26px}
+h1{font-family:'Inter',sans-serif;font-weight:800;font-size:46px;line-height:1.08;letter-spacing:-.045em;margin:10px 0 26px}
 .legende{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:28px;font-size:17px;color:#3c3c60}
 .legende span{display:inline-flex;align-items:center;gap:8px}
 .punkt{width:16px;height:16px;border-radius:50%%;border:2px solid transparent;display:inline-block}
@@ -122,7 +122,7 @@ def main():
         for slug, name, kurz in eintraege:
             groesse = 96 if len(name) <= 18 else 80 if len(name) <= 26 else 66
             zeige(OG % (STIL, groesse, "", LOGO, "Branche · Schweiz", html.escape(name), html.escape(kurz)))
-            # Titel auf eine Zeile einpassen: Syne ist breit, lange Namen werden verkleinert
+            # Titel auf eine Zeile einpassen: lange Namen werden verkleinert
             seite.evaluate("""() => { const h = document.querySelector('h1'); let g = parseFloat(getComputedStyle(h).fontSize);
                 while (h.scrollWidth > 1056 && g > 40) { g -= 2; h.style.fontSize = g + 'px'; } }""")
             ziel = ROOT / "assets" / "og" / ("branche-%s.png" % slug)
