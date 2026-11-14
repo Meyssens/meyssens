@@ -1,0 +1,181 @@
+{
+ "unternehmen": [
+  {
+   "id": "belege",
+   "titel": "Belege automatisch erfassen",
+   "text": "Sie fotografieren eine Rechnung oder leiten sie per E-Mail weiter. Lieferant, Datum, Betrag und Mehrwertsteuer werden ausgelesen und als Buchungsvorschlag vorbereitet.",
+   "automatisch": "Felder auslesen, Konto vorschlagen, Beleg ablegen.",
+   "mensch": "Sie prüfen den Vorschlag und buchen. Was sich nicht sicher lesen lässt, wird markiert statt geraten.",
+   "geraet": "Belegerfassung",
+   "beschreibung": "Eine fotografierte Rechnung über CHF 432.40 wird ausgelesen. Lieferant, Datum, Betrag, Mehrwertsteuer und Konto füllen sich, danach erscheint der Buchungsvorschlag 4000 Materialaufwand an 2000 Kreditoren. Gebucht wird erst nach Ihrer Prüfung."
+  },
+  {
+   "id": "posteingang",
+   "titel": "Posteingang sortieren",
+   "text": "Eingehende E-Mails werden gelesen und markiert, zum Beispiel als Offerte, Termin oder Reklamation. Zu jeder Nachricht entsteht ein Antwortentwurf in Ihrem Ton.",
+   "automatisch": "Markieren, nach Dringlichkeit ordnen, Antwort entwerfen.",
+   "mensch": "Kein Entwurf verlässt Ihren Betrieb ohne Ihre Freigabe.",
+   "geraet": "Posteingang",
+   "beschreibung": "Drei E-Mails treffen ein und werden als Offerte, Termin und Reklamation markiert. Für die Offertanfrage erscheint ein Antwortentwurf, der erst nach Ihrer Freigabe versendet wird."
+  },
+  {
+   "id": "auftrag-rechnung",
+   "titel": "Vom Auftrag zur Rechnung",
+   "text": "Der Rapport wird vor Ort auf dem Handy erfasst: Arbeit, Material, Fotos und Unterschrift. Daraus entstehen der Arbeitsbericht und ein Rechnungsentwurf, ohne dass im Büro jemand abtippt.",
+   "automatisch": "Arbeitsbericht erstellen, Arbeitszeit und Material in den Rechnungsentwurf übernehmen.",
+   "mensch": "Sie prüfen Ansätze und Positionen und geben die Rechnung frei.",
+   "geraet": "Rapport und Rechnung",
+   "beschreibung": "Ein Rapport auf dem Handy mit 2.5 Stunden Arbeit und 4 Steckdosen wird zum Arbeitsbericht und zu einem Rechnungsentwurf über CHF 324.30 inklusive 8.1 Prozent Mehrwertsteuer. Die Rechnung geht erst nach Ihrer Freigabe hinaus."
+  },
+  {
+   "id": "fristen",
+   "titel": "Fristen und Erinnerungen",
+   "text": "Offerten, Wartungen, Kontrollen und Zahlungsfristen stehen auf einer Zeitachse. Vor jeder Frist kommt rechtzeitig eine Erinnerung per E-Mail oder SMS.",
+   "automatisch": "Erinnerungen an Sie und Ihr Team, Entwürfe für Erinnerungen an Ihre Kunden.",
+   "mensch": "Erinnerungen an Kunden geben Sie frei, einzeln oder als Liste.",
+   "geraet": "Fristen",
+   "beschreibung": "Auf einer Zeitachse rückt der heutige Tag vor. Vor dem Ablauf einer Offerte geht automatisch eine E-Mail an Sie. Für die fällige Wartung entsteht eine SMS an den Kunden als Entwurf, die nach Ihrer Freigabe gesendet wird."
+  },
+  {
+   "id": "auswertung",
+   "titel": "Auswertung und Wochenbericht",
+   "text": "Die wichtigsten Kennzahlen Ihres Betriebs auf einer Seite, zum Beispiel offene Offerten, offene Rechnungen und Termine der Woche. Jeden Montag kommt ein kurzer Wochenbericht per E-Mail.",
+   "automatisch": "Zahlen aus Ihren Abläufen zusammenführen, den Bericht erstellen und Ihnen senden.",
+   "mensch": "Welche Kennzahlen zählen, legen Sie fest.",
+   "geraet": "Übersicht",
+   "beschreibung": "Eine Übersicht zeigt 6 offene Offerten, 4 offene Rechnungen und 12 Termine in dieser Woche sowie erledigte Aufträge pro Wochentag. Daraus entsteht ein Wochenbericht, der am Montagmorgen per E-Mail an Sie geht."
+  },
+  {
+   "id": "schnittstellen",
+   "titel": "Schnittstellen zwischen Ihren Programmen",
+   "text": "Kalender, Buchhaltung und E-Mail arbeiten oft nebeneinander her. Wir verbinden sie, damit eine Angabe einmal erfasst wird und dort ankommt, wo sie gebraucht wird.",
+   "automatisch": "Termine, Kontakte und Rechnungsdaten abgleichen, damit nichts doppelt getippt wird.",
+   "mensch": "Welche Programme verbunden werden, klären wir mit Ihnen: nach Absprache, wenn eine Schnittstelle besteht. Eine Anbindung sagen wir erst zu, wenn wir die Schnittstelle geprüft haben.",
+   "geraet": "Schnittstellen",
+   "beschreibung": "Eine Terminbestätigung per E-Mail wird einmal erfasst. Daraus entstehen automatisch ein Kalendereintrag und ein vorbereiteter Rechnungsentwurf in der Buchhaltung, ohne dass etwas doppelt getippt wird."
+  }
+ ],
+ "branchen": {
+  "bauunternehmen": {
+   "titel": "Mängel auf der Baustelle erfassen",
+   "text": "Ein Mangel wird auf dem Handy mit Foto erfasst. Daraus entstehen ein Eintrag in der Mängelliste und eine Mitteilung an den zuständigen Unternehmer als Entwurf.",
+   "mensch": "Die Bauleitung prüft die Mitteilung und versendet sie",
+   "baustein": "maengelliste-bau",
+   "schritte": [
+    {"label": "Auf der Baustelle", "titel": "Mangel mit Foto", "zeilen": [["Ort", "2. OG, Bad"], ["Gewerk", "Plattenarbeiten"], ["Foto", "angehängt"]]},
+    {"label": "Automatisch", "titel": "Mängelliste", "zeilen": [["Nr.", "M-014"], ["Frist", "10 Arbeitstage"], ["Status", "offen"]]},
+    {"label": "Entwurf", "titel": "Mitteilung an Unternehmer", "zeilen": [["An", "Plattenleger"], ["Inhalt", "Mangel, Foto, Frist"]]}
+   ]
+  },
+  "elektro-handwerk": {
+   "titel": "Vom Rapport zur Rechnung",
+   "text": "Der Rapport wird beim Kunden auf dem Handy erfasst. Daraus entstehen der Arbeitsbericht und ein Rechnungsentwurf mit Arbeitszeit und Material.",
+   "mensch": "Sie prüfen Ansätze und Positionen und geben die Rechnung frei",
+   "baustein": "zeitabgleich-rapporte-handwerk",
+   "schritte": [
+    {"label": "Beim Kunden", "titel": "Rapport auf dem Handy", "zeilen": [["Arbeit", "2.5 h"], ["Material", "4 Steckdosen"], ["Unterschrift", "erfasst"]]},
+    {"label": "Automatisch", "titel": "Arbeitsbericht", "zeilen": [["Auftrag", "2026-118"], ["Fotos", "2"]]},
+    {"label": "Entwurf", "titel": "Rechnung", "zeilen": [["Positionen", "2"], ["Total", "CHF 324.30"]]}
+   ]
+  },
+  "kindergaerten-schulen": {
+   "titel": "Elternumfrage auswerten",
+   "text": "Eltern beantworten eine kurze Umfrage zum Elternabend. Die Antworten werden ausgezählt, und ein Elternbrief mit dem gewählten Termin entsteht als Entwurf.",
+   "mensch": "Die Lehrperson prüft den Brief und versendet ihn",
+   "baustein": "umfragen-abstimmungen",
+   "schritte": [
+    {"label": "Umfrage", "titel": "Termin für den Elternabend", "zeilen": [["Frage", "Welcher Abend passt?"], ["Antworten", "laufen ein"]]},
+    {"label": "Automatisch", "titel": "Auswertung", "zeilen": [["Am häufigsten", "Dienstag, 19.30 Uhr"]]},
+    {"label": "Entwurf", "titel": "Elternbrief", "zeilen": [["Betreff", "Einladung Elternabend"]]}
+   ]
+  },
+  "vereine": {
+   "titel": "Anmeldung zum Vereinsanlass",
+   "text": "Mitglieder melden sich online für einen Anlass an. Die Teilnehmerliste ist sofort aktuell, und eine Erinnerung an alle Angemeldeten liegt als Entwurf bereit.",
+   "mensch": "Der Vorstand prüft die Erinnerung und versendet sie",
+   "baustein": "newsletter",
+   "schritte": [
+    {"label": "Anmeldung", "titel": "Sommerfest", "zeilen": [["Personen", "2"], ["Helfereinsatz", "Grill"]]},
+    {"label": "Automatisch", "titel": "Teilnehmerliste", "zeilen": [["Eintrag", "neu"], ["Bestätigung", "an Mitglied"]]},
+    {"label": "Entwurf", "titel": "Erinnerung", "zeilen": [["Versand", "3 Tage vor dem Anlass"]]}
+   ]
+  },
+  "arztpraxen": {
+   "titel": "Online-Terminanfrage",
+   "text": "Eine Patientin fragt über die Website einen Termin an. Ein passender freier Termin wird im Kalender vorgeschlagen, die Bestätigung liegt als Entwurf bereit.",
+   "mensch": "Die MPA prüft den Vorschlag und bestätigt",
+   "baustein": "online-terminanfrage-arztpraxis",
+   "schritte": [
+    {"label": "Website", "titel": "Terminanfrage", "zeilen": [["Grund", "Kontrolle"], ["Wunsch", "Vormittag"]]},
+    {"label": "Automatisch", "titel": "Vorschlag im Kalender", "zeilen": [["Termin", "Di, 09.15 Uhr"], ["Status", "frei"]]},
+    {"label": "Entwurf", "titel": "Bestätigung", "zeilen": [["An", "Patientin"]]}
+   ]
+  },
+  "treuhaender": {
+   "titel": "Vom Beleg zur Buchung",
+   "text": "Ein Beleg geht per Foto oder E-Mail ein. Lieferant, Betrag und Mehrwertsteuer werden ausgelesen, ein Buchungsvorschlag entsteht.",
+   "mensch": "Die Sachbearbeitung prüft den Vorschlag und bucht",
+   "baustein": "fristenkalender-belegeingang-treuhand",
+   "schritte": [
+    {"label": "Eingang", "titel": "Beleg", "zeilen": [["Lieferant", "Beispiel Handels GmbH"], ["Total", "CHF 432.40"]]},
+    {"label": "Automatisch", "titel": "Ausgelesen", "zeilen": [["MwSt 8.1 %", "CHF 32.40"], ["Konto", "4000 Materialaufwand"]]},
+    {"label": "Vorschlag", "titel": "Buchung", "zeilen": [["Soll", "4000"], ["Haben", "2000 Kreditoren"]]}
+   ]
+  },
+  "hotels-gastronomie": {
+   "titel": "Reservationsanfrage per E-Mail",
+   "text": "Eine Reservationsanfrage kommt per E-Mail. Datum, Uhrzeit und Anzahl Personen werden erkannt und mit dem Reservationsbuch abgeglichen, die Bestätigung liegt als Entwurf bereit.",
+   "mensch": "Der Service prüft die Reservation und sendet die Bestätigung",
+   "baustein": "",
+   "schritte": [
+    {"label": "E-Mail", "titel": "Anfrage", "zeilen": [["Tisch", "6 Personen"], ["Wann", "Freitag, 19.00 Uhr"]]},
+    {"label": "Automatisch", "titel": "Reservationsbuch", "zeilen": [["Freitag 19.00", "Tisch frei"], ["Eintrag", "vorgemerkt"]]},
+    {"label": "Entwurf", "titel": "Bestätigung", "zeilen": [["An", "Gast"]]}
+   ]
+  },
+  "zahnarztpraxen": {
+   "titel": "Recall-Erinnerung",
+   "text": "Fällige Kontrollen werden aus der Agenda erkannt und in einer Liste gesammelt. Für jede Patientin und jeden Patienten liegt eine Erinnerung per SMS als Entwurf bereit.",
+   "mensch": "Die Praxis prüft die Liste und gibt die Erinnerungen frei",
+   "baustein": "terminerinnerung-recall-zahnarztpraxis",
+   "schritte": [
+    {"label": "Agenda", "titel": "Recall fällig", "zeilen": [["Behandlung", "Kontrolle"], ["Fällig", "im Dezember"]]},
+    {"label": "Automatisch", "titel": "Recall-Liste", "zeilen": [["Eintrag", "neu"], ["Kanal", "SMS"]]},
+    {"label": "Entwurf", "titel": "SMS-Erinnerung", "zeilen": [["Text", "Kontrolltermin vereinbaren"]]}
+   ]
+  },
+  "immobilienverwaltungen": {
+   "titel": "Schadenmeldung einordnen",
+   "text": "Eine Mieterin meldet einen Schaden mit Foto. Die Meldung wird nach Dringlichkeit und Gewerk eingeordnet, ein Auftrag an den Handwerker liegt als Entwurf bereit.",
+   "mensch": "Die Bewirtschaftung entscheidet und vergibt den Auftrag",
+   "baustein": "schadenmeldung-triage",
+   "schritte": [
+    {"label": "Meldung", "titel": "Schaden mit Foto", "zeilen": [["Was", "Wasser unter Spülbecken"], ["Wohnung", "3. OG links"]]},
+    {"label": "Automatisch", "titel": "Einordnung", "zeilen": [["Dringlichkeit", "hoch"], ["Gewerk", "Sanitär"]]},
+    {"label": "Entwurf", "titel": "Auftrag an Handwerker", "zeilen": [["Inhalt", "Meldung, Foto, Zugang"]]}
+   ]
+  },
+  "architekturbueros": {
+   "titel": "Stunden nach SIA-Phasen",
+   "text": "Stunden werden direkt auf Projekt und SIA-Phase erfasst. Daraus entstehen eine Übersicht je Phase und ein Entwurf der nächsten Akontorechnung.",
+   "mensch": "Die Projektleitung prüft die Übersicht und gibt die Rechnung frei",
+   "baustein": "zeiterfassung-sia-phasen",
+   "schritte": [
+    {"label": "Zeiterfassung", "titel": "Stunden", "zeilen": [["Projekt", "Wohnhaus am Hang"], ["Phase", "32 Bauprojekt"], ["Zeit", "3.5 h"]]},
+    {"label": "Automatisch", "titel": "Übersicht je Phase", "zeilen": [["Phase 32", "aktualisiert"]]},
+    {"label": "Entwurf", "titel": "Akontorechnung", "zeilen": [["Grundlage", "erfasste Stunden"]]}
+   ]
+  },
+  "pflegeheime-spitex": {
+   "titel": "Arbeitszeit im Monatsabschluss",
+   "text": "Einsätze und Dienste werden laufend erfasst. Zum Monatsende entsteht eine Übersicht pro Person, in der Abweichungen zum Dienstplan markiert sind.",
+   "mensch": "Die Teamleitung prüft die Abweichungen und gibt die Übersicht frei",
+   "baustein": "arbeitszeit-pflege",
+   "schritte": [
+    {"label": "Erfasst", "titel": "Dienst", "zeilen": [["Frühdienst", "07.00 bis 15.30 Uhr"], ["Pause", "30 Minuten"]]},
+    {"label": "Automatisch", "titel": "Monatsübersicht", "zeilen": [["Abweichung", "markiert"]]},
+    {"label": "Zur Freigabe", "titel": "Übersicht pro Person", "zeilen": [["Status", "bereit"]]}
+   ]
+  }
+ }
+}

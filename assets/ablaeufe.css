@@ -1,0 +1,177 @@
+/* Automatisierungen und Schnittstellen (/unternehmen/#ablaeufe) und Mini-Beispiele auf den Branchenseiten (#ablauf-beispiel).
+   Elemente mit data-ab erscheinen schrittweise, solange .spielt gesetzt ist (assets/ablaeufe.js); sonst Endzustand. */
+.abl-liste{display:grid;gap:clamp(3.5rem,8vw,6.5rem);max-width:1180px;margin:0 auto}
+.abl-block{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,4rem);align-items:center;scroll-margin-top:96px}
+.abl-liste .abl-block:nth-child(even){grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.abl-liste .abl-block:nth-child(even) .abl-text{order:2}
+.abl-nr{display:block;font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.06em;color:var(--blue)}
+.abl-text h3{font-size:clamp(1.4rem,2.4vw,1.9rem);line-height:1.15;margin:.35rem 0 .75rem;color:var(--ink)}
+.abl-text h2{margin-bottom:.9rem}
+.abl-text>p{color:var(--ink2);line-height:1.75;font-size:1rem}
+.abl-punkte{list-style:none;padding:0;margin:1.1rem 0 0;display:grid;gap:.55rem}
+.abl-punkte li{padding:.7rem .95rem;border-radius:12px;background:var(--grau);font-size:.92rem;line-height:1.6;color:var(--ink2)}
+.abl-punkte li:last-child,.abl-mensch{background:#fff6e0}
+.abl-punkte strong,.abl-mensch strong{color:var(--ink)}
+.abl-mensch{margin-top:1rem;padding:.75rem .95rem;border-radius:12px;font-size:.95rem;line-height:1.6;color:var(--ink2)}
+.abl-aktion{margin:1.4rem 0 .6rem}
+.abl-klein-text{font-size:.82rem;line-height:1.6;color:var(--ink3)}
+.abl-links{list-style:none;padding:0;margin:1rem 0 0;display:grid;gap:.5rem}
+.abl-links a{display:inline-flex;align-items:center;gap:.4rem;color:var(--blue);font-weight:500;font-size:.95rem;text-decoration:underline;text-underline-offset:3px}
+
+/* Einstieg und Datenschutz */
+.abl-start{max-width:1180px;margin:clamp(3.5rem,7vw,5.5rem) auto 0;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(1.5rem,3vw,2.5rem);background:var(--grau);border-radius:24px;padding:clamp(1.5rem,3.5vw,2.75rem)}
+.abl-start h3{font-size:1.35rem;line-height:1.2;margin-bottom:1rem;color:var(--ink)}
+.abl-schritte{margin:0 0 1.6rem;padding-left:1.25rem;display:grid;gap:.65rem;color:var(--ink2);line-height:1.6}
+.abl-schritte strong{color:var(--ink)}
+.abl-datenschutz{background:#fff;border-radius:16px;padding:clamp(1.1rem,2.5vw,1.5rem);font-size:.92rem;line-height:1.65;color:var(--ink2)}
+.abl-datenschutz p+p{margin-top:.65rem}
+
+/* Gerät und Bühne */
+.abl-geraet{margin:0;min-width:0;background:#fff;border:1px solid var(--rand);border-radius:22px;overflow:hidden;box-shadow:0 1px 2px rgba(10,10,60,.04),0 32px 80px -40px rgba(10,10,60,.4)}
+.abl-geraet .geraet-titel{text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.abl-knopf{flex:none;margin-left:.4rem;min-height:28px;padding:.3rem .75rem;border-radius:999px;border:1px solid rgba(7,7,26,.28);background:#fff;color:var(--ink);font:600 .72rem/1.2 'Inter','Inter Ersatz',sans-serif;cursor:pointer}
+.abl-knopf:hover{border-color:var(--blue);color:#0000c8}
+.abl-knopf:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.abl-buehne{padding:clamp(.9rem,2.4vw,1.5rem);background:linear-gradient(180deg,#fafaff,#f3f3fa)}
+.abl-inhalt{display:grid;gap:.75rem;min-width:0}
+.abl-hinweis{font-size:.78rem;color:var(--ink3);padding:.6rem 1rem;border-top:1px solid var(--rand);background:#fff}
+.abl-geraet [data-ab]{transition:opacity .5s var(--weich),transform .5s var(--weich),clip-path .7s var(--weich)}
+.abl-geraet.spielt [data-ab]:not(.an){opacity:0;transform:translateY(10px)}
+.abl-klein{display:block;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:.35rem;line-height:1.3}
+.abl-karte{background:#fff;border:1px solid var(--rand);border-radius:14px;padding:.8rem .95rem;min-width:0;box-shadow:0 1px 2px rgba(10,10,60,.04)}
+.abl-karte>b{display:block;font-weight:600;font-size:.92rem;line-height:1.3;color:var(--ink);margin-bottom:.35rem;overflow-wrap:anywhere}
+.abl-zeile{display:flex;justify-content:space-between;gap:.75rem;font-size:.78rem;line-height:1.45;color:var(--ink2);padding:.22rem 0;border-top:1px dashed rgba(7,7,26,.1)}
+.abl-zeile i{font-style:normal;min-width:0;overflow-wrap:anywhere}
+.abl-zeile i:last-child{text-align:right;color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
+.abl-total{font-weight:600;border-top:1px solid rgba(7,7,26,.3)}
+.abl-total i:last-child{font-weight:700}
+.abl-freigabe{display:inline-flex;align-items:center;gap:.45rem;justify-self:start;align-self:start;max-width:100%;font-size:.8rem;font-weight:600;line-height:1.35;color:#14532d;background:#dcfce7;border:1px solid #9fdcb5;border-radius:999px;padding:.4rem .85rem}
+.abl-freigabe::before{content:"✓";font-weight:700}
+.abl-breit{grid-column:1/-1}
+.abl-pfeil{display:block;align-self:center;justify-self:center;width:100%;max-width:26px;height:2px;background:var(--blue);position:relative;transform-origin:left center}
+.abl-pfeil::after{content:"";position:absolute;right:-2px;top:-4px;border:5px solid transparent;border-left:7px solid var(--blue);border-right:0}
+.abl-geraet.spielt .abl-pfeil:not(.an){transform:scaleX(0)}
+
+/* 1 Belege */
+.abl-belege .abl-inhalt{grid-template-columns:minmax(0,4fr) minmax(0,6fr);align-items:start}
+.abl-foto{position:relative;background:#e6e6f0;border-radius:14px;padding:1rem .9rem;overflow:hidden}
+.abl-papier{display:grid;gap:.3rem;background:#fff;border-radius:6px;padding:.9rem .85rem;font-size:.76rem;color:var(--ink2);box-shadow:0 10px 24px -12px rgba(10,10,60,.4);transform:rotate(-2deg)}
+.abl-papier>b{font-size:.84rem;color:var(--ink)}
+.abl-scan{position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,#0000ff,transparent);box-shadow:0 0 14px 3px rgba(0,0,255,.35);opacity:0;pointer-events:none}
+.abl-geraet.spielt .abl-scan.an{opacity:1;animation:abl-scan 1.3s ease-in-out forwards}
+@keyframes abl-scan{from{top:0}90%{opacity:1}to{top:calc(100% - 3px);opacity:0}}
+.abl-felder{display:grid;gap:.4rem;min-width:0}
+.abl-feld{display:grid;grid-template-columns:4.6rem minmax(0,1fr);gap:.5rem;align-items:center;background:#fff;border:1px solid var(--rand);border-radius:10px;padding:.42rem .65rem;font-size:.78rem}
+.abl-feld i{font-style:normal;color:var(--ink3)}
+.abl-wert{font-weight:600;color:var(--ink);overflow-wrap:anywhere;clip-path:inset(0)}
+.abl-geraet.spielt .abl-wert:not(.an){transform:none;clip-path:inset(0 100% 0 0)}
+.abl-vorschlag{display:block;background:#ebebff;border:1px solid rgba(0,0,255,.22);border-radius:12px;padding:.6rem .75rem;font-size:.8rem;line-height:1.45;color:var(--ink)}
+.abl-vorschlag i{display:block;font-style:normal;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0000c8;margin-bottom:.2rem}
+.abl-vorschlag b{font-weight:600}
+
+/* 2 Posteingang */
+.abl-mails{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.abl-mails li{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:.75rem;row-gap:.1rem;background:#fff;border:1px solid var(--rand);border-radius:12px;padding:.6rem .8rem;font-size:.8rem;line-height:1.4}
+.abl-mails b{color:var(--ink);font-weight:600}
+.abl-mails span{grid-column:1;color:var(--ink2);min-width:0;overflow-wrap:anywhere}
+.abl-tag{grid-column:2;grid-row:1/3;align-self:center;font-style:normal;font-size:.7rem;font-weight:600;border-radius:999px;padding:.25rem .6rem;white-space:nowrap}
+.abl-geraet.spielt .abl-tag:not(.an){transform:scale(.6)}
+.t-offerte{color:#0000c8;background:#ebebff}
+.t-termin{color:#6b4100;background:#fff1cf}
+.t-rekla{color:#8a1c1c;background:#fde8e8}
+.abl-entwurf{display:grid;gap:.5rem;background:#fff;border:1px solid rgba(0,0,255,.25);border-radius:14px;padding:.8rem .9rem}
+.abl-brief{font-size:.82rem;line-height:1.6;color:var(--ink2)}
+
+/* 3 Auftrag zur Rechnung */
+.abl-auftrag-rechnung .abl-inhalt{grid-template-columns:minmax(0,1fr) 26px minmax(0,1.15fr);grid-template-rows:auto auto auto auto}
+.abl-auftrag-rechnung .abl-handy{grid-column:1;grid-row:1/4;align-self:center;border-radius:20px;border-width:2px;border-color:#d4d4e2}
+.abl-auftrag-rechnung .abl-inhalt>.abl-pfeil:nth-of-type(1){grid-column:2;grid-row:1/4}
+.abl-auftrag-rechnung .abl-inhalt>.abl-karte:nth-of-type(2){grid-column:3;grid-row:1}
+.abl-auftrag-rechnung .abl-inhalt>.abl-pfeil:nth-of-type(2){grid-column:3;grid-row:2;width:2px;height:16px;max-width:none;transform-origin:center top}
+.abl-auftrag-rechnung .abl-inhalt>.abl-pfeil:nth-of-type(2)::after{right:auto;top:auto;bottom:-2px;left:-4px;border:5px solid transparent;border-top:7px solid var(--blue);border-bottom:0}
+.abl-geraet.spielt .abl-auftrag-rechnung .abl-inhalt>.abl-pfeil:nth-of-type(2):not(.an){transform:scaleY(0)}
+.abl-auftrag-rechnung .abl-inhalt>.abl-karte:nth-of-type(3){grid-column:3;grid-row:3}
+.abl-check{display:block;position:relative;padding:.2rem 0 .2rem 1.35rem;font-size:.8rem;line-height:1.4;color:var(--ink2)}
+.abl-check::before{content:"✓";position:absolute;left:0;top:.2rem;width:1rem;height:1rem;border-radius:50%;background:#dcfce7;color:#14532d;font-size:.65rem;font-weight:700;display:grid;place-items:center}
+.abl-balken{display:block;height:6px;width:var(--w);border-radius:3px;background:#e1e1ee;margin-top:.45rem}
+
+/* 4 Fristen */
+.abl-achse{position:relative;height:104px;margin:.25rem .5rem .75rem}
+.abl-linie{position:absolute;left:0;right:0;top:51px;height:3px;border-radius:2px;background:#d6d6e8}
+.abl-ereignis{position:absolute;top:0;left:var(--x);width:7rem;margin-left:-3.5rem;display:flex;flex-direction:column;align-items:center;text-align:center}
+.abl-ereignis.rechts{margin-left:-5.25rem;align-items:flex-end;text-align:right}
+.abl-ereignis b{order:-1;height:34px;display:flex;align-items:flex-end;justify-content:center;font-size:.74rem;line-height:1.3;font-weight:600;color:var(--ink)}
+.abl-ereignis i{display:block;width:13px;height:13px;margin-top:12px;border-radius:50%;background:#fff;border:3px solid var(--blue)}
+.abl-ereignis.rechts b{justify-content:flex-end}
+.abl-ereignis.rechts i{margin-right:calc(1.75rem - 6.5px)}
+.abl-heute{position:absolute;top:40px;left:var(--heute,62%);width:2px;height:26px;margin-left:-1px;background:var(--ink);transition:left 1s var(--weich)}
+.abl-heute b{position:absolute;top:28px;left:50%;transform:translateX(-50%);font-size:.68rem;font-weight:600;color:#fff;background:var(--ink);border-radius:999px;padding:.15rem .5rem;white-space:nowrap}
+.abl-fristen[data-s="0"]{--heute:3%}
+.abl-fristen[data-s="1"]{--heute:16%}
+.abl-fristen[data-s="2"]{--heute:27%}
+.abl-fristen[data-s="3"]{--heute:52%}
+.abl-fristen[data-s="4"]{--heute:58%}
+.abl-meldungen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.6rem;align-items:start}
+.abl-meldung{display:grid;gap:.4rem;background:#fff;border:1px solid var(--rand);border-radius:12px;padding:.7rem .8rem;font-size:.8rem}
+.abl-meldung b{font-weight:500;line-height:1.5;color:var(--ink)}
+.abl-meldung.intern{border-color:rgba(0,0,255,.28)}
+
+/* 5 Auswertung */
+.abl-kacheln{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
+.abl-kacheln span{display:grid;gap:.25rem;align-content:space-between;background:#fff;border:1px solid var(--rand);border-radius:12px;padding:.7rem .75rem}
+.abl-kacheln i{font-style:normal;font-size:.72rem;line-height:1.3;color:var(--ink3)}
+.abl-kacheln b{font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-weight:800;font-size:clamp(1.45rem,3vw,1.9rem);line-height:1;letter-spacing:-.03em;color:var(--ink)}
+.abl-diagramm{background:#fff;border:1px solid var(--rand);border-radius:12px;padding:.75rem .85rem}
+.abl-saeulen{display:flex;align-items:flex-end;gap:.7rem;height:76px;padding:0 .25rem}
+.abl-saeulen i{flex:1;height:var(--h);position:relative;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,#4d4dff,#0000ff);transform-origin:bottom;transition:transform .8s var(--weich)}
+.abl-tage{display:flex;gap:.7rem;padding:.35rem .25rem 0}
+.abl-tage b{flex:1;text-align:center;font-size:.68rem;font-weight:500;color:var(--ink3)}
+.abl-geraet.spielt .abl-diagramm:not(.an) .abl-saeulen i{transform:scaleY(.05)}
+.abl-bericht{background:#ebebff;border-radius:12px;padding:.7rem .85rem;font-size:.8rem}
+.abl-bericht .abl-klein{color:#0000c8}
+.abl-bericht b{font-weight:500;line-height:1.55;color:var(--ink)}
+
+/* 6 Schnittstellen */
+.abl-schnittstellen .abl-inhalt{grid-template-columns:minmax(0,1fr) 34px minmax(0,.8fr) 34px minmax(0,1fr);align-items:center}
+.abl-knoten{background:#fff;border:1px solid var(--rand);border-radius:14px;padding:.75rem .85rem;font-size:.8rem;min-width:0}
+.abl-knoten b{display:block;font-weight:600;line-height:1.4;color:var(--ink);overflow-wrap:anywhere}
+.abl-mitte{background:#0000ff;border-color:#0000ff;text-align:center}
+.abl-mitte b{color:#fff}
+.abl-mitte span{display:block;color:#fff;font-size:.72rem;margin-top:.15rem}
+.abl-ziele{display:grid;gap:.6rem;min-width:0}
+.abl-leitung{display:block;position:relative;height:2px;background:repeating-linear-gradient(90deg,#8f8fe0 0 6px,transparent 6px 10px)}
+.abl-leitung::after{content:"";position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:#0000ff;opacity:0}
+.abl-geraet.spielt .abl-leitung.an::after{animation:abl-fluss 1.1s ease-in-out 2}
+@keyframes abl-fluss{from{left:0;opacity:1}to{left:calc(100% - 10px);opacity:1}}
+@keyframes abl-fluss-v{from{top:0;opacity:1}to{top:calc(100% - 10px);opacity:1}}
+
+/* Mini-Beispiel der Branchenseiten */
+.abl-mini-abschnitt .abl-block{max-width:1180px;margin:0 auto}
+.abl-mini .abl-inhalt{grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr) 22px minmax(0,1fr);align-items:stretch}
+.abl-mini .abl-pfeil{align-self:center}
+
+@media (max-width:900px){
+  .abl-block{grid-template-columns:minmax(0,1fr)}
+  .abl-liste .abl-block:nth-child(even){grid-template-columns:minmax(0,1fr)}
+  .abl-liste .abl-block:nth-child(even) .abl-text{order:0}
+  .abl-start{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px){
+  .abl-belege .abl-inhalt,.abl-meldungen{grid-template-columns:minmax(0,1fr)}
+  .abl-auftrag-rechnung .abl-inhalt,.abl-schnittstellen .abl-inhalt,.abl-mini .abl-inhalt{grid-template-columns:minmax(0,1fr);grid-template-rows:none}
+  .abl-auftrag-rechnung .abl-inhalt>*{grid-column:1!important;grid-row:auto!important}
+  .abl-auftrag-rechnung .abl-handy{align-self:stretch}
+  .abl-pfeil{width:2px;height:18px;max-width:none;transform-origin:center top}
+  .abl-pfeil::after{right:auto;top:auto;bottom:-2px;left:-4px;border:5px solid transparent;border-top:7px solid var(--blue);border-bottom:0}
+  .abl-geraet.spielt .abl-pfeil:not(.an){transform:scaleY(0)}
+  .abl-leitung{justify-self:center;width:2px;height:26px;background:repeating-linear-gradient(180deg,#8f8fe0 0 6px,transparent 6px 10px)}
+  .abl-leitung::after{left:-4px;top:0}
+  .abl-geraet.spielt .abl-leitung.an::after{animation-name:abl-fluss-v}
+  .abl-geraet .beispiel{display:none}
+  .abl-kacheln{gap:.4rem}
+  .abl-kacheln span{padding:.6rem .55rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .abl-geraet [data-ab],.abl-saeulen i,.abl-heute{transition:none}
+  .abl-geraet.spielt .abl-scan.an,.abl-geraet.spielt .abl-leitung.an::after{animation:none}
+}
