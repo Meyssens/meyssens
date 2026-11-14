@@ -7,7 +7,7 @@
   var TAKT = 1300;
   var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  document.querySelectorAll("[data-ablauf]").forEach(function (fig) {
+  document.querySelectorAll("[data-abl-beispiel]").forEach(function (fig) {
     var buehne = fig.querySelector(".abl-buehne");
     var knopf = fig.querySelector(".abl-knopf");
     var teile = Array.prototype.slice.call(buehne.querySelectorAll("[data-ab]"));

@@ -642,7 +642,7 @@ for url in ["/branchen/"] + ["/branchen/%s/" % b["slug"] for b in welle2] + w2_b
 ablaeufe = json.loads((ROOT / "ablaeufe.json").read_text(encoding="utf-8"))
 PROGRAMME = re.compile(r"\b(Bexio|Abacus|Sage|Banana|Run my Accounts|Klara|Outlook|Gmail|Google Kalender|Microsoft|Excel)\b", re.I)
 def pruefe_beispiele(url, abschnitt, anzahl):
-    figuren = abschnitt.count("data-ablauf>")
+    figuren = abschnitt.count("data-abl-beispiel>")
     if figuren != anzahl:
         fehler.append("%s: %d statt %d animierte Beispiele" % (url, figuren, anzahl))
     if abschnitt.count('<figcaption class="abl-hinweis">Beispiel mit erfundenen Daten</figcaption>') != anzahl:

@@ -189,7 +189,7 @@ PROZESS_CHECK = "Gratis-Prozess-Check (30 Minuten)"
 def ablauf_geraet(titel, buehne, klasse, beschreibung):
     # Animiertes Beispiel (assets/ablaeufe.js): für Screenreader eine Beschreibung des ganzen Ablaufs, die Bühne selbst
     # ist ausgeblendet; ohne JavaScript und bei reduzierter Bewegung bleibt der Endzustand stehen
-    return ('<figure class="abl-geraet r" data-ablauf>\n'
+    return ('<figure class="abl-geraet r" data-abl-beispiel>\n'
             '  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>'
             '<span class="geraet-titel">%s</span><span class="beispiel">Beispiel</span>'
             '<button type="button" class="abl-knopf" hidden>Abspielen</button></div>\n'
