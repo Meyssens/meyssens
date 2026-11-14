@@ -1,7 +1,7 @@
 /* Schlichter Stil für Startseite, Produkt-, Unternehmen-, Branchen- und Ratgeberseiten.
    Gilt nur unter body.stil, damit die Gemeinden-Seite unverändert bleibt. Ergänzt assets/site.css. */
 /* Fliesstext in Inter, mit Ersatzschrift (Masse angepasst, siehe site.css) bis die Webschrift geladen ist */
-.stil,.stil .btn-p,.stil .pcta,.stil .finput,.stil .fselect,.stil .ftextarea,.stil .lang-btn,.stil .cookie-btn,.stil .chat-fragen button{font-family:'Inter','Inter Ersatz',sans-serif}
+.stil,.stil button,.stil .btn-p,.stil .btn-s,.stil .pcta,.stil .finput,.stil .fselect,.stil .ftextarea,.stil .lang-btn,.stil .cookie-btn,.stil .chat-fragen button{font-family:'Inter','Inter Ersatz',sans-serif}
 .stil{--nacht:#07071a;--nacht2:#11112a;--hellblau:#a8a8ff;--grau:#f5f5f7;--rand:rgba(0,0,0,.08);--weich:cubic-bezier(.2,.7,.2,1)}
 .stil section{padding-top:clamp(2.75rem,5vw,4.5rem);padding-bottom:clamp(2.75rem,5vw,4.5rem)}
 /* Letztes Element eines Abschnitts ohne Aussenabstand nach unten, sonst addiert er sich zum Abschnittsabstand */
@@ -762,8 +762,9 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 /* Navigation: wenige Punkte, Kontakt immer sichtbar (auch mobil neben dem Menü) */
 #nav{gap:1rem}
 #nav .nav-items{margin-left:auto;gap:1.75rem}
-#nav .nav-items a{font-size:.9rem;padding:.5rem 0}
-.nav-kontakt{display:inline-flex;align-items:center;min-height:40px;font-size:.88rem;text-decoration:none;flex:none;white-space:nowrap}
+/* Schrift wie vor der UI-Überarbeitung (Stand 1a796f7): Navigation .85rem */
+#nav .nav-items a{font-size:.85rem;padding:.5rem 0}
+.nav-kontakt{display:inline-flex;align-items:center;min-height:40px;font-size:.85rem;text-decoration:none;flex:none;white-space:nowrap}
 .stil .nav-kontakt{border-radius:999px!important}
 .hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center;border-radius:10px}
 .hamburger:hover{background:var(--grau,#f5f5f7)}
@@ -773,8 +774,9 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 @media(max-width:380px){#nav .logo img{height:20px}.nav-kontakt{padding:.45rem .9rem!important}}
 
 /* Hero: ein Satz Nutzen, zwei gleichwertige Wege */
-.stil .held h1{font-size:clamp(2.3rem,6.4vw,5.4rem);max-width:14ch;line-height:1.03}
-.held-wahl{min-height:52px!important;padding:.9rem 1.5rem!important;font-size:1rem!important;font-weight:500;box-shadow:0 14px 30px -18px rgba(0,0,255,.8);transition:transform .25s var(--weich),box-shadow .25s,background .2s!important}
+/* Hero-Überschrift in Grösse und Zeilenhöhe wie vor der UI-Überarbeitung (.stil .page-hero h1) */
+.stil .held h1{max-width:15ch}
+.held-wahl{min-height:52px!important;padding:.9rem 1.5rem!important;font-size:.9rem!important;font-weight:500;box-shadow:0 14px 30px -18px rgba(0,0,255,.8);transition:transform .25s var(--weich),box-shadow .25s,background .2s!important}
 .held-wahl:hover{transform:translateY(-2px);box-shadow:0 18px 36px -16px rgba(0,0,255,.75)}
 .held-wahl .wahl-symbol{flex:none}
 .stil .btn-dunkel,a.btn-dunkel:is(:link,:visited){background:var(--ink);color:#fff;box-shadow:0 14px 30px -18px rgba(7,7,26,.8)}
@@ -832,7 +834,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .za-punkt{position:relative;z-index:1;display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#fff;border:2px solid var(--blue);color:var(--blue);font-family:'Syne','Syne Ersatz',sans-serif;font-weight:800;font-size:1.1rem;margin-bottom:1rem;transition:background .4s,color .4s,transform .4s var(--weich)}
 .zeitachse li.on .za-punkt{background:var(--blue);color:#fff}
 .zeitachse li:hover .za-punkt{transform:scale(1.08)}
-.zeitachse h3{font-size:1.1rem;margin-bottom:.4rem;color:var(--ink)}
+.zeitachse h3{font-family:'Syne','Syne Ersatz',sans-serif;font-weight:700;letter-spacing:-.015em;font-size:1.1rem;margin-bottom:.4rem;color:var(--ink)}
 .zeitachse p{font-size:.92rem;color:var(--ink3);line-height:1.65}
 .js .stil .zeitachse li:nth-child(2){transition-delay:.12s}
 .js .stil .zeitachse li:nth-child(3){transition-delay:.24s}
@@ -871,7 +873,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .pf-item{display:flex;flex-direction:column;gap:1.25rem;background:var(--grau);border-radius:24px;padding:clamp(1.25rem,2.6vw,2rem);transition:transform .3s var(--weich),box-shadow .3s}
 @media(hover:hover){.pf-item:hover{transform:translateY(-4px);box-shadow:0 24px 60px -34px rgba(10,10,60,.35)}}
 .pf-nr{display:block;font-family:'Inter','Inter Ersatz',sans-serif;font-weight:600;font-size:.85rem;font-variant-numeric:tabular-nums;color:var(--blue);letter-spacing:.08em;margin-bottom:.4rem}
-.pf-text h3{font-size:clamp(1.25rem,2vw,1.5rem);margin-bottom:.4rem;color:var(--ink)}
+.pf-text h3{font-family:'Syne','Syne Ersatz',sans-serif;font-weight:700;letter-spacing:-.015em;font-size:clamp(1.25rem,2vw,1.5rem);margin-bottom:.4rem;color:var(--ink)}
 .pf-text p{color:var(--ink3);font-size:.95rem;line-height:1.7}
 .pf-geraet{margin-top:auto}
 .pf-geraet .geraet-leiste i{pointer-events:none}
@@ -945,7 +947,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .pk-liste li{display:flex;gap:.7rem;align-items:flex-start;font-size:.92rem;line-height:1.55;color:var(--ink3)}
 .pk-liste svg{flex:none;color:var(--blue);margin-top:.15rem}
 .pk-liste b{color:var(--ink);font-weight:600}
-.pk-knopf{width:100%;justify-content:center;min-height:52px!important;font-size:1rem!important}
+.pk-knopf{width:100%;justify-content:center;min-height:52px!important;font-size:.9rem!important}
 @media(max-width:900px){.pilot-raster{grid-template-columns:1fr}}
 
 /* Etappe 2b: Textwerte statt Zahlen in Hero- und Über-uns-Karte */
