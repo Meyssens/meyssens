@@ -179,6 +179,100 @@ def geraet(titel, inhalt, marke="Beispiel"):
             '</figure>' % (titel, marke, inhalt))
 
 
+ABLAUF_KOPF = '\n<link rel="stylesheet" href="/assets/ablaeufe.css">'
+ABLAUF_SKRIPT = '<script src="/assets/ablaeufe.js" defer></script>'
+ERFUNDEN = "Beispiel mit erfundenen Daten"
+PILOT_ABLAUF = "Pilot: ein Ablauf, drei Monate kostenlos, jederzeit kündbar."
+PROZESS_CHECK = "Gratis-Prozess-Check (30 Minuten)"
+
+
+def ablauf_geraet(titel, buehne, klasse, beschreibung):
+    # Animiertes Beispiel (assets/ablaeufe.js): für Screenreader eine Beschreibung des ganzen Ablaufs, die Bühne selbst
+    # ist ausgeblendet; ohne JavaScript und bei reduzierter Bewegung bleibt der Endzustand stehen
+    return ('<figure class="abl-geraet r" data-ablauf>\n'
+            '  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>'
+            '<span class="geraet-titel">%s</span><span class="beispiel">Beispiel</span>'
+            '<button type="button" class="abl-knopf" hidden>Abspielen</button></div>\n'
+            '  <div class="abl-buehne %s" role="img" aria-label="%s">\n<div class="abl-inhalt" aria-hidden="true">\n%s\n</div>\n  </div>\n'
+            '  <figcaption class="abl-hinweis">%s</figcaption>\n'
+            '</figure>' % (html.escape(titel), klasse, html.escape("%s: %s" % (ERFUNDEN, beschreibung)), buehne, ERFUNDEN))
+
+
+def ablaeufe_abschnitt(daten, schnipsel):
+    # Abschnitt "Automatisierungen und Schnittstellen" auf /unternehmen/: sechs Bausteine mit animiertem Beispiel
+    bloecke = []
+    for i, x in enumerate(daten["unternehmen"], 1):
+        buehne = teil(schnipsel, "buehne-" + x["id"])
+        if not buehne:
+            raise SystemExit("ablaeufe.html: buehne-%s fehlt" % x["id"])
+        bloecke.append(
+            '  <article class="abl-block" id="ablauf-%s">\n    <div class="abl-text r">\n'
+            '      <span class="abl-nr" aria-hidden="true">%02d</span>\n      <h3>%s</h3>\n      <p>%s</p>\n'
+            '      <ul class="abl-punkte">\n        <li><strong>Automatisch:</strong> %s</li>\n'
+            '        <li><strong>Sie entscheiden:</strong> %s</li>\n      </ul>\n    </div>\n    %s\n  </article>'
+            % (x["id"], i, html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["automatisch"]),
+               html.escape(x["mensch"]), ablauf_geraet(x["geraet"], buehne, "abl-" + x["id"], x["beschreibung"])))
+    return ('<section id="ablaeufe" class="ablaeufe">\n  <div class="kopf-mitte r">\n    <span class="s-label">Automatisierung</span>\n'
+            '    <h2>Automatisierungen und Schnittstellen</h2>\n'
+            '    <p class="s-lead">Sechs Bausteine, die wiederkehrende Büroarbeit vorbereiten. Entwürfe ja, automatischer Versand nein: '
+            'Was Ihren Betrieb verlässt, gibt ein Mensch frei. Alle Beispiele zeigen erfundene Daten.</p>\n  </div>\n'
+            '  <div class="abl-liste">\n%s\n  </div>\n'
+            '  <div class="abl-start r">\n    <div>\n      <h3>So starten Sie</h3>\n      <ol class="abl-schritte">\n'
+            '        <li><strong>%s.</strong> Sie zeigen uns einen Ablauf, wir sagen Ihnen offen, was sich automatisieren lässt und was nicht.</li>\n'
+            '        <li><strong>Pilot.</strong> Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.</li>\n'
+            '        <li><strong>Entscheid.</strong> Nach dem Pilot entscheiden Sie, ob der Ablauf bleibt.</li>\n      </ol>\n'
+            '      <a class="btn-p" href="#anfrage" data-thema="%s">Gratis-Prozess-Check anfragen %s</a>\n    </div>\n'
+            '    <div class="abl-datenschutz">\n      <h3>Datenschutz und Programme</h3>\n'
+            '      <p>Personendaten bearbeiten wir nur mit einem Vertrag zur Auftragsbearbeitung (Auftragsverarbeitungsvertrag). '
+            'Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.</p>\n'
+            '      <p>Bestehende Programme binden wir nach Absprache an, wenn eine Schnittstelle besteht. Eine Anbindung sagen wir erst zu, '
+            'wenn wir die Schnittstelle geprüft haben.</p>\n'
+            '      <p class="abl-klein-text">Allgemeine Information, keine Rechtsberatung.</p>\n    </div>\n  </div>\n'
+            '</section>\n%s\n' % ("\n".join(bloecke), PROZESS_CHECK, PROZESS_CHECK, PFEIL, ABLAUF_SKRIPT))
+
+
+def ablaeufe_ld(daten, url):
+    # ItemList der sechs Bausteine als Service (ohne Preise und Bewertungen)
+    return {"@type": "ItemList", "@id": url + "#ablaeufe", "name": "Automatisierungen und Schnittstellen",
+            "itemListElement": [{"@type": "ListItem", "position": i, "item": {
+                "@type": "Service", "@id": url + "#ablauf-" + x["id"], "name": x["titel"], "description": x["text"],
+                "url": url + "#ablauf-" + x["id"], "provider": {"@id": DOMAIN + "/#org"}, "areaServed": SCHWEIZ,
+                "availableLanguage": "de-CH", "serviceType": "Automatisierung von Büroabläufen"}}
+                for i, x in enumerate(daten["unternehmen"], 1)]}
+
+
+def ablauf_beispiel(slug, daten, nach_slug):
+    # Mini-Beispiel auf der Branchenseite: drei Schritte und die Freigabe durch einen Menschen
+    x = daten["branchen"].get(slug)
+    if not x:
+        return ""
+    teile, text = [], []
+    for i, s in enumerate(x["schritte"], 1):
+        if i > 1:
+            teile.append('<i class="abl-pfeil" data-ab="%d"></i>' % i)
+        teile.append('<div class="abl-karte" data-ab="%d"><span class="abl-klein">%s</span><b>%s</b>%s</div>'
+                     % (i, html.escape(s["label"]), html.escape(s["titel"]),
+                        "".join('<span class="abl-zeile"><i>%s</i><i>%s</i></span>' % (html.escape(k), html.escape(v))
+                                for k, v in s["zeilen"])))
+        text.append("%d. %s: %s (%s)." % (i, s["label"], s["titel"], "; ".join("%s %s" % (k, v) for k, v in s["zeilen"])))
+    n = len(x["schritte"]) + 1
+    teile.append('<span class="abl-freigabe abl-breit" data-ab="%d">%s</span>' % (n, html.escape(x["mensch"])))
+    text.append("%d. %s." % (n, x["mensch"]))
+    links = ['<li><a href="/unternehmen/#ablaeufe">Alle Automatisierungen und Schnittstellen %s</a></li>' % PFEIL]
+    if x.get("baustein"):
+        p = nach_slug[x["baustein"]]
+        links.append('<li><a href="/produkte/%s/">Zum Baustein %s %s</a></li>' % (p["slug"], html.escape(p["name"]), PFEIL))
+    return ('<section id="ablauf-beispiel" class="abl-mini-abschnitt">\n  <div class="abl-block">\n    <div class="abl-text r">\n'
+            '      <span class="s-label">Automatisierung</span>\n      <h2>Beispiel: %s</h2>\n      <p>%s</p>\n'
+            '      <p class="abl-mensch"><strong>Sie entscheiden:</strong> %s.</p>\n'
+            '      <p class="abl-aktion"><a class="btn-p" href="#anfrage" data-thema="%s: %s">Gratis-Prozess-Check anfragen %s</a></p>\n'
+            '      <p class="abl-klein-text">%s</p>\n      <ul class="abl-links">\n        %s\n      </ul>\n    </div>\n'
+            '    %s\n  </div>\n</section>\n%s\n'
+            % (html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["mensch"]), PROZESS_CHECK, html.escape(x["titel"]),
+               PFEIL, PILOT_ABLAUF, "\n        ".join(links),
+               ablauf_geraet(x["titel"], "\n".join(teile), "abl-mini", " ".join(text)), ABLAUF_SKRIPT))
+
+
 def ansicht(ansichten, p):
     # Pilotphase: interaktive Demo, sonst statische Beispielansicht
     demo_teil = teil(ansichten, "demo-" + p["slug"])
@@ -898,7 +992,7 @@ EINWILLIGUNG = '<div class="fgrp"><label style="display:flex;gap:.6rem;align-ite
 
 SEITEN_STAND = "2026-11-13"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/": "2026-11-13", "/gemeinden/": "2026-11-13", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-13"}
+SEITEN_GEAENDERT = {"/": "2026-11-13", "/gemeinden/": "2026-11-13", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-14"}
 
 
 def stand(eintrag, pruef):
@@ -1229,6 +1323,12 @@ def main():
     if len(aslugs) != len(artikel) or {a["slug"] for a in artikel if a["art"] == "branche"} & bslugs:
         raise SystemExit("Doppelter Artikel-Slug")
     artikel_branchen = [a for a in artikel if a["art"] == "branche"]
+    ablaeufe = json.loads(lies("ablaeufe.json"))
+    schnipsel_ablaeufe = lies("ablaeufe.html")
+    if set(ablaeufe["branchen"]) != bslugs | {a["slug"] for a in artikel_branchen}:
+        raise SystemExit("ablaeufe.json: Mini-Beispiel nicht für genau alle Branchen")
+    if "ß" in json.dumps(ablaeufe, ensure_ascii=False) + schnipsel_ablaeufe:
+        raise SystemExit("ablaeufe.json/ablaeufe.html: ß im Text")
     for a in artikel:
         au = a.get("automatisierung")
         if not au:
@@ -1352,6 +1452,8 @@ def main():
                                og_branche(b["slug"], b["name"]))
         werte = dict(gemeinsam, **kopf, **{
             "verwandt": branchen_ratgeber(b, ratgeber) + branchen_quellen(b) + verwandt_abschnitt(verwandte(netz, info, burl)),
+            "ablauf_kopf": ABLAUF_KOPF,
+            "ablauf_beispiel": ablauf_beispiel(b["slug"], ablaeufe, nach_slug),
             "titel": html.escape(b.get("seo_titel") or titel_branche(b)),
             "beschreibung": html.escape(b.get("seo_beschreibung") or b["beschreibung"]),
             "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),
@@ -1416,6 +1518,8 @@ def main():
         kopf, seitenld = seitenkopf((START, stufe_a, (a["name"], pfad)), a["titel"], bild_a)
         werte = dict(gemeinsam, **kopf, **{
             "verwandt": verwandt_abschnitt(verwandte(netz, info, pfad)),
+            "ablauf_kopf": ABLAUF_KOPF if a["art"] == "branche" else "",
+            "ablauf_beispiel": ablauf_beispiel(a["slug"], ablaeufe, nach_slug) if a["art"] == "branche" else "",
             "titel": html.escape(a["titel"]),
             "beschreibung": html.escape(a["beschreibung"]),
             "url": DOMAIN + pfad,
@@ -1565,15 +1669,17 @@ def main():
     kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens")
     werte = dict(gemeinsam, **kopf, **{
         "titel": "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens",
-        "beschreibung": html.escape("Umfragen, Newsletter, Vereinswebsite, Mail-Assistent und Bausteine für Praxen, "
-                                    "Verwaltungen und Büros in der Schweiz. Jetzt Pilotpartner werden."),
+        "beschreibung": html.escape("Automatisierungen, Schnittstellen, Umfragen und Newsletter für Schweizer KMU und Vereine. "
+                                    "Jetzt Gratis-Prozess-Check anfragen."),
         "url": DOMAIN + "/unternehmen/",
         "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
         "produkte": scrolly(ansichten, allgemein, mehr=True),
         "bausteine": bausteine_gruppen(),
+        "ablauf_kopf": ABLAUF_KOPF,
+        "ablaeufe": ablaeufe_abschnitt(ablaeufe, schnipsel_ablaeufe),
         "anfrage": anfrage_formular("Unternehmen", "Unternehmen / Organisation", False,
                                     "Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an."),
-        "ld": ld(*seitenld),
+        "ld": ld(*seitenld, ablaeufe_ld(ablaeufe, DOMAIN + "/unternehmen/")),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
                                for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
         "ratgeber": "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (a["slug"], html.escape(a["name"]), PFEIL)

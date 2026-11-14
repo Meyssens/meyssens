@@ -636,6 +636,63 @@ for url in ["/branchen/"] + ["/branchen/%s/" % b["slug"] for b in welle2] + w2_b
                 if wort.lower() not in html.unescape(inhalt).lower():
                     fehler.append("%s: Suchbegriff %s fehlt in %s" % (url, wort, wo))
 
+# Automatisierungen und Schnittstellen: sechs Beispiele auf /unternehmen/, je ein Mini-Beispiel auf jeder Branchenseite.
+# Jedes Beispiel als "Beispiel mit erfundenen Daten" gekennzeichnet, mit Beschreibung für Screenreader und Knopf;
+# Pilot, Gratis-Prozess-Check, Auftragsbearbeitung, Hosting-Ort und Schnittstellen nur nach Absprache; keine Programmnamen
+ablaeufe = json.loads((ROOT / "ablaeufe.json").read_text(encoding="utf-8"))
+PROGRAMME = re.compile(r"\b(Bexio|Abacus|Sage|Banana|Run my Accounts|Klara|Outlook|Gmail|Google Kalender|Microsoft|Excel)\b", re.I)
+def pruefe_beispiele(url, abschnitt, anzahl):
+    figuren = abschnitt.count("data-ablauf>")
+    if figuren != anzahl:
+        fehler.append("%s: %d statt %d animierte Beispiele" % (url, figuren, anzahl))
+    if abschnitt.count('<figcaption class="abl-hinweis">Beispiel mit erfundenen Daten</figcaption>') != anzahl:
+        fehler.append("%s: Beispiel nicht als «Beispiel mit erfundenen Daten» gekennzeichnet" % url)
+    if abschnitt.count('role="img" aria-label="Beispiel mit erfundenen Daten: ') != anzahl:
+        fehler.append("%s: Beschreibung der Beispiele für Screenreader fehlt" % url)
+    if abschnitt.count('class="abl-knopf"') != anzahl:
+        fehler.append("%s: Knopf zum Anhalten/Abspielen fehlt" % url)
+    if 'href="#anfrage" data-thema="Gratis-Prozess-Check (30 Minuten)' not in abschnitt:
+        fehler.append("%s: Knopf Gratis-Prozess-Check zum Anfrageformular fehlt" % url)
+    if PROGRAMME.search(abschnitt):
+        fehler.append("%s: konkretes Programm genannt (%s)" % (url, PROGRAMME.search(abschnitt).group(0)))
+    if "ß" in abschnitt:
+        fehler.append("%s: ß im Abschnitt Automatisierungen" % url)
+    if "ablaeufe.css" not in seiten[url][0] or "ablaeufe.js" not in seiten[url][0]:
+        fehler.append("%s: ablaeufe.css oder ablaeufe.js nicht eingebunden" % url)
+u_text = seiten["/unternehmen/"][0]
+if '<section id="ablaeufe"' not in u_text:
+    fehler.append("/unternehmen/: Abschnitt #ablaeufe fehlt")
+else:
+    u_ab = zwischen(u_text, '<section id="ablaeufe"', '<section id="automatisierungen"')
+    pruefe_beispiele("/unternehmen/", u_ab, len(ablaeufe["unternehmen"]))
+    if len(ablaeufe["unternehmen"]) != 6 or u_ab.count('<article class="abl-block"') != 6:
+        fehler.append("/unternehmen/: nicht genau sechs Bausteine")
+    for muss in ("Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.", "Vertrag zur Auftragsbearbeitung",
+                 "Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.", "nach Absprache an, wenn eine Schnittstelle besteht",
+                 "keine Rechtsberatung", "Sie entscheiden:"):
+        if muss not in u_ab:
+            fehler.append("/unternehmen/: im Abschnitt #ablaeufe fehlt «%s»" % muss)
+    for x in ablaeufe["unternehmen"]:
+        if 'id="ablauf-%s"' % x["id"] not in u_ab:
+            fehler.append("/unternehmen/: Baustein #ablauf-%s fehlt" % x["id"])
+    ld_u = [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', u_text, re.S)]
+    liste = [g for d in ld_u for g in d.get("@graph", []) if g.get("@type") == "ItemList" and g.get("@id", "").endswith("#ablaeufe")]
+    if not liste or len(liste[0]["itemListElement"]) != 6 or any(e["item"].get("@type") != "Service" or "offers" in e["item"]
+                                                                 for e in liste[0]["itemListElement"]):
+        fehler.append("/unternehmen/: JSON-LD ItemList mit sechs Service-Einträgen (ohne Preise) fehlt")
+for slug in ablaeufe["branchen"]:
+    url = "/branchen/%s/" % slug
+    text = seiten.get(url, ("",))[0]
+    if '<section id="ablauf-beispiel"' not in text:
+        fehler.append("%s: Mini-Beispiel #ablauf-beispiel fehlt" % url)
+        continue
+    ab = zwischen(text, '<section id="ablauf-beispiel"', "</section>", True)
+    pruefe_beispiele(url, ab, 1)
+    if 'href="/unternehmen/#ablaeufe"' not in ab:
+        fehler.append("%s: Link auf /unternehmen/#ablaeufe fehlt" % url)
+    if "Pilot: ein Ablauf, drei Monate kostenlos, jederzeit kündbar." not in ab:
+        fehler.append("%s: Pilot-Hinweis im Mini-Beispiel fehlt" % url)
+
 # Erreichbarkeit: Breitensuche ab der Startseite über interne Links, höchstens 3 Klicks, keine verwaiste Seite
 tiefe, offen = {"/": 0}, ["/"]
 while offen:

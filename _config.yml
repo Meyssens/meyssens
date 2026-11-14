@@ -7,6 +7,8 @@ exclude:
   - branchen.json
   - produkte.json
   - ansichten.html
+  - ablaeufe.html
+  - ablaeufe.json
   - artikel
   - vorlage_artikel.html
   - vorlage_baustein.html

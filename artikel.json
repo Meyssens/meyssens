@@ -168,7 +168,8 @@
    },
    "demo": "online-terminanfrage-zahnarztpraxis",
    "geprueft": "2026-10-26"
-  }
+  },
+  "aktualisiert": "2026-11-14"
  },
  {
   "slug": "immobilienverwaltungen",
@@ -328,7 +329,8 @@
    },
    "demo": "schadenmeldung-triage",
    "geprueft": "2026-10-26"
-  }
+  },
+  "aktualisiert": "2026-11-14"
  },
  {
   "slug": "architekturbueros",
@@ -471,7 +473,8 @@
    },
    "demo": "zeiterfassung-sia-phasen",
    "geprueft": "2026-10-26"
-  }
+  },
+  "aktualisiert": "2026-11-14"
  },
  {
   "slug": "pflegeheime-spitex",
@@ -622,7 +625,8 @@
    },
    "demo": "arbeitszeit-pflege",
    "geprueft": "2026-10-26"
-  }
+  },
+  "aktualisiert": "2026-11-14"
  },
  {
   "slug": "ndsg-kmu-checkliste",
