@@ -992,7 +992,7 @@ EINWILLIGUNG = '<div class="fgrp"><label style="display:flex;gap:.6rem;align-ite
 
 SEITEN_STAND = "2026-11-13"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/": "2026-11-13", "/gemeinden/": "2026-11-13", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-14"}
+SEITEN_GEAENDERT = {"/": "2026-11-13", "/gemeinden/": "2026-11-13", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-16"}
 
 
 def stand(eintrag, pruef):
@@ -1272,6 +1272,66 @@ def ehrlich(produkte):
 START = ("Startseite", "/")
 UNTERNEHMEN = ("Unternehmen und Vereine", "/unternehmen/")
 
+# Gratis-Werkzeug QR-Rechnung (/werkzeuge/qr-rechnung/): Inhalt in werkzeug_qr_rechnung.html, Vorlage vorlage_werkzeug.html
+# (strenge Content Security Policy: keine Verbindungen nach aussen), Logik in assets/qr-rechnung.js und assets/qrcode.js
+QR_WERKZEUG = {
+    "pfad": "/werkzeuge/qr-rechnung/",
+    "name": "QR-Rechnung erstellen",
+    "titel": "QR-Rechnung erstellen: gratis und im Browser | Meyssens",
+    "beschreibung": "QR-Rechnung nach SIX-Standard 2.4 gratis erstellen: Zahlteil als PDF, Prüfung von IBAN und Referenz, Daten bleiben im Browser. Jetzt ausprobieren.",
+    "h1": "QR-Rechnung erstellen: gratis, direkt im Browser",
+    "lead": "Zahlteil mit Empfangsschein nach den Vorgaben der SIX (Version 2.4) als PDF oder SVG. Das Werkzeug prüft IBAN, "
+            "Referenz und Zeichen und läuft vollständig auf Ihrem Gerät: Ihre Angaben werden nicht übertragen.",
+    "geprueft": "2026-11-16",
+    "veroeffentlicht": "2026-11-16",
+    "faq": [
+        {"frage": "Ist das Werkzeug wirklich kostenlos?",
+         "antwort": "Ja. Es gibt keine Anmeldung, keine Begrenzung und keine Werbung auf dem Zahlteil. Meyssens bietet daneben "
+                    "Automatisierungen für Betriebe an, die viele Rechnungen schreiben."},
+        {"frage": "Werden meine Angaben gespeichert oder übertragen?",
+         "antwort": "Nein. Prüfung, QR-Code und PDF entstehen in Ihrem Browser. Die Seite verbietet Verbindungen nach aussen "
+                    "technisch per Content Security Policy, auch die Statistik ist auf dieser Seite abgeschaltet."},
+        {"frage": "Nach welchem Standard wird die QR-Rechnung erstellt?",
+         "antwort": "Nach den Schweizer Implementation Guidelines QR-Rechnung der SIX, Version 2.4, gültig ab 14. November 2026: "
+                    "strukturierte Adresse, Fehlerkorrekturstufe M, QR-Code 46 x 46 mm mit Schweizer Kreuz, Schriften Helvetica."},
+        {"frage": "Kann ich das PDF per E-Mail verschicken?",
+         "antwort": "Ja. Laut SIX eignen sich QR-Rechnungen als PDF für das E- und M-Banking. Damit Zahlende sie auch auf Papier "
+                    "nutzen können, enthält das PDF Trennlinien und den Hinweis «Vor der Einzahlung abzutrennen»."},
+        {"frage": "Kann ich eine QR-Referenz mit einer normalen IBAN verwenden?",
+         "antwort": "Nein. Die QR-Referenz ist nur mit einer QR-IBAN zulässig, und seit Version 2.4 nur in CHF. Mit einer normalen "
+                    "IBAN verwenden Sie eine RF-Referenz oder keine Referenz."},
+        {"frage": "Warum werden manche Zeichen abgelehnt?",
+         "antwort": "Die SIX lässt nur einen Teil des Unicode-Zeichensatzes zu. Typografische Anführungszeichen und Striche ersetzt "
+                    "das Werkzeug automatisch, seltene Buchstaben aus osteuropäischen Sprachen kann es im PDF nicht darstellen."},
+    ],
+    "quellen": [
+        ("SIX, Schweizer Implementation Guidelines QR-Rechnung, Version 2.4 (gültig ab 14. November 2026)",
+         "https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.4-de.pdf"),
+        ("SIX, QR-Rechnung: Informationen und Download Center",
+         "https://www.six-group.com/de/products-services/banking-services/payment-standardization/standards/qr-bill.html"),
+        ("SIX, Swiss QR-bill Validation Portal",
+         "https://validation.iso-payments.ch/gp/qrrechnung/validation"),
+        ("qrcode-generator von Kazuhiko Arase (MIT-Lizenz), für den QR-Code verwendet",
+         "https://github.com/kazuhikoarase/qrcode-generator"),
+    ],
+}
+
+
+def werkzeug_fragen(faq):
+    return ('<section id="fragen" class="flaeche">\n  <div class="r">\n    <span class="s-label">Fragen</span>\n'
+            '    <h2>Häufige Fragen</h2>\n  </div>\n  <div class="qa-list r">\n%s\n  </div>\n</section>'
+            % "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
+                        % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in faq))
+
+
+def werkzeug_quellen(quellen, geprueft):
+    return ('<section id="quellen">\n  <div class="artikel-text">\n    <span class="s-label">Quellen</span>\n'
+            '    <h2>Quellen und Stand</h2>\n    <p>Zuletzt geprüft am %s von %s, Meyssens. Allgemeine Information, keine Rechtsberatung.</p>\n'
+            '    <ul class="quellen">\n%s\n    </ul>\n  </div>\n</section>'
+            % (datetime.date.fromisoformat(geprueft).strftime("%d.%m.%Y"), AUTOR,
+               "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (html.escape(u), html.escape(n))
+                         for n, u in quellen)))
+
 
 def main():
     produkte = json.loads(lies("produkte.json"))
@@ -1493,7 +1553,7 @@ def main():
         schreibe("branchen/%s/index.html" % b["slug"], seite)
 
     # Alle Seiten, auf die Langtext-Seiten intern verlinken dürfen
-    bekannte_seiten = {"/", "/gemeinden/", "/unternehmen/"}
+    bekannte_seiten = {"/", "/gemeinden/", "/unternehmen/", QR_WERKZEUG["pfad"]}
     bekannte_seiten |= {"/produkte/%s/" % s for s in slugs} | {"/branchen/%s/" % s for s in bslugs}
     bekannte_seiten |= {"/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]) for a in artikel}
 
@@ -1506,7 +1566,7 @@ def main():
             if link["url"] not in bekannte_seiten:
                 raise SystemExit("Artikel %s: Weiterlesen auf unbekannte Seite %s" % (a["slug"], link["url"]))
         for ziel in re.findall(r'href="(/[^"#]*)', inhalt):
-            if ziel not in bekannte_seiten:
+            if ziel not in bekannte_seiten and not (ziel.startswith("/downloads/") and (ROOT / ziel.lstrip("/")).is_file()):
                 raise SystemExit("Artikel %s: interner Link auf unbekannte Seite %s" % (a["slug"], ziel))
         roh = inhalt + json.dumps(a, ensure_ascii=False)
         if "[Status" in roh or "ß" in roh:
@@ -1785,6 +1845,31 @@ def main():
             "ld": ld(*seitenld, *extra)})
         schreibe(pfad.strip("/") + "/index.html", fuelle(vorlage_seite, werte))
 
+    # Gratis-Werkzeug QR-Rechnung
+    w = QR_WERKZEUG
+    bild_w = og_eigen("werkzeug", "qr-rechnung", "Gratis-Werkzeug von Meyssens: QR-Rechnung erstellen", OG_STANDARD)
+    kopf, seitenld = seitenkopf((START, UNTERNEHMEN, (w["name"], w["pfad"])), w["titel"], bild_w)
+    werte = dict(gemeinsam, **kopf, **{
+        "titel": html.escape(w["titel"]), "beschreibung": html.escape(w["beschreibung"]), "url": DOMAIN + w["pfad"],
+        "seo_kopf": seo_kopf(DOMAIN + w["pfad"]), "chip": "Gratis-Werkzeug", "h1": html.escape(w["h1"]),
+        "lead": html.escape(w["lead"]), "inhalt": lies("werkzeug_qr_rechnung.html").rstrip("\n").replace(
+            "<!-- qr-beispiel -->", re.sub(r"^<\?xml[^>]*>\s*", "", lies("assets/qr-beispiel.svg").strip()).replace(
+                ' width="210mm" height="111mm"', ' role="img" aria-label="Beispiel einer QR-Rechnung mit erfundenen Daten: '
+                'Empfangsschein links, Zahlteil mit Swiss QR Code rechts"', 1)),
+        "fragen": werkzeug_fragen(w["faq"]), "quellen": werkzeug_quellen(w["quellen"], w["geprueft"]),
+        "ld": ld(*seitenld,
+                 {"@type": "WebApplication", "@id": DOMAIN + w["pfad"] + "#werkzeug", "name": w["name"], "url": DOMAIN + w["pfad"],
+                  "description": w["beschreibung"], "applicationCategory": "BusinessApplication", "operatingSystem": "Browser",
+                  "inLanguage": "de-CH", "isAccessibleForFree": True, "browserRequirements": "JavaScript",
+                  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CHF"},
+                  "provider": {"@id": DOMAIN + "/#org"}, "datePublished": w["veroeffentlicht"], "dateModified": w["geprueft"]},
+                 {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
+                  "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in w["faq"]]})})
+    for ziel in re.findall(r'href="(/[^"#]*)', werte["inhalt"]):
+        if ziel not in bekannte_seiten:
+            raise SystemExit("Werkzeug QR-Rechnung: interner Link auf unbekannte Seite %s" % ziel)
+    schreibe(w["pfad"].strip("/") + "/index.html", fuelle(lies("vorlage_werkzeug.html"), werte))
+
     # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
     werte = dict(gemeinsam, **{
         "titel": "Seite nicht gefunden | Meyssens",
@@ -1832,6 +1917,7 @@ def main():
     seiten += [("/produkte/%s/" % p["slug"], "0.6", stand(p, p.get("geprueft", SEITEN_STAND))) for p in produkte]
     seiten += [("/branchen/%s/" % b["slug"], "0.6", stand(b, b.get("automatisierungen", {}).get("geprueft", SEITEN_STAND))) for b in branchen]
     seiten += [("/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]), "0.6", stand(a, a["geprueft"])) for a in artikel]
+    seiten.append((QR_WERKZEUG["pfad"], "0.7", QR_WERKZEUG["geprueft"]))
     zeilen = ["  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>"
               % (DOMAIN, pfad, stand, prio) for pfad, prio, stand in seiten]
     schreibe("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'

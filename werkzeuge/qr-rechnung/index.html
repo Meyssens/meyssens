@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'">
+<title>QR-Rechnung erstellen: gratis und im Browser | Meyssens</title>
+<meta name="description" content="QR-Rechnung nach SIX-Standard 2.4 gratis erstellen: Zahlteil als PDF, Prüfung von IBAN und Referenz, Daten bleiben im Browser. Jetzt ausprobieren.">
+<meta property="og:title" content="QR-Rechnung erstellen: gratis und im Browser | Meyssens">
+<meta property="og:description" content="QR-Rechnung nach SIX-Standard 2.4 gratis erstellen: Zahlteil als PDF, Prüfung von IBAN und Referenz, Daten bleiben im Browser. Jetzt ausprobieren.">
+<meta property="og:url" content="https://meyssens.ch/werkzeuge/qr-rechnung/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://meyssens.ch/assets/og/werkzeug-qr-rechnung.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Gratis-Werkzeug von Meyssens: QR-Rechnung erstellen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://meyssens.ch/assets/og/werkzeug-qr-rechnung.png">
+<meta name="twitter:image:alt" content="Gratis-Werkzeug von Meyssens: QR-Rechnung erstellen">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Meyssens">
+<link rel="canonical" href="https://meyssens.ch/werkzeuge/qr-rechnung/">
+<link rel="alternate" hreflang="de-CH" href="https://meyssens.ch/werkzeuge/qr-rechnung/">
+<link rel="alternate" hreflang="x-default" href="https://meyssens.ch/werkzeuge/qr-rechnung/">
+<link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
+<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=2">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=2">
+<link rel="manifest" href="/site.webmanifest?v=2">
+<meta name="theme-color" content="#0000ff">
+<script>document.documentElement.classList.add("js")</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.meyssensEnableAnalytics = function(){
+    if(window.meyssensGaLoaded) return;
+    window.meyssensGaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JNHXZ1TZ4K';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-JNHXZ1TZ4K');
+  };
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+<link rel="preload" href="/assets/schriften/inter-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/schriften/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/stil.css">
+<link rel="stylesheet" href="/assets/werkzeug.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@id": "https://meyssens.ch/ueber-uns/#person"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}, "areaServed": {"@type": "Country", "name": "Schweiz"}, "knowsLanguage": "de-CH", "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "lionel@meyssens.ch", "availableLanguage": "de"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de-CH", "publisher": {"@id": "https://meyssens.ch/#org"}}, {"@type": "Person", "@id": "https://meyssens.ch/ueber-uns/#person", "name": "Lionel Nickelsen", "url": "https://meyssens.ch/ueber-uns/", "worksFor": {"@id": "https://meyssens.ch/#org"}}, {"@type": "BreadcrumbList", "@id": "https://meyssens.ch/werkzeuge/qr-rechnung/#brotkrumen", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen und Vereine", "item": "https://meyssens.ch/unternehmen/"}, {"@type": "ListItem", "position": 3, "name": "QR-Rechnung erstellen", "item": "https://meyssens.ch/werkzeuge/qr-rechnung/"}]}, {"@type": "WebPage", "@id": "https://meyssens.ch/werkzeuge/qr-rechnung/", "url": "https://meyssens.ch/werkzeuge/qr-rechnung/", "name": "QR-Rechnung erstellen: gratis und im Browser | Meyssens", "inLanguage": "de-CH", "isPartOf": {"@id": "https://meyssens.ch/#website"}, "breadcrumb": {"@id": "https://meyssens.ch/werkzeuge/qr-rechnung/#brotkrumen"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://meyssens.ch/assets/og/werkzeug-qr-rechnung.png", "width": 1200, "height": 630, "caption": "Gratis-Werkzeug von Meyssens: QR-Rechnung erstellen"}}, {"@type": "WebApplication", "@id": "https://meyssens.ch/werkzeuge/qr-rechnung/#werkzeug", "name": "QR-Rechnung erstellen", "url": "https://meyssens.ch/werkzeuge/qr-rechnung/", "description": "QR-Rechnung nach SIX-Standard 2.4 gratis erstellen: Zahlteil als PDF, Prüfung von IBAN und Referenz, Daten bleiben im Browser. Jetzt ausprobieren.", "applicationCategory": "BusinessApplication", "operatingSystem": "Browser", "inLanguage": "de-CH", "isAccessibleForFree": true, "browserRequirements": "JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CHF"}, "provider": {"@id": "https://meyssens.ch/#org"}, "datePublished": "2026-11-16", "dateModified": "2026-11-16"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ist das Werkzeug wirklich kostenlos?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Es gibt keine Anmeldung, keine Begrenzung und keine Werbung auf dem Zahlteil. Meyssens bietet daneben Automatisierungen für Betriebe an, die viele Rechnungen schreiben."}}, {"@type": "Question", "name": "Werden meine Angaben gespeichert oder übertragen?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Prüfung, QR-Code und PDF entstehen in Ihrem Browser. Die Seite verbietet Verbindungen nach aussen technisch per Content Security Policy, auch die Statistik ist auf dieser Seite abgeschaltet."}}, {"@type": "Question", "name": "Nach welchem Standard wird die QR-Rechnung erstellt?", "acceptedAnswer": {"@type": "Answer", "text": "Nach den Schweizer Implementation Guidelines QR-Rechnung der SIX, Version 2.4, gültig ab 14. November 2026: strukturierte Adresse, Fehlerkorrekturstufe M, QR-Code 46 x 46 mm mit Schweizer Kreuz, Schriften Helvetica."}}, {"@type": "Question", "name": "Kann ich das PDF per E-Mail verschicken?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Laut SIX eignen sich QR-Rechnungen als PDF für das E- und M-Banking. Damit Zahlende sie auch auf Papier nutzen können, enthält das PDF Trennlinien und den Hinweis «Vor der Einzahlung abzutrennen»."}}, {"@type": "Question", "name": "Kann ich eine QR-Referenz mit einer normalen IBAN verwenden?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die QR-Referenz ist nur mit einer QR-IBAN zulässig, und seit Version 2.4 nur in CHF. Mit einer normalen IBAN verwenden Sie eine RF-Referenz oder keine Referenz."}}, {"@type": "Question", "name": "Warum werden manche Zeichen abgelehnt?", "acceptedAnswer": {"@type": "Answer", "text": "Die SIX lässt nur einen Teil des Unicode-Zeichensatzes zu. Typografische Anführungszeichen und Striche ersetzt das Werkzeug automatisch, seltene Buchstaben aus osteuropäischen Sprachen kann es im PDF nicht darstellen."}}]}]}</script>
+</head>
+<body class="stil">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<nav id="nav" aria-label="Hauptnavigation">
+  <a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – zur Startseite"></a>
+  <ul class="nav-items">
+    <li><a href="/gemeinden/">Für Gemeinden</a></li>
+    <li><a href="/unternehmen/">Für Unternehmen</a></li>
+    <li><a href="/ueber-uns/">Über uns</a></li>
+  </ul>
+  <a href="mailto:lionel@meyssens.ch" class="nav-btn nav-kontakt">Kontakt</a>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/gemeinden/">Für Gemeinden</a>
+  <a href="/unternehmen/">Für Unternehmen und Vereine</a>
+  <a href="/ueber-uns/">Über uns</a>
+</div>
+
+<main id="main">
+<section class="page-hero">
+  <nav class="brotkrumen" aria-label="Brotkrumen"><ol><li><a href="/">Startseite</a></li><li><a href="/unternehmen/">Unternehmen und Vereine</a></li><li aria-current="page">QR-Rechnung erstellen</li></ol></nav>
+  <div class="chip"><span class="chip-dot"></span><span>Gratis-Werkzeug</span></div>
+  <h1>QR-Rechnung erstellen: gratis, direkt im Browser</h1>
+  <p class="lead">Zahlteil mit Empfangsschein nach den Vorgaben der SIX (Version 2.4) als PDF oder SVG. Das Werkzeug prüft IBAN, Referenz und Zeichen und läuft vollständig auf Ihrem Gerät: Ihre Angaben werden nicht übertragen.</p>
+</section>
+
+<section id="werkzeug" class="flaeche">
+  <h2 class="sr-only">Angaben erfassen und Vorschau</h2>
+  <div class="qr-raster">
+    <form id="qr-formular" class="ccard qr-formular" novalidate aria-describedby="qr-datenschutz">
+      <noscript><p class="note">Das Werkzeug braucht JavaScript. Es rechnet alles in Ihrem Browser und sendet nichts.</p></noscript>
+      <fieldset>
+        <legend>Konto und Zahlungsempfänger</legend>
+        <div class="fgrp">
+          <label class="flabel" for="qr-konto">IBAN oder QR-IBAN (CH oder LI)</label>
+          <input class="finput" type="text" id="qr-konto" autocomplete="off" spellcheck="false" inputmode="text" placeholder="CH00 0000 0000 0000 0000 0" aria-describedby="qr-konto-hilfe">
+          <p class="qr-hilfe" id="qr-konto-hilfe">Die Angaben müssen zum Inhaber des Kontos passen, so wie es bei der Bank geführt wird.</p>
+        </div>
+        <div class="fgrp">
+          <label class="flabel" for="qr-ze-name">Name oder Firma</label>
+          <input class="finput" type="text" id="qr-ze-name" autocomplete="organization" maxlength="70">
+        </div>
+        <div class="frow strasse">
+          <div class="fgrp"><label class="flabel" for="qr-ze-strasse">Strasse</label><input class="finput" type="text" id="qr-ze-strasse" autocomplete="address-line1" maxlength="70"></div>
+          <div class="fgrp"><label class="flabel" for="qr-ze-nr">Nr.</label><input class="finput" type="text" id="qr-ze-nr" maxlength="16"></div>
+        </div>
+        <div class="frow drei">
+          <div class="fgrp"><label class="flabel" for="qr-ze-plz">PLZ</label><input class="finput" type="text" id="qr-ze-plz" autocomplete="postal-code" maxlength="16"></div>
+          <div class="fgrp"><label class="flabel" for="qr-ze-ort">Ort</label><input class="finput" type="text" id="qr-ze-ort" autocomplete="address-level2" maxlength="35"></div>
+          <div class="fgrp"><label class="flabel" for="qr-ze-land">Land</label><input class="finput" type="text" id="qr-ze-land" value="CH" maxlength="2" autocomplete="country"></div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Betrag und Referenz</legend>
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="qr-waehrung">Währung</label><select class="fselect finput" id="qr-waehrung"><option value="CHF">CHF</option><option value="EUR">EUR</option></select></div>
+          <div class="fgrp"><label class="flabel" for="qr-betrag">Betrag (leer lassen für ein Feld zum Ausfüllen)</label><input class="finput" type="text" id="qr-betrag" inputmode="decimal" placeholder="1590.00"></div>
+        </div>
+        <div class="fgrp">
+          <label class="flabel" for="qr-referenz">Referenz (optional)</label>
+          <div class="qr-ref-zeile">
+            <input class="finput" type="text" id="qr-referenz" autocomplete="off" spellcheck="false" aria-describedby="qr-ref-hinweis">
+            <button type="button" class="qr-klein" id="qr-pruefziffer">Prüfziffer ergänzen</button>
+          </div>
+          <p class="qr-hilfe" id="qr-ref-hinweis" aria-live="polite">Mit normaler IBAN: RF-Referenz oder leer lassen.</p>
+        </div>
+        <div class="fgrp">
+          <label class="flabel" for="qr-mitteilung">Zusätzliche Informationen (höchstens 140 Zeichen)</label>
+          <textarea class="ftextarea" id="qr-mitteilung" maxlength="140" placeholder="Rechnung 2026-117 vom 20.11.2026"></textarea>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Zahlungspflichtiger</legend>
+        <label class="qr-wahl" for="qr-mit-zahler"><input type="checkbox" id="qr-mit-zahler"> Adresse des Zahlungspflichtigen aufdrucken</label>
+        <div id="qr-zahler-felder" hidden>
+          <div class="fgrp"><label class="flabel" for="qr-zp-name">Name oder Firma</label><input class="finput" type="text" id="qr-zp-name" maxlength="70"></div>
+          <div class="frow strasse">
+            <div class="fgrp"><label class="flabel" for="qr-zp-strasse">Strasse</label><input class="finput" type="text" id="qr-zp-strasse" maxlength="70"></div>
+            <div class="fgrp"><label class="flabel" for="qr-zp-nr">Nr.</label><input class="finput" type="text" id="qr-zp-nr" maxlength="16"></div>
+          </div>
+          <div class="frow drei">
+            <div class="fgrp"><label class="flabel" for="qr-zp-plz">PLZ</label><input class="finput" type="text" id="qr-zp-plz" maxlength="16"></div>
+            <div class="fgrp"><label class="flabel" for="qr-zp-ort">Ort</label><input class="finput" type="text" id="qr-zp-ort" maxlength="35"></div>
+            <div class="fgrp"><label class="flabel" for="qr-zp-land">Land</label><input class="finput" type="text" id="qr-zp-land" value="CH" maxlength="2"></div>
+          </div>
+        </div>
+      </fieldset>
+      <div id="qr-meldungen" role="status" aria-live="polite"></div>
+      <div class="qr-knoepfe">
+        <button type="button" class="btn-p" data-qr-download="pdf" disabled>PDF herunterladen</button>
+        <button type="button" class="btn-s" data-qr-download="svg" disabled>SVG herunterladen</button>
+        <button type="button" class="qr-klein" id="qr-beispiel">Beispiel ausfüllen</button>
+        <button type="button" class="qr-klein" id="qr-leeren">Alles leeren</button>
+      </div>
+    </form>
+    <div class="qr-seite">
+      <figure class="geraet qr-geraet">
+        <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Zahlteil mit Empfangsschein</span><span class="beispiel" id="qr-marke">Beispiel</span></div>
+        <div class="geraet-inhalt"><div id="qr-vorschau" class="qr-vorschau"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -6 210 111" role="img" aria-label="Beispiel einer QR-Rechnung mit erfundenen Daten: Empfangsschein links, Zahlteil mit Swiss QR Code rechts"><rect x="0" y="-6" width="210" height="111" fill="#fff"/><g font-family="Helvetica, Arial, 'Liberation Sans', sans-serif" fill="#000"><line x1="0" y1="0" x2="210" y2="0" stroke="#000" stroke-width="0.176"/><line x1="62" y1="0" x2="62" y2="105" stroke="#000" stroke-width="0.176"/><text x="105" y="-1.6" font-size="2.469" text-anchor="middle">Vor der Einzahlung abzutrennen</text><text x="5" y="7.794" font-size="3.881" font-weight="bold">Empfangsschein</text><text x="5" y="13.588" font-size="2.117" font-weight="bold">Konto / Zahlbar an</text><text x="5" y="16.763" font-size="2.822">CH44 3199 9123 0008 8901 2</text><text x="5" y="20.093" font-size="2.822">Max Muster &amp; Söhne</text><text x="5" y="23.423" font-size="2.822">Musterstrasse 123</text><text x="5" y="26.753" font-size="2.822">8000 Seldwyla</text><text x="5" y="31.754" font-size="2.117" font-weight="bold">Referenz</text><text x="5" y="34.929" font-size="2.822">21 00000 00003 13947 14300 09017</text><text x="5" y="39.93" font-size="2.117" font-weight="bold">Zahlbar durch</text><text x="5" y="43.105" font-size="2.822">Simon Muster</text><text x="5" y="46.436" font-size="2.822">Musterstrasse 1</text><text x="5" y="49.766" font-size="2.822">8000 Seldwyla</text><text x="5" y="70" font-size="2.117" font-weight="bold">Währung</text><text x="17" y="70" font-size="2.117" font-weight="bold">Betrag</text><text x="5" y="73.6" font-size="2.822">CHF</text><text x="17" y="73.6" font-size="2.822">1 949.75</text><text x="57" y="84.5" font-size="2.117" font-weight="bold" text-anchor="end">Annahmestelle</text><text x="67" y="7.794" font-size="3.881" font-weight="bold">Zahlteil</text><path fill="#000" d="M67 17h5.279v0.754h-5.279zM73.033 17h1.508v0.754h-1.508zM75.295 17h2.262v0.754h-2.262zM79.066 17h0.754v0.754h-0.754zM80.574 17h0.754v0.754h-0.754zM82.082 17h0.754v0.754h-0.754zM84.344 17h0.754v0.754h-0.754zM88.115 17h1.508v0.754h-1.508zM93.393 17h1.508v0.754h-1.508zM97.918 17h1.508v0.754h-1.508zM100.934 17h0.754v0.754h-0.754zM103.197 17h0.754v0.754h-0.754zM105.459 17h1.508v0.754h-1.508zM107.721 17h5.279v0.754h-5.279zM67 17.754h0.754v0.754h-0.754zM71.525 17.754h0.754v0.754h-0.754zM73.033 17.754h0.754v0.754h-0.754zM78.311 17.754h0.754v0.754h-0.754zM79.82 17.754h0.754v0.754h-0.754zM81.328 17.754h0.754v0.754h-0.754zM82.836 17.754h2.262v0.754h-2.262zM86.607 17.754h0.754v0.754h-0.754zM88.115 17.754h0.754v0.754h-0.754zM91.131 17.754h1.508v0.754h-1.508zM93.393 17.754h0.754v0.754h-0.754zM95.656 17.754h4.525v0.754h-4.525zM100.934 17.754h2.262v0.754h-2.262zM105.459 17.754h1.508v0.754h-1.508zM107.721 17.754h0.754v0.754h-0.754zM112.246 17.754h0.754v0.754h-0.754zM67 18.508h0.754v0.754h-0.754zM68.508 18.508h2.262v0.754h-2.262zM71.525 18.508h0.754v0.754h-0.754zM74.541 18.508h0.754v0.754h-0.754zM76.049 18.508h0.754v0.754h-0.754zM78.311 18.508h2.262v0.754h-2.262zM81.328 18.508h2.262v0.754h-2.262zM85.852 18.508h0.754v0.754h-0.754zM87.361 18.508h0.754v0.754h-0.754zM91.885 18.508h0.754v0.754h-0.754zM94.148 18.508h1.508v0.754h-1.508zM97.164 18.508h0.754v0.754h-0.754zM99.426 18.508h0.754v0.754h-0.754zM102.443 18.508h4.525v0.754h-4.525zM107.721 18.508h0.754v0.754h-0.754zM109.23 18.508h2.262v0.754h-2.262zM112.246 18.508h0.754v0.754h-0.754zM67 19.262h0.754v0.754h-0.754zM68.508 19.262h2.262v0.754h-2.262zM71.525 19.262h0.754v0.754h-0.754zM73.033 19.262h0.754v0.754h-0.754zM75.295 19.262h0.754v0.754h-0.754zM77.557 19.262h0.754v0.754h-0.754zM79.066 19.262h2.262v0.754h-2.262zM82.836 19.262h3.77v0.754h-3.77zM88.115 19.262h0.754v0.754h-0.754zM89.623 19.262h5.279v0.754h-5.279zM96.41 19.262h0.754v0.754h-0.754zM97.918 19.262h1.508v0.754h-1.508zM100.934 19.262h1.508v0.754h-1.508zM103.197 19.262h0.754v0.754h-0.754zM104.705 19.262h0.754v0.754h-0.754zM106.213 19.262h0.754v0.754h-0.754zM107.721 19.262h0.754v0.754h-0.754zM109.23 19.262h2.262v0.754h-2.262zM112.246 19.262h0.754v0.754h-0.754zM67 20.016h0.754v0.754h-0.754zM68.508 20.016h2.262v0.754h-2.262zM71.525 20.016h0.754v0.754h-0.754zM74.541 20.016h0.754v0.754h-0.754zM76.049 20.016h0.754v0.754h-0.754zM77.557 20.016h1.508v0.754h-1.508zM81.328 20.016h0.754v0.754h-0.754zM83.59 20.016h0.754v0.754h-0.754zM85.098 20.016h0.754v0.754h-0.754zM86.607 20.016h0.754v0.754h-0.754zM88.115 20.016h3.77v0.754h-3.77zM95.656 20.016h1.508v0.754h-1.508zM99.426 20.016h2.262v0.754h-2.262zM103.951 20.016h2.262v0.754h-2.262zM107.721 20.016h0.754v0.754h-0.754zM109.23 20.016h2.262v0.754h-2.262zM112.246 20.016h0.754v0.754h-0.754zM67 20.77h0.754v0.754h-0.754zM71.525 20.77h0.754v0.754h-0.754zM75.295 20.77h0.754v0.754h-0.754zM78.311 20.77h0.754v0.754h-0.754zM79.82 20.77h0.754v0.754h-0.754zM83.59 20.77h2.262v0.754h-2.262zM86.607 20.77h0.754v0.754h-0.754zM88.115 20.77h0.754v0.754h-0.754zM91.131 20.77h1.508v0.754h-1.508zM94.148 20.77h0.754v0.754h-0.754zM95.656 20.77h1.508v0.754h-1.508zM98.672 20.77h0.754v0.754h-0.754zM101.689 20.77h0.754v0.754h-0.754zM104.705 20.77h0.754v0.754h-0.754zM107.721 20.77h0.754v0.754h-0.754zM112.246 20.77h0.754v0.754h-0.754zM67 21.525h5.279v0.754h-5.279zM73.033 21.525h0.754v0.754h-0.754zM74.541 21.525h0.754v0.754h-0.754zM76.049 21.525h0.754v0.754h-0.754zM77.557 21.525h0.754v0.754h-0.754zM79.066 21.525h0.754v0.754h-0.754zM80.574 21.525h0.754v0.754h-0.754zM82.082 21.525h0.754v0.754h-0.754zM83.59 21.525h0.754v0.754h-0.754zM85.098 21.525h0.754v0.754h-0.754zM86.607 21.525h0.754v0.754h-0.754zM88.115 21.525h0.754v0.754h-0.754zM89.623 21.525h0.754v0.754h-0.754zM91.131 21.525h0.754v0.754h-0.754zM92.639 21.525h0.754v0.754h-0.754zM94.148 21.525h0.754v0.754h-0.754zM95.656 21.525h0.754v0.754h-0.754zM97.164 21.525h0.754v0.754h-0.754zM98.672 21.525h0.754v0.754h-0.754zM100.18 21.525h0.754v0.754h-0.754zM101.689 21.525h0.754v0.754h-0.754zM103.197 21.525h0.754v0.754h-0.754zM104.705 21.525h0.754v0.754h-0.754zM106.213 21.525h0.754v0.754h-0.754zM107.721 21.525h5.279v0.754h-5.279zM73.033 22.279h2.262v0.754h-2.262zM76.049 22.279h0.754v0.754h-0.754zM77.557 22.279h6.787v0.754h-6.787zM85.098 22.279h0.754v0.754h-0.754zM86.607 22.279h0.754v0.754h-0.754zM88.115 22.279h0.754v0.754h-0.754zM91.131 22.279h0.754v0.754h-0.754zM94.148 22.279h0.754v0.754h-0.754zM95.656 22.279h4.525v0.754h-4.525zM101.689 22.279h3.016v0.754h-3.016zM67 23.033h0.754v0.754h-0.754zM68.508 23.033h1.508v0.754h-1.508zM70.77 23.033h2.262v0.754h-2.262zM74.541 23.033h0.754v0.754h-0.754zM76.803 23.033h0.754v0.754h-0.754zM78.311 23.033h0.754v0.754h-0.754zM79.82 23.033h0.754v0.754h-0.754zM81.328 23.033h1.508v0.754h-1.508zM83.59 23.033h0.754v0.754h-0.754zM85.098 23.033h0.754v0.754h-0.754zM88.115 23.033h5.279v0.754h-5.279zM94.902 23.033h0.754v0.754h-0.754zM97.164 23.033h1.508v0.754h-1.508zM101.689 23.033h1.508v0.754h-1.508zM105.459 23.033h0.754v0.754h-0.754zM107.721 23.033h0.754v0.754h-0.754zM109.984 23.033h0.754v0.754h-0.754zM111.492 23.033h1.508v0.754h-1.508zM68.508 23.787h3.016v0.754h-3.016zM72.279 23.787h3.016v0.754h-3.016zM76.049 23.787h6.033v0.754h-6.033zM82.836 23.787h2.262v0.754h-2.262zM86.607 23.787h1.508v0.754h-1.508zM88.869 23.787h3.77v0.754h-3.77zM94.148 23.787h0.754v0.754h-0.754zM98.672 23.787h1.508v0.754h-1.508zM100.934 23.787h0.754v0.754h-0.754zM103.197 23.787h0.754v0.754h-0.754zM105.459 23.787h0.754v0.754h-0.754zM108.475 23.787h2.262v0.754h-2.262zM112.246 23.787h0.754v0.754h-0.754zM68.508 24.541h2.262v0.754h-2.262zM71.525 24.541h0.754v0.754h-0.754zM73.787 24.541h2.262v0.754h-2.262zM76.803 24.541h0.754v0.754h-0.754zM82.836 24.541h0.754v0.754h-0.754zM85.098 24.541h1.508v0.754h-1.508zM91.131 24.541h3.016v0.754h-3.016zM94.902 24.541h0.754v0.754h-0.754zM98.672 24.541h0.754v0.754h-0.754zM100.18 24.541h2.262v0.754h-2.262zM104.705 24.541h0.754v0.754h-0.754zM106.213 24.541h0.754v0.754h-0.754zM107.721 24.541h0.754v0.754h-0.754zM109.23 24.541h0.754v0.754h-0.754zM110.738 24.541h1.508v0.754h-1.508zM67 25.295h1.508v0.754h-1.508zM69.262 25.295h0.754v0.754h-0.754zM70.77 25.295h0.754v0.754h-0.754zM73.033 25.295h2.262v0.754h-2.262zM77.557 25.295h3.016v0.754h-3.016zM81.328 25.295h0.754v0.754h-0.754zM82.836 25.295h0.754v0.754h-0.754zM84.344 25.295h1.508v0.754h-1.508zM88.115 25.295h1.508v0.754h-1.508zM90.377 25.295h1.508v0.754h-1.508zM92.639 25.295h3.016v0.754h-3.016zM96.41 25.295h0.754v0.754h-0.754zM100.18 25.295h2.262v0.754h-2.262zM104.705 25.295h0.754v0.754h-0.754zM106.967 25.295h1.508v0.754h-1.508zM109.23 25.295h2.262v0.754h-2.262zM112.246 25.295h0.754v0.754h-0.754zM67 26.049h0.754v0.754h-0.754zM70.016 26.049h0.754v0.754h-0.754zM71.525 26.049h0.754v0.754h-0.754zM73.787 26.049h0.754v0.754h-0.754zM76.049 26.049h0.754v0.754h-0.754zM77.557 26.049h3.016v0.754h-3.016zM82.082 26.049h1.508v0.754h-1.508zM85.098 26.049h0.754v0.754h-0.754zM87.361 26.049h1.508v0.754h-1.508zM91.885 26.049h0.754v0.754h-0.754zM94.148 26.049h0.754v0.754h-0.754zM95.656 26.049h1.508v0.754h-1.508zM97.918 26.049h0.754v0.754h-0.754zM102.443 26.049h2.262v0.754h-2.262zM105.459 26.049h0.754v0.754h-0.754zM106.967 26.049h1.508v0.754h-1.508zM110.738 26.049h0.754v0.754h-0.754zM67 26.803h3.77v0.754h-3.77zM73.787 26.803h2.262v0.754h-2.262zM76.803 26.803h1.508v0.754h-1.508zM79.82 26.803h1.508v0.754h-1.508zM84.344 26.803h1.508v0.754h-1.508zM86.607 26.803h0.754v0.754h-0.754zM90.377 26.803h0.754v0.754h-0.754zM93.393 26.803h0.754v0.754h-0.754zM95.656 26.803h0.754v0.754h-0.754zM99.426 26.803h2.262v0.754h-2.262zM103.197 26.803h0.754v0.754h-0.754zM104.705 26.803h0.754v0.754h-0.754zM106.967 26.803h0.754v0.754h-0.754zM111.492 26.803h1.508v0.754h-1.508zM68.508 27.557h0.754v0.754h-0.754zM71.525 27.557h0.754v0.754h-0.754zM75.295 27.557h1.508v0.754h-1.508zM77.557 27.557h0.754v0.754h-0.754zM79.066 27.557h0.754v0.754h-0.754zM80.574 27.557h3.016v0.754h-3.016zM85.852 27.557h0.754v0.754h-0.754zM88.869 27.557h0.754v0.754h-0.754zM91.885 27.557h0.754v0.754h-0.754zM95.656 27.557h0.754v0.754h-0.754zM97.164 27.557h4.525v0.754h-4.525zM103.951 27.557h0.754v0.754h-0.754zM105.459 27.557h1.508v0.754h-1.508zM108.475 27.557h2.262v0.754h-2.262zM68.508 28.311h1.508v0.754h-1.508zM72.279 28.311h0.754v0.754h-0.754zM74.541 28.311h0.754v0.754h-0.754zM77.557 28.311h0.754v0.754h-0.754zM79.066 28.311h2.262v0.754h-2.262zM82.082 28.311h1.508v0.754h-1.508zM85.098 28.311h0.754v0.754h-0.754zM88.869 28.311h2.262v0.754h-2.262zM92.639 28.311h0.754v0.754h-0.754zM95.656 28.311h3.016v0.754h-3.016zM100.18 28.311h2.262v0.754h-2.262zM103.197 28.311h0.754v0.754h-0.754zM104.705 28.311h0.754v0.754h-0.754zM106.213 28.311h0.754v0.754h-0.754zM107.721 28.311h3.016v0.754h-3.016zM68.508 29.066h0.754v0.754h-0.754zM71.525 29.066h2.262v0.754h-2.262zM75.295 29.066h0.754v0.754h-0.754zM78.311 29.066h3.016v0.754h-3.016zM82.082 29.066h2.262v0.754h-2.262zM86.607 29.066h1.508v0.754h-1.508zM89.623 29.066h1.508v0.754h-1.508zM91.885 29.066h0.754v0.754h-0.754zM93.393 29.066h0.754v0.754h-0.754zM99.426 29.066h2.262v0.754h-2.262zM102.443 29.066h0.754v0.754h-0.754zM107.721 29.066h0.754v0.754h-0.754zM109.23 29.066h3.016v0.754h-3.016zM67.754 29.82h3.77v0.754h-3.77zM73.033 29.82h1.508v0.754h-1.508zM76.049 29.82h3.77v0.754h-3.77zM80.574 29.82h0.754v0.754h-0.754zM82.082 29.82h0.754v0.754h-0.754zM85.098 29.82h0.754v0.754h-0.754zM86.607 29.82h0.754v0.754h-0.754zM90.377 29.82h3.016v0.754h-3.016zM96.41 29.82h1.508v0.754h-1.508zM99.426 29.82h1.508v0.754h-1.508zM101.689 29.82h1.508v0.754h-1.508zM103.951 29.82h0.754v0.754h-0.754zM106.213 29.82h1.508v0.754h-1.508zM110.738 29.82h1.508v0.754h-1.508zM68.508 30.574h0.754v0.754h-0.754zM70.016 30.574h3.016v0.754h-3.016zM74.541 30.574h0.754v0.754h-0.754zM77.557 30.574h2.262v0.754h-2.262zM80.574 30.574h2.262v0.754h-2.262zM83.59 30.574h2.262v0.754h-2.262zM87.361 30.574h3.77v0.754h-3.77zM91.885 30.574h1.508v0.754h-1.508zM94.148 30.574h1.508v0.754h-1.508zM97.164 30.574h0.754v0.754h-0.754zM98.672 30.574h0.754v0.754h-0.754zM101.689 30.574h1.508v0.754h-1.508zM106.967 30.574h0.754v0.754h-0.754zM110.738 30.574h2.262v0.754h-2.262zM69.262 31.328h0.754v0.754h-0.754zM72.279 31.328h0.754v0.754h-0.754zM74.541 31.328h0.754v0.754h-0.754zM76.049 31.328h0.754v0.754h-0.754zM77.557 31.328h3.77v0.754h-3.77zM82.082 31.328h5.279v0.754h-5.279zM88.869 31.328h0.754v0.754h-0.754zM90.377 31.328h0.754v0.754h-0.754zM103.197 31.328h0.754v0.754h-0.754zM104.705 31.328h1.508v0.754h-1.508zM108.475 31.328h0.754v0.754h-0.754zM109.984 31.328h0.754v0.754h-0.754zM67 32.082h0.754v0.754h-0.754zM69.262 32.082h0.754v0.754h-0.754zM70.77 32.082h3.77v0.754h-3.77zM75.295 32.082h0.754v0.754h-0.754zM76.803 32.082h2.262v0.754h-2.262zM79.82 32.082h1.508v0.754h-1.508zM82.082 32.082h0.754v0.754h-0.754zM84.344 32.082h0.754v0.754h-0.754zM85.852 32.082h0.754v0.754h-0.754zM88.115 32.082h3.016v0.754h-3.016zM93.393 32.082h0.754v0.754h-0.754zM94.902 32.082h1.508v0.754h-1.508zM97.164 32.082h0.754v0.754h-0.754zM101.689 32.082h0.754v0.754h-0.754zM106.213 32.082h0.754v0.754h-0.754zM109.984 32.082h2.262v0.754h-2.262zM67.754 32.836h2.262v0.754h-2.262zM70.77 32.836h0.754v0.754h-0.754zM75.295 32.836h0.754v0.754h-0.754zM78.311 32.836h0.754v0.754h-0.754zM80.574 32.836h0.754v0.754h-0.754zM83.59 32.836h0.754v0.754h-0.754zM85.098 32.836h1.508v0.754h-1.508zM87.361 32.836h1.508v0.754h-1.508zM94.902 32.836h0.754v0.754h-0.754zM97.918 32.836h2.262v0.754h-2.262zM100.934 32.836h0.754v0.754h-0.754zM103.197 32.836h0.754v0.754h-0.754zM105.459 32.836h0.754v0.754h-0.754zM107.721 32.836h1.508v0.754h-1.508zM109.984 32.836h0.754v0.754h-0.754zM111.492 32.836h0.754v0.754h-0.754zM67 33.59h1.508v0.754h-1.508zM69.262 33.59h3.016v0.754h-3.016zM74.541 33.59h0.754v0.754h-0.754zM76.049 33.59h0.754v0.754h-0.754zM77.557 33.59h3.77v0.754h-3.77zM82.836 33.59h0.754v0.754h-0.754zM84.344 33.59h0.754v0.754h-0.754zM85.852 33.59h0.754v0.754h-0.754zM88.869 33.59h1.508v0.754h-1.508zM91.131 33.59h1.508v0.754h-1.508zM93.393 33.59h1.508v0.754h-1.508zM95.656 33.59h0.754v0.754h-0.754zM98.672 33.59h2.262v0.754h-2.262zM102.443 33.59h0.754v0.754h-0.754zM104.705 33.59h0.754v0.754h-0.754zM107.721 33.59h0.754v0.754h-0.754zM109.23 33.59h0.754v0.754h-0.754zM111.492 33.59h0.754v0.754h-0.754zM67 34.344h0.754v0.754h-0.754zM70.77 34.344h0.754v0.754h-0.754zM73.787 34.344h2.262v0.754h-2.262zM76.803 34.344h2.262v0.754h-2.262zM79.82 34.344h0.754v0.754h-0.754zM81.328 34.344h2.262v0.754h-2.262zM88.115 34.344h1.508v0.754h-1.508zM91.131 34.344h0.754v0.754h-0.754zM92.639 34.344h0.754v0.754h-0.754zM94.148 34.344h1.508v0.754h-1.508zM97.164 34.344h1.508v0.754h-1.508zM100.18 34.344h0.754v0.754h-0.754zM101.689 34.344h3.77v0.754h-3.77zM106.213 34.344h0.754v0.754h-0.754zM108.475 34.344h0.754v0.754h-0.754zM110.738 34.344h1.508v0.754h-1.508zM67 35.098h0.754v0.754h-0.754zM68.508 35.098h3.77v0.754h-3.77zM73.033 35.098h3.77v0.754h-3.77zM77.557 35.098h1.508v0.754h-1.508zM82.082 35.098h0.754v0.754h-0.754zM84.344 35.098h2.262v0.754h-2.262zM87.361 35.098h0.754v0.754h-0.754zM89.623 35.098h0.754v0.754h-0.754zM91.885 35.098h3.77v0.754h-3.77zM96.41 35.098h0.754v0.754h-0.754zM97.918 35.098h0.754v0.754h-0.754zM103.197 35.098h1.508v0.754h-1.508zM106.213 35.098h0.754v0.754h-0.754zM107.721 35.098h0.754v0.754h-0.754zM109.984 35.098h1.508v0.754h-1.508zM112.246 35.098h0.754v0.754h-0.754zM67 35.852h3.016v0.754h-3.016zM70.77 35.852h0.754v0.754h-0.754zM72.279 35.852h0.754v0.754h-0.754zM73.787 35.852h1.508v0.754h-1.508zM76.049 35.852h1.508v0.754h-1.508zM78.311 35.852h3.77v0.754h-3.77zM82.836 35.852h2.262v0.754h-2.262zM85.852 35.852h0.754v0.754h-0.754zM87.361 35.852h0.754v0.754h-0.754zM88.869 35.852h1.508v0.754h-1.508zM91.131 35.852h0.754v0.754h-0.754zM94.148 35.852h0.754v0.754h-0.754zM95.656 35.852h0.754v0.754h-0.754zM97.164 35.852h1.508v0.754h-1.508zM99.426 35.852h0.754v0.754h-0.754zM100.934 35.852h0.754v0.754h-0.754zM102.443 35.852h1.508v0.754h-1.508zM104.705 35.852h0.754v0.754h-0.754zM106.967 35.852h0.754v0.754h-0.754zM109.984 35.852h1.508v0.754h-1.508zM112.246 35.852h0.754v0.754h-0.754zM67 36.607h0.754v0.754h-0.754zM71.525 36.607h1.508v0.754h-1.508zM73.787 36.607h0.754v0.754h-0.754zM78.311 36.607h0.754v0.754h-0.754zM79.82 36.607h1.508v0.754h-1.508zM82.082 36.607h0.754v0.754h-0.754zM83.59 36.607h1.508v0.754h-1.508zM85.852 36.607h0.754v0.754h-0.754zM87.361 36.607h0.754v0.754h-0.754zM89.623 36.607h1.508v0.754h-1.508zM91.885 36.607h0.754v0.754h-0.754zM95.656 36.607h2.262v0.754h-2.262zM98.672 36.607h0.754v0.754h-0.754zM100.934 36.607h0.754v0.754h-0.754zM103.197 36.607h0.754v0.754h-0.754zM104.705 36.607h0.754v0.754h-0.754zM106.213 36.607h6.033v0.754h-6.033zM67 37.361h0.754v0.754h-0.754zM68.508 37.361h0.754v0.754h-0.754zM73.787 37.361h0.754v0.754h-0.754zM75.295 37.361h0.754v0.754h-0.754zM76.803 37.361h0.754v0.754h-0.754zM78.311 37.361h0.754v0.754h-0.754zM81.328 37.361h0.754v0.754h-0.754zM85.098 37.361h1.508v0.754h-1.508zM87.361 37.361h0.754v0.754h-0.754zM88.869 37.361h1.508v0.754h-1.508zM91.885 37.361h0.754v0.754h-0.754zM93.393 37.361h0.754v0.754h-0.754zM97.164 37.361h0.754v0.754h-0.754zM100.18 37.361h0.754v0.754h-0.754zM102.443 37.361h0.754v0.754h-0.754zM104.705 37.361h1.508v0.754h-1.508zM106.967 37.361h1.508v0.754h-1.508zM109.984 37.361h0.754v0.754h-0.754zM111.492 37.361h1.508v0.754h-1.508zM67 38.115h0.754v0.754h-0.754zM70.016 38.115h5.279v0.754h-5.279zM76.803 38.115h1.508v0.754h-1.508zM79.066 38.115h1.508v0.754h-1.508zM82.836 38.115h1.508v0.754h-1.508zM85.098 38.115h0.754v0.754h-0.754zM86.607 38.115h0.754v0.754h-0.754zM88.115 38.115h3.77v0.754h-3.77zM92.639 38.115h1.508v0.754h-1.508zM95.656 38.115h0.754v0.754h-0.754zM99.426 38.115h1.508v0.754h-1.508zM106.213 38.115h3.77v0.754h-3.77zM67.754 38.869h0.754v0.754h-0.754zM70.016 38.869h0.754v0.754h-0.754zM73.033 38.869h2.262v0.754h-2.262zM76.803 38.869h2.262v0.754h-2.262zM79.82 38.869h0.754v0.754h-0.754zM81.328 38.869h1.508v0.754h-1.508zM83.59 38.869h0.754v0.754h-0.754zM85.852 38.869h0.754v0.754h-0.754zM88.115 38.869h0.754v0.754h-0.754zM91.131 38.869h0.754v0.754h-0.754zM92.639 38.869h0.754v0.754h-0.754zM94.902 38.869h0.754v0.754h-0.754zM99.426 38.869h1.508v0.754h-1.508zM101.689 38.869h3.016v0.754h-3.016zM106.213 38.869h0.754v0.754h-0.754zM109.23 38.869h0.754v0.754h-0.754zM110.738 38.869h0.754v0.754h-0.754zM67 39.623h0.754v0.754h-0.754zM69.262 39.623h1.508v0.754h-1.508zM71.525 39.623h0.754v0.754h-0.754zM73.033 39.623h1.508v0.754h-1.508zM76.803 39.623h1.508v0.754h-1.508zM79.066 39.623h0.754v0.754h-0.754zM83.59 39.623h0.754v0.754h-0.754zM85.098 39.623h0.754v0.754h-0.754zM86.607 39.623h2.262v0.754h-2.262zM89.623 39.623h0.754v0.754h-0.754zM91.131 39.623h1.508v0.754h-1.508zM94.902 39.623h3.77v0.754h-3.77zM101.689 39.623h0.754v0.754h-0.754zM103.197 39.623h3.77v0.754h-3.77zM107.721 39.623h0.754v0.754h-0.754zM109.23 39.623h0.754v0.754h-0.754zM110.738 39.623h0.754v0.754h-0.754zM112.246 39.623h0.754v0.754h-0.754zM67 40.377h0.754v0.754h-0.754zM69.262 40.377h1.508v0.754h-1.508zM73.033 40.377h1.508v0.754h-1.508zM75.295 40.377h0.754v0.754h-0.754zM76.803 40.377h0.754v0.754h-0.754zM79.066 40.377h0.754v0.754h-0.754zM80.574 40.377h1.508v0.754h-1.508zM82.836 40.377h0.754v0.754h-0.754zM84.344 40.377h0.754v0.754h-0.754zM88.115 40.377h0.754v0.754h-0.754zM91.131 40.377h0.754v0.754h-0.754zM94.148 40.377h0.754v0.754h-0.754zM95.656 40.377h3.016v0.754h-3.016zM99.426 40.377h0.754v0.754h-0.754zM102.443 40.377h0.754v0.754h-0.754zM106.213 40.377h0.754v0.754h-0.754zM109.23 40.377h1.508v0.754h-1.508zM68.508 41.131h0.754v0.754h-0.754zM70.016 41.131h3.77v0.754h-3.77zM74.541 41.131h3.016v0.754h-3.016zM79.066 41.131h2.262v0.754h-2.262zM82.836 41.131h0.754v0.754h-0.754zM84.344 41.131h1.508v0.754h-1.508zM87.361 41.131h4.525v0.754h-4.525zM92.639 41.131h0.754v0.754h-0.754zM95.656 41.131h0.754v0.754h-0.754zM97.164 41.131h3.016v0.754h-3.016zM102.443 41.131h0.754v0.754h-0.754zM103.951 41.131h6.787v0.754h-6.787zM111.492 41.131h1.508v0.754h-1.508zM67.754 41.885h0.754v0.754h-0.754zM70.016 41.885h0.754v0.754h-0.754zM73.033 41.885h2.262v0.754h-2.262zM76.049 41.885h2.262v0.754h-2.262zM81.328 41.885h1.508v0.754h-1.508zM84.344 41.885h1.508v0.754h-1.508zM88.115 41.885h0.754v0.754h-0.754zM89.623 41.885h0.754v0.754h-0.754zM91.885 41.885h0.754v0.754h-0.754zM93.393 41.885h1.508v0.754h-1.508zM97.164 41.885h3.016v0.754h-3.016zM103.951 41.885h0.754v0.754h-0.754zM105.459 41.885h1.508v0.754h-1.508zM108.475 41.885h3.77v0.754h-3.77zM67 42.639h1.508v0.754h-1.508zM69.262 42.639h0.754v0.754h-0.754zM71.525 42.639h2.262v0.754h-2.262zM74.541 42.639h3.016v0.754h-3.016zM78.311 42.639h0.754v0.754h-0.754zM80.574 42.639h0.754v0.754h-0.754zM82.082 42.639h1.508v0.754h-1.508zM85.098 42.639h0.754v0.754h-0.754zM86.607 42.639h0.754v0.754h-0.754zM88.115 42.639h0.754v0.754h-0.754zM89.623 42.639h1.508v0.754h-1.508zM93.393 42.639h1.508v0.754h-1.508zM95.656 42.639h0.754v0.754h-0.754zM97.918 42.639h1.508v0.754h-1.508zM100.18 42.639h3.77v0.754h-3.77zM104.705 42.639h1.508v0.754h-1.508zM108.475 42.639h0.754v0.754h-0.754zM109.984 42.639h0.754v0.754h-0.754zM67 43.393h0.754v0.754h-0.754zM68.508 43.393h1.508v0.754h-1.508zM70.77 43.393h0.754v0.754h-0.754zM72.279 43.393h0.754v0.754h-0.754zM73.787 43.393h1.508v0.754h-1.508zM76.049 43.393h0.754v0.754h-0.754zM77.557 43.393h2.262v0.754h-2.262zM81.328 43.393h0.754v0.754h-0.754zM82.836 43.393h1.508v0.754h-1.508zM85.852 43.393h0.754v0.754h-0.754zM90.377 43.393h0.754v0.754h-0.754zM91.885 43.393h0.754v0.754h-0.754zM93.393 43.393h2.262v0.754h-2.262zM98.672 43.393h0.754v0.754h-0.754zM100.18 43.393h2.262v0.754h-2.262zM104.705 43.393h0.754v0.754h-0.754zM106.213 43.393h0.754v0.754h-0.754zM107.721 43.393h1.508v0.754h-1.508zM110.738 43.393h1.508v0.754h-1.508zM68.508 44.148h2.262v0.754h-2.262zM71.525 44.148h0.754v0.754h-0.754zM73.787 44.148h0.754v0.754h-0.754zM75.295 44.148h2.262v0.754h-2.262zM80.574 44.148h0.754v0.754h-0.754zM85.098 44.148h0.754v0.754h-0.754zM87.361 44.148h3.016v0.754h-3.016zM91.131 44.148h0.754v0.754h-0.754zM92.639 44.148h0.754v0.754h-0.754zM94.148 44.148h2.262v0.754h-2.262zM99.426 44.148h0.754v0.754h-0.754zM100.934 44.148h0.754v0.754h-0.754zM103.197 44.148h1.508v0.754h-1.508zM105.459 44.148h0.754v0.754h-0.754zM110.738 44.148h2.262v0.754h-2.262zM67 44.902h0.754v0.754h-0.754zM68.508 44.902h0.754v0.754h-0.754zM76.803 44.902h0.754v0.754h-0.754zM78.311 44.902h0.754v0.754h-0.754zM79.82 44.902h0.754v0.754h-0.754zM81.328 44.902h3.016v0.754h-3.016zM85.852 44.902h0.754v0.754h-0.754zM87.361 44.902h3.016v0.754h-3.016zM91.885 44.902h0.754v0.754h-0.754zM95.656 44.902h2.262v0.754h-2.262zM100.18 44.902h0.754v0.754h-0.754zM103.197 44.902h0.754v0.754h-0.754zM104.705 44.902h1.508v0.754h-1.508zM106.967 44.902h1.508v0.754h-1.508zM109.23 44.902h0.754v0.754h-0.754zM112.246 44.902h0.754v0.754h-0.754zM67 45.656h1.508v0.754h-1.508zM69.262 45.656h0.754v0.754h-0.754zM70.77 45.656h1.508v0.754h-1.508zM73.787 45.656h0.754v0.754h-0.754zM78.311 45.656h0.754v0.754h-0.754zM79.82 45.656h0.754v0.754h-0.754zM82.082 45.656h3.77v0.754h-3.77zM86.607 45.656h0.754v0.754h-0.754zM90.377 45.656h0.754v0.754h-0.754zM94.902 45.656h0.754v0.754h-0.754zM96.41 45.656h0.754v0.754h-0.754zM100.934 45.656h0.754v0.754h-0.754zM102.443 45.656h0.754v0.754h-0.754zM103.951 45.656h0.754v0.754h-0.754zM105.459 45.656h1.508v0.754h-1.508zM110.738 45.656h2.262v0.754h-2.262zM67 46.41h4.525v0.754h-4.525zM72.279 46.41h2.262v0.754h-2.262zM75.295 46.41h0.754v0.754h-0.754zM78.311 46.41h0.754v0.754h-0.754zM79.82 46.41h0.754v0.754h-0.754zM81.328 46.41h1.508v0.754h-1.508zM85.098 46.41h0.754v0.754h-0.754zM86.607 46.41h0.754v0.754h-0.754zM88.115 46.41h1.508v0.754h-1.508zM90.377 46.41h0.754v0.754h-0.754zM91.885 46.41h0.754v0.754h-0.754zM94.148 46.41h0.754v0.754h-0.754zM96.41 46.41h3.016v0.754h-3.016zM100.18 46.41h0.754v0.754h-0.754zM101.689 46.41h1.508v0.754h-1.508zM103.951 46.41h1.508v0.754h-1.508zM106.213 46.41h0.754v0.754h-0.754zM107.721 46.41h2.262v0.754h-2.262zM112.246 46.41h0.754v0.754h-0.754zM68.508 47.164h0.754v0.754h-0.754zM70.016 47.164h2.262v0.754h-2.262zM73.033 47.164h0.754v0.754h-0.754zM74.541 47.164h3.016v0.754h-3.016zM78.311 47.164h1.508v0.754h-1.508zM80.574 47.164h3.016v0.754h-3.016zM84.344 47.164h0.754v0.754h-0.754zM85.852 47.164h0.754v0.754h-0.754zM88.115 47.164h0.754v0.754h-0.754zM91.131 47.164h0.754v0.754h-0.754zM92.639 47.164h1.508v0.754h-1.508zM94.902 47.164h0.754v0.754h-0.754zM96.41 47.164h0.754v0.754h-0.754zM98.672 47.164h3.016v0.754h-3.016zM102.443 47.164h0.754v0.754h-0.754zM103.951 47.164h1.508v0.754h-1.508zM106.967 47.164h0.754v0.754h-0.754zM108.475 47.164h0.754v0.754h-0.754zM111.492 47.164h0.754v0.754h-0.754zM67.754 47.918h2.262v0.754h-2.262zM70.77 47.918h0.754v0.754h-0.754zM73.033 47.918h0.754v0.754h-0.754zM74.541 47.918h0.754v0.754h-0.754zM76.803 47.918h2.262v0.754h-2.262zM80.574 47.918h1.508v0.754h-1.508zM82.836 47.918h0.754v0.754h-0.754zM84.344 47.918h2.262v0.754h-2.262zM87.361 47.918h0.754v0.754h-0.754zM88.869 47.918h2.262v0.754h-2.262zM92.639 47.918h1.508v0.754h-1.508zM97.164 47.918h1.508v0.754h-1.508zM100.18 47.918h0.754v0.754h-0.754zM101.689 47.918h0.754v0.754h-0.754zM103.951 47.918h0.754v0.754h-0.754zM105.459 47.918h0.754v0.754h-0.754zM106.967 47.918h2.262v0.754h-2.262zM109.984 47.918h3.016v0.754h-3.016zM68.508 48.672h3.77v0.754h-3.77zM73.033 48.672h0.754v0.754h-0.754zM76.803 48.672h2.262v0.754h-2.262zM82.082 48.672h2.262v0.754h-2.262zM85.852 48.672h0.754v0.754h-0.754zM87.361 48.672h1.508v0.754h-1.508zM89.623 48.672h1.508v0.754h-1.508zM91.885 48.672h0.754v0.754h-0.754zM93.393 48.672h0.754v0.754h-0.754zM97.164 48.672h1.508v0.754h-1.508zM100.934 48.672h0.754v0.754h-0.754zM106.213 48.672h5.279v0.754h-5.279zM112.246 48.672h0.754v0.754h-0.754zM67.754 49.426h1.508v0.754h-1.508zM70.016 49.426h0.754v0.754h-0.754zM72.279 49.426h6.787v0.754h-6.787zM79.82 49.426h1.508v0.754h-1.508zM82.836 49.426h1.508v0.754h-1.508zM85.098 49.426h2.262v0.754h-2.262zM88.869 49.426h0.754v0.754h-0.754zM90.377 49.426h1.508v0.754h-1.508zM94.902 49.426h1.508v0.754h-1.508zM97.918 49.426h0.754v0.754h-0.754zM99.426 49.426h0.754v0.754h-0.754zM100.934 49.426h0.754v0.754h-0.754zM102.443 49.426h0.754v0.754h-0.754zM104.705 49.426h1.508v0.754h-1.508zM106.967 49.426h3.016v0.754h-3.016zM112.246 49.426h0.754v0.754h-0.754zM67 50.18h0.754v0.754h-0.754zM68.508 50.18h0.754v0.754h-0.754zM70.016 50.18h0.754v0.754h-0.754zM71.525 50.18h1.508v0.754h-1.508zM74.541 50.18h0.754v0.754h-0.754zM76.049 50.18h1.508v0.754h-1.508zM78.311 50.18h0.754v0.754h-0.754zM82.836 50.18h0.754v0.754h-0.754zM84.344 50.18h1.508v0.754h-1.508zM88.115 50.18h0.754v0.754h-0.754zM90.377 50.18h1.508v0.754h-1.508zM92.639 50.18h1.508v0.754h-1.508zM96.41 50.18h1.508v0.754h-1.508zM99.426 50.18h0.754v0.754h-0.754zM100.934 50.18h1.508v0.754h-1.508zM103.951 50.18h0.754v0.754h-0.754zM106.213 50.18h0.754v0.754h-0.754zM108.475 50.18h1.508v0.754h-1.508zM67 50.934h1.508v0.754h-1.508zM70.016 50.934h0.754v0.754h-0.754zM74.541 50.934h1.508v0.754h-1.508zM78.311 50.934h1.508v0.754h-1.508zM81.328 50.934h0.754v0.754h-0.754zM83.59 50.934h0.754v0.754h-0.754zM85.098 50.934h4.525v0.754h-4.525zM91.131 50.934h1.508v0.754h-1.508zM96.41 50.934h0.754v0.754h-0.754zM97.918 50.934h1.508v0.754h-1.508zM100.18 50.934h0.754v0.754h-0.754zM102.443 50.934h1.508v0.754h-1.508zM105.459 50.934h0.754v0.754h-0.754zM106.967 50.934h0.754v0.754h-0.754zM108.475 50.934h0.754v0.754h-0.754zM109.984 50.934h1.508v0.754h-1.508zM67 51.689h0.754v0.754h-0.754zM68.508 51.689h1.508v0.754h-1.508zM71.525 51.689h1.508v0.754h-1.508zM73.787 51.689h0.754v0.754h-0.754zM75.295 51.689h0.754v0.754h-0.754zM79.066 51.689h0.754v0.754h-0.754zM80.574 51.689h1.508v0.754h-1.508zM82.836 51.689h0.754v0.754h-0.754zM84.344 51.689h0.754v0.754h-0.754zM85.852 51.689h0.754v0.754h-0.754zM90.377 51.689h4.525v0.754h-4.525zM97.164 51.689h0.754v0.754h-0.754zM98.672 51.689h1.508v0.754h-1.508zM101.689 51.689h0.754v0.754h-0.754zM103.197 51.689h1.508v0.754h-1.508zM106.213 51.689h1.508v0.754h-1.508zM110.738 51.689h0.754v0.754h-0.754zM70.77 52.443h0.754v0.754h-0.754zM72.279 52.443h3.016v0.754h-3.016zM77.557 52.443h0.754v0.754h-0.754zM81.328 52.443h1.508v0.754h-1.508zM83.59 52.443h0.754v0.754h-0.754zM88.115 52.443h1.508v0.754h-1.508zM91.885 52.443h0.754v0.754h-0.754zM93.393 52.443h3.016v0.754h-3.016zM97.164 52.443h0.754v0.754h-0.754zM100.18 52.443h4.525v0.754h-4.525zM105.459 52.443h3.77v0.754h-3.77zM110.738 52.443h0.754v0.754h-0.754zM67 53.197h0.754v0.754h-0.754zM69.262 53.197h0.754v0.754h-0.754zM70.77 53.197h1.508v0.754h-1.508zM73.033 53.197h0.754v0.754h-0.754zM74.541 53.197h0.754v0.754h-0.754zM79.066 53.197h1.508v0.754h-1.508zM82.082 53.197h1.508v0.754h-1.508zM84.344 53.197h0.754v0.754h-0.754zM87.361 53.197h3.016v0.754h-3.016zM91.131 53.197h0.754v0.754h-0.754zM94.148 53.197h0.754v0.754h-0.754zM96.41 53.197h0.754v0.754h-0.754zM97.918 53.197h2.262v0.754h-2.262zM100.934 53.197h0.754v0.754h-0.754zM102.443 53.197h2.262v0.754h-2.262zM105.459 53.197h0.754v0.754h-0.754zM107.721 53.197h0.754v0.754h-0.754zM109.984 53.197h0.754v0.754h-0.754zM111.492 53.197h1.508v0.754h-1.508zM67 53.951h3.016v0.754h-3.016zM72.279 53.951h2.262v0.754h-2.262zM76.049 53.951h0.754v0.754h-0.754zM78.311 53.951h2.262v0.754h-2.262zM82.836 53.951h0.754v0.754h-0.754zM86.607 53.951h1.508v0.754h-1.508zM93.393 53.951h1.508v0.754h-1.508zM95.656 53.951h1.508v0.754h-1.508zM97.918 53.951h0.754v0.754h-0.754zM100.18 53.951h0.754v0.754h-0.754zM104.705 53.951h0.754v0.754h-0.754zM106.967 53.951h1.508v0.754h-1.508zM109.23 53.951h1.508v0.754h-1.508zM111.492 53.951h0.754v0.754h-0.754zM68.508 54.705h4.525v0.754h-4.525zM77.557 54.705h2.262v0.754h-2.262zM82.836 54.705h0.754v0.754h-0.754zM84.344 54.705h0.754v0.754h-0.754zM86.607 54.705h0.754v0.754h-0.754zM88.115 54.705h2.262v0.754h-2.262zM91.131 54.705h0.754v0.754h-0.754zM92.639 54.705h0.754v0.754h-0.754zM94.148 54.705h0.754v0.754h-0.754zM95.656 54.705h1.508v0.754h-1.508zM97.918 54.705h1.508v0.754h-1.508zM100.934 54.705h0.754v0.754h-0.754zM102.443 54.705h0.754v0.754h-0.754zM103.951 54.705h0.754v0.754h-0.754zM106.213 54.705h0.754v0.754h-0.754zM110.738 54.705h0.754v0.754h-0.754zM67 55.459h2.262v0.754h-2.262zM70.016 55.459h0.754v0.754h-0.754zM72.279 55.459h0.754v0.754h-0.754zM77.557 55.459h1.508v0.754h-1.508zM79.82 55.459h0.754v0.754h-0.754zM83.59 55.459h3.016v0.754h-3.016zM87.361 55.459h0.754v0.754h-0.754zM88.869 55.459h1.508v0.754h-1.508zM92.639 55.459h1.508v0.754h-1.508zM94.902 55.459h1.508v0.754h-1.508zM97.164 55.459h4.525v0.754h-4.525zM103.197 55.459h3.016v0.754h-3.016zM106.967 55.459h0.754v0.754h-0.754zM108.475 55.459h1.508v0.754h-1.508zM112.246 55.459h0.754v0.754h-0.754zM67 56.213h3.016v0.754h-3.016zM71.525 56.213h0.754v0.754h-0.754zM75.295 56.213h1.508v0.754h-1.508zM77.557 56.213h0.754v0.754h-0.754zM79.066 56.213h0.754v0.754h-0.754zM80.574 56.213h0.754v0.754h-0.754zM82.082 56.213h0.754v0.754h-0.754zM84.344 56.213h0.754v0.754h-0.754zM85.852 56.213h1.508v0.754h-1.508zM88.115 56.213h4.525v0.754h-4.525zM93.393 56.213h0.754v0.754h-0.754zM94.902 56.213h1.508v0.754h-1.508zM100.18 56.213h3.016v0.754h-3.016zM103.951 56.213h1.508v0.754h-1.508zM106.213 56.213h6.787v0.754h-6.787zM73.033 56.967h0.754v0.754h-0.754zM79.066 56.967h3.016v0.754h-3.016zM82.836 56.967h2.262v0.754h-2.262zM86.607 56.967h0.754v0.754h-0.754zM88.115 56.967h0.754v0.754h-0.754zM91.131 56.967h0.754v0.754h-0.754zM92.639 56.967h0.754v0.754h-0.754zM94.902 56.967h0.754v0.754h-0.754zM100.18 56.967h3.016v0.754h-3.016zM105.459 56.967h1.508v0.754h-1.508zM109.23 56.967h2.262v0.754h-2.262zM112.246 56.967h0.754v0.754h-0.754zM67 57.721h5.279v0.754h-5.279zM73.033 57.721h1.508v0.754h-1.508zM75.295 57.721h0.754v0.754h-0.754zM79.82 57.721h0.754v0.754h-0.754zM81.328 57.721h0.754v0.754h-0.754zM83.59 57.721h0.754v0.754h-0.754zM88.115 57.721h0.754v0.754h-0.754zM89.623 57.721h0.754v0.754h-0.754zM91.131 57.721h1.508v0.754h-1.508zM96.41 57.721h0.754v0.754h-0.754zM98.672 57.721h0.754v0.754h-0.754zM101.689 57.721h1.508v0.754h-1.508zM103.951 57.721h3.016v0.754h-3.016zM107.721 57.721h0.754v0.754h-0.754zM109.23 57.721h1.508v0.754h-1.508zM111.492 57.721h1.508v0.754h-1.508zM67 58.475h0.754v0.754h-0.754zM71.525 58.475h0.754v0.754h-0.754zM73.033 58.475h4.525v0.754h-4.525zM78.311 58.475h0.754v0.754h-0.754zM80.574 58.475h0.754v0.754h-0.754zM82.082 58.475h0.754v0.754h-0.754zM84.344 58.475h1.508v0.754h-1.508zM86.607 58.475h2.262v0.754h-2.262zM91.131 58.475h2.262v0.754h-2.262zM94.148 58.475h1.508v0.754h-1.508zM97.164 58.475h1.508v0.754h-1.508zM99.426 58.475h0.754v0.754h-0.754zM101.689 58.475h0.754v0.754h-0.754zM103.197 58.475h0.754v0.754h-0.754zM105.459 58.475h1.508v0.754h-1.508zM109.23 58.475h0.754v0.754h-0.754zM111.492 58.475h0.754v0.754h-0.754zM67 59.23h0.754v0.754h-0.754zM68.508 59.23h2.262v0.754h-2.262zM71.525 59.23h0.754v0.754h-0.754zM73.787 59.23h0.754v0.754h-0.754zM76.803 59.23h2.262v0.754h-2.262zM79.82 59.23h0.754v0.754h-0.754zM82.082 59.23h0.754v0.754h-0.754zM83.59 59.23h3.016v0.754h-3.016zM88.115 59.23h3.77v0.754h-3.77zM96.41 59.23h3.016v0.754h-3.016zM100.934 59.23h1.508v0.754h-1.508zM103.951 59.23h1.508v0.754h-1.508zM106.213 59.23h4.525v0.754h-4.525zM111.492 59.23h0.754v0.754h-0.754zM67 59.984h0.754v0.754h-0.754zM68.508 59.984h2.262v0.754h-2.262zM71.525 59.984h0.754v0.754h-0.754zM73.033 59.984h0.754v0.754h-0.754zM74.541 59.984h0.754v0.754h-0.754zM77.557 59.984h2.262v0.754h-2.262zM81.328 59.984h2.262v0.754h-2.262zM84.344 59.984h3.77v0.754h-3.77zM88.869 59.984h1.508v0.754h-1.508zM91.131 59.984h1.508v0.754h-1.508zM96.41 59.984h3.016v0.754h-3.016zM100.18 59.984h1.508v0.754h-1.508zM102.443 59.984h1.508v0.754h-1.508zM105.459 59.984h0.754v0.754h-0.754zM108.475 59.984h0.754v0.754h-0.754zM109.984 59.984h0.754v0.754h-0.754zM112.246 59.984h0.754v0.754h-0.754zM67 60.738h0.754v0.754h-0.754zM68.508 60.738h2.262v0.754h-2.262zM71.525 60.738h0.754v0.754h-0.754zM73.033 60.738h2.262v0.754h-2.262zM76.049 60.738h3.016v0.754h-3.016zM81.328 60.738h1.508v0.754h-1.508zM83.59 60.738h0.754v0.754h-0.754zM85.098 60.738h0.754v0.754h-0.754zM86.607 60.738h1.508v0.754h-1.508zM88.869 60.738h1.508v0.754h-1.508zM91.131 60.738h0.754v0.754h-0.754zM92.639 60.738h0.754v0.754h-0.754zM94.148 60.738h0.754v0.754h-0.754zM95.656 60.738h1.508v0.754h-1.508zM97.918 60.738h0.754v0.754h-0.754zM99.426 60.738h1.508v0.754h-1.508zM101.689 60.738h1.508v0.754h-1.508zM104.705 60.738h0.754v0.754h-0.754zM106.967 60.738h0.754v0.754h-0.754zM108.475 60.738h3.77v0.754h-3.77zM67 61.492h0.754v0.754h-0.754zM71.525 61.492h0.754v0.754h-0.754zM73.787 61.492h0.754v0.754h-0.754zM77.557 61.492h2.262v0.754h-2.262zM87.361 61.492h0.754v0.754h-0.754zM88.869 61.492h0.754v0.754h-0.754zM90.377 61.492h0.754v0.754h-0.754zM91.885 61.492h0.754v0.754h-0.754zM94.902 61.492h1.508v0.754h-1.508zM98.672 61.492h0.754v0.754h-0.754zM102.443 61.492h5.279v0.754h-5.279zM108.475 61.492h0.754v0.754h-0.754zM110.738 61.492h0.754v0.754h-0.754zM67 62.246h5.279v0.754h-5.279zM73.033 62.246h4.525v0.754h-4.525zM78.311 62.246h0.754v0.754h-0.754zM79.82 62.246h1.508v0.754h-1.508zM84.344 62.246h1.508v0.754h-1.508zM89.623 62.246h0.754v0.754h-0.754zM94.148 62.246h0.754v0.754h-0.754zM97.918 62.246h2.262v0.754h-2.262zM100.934 62.246h1.508v0.754h-1.508zM103.197 62.246h0.754v0.754h-0.754zM104.705 62.246h0.754v0.754h-0.754zM106.213 62.246h0.754v0.754h-0.754zM109.984 62.246h0.754v0.754h-0.754zM111.492 62.246h1.508v0.754h-1.508z"/><rect x="86.5" y="36.5" width="7" height="7" fill="#fff"/><rect x="86.85" y="36.85" width="6.3" height="6.3" fill="#000"/><rect x="89.435" y="38.117" width="1.13" height="3.766" fill="#fff"/><rect x="88.117" y="39.435" width="3.766" height="1.13" fill="#fff"/><text x="67" y="70.8" font-size="2.822" font-weight="bold">Währung</text><text x="80" y="70.8" font-size="2.822" font-weight="bold">Betrag</text><text x="67" y="75.4" font-size="3.528">CHF</text><text x="80" y="75.4" font-size="3.528">1 949.75</text><text x="118" y="7.117" font-size="2.822" font-weight="bold">Konto / Zahlbar an</text><text x="118" y="11.174" font-size="3.528">CH44 3199 9123 0008 8901 2</text><text x="118" y="15.336" font-size="3.528">Max Muster &amp; Söhne</text><text x="118" y="19.499" font-size="3.528">Musterstrasse 123</text><text x="118" y="23.662" font-size="3.528">8000 Seldwyla</text><text x="118" y="29.896" font-size="2.822" font-weight="bold">Referenz</text><text x="118" y="33.953" font-size="3.528">21 00000 00003 13947 14300 09017</text><text x="118" y="40.186" font-size="2.822" font-weight="bold">Zusätzliche Informationen</text><text x="118" y="44.243" font-size="3.528">Auftrag vom 15.10.2020</text><text x="118" y="50.477" font-size="2.822" font-weight="bold">Zahlbar durch</text><text x="118" y="54.534" font-size="3.528">Simon Muster</text><text x="118" y="58.696" font-size="3.528">Musterstrasse 1</text><text x="118" y="62.859" font-size="3.528">8000 Seldwyla</text></g></svg></div></div>
+      </figure>
+      <details class="qr-details"><summary>Inhalt des QR-Codes anzeigen</summary><pre id="qr-inhalt"></pre></details>
+      <div class="note" id="qr-datenschutz"><strong>Ihre Eingaben bleiben auf Ihrem Gerät.</strong> Das Werkzeug rechnet vollständig in Ihrem Browser. Es sendet keine Eingaben an einen Server und speichert nichts. Die Seite sperrt Verbindungen nach aussen technisch (Content Security Policy), auch die Statistik ist hier abgeschaltet. Nach dem Schliessen des Tabs sind die Angaben weg.</div>
+      <div class="note qr-haftung"><strong>Haftungshinweis.</strong> Das Werkzeug prüft Form und Prüfziffern nach den Vorgaben der SIX, nicht aber, ob Konto und Name zusammengehören. Kontrollieren Sie jede QR-Rechnung vor dem Versand, zum Beispiel mit der Scan-Funktion Ihrer Bank-App. Die Nutzung erfolgt auf eigene Verantwortung, eine Haftung für Schäden aus der Verwendung ist ausgeschlossen, soweit das Gesetz es zulässt.</div>
+    </div>
+  </div>
+</section>
+
+<section id="aufbau">
+  <div class="artikel-text">
+    <span class="s-label">Aufbau</span>
+    <h2>So ist der Zahlteil aufgebaut</h2>
+    <p>Seit dem 1. Oktober 2022 gibt es in der Schweiz nur noch die QR-Rechnung, die roten und orangen Einzahlungsscheine sind abgeschafft. Der Zahlteil ist 148 x 105 mm gross, links daneben steht der Empfangsschein mit 62 x 105 mm. Zusammen ergeben sie einen Streifen von 210 x 105 mm am unteren Rand einer A4-Seite.</p>
+    <figure class="qr-schema">
+      <svg viewBox="0 0 420 210" role="img" aria-label="Schema der QR-Rechnung: Empfangsschein mit Titel, Angaben, Betrag und Annahmestelle; Zahlteil mit Titel, Swiss QR Code, Betrag, Angaben und weiteren Informationen">
+        <rect x="1" y="1" width="418" height="208" fill="#fff" stroke="#07071a" stroke-width="1.5"/>
+        <line x1="124" y1="1" x2="124" y2="209" stroke="#07071a" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <g font-family="Inter, Arial, sans-serif" font-size="11" fill="#07071a">
+          <rect x="10" y="10" width="104" height="14" rx="3" fill="#e6e6ff"/><text x="16" y="21">1 Titel</text>
+          <rect x="10" y="30" width="104" height="104" rx="3" fill="#e6e6ff"/><text x="16" y="46">2 Angaben</text>
+          <rect x="10" y="140" width="104" height="26" rx="3" fill="#e6e6ff"/><text x="16" y="157">3 Betrag</text>
+          <rect x="10" y="172" width="104" height="28" rx="3" fill="#e6e6ff"/><text x="16" y="189">4 Annahmestelle</text>
+          <rect x="134" y="10" width="92" height="14" rx="3" fill="#ffe9c2"/><text x="140" y="21">1 Titel</text>
+          <rect x="134" y="34" width="92" height="92" rx="3" fill="#ffe9c2"/><text x="140" y="50">2 Swiss QR Code</text>
+          <rect x="167" y="67" width="26" height="26" fill="#07071a"/><rect x="177" y="72" width="6" height="16" fill="#fff"/><rect x="172" y="77" width="16" height="6" fill="#fff"/>
+          <rect x="134" y="136" width="92" height="40" rx="3" fill="#ffe9c2"/><text x="140" y="153">3 Betrag</text>
+          <rect x="236" y="10" width="174" height="166" rx="3" fill="#ffe9c2"/><text x="242" y="26">4 Angaben</text>
+          <rect x="134" y="182" width="276" height="18" rx="3" fill="#ffe9c2"/><text x="140" y="195">5 Weitere Informationen</text>
+        </g>
+      </svg>
+      <figcaption>Schema, nicht massstabsgetreu. Links der Empfangsschein (4 Bereiche), rechts der Zahlteil (5 Bereiche). Der QR-Code misst immer 46 x 46 mm, das Schweizer Kreuz in der Mitte 7 x 7 mm.</figcaption>
+    </figure>
+    <ul>
+      <li><strong>Angaben:</strong> Konto, Name und Adresse des Zahlungsempfängers, Referenz, zusätzliche Informationen und der Zahlungspflichtige. Ohne Zahlungspflichtigen steht dort ein leeres Feld mit Eckmarken zum Ausfüllen.</li>
+      <li><strong>Betrag:</strong> Währung CHF oder EUR und Betrag mit Leerzeichen als Tausendertrennzeichen, zum Beispiel CHF 1 590.00. Ohne Betrag bleibt ein Feld zum Ausfüllen frei, etwa für Spenden.</li>
+      <li><strong>Schriften:</strong> nur Arial, Frutiger, Helvetica oder Liberation Sans, schwarz, nicht kursiv. Überschriften 8 Punkt fett, Werte 10 Punkt, auf dem Empfangsschein 6 und 8 Punkt.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="referenz" class="flaeche">
+  <div class="artikel-text">
+    <span class="s-label">Referenz</span>
+    <h2>QR-IBAN oder IBAN: welche Referenz passt?</h2>
+    <p>Welche Referenz Sie verwenden dürfen, hängt vom Konto ab. Die QR-IBAN erkennen Sie an der Instituts-Identifikation an Stelle 5 bis 9: Sie liegt zwischen 30000 und 31999. Ihre Bank teilt Ihnen die QR-IBAN mit, wenn Sie das Verfahren mit QR-Referenz nutzen.</p>
+    <div class="tabelle-scroll"><table class="qr-tabelle">
+      <thead><tr><th scope="col">Konto</th><th scope="col">Referenz</th><th scope="col">Währung</th><th scope="col">Typisch für</th></tr></thead>
+      <tbody>
+        <tr><td>QR-IBAN</td><td>QR-Referenz, 27 Ziffern mit Prüfziffer</td><td>nur CHF</td><td>Betriebe mit Buchhaltungssoftware, die Zahlungen automatisch zuordnet</td></tr>
+        <tr><td>IBAN</td><td>Creditor Reference (beginnt mit RF)</td><td>CHF und EUR</td><td>automatischer Abgleich ohne QR-IBAN</td></tr>
+        <tr><td>IBAN</td><td>keine Referenz, nur Mitteilung</td><td>CHF und EUR</td><td>kleine Betriebe, Vereine, Spenden</td></tr>
+      </tbody>
+    </table></div>
+    <p>Die Schaltfläche «Prüfziffer ergänzen» bildet aus einer Nummer die passende Referenz. Bei einer QR-IBAN entsteht aus bis zu 26 Ziffern, zum Beispiel Kunden- und Rechnungsnummer, eine QR-Referenz mit Prüfziffer nach Modulo 10 rekursiv. Bei einer normalen IBAN entsteht aus Buchstaben und Ziffern eine RF-Referenz nach ISO 11649. Manche Banken geben für die QR-Referenz eine feste Kundennummer am Anfang vor. Fragen Sie im Zweifel Ihre Bank.</p>
+    <h3>Was sich 2025 und 2026 geändert hat</h3>
+    <p>Seit dem 21. November 2025 (Version 2.3 der Vorgaben) sind im QR-Code nur noch strukturierte Adressen zulässig: Strasse und Hausnummer, Postleitzahl und Ort stehen in eigenen Zeilen. Seit dem 14. November 2026 gilt Version 2.4. Für Rechnungen in CHF ändert sich technisch nichts, für Rechnungen in EUR sind nur noch IBAN mit RF-Referenz oder IBAN ohne Referenz möglich. Das Werkzeug setzt beides um.</p>
+  </div>
+</section>
+
+<section id="naechster-schritt">
+  <div class="artikel-text">
+    <span class="s-label">Weiter</span>
+    <h2>Rechnungen nicht mehr von Hand schreiben</h2>
+    <p>Eine einzelne QR-Rechnung ist mit diesem Werkzeug in zwei Minuten erstellt. Wer jede Woche Rechnungen aus Rapporten schreibt, verliert die Zeit an anderer Stelle: beim Abtippen von Stunden und Material. Wie ein Regierapport aussehen sollte und wie daraus ein Rechnungsentwurf wird, steht im Ratgeber <a href="/ratgeber/regierapport-vorlage/">Regierapport-Vorlage für Handwerksbetriebe</a>. Das animierte Beispiel «Vom Auftrag zur Rechnung» finden Sie auf der Seite <a href="/unternehmen/#ablaeufe">Automatisierungen für Unternehmen</a>.</p>
+    <p><a class="btn-p" href="/unternehmen/#kontakt">Gratis-Prozess-Check anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </div>
+</section>
+<section id="fragen" class="flaeche">
+  <div class="r">
+    <span class="s-label">Fragen</span>
+    <h2>Häufige Fragen</h2>
+  </div>
+  <div class="qa-list r">
+    <div class="qa">
+      <h3>Ist das Werkzeug wirklich kostenlos?</h3>
+      <p>Ja. Es gibt keine Anmeldung, keine Begrenzung und keine Werbung auf dem Zahlteil. Meyssens bietet daneben Automatisierungen für Betriebe an, die viele Rechnungen schreiben.</p>
+    </div>
+    <div class="qa">
+      <h3>Werden meine Angaben gespeichert oder übertragen?</h3>
+      <p>Nein. Prüfung, QR-Code und PDF entstehen in Ihrem Browser. Die Seite verbietet Verbindungen nach aussen technisch per Content Security Policy, auch die Statistik ist auf dieser Seite abgeschaltet.</p>
+    </div>
+    <div class="qa">
+      <h3>Nach welchem Standard wird die QR-Rechnung erstellt?</h3>
+      <p>Nach den Schweizer Implementation Guidelines QR-Rechnung der SIX, Version 2.4, gültig ab 14. November 2026: strukturierte Adresse, Fehlerkorrekturstufe M, QR-Code 46 x 46 mm mit Schweizer Kreuz, Schriften Helvetica.</p>
+    </div>
+    <div class="qa">
+      <h3>Kann ich das PDF per E-Mail verschicken?</h3>
+      <p>Ja. Laut SIX eignen sich QR-Rechnungen als PDF für das E- und M-Banking. Damit Zahlende sie auch auf Papier nutzen können, enthält das PDF Trennlinien und den Hinweis «Vor der Einzahlung abzutrennen».</p>
+    </div>
+    <div class="qa">
+      <h3>Kann ich eine QR-Referenz mit einer normalen IBAN verwenden?</h3>
+      <p>Nein. Die QR-Referenz ist nur mit einer QR-IBAN zulässig, und seit Version 2.4 nur in CHF. Mit einer normalen IBAN verwenden Sie eine RF-Referenz oder keine Referenz.</p>
+    </div>
+    <div class="qa">
+      <h3>Warum werden manche Zeichen abgelehnt?</h3>
+      <p>Die SIX lässt nur einen Teil des Unicode-Zeichensatzes zu. Typografische Anführungszeichen und Striche ersetzt das Werkzeug automatisch, seltene Buchstaben aus osteuropäischen Sprachen kann es im PDF nicht darstellen.</p>
+    </div>
+  </div>
+</section>
+<section id="quellen">
+  <div class="artikel-text">
+    <span class="s-label">Quellen</span>
+    <h2>Quellen und Stand</h2>
+    <p>Zuletzt geprüft am 16.11.2026 von Lionel Nickelsen, Meyssens. Allgemeine Information, keine Rechtsberatung.</p>
+    <ul class="quellen">
+      <li><a href="https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.4-de.pdf" target="_blank" rel="noopener">SIX, Schweizer Implementation Guidelines QR-Rechnung, Version 2.4 (gültig ab 14. November 2026)</a></li>
+      <li><a href="https://www.six-group.com/de/products-services/banking-services/payment-standardization/standards/qr-bill.html" target="_blank" rel="noopener">SIX, QR-Rechnung: Informationen und Download Center</a></li>
+      <li><a href="https://validation.iso-payments.ch/gp/qrrechnung/validation" target="_blank" rel="noopener">SIX, Swiss QR-bill Validation Portal</a></li>
+      <li><a href="https://github.com/kazuhikoarase/qrcode-generator" target="_blank" rel="noopener">qrcode-generator von Kazuhiko Arase (MIT-Lizenz), für den QR-Code verwendet</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
+      <p>Digitale Infrastruktur für Gemeinden, Unternehmen und Vereine.</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:.85rem;margin-top:.5rem">lionel@meyssens.ch</p>
+    </div>
+    <div class="footer-col">
+      <h3>Bereiche</h3>
+      <a href="/gemeinden/">Für Gemeinden</a>
+      <a href="/unternehmen/">Für Unternehmen und Vereine</a>
+      <a href="/branchen/">Branchen</a>
+      <a href="/ratgeber/">Ratgeber</a>
+      <a href="/ueber-uns/">Über uns</a>
+      <a href="mailto:lionel@meyssens.ch">Kontakt</a>
+    </div>
+    <div class="footer-col">
+      <h3>Links</h3>
+      <a href="https://demo.meyssens.ch" target="_blank">Live-Demo ansehen →</a>
+      <a href="https://decidim.org" target="_blank">Decidim Open-Source</a>
+      <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'">Impressum</a>
+      <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Datenschutz</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
+    <p class="fcopy">© 2026 Meyssens · Lausen, Basel-Landschaft · Schweiz</p>
+    <div class="footer-legal">
+      <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'">Impressum</a>
+      <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner hidden" id="cookie-banner">
+  <div class="cookie-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="7"/><circle cx="6" cy="6.5" r=".6" fill="var(--blue)" stroke="none"/><circle cx="10.5" cy="6" r=".6" fill="var(--blue)" stroke="none"/><circle cx="6.5" cy="10.5" r=".6" fill="var(--blue)" stroke="none"/><circle cx="10" cy="10.5" r=".6" fill="var(--blue)" stroke="none"/></svg></div>
+  <div class="cookie-title" data-i18n="cookie.title">Ihre Privatsphäre ist uns wichtig</div>
+  <div class="cookie-text" data-i18n="cookie.text">Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Mehr erfahren<span class="sr-only"> zur Datenschutzerklärung</span></a></div>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-decline" id="cookie-decline" data-i18n="cookie.decline">Ablehnen</button>
+    <button class="cookie-btn cookie-accept" id="cookie-accept" data-i18n="cookie.accept">Akzeptieren</button>
+  </div>
+</div>
+
+<div id="impressum-modal" role="dialog" aria-modal="true" aria-label="Impressum" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:1rem">
+  <div style="background:white;border-radius:16px;padding:2.5rem;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;position:relative">
+    <button onclick="document.getElementById('impressum-modal').style.display='none'" aria-label="Schliessen" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888">×</button>
+    <h3 style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#07071a">Impressum</h3>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Einzelunternehmen</strong><br>Meyssens<br>Lausen, Basel-Landschaft<br>Schweiz</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Kontakt</strong><br>E-Mail: lionel@meyssens.ch</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Handelsregister</strong><br>Einzelfirma, eingetragen im Kanton Basel-Landschaft</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8"><strong>Haftungsausschluss</strong><br>Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.</p>
+  </div>
+</div>
+
+<div id="datenschutz-modal" role="dialog" aria-modal="true" aria-label="Datenschutzerklärung" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:1rem">
+  <div style="background:white;border-radius:16px;padding:2.5rem;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;position:relative">
+    <button onclick="document.getElementById('datenschutz-modal').style.display='none'" aria-label="Schliessen" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888">×</button>
+    <h3 style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#07071a">Datenschutzerklärung</h3>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Verantwortliche Stelle</strong><br>Meyssens, Lausen, Schweiz<br>E-Mail: lionel@meyssens.ch</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Datenerhebung</strong><br>Wir erheben nur die Daten, die für den Betrieb der Website notwendig sind. Die Website wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Dabei wird Ihre IP-Adresse übermittelt.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Schriftarten</strong><br>Die Website verwendet die Schriftart Inter. Sie wird zusammen mit der Website ausgeliefert; eine Verbindung zu Google Fonts oder anderen Drittanbietern findet dabei nicht statt.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Google Analytics</strong><br>Wir setzen Google Analytics (Google Ireland Limited, ggf. Google LLC, USA) nur mit Ihrer Einwilligung über das Cookie-Banner ein. Verarbeitet werden pseudonymisierte Nutzungsdaten wie besuchte Seiten, ungefähre Herkunft und Gerätetyp. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können sie jederzeit widerrufen, indem Sie die Website-Daten Ihres Browsers löschen und das Banner erneut mit «Ablehnen» beantworten.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformulare zu Branchen, Produkten und Ratgebern</strong><br>Wenn Sie eines dieser Formulare nutzen, verarbeiten wir Ihre Angaben (Vorname, Nachname, Organisation, E-Mail-Adresse, je nach Formular Branche, Produkt, Baustein oder Thema und, falls angegeben, Ihre Nachricht), um Ihre Anfrage zu beantworten. Beim Formular zu einem Ablauf sind es Name, E-Mail-Adresse, der gewählte Ablauf und, falls angegeben, Ihre Nachricht. Die Formulare werden über Formspree (Formspree, Inc., USA) als E-Mail an uns weitergeleitet. Rechtsgrundlage ist die Anbahnung eines Vertrags und unser berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO). Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformular «Pilot anfragen»</strong><br>Wenn Sie das Formular «Pilot anfragen» auf den Seiten für Gemeinden und für Unternehmen nutzen, verarbeiten wir Ihre Angaben (Gemeinde oder Organisation, Name, E-Mail-Adresse und, falls angegeben, Ihr Thema oder Anliegen), um Ihre Anfrage zu beantworten. Zum Versand des Formulars nutzen wir den Dienst Formspree der Formspree, Inc., USA. Ihre Angaben werden über die Server von Formspree an uns weitergeleitet und dabei in den USA verarbeitet. Formspree handelt dabei in unserem Auftrag. Wir verwenden die Angaben nur, um Ihre Anfrage zu beantworten. Wer keine Daten über Formspree senden möchte, schreibt uns direkt an lionel@meyssens.ch. Rechtsgrundlage ist Ihre Einwilligung und die Anbahnung eines Vertrags (Art. 6 Abs. 1 lit. a und b DSGVO). Sie können Ihre Einwilligung jederzeit per E-Mail an lionel@meyssens.ch widerrufen. Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Ihre Rechte</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Schreiben Sie uns dazu an lionel@meyssens.ch. Sie können sich ausserdem bei der zuständigen Datenschutzbehörde beschweren (in der Schweiz der EDÖB, in Deutschland die Aufsichtsbehörde Ihres Bundeslandes).</p>
+    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8"><strong>Kontakt</strong><br>Bei Fragen zum Datenschutz: lionel@meyssens.ch</p>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>40)})
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.08})
+document.querySelectorAll('.r').forEach(el=>io.observe(el))
+const hamburger=document.getElementById('hamburger')
+const mobileNav=document.getElementById('mobile-nav')
+function setMobileNav(auf){hamburger.classList.toggle('open',auf);mobileNav.classList.toggle('open',auf);hamburger.setAttribute('aria-expanded',auf?'true':'false')}
+function closeMobileNav(){setMobileNav(false)}
+hamburger.addEventListener('click',()=>{const auf=!mobileNav.classList.contains('open');setMobileNav(auf);if(auf){const a=mobileNav.querySelector('a');if(a)a.focus()}})
+document.addEventListener('click',(e)=>{if(!hamburger.contains(e.target)&&!mobileNav.contains(e.target))closeMobileNav()})
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mobileNav.classList.contains('open')){closeMobileNav();hamburger.focus()}})
+mobileNav.addEventListener('click',(e)=>{if(e.target.closest('a'))closeMobileNav()})
+// Aktuellen Bereich in der Navigation markieren
+document.querySelectorAll('#nav .nav-items a,#mobile-nav a').forEach(a=>{const h=a.getAttribute('href');if(h.charAt(0)==='/'&&h!=='/'&&location.pathname.indexOf(h)===0){a.classList.add('active');a.setAttribute('aria-current','page')}})
+// Zähler: nur echte Zahlen aus dem HTML, ohne reduzierte Bewegung von 0 hochzählen
+if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const zio=new IntersectionObserver(e=>e.forEach(x=>{if(!x.isIntersecting)return;zio.unobserve(x.target);const el=x.target,ziel=+el.getAttribute('data-zaehler'),t0=performance.now(),d=900;(function f(t){const k=Math.min(1,(t-t0)/d);el.textContent=Math.round(ziel*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});document.querySelectorAll('[data-zaehler]').forEach(el=>zio.observe(el))}
+
+// --- Cookie consent for Google Analytics ---
+const COOKIE_I18N = {
+  de: {title:"Ihre Privatsphäre ist uns wichtig", accept:"Akzeptieren", decline:"Ablehnen", text:'Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Mehr erfahren<span class="sr-only"> zur Datenschutzerklärung</span></a>'},
+  fr: {title:"Votre vie privée compte pour nous", accept:"Accepter", decline:"Refuser", text:'Ce site utilise Google Analytics pour analyser de manière anonyme le comportement des utilisateurs. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">En savoir plus</a>'},
+  it: {title:"La vostra privacy è importante per noi", accept:"Accetta", decline:"Rifiuta", text:'Questo sito utilizza Google Analytics per analizzare in forma anonima il comportamento degli utenti. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Maggiori informazioni</a>'},
+  en: {title:"Your privacy matters to us", accept:"Accept", decline:"Decline", text:'This website uses Google Analytics to anonymously analyse visitor behaviour. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Learn more</a>'}
+};
+
+function updateCookieBannerLang(lang){
+  const t = COOKIE_I18N[lang] || COOKIE_I18N.de;
+  const banner = document.getElementById('cookie-banner');
+  if(!banner) return;
+  document.getElementById('cookie-accept').textContent = t.accept;
+  document.getElementById('cookie-decline').textContent = t.decline;
+  banner.querySelector('.cookie-title').textContent = t.title;
+  banner.querySelector('.cookie-text').innerHTML = t.text;
+}
+
+const cookieChoice = localStorage.getItem('meyssens_cookie_consent');
+if(cookieChoice === 'accepted' && typeof window.meyssensEnableAnalytics === 'function'){
+  window.meyssensEnableAnalytics();
+} else if(!cookieChoice){
+  const b = document.getElementById('cookie-banner');
+  if(b) b.classList.remove('hidden');
+}
+updateCookieBannerLang('de');
+
+const acceptBtn = document.getElementById('cookie-accept');
+const declineBtn = document.getElementById('cookie-decline');
+if(acceptBtn) acceptBtn.addEventListener('click', ()=>{
+  localStorage.setItem('meyssens_cookie_consent','accepted');
+  document.getElementById('cookie-banner').classList.add('hidden');
+  if(typeof window.meyssensEnableAnalytics === 'function') window.meyssensEnableAnalytics();
+});
+if(declineBtn) declineBtn.addEventListener('click', ()=>{
+  localStorage.setItem('meyssens_cookie_consent','declined');
+  document.getElementById('cookie-banner').classList.add('hidden');
+});
+
+// --- Dialoge mit Escape schliessen ---
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    ['impressum-modal','datenschutz-modal'].forEach(function(id){
+      var m = document.getElementById(id);
+      if(m) m.style.display = 'none';
+    });
+  }
+});
+
+</script>
+<script src="/assets/demos.js" defer></script>
+<script src="/assets/qrcode.js" defer></script>
+<script src="/assets/qr-rechnung.js" defer></script>
+</body>
+</html>

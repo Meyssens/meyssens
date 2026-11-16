@@ -13,6 +13,7 @@ sobald die Dateien vorhanden sind. Nach Änderungen an Branchennamen, Kurztexten
 """
 import html
 import json
+import sys
 import tempfile
 from pathlib import Path
 
@@ -101,6 +102,10 @@ def ohne_aufruf(text):
     return text
 
 
+# Optional: nur bestimmte Bilder neu erzeugen, z. B. python3 bilder.py ratgeber-regierapport-vorlage werkzeug-qr-rechnung
+NUR = set(sys.argv[1:])
+
+
 def main():
     branchen = json.loads((ROOT / "branchen.json").read_text(encoding="utf-8"))
     artikel = json.loads((ROOT / "artikel.json").read_text(encoding="utf-8"))
@@ -119,7 +124,7 @@ def main():
             seite.evaluate("document.fonts.ready")
             seite.wait_for_timeout(150)
 
-        for slug, name, kurz in eintraege:
+        for slug, name, kurz in (e for e in eintraege if not NUR):
             groesse = 96 if len(name) <= 18 else 80 if len(name) <= 26 else 66
             zeige(OG % (STIL, groesse, "", LOGO, "Branche · Schweiz", html.escape(name), html.escape(kurz)))
             # Titel auf eine Zeile einpassen: lange Namen werden verkleinert
@@ -136,7 +141,11 @@ def main():
                   for a in artikel if a["art"] == "ratgeber" and neu & set(a.get("produkte", []))]
         seiten += [("baustein-" + p["slug"], "Baustein · " + p["status"], p["name"],
                     ohne_aufruf(p["seo_beschreibung"])) for p in produkte if p["slug"] in neu]
+        seiten.append(("werkzeug-qr-rechnung", "Gratis-Werkzeug · Schweiz", "QR-Rechnung erstellen",
+                       "Zahlteil nach SIX-Standard als PDF. Läuft im Browser, Ihre Angaben bleiben auf Ihrem Gerät."))
         for datei, chip, titel, text in seiten:
+            if NUR and datei not in NUR:
+                continue
             zeige(OG % (STIL, 60, "zwei", LOGO, html.escape(chip), html.escape(titel), html.escape(text)))
             ziel = ROOT / "assets" / "og" / ("%s.png" % datei)
             seite.screenshot(path=str(ziel), clip={"x": 0, "y": 0, "width": 1200, "height": 630})
@@ -146,7 +155,7 @@ def main():
         ketten = [(a["slug"], a["name"], a["automatisierung"]["kette"]) for a in artikel if a.get("automatisierung")]
         ketten += [("%s-%d" % (b["slug"], i), b["name"], k) for b in branchen if b.get("automatisierungen")
                    for i, k in enumerate(b["automatisierungen"]["ketten"], 1)]
-        for slug, name, k in ketten:
+        for slug, name, k in (x for x in ketten if not NUR):
             arten = []
             for st in k["schritte"]:
                 if st["art"] not in arten:

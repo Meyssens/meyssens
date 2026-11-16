@@ -4446,5 +4446,173 @@
     "url": "https://www.edoeb.admin.ch/de/datenschutz-in-vereinen"
    }
   ]
+ },
+ {
+  "slug": "regierapport-vorlage",
+  "art": "ratgeber",
+  "name": "Regierapport-Vorlage",
+  "titel": "Regierapport Vorlage gratis (PDF, Excel) | Meyssens",
+  "beschreibung": "Regierapport-Vorlage gratis als PDF und Excel: was hineingehört, was die Unterschrift bewirkt, SIA 118 und häufige Fehler. Vorlage jetzt ansehen.",
+  "h1": "Regierapport-Vorlage: gratis als PDF und Excel, mit Beispiel",
+  "lead": "Ein Regierapport hält fest, welche Arbeit nach Aufwand geleistet und welches Material verbaut wurde. Hier finden Sie eine kostenlose Vorlage als PDF und Excel, ein ausgefülltes Beispiel und die wichtigsten Regeln zur Unterschrift, zu SIA 118 und zu den Ansätzen.",
+  "geprueft": "2026-11-16",
+  "aktualisiert": "2026-11-16",
+  "veroeffentlicht": "2026-11-16",
+  "produkte": [
+   "zeitabgleich-rapporte-handwerk",
+   "materialliste-elektro"
+  ],
+  "faq": [
+   {
+    "frage": "Ist ein Regierapport Pflicht?",
+    "antwort": "Ist die SIA 118 Teil des Werkvertrags, regelt Art. 47 eine Rapportpflicht. Ohne SIA 118 gibt es keine Formvorschrift, wer nach Aufwand abrechnet, muss den Aufwand aber beweisen. Der unterschriebene Rapport ist dafür der beste Nachweis."
+   },
+   {
+    "frage": "Was bestätigt der Kunde mit seiner Unterschrift?",
+    "antwort": "Laut law.ch begründet ein beidseitig unterschriebener Regierapport die Vermutung, dass der festgehaltene Aufwand richtig und notwendig war. Wer nicht einverstanden ist, sollte den Vorbehalt auf dem Rapport notieren."
+   },
+   {
+    "frage": "Was tun, wenn der Kunde nicht unterschreibt?",
+    "antwort": "Den Rapport trotzdem zeitnah übergeben oder mit Datum zustellen und eine Kopie behalten. Ohne Unterschrift ist er nur ein Indiz, deshalb lohnen sich zusätzliche Nachweise wie Fotos, Lieferscheine und Notizen zur Anordnung."
+   },
+   {
+    "frage": "Darf der Regierapport digital unterschrieben werden?",
+    "antwort": "Eine Formvorschrift für die Unterschrift auf dem Rapport selbst haben wir nicht gefunden. Verlangt der Werkvertrag Schriftform, sollte vor dem Umstieg geklärt werden, ob eine Unterschrift auf dem Bildschirm genügt."
+   },
+   {
+    "frage": "Welche Ansätze gehören in den Rapport?",
+    "antwort": "Die Ansätze aus Offerte oder Werkvertrag. Fehlt eine Vereinbarung, gelten nach SIA 118 die Regietarife der Berufsverbände oder die ortsüblichen Ansätze. Zuschläge für Überstunden nur, wenn sie den Mitarbeitenden bezahlt werden."
+   },
+   {
+    "frage": "Wie lange muss ich Regierapporte aufbewahren?",
+    "antwort": "Rapporte, die einer Rechnung zugrunde liegen, gehören zu den Buchungsbelegen. Für Geschäftsbücher und Buchungsbelege gilt nach Art. 958f OR eine Aufbewahrungsfrist von zehn Jahren."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/elektro-handwerk/",
+    "titel": "Elektro-Handwerk digital",
+    "grund": "Abläufe von der Anfrage bis zur Rechnung, mit Beispiel «Vom Rapport zur Rechnung»."
+   },
+   {
+    "url": "/werkzeuge/qr-rechnung/",
+    "titel": "QR-Rechnung erstellen",
+    "grund": "Gratis-Werkzeug: Zahlteil nach SIX-Standard als PDF, direkt im Browser."
+   },
+   {
+    "url": "/ratgeber/offerte-elektroinstallation/",
+    "titel": "Offerte für Elektroinstallationen",
+    "grund": "Aufbau, Positionen und Regieansätze in der Offerte."
+   },
+   {
+    "url": "/produkte/zeitabgleich-rapporte-handwerk/",
+    "titel": "Zeitabgleich zwischen Rapport und Arbeitszeit",
+    "grund": "Abweichungen zwischen Rapporten und Arbeitszeit finden, bevor die Rechnung rausgeht."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "law.ch, Vergütung von Regiearbeiten (Art. 48 ff. SIA-Norm 118)",
+    "url": "https://law.ch/lawinfo/werkvertrag/besteller-pflichten/werklohn-zahlung/sia-verguetungsordnung-art-38-83-sia-norm-118/verguetung-von-regiearbeiten-art-48-ff-sia-norm-118/"
+   },
+   {
+    "titel": "law.ch, Werklohnhöhe bei fehlender Preisabrede (Beweislast, Regierapporte)",
+    "url": "https://law.ch/lawinfo/bauprozess/prozessverfahren/beweislast/beweisnot/werklohnhoehe-bei-fehlender-preisabrede/"
+   },
+   {
+    "titel": "law.ch, Regiearbeiten: Verzicht auf die vorbehaltene Schriftform durch vorbehaltlose Unterzeichnung der Regierapporte (BGer 4A_377/2021, 25.10.2022)",
+    "url": "https://law.ch/lawnews/2022/10/regiearbeiten-verzicht-auf-die-vorbehaltene-schriftform-durch-vorbehaltslose-unterzeichnung-der-regierapporte/"
+   },
+   {
+    "titel": "Obligationenrecht, Art. 374 (Werkvertrag, Preis nach Aufwand) und Art. 958f (Aufbewahrung), Fedlex",
+    "url": "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de"
+   },
+   {
+    "titel": "ESTV, Schweizer Mehrwertsteuersätze",
+    "url": "https://www.estv.admin.ch/estv/de/home/mehrwertsteuer/mwst-steuersaetze.html"
+   }
+  ]
+ },
+ {
+  "slug": "steuerunterlagen-einsammeln",
+  "art": "ratgeber",
+  "name": "Steuerunterlagen einsammeln",
+  "titel": "Steuerunterlagen einsammeln: Checkliste Treuhand | Meyssens",
+  "beschreibung": "Steuerunterlagen 2026 einsammeln: Ablauf in 5 Schritten, Checkliste als PDF und Word, Fristen BL und ZH, Datenschutz. Checkliste jetzt ansehen.",
+  "h1": "Steuerunterlagen einsammeln: Checkliste und Ablauf für Treuhandbüros",
+  "lead": "Die Saison der Steuererklärungen scheitert selten am Ausfüllen, sondern an fehlenden Belegen. Dieser Ratgeber zeigt einen Ablauf in fünf Schritten, eine Checkliste für Mandantinnen und Mandanten zum Herunterladen und einen sicheren Weg für die Übermittlung.",
+  "geprueft": "2026-11-16",
+  "aktualisiert": "2026-11-16",
+  "veroeffentlicht": "2026-11-16",
+  "produkte": [
+   "unterlagen-erinnerung-treuhand",
+   "fristenkalender-belegeingang-treuhand"
+  ],
+  "faq": [
+   {
+    "frage": "Wann sollte ein Treuhandbüro die Unterlagen anfordern?",
+    "antwort": "Am besten Anfang Januar, mit einem konkreten Abgabedatum. In Basel-Landschaft endet die Frist für Unselbständigerwerbende am 31. März, bis zu zwei Monate Verlängerung gibt es stillschweigend und kostenlos."
+   },
+   {
+    "frage": "Darf ich die Checkliste mit meinem Logo verwenden?",
+    "antwort": "Ja. Die Vorlage ist frei verwendbar und anpassbar. In der Word-Datei ersetzen Sie das Feld oben rechts durch Logo und Kontaktangaben und streichen Punkte, die für Ihre Mandantschaft nicht passen."
+   },
+   {
+    "frage": "Dürfen Mandanten Unterlagen per E-Mail schicken?",
+    "antwort": "Verboten ist es nicht, das Datenschutzgesetz verlangt aber eine dem Risiko angemessene Datensicherheit. Für Steuerauszüge und Ausweise ist ein Upload-Link oder ein Portal mit Zugriffsschutz der sicherere Weg."
+   },
+   {
+    "frage": "Warum soll der eSteuerauszug nicht ausgedruckt werden?",
+    "antwort": "Der eSteuerauszug enthält einen Strichcode, den die Steuersoftware einliest. Laut Kanton Aargau lässt er sich nach dem Ausdrucken nicht mehr auslesen. Die PDF-Datei spart deshalb das Abtippen."
+   },
+   {
+    "frage": "Wie oft sollte man erinnern?",
+    "antwort": "Eine feste Regel gibt es nicht. Bewährt haben sich zwei Erinnerungen im Abstand von zwei Wochen, jeweils mit der Liste der fehlenden Belege, und danach rechtzeitig die Fristerstreckung."
+   },
+   {
+    "frage": "Was gilt für selbständigerwerbende Mandanten?",
+    "antwort": "Sie brauchen zusätzlich den Jahresabschluss und haben in Basel-Landschaft bis 30. Juni Zeit. Es lohnt sich, die Unterlagen für Abschluss und Steuererklärung in einem Schritt anzufordern, damit Belege nicht doppelt gesucht werden."
+   }
+  ],
+  "weiterlesen": [
+   {
+    "url": "/branchen/treuhaender/",
+    "titel": "Treuhandbüro digital",
+    "grund": "Abläufe für Mandantenanfragen, Belegeingang und Fristen."
+   },
+   {
+    "url": "/ratgeber/fristerstreckung-steuererklaerung/",
+    "titel": "Fristerstreckung der Steuererklärung",
+    "grund": "Fristen und Sammelgesuche in Basel-Landschaft, Zürich und Bern."
+   },
+   {
+    "url": "/produkte/unterlagen-erinnerung-treuhand/",
+    "titel": "Unterlagen-Erinnerung für Treuhandbüros",
+    "grund": "Erinnerungen mit den fehlenden Belegen als Entwurf vorbereiten."
+   },
+   {
+    "url": "/ratgeber/ndsg-kmu-checkliste/",
+    "titel": "nDSG-Checkliste für KMU",
+    "grund": "Datensicherheit, Auftragsbearbeitung und Informationspflicht im Überblick."
+   }
+  ],
+  "quellen": [
+   {
+    "titel": "Steuerverwaltung Basel-Landschaft, Kurzmitteilung Nr. 551: Fristgewährung (10. September 2024)",
+    "url": "https://kanton.baselland.ch/finanz-und-kirchendirektion/steuerverwaltung-kurzmitteilungen/kurzmitteilungen-der-kantonalen-steuerverwaltung-2024/downloads-6/km551_fristgewaehrung.pdf"
+   },
+   {
+    "titel": "Kanton Zürich, Zürcher Steuerbuch Nr. 133.1: Aufforderung zur Einreichung der Steuererklärungen 2027",
+    "url": "https://www.zh.ch/content/dam/zhweb/bilder-dokumente/themen/steuern-finanzen/steuern/vertreter/steuerbuch/zstb-nr-133-1/ZStB-Nr-133-1_Aufforderung-2027.pdf"
+   },
+   {
+    "titel": "Kanton Aargau, eSteuerauszug",
+    "url": "https://www.ag.ch/de/themen/steuern-finanzen/steuern/natuerliche-personen/steuererklaerung-easytax/esteuerauszug"
+   },
+   {
+    "titel": "Bundesgesetz über den Datenschutz (DSG), Art. 8 und 9, Fedlex",
+    "url": "https://www.fedlex.admin.ch/eli/cc/2022/491/de"
+   }
+  ]
  }
 ]
