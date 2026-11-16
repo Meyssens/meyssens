@@ -49,8 +49,9 @@ STUFEN = {
 }
 # Pilot-Angebot auf jeder Produktseite. Der Preis steht nur hier und ausdrücklich als "ab".
 PILOT_ANGEBOT = ("Wir richten diesen Ablauf für Ihren Betrieb ein und betreuen ihn im Pilot drei Monate persönlich, "
-                 "kostenlos und unverbindlich. Danach ab CHF 79 pro Monat und Ablauf, jederzeit kündbar.")
-ANGEBOT_GEPRUEFT = "2026-11-07"
+                 "kostenlos und unverbindlich. Danach ab CHF 79 (Endpreis, nicht MWST-pflichtig) pro Monat und Ablauf, "
+                 "jederzeit kündbar.")
+ANGEBOT_GEPRUEFT = "2026-11-16"
 
 
 def pilot_angebot():
