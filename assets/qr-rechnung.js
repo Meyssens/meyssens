@@ -485,7 +485,13 @@
     refHinweis.textContent = konto.length === 21 && istQrIban(konto)
       ? 'QR-IBAN erkannt: 27-stellige QR-Referenz nötig, nur in CHF.'
       : 'Mit normaler IBAN: RF-Referenz oder leer lassen.';
-    if (leer(e)) { letzte = null; meldungen.innerHTML = ''; zeigeBeispiel(); return; }
+    if (leer(e)) {
+      letzte = null; meldungen.innerHTML = '';
+      // Beim Laden steht das Beispiel schon als SVG in der Seite: nur neu zeichnen, wenn vorher eigene Angaben sichtbar waren
+      if (vorschau.hasAttribute('data-eigen')) { vorschau.removeAttribute('data-eigen'); vorschau.classList.remove('qr-blass'); zeigeBeispiel(); }
+      else inhaltAnzeige.textContent = pruefe(BEISPIEL).daten.inhalt;
+      return;
+    }
     var p = erstelle(e);
     if (!p.ok) {
       letzte = null;
@@ -495,6 +501,7 @@
         return '<li><a href="#qr-' + f.feld.replace(/_/g, '-') + '">' + esc(f.text) + '</a></li>';
       }).join('') + '</ul>';
       marke.textContent = 'Unvollständig';
+      vorschau.setAttribute('data-eigen', '');
       vorschau.classList.add('qr-blass');
       return;
     }
@@ -502,6 +509,7 @@
     letzte = p;
     meldungen.innerHTML = '<p class="qr-ok">Alle Angaben sind formal gültig. Bitte vor dem Versand mit Ihrer Bank-App testen.</p>';
     vorschau.innerHTML = svg(p.entwurf);
+    vorschau.setAttribute('data-eigen', '');
     marke.textContent = 'Ihre Vorschau';
     inhaltAnzeige.textContent = p.daten.inhalt;
     knoepfe.forEach(function (k) { k.disabled = false; });
