@@ -46,7 +46,7 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
-from build import (ARTEN, STUFEN, AUTO_WORTE, AUTOMATISIERUNGEN_WORTE, MEIN, KETTE_ART, BAUSTEIN_WORTE, BEDINGUNGEN, REGEL, WORTE, ist_baustein, ohne_automatisierung,
+from build import (VEREINS_SEITEN, ARTEN, STUFEN, AUTO_WORTE, AUTOMATISIERUNGEN_WORTE, MEIN, KETTE_ART, BAUSTEIN_WORTE, BEDINGUNGEN, REGEL, WORTE, ist_baustein, ohne_automatisierung,
                    worte, zwischen)
 
 ROOT = Path(__file__).resolve().parent
@@ -233,6 +233,8 @@ def pruefe_ablauf(a, teil):
 
 
 uebersicht = seiten.get("/unternehmen/", ("", None))[0]
+_start = seiten.get("/", ("", None))[0]
+vereine_start = zwischen(_start, '<section id="vereine"', "</section>") if '<section id="vereine"' in _start else ""
 for a in artikel:
     au = a.get("automatisierung")
     if not au:
@@ -391,7 +393,13 @@ for a in (a for a in artikel if a["art"] == "ratgeber"):
     url = "/ratgeber/%s/" % a["slug"]
     if 'href="%s"' % url not in branchen_seiten:
         fehler.append("%s: von keiner Branchenseite verlinkt" % url)
-    if 'href="%s"' % url not in uebersicht:
+    if url in VEREINS_SEITEN:
+        # Vereins-Ratgeber: nicht in der Unternehmen-Übersicht, dafür im Abschnitt "Auch für Vereine" der Startseite
+        if 'href="%s"' % url in uebersicht:
+            fehler.append("%s: Vereinsseite in der Unternehmen-Übersicht" % url)
+        if 'href="%s"' % url not in vereine_start:
+            fehler.append("%s: nicht im Abschnitt Auch für Vereine verlinkt" % url)
+    elif 'href="%s"' % url not in uebersicht:
         fehler.append("%s: nicht von der Übersicht verlinkt" % url)
 for p in (p for p in produkte if ist_baustein(p) and p.get("faq")):
     if len(p["faq"]) < 3 or '<section id="fragen"' not in seiten.get("/produkte/%s/" % p["slug"], ("",))[0]:
@@ -574,6 +582,7 @@ for b in json.loads((ROOT / "branchen.json").read_text(encoding="utf-8")):
 for a in artikel:
     if a["art"] == "branche":
         alle_b.append((a["slug"], a["name"], a["kurz"], a["automatisierung"]["bausteine"][:3], a["automatisierung"]["kette"]))
+alle_b = [x for x in alle_b if "/branchen/%s/" % x[0] not in VEREINS_SEITEN]
 alle_b.sort(key=lambda x: x[1])
 zeilen = re.findall(r'<a class="bliste-link" id="bl-([^"]+)" href="/branchen/([^/]+)/" data-branche="\1">'
                     r'<span class="bliste-icon" aria-hidden="true"><svg [^>]+>.*?</svg></span><span class="bliste-text">'

@@ -490,8 +490,7 @@
   "produkte": [
    "website-chatbot",
    "mail-assistent",
-   "umfragen-abstimmungen",
-   "website-fuer-vereine"
+   "umfragen-abstimmungen"
   ],
   "faq": [
    {
@@ -529,12 +528,12 @@
    {
     "url": "/produkte/umfragen-abstimmungen/",
     "titel": "Umfragen und Abstimmungen",
-    "grund": "Anonyme Rückmeldungen von Angehörigen oder Mitgliedern eines Trägervereins einholen."
+    "grund": "Anonyme Rückmeldungen von Angehörigen einholen, etwa zur Erreichbarkeit."
    },
    {
-    "url": "/produkte/website-fuer-vereine/",
-    "titel": "Website für Vereine",
-    "grund": "Für Trägervereine, etwa einen Spitex-Verein, mit Informationen zu Vorstand und Mitgliedschaft."
+    "url": "/ratgeber/datenschutz-pflege/",
+    "titel": "Datenschutz in der Pflege",
+    "grund": "Was beim Umgang mit Gesundheitsdaten in Heim und Spitex gilt."
    }
   ],
   "quellen": [
@@ -671,9 +670,9 @@
     "grund": "Kennzeichnung, Nutzer-Eingaben und KI-Anbieter als Auftragsbearbeiter: das nDSG angewendet auf einen Chatbot."
    },
    {
-    "url": "/ratgeber/online-abstimmung-verein/",
-    "titel": "Online-Abstimmungen im Verein",
-    "grund": "Wie die Pflichten aus dem nDSG bei Mitgliederdaten und Online-Abstimmungen aussehen."
+    "url": "/ratgeber/terminerinnerung-sms-datenschutz/",
+    "titel": "Terminerinnerung per SMS und Datenschutz",
+    "grund": "Wie die Pflichten aus dem nDSG beim Versand von Terminerinnerungen aussehen."
    },
    {
     "url": "/branchen/zahnarztpraxen/",
@@ -4269,9 +4268,9 @@
     "grund": "Wann eine Einwilligung nötig ist und wie ein Formular aussieht."
    },
    {
-    "url": "/ratgeber/online-abstimmung-verein/",
-    "titel": "Online-Abstimmungen im Verein",
-    "grund": "Für Elternvereine: Rückmeldungen und Beschlüsse digital einholen."
+    "url": "/ratgeber/elternumfrage-durchfuehren/",
+    "titel": "Elternumfrage durchführen",
+    "grund": "Eine Umfrage unter Eltern planen, auswerten und die Ergebnisse mitteilen."
    }
   ],
   "quellen": [
@@ -4418,9 +4417,9 @@
     "grund": "Terminabfragen und Befragungen per Link, wahlweise anonym (Pilotphase)."
    },
    {
-    "url": "/ratgeber/online-abstimmung-verein/",
-    "titel": "Online-Abstimmungen im Verein",
-    "grund": "Für Elternvereine: wann eine Online-Abstimmung verbindlich ist."
+    "url": "/ratgeber/fotos-kinder-schule-einwilligung/",
+    "titel": "Fotos von Kindern auf der Schulwebsite",
+    "grund": "Wann für Fotos auf der Schulwebsite eine Einwilligung nötig ist."
    },
    {
     "url": "/ratgeber/elternkommunikation-datenschutz/",

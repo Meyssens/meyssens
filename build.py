@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Erzeugt die Produktseiten, die Übersicht für Unternehmen und Vereine und die sitemap.xml.
+"""Erzeugt die Produktseiten, die Übersicht für Unternehmen und die sitemap.xml.
 
 Aufruf im Projektordner: python3 build.py
 Nur Python-Standardbibliothek.
@@ -292,7 +292,7 @@ VEREINE_START = [
 ]
 
 
-def start_vereine(produkte):
+def start_vereine(produkte, vereins_links=()):
     nach = {p["slug"]: p for p in produkte}
     karten = []
     for slug, text in VEREINE_START:
@@ -300,10 +300,14 @@ def start_vereine(produkte):
         karten.append('    <a href="/produkte/%s/" class="feat tile">\n      <span class="status-chip">%s</span>\n      <h3>%s</h3>\n      <p>%s</p>\n'
                       '      <span class="way-go">Zum Produkt %s</span>\n    </a>'
                       % (slug, html.escape(STUFEN[p["status"]]["badge"]), html.escape(p["name"]), html.escape(text), PFEIL))
-    return '<div class="feat-grid vier r">\n%s\n</div>' % "\n".join(karten)
+    links = ""
+    if vereins_links:
+        links = ('\n<p class="vereine-links r">Ratgeber für Vereine: %s</p>'
+                 % " · ".join('<a href="%s">%s</a>' % (u, html.escape(n)) for u, n in vereins_links))
+    return '<div class="feat-grid vier r">\n%s\n</div>%s' % ("\n".join(karten), links)
 
 
-def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
+def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber, vereins_links=()):
     # Automatisch erzeugte Bereiche der Startseite aus produkte.json und ansichten.html
     held = '<div class="buehne" data-buehne>\n%s\n</div>' % geraet("Meyssens", teil(ansichten, "held"))
     demos = []
@@ -320,7 +324,7 @@ def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
                      '</article>' % (html.escape(STUFEN[p["status"]]["badge"]), html.escape(p["name"]),
                                      html.escape(p["kurzbeschreibung"]), p["slug"], PFEIL, bild))
     geplant = [p for p in produkte if p["status"] == "Individuell auf Anfrage"]
-    planung = scrolly(ansichten, geplant)
+    planung = scrolly(ansichten, [p for p in geplant if "/produkte/%s/" % p["slug"] not in VEREINS_SEITEN])
     zahlen = [(len(produkte), "Produkte"),
               (sum(p["status"] == "Pilotphase" for p in produkte), "in der Pilotphase"),
               (len(geplant), "individuell auf Anfrage"),
@@ -330,7 +334,7 @@ def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
               '<p class="zahlen-hinweis">Gezählt aus den Angaben dieser Website. Meyssens ist ein Einzelunternehmen '
               'in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen.</p>'
               % "\n".join('  <div class="zahl"><strong data-zaehler="%d">%d</strong><span>%s</span></div>' % (z[0], z[0], z[1]) for z in zahlen))
-    vereine = start_vereine(produkte)
+    vereine = start_vereine(produkte, vereins_links)
     # Branchenbausteine nur im Bereich Unternehmen: in der Chatbot-Demo der Startseite den Satz zu den Bausteinen weglassen
     demos_text, n = re.subn(r" Dazu \w+ Bausteine?:[^.<]*\.", "", "\n".join(demos))
     if n != 1:
@@ -981,7 +985,8 @@ def dienst(p, url, branche=None):
     # Service für Produkt- und Bausteinseiten; keine Preise, keine Bewertungen
     d = {"@type": "Service", "@id": url + "#dienst", "name": p["name"], "description": p["kurzbeschreibung"], "url": url,
          "provider": {"@id": DOMAIN + "/#org"}, "areaServed": SCHWEIZ, "availableLanguage": "de-CH",
-         "audience": {"@type": "BusinessAudience", "audienceType": branche or "Unternehmen und Vereine in der Schweiz"}}
+         "audience": {"@type": "BusinessAudience", "audienceType": branche or ("Vereine und Unternehmen in der Schweiz" if p.get("slug") in VEREINS_PRODUKTE
+                                                                           else "Unternehmen in der Schweiz")}}
     if p.get("status"):
         d["additionalProperty"] = {"@type": "PropertyValue", "name": "Status", "value": p["status"]}
     return d
@@ -1168,7 +1173,8 @@ def branchen_liste(branchen, artikel_branchen, nach_slug):
 
 def ratgeber_abschnitt(slug, ratgeber, flaeche=False):
     # Rückverweis von Produkt- und Bausteinseiten auf alle Ratgeber, die das Produkt im Feld "produkte" nennen
-    passend = [r for r in ratgeber if slug in r["produkte"]]
+    passend = [r for r in ratgeber if slug in r["produkte"]
+               and (slug in VEREINS_PRODUKTE or r["slug"] not in VEREINS_RATGEBER)]
     if not passend:
         return ""
     return ('<section id="ratgeber"%s>\n  <div class="r">\n    <span class="s-label">Ratgeber</span>\n'
@@ -1183,6 +1189,8 @@ def branchen_ratgeber(b, ratgeber):
     url = "/branchen/%s/" % b["slug"]
     passend = [r for r in ratgeber if set(r["produkte"]) & eigene or any(l["url"] == url for l in r["weiterlesen"])
                or b.get("automatisierungen", {}).get("ratgeber") == r["slug"]]
+    if url not in VEREINS_SEITEN:
+        passend = [r for r in passend if r["slug"] not in VEREINS_RATGEBER]
     if not passend:
         return ""
     return ('<section id="ratgeber-branche">\n  <div class="r">\n    <span class="s-label">Ratgeber</span>\n'
@@ -1218,12 +1226,13 @@ def verwandte(netz, info, url, anzahl=3):
     wunsch = {"branche": ("baustein", "ratgeber", "produkt", "branche"), "baustein": ("branche", "ratgeber", "baustein", "produkt"),
               "ratgeber": ("branche", "baustein", "produkt", "ratgeber")}[info[url]["typ"]]
     eigene = set(netz.get(url, []))
+    ausser = set() if url in VEREINS_SEITEN else VEREINS_SEITEN
     # Ähnlichste Nachbarn zuerst: Anteil gemeinsamer Verknüpfungen (Jaccard), bei Gleichstand Reihenfolge der Daten
     def aehnlich(n):
         andere = set(netz.get(n, []))
         return len(eigene & andere) / max(1, len(eigene | andere))
-    nachbarn = sorted((n for n in netz.get(url, []) if n != url), key=lambda n: -aehnlich(n))
-    zweite = [m for n in nachbarn for m in netz.get(n, []) if m != url and m not in nachbarn]
+    nachbarn = sorted((n for n in netz.get(url, []) if n != url and n not in ausser), key=lambda n: -aehnlich(n))
+    zweite = [m for n in nachbarn for m in netz.get(n, []) if m != url and m not in nachbarn and m not in ausser]
     wahl = []
     for typ in wunsch:
         for n in nachbarn:
@@ -1298,6 +1307,13 @@ def ehrlich(produkte):
 
 START = ("Startseite", "/")
 UNTERNEHMEN = ("Unternehmen", "/unternehmen/")
+# Vereine nur im Abschnitt "Auch für Vereine" (Startseite) und auf diesen eigenen Seiten; Übersichten und
+# automatische Verweise im Bereich Unternehmen lassen sie weg (Seiten und URLs bleiben bestehen)
+VEREINS_RATGEBER = {"online-abstimmung-verein", "website-verein-erstellen", "generalversammlung-verein", "newsletter-verein-datenschutz"}
+VEREINS_PRODUKTE = {"website-fuer-vereine", "umfragen-abstimmungen", "newsletter"}
+VEREINS_SEITEN = ({"/branchen/vereine/", "/produkte/website-fuer-vereine/"} |
+                  {"/ratgeber/%s/" % s for s in VEREINS_RATGEBER})
+VEREINS_ZURUECK = ("/#vereine", "Zurück zu «Auch für Vereine»")
 
 # Gratis-Werkzeug QR-Rechnung (/werkzeuge/qr-rechnung/): Inhalt in werkzeug_qr_rechnung.html, Vorlage vorlage_werkzeug.html
 # (strenge Content Security Policy: keine Verbindungen nach aussen), Logik in assets/qr-rechnung.js und assets/qrcode.js
@@ -1573,6 +1589,11 @@ def main():
             "formular_skript": formular_skript,
         })
         seite = fuelle(vorlage_branche, werte)
+        if "/branchen/%s/" % b["slug"] in VEREINS_SEITEN:
+            alt = '<a href="/unternehmen/" class="back-link">← Zurück zu Unternehmen</a>'
+            if seite.count(alt) != 1:
+                raise SystemExit("Branche %s: Zurück-Link nicht gefunden" % b["slug"])
+            seite = seite.replace(alt, '<a href="%s" class="back-link">← %s</a>' % VEREINS_ZURUECK)
         if b.get("automatisierungen"):
             n = worte(zwischen(seite, '<section id="automatisierung"', "</section>"))
             hinweis = "" if AUTOMATISIERUNGEN_WORTE[0] <= n <= AUTOMATISIERUNGEN_WORTE[1] else "  ACHTUNG: ausserhalb %d bis %d" % AUTOMATISIERUNGEN_WORTE
@@ -1630,8 +1651,8 @@ def main():
             "produkte": "\n".join(angebot(nach_slug[s]) for s in a["produkte"]),
             "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
                                  % (html.escape(q["url"]), html.escape(q["titel"])) for q in a["quellen"]),
-            "zurueck_url": art["zurueck"][0],
-            "zurueck_text": art["zurueck"][1],
+            "zurueck_url": (VEREINS_ZURUECK if a["slug"] in VEREINS_RATGEBER else art["zurueck"])[0],
+            "zurueck_text": (VEREINS_ZURUECK if a["slug"] in VEREINS_RATGEBER else art["zurueck"])[1],
             "anfrage_titel": art["anfrage"],
             "betreff": html.escape(art["betreff"] % a["name"]),
             "feld": art["feld"][0],
@@ -1748,19 +1769,19 @@ def main():
             if mit_ratgeber:
                 zeilen += ['        <li><a href="/ratgeber/%s/">%s %s</a><span class="status-chip">Ratgeber</span></li>'
                            % (r["slug"], html.escape(r["name"]), PFEIL)
-                           for r in ratgeber if set(r.get("produkte", [])) & set(liste)]
+                           for r in ratgeber if set(r.get("produkte", [])) & set(liste) and r["slug"] not in VEREINS_RATGEBER]
             gruppen.append('    <div class="auto-gruppe r">\n      <h3><a href="/branchen/%s/%s">%s</a></h3>\n      <ul>\n%s\n      </ul>\n    </div>'
                            % (a["slug"], anker, html.escape(a["name"]), "\n".join(zeilen)))
         return "\n".join(gruppen)
 
-    kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens")
+    kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Digitale Werkzeuge für Schweizer KMU | Meyssens")
     werte = dict(gemeinsam, **kopf, **{
-        "titel": "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens",
-        "beschreibung": html.escape("Automatisierungen, Schnittstellen, Umfragen und Newsletter für Schweizer KMU und Vereine. "
+        "titel": "Digitale Werkzeuge für Schweizer KMU | Meyssens",
+        "beschreibung": html.escape("Automatisierungen, Schnittstellen, Umfragen und Bausteine für Schweizer KMU. "
                                     "Jetzt Gratis-Prozess-Check anfragen."),
         "url": DOMAIN + "/unternehmen/",
         "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
-        "produkte": scrolly(ansichten, allgemein, mehr=True),
+        "produkte": scrolly(ansichten, [p for p in allgemein if "/produkte/%s/" % p["slug"] not in VEREINS_SEITEN], mehr=True),
         "bausteine": bausteine_gruppen(),
         "ablauf_kopf": ABLAUF_KOPF,
         "ablaeufe": ablaeufe_abschnitt(ablaeufe, schnipsel_ablaeufe),
@@ -1768,9 +1789,10 @@ def main():
                                     "Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an."),
         "ld": ld(*seitenld, ablaeufe_ld(ablaeufe, DOMAIN + "/unternehmen/")),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
-                               for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
+                               for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])
+                               if "/branchen/%s/" % b["slug"] not in VEREINS_SEITEN),
         "ratgeber": "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (a["slug"], html.escape(a["name"]), PFEIL)
-                               for a in ratgeber),
+                               for a in ratgeber if a["slug"] not in VEREINS_RATGEBER),
     })
     schreibe("unternehmen/index.html", fuelle(lies("vorlage_unternehmen.html"), werte))
 
@@ -1793,7 +1815,7 @@ def main():
          "Branchen", "Werkzeuge für <span class=\"hl\">Ihre Branche.</span>",
          "Für jede Branche zeigen wir, wo digitale Werkzeuge im Alltag entlasten können, was rechtlich gilt und welche "
          "Bausteine wir planen. Alle Angaben beziehen sich auf die Schweiz.",
-         abschnitt_html("alle", "Branchen", "Alle Branchen", branchen_liste(branchen, artikel_branchen, nach_slug)) + "\n" +
+         abschnitt_html("alle", "Branchen", "Alle Branchen", branchen_liste([b for b in branchen if "/branchen/%s/" % b["slug"] not in VEREINS_SEITEN], artikel_branchen, nach_slug)) + "\n" +
          '<section id="bausteine" class="dunkel">\n  <div class="kopf-mitte r">\n    <span class="s-label">Bausteine und Ratgeber</span>\n'
          '    <h2>Bausteine und Ratgeber nach Branche</h2>\n    <p class="s-lead">Alle Bausteinseiten und die passenden Ratgeber auf '
          'einen Blick. Entwürfe ja, automatischer Versand nein: Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>\n  </div>\n'
@@ -1802,18 +1824,19 @@ def main():
          "Ratgeber mit Quellen und Prüfdatum: nDSG, Aufbewahrungsfristen, Mängelrüge 2026, Patientenformulare, "
          "Sicherheitsnachweis, Spitex und mehr. Jetzt lesen.",
          "Ratgeber", "Ratgeber mit <span class=\"hl\">Quellen.</span>",
-         "Kurze Leitfäden zu Fragen aus dem Alltag Schweizer KMU, Praxen, Verwaltungen und Vereine. Jeder Ratgeber nennt "
+         "Kurze Leitfäden zu Fragen aus dem Alltag Schweizer KMU, Praxen und Verwaltungen. Jeder Ratgeber nennt "
          "seine Quellen und das Datum der letzten Prüfung. Allgemeine Information, keine Rechtsberatung.",
          abschnitt_html("alle", "Ratgeber", "Alle Ratgeber", raster(
-             [eintrag("/ratgeber/%s/" % a["slug"]) for a in ratgeber]))),
+             [eintrag("/ratgeber/%s/" % a["slug"]) for a in ratgeber if a["slug"] not in VEREINS_RATGEBER]))),
         ((START, STUFE_PRODUKTE), "Produkte und Bausteine für Schweizer KMU | Meyssens",
          "Umfragen, Newsletter, Website-Chatbot und Bausteine für Praxen, Verwaltungen, Büros und Spitex. Status ehrlich "
          "angegeben. Jetzt ansehen und anfragen.",
          "Produkte", "Produkte und <span class=\"hl\">Bausteine.</span>",
          "%d Produkte und Bausteine sind in der Pilotphase, alle weiteren richten wir individuell auf Anfrage ein. Den Stand "
          "nennen wir auf jeder Seite." % (pilot + pilot_b),
-         abschnitt_html("produkte", "Produkte", "Werkzeuge für Unternehmen und Vereine",
-                        raster([eintrag("/produkte/%s/" % p["slug"]) for p in allgemein])) + "\n" +
+         abschnitt_html("produkte", "Produkte", "Werkzeuge für Unternehmen",
+                        raster([eintrag("/produkte/%s/" % p["slug"]) for p in allgemein
+                                if "/produkte/%s/" % p["slug"] not in VEREINS_SEITEN])) + "\n" +
          abschnitt_html("bausteine", "Bausteine", "Bausteine nach Branche",
                         raster([eintrag("/produkte/%s/" % p["slug"]) for p in produkte if ist_baustein(p)]), "flaeche")),
     ]
@@ -1829,7 +1852,7 @@ def main():
             '    <p>Für Gemeinden betreiben wir eine Beteiligungsplattform auf Basis der Open-Source-Software Decidim, als '
             'verwalteten Dienst mit Hosting, Updates, Backups und Sicherheit. Mehr dazu auf der Seite '
             '<a href="/gemeinden/">Für Gemeinden</a>.</p>\n'
-            '    <p>Für Unternehmen und Vereine entwickeln wir schlanke Werkzeuge. Stand heute sind %d von %d Produkten und %d von %d '
+            '    <p>Für Unternehmen entwickeln wir schlanke Werkzeuge. Stand heute sind %d von %d Produkten und %d von %d '
             'Bausteinen in der Pilotphase, die übrigen richten wir individuell auf Anfrage ein. Die Übersicht steht unter '
             '<a href="/produkte/">Produkte und Bausteine</a>, die Branchen unter <a href="/branchen/">Branchen</a>.</p>\n'
             '  </div>' % (pilot, len(allgemein), pilot_b, len(bausteine_alle)), "flaeche") + "\n" +
@@ -1859,8 +1882,8 @@ def main():
         "Wer hinter Meyssens steht: Einzelunternehmen von Lionel Nickelsen in Lausen BL, Arbeitsweise und "
         "Datenschutz-Prinzipien. Jetzt mehr lesen.",
         "Über uns", "Über <span class=\"hl\">Meyssens.</span>",
-        "Ein Einzelunternehmen aus Lausen im Kanton Basel-Landschaft: digitale Werkzeuge für Gemeinden, Unternehmen und "
-        "Vereine, persönlich begleitet.", ueber_inhalt))
+        "Ein Einzelunternehmen aus Lausen im Kanton Basel-Landschaft: digitale Werkzeuge für Gemeinden und Unternehmen, "
+        "persönlich begleitet.", ueber_inhalt))
     for stufen, titel, beschreibung, chip, h1, lead, inhalt in uebersichten:
         pfad = stufen[-1][1]
         kopf, seitenld = seitenkopf(stufen, titel)
@@ -1908,13 +1931,13 @@ def main():
     # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
     werte = dict(gemeinsam, **{
         "titel": "Seite nicht gefunden | Meyssens",
-        "beschreibung": "Diese Seite gibt es nicht. Zu den Werkzeugen für Schweizer KMU und Vereine, den Branchen oder zur Startseite.",
+        "beschreibung": "Diese Seite gibt es nicht. Zu den Werkzeugen für Schweizer KMU, den Branchen oder zur Startseite.",
         "url": DOMAIN + "/404.html",
         "links": "\n".join('    <a class="feat tile" href="%s">\n      <h3>%s</h3>\n      <p>%s</p>\n      <span class="way-go">Öffnen %s</span>\n    </a>'
                            % (u, html.escape(t), html.escape(x), PFEIL) for u, t, x in (
                                ("/unternehmen/", "Für Unternehmen", "Werkzeuge und Bausteine für Schweizer KMU, Praxen und Verwaltungen."),
                                ("/unternehmen/#branchen", "Branchen", "Zahnarztpraxen, Immobilienverwaltungen, Architekturbüros, Pflege und weitere."),
-                               ("/unternehmen/#ratgeber", "Ratgeber", "nDSG für KMU, Offertanfragen, Online-Abstimmung im Verein, Website-Chatbot."),
+                               ("/unternehmen/#ratgeber", "Ratgeber", "nDSG für KMU, Offertanfragen, Aufbewahrungsfristen, Website-Chatbot."),
                                ("/", "Startseite", "Überblick über Meyssens."))),
     })
     schreibe("404.html", fuelle(lies("vorlage_404.html"), werte))
@@ -1931,7 +1954,9 @@ def main():
     if neu_g != gemeinden:
         schreibe("gemeinden/index.html", neu_g)
 
-    neu = startseite(start, ansichten, allgemein, len(branchen) + len(artikel_branchen), len(ratgeber))
+    vereins_links = [(u, info[u]["name"] if u.startswith("/ratgeber/") else "Branchenseite " + info[u]["name"]) for u in sorted(VEREINS_SEITEN - {"/produkte/%s/" % s for s in VEREINS_PRODUKTE},
+                                                          key=lambda u: (not u.startswith("/ratgeber/"), info[u]["name"]))]
+    neu = startseite(start, ansichten, allgemein, len(branchen) + len(artikel_branchen), len(ratgeber), vereins_links)
     if beschreibend(neu) != start:
         schreibe("index.html", neu)
 

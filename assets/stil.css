@@ -1048,3 +1048,4 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .stil section.vereine-kurz{padding-top:clamp(2rem,4vw,3.25rem);padding-bottom:clamp(2rem,4vw,3.25rem)}
 .stil .vereine-kurz h2{font-size:clamp(1.5rem,2.6vw,2.1rem)}
 .stil .vereine-kurz .s-lead{font-size:1rem}
+.stil .vereine-links{margin:1.5rem auto 0;max-width:62rem;text-align:center;font-size:.95rem;line-height:1.8;color:var(--ink2)}
