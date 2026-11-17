@@ -1036,3 +1036,15 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .zeitstrahl-liste span:last-child{color:var(--ink2)}
 .u-vorlagen .feat-grid{margin-top:1.5rem}
 @media(max-width:640px){.vorlage-download{grid-template-columns:1fr}.vorlage-download img{max-width:180px}}
+
+/* Startseite: kleiner Abschnitt "Auch für Vereine" mit vier Produktkarten */
+.feat-grid.vier{grid-template-columns:repeat(4,minmax(0,1fr))}
+.stil .vereine-kurz .feat{padding:clamp(1.15rem,2vw,1.6rem);display:flex;flex-direction:column;gap:.5rem}
+.stil .vereine-kurz .feat h3{font-size:1.05rem;margin:0}
+.stil .vereine-kurz .feat p{font-size:.9rem;margin:0;flex:1}
+.stil .vereine-kurz .status-chip{align-self:flex-start}
+@media(max-width:1100px){.feat-grid.vier{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.feat-grid.vier{grid-template-columns:1fr}}
+.stil section.vereine-kurz{padding-top:clamp(2rem,4vw,3.25rem);padding-bottom:clamp(2rem,4vw,3.25rem)}
+.stil .vereine-kurz h2{font-size:clamp(1.5rem,2.6vw,2.1rem)}
+.stil .vereine-kurz .s-lead{font-size:1rem}

@@ -283,6 +283,26 @@ def ansicht(ansichten, p):
     return geraet(html.escape(p["name"]), inhalt, "Beispiel" if demo_teil else "Beispielansicht"), bool(demo_teil)
 
 
+# Startseite, Abschnitt "Auch für Vereine": allgemeine Produkte mit kurzem Vereinstext (Name, Status und Link aus produkte.json)
+VEREINE_START = [
+    ("umfragen-abstimmungen", "Mitgliederbefragung, Terminabfrage oder Abstimmung zwischen zwei Versammlungen, per Link."),
+    ("newsletter", "Mitglieder und Gönner informieren, mit Anmeldung über einen Bestätigungslink."),
+    ("website-fuer-vereine", "Vereinswebsite mit Anlässen, Neuigkeiten und Kontakt, die der Vorstand selbst pflegt."),
+    ("website-chatbot", "Beantwortet häufige Fragen auf Ihrer Website anhand Ihrer eigenen Inhalte."),
+]
+
+
+def start_vereine(produkte):
+    nach = {p["slug"]: p for p in produkte}
+    karten = []
+    for slug, text in VEREINE_START:
+        p = nach[slug]
+        karten.append('    <a href="/produkte/%s/" class="feat tile">\n      <span class="status-chip">%s</span>\n      <h3>%s</h3>\n      <p>%s</p>\n'
+                      '      <span class="way-go">Zum Produkt %s</span>\n    </a>'
+                      % (slug, html.escape(STUFEN[p["status"]]["badge"]), html.escape(p["name"]), html.escape(text), PFEIL))
+    return '<div class="feat-grid vier r">\n%s\n</div>' % "\n".join(karten)
+
+
 def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
     # Automatisch erzeugte Bereiche der Startseite aus produkte.json und ansichten.html
     held = '<div class="buehne" data-buehne>\n%s\n</div>' % geraet("Meyssens", teil(ansichten, "held"))
@@ -310,7 +330,13 @@ def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
               '<p class="zahlen-hinweis">Gezählt aus den Angaben dieser Website. Meyssens ist ein Einzelunternehmen '
               'in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen.</p>'
               % "\n".join('  <div class="zahl"><strong data-zaehler="%d">%d</strong><span>%s</span></div>' % (z[0], z[0], z[1]) for z in zahlen))
-    for name, inhalt in (("held", held), ("demos", "\n".join(demos)), ("planung", planung), ("zahlen", zahlen)):
+    vereine = start_vereine(produkte)
+    # Branchenbausteine nur im Bereich Unternehmen: in der Chatbot-Demo der Startseite den Satz zu den Bausteinen weglassen
+    demos_text, n = re.subn(r" Dazu \w+ Bausteine?:[^.<]*\.", "", "\n".join(demos))
+    if n != 1:
+        raise SystemExit("Startseite: Bausteine-Satz in der Chatbot-Demo nicht gefunden")
+    demos = [demos_text]
+    for name, inhalt in (("held", held), ("demos", "\n".join(demos)), ("planung", planung), ("zahlen", zahlen), ("vereine", vereine)):
         start = setze_auto(start, name, inhalt)
     return start
 
@@ -1271,7 +1297,7 @@ def ehrlich(produkte):
 
 
 START = ("Startseite", "/")
-UNTERNEHMEN = ("Unternehmen und Vereine", "/unternehmen/")
+UNTERNEHMEN = ("Unternehmen", "/unternehmen/")
 
 # Gratis-Werkzeug QR-Rechnung (/werkzeuge/qr-rechnung/): Inhalt in werkzeug_qr_rechnung.html, Vorlage vorlage_werkzeug.html
 # (strenge Content Security Policy: keine Verbindungen nach aussen), Logik in assets/qr-rechnung.js und assets/qrcode.js
@@ -1886,7 +1912,7 @@ def main():
         "url": DOMAIN + "/404.html",
         "links": "\n".join('    <a class="feat tile" href="%s">\n      <h3>%s</h3>\n      <p>%s</p>\n      <span class="way-go">Öffnen %s</span>\n    </a>'
                            % (u, html.escape(t), html.escape(x), PFEIL) for u, t, x in (
-                               ("/unternehmen/", "Für Unternehmen und Vereine", "Werkzeuge und Bausteine für Schweizer KMU, Praxen, Verwaltungen und Vereine."),
+                               ("/unternehmen/", "Für Unternehmen", "Werkzeuge und Bausteine für Schweizer KMU, Praxen und Verwaltungen."),
                                ("/unternehmen/#branchen", "Branchen", "Zahnarztpraxen, Immobilienverwaltungen, Architekturbüros, Pflege und weitere."),
                                ("/unternehmen/#ratgeber", "Ratgeber", "nDSG für KMU, Offertanfragen, Online-Abstimmung im Verein, Website-Chatbot."),
                                ("/", "Startseite", "Überblick über Meyssens."))),
