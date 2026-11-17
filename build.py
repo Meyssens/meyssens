@@ -1850,7 +1850,15 @@ def main():
     w = QR_WERKZEUG
     bild_w = og_eigen("werkzeug", "qr-rechnung", "Gratis-Werkzeug von Meyssens: QR-Rechnung erstellen", OG_STANDARD)
     kopf, seitenld = seitenkopf((START, UNTERNEHMEN, (w["name"], w["pfad"])), w["titel"], bild_w)
-    werte = dict(gemeinsam, **kopf, **{
+    # Werkzeugseite ohne Cookie-Banner, Einwilligungs-Skript und Google-Analytics-Lader (keine Cookies, keine Übertragung)
+    ohne_cookies = dict(gemeinsam)
+    ohne_cookies["head"] = re.sub(r"<script>\s*window\.dataLayer.*?</script>\n", "", gemeinsam["head"], count=1, flags=re.S)
+    ohne_cookies["rechtliches"] = re.sub(r'<div class="cookie-banner[^"]*" id="cookie-banner">.*?\n</div>\n\n', "", gemeinsam["rechtliches"], count=1, flags=re.S)
+    ohne_cookies["skripte"] = re.sub(r"// --- Cookie consent.*?(?=// --- Dialoge)", "", gemeinsam["skripte"], count=1, flags=re.S)
+    for name, merkmal in (("head", "googletagmanager"), ("rechtliches", "cookie-banner"), ("skripte", "meyssens_cookie_consent")):
+        if merkmal in ohne_cookies[name] or ohne_cookies[name] == gemeinsam[name]:
+            raise SystemExit("Werkzeug QR-Rechnung: Cookie-Teil %s nicht entfernt" % name)
+    werte = dict(ohne_cookies, **kopf, **{
         "titel": html.escape(w["titel"]), "beschreibung": html.escape(w["beschreibung"]), "url": DOMAIN + w["pfad"],
         "seo_kopf": seo_kopf(DOMAIN + w["pfad"]), "chip": "Gratis-Werkzeug", "h1": html.escape(w["h1"]),
         "lead": html.escape(w["lead"]), "inhalt": lies("werkzeug_qr_rechnung.html").rstrip("\n").replace(

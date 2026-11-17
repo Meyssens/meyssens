@@ -4465,15 +4465,15 @@
   "faq": [
    {
     "frage": "Ist ein Regierapport Pflicht?",
-    "antwort": "Ist die SIA 118 Teil des Werkvertrags, regelt Art. 47 eine Rapportpflicht. Ohne SIA 118 gibt es keine Formvorschrift, wer nach Aufwand abrechnet, muss den Aufwand aber beweisen. Der unterschriebene Rapport ist dafür der beste Nachweis."
+    "antwort": "Ob und wann Rapporte vorzulegen sind, regeln der Werkvertrag und, falls vereinbart, die SIA-Norm 118. Nach den Branchenusanzen, auf die sich das Bundesgericht stützt, legt der Unternehmer Regierapporte zur Gegenzeichnung vor. Wer nach Aufwand abrechnet, muss den Aufwand beweisen, der unterschriebene Rapport ist dafür der beste Nachweis."
    },
    {
     "frage": "Was bestätigt der Kunde mit seiner Unterschrift?",
-    "antwort": "Laut law.ch begründet ein beidseitig unterschriebener Regierapport die Vermutung, dass der festgehaltene Aufwand richtig und notwendig war. Wer nicht einverstanden ist, sollte den Vorbehalt auf dem Rapport notieren."
+    "antwort": "Laut Bundesgericht (Urteil 4A_377/2021, E. 5.1) begründet ein gegengezeichneter Regierapport eine tatsächliche Vermutung für den darin ausgewiesenen Aufwand. Wer nicht einverstanden ist, sollte auf dem Rapport konkret festhalten, was er bestreitet und warum."
    },
    {
     "frage": "Was tun, wenn der Kunde nicht unterschreibt?",
-    "antwort": "Den Rapport trotzdem zeitnah übergeben oder mit Datum zustellen und eine Kopie behalten. Ohne Unterschrift ist er nur ein Indiz, deshalb lohnen sich zusätzliche Nachweise wie Fotos, Lieferscheine und Notizen zur Anordnung."
+    "antwort": "Den Rapport trotzdem zeitnah übergeben oder mit Datum zustellen und eine Kopie behalten. Ohne Unterschrift muss der Betrieb seinen Aufwand nachträglich beweisen, deshalb lohnen sich zusätzliche Nachweise wie Fotos, Lieferscheine und Notizen zur Anordnung."
    },
    {
     "frage": "Darf der Regierapport digital unterschrieben werden?",
@@ -4481,7 +4481,7 @@
    },
    {
     "frage": "Welche Ansätze gehören in den Rapport?",
-    "antwort": "Die Ansätze aus Offerte oder Werkvertrag. Fehlt eine Vereinbarung, gelten nach SIA 118 die Regietarife der Berufsverbände oder die ortsüblichen Ansätze. Zuschläge für Überstunden nur, wenn sie den Mitarbeitenden bezahlt werden."
+    "antwort": "Die Ansätze aus Offerte oder Werkvertrag. Fehlen Ansätze, kann ein Gericht sie ergänzen, im Urteil 4A_377/2021 etwa nach Art. 49 SIA 118 aus den vereinbarten Ansätzen und beim Material nach den Regieansätzen der Berufsverbände. Sicherer ist, alle Ansätze und Zuschläge im Voraus zu vereinbaren."
    },
    {
     "frage": "Wie lange muss ich Regierapporte aufbewahren?",
@@ -4512,16 +4512,12 @@
   ],
   "quellen": [
    {
-    "titel": "law.ch, Vergütung von Regiearbeiten (Art. 48 ff. SIA-Norm 118)",
-    "url": "https://law.ch/lawinfo/werkvertrag/besteller-pflichten/werklohn-zahlung/sia-verguetungsordnung-art-38-83-sia-norm-118/verguetung-von-regiearbeiten-art-48-ff-sia-norm-118/"
+    "titel": "Bundesgericht, Urteil 4A_377/2021 vom 29. Juni 2022 (Werkvertrag, Regiearbeiten, Regierapporte)",
+    "url": "https://www.bger.ch/ext/eurospider/live/de/php/aza/http/index.php?highlight_docid=aza%3A%2F%2F29-06-2022-4A_377-2021&lang=de&type=show_document"
    },
    {
-    "titel": "law.ch, Werklohnhöhe bei fehlender Preisabrede (Beweislast, Regierapporte)",
-    "url": "https://law.ch/lawinfo/bauprozess/prozessverfahren/beweislast/beweisnot/werklohnhoehe-bei-fehlender-preisabrede/"
-   },
-   {
-    "titel": "law.ch, Regiearbeiten: Verzicht auf die vorbehaltene Schriftform durch vorbehaltlose Unterzeichnung der Regierapporte (BGer 4A_377/2021, 25.10.2022)",
-    "url": "https://law.ch/lawnews/2022/10/regiearbeiten-verzicht-auf-die-vorbehaltene-schriftform-durch-vorbehaltslose-unterzeichnung-der-regierapporte/"
+    "titel": "SIA, Norm 118 Allgemeine Bedingungen für Bauarbeiten (kostenpflichtig)",
+    "url": "https://shop.sia.ch/normenwerk/architekt/118_2013_d/D/Product"
    },
    {
     "titel": "Obligationenrecht, Art. 374 (Werkvertrag, Preis nach Aufwand) und Art. 958f (Aufbewahrung), Fedlex",
