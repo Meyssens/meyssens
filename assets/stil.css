@@ -801,10 +801,10 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .held-notiz{margin-top:.6rem;font-size:.8rem;color:var(--ink3)}
 .held-balken::before{transition:width .25s linear}
 @media(prefers-reduced-motion:no-preference){
-  .lebt .held-pin > g{animation:pin-fall .55s var(--weich) both;animation-delay:calc(.25s + var(--i) * .18s)}
-  .lebt .held-blase{animation:blase-ein .5s var(--weich) both;animation-delay:1.3s}
-  .lebt .held-schritte li{animation:schritt-ein .45s var(--weich) both;animation-delay:calc(.5s + var(--i) * .45s)}
-  .lebt .held-haken{animation:haken-ein .35s var(--weich) both;animation-delay:calc(.75s + var(--i) * .45s)}
+  .lebt .spielt .held-pin > g{animation:pin-fall .55s var(--weich) both;animation-delay:calc(.25s + var(--i) * .18s)}
+  .lebt .spielt .held-blase{animation:blase-ein .5s var(--weich) both;animation-delay:1.3s}
+  .lebt .spielt .held-schritte li{animation:schritt-ein .45s var(--weich) both;animation-delay:calc(.5s + var(--i) * .45s)}
+  .lebt .spielt .held-haken{animation:haken-ein .35s var(--weich) both;animation-delay:calc(.75s + var(--i) * .45s)}
 }
 @keyframes pin-fall{from{opacity:0;transform:translateY(-14px) scale(.6)}to{opacity:1;transform:none}}
 @keyframes blase-ein{from{opacity:0;transform:translateY(6px) scale(.96)}to{opacity:1;transform:none}}
@@ -1049,3 +1049,34 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .stil .vereine-kurz h2{font-size:clamp(1.5rem,2.6vw,2.1rem)}
 .stil .vereine-kurz .s-lead{font-size:1rem}
 .stil .vereine-links{margin:1.5rem auto 0;max-width:62rem;text-align:center;font-size:.95rem;line-height:1.8;color:var(--ink2)}
+
+/* Startseite: Produktansicht mit Reitern Gemeinden / Unternehmen (assets/demos.js).
+   Ohne JavaScript bleiben die Reiter verborgen und nur die Gemeinden-Tafel ist sichtbar. */
+.buehne-wrap{scroll-margin-top:84px}
+.held-reiter{display:none}
+.js .held-reiter{display:flex;gap:.35rem;width:fit-content;margin:0 auto 1rem;padding:.3rem;border-radius:999px;background:var(--grau)}
+.held-reiter [role=tab]{appearance:none;border:0;background:transparent;color:var(--ink);font:inherit;font-size:.9rem;font-weight:500;min-height:44px;padding:.55rem 1.3rem;border-radius:999px;cursor:pointer;transition:background .2s,color .2s}
+.held-reiter [role=tab]:hover{background:#fff}
+.held-reiter [role=tab][aria-selected=true]{background:#0000ff;color:#fff}
+.held-reiter [role=tab]:focus-visible{outline:3px solid #0000ff;outline-offset:2px}
+.held-tafel:focus-visible{outline:3px solid #0000ff;outline-offset:4px;border-radius:12px}
+.held-tafeln{display:grid}
+.held-tafel{grid-area:1/1}
+.held-tafel[hidden]{display:none}
+.js .held-tafel[hidden]{display:grid;visibility:hidden}
+.held-raster.held-tafel{grid-template-rows:auto}
+.held-tafel .held-plan{grid-row:auto}
+.held-tafel .held-karte{transform:none}
+.held-raster-firma{grid-template-columns:1fr 1.15fr}
+.held-ablauf{display:flex;flex-direction:column;justify-content:center}
+.held-beispiel{display:inline-block;margin-left:.4rem;padding:.1rem .45rem;border-radius:999px;background:#fff;color:var(--ink);letter-spacing:.06em;font-size:.62rem;vertical-align:1px}
+.qr-zahlteil{background:#fff;border-radius:10px;padding:.8rem .9rem;border:1px dashed #9a9ab0}
+.qr-kopf{font-weight:700;font-size:.85rem;color:var(--ink);margin-bottom:.55rem}
+.qr-inhalt{display:flex;gap:.9rem;align-items:flex-start}
+.qr-code{flex:none;width:92px;height:92px;fill:#000;shape-rendering:crispEdges}
+.qr-angaben{display:grid;gap:.4rem;font-size:.76rem;line-height:1.35;min-width:0}
+.qr-angaben dt{font-weight:600;color:var(--ink)}
+.qr-angaben dd{margin:0;color:var(--ink2);overflow-wrap:anywhere}
+.held-qr .held-notiz a{color:#0000ff}
+@media(max-width:700px){.held-raster-firma{grid-template-columns:1fr}}
+@media(max-width:380px){.qr-inhalt{flex-direction:column}.js .held-reiter{width:100%}.held-reiter [role=tab]{flex:1;padding:.55rem .8rem}}

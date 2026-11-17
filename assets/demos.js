@@ -26,6 +26,41 @@ alle('[data-buehne]').forEach(function(b){
   }).observe(b);
 });
 
+// --- Produktansicht: Reiter Gemeinden / Unternehmen, auch über die Hero-Knöpfe mit data-reiter ---
+alle('[data-held-tabs]').forEach(function(w){
+  var tabs = alle('[role="tab"]', w);
+  function zeige(t){
+    tabs.forEach(function(x){
+      var an = x === t, tafel = document.getElementById(x.getAttribute('aria-controls'));
+      x.setAttribute('aria-selected', an ? 'true' : 'false');
+      x.tabIndex = an ? 0 : -1;
+      tafel.hidden = !an;
+      if(an && !tafel.classList.contains('spielt')) tafel.classList.add('spielt');
+      else if(an){ tafel.classList.remove('spielt'); void tafel.offsetWidth; tafel.classList.add('spielt'); }
+    });
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ zeige(t); });
+    t.addEventListener('keydown', function(e){
+      var n = tabs.length, j = e.key === 'ArrowRight' ? (i + 1) % n : e.key === 'ArrowLeft' ? (i + n - 1) % n
+            : e.key === 'Home' ? 0 : e.key === 'End' ? n - 1 : -1;
+      if(j < 0) return;
+      e.preventDefault(); zeige(tabs[j]); tabs[j].focus();
+    });
+  });
+  alle('a[data-reiter]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      if(e.button || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      var t = document.getElementById('reiter-' + a.getAttribute('data-reiter'));
+      if(!t) return;
+      e.preventDefault();
+      zeige(t);
+      (w.closest('.buehne-wrap') || w).scrollIntoView({behavior: ruhig ? 'auto' : 'smooth', block: 'start'});
+      t.focus({preventScroll: true});
+    });
+  });
+});
+
 // --- Umfrage: abstimmen, Ergebnis sofort sehen ---
 alle('[data-umfrage]').forEach(function(u){
   var opts = alle('.opt', u), knopf = u.querySelector('[data-abstimmen]'), stand = u.querySelector('[data-stand]');
