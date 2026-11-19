@@ -309,7 +309,7 @@ def start_vereine(produkte, vereins_links=()):
 
 def startseite(start, ansichten):
     # Startseite: nur die Produktansicht unter dem Hero wird erzeugt, alle anderen Abschnitte stehen von Hand in index.html
-    held = '<div class="buehne" data-buehne>\n%s\n</div>' % geraet("Meyssens", teil(ansichten, "held"))
+    held = '<div class="buehne buehne-ruhig" data-buehne>\n%s\n</div>' % teil(ansichten, "held")
     return setze_auto(start, "held", held)
 
 

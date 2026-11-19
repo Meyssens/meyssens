@@ -1176,3 +1176,45 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .sg-preis-info{list-style:none;display:grid;gap:.35rem;margin:-.5rem 0 1.4rem;font-size:.86rem;line-height:1.45;color:var(--ink2)}
 .sg-preis-info li{position:relative;padding-left:1rem}
 .sg-preis-info li::before{content:'';position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:#0000ff}
+
+/* Block unter dem Hero: ruhiges Indigo, Reiter mit feiner Unterstreichung, echter Screenshot der Beispielplattform */
+.buehne-ruhig{--indigo:#3B4BD6;--text:#2e3040;--text2:#5b5e6e;--linie:#e3e4ec;max-width:1040px;color:var(--text)}
+.js .buehne-ruhig .held-reiter{display:flex;justify-content:center;gap:clamp(1.25rem,4vw,2.5rem);width:auto;margin:0 auto clamp(1.75rem,3.5vw,2.75rem);padding:0;border-radius:0;background:none;border-bottom:1px solid var(--linie)}
+.buehne-ruhig .held-reiter [role=tab]{border-radius:0;padding:.6rem .2rem;margin-bottom:-1px;border-bottom:2px solid transparent;background:none;color:var(--text2);font-weight:500;transition:color .2s,border-color .2s}
+.buehne-ruhig .held-reiter [role=tab]:hover{background:none;color:var(--text);border-bottom-color:var(--linie)}
+.buehne-ruhig .held-reiter [role=tab][aria-selected=true]{background:none;color:var(--indigo);border-bottom-color:var(--indigo)}
+.buehne-ruhig .held-reiter [role=tab]:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+.buehne-ruhig .held-tafel{display:block}
+.buehne-ruhig .held-tafel[hidden]{display:none}
+.js .buehne-ruhig .held-tafel[hidden]{display:block;visibility:hidden}
+.buehne-ruhig .held-tafel:focus-visible{outline:2px solid var(--indigo);outline-offset:6px;border-radius:12px}
+.buehne-ruhig .held-aussage{hyphens:manual;-webkit-hyphens:manual;text-wrap:balance;max-width:40ch;margin:0 auto clamp(1.25rem,2.5vw,2rem);text-align:center;font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-weight:600;font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.25;letter-spacing:-.015em;color:var(--text)}
+.buehne-ruhig .held-raster{display:grid;grid-template-columns:1.65fr 1fr;grid-template-rows:auto;gap:clamp(1rem,2.5vw,2rem);align-items:start}
+.buehne-ruhig .held-raster-firma{grid-template-columns:1fr 1.15fr}
+.held-bild{margin:0;min-width:0}
+.held-bild-link{display:block;border-radius:14px}
+.held-bild-link:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+.held-bild img{display:block;width:100%;height:auto;border:1px solid var(--linie);border-radius:14px;box-shadow:0 24px 60px -40px rgba(30,35,90,.35)}
+.held-bild figcaption{margin-top:.8rem;font-size:.8rem;line-height:1.45;color:var(--text2)}
+.held-legende{list-style:none;display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;margin:0 0 .4rem;padding:0;color:var(--text)}
+.held-legende li{display:flex;align-items:center;gap:.4rem}
+.held-legende i{flex:none;width:9px;height:9px;border-radius:50%}
+.buehne-ruhig .held-karte{background:#fff;border:1px solid var(--linie);border-radius:14px;padding:clamp(1.1rem,2vw,1.5rem);transform:none}
+.buehne-ruhig .held-titel{color:var(--indigo);margin-bottom:.7rem}
+.buehne-ruhig .held-frage{color:var(--text);margin-bottom:1.1rem}
+.held-optionen{list-style:none;display:grid;gap:.5rem;margin:0 0 1rem;padding:0}
+.held-optionen li{display:flex;align-items:center;gap:.7rem;padding:.75rem .9rem;border:1px solid var(--linie);border-radius:10px;font-size:.95rem;color:var(--text)}
+.held-kreis{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--indigo)}
+.buehne-ruhig .held-notiz{margin-top:0;color:var(--text2)}
+.held-link{display:inline-flex;align-items:center;min-height:44px;color:var(--indigo);font-size:.9rem;font-weight:600;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.held-link:hover{text-decoration-thickness:2px}
+.held-link:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;border-radius:4px}
+.buehne-ruhig .held-ablauf{justify-content:flex-start}
+.buehne-ruhig .held-schritte li{background:#fff;border:1px solid var(--linie);color:var(--text)}
+.buehne-ruhig .held-haken{background:var(--indigo)}
+.buehne-ruhig .held-notiz + .held-link{margin-top:.15rem}
+.buehne-ruhig .qr-zahlteil{border:1px dashed #b4b6c4;margin-bottom:.8rem}
+.buehne-ruhig .qr-kopf,.buehne-ruhig .qr-angaben dt{color:var(--text)}
+.buehne-ruhig .qr-angaben dd{color:var(--text2)}
+@media(max-width:860px){.buehne-ruhig .held-raster,.buehne-ruhig .held-raster-firma{grid-template-columns:1fr}}
+@media(max-width:380px){.js .buehne-ruhig .held-reiter{width:auto}.buehne-ruhig .held-reiter [role=tab]{flex:none;padding:.6rem .2rem}}
