@@ -307,42 +307,10 @@ def start_vereine(produkte, vereins_links=()):
     return '<div class="feat-grid vier r">\n%s\n</div>%s' % ("\n".join(karten), links)
 
 
-def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber, vereins_links=()):
-    # Automatisch erzeugte Bereiche der Startseite aus produkte.json und ansichten.html
+def startseite(start, ansichten):
+    # Startseite: nur die Produktansicht unter dem Hero wird erzeugt, alle anderen Abschnitte stehen von Hand in index.html
     held = '<div class="buehne" data-buehne>\n%s\n</div>' % geraet("Meyssens", teil(ansichten, "held"))
-    demos = []
-    for p in (p for p in produkte if p["status"] == "Pilotphase"):
-        bild, _ = ansicht(ansichten, p)
-        demos.append('<article class="demo r">\n'
-                     '  <div class="demo-text">\n'
-                     '    <span class="status-chip">%s</span>\n'
-                     '    <h3>%s</h3>\n'
-                     '    <p>%s</p>\n'
-                     '    <a class="mehr" href="/produkte/%s/">Mehr erfahren %s</a>\n'
-                     '  </div>\n'
-                     '  <div class="demo-bild">\n%s\n  </div>\n'
-                     '</article>' % (html.escape(STUFEN[p["status"]]["badge"]), html.escape(p["name"]),
-                                     html.escape(p["kurzbeschreibung"]), p["slug"], PFEIL, bild))
-    geplant = [p for p in produkte if p["status"] == "Individuell auf Anfrage"]
-    planung = scrolly(ansichten, [p for p in geplant if "/produkte/%s/" % p["slug"] not in VEREINS_SEITEN])
-    zahlen = [(len(produkte), "Produkte"),
-              (sum(p["status"] == "Pilotphase" for p in produkte), "in der Pilotphase"),
-              (len(geplant), "individuell auf Anfrage"),
-              (anzahl_branchen, "Branchenseiten"),
-              (anzahl_ratgeber, "Ratgeber")]
-    zahlen = ('<div class="zahlen r">\n%s\n</div>\n'
-              '<p class="zahlen-hinweis">Gezählt aus den Angaben dieser Website. Meyssens ist ein Einzelunternehmen '
-              'in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen.</p>'
-              % "\n".join('  <div class="zahl"><strong data-zaehler="%d">%d</strong><span>%s</span></div>' % (z[0], z[0], z[1]) for z in zahlen))
-    vereine = start_vereine(produkte, vereins_links)
-    # Branchenbausteine nur im Bereich Unternehmen: in der Chatbot-Demo der Startseite den Satz zu den Bausteinen weglassen
-    demos_text, n = re.subn(r" Dazu \w+ Bausteine?:[^.<]*\.", "", "\n".join(demos))
-    if n != 1:
-        raise SystemExit("Startseite: Bausteine-Satz in der Chatbot-Demo nicht gefunden")
-    demos = [demos_text]
-    for name, inhalt in (("held", held), ("demos", "\n".join(demos)), ("planung", planung), ("zahlen", zahlen), ("vereine", vereine)):
-        start = setze_auto(start, name, inhalt)
-    return start
+    return setze_auto(start, "held", held)
 
 
 def scrolly(ansichten, liste, mehr=False):
@@ -1313,7 +1281,7 @@ VEREINS_RATGEBER = {"online-abstimmung-verein", "website-verein-erstellen", "gen
 VEREINS_PRODUKTE = {"website-fuer-vereine", "umfragen-abstimmungen", "newsletter"}
 VEREINS_SEITEN = ({"/branchen/vereine/", "/produkte/website-fuer-vereine/"} |
                   {"/ratgeber/%s/" % s for s in VEREINS_RATGEBER})
-VEREINS_ZURUECK = ("/#vereine", "Zurück zu «Auch für Vereine»")
+VEREINS_ZURUECK = ("/unternehmen/#vereine", "Zurück zu «Auch für Vereine»")
 
 # Gratis-Werkzeug QR-Rechnung (/werkzeuge/qr-rechnung/): Inhalt in werkzeug_qr_rechnung.html, Vorlage vorlage_werkzeug.html
 # (strenge Content Security Policy: keine Verbindungen nach aussen), Logik in assets/qr-rechnung.js und assets/qrcode.js
@@ -1774,6 +1742,8 @@ def main():
                            % (a["slug"], anker, html.escape(a["name"]), "\n".join(zeilen)))
         return "\n".join(gruppen)
 
+    vereins_links = [(u, info[u]["name"] if u.startswith("/ratgeber/") else "Branchenseite " + info[u]["name"]) for u in sorted(VEREINS_SEITEN - {"/produkte/%s/" % s for s in VEREINS_PRODUKTE},
+                                                          key=lambda u: (not u.startswith("/ratgeber/"), info[u]["name"]))]
     kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Digitale Werkzeuge für Schweizer KMU | Meyssens")
     werte = dict(gemeinsam, **kopf, **{
         "titel": "Digitale Werkzeuge für Schweizer KMU | Meyssens",
@@ -1783,6 +1753,7 @@ def main():
         "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
         "produkte": scrolly(ansichten, [p for p in allgemein if "/produkte/%s/" % p["slug"] not in VEREINS_SEITEN], mehr=True),
         "bausteine": bausteine_gruppen(),
+        "vereine": start_vereine(allgemein, vereins_links),
         "ablauf_kopf": ABLAUF_KOPF,
         "ablaeufe": ablaeufe_abschnitt(ablaeufe, schnipsel_ablaeufe),
         "anfrage": anfrage_formular("Unternehmen", "Unternehmen / Organisation", False,
@@ -1954,9 +1925,7 @@ def main():
     if neu_g != gemeinden:
         schreibe("gemeinden/index.html", neu_g)
 
-    vereins_links = [(u, info[u]["name"] if u.startswith("/ratgeber/") else "Branchenseite " + info[u]["name"]) for u in sorted(VEREINS_SEITEN - {"/produkte/%s/" % s for s in VEREINS_PRODUKTE},
-                                                          key=lambda u: (not u.startswith("/ratgeber/"), info[u]["name"]))]
-    neu = startseite(start, ansichten, allgemein, len(branchen) + len(artikel_branchen), len(ratgeber), vereins_links)
+    neu = startseite(start, ansichten)
     if beschreibend(neu) != start:
         schreibe("index.html", neu)
 

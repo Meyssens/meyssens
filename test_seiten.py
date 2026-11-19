@@ -233,8 +233,9 @@ def pruefe_ablauf(a, teil):
 
 
 uebersicht = seiten.get("/unternehmen/", ("", None))[0]
-_start = seiten.get("/", ("", None))[0]
-vereine_start = zwischen(_start, '<section id="vereine"', "</section>") if '<section id="vereine"' in _start else ""
+# Abschnitt "Auch für Vereine" auf /unternehmen/; der Rest der Seite ist die Unternehmen-Übersicht ohne Vereinsseiten
+vereine_start = zwischen(uebersicht, '<section id="vereine"', "</section>") if '<section id="vereine"' in uebersicht else ""
+uebersicht_ohne_vereine = uebersicht.replace(vereine_start, "")
 for a in artikel:
     au = a.get("automatisierung")
     if not au:
@@ -394,8 +395,8 @@ for a in (a for a in artikel if a["art"] == "ratgeber"):
     if 'href="%s"' % url not in branchen_seiten:
         fehler.append("%s: von keiner Branchenseite verlinkt" % url)
     if url in VEREINS_SEITEN:
-        # Vereins-Ratgeber: nicht in der Unternehmen-Übersicht, dafür im Abschnitt "Auch für Vereine" der Startseite
-        if 'href="%s"' % url in uebersicht:
+        # Vereins-Ratgeber: nur im Abschnitt "Auch für Vereine" auf /unternehmen/, nicht in der übrigen Übersicht
+        if 'href="%s"' % url in uebersicht_ohne_vereine:
             fehler.append("%s: Vereinsseite in der Unternehmen-Übersicht" % url)
         if 'href="%s"' % url not in vereine_start:
             fehler.append("%s: nicht im Abschnitt Auch für Vereine verlinkt" % url)
