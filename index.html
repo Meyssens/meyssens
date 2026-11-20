@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Meyssens – Digitale Werkzeuge für Gemeinden und Unternehmen</title>
-<meta name="description" content="Meyssens entwickelt digitale Werkzeuge für Gemeinden und Unternehmen: Bürgerbeteiligung für Gemeinden, schlanke Abläufe für KMU. Jetzt Beispiele ansehen.">
+<meta name="description" content="Digitale Werkzeuge für Gemeinden und Unternehmen: Bürgerbeteiligung mit Karte und Abstimmungen, weniger Büroarbeit für KMU. Jetzt Beispiele ansehen.">
 <meta property="og:title" content="Meyssens – Digitale Werkzeuge für Gemeinden und Unternehmen">
-<meta property="og:description" content="Digitale Werkzeuge für Gemeinden und Unternehmen.">
+<meta property="og:description" content="Bürgerbeteiligung für Gemeinden, weniger Büroarbeit für Unternehmen.">
 <meta property="og:url" content="https://meyssens.ch/">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://meyssens.ch/og-image.png">
@@ -22,7 +22,7 @@
 <link rel="alternate" hreflang="de-CH" href="https://meyssens.ch/">
 <link rel="alternate" hreflang="x-default" href="https://meyssens.ch/">
 <link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
-<script>if(location.hash==='#kontakt')location.replace('/gemeinden/#kontakt')</script>
+<script>if(/^#(kontakt|gespraech|schritte|vertrauen|preis|beispiel-gemeinde|beispiele)$/.test(location.hash))location.replace('/gemeinden/'+({'#gespraech':'#kontakt','#schritte':'#ablauf','#preis':'#ablauf','#beispiel-gemeinde':'','#beispiele':''}[location.hash]??location.hash))</script>
 <!-- head:start -->
 <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
@@ -32,7 +32,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=2">
 <link rel="manifest" href="/site.webmanifest?v=2">
-<meta name="theme-color" content="#0000ff">
+<meta name="theme-color" content="#ffffff">
 <script>document.documentElement.classList.add("js")</script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -54,87 +54,41 @@
 <link rel="stylesheet" href="/assets/site.css">
 <!-- head:ende -->
 <link rel="stylesheet" href="/assets/stil.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@id": "https://meyssens.ch/ueber-uns/#person"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de-CH", "publisher": {"@id": "https://meyssens.ch/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}], "@id": "https://meyssens.ch/#brotkrumen"}, {"@type": "Person", "@id": "https://meyssens.ch/ueber-uns/#person", "name": "Lionel Nickelsen", "url": "https://meyssens.ch/ueber-uns/", "worksFor": {"@id": "https://meyssens.ch/#org"}}, {"@type": "WebPage", "@id": "https://meyssens.ch/", "url": "https://meyssens.ch/", "name": "Meyssens – Digitale Infrastruktur für Organisationen", "inLanguage": "de-CH", "isPartOf": {"@id": "https://meyssens.ch/#website"}, "breadcrumb": {"@id": "https://meyssens.ch/#brotkrumen"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://meyssens.ch/og-image.png", "width": 1200, "height": 630, "caption": "Meyssens – Digitale Infrastruktur für Organisationen"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@id": "https://meyssens.ch/ueber-uns/#person"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de-CH", "publisher": {"@id": "https://meyssens.ch/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}], "@id": "https://meyssens.ch/#brotkrumen"}, {"@type": "Person", "@id": "https://meyssens.ch/ueber-uns/#person", "name": "Lionel Nickelsen", "url": "https://meyssens.ch/ueber-uns/", "worksFor": {"@id": "https://meyssens.ch/#org"}}, {"@type": "WebPage", "@id": "https://meyssens.ch/", "url": "https://meyssens.ch/", "name": "Meyssens – Digitale Werkzeuge für Gemeinden und Unternehmen", "inLanguage": "de-CH", "isPartOf": {"@id": "https://meyssens.ch/#website"}, "breadcrumb": {"@id": "https://meyssens.ch/#brotkrumen"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://meyssens.ch/og-image.png", "width": 1200, "height": 630, "caption": "Meyssens – Digitale Infrastruktur für Organisationen"}}]}</script>
 </head>
-<body class="stil">
+<body class="stil bereich-neutral">
 <a class="skip-link" href="#main">Zum Inhalt springen</a>
 <!-- kopf:start -->
-<nav id="nav" aria-label="Hauptnavigation">
-  <a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – zur Startseite"></a>
-  <ul class="nav-items">
-    <li><a href="/gemeinden/">Für Gemeinden</a></li>
-    <li><a href="/unternehmen/">Für Unternehmen</a></li>
-    <li><a href="/ueber-uns/">Über uns</a></li>
-  </ul>
-  <a href="mailto:lionel@meyssens.ch" class="nav-btn nav-kontakt">Kontakt</a>
-  <button class="hamburger" id="hamburger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
-</nav>
-<div class="mobile-nav" id="mobile-nav">
-  <a href="/gemeinden/">Für Gemeinden</a>
-  <a href="/unternehmen/">Für Unternehmen</a>
-  <a href="/ueber-uns/">Über uns</a>
-</div>
+<header id="nav" class="kopf">
+  <div class="kopf-zeile">
+    <a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – zur Startseite"></a>
+    <nav class="bereich-wahl" aria-label="Bereich wählen"><a href="/gemeinden/" class="bw-gemeinden" data-i18n="kopf.gemeinden">Gemeinden</a><a href="/unternehmen/" class="bw-unternehmen" data-i18n="kopf.unternehmen">Unternehmen</a></nav>
+  </div>
+</header>
 <!-- kopf:ende -->
 
 <main id="main">
-<section class="page-hero held">
-  <div class="chip"><span class="chip-dot"></span><span>Pilot: drei Monate kostenlos</span></div>
-  <h1>Mehr <span class="hl">Mitwirkung,</span> weniger Büroarbeit.</h1>
-  <p class="lead">Meyssens richtet für Gemeinden eine Beteiligungsplattform und für Unternehmen schlanke digitale Abläufe ein, persönlich begleitet.</p>
-  <div class="held-knoepfe">
-    <a href="/gemeinden/" class="btn-p held-wahl" data-reiter="gemeinden" aria-controls="tafel-gemeinden"><svg class="wahl-symbol" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg>Für Gemeinden <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a href="/unternehmen/" class="btn-p btn-dunkel held-wahl" data-reiter="unternehmen" aria-controls="tafel-unternehmen"><svg class="wahl-symbol" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Für Unternehmen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+<section class="weiche">
+  <div class="weiche-kopf">
+    <h1 data-i18n="start.titel">Digitale Werkzeuge für Gemeinden und Unternehmen</h1>
+    <p class="lead" data-i18n="start.satz">Meyssens richtet für Gemeinden eine Beteiligungsplattform und für Unternehmen schlanke digitale Abläufe ein, persönlich begleitet.</p>
   </div>
-</section>
-
-<section class="buehne-wrap" id="beispiele" aria-label="Beispielansichten für Gemeinden und Unternehmen">
-<!-- auto:held:start -->
-<div class="buehne buehne-ruhig" data-buehne>
-<div class="held-tabs" data-held-tabs>
-  <div class="held-reiter" role="tablist" aria-label="Beispiele nach Bereich">
-    <button type="button" role="tab" id="reiter-gemeinden" aria-controls="tafel-gemeinden" aria-selected="true">Gemeinden</button>
-    <button type="button" role="tab" id="reiter-unternehmen" aria-controls="tafel-unternehmen" aria-selected="false" tabindex="-1">Unternehmen</button>
-  </div>
-  <div class="held-tafeln">
-  <div class="held-tafel spielt" role="tabpanel" id="tafel-gemeinden" aria-labelledby="reiter-gemeinden" tabindex="0">
-    <h2 class="held-aussage">Ideen sammeln, abstimmen, entscheiden: an einem Ort.</h2>
-    <div class="held-raster">
-    <figure class="held-bild">
-      <a class="held-bild-link" href="https://demo.meyssens.ch/mitmachen/karlsruhe-2040"><img src="/assets/beispiel/karlsruhe-karte-1300.webp" srcset="/assets/beispiel/karlsruhe-karte-900.webp 900w, /assets/beispiel/karlsruhe-karte-1300.webp 1300w, /assets/beispiel/karlsruhe-karte.webp 1756w" sizes="(max-width: 860px) 92vw, 640px" width="1756" height="938" loading="lazy" decoding="async" alt="Karten-Umfrage «Karlsruhe 2040» auf der Beispielplattform: Stadtplan von Karlsruhe mit 13 farbigen Pins zwischen Schlossgarten, Innenstadt, Südstadt und Hauptbahnhof."></a>
-      <figcaption>
-        <ul class="held-legende" aria-label="Legende der Pins">
-          <li><i style="background:#16A34A" aria-hidden="true"></i>Lieblingsort</li><li><i style="background:#F59E0B" aria-hidden="true"></i>Problemstelle</li><li><i style="background:#2563EB" aria-hidden="true"></i>Ideenort</li>
-        </ul>
-        <p>Screenshot der Beispielplattform demo.meyssens.ch mit erfundenen Hinweisen, nicht im Auftrag der Stadt Karlsruhe. © OpenStreetMap-Mitwirkende</p>
-      </figcaption>
-    </figure>
-    <div class="held-karte held-abstimmung">
-      <p class="held-titel">Beispiel-Abstimmung</p>
-      <p class="held-frage">Soll der Dorfplatz an Markttagen autofrei sein?</p>
-      <ul class="held-optionen" aria-label="Antwortmöglichkeiten">
-        <li><span class="held-kreis" aria-hidden="true"></span>Ja</li>
-        <li><span class="held-kreis" aria-hidden="true"></span>Nein</li>
-      </ul>
-      <p class="held-notiz">Erfundene Frage, keine echte Abstimmung.</p>
-      <a class="held-link" href="https://demo.meyssens.ch/mitmachen/karlsruhe-2040">Karten-Umfrage ausprobieren</a>
-    </div>
-    </div>
-  </div>
-  <div class="held-tafel" role="tabpanel" id="tafel-unternehmen" aria-labelledby="reiter-unternehmen" tabindex="0" hidden>
-    <h2 class="held-aussage">Belege, Fristen und Rechnungen: an einem Ort.</h2>
-    <div class="held-raster held-raster-firma">
-    <div class="held-karte held-ablauf">
-      <p class="held-titel">Belegeingang</p>
-      <ul class="held-schritte">
-        <li style="--i:0"><span class="held-haken"></span>Beleg per E-Mail erhalten</li>
-        <li style="--i:1"><span class="held-haken"></span>Frist im Kalender eingetragen</li>
-        <li style="--i:2"><span class="held-haken"></span>Erinnerung an Kundin vorbereitet</li>
-      </ul>
-      <p class="held-notiz">Sie prüfen und geben frei.</p>
-    </div>
-    <div class="held-karte held-qr">
-      <p class="held-titel">Beispiel-QR-Rechnung</p>
-      <div class="qr-zahlteil">
+  <div class="weiche-karten">
+    <article class="weiche-karte bereich-gemeinden">
+      <div class="wk-bild">
+        <img src="/assets/beispiel/demo-desktop-960.webp" srcset="/assets/beispiel/demo-desktop-960.webp 960w, /assets/beispiel/demo-desktop.webp 1800w" sizes="(max-width: 760px) 92vw, 560px" width="960" height="600" loading="lazy" decoding="async" alt="Startseite der Beispielplattform für Gemeinden am Computer, mit Menü für Beteiligungsprozesse, Konsultationen, Partizipatives Budget und Schaden melden." data-i18n-alt="start.g.alt">
+        <span class="wk-marke" data-i18n="g.beispielplattform">Beispielplattform</span>
+      </div>
+      <div class="wk-text">
+        <p class="wk-label" data-i18n="start.g.label">Für Gemeinden</p>
+        <h2 data-i18n="start.g.titel">Bürgerbeteiligung mit Ideen auf der Karte, Abstimmungen, Budget</h2>
+        <a href="/gemeinden/" class="btn-p"><span data-i18n="start.g.knopf">Zu den Gemeinden</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </article>
+    <article class="weiche-karte bereich-unternehmen">
+      <div class="wk-bild wk-qr" role="img" aria-label="Beispiel einer Schweizer QR-Rechnung mit erfundenen Daten: Zahlteil mit QR-Code, Konto, Referenz und Betrag." data-i18n-aria="start.u.alt">
+        <span class="wk-marke" data-i18n="start.u.marke">Beispiel</span>
+        <div class="qr-zahlteil">
         <p class="qr-kopf">Zahlteil</p>
         <div class="qr-inhalt">
         <svg class="qr-code" viewBox="0 0 25 25" aria-hidden="true" focusable="false"><path d="M0 0h1v1h-1zM0 1h1v1h-1zM0 2h1v1h-1zM0 3h1v1h-1zM0 4h1v1h-1zM0 5h1v1h-1zM0 6h1v1h-1zM0 8h1v1h-1zM0 9h1v1h-1zM0 11h1v1h-1zM0 13h1v1h-1zM0 14h1v1h-1zM0 16h1v1h-1zM0 18h1v1h-1zM0 19h1v1h-1zM0 20h1v1h-1zM0 21h1v1h-1zM0 22h1v1h-1zM0 23h1v1h-1zM0 24h1v1h-1zM1 0h1v1h-1zM1 6h1v1h-1zM1 8h1v1h-1zM1 9h1v1h-1zM1 10h1v1h-1zM1 11h1v1h-1zM1 13h1v1h-1zM1 14h1v1h-1zM1 18h1v1h-1zM1 24h1v1h-1zM2 0h1v1h-1zM2 2h1v1h-1zM2 3h1v1h-1zM2 4h1v1h-1zM2 6h1v1h-1zM2 9h1v1h-1zM2 11h1v1h-1zM2 13h1v1h-1zM2 14h1v1h-1zM2 15h1v1h-1zM2 16h1v1h-1zM2 18h1v1h-1zM2 20h1v1h-1zM2 21h1v1h-1zM2 22h1v1h-1zM2 24h1v1h-1zM3 0h1v1h-1zM3 2h1v1h-1zM3 3h1v1h-1zM3 4h1v1h-1zM3 6h1v1h-1zM3 9h1v1h-1zM3 12h1v1h-1zM3 14h1v1h-1zM3 15h1v1h-1zM3 16h1v1h-1zM3 18h1v1h-1zM3 20h1v1h-1zM3 21h1v1h-1zM3 22h1v1h-1zM3 24h1v1h-1zM4 0h1v1h-1zM4 2h1v1h-1zM4 3h1v1h-1zM4 4h1v1h-1zM4 6h1v1h-1zM4 9h1v1h-1zM4 10h1v1h-1zM4 12h1v1h-1zM4 13h1v1h-1zM4 16h1v1h-1zM4 18h1v1h-1zM4 20h1v1h-1zM4 21h1v1h-1zM4 22h1v1h-1zM4 24h1v1h-1zM5 0h1v1h-1zM5 6h1v1h-1zM5 12h1v1h-1zM5 14h1v1h-1zM5 15h1v1h-1zM5 18h1v1h-1zM5 24h1v1h-1zM6 0h1v1h-1zM6 1h1v1h-1zM6 2h1v1h-1zM6 3h1v1h-1zM6 4h1v1h-1zM6 5h1v1h-1zM6 6h1v1h-1zM6 8h1v1h-1zM6 10h1v1h-1zM6 15h1v1h-1zM6 18h1v1h-1zM6 19h1v1h-1zM6 20h1v1h-1zM6 21h1v1h-1zM6 22h1v1h-1zM6 23h1v1h-1zM6 24h1v1h-1zM7 10h1v1h-1zM7 13h1v1h-1zM7 15h1v1h-1zM8 3h1v1h-1zM8 4h1v1h-1zM8 6h1v1h-1zM8 7h1v1h-1zM8 8h1v1h-1zM8 9h1v1h-1zM8 10h1v1h-1zM8 12h1v1h-1zM8 13h1v1h-1zM8 14h1v1h-1zM8 16h1v1h-1zM8 17h1v1h-1zM8 22h1v1h-1zM8 23h1v1h-1zM8 24h1v1h-1zM9 2h1v1h-1zM9 3h1v1h-1zM9 4h1v1h-1zM9 5h1v1h-1zM9 8h1v1h-1zM9 16h1v1h-1zM9 17h1v1h-1zM9 18h1v1h-1zM10 0h1v1h-1zM10 5h1v1h-1zM10 6h1v1h-1zM10 7h1v1h-1zM10 16h1v1h-1zM10 17h1v1h-1zM10 18h1v1h-1zM10 19h1v1h-1zM10 20h1v1h-1zM10 21h1v1h-1zM10 22h1v1h-1zM10 23h1v1h-1zM10 24h1v1h-1zM11 0h1v1h-1zM11 1h1v1h-1zM11 4h1v1h-1zM11 5h1v1h-1zM11 6h1v1h-1zM11 7h1v1h-1zM11 8h1v1h-1zM11 18h1v1h-1zM11 20h1v1h-1zM11 21h1v1h-1zM11 22h1v1h-1zM11 23h1v1h-1zM12 0h1v1h-1zM12 1h1v1h-1zM12 4h1v1h-1zM12 6h1v1h-1zM12 18h1v1h-1zM12 19h1v1h-1zM12 20h1v1h-1zM12 24h1v1h-1zM13 0h1v1h-1zM13 7h1v1h-1zM13 16h1v1h-1zM13 17h1v1h-1zM13 18h1v1h-1zM13 19h1v1h-1zM13 20h1v1h-1zM13 23h1v1h-1zM14 2h1v1h-1zM14 3h1v1h-1zM14 4h1v1h-1zM14 5h1v1h-1zM14 6h1v1h-1zM14 17h1v1h-1zM14 20h1v1h-1zM15 0h1v1h-1zM15 1h1v1h-1zM15 3h1v1h-1zM15 6h1v1h-1zM15 7h1v1h-1zM15 17h1v1h-1zM15 18h1v1h-1zM15 19h1v1h-1zM15 22h1v1h-1zM16 1h1v1h-1zM16 3h1v1h-1zM16 4h1v1h-1zM16 9h1v1h-1zM16 12h1v1h-1zM16 13h1v1h-1zM16 14h1v1h-1zM16 15h1v1h-1zM16 17h1v1h-1zM16 18h1v1h-1zM16 19h1v1h-1zM16 21h1v1h-1zM16 22h1v1h-1zM17 8h1v1h-1zM17 13h1v1h-1zM17 14h1v1h-1zM17 15h1v1h-1zM17 16h1v1h-1zM17 18h1v1h-1zM17 19h1v1h-1zM17 22h1v1h-1zM18 0h1v1h-1zM18 1h1v1h-1zM18 2h1v1h-1zM18 3h1v1h-1zM18 4h1v1h-1zM18 5h1v1h-1zM18 6h1v1h-1zM18 9h1v1h-1zM18 11h1v1h-1zM18 12h1v1h-1zM18 18h1v1h-1zM18 23h1v1h-1zM19 0h1v1h-1zM19 6h1v1h-1zM19 8h1v1h-1zM19 13h1v1h-1zM19 17h1v1h-1zM19 18h1v1h-1zM19 19h1v1h-1zM19 20h1v1h-1zM19 21h1v1h-1zM19 22h1v1h-1zM20 0h1v1h-1zM20 2h1v1h-1zM20 3h1v1h-1zM20 4h1v1h-1zM20 6h1v1h-1zM20 9h1v1h-1zM20 12h1v1h-1zM20 15h1v1h-1zM20 17h1v1h-1zM20 21h1v1h-1zM20 22h1v1h-1zM20 24h1v1h-1zM21 0h1v1h-1zM21 2h1v1h-1zM21 3h1v1h-1zM21 4h1v1h-1zM21 6h1v1h-1zM21 8h1v1h-1zM21 9h1v1h-1zM21 11h1v1h-1zM21 13h1v1h-1zM21 14h1v1h-1zM21 15h1v1h-1zM21 18h1v1h-1zM21 22h1v1h-1zM21 23h1v1h-1zM21 24h1v1h-1zM22 0h1v1h-1zM22 2h1v1h-1zM22 3h1v1h-1zM22 4h1v1h-1zM22 6h1v1h-1zM22 9h1v1h-1zM22 10h1v1h-1zM22 11h1v1h-1zM22 14h1v1h-1zM22 15h1v1h-1zM22 19h1v1h-1zM22 20h1v1h-1zM22 22h1v1h-1zM22 23h1v1h-1zM23 0h1v1h-1zM23 6h1v1h-1zM23 10h1v1h-1zM23 12h1v1h-1zM23 14h1v1h-1zM23 15h1v1h-1zM23 18h1v1h-1zM23 19h1v1h-1zM23 21h1v1h-1zM23 22h1v1h-1zM23 23h1v1h-1zM23 24h1v1h-1zM24 0h1v1h-1zM24 1h1v1h-1zM24 2h1v1h-1zM24 3h1v1h-1zM24 4h1v1h-1zM24 5h1v1h-1zM24 6h1v1h-1zM24 8h1v1h-1zM24 9h1v1h-1zM24 10h1v1h-1zM24 12h1v1h-1zM24 14h1v1h-1zM24 15h1v1h-1zM24 16h1v1h-1zM24 17h1v1h-1zM24 18h1v1h-1zM24 21h1v1h-1zM24 22h1v1h-1zM24 24h1v1h-1z"/><rect x="9.6" y="9.6" width="5.8" height="5.8" fill="#fff"/><rect x="10" y="10" width="5" height="5"/><path d="M12.05 11h.9v1.05h1.05v.9h-1.05V14h-.9v-1.05H11v-.9h1.05z" fill="#fff"/></svg>
@@ -145,157 +99,15 @@
         </dl>
         </div>
       </div>
-      <p class="held-notiz">Erfundene Beispieldaten, nicht zum Bezahlen.</p>
-      <a class="held-link" href="/werkzeuge/qr-rechnung/">Eigene QR-Rechnung erstellen</a>
-    </div>
-    </div>
-  </div>
-  </div>
-</div>
-</div>
-<!-- auto:held:ende -->
-</section>
-
-<section id="beispiel-gemeinde" class="sg-beispiel">
-  <div class="kopf-mitte r">
-    <span class="s-label">Beispielplattform</span>
-    <h2>So sieht es für Ihre Gemeinde aus.</h2>
-    <p class="s-lead">Ideen auf der Karte, Abstimmungen und Termine für Ihre Bevölkerung, am Computer und auf dem Handy.</p>
-  </div>
-  <figure class="sg-bild r">
-    <div class="sg-geraete">
-    <div class="geraet sg-browser">
-      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">badenweiler.meyssens.ch</span><span class="beispiel">Beispielplattform</span></div>
-      <img src="/assets/beispiel/badenweiler-desktop.webp" srcset="/assets/beispiel/badenweiler-desktop-960.webp 960w, /assets/beispiel/badenweiler-desktop.webp 1440w" sizes="(max-width: 1100px) 92vw, 1000px" width="1440" height="900" loading="lazy" decoding="async" alt="Startseite der Beispielplattform Badenweiler am Computer: Menü mit Prozessen, Konsultationen, Partizipativem Budget und Schaden melden, darunter «Mitreden in Badenweiler» mit dem Knopf «Ideen auf der Karte ansehen».">
-    </div>
-    <div class="sg-handy">
-      <img src="/assets/beispiel/badenweiler-handy.webp" width="480" height="994" loading="lazy" decoding="async" alt="Dieselbe Beispielplattform auf dem Handy: Karte mit farbigen Punkten für Vorschläge und Hinweise in Badenweiler, Lipburg, Sehringen und Schweighof.">
-    </div>
-    </div>
-    <figcaption><span>Beispielplattform von Meyssens, nicht im Auftrag der Gemeinde Badenweiler. Alle Inhalte sind Beispiele.</span><span>Foto im Bild: PantaRhei, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de">CC BY-SA 4.0</a> · Karte: © OpenStreetMap-Mitwirkende</span></figcaption>
-  </figure>
-  <div class="mitte-knopf r"><a href="https://badenweiler.meyssens.ch/" class="btn-p">Demo ausprobieren <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-</section>
-
-<section id="schritte" class="flaeche">
-  <div class="kopf-mitte r">
-    <span class="s-label">Ablauf</span>
-    <h2>In drei Schritten zur eigenen Plattform.</h2>
-    <p class="s-lead">Sie entscheiden erst, wenn Sie die Plattform im Einsatz gesehen haben.</p>
-  </div>
-  <ol class="sg-schritte">
-    <li class="sg-schritt r">
-      <div class="sg-mock" aria-hidden="true">
-        <div class="sg-mock-zeile"><span class="sg-punkt">1</span><b>Gespräch</b><span class="sg-tag">kostenlos</span></div>
-        <div class="sg-blase">Wir möchten Ideen für den Dorfplatz sammeln.</div>
-        <div class="sg-blase sg-blase-ich">Gut, dafür richten wir eine Karte mit Abstimmung ein.</div>
       </div>
-      <h3>Klarheit in einem Gespräch</h3>
-      <p>Sie schildern Ihr Vorhaben am Telefon oder per E-Mail. Wir klären, was nötig ist.</p>
-    </li>
-    <li class="sg-schritt r">
-      <div class="sg-mock" aria-hidden="true">
-        <div class="sg-mock-zeile"><span class="sg-punkt">2</span><b>Pilot</b><span class="sg-tag">0 €</span></div>
-        <div class="sg-monate"><span>Monat 1</span><span>Monat 2</span><span>Monat 3</span></div>
-        <div class="sg-leiste"><i></i></div>
-        <p class="sg-klein">Einrichtung und Begleitung inklusive</p>
+      <div class="wk-text">
+        <p class="wk-label" data-i18n="start.u.label">Für Unternehmen</p>
+        <h2 data-i18n="start.u.titel">Weniger Büroarbeit mit Belegen, Fristen, Rechnungen</h2>
+        <a href="/unternehmen/" class="btn-p"><span data-i18n="start.u.knopf">Zu den Unternehmen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
-      <h3>Drei Monate testen, ohne Risiko</h3>
-      <p>Kostenlos und unverbindlich. Wir richten alles ein und begleiten Ihr erstes Verfahren.</p>
-    </li>
-    <li class="sg-schritt r">
-      <div class="sg-mock" aria-hidden="true">
-        <div class="sg-mock-zeile"><span class="sg-punkt">3</span><b>Weiterführen</b><span class="sg-tag">Festpreis</span></div>
-        <div class="sg-betrag"><b>4.900 €</b><span>pro Jahr</span></div>
-        <p class="sg-klein">Bis 5.000 Einwohner. Oder beenden, ohne Kosten</p>
-      </div>
-      <h3>Ein Preis, den Sie planen können</h3>
-      <p>Danach 4.900 € pro Jahr als Festpreis, bis 5.000 Einwohner. Oder ohne Kosten beenden.</p>
-    </li>
-  </ol>
-</section>
-
-<section id="vertrauen" class="sg-vertrauen">
-  <div class="sg-zwei">
-    <div class="sg-text r">
-      <span class="s-label">Datenschutz und Unabhängigkeit</span>
-      <h2>Ihre Daten bleiben geschützt, Sie bleiben unabhängig.</h2>
-      <ul class="sg-punkte">
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg><div><h3>Hosting in der Schweiz</h3><p>Die Plattform läuft auf Servern in einem Rechenzentrum in Zürich.</p></div></li>
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><h3>Datenschutz nach DSGVO-Anforderungen</h3><p>Auftragsverarbeitungsvertrag auf Wunsch. Die EU erkennt den Schweizer Datenschutz als gleichwertig an.</p></div></li>
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><div><h3>Open Source auf Decidim</h3><p>Der Quellcode ist offen. Decidim stammt aus Barcelona und wird von Städten weltweit eingesetzt.</p></div></li>
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.6-1.7"/></svg><div><h3>Keine Bindung</h3><p>Sie können den Pilot jederzeit beenden. Ihre Daten lassen sich jederzeit exportieren.</p></div></li>
-      </ul>
-    </div>
-    <figure class="sg-karte-wrap r" aria-hidden="true">
-      <div class="sg-datenblatt">
-        <p class="held-titel">Ihre Plattform · Übersicht</p>
-        <dl>
-          <div><dt>Standort der Daten</dt><dd><span class="sg-ok"></span>Zürich, Schweiz</dd></div>
-          <div><dt>Datenschutz</dt><dd><span class="sg-ok"></span>nach DSGVO-Anforderungen</dd></div>
-          <div><dt>Auftragsverarbeitungsvertrag</dt><dd><span class="sg-ok"></span>auf Wunsch</dd></div>
-          <div><dt>Software</dt><dd><span class="sg-ok"></span>Decidim, Open Source</dd></div>
-          <div><dt>Datenexport</dt><dd><span class="sg-ok"></span>jederzeit möglich</dd></div>
-          <div><dt>Bindung</dt><dd><span class="sg-ok"></span>keine</dd></div>
-        </dl>
-      </div>
-    </figure>
+    </article>
   </div>
-</section>
-
-<section id="preis" class="flaeche">
-  <div class="sg-zwei sg-zwei-preis">
-    <div class="sg-text r">
-      <span class="s-label">Preis</span>
-      <h2>Ein Festpreis ohne Aufbaukosten.</h2>
-      <p class="s-lead">Sie zahlen keine Einrichtung und keine Zusatzgebühren. Der Preis ist ab dem ersten Tag bekannt.</p>
-      <ul class="sg-haken">
-        <li>Einrichtung der Plattform</li>
-        <li>Hosting in der Schweiz, Updates, Backups und Sicherheit</li>
-        <li>Persönlicher Support</li>
-      </ul>
-    </div>
-    <div class="sg-preiskarte r">
-      <p class="held-titel">Ihre Kosten auf einen Blick</p>
-      <dl class="sg-posten">
-        <div><dt>Aufbau und Einrichtung</dt><dd>0 €</dd></div>
-        <div><dt>Pilot, 3 Monate</dt><dd>0 €</dd></div>
-        <div class="sg-summe"><dt>Danach pro Jahr, Festpreis</dt><dd>4.900 €</dd></div>
-      </dl>
-      <ul class="sg-preis-info">
-        <li>Für Gemeinden bis 5.000 Einwohner, nicht mehrwertsteuerpflichtig</li>
-        <li>Schweizer Gemeinden: 4'900 CHF pro Jahr, bis 5'000 Einwohner</li>
-        <li>Grössere Gemeinden: Angebot auf Anfrage</li>
-      </ul>
-      <a href="#gespraech" class="btn-p">Pilot anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<section id="weitere" class="sg-weitere">
-  <div class="sg-weitere-zeile r">
-    <a href="/unternehmen/"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg><span><b>Für Unternehmen</b> Automatisierungen, Vorlagen und QR-Rechnung</span></a>
-    <a href="/unternehmen/#vereine"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5.5"/></svg><span><b>Für Vereine</b> Abstimmen, informieren, eigene Website</span></a>
-  </div>
-</section>
-
-<section id="gespraech" class="schluss">
-  <div class="schluss-karte sg-schluss r">
-    <div class="sg-schluss-text">
-      <h2>Ihr Pilot beginnt mit einem Gespräch.</h2>
-      <p>Rufen Sie an oder schreiben Sie. Sie erhalten eine persönliche Antwort von Lionel Nickelsen.</p>
-      <div class="held-knoepfe">
-        <a href="tel:+41788643763" class="btn-p btn-hell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>+41 78 864 37 63</a>
-        <a href="mailto:lionel@meyssens.ch" class="btn-p btn-hell"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>lionel@meyssens.ch</a>
-      </div>
-    </div>
-    <div class="sg-visitenkarte" aria-hidden="true">
-      <p class="sg-vk-name">Lionel Nickelsen</p>
-      <p class="sg-vk-rolle">Meyssens · Lausen (BL)</p>
-      <p class="sg-vk-zeile">+41 78 864 37 63</p>
-      <p class="sg-vk-zeile">lionel@meyssens.ch</p>
-    </div>
-  </div>
+  <p class="weiche-kontakt"><span data-i18n="start.kontakt">Fragen?</span> <a href="tel:+41788643763">+41 78 864 37 63</a><span class="trenn" aria-hidden="true">·</span><a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></p>
 </section>
 </main>
 
@@ -303,32 +115,36 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
-      <p>Digitale Werkzeuge für Gemeinden und Unternehmen.</p>
-      <p style="color:rgba(255,255,255,0.7);font-size:.85rem;margin-top:.5rem">lionel@meyssens.ch</p>
+      <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – zur Startseite"></a>
+      <p data-i18n="fuss.claim">Digitale Werkzeuge für Gemeinden und Unternehmen, persönlich begleitet.</p>
+      <p class="fuss-kontakt"><a href="tel:+41788643763">+41 78 864 37 63</a><br><a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></p>
     </div>
-    <div class="footer-col">
-      <h3>Für Gemeinden</h3>
-      <a href="/gemeinden/">Übersicht Gemeinden</a>
-      <a href="https://demo.meyssens.ch" target="_blank">Live-Demo ansehen →</a>
-      <a href="https://decidim.org" target="_blank">Decidim Open-Source</a>
+    <div class="footer-col fuss-gemeinden">
+      <h3 data-i18n="fuss.gemeinden">Gemeinden</h3>
+      <a href="/gemeinden/" data-i18n="fuss.g.start">Bürgerbeteiligung</a>
+      <a href="/gemeinden/#ablauf" data-i18n="fuss.g.ablauf">Ablauf und Preis</a>
+      <a href="/gemeinden/#vertrauen" data-i18n="fuss.g.datenschutz">Datenschutz und Hosting</a>
+      <a href="/gemeinden/#faq" data-i18n="fuss.g.fragen">Häufige Fragen</a>
+      <a href="https://demo.meyssens.ch" target="_blank" rel="noopener" data-i18n="fuss.g.demo">Live-Demo ansehen</a>
     </div>
-    <div class="footer-col">
-      <h3>Für Unternehmen</h3>
-      <a href="/unternehmen/">Übersicht Unternehmen</a>
-      <a href="/branchen/">Branchen</a>
-      <a href="/ratgeber/">Ratgeber</a>
-      <a href="/werkzeuge/qr-rechnung/">QR-Rechnung erstellen</a>
+    <div class="footer-col fuss-unternehmen">
+      <h3 data-i18n="fuss.unternehmen">Unternehmen</h3>
+      <a href="/unternehmen/" data-i18n="fuss.u.start">Weniger Büroarbeit</a>
+      <a href="/unternehmen/#ablaeufe" data-i18n="fuss.u.auto">Automatisierungen</a>
+      <a href="/werkzeuge/qr-rechnung/" data-i18n="fuss.u.qr">QR-Rechnung erstellen</a>
+      <a href="/unternehmen/#apps" data-i18n="fuss.u.apps">Apps nach Mass</a>
+      <a href="/branchen/" data-i18n="fuss.u.branchen">Branchen</a>
+      <a href="/produkte/" data-i18n="fuss.u.produkte">Produkte</a>
+      <a href="/ratgeber/" data-i18n="fuss.u.ratgeber">Ratgeber</a>
+      <a href="/unternehmen/#vereine" data-i18n="fuss.u.vereine">Auch für Vereine</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
-    <p class="fcopy">© 2026 Meyssens · Lausen, Basel-Landschaft · Schweiz</p>
+    <p class="fcopy">© 2026 Meyssens · Lausen, Basel-Landschaft · <span data-i18n="fuss.schweiz">Schweiz</span></p>
     <div class="footer-legal">
-      <a href="/ueber-uns/">Über uns</a>
-      <a href="mailto:lionel@meyssens.ch">Kontakt</a>
-      <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'">Impressum</a>
-      <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Datenschutz</a>
+      <a href="/ueber-uns/" data-i18n="nav.ueberuns">Über uns</a>
+      <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'" data-i18n="footer.impressum">Impressum</a>
+      <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" data-i18n="footer.datenschutz">Datenschutz</a>
     </div>
   </div>
 </footer>
@@ -380,14 +196,16 @@ const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target
 document.querySelectorAll('.r').forEach(el=>io.observe(el))
 const hamburger=document.getElementById('hamburger')
 const mobileNav=document.getElementById('mobile-nav')
-function setMobileNav(auf){hamburger.classList.toggle('open',auf);mobileNav.classList.toggle('open',auf);hamburger.setAttribute('aria-expanded',auf?'true':'false')}
+function setMobileNav(auf){if(!hamburger)return;hamburger.classList.toggle('open',auf);mobileNav.classList.toggle('open',auf);hamburger.setAttribute('aria-expanded',auf?'true':'false')}
 function closeMobileNav(){setMobileNav(false)}
+if(hamburger&&mobileNav){
 hamburger.addEventListener('click',()=>{const auf=!mobileNav.classList.contains('open');setMobileNav(auf);if(auf){const a=mobileNav.querySelector('a');if(a)a.focus()}})
 document.addEventListener('click',(e)=>{if(!hamburger.contains(e.target)&&!mobileNav.contains(e.target))closeMobileNav()})
 document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mobileNav.classList.contains('open')){closeMobileNav();hamburger.focus()}})
 mobileNav.addEventListener('click',(e)=>{if(e.target.closest('a'))closeMobileNav()})
-// Aktuellen Bereich in der Navigation markieren
-document.querySelectorAll('#nav .nav-items a,#mobile-nav a').forEach(a=>{const h=a.getAttribute('href');if(h.charAt(0)==='/'&&h!=='/'&&location.pathname.indexOf(h)===0){a.classList.add('active');a.setAttribute('aria-current','page')}})
+}
+// Aktuellen Menüpunkt markieren (Seiten im Bereich, ohne Sprungmarken)
+document.querySelectorAll('.kopf-menue a,#mobile-nav a').forEach(a=>{const h=a.getAttribute('href');if(h.charAt(0)==='/'&&h.indexOf('#')<0&&location.pathname.indexOf(h)===0){a.classList.add('active');a.setAttribute('aria-current','page')}})
 // Zähler: nur echte Zahlen aus dem HTML, ohne reduzierte Bewegung von 0 hochzählen
 if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const zio=new IntersectionObserver(e=>e.forEach(x=>{if(!x.isIntersecting)return;zio.unobserve(x.target);const el=x.target,ziel=+el.getAttribute('data-zaehler'),t0=performance.now(),d=900;(function f(t){const k=Math.min(1,(t-t0)/d);el.textContent=Math.round(ziel*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});document.querySelectorAll('[data-zaehler]').forEach(el=>zio.observe(el))}
 
@@ -442,6 +260,9 @@ document.addEventListener('keydown', function(e){
 
 </script>
 <!-- skripte:ende -->
-<script src="/assets/demos.js" defer></script>
+<script>
+// Hat jemand auf der Gemeinden-Seite eine andere Sprache gewählt, zeigt die Startseite dieselbe Sprache
+(function(){var l;try{l=localStorage.getItem('meyssens_lang')}catch(e){}if(!l||l==='de')return;var s=document.createElement('script');s.src='/assets/gemeinden-sprachen.js';s.onload=function(){applyLang(l)};document.head.appendChild(s)})();
+</script>
 </body>
 </html>

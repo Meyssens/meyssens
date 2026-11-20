@@ -19,6 +19,7 @@
 <meta property="og:locale" content="de_CH">
 <meta property="og:site_name" content="Meyssens">
 <link rel="canonical" href="{{url}}">
+<script>if(location.hash==='#produkte')location.replace('/produkte/');else if(location.hash==='#wege')history.replaceState(null,'',location.pathname)</script>
 {{seo_kopf}}
 <link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
 {{head}}
@@ -34,43 +35,14 @@
 {{krumen}}
   <div class="chip"><span class="chip-dot"></span><span>Pilotpartner gesucht</span></div>
   <h1>Weniger Büroarbeit für <span class="hl">KMU.</span></h1>
-  <p class="lead">Digitale Werkzeuge für Kommunikation und Organisation, schlank eingerichtet und persönlich begleitet.</p>
+  <p class="lead">Belege, Posteingang, Rechnungen und Fristen: Wir automatisieren wiederkehrende Abläufe, schlank eingerichtet und persönlich begleitet.</p>
   <div class="held-knoepfe">
     <a href="#anfrage" class="btn-p">Pilot anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a href="#produkte" class="btn-s">Produkte ansehen</a>
+    <a href="#ablaeufe" class="btn-s">Automatisierungen ansehen</a>
   </div>
 </section>
 
-<section id="wege" class="wege-u">
-  <h2 class="sr-only">Überblick</h2>
-  <div class="ways ways-drei r">
-    <a href="#produkte" class="way blue">
-      <svg class="way-ic" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 18v3"/></svg>
-      <h3>Fertige Produkte</h3>
-      <p>Umfragen, Newsletter, Chatbot und Assistenten, jedes mit einer Beispielansicht.</p>
-      <span class="way-go">Zu den Produkten <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-    <a href="#automatisierungen" class="way">
-      <svg class="way-ic" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H15a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6.5"/></svg>
-      <h3>Automatisierung nach Branche</h3>
-      <p>Bausteine, die einzelne Abläufe vorbereiten. Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>
-      <span class="way-go">Zu den Bausteinen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-    <a href="#apps" class="way">
-      <svg class="way-ic" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
-      <h3>Apps nach Mass</h3>
-      <p>Anwendungen für Handy und Browser, mit festem Preis und kostenloser Pilotphase.</p>
-      <span class="way-go">Zu den Apps <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-  </div>
-</section>
-
-<section id="produkte">
-  <h2 class="sr-only">Produkte</h2>
-{{produkte}}
-</section>
-
-{{ablaeufe}}<section id="automatisierungen" class="dunkel">
+{{ablaeufe}}<section id="automatisierungen" class="flaeche">
   <div class="kopf-mitte r">
     <span class="s-label">Automatisierung</span>
     <h2>Automatisierungen nach Branche</h2>
@@ -78,6 +50,53 @@
   </div>
   <div class="auto-gruppen">
 {{bausteine}}
+  </div>
+</section>
+
+<section id="qr-rechnung">
+  <div class="u-qr">
+    <div class="r">
+      <span class="s-label">Gratis-Werkzeug</span>
+      <h2>QR-Rechnung erstellen, direkt im Browser</h2>
+      <p class="s-lead">Zahlteil nach SIX-Standard 2.4 als PDF. Ihre Angaben bleiben auf Ihrem Gerät.</p>
+      <ul class="sg-haken">
+        <li>Ohne Anmeldung und ohne E-Mail-Adresse</li>
+        <li>Läuft im Browser, ohne Cookies und ohne Übertragung Ihrer Eingaben</li>
+        <li>PDF zum Ausdrucken oder Versenden</li>
+      </ul>
+      <a class="btn-p" href="/werkzeuge/qr-rechnung/">QR-Rechnung erstellen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+    <div class="r">
+      <div class="u-qr-bild" role="img" aria-label="Beispiel einer Schweizer QR-Rechnung mit erfundenen Daten: Zahlteil mit QR-Code, Konto, Referenz und Betrag.">
+        <div class="qr-zahlteil">
+        <p class="qr-kopf">Zahlteil</p>
+        <div class="qr-inhalt">
+        <svg class="qr-code" viewBox="0 0 25 25" aria-hidden="true" focusable="false"><path d="M0 0h1v1h-1zM0 1h1v1h-1zM0 2h1v1h-1zM0 3h1v1h-1zM0 4h1v1h-1zM0 5h1v1h-1zM0 6h1v1h-1zM0 8h1v1h-1zM0 9h1v1h-1zM0 11h1v1h-1zM0 13h1v1h-1zM0 14h1v1h-1zM0 16h1v1h-1zM0 18h1v1h-1zM0 19h1v1h-1zM0 20h1v1h-1zM0 21h1v1h-1zM0 22h1v1h-1zM0 23h1v1h-1zM0 24h1v1h-1zM1 0h1v1h-1zM1 6h1v1h-1zM1 8h1v1h-1zM1 9h1v1h-1zM1 10h1v1h-1zM1 11h1v1h-1zM1 13h1v1h-1zM1 14h1v1h-1zM1 18h1v1h-1zM1 24h1v1h-1zM2 0h1v1h-1zM2 2h1v1h-1zM2 3h1v1h-1zM2 4h1v1h-1zM2 6h1v1h-1zM2 9h1v1h-1zM2 11h1v1h-1zM2 13h1v1h-1zM2 14h1v1h-1zM2 15h1v1h-1zM2 16h1v1h-1zM2 18h1v1h-1zM2 20h1v1h-1zM2 21h1v1h-1zM2 22h1v1h-1zM2 24h1v1h-1zM3 0h1v1h-1zM3 2h1v1h-1zM3 3h1v1h-1zM3 4h1v1h-1zM3 6h1v1h-1zM3 9h1v1h-1zM3 12h1v1h-1zM3 14h1v1h-1zM3 15h1v1h-1zM3 16h1v1h-1zM3 18h1v1h-1zM3 20h1v1h-1zM3 21h1v1h-1zM3 22h1v1h-1zM3 24h1v1h-1zM4 0h1v1h-1zM4 2h1v1h-1zM4 3h1v1h-1zM4 4h1v1h-1zM4 6h1v1h-1zM4 9h1v1h-1zM4 10h1v1h-1zM4 12h1v1h-1zM4 13h1v1h-1zM4 16h1v1h-1zM4 18h1v1h-1zM4 20h1v1h-1zM4 21h1v1h-1zM4 22h1v1h-1zM4 24h1v1h-1zM5 0h1v1h-1zM5 6h1v1h-1zM5 12h1v1h-1zM5 14h1v1h-1zM5 15h1v1h-1zM5 18h1v1h-1zM5 24h1v1h-1zM6 0h1v1h-1zM6 1h1v1h-1zM6 2h1v1h-1zM6 3h1v1h-1zM6 4h1v1h-1zM6 5h1v1h-1zM6 6h1v1h-1zM6 8h1v1h-1zM6 10h1v1h-1zM6 15h1v1h-1zM6 18h1v1h-1zM6 19h1v1h-1zM6 20h1v1h-1zM6 21h1v1h-1zM6 22h1v1h-1zM6 23h1v1h-1zM6 24h1v1h-1zM7 10h1v1h-1zM7 13h1v1h-1zM7 15h1v1h-1zM8 3h1v1h-1zM8 4h1v1h-1zM8 6h1v1h-1zM8 7h1v1h-1zM8 8h1v1h-1zM8 9h1v1h-1zM8 10h1v1h-1zM8 12h1v1h-1zM8 13h1v1h-1zM8 14h1v1h-1zM8 16h1v1h-1zM8 17h1v1h-1zM8 22h1v1h-1zM8 23h1v1h-1zM8 24h1v1h-1zM9 2h1v1h-1zM9 3h1v1h-1zM9 4h1v1h-1zM9 5h1v1h-1zM9 8h1v1h-1zM9 16h1v1h-1zM9 17h1v1h-1zM9 18h1v1h-1zM10 0h1v1h-1zM10 5h1v1h-1zM10 6h1v1h-1zM10 7h1v1h-1zM10 16h1v1h-1zM10 17h1v1h-1zM10 18h1v1h-1zM10 19h1v1h-1zM10 20h1v1h-1zM10 21h1v1h-1zM10 22h1v1h-1zM10 23h1v1h-1zM10 24h1v1h-1zM11 0h1v1h-1zM11 1h1v1h-1zM11 4h1v1h-1zM11 5h1v1h-1zM11 6h1v1h-1zM11 7h1v1h-1zM11 8h1v1h-1zM11 18h1v1h-1zM11 20h1v1h-1zM11 21h1v1h-1zM11 22h1v1h-1zM11 23h1v1h-1zM12 0h1v1h-1zM12 1h1v1h-1zM12 4h1v1h-1zM12 6h1v1h-1zM12 18h1v1h-1zM12 19h1v1h-1zM12 20h1v1h-1zM12 24h1v1h-1zM13 0h1v1h-1zM13 7h1v1h-1zM13 16h1v1h-1zM13 17h1v1h-1zM13 18h1v1h-1zM13 19h1v1h-1zM13 20h1v1h-1zM13 23h1v1h-1zM14 2h1v1h-1zM14 3h1v1h-1zM14 4h1v1h-1zM14 5h1v1h-1zM14 6h1v1h-1zM14 17h1v1h-1zM14 20h1v1h-1zM15 0h1v1h-1zM15 1h1v1h-1zM15 3h1v1h-1zM15 6h1v1h-1zM15 7h1v1h-1zM15 17h1v1h-1zM15 18h1v1h-1zM15 19h1v1h-1zM15 22h1v1h-1zM16 1h1v1h-1zM16 3h1v1h-1zM16 4h1v1h-1zM16 9h1v1h-1zM16 12h1v1h-1zM16 13h1v1h-1zM16 14h1v1h-1zM16 15h1v1h-1zM16 17h1v1h-1zM16 18h1v1h-1zM16 19h1v1h-1zM16 21h1v1h-1zM16 22h1v1h-1zM17 8h1v1h-1zM17 13h1v1h-1zM17 14h1v1h-1zM17 15h1v1h-1zM17 16h1v1h-1zM17 18h1v1h-1zM17 19h1v1h-1zM17 22h1v1h-1zM18 0h1v1h-1zM18 1h1v1h-1zM18 2h1v1h-1zM18 3h1v1h-1zM18 4h1v1h-1zM18 5h1v1h-1zM18 6h1v1h-1zM18 9h1v1h-1zM18 11h1v1h-1zM18 12h1v1h-1zM18 18h1v1h-1zM18 23h1v1h-1zM19 0h1v1h-1zM19 6h1v1h-1zM19 8h1v1h-1zM19 13h1v1h-1zM19 17h1v1h-1zM19 18h1v1h-1zM19 19h1v1h-1zM19 20h1v1h-1zM19 21h1v1h-1zM19 22h1v1h-1zM20 0h1v1h-1zM20 2h1v1h-1zM20 3h1v1h-1zM20 4h1v1h-1zM20 6h1v1h-1zM20 9h1v1h-1zM20 12h1v1h-1zM20 15h1v1h-1zM20 17h1v1h-1zM20 21h1v1h-1zM20 22h1v1h-1zM20 24h1v1h-1zM21 0h1v1h-1zM21 2h1v1h-1zM21 3h1v1h-1zM21 4h1v1h-1zM21 6h1v1h-1zM21 8h1v1h-1zM21 9h1v1h-1zM21 11h1v1h-1zM21 13h1v1h-1zM21 14h1v1h-1zM21 15h1v1h-1zM21 18h1v1h-1zM21 22h1v1h-1zM21 23h1v1h-1zM21 24h1v1h-1zM22 0h1v1h-1zM22 2h1v1h-1zM22 3h1v1h-1zM22 4h1v1h-1zM22 6h1v1h-1zM22 9h1v1h-1zM22 10h1v1h-1zM22 11h1v1h-1zM22 14h1v1h-1zM22 15h1v1h-1zM22 19h1v1h-1zM22 20h1v1h-1zM22 22h1v1h-1zM22 23h1v1h-1zM23 0h1v1h-1zM23 6h1v1h-1zM23 10h1v1h-1zM23 12h1v1h-1zM23 14h1v1h-1zM23 15h1v1h-1zM23 18h1v1h-1zM23 19h1v1h-1zM23 21h1v1h-1zM23 22h1v1h-1zM23 23h1v1h-1zM23 24h1v1h-1zM24 0h1v1h-1zM24 1h1v1h-1zM24 2h1v1h-1zM24 3h1v1h-1zM24 4h1v1h-1zM24 5h1v1h-1zM24 6h1v1h-1zM24 8h1v1h-1zM24 9h1v1h-1zM24 10h1v1h-1zM24 12h1v1h-1zM24 14h1v1h-1zM24 15h1v1h-1zM24 16h1v1h-1zM24 17h1v1h-1zM24 18h1v1h-1zM24 21h1v1h-1zM24 22h1v1h-1zM24 24h1v1h-1z"/><rect x="9.6" y="9.6" width="5.8" height="5.8" fill="#fff"/><rect x="10" y="10" width="5" height="5"/><path d="M12.05 11h.9v1.05h1.05v.9h-1.05V14h-.9v-1.05H11v-.9h1.05z" fill="#fff"/></svg>
+        <dl class="qr-angaben">
+          <div><dt>Konto / Zahlbar an</dt><dd>CH44 3199 9123 0008 8901 2<br>Beispiel AG, 9999 Musterhausen</dd></div>
+          <div><dt>Referenz</dt><dd>21 00000 00003 13947 14300 09017</dd></div>
+          <div><dt>Betrag</dt><dd>CHF 1 949.75</dd></div>
+        </dl>
+        </div>
+      </div>
+      </div>
+      <p class="u-qr-notiz">Erfundene Beispieldaten, nicht zum Bezahlen.</p>
+    </div>
+  </div>
+  <div class="u-vorlagen-zeile r" id="vorlagen">
+    <h3>Gratis-Vorlagen zum Herunterladen</h3>
+    <div class="feat-grid">
+    <a href="/ratgeber/regierapport-vorlage/" class="feat tile">
+      <h3>Regierapport-Vorlage</h3>
+      <p>Für Handwerk und Elektro: Vorlage als PDF und Excel, mit ausgefülltem Beispiel und den Regeln zur Unterschrift.</p>
+      <span class="way-go">Zur Vorlage <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+    <a href="/ratgeber/steuerunterlagen-einsammeln/" class="feat tile">
+      <h3>Checkliste Steuerunterlagen</h3>
+      <p>Für Treuhandbüros: Checkliste für Mandanten als PDF und Word, Ablauf in fünf Schritten und Textvorlagen.</p>
+      <span class="way-go">Zur Checkliste <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+    </div>
   </div>
 </section>
 
@@ -144,48 +163,24 @@
 </section>
 
 <section id="branchen" class="flaeche">
-  <div class="r">
-    <span class="s-label">Branchen</span>
-    <h2>Nach Branche</h2>
-    <p class="s-lead">Typische Herausforderungen, Beispielszenarien und passende Produkte für einzelne Branchen.</p>
+  <div class="kopf-mitte r">
+    <span class="s-label">Nach Branche</span>
+    <h2>Branchen und Ratgeber</h2>
+    <p class="s-lead">Typische Abläufe, Beispielszenarien und passende Bausteine pro Branche, dazu Ratgeber mit Quellen. Allgemeine Information, keine Rechtsberatung.</p>
   </div>
-  <div class="branch-list r">
+  <div class="u-listen">
+    <div class="r">
+      <h3>Branchen</h3>
+      <div class="branch-list">
 {{branchen}}
-  </div>
-</section>
-
-<section id="vorlagen" class="u-vorlagen">
-  <div class="r">
-    <span class="s-label">Gratis</span>
-    <h2>Gratis-Vorlagen und Werkzeuge</h2>
-    <p class="s-lead">Zum Herunterladen und sofort Verwenden, ohne Anmeldung und ohne E-Mail-Adresse.</p>
-  </div>
-  <div class="feat-grid r">
-    <a href="/werkzeuge/qr-rechnung/" class="feat tile">
-      <h3>QR-Rechnung erstellen</h3>
-      <p>Gratis-Werkzeug: Zahlteil nach SIX-Standard 2.4 als PDF. Läuft im Browser, Ihre Angaben bleiben auf Ihrem Gerät.</p>
-      <span class="way-go">Werkzeug öffnen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-    <a href="/ratgeber/regierapport-vorlage/" class="feat tile">
-      <h3>Regierapport-Vorlage</h3>
-      <p>Für Handwerk und Elektro: Vorlage als PDF und Excel, mit ausgefülltem Beispiel und den Regeln zur Unterschrift.</p>
-      <span class="way-go">Zur Vorlage <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-    <a href="/ratgeber/steuerunterlagen-einsammeln/" class="feat tile">
-      <h3>Checkliste Steuerunterlagen</h3>
-      <p>Für Treuhandbüros: Checkliste für Mandanten als PDF und Word, Ablauf in fünf Schritten und Textvorlagen.</p>
-      <span class="way-go">Zur Checkliste <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-  </div>
-</section>
-<section id="ratgeber">
-  <div class="r">
-    <span class="s-label">Ratgeber</span>
-    <h2>Ratgeber</h2>
-    <p class="s-lead">Hintergründe zu Recht und Praxis, mit Quellen und Checklisten. Allgemeine Information, keine Rechtsberatung.</p>
-  </div>
-  <div class="branch-list r">
+      </div>
+    </div>
+    <div class="r">
+      <h3 id="ratgeber">Ratgeber</h3>
+      <div class="branch-list">
 {{ratgeber}}
+      </div>
+    </div>
   </div>
 </section>
 <section id="vereine" class="vereine-kurz">
@@ -205,6 +200,10 @@
       <div class="cinfo-item">
         <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="3.5" width="14" height="10" rx="2"/><path d="M1.5 5.5l7 4.5 7-4.5"/></svg></div>
         <div><div class="clabel">Lieber per E-Mail</div><div class="cval"><a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></div>
+        <div><div class="clabel">Telefon</div><div class="cval"><a href="tel:+41788643763">+41 78 864 37 63</a></div></div>
       </div>
     </div>
     <div class="ccard r d1">
