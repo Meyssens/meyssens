@@ -646,7 +646,7 @@ for url in ["/branchen/"] + ["/branchen/%s/" % b["slug"] for b in welle2] + w2_b
                 if wort.lower() not in html.unescape(inhalt).lower():
                     fehler.append("%s: Suchbegriff %s fehlt in %s" % (url, wort, wo))
 
-# Automatisierungen und Schnittstellen: sechs Beispiele auf /unternehmen/, je ein Mini-Beispiel auf jeder Branchenseite.
+# Automatisierungen und Schnittstellen: acht Beispiele auf /unternehmen/ (mit Karten auf /unternehmen/ und der Startseite), je ein Mini-Beispiel auf jeder Branchenseite.
 # Jedes Beispiel als "Beispiel mit erfundenen Daten" gekennzeichnet, mit Beschreibung für Screenreader und Knopf;
 # Pilot, Gratis-Prozess-Check, Auftragsbearbeitung, Hosting-Ort und Schnittstellen nur nach Absprache; keine Programmnamen
 ablaeufe = json.loads((ROOT / "ablaeufe.json").read_text(encoding="utf-8"))
@@ -673,10 +673,15 @@ u_text = seiten["/unternehmen/"][0]
 if '<section id="ablaeufe"' not in u_text:
     fehler.append("/unternehmen/: Abschnitt #ablaeufe fehlt")
 else:
-    u_ab = zwischen(u_text, '<section id="ablaeufe"', '<section id="automatisierungen"')
+    u_ab = zwischen(u_text, '<section id="ablaeufe"', '</section>')
     pruefe_beispiele("/unternehmen/", u_ab, len(ablaeufe["unternehmen"]))
-    if len(ablaeufe["unternehmen"]) != 6 or u_ab.count('<article class="abl-block"') != 6:
-        fehler.append("/unternehmen/: nicht genau sechs Bausteine")
+    if len(ablaeufe["unternehmen"]) != 8 or u_ab.count('<article class="abl-block"') != 8:
+        fehler.append("/unternehmen/: nicht genau acht Abläufe")
+    for x in ablaeufe["unternehmen"]:
+        for seite, ziel in (("/unternehmen/", '<a class="auto-karte r" href="#ablauf-%s">' % x["id"]),
+                            ("/", '<a class="auto-karte r" href="/unternehmen/#ablauf-%s">' % x["id"])):
+            if ziel not in seiten[seite][0]:
+                fehler.append("%s: Karte für Ablauf %s fehlt" % (seite, x["id"]))
     for muss in ("Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.", "Vertrag zur Auftragsbearbeitung",
                  "Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.", "nach Absprache an, wenn eine Schnittstelle besteht",
                  "keine Rechtsberatung", "Sie entscheiden:"):
@@ -687,9 +692,9 @@ else:
             fehler.append("/unternehmen/: Baustein #ablauf-%s fehlt" % x["id"])
     ld_u = [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', u_text, re.S)]
     liste = [g for d in ld_u for g in d.get("@graph", []) if g.get("@type") == "ItemList" and g.get("@id", "").endswith("#ablaeufe")]
-    if not liste or len(liste[0]["itemListElement"]) != 6 or any(e["item"].get("@type") != "Service" or "offers" in e["item"]
+    if not liste or len(liste[0]["itemListElement"]) != 8 or any(e["item"].get("@type") != "Service" or "offers" in e["item"]
                                                                  for e in liste[0]["itemListElement"]):
-        fehler.append("/unternehmen/: JSON-LD ItemList mit sechs Service-Einträgen (ohne Preise) fehlt")
+        fehler.append("/unternehmen/: JSON-LD ItemList mit acht Service-Einträgen (ohne Preise) fehlt")
 for slug in ablaeufe["branchen"]:
     url = "/branchen/%s/" % slug
     text = seiten.get(url, ("",))[0]

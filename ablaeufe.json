@@ -2,30 +2,63 @@
  "unternehmen": [
   {
    "id": "belege",
-   "titel": "Belege automatisch erfassen",
+   "titel": "Belege erfassen und Buchung vorbereiten",
    "text": "Sie fotografieren eine Rechnung oder leiten sie per E-Mail weiter. Lieferant, Datum, Betrag und Mehrwertsteuer werden ausgelesen und als Buchungsvorschlag vorbereitet.",
    "automatisch": "Felder auslesen, Konto vorschlagen, Beleg ablegen.",
    "mensch": "Sie prüfen den Vorschlag und buchen. Was sich nicht sicher lesen lässt, wird markiert statt geraten.",
    "geraet": "Belegerfassung",
-   "beschreibung": "Eine fotografierte Rechnung über CHF 432.40 wird ausgelesen. Lieferant, Datum, Betrag, Mehrwertsteuer und Konto füllen sich, danach erscheint der Buchungsvorschlag 4000 Materialaufwand an 2000 Kreditoren. Gebucht wird erst nach Ihrer Prüfung."
+   "beschreibung": "Eine fotografierte Rechnung über CHF 432.40 wird ausgelesen. Lieferant, Datum, Betrag, Mehrwertsteuer und Konto füllen sich, danach erscheint der Buchungsvorschlag 4000 Materialaufwand an 2000 Kreditoren. Gebucht wird erst nach Ihrer Prüfung.",
+   "schritte": [
+    "Rechnung per E-Mail oder Foto",
+    "Felder auslesen, Konto vorschlagen",
+    "Buchung als Entwurf"
+   ],
+   "satz": "Felder werden ausgelesen, die Buchung liegt als Entwurf bereit."
   },
   {
    "id": "posteingang",
-   "titel": "Posteingang sortieren",
+   "titel": "Posteingang sortieren und Antworten vorbereiten",
    "text": "Eingehende E-Mails werden gelesen und markiert, zum Beispiel als Offerte, Termin oder Reklamation. Zu jeder Nachricht entsteht ein Antwortentwurf in Ihrem Ton.",
    "automatisch": "Markieren, nach Dringlichkeit ordnen, Antwort entwerfen.",
    "mensch": "Kein Entwurf verlässt Ihren Betrieb ohne Ihre Freigabe.",
    "geraet": "Posteingang",
-   "beschreibung": "Drei E-Mails treffen ein und werden als Offerte, Termin und Reklamation markiert. Für die Offertanfrage erscheint ein Antwortentwurf, der erst nach Ihrer Freigabe versendet wird."
+   "beschreibung": "Drei E-Mails treffen ein und werden als Offerte, Termin und Reklamation markiert. Für die Offertanfrage erscheint ein Antwortentwurf, der erst nach Ihrer Freigabe versendet wird.",
+   "schritte": [
+    "Neue E-Mails",
+    "Nach Anliegen markieren",
+    "Antwort als Entwurf"
+   ],
+   "satz": "E-Mails werden markiert, zu jeder liegt ein Antwortentwurf bereit."
   },
   {
    "id": "auftrag-rechnung",
-   "titel": "Vom Auftrag zur Rechnung",
+   "titel": "Von Auftrag zu Rechnung",
    "text": "Der Rapport wird vor Ort auf dem Handy erfasst: Arbeit, Material, Fotos und Unterschrift. Daraus entstehen der Arbeitsbericht und ein Rechnungsentwurf, ohne dass im Büro jemand abtippt.",
    "automatisch": "Arbeitsbericht erstellen, Arbeitszeit und Material in den Rechnungsentwurf übernehmen.",
    "mensch": "Sie prüfen Ansätze und Positionen und geben die Rechnung frei.",
    "geraet": "Rapport und Rechnung",
-   "beschreibung": "Ein Rapport auf dem Handy mit 2.5 Stunden Arbeit und 4 Steckdosen wird zum Arbeitsbericht und zu einem Rechnungsentwurf über CHF 324.30 inklusive 8.1 Prozent Mehrwertsteuer. Die Rechnung geht erst nach Ihrer Freigabe hinaus."
+   "beschreibung": "Ein Rapport auf dem Handy mit 2.5 Stunden Arbeit und 4 Steckdosen wird zum Arbeitsbericht und zu einem Rechnungsentwurf über CHF 324.30 inklusive 8.1 Prozent Mehrwertsteuer. Die Rechnung geht erst nach Ihrer Freigabe hinaus.",
+   "schritte": [
+    "Rapport auf dem Handy",
+    "Arbeit und Material übernehmen",
+    "Rechnung als Entwurf"
+   ],
+   "satz": "Stunden und Material landen als Positionen im Rechnungsentwurf."
+  },
+  {
+   "id": "mahnwesen",
+   "titel": "Zahlungserinnerungen und Mahnwesen",
+   "text": "Offene Rechnungen werden mit den Zahlungseingängen abgeglichen. Für überfällige Rechnungen entsteht eine Zahlungserinnerung als Entwurf.",
+   "automatisch": "Offene Posten abgleichen, Fälligkeit prüfen, Erinnerung oder Mahnung als Entwurf vorbereiten.",
+   "mensch": "Sie entscheiden, ob und wann eine Erinnerung oder Mahnung verschickt wird.",
+   "geraet": "Offene Rechnungen",
+   "beschreibung": "Drei offene Rechnungen werden mit den Zahlungseingängen abgeglichen: eine ist bezahlt, eine noch offen, eine überfällig. Für die überfällige Rechnung über CHF 324.30 entsteht eine Zahlungserinnerung als Entwurf, die erst nach Ihrer Freigabe verschickt wird.",
+   "schritte": [
+    "Offene Rechnungen",
+    "Zahlungseingänge abgleichen",
+    "Erinnerung als Entwurf"
+   ],
+   "satz": "Überfälliges wird erkannt, die Erinnerung liegt als Entwurf bereit."
   },
   {
    "id": "fristen",
@@ -34,25 +67,58 @@
    "automatisch": "Erinnerungen an Sie und Ihr Team, Entwürfe für Erinnerungen an Ihre Kunden.",
    "mensch": "Erinnerungen an Kunden geben Sie frei, einzeln oder als Liste.",
    "geraet": "Fristen",
-   "beschreibung": "Auf einer Zeitachse rückt der heutige Tag vor. Vor dem Ablauf einer Offerte geht automatisch eine E-Mail an Sie. Für die fällige Wartung entsteht eine SMS an den Kunden als Entwurf, die nach Ihrer Freigabe gesendet wird."
+   "beschreibung": "Auf einer Zeitachse rückt der heutige Tag vor. Vor dem Ablauf einer Offerte geht automatisch eine E-Mail an Sie. Für die fällige Wartung entsteht eine SMS an den Kunden als Entwurf, die nach Ihrer Freigabe gesendet wird.",
+   "schritte": [
+    "Offerten, Wartungen, Zahlungsfristen",
+    "Fristen auf einer Zeitachse",
+    "Erinnerung an Sie, Entwurf an Kunden"
+   ],
+   "satz": "Vor jeder Frist kommt eine Erinnerung, Kundennachrichten als Entwurf."
   },
   {
    "id": "auswertung",
-   "titel": "Auswertung und Wochenbericht",
+   "titel": "Dashboards und Berichte",
    "text": "Die wichtigsten Kennzahlen Ihres Betriebs auf einer Seite, zum Beispiel offene Offerten, offene Rechnungen und Termine der Woche. Jeden Montag kommt ein kurzer Wochenbericht per E-Mail.",
    "automatisch": "Zahlen aus Ihren Abläufen zusammenführen, den Bericht erstellen und Ihnen senden.",
    "mensch": "Welche Kennzahlen zählen, legen Sie fest.",
    "geraet": "Übersicht",
-   "beschreibung": "Eine Übersicht zeigt 6 offene Offerten, 4 offene Rechnungen und 12 Termine in dieser Woche sowie erledigte Aufträge pro Wochentag. Daraus entsteht ein Wochenbericht, der am Montagmorgen per E-Mail an Sie geht."
+   "beschreibung": "Eine Übersicht zeigt 6 offene Offerten, 4 offene Rechnungen und 12 Termine in dieser Woche sowie erledigte Aufträge pro Wochentag. Daraus entsteht ein Wochenbericht, der am Montagmorgen per E-Mail an Sie geht.",
+   "schritte": [
+    "Zahlen aus Ihren Abläufen",
+    "Zusammenführen",
+    "Übersicht und Wochenbericht"
+   ],
+   "satz": "Offerten, Rechnungen und Termine auf einer Seite, dazu ein Wochenbericht."
   },
   {
    "id": "schnittstellen",
-   "titel": "Schnittstellen zwischen Ihren Programmen",
+   "titel": "Daten zwischen Programmen übertragen (Schnittstellen)",
    "text": "Kalender, Buchhaltung und E-Mail arbeiten oft nebeneinander her. Wir verbinden sie, damit eine Angabe einmal erfasst wird und dort ankommt, wo sie gebraucht wird.",
    "automatisch": "Termine, Kontakte und Rechnungsdaten abgleichen, damit nichts doppelt getippt wird.",
    "mensch": "Welche Programme verbunden werden, klären wir mit Ihnen: nach Absprache, wenn eine Schnittstelle besteht. Eine Anbindung sagen wir erst zu, wenn wir die Schnittstelle geprüft haben.",
    "geraet": "Schnittstellen",
-   "beschreibung": "Eine Terminbestätigung per E-Mail wird einmal erfasst. Daraus entstehen automatisch ein Kalendereintrag und ein vorbereiteter Rechnungsentwurf in der Buchhaltung, ohne dass etwas doppelt getippt wird."
+   "beschreibung": "Eine Terminbestätigung per E-Mail wird einmal erfasst. Daraus entstehen automatisch ein Kalendereintrag und ein vorbereiteter Rechnungsentwurf in der Buchhaltung, ohne dass etwas doppelt getippt wird.",
+   "schritte": [
+    "Angabe einmal erfasst",
+    "Prüfen und übertragen",
+    "Im anderen Programm"
+   ],
+   "satz": "Einmal erfasst, dort eingetragen, wo es gebraucht wird. Nach Absprache."
+  },
+  {
+   "id": "offerten",
+   "titel": "Angebote und Offerten vorbereiten",
+   "text": "Aus einer Anfrage per E-Mail oder Formular entsteht ein Offertentwurf mit Positionen aus Ihren eigenen Vorlagen und Ansätzen.",
+   "automatisch": "Anfrage auslesen, passende Positionen vorschlagen, Offerte als Entwurf anlegen.",
+   "mensch": "Sie prüfen Positionen und Preise und geben die Offerte frei.",
+   "geraet": "Offerte",
+   "beschreibung": "Eine Anfrage für drei neue Steckdosen trifft per E-Mail ein. Daraus entsteht ein Offertentwurf mit Arbeit, Material und Mehrwertsteuer über CHF 256.74, der erst nach Ihrer Freigabe an die Kundin geht.",
+   "schritte": [
+    "Anfrage per E-Mail oder Formular",
+    "Positionen vorschlagen",
+    "Offerte als Entwurf"
+   ],
+   "satz": "Aus einer Anfrage entsteht ein Offertentwurf mit Ihren Positionen."
   }
  ],
  "branchen": {

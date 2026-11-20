@@ -1212,3 +1212,58 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .mock-check li .haken{margin-right:0}
 .handy-liste li::before,.handy-liste li.ok::before{content:none}
 .sg-nutzen{display:grid;justify-content:center;gap:.6rem;max-width:none}
+
+/* Büroautomatisierung: acht Karten, Arbeitsweise, Streifen, Branchen (Startseite und /unternehmen/, 20.11.2026) */
+.auto-karten{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;max-width:1180px;margin:0 auto}
+.auto-karte{display:flex;flex-direction:column;gap:.7rem;background:#fff;border:1px solid var(--rand);border-radius:20px;padding:1.25rem 1.2rem 1.15rem;color:var(--ink);text-decoration:none;box-shadow:0 1px 2px rgba(10,10,60,.04);transition:transform .25s var(--weich),box-shadow .25s,border-color .25s}
+.auto-karte:hover{transform:translateY(-3px);border-color:var(--blue-20);box-shadow:0 22px 50px -30px rgba(10,10,60,.4)}
+.auto-karte:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.auto-nr{font-size:.72rem;font-weight:600;letter-spacing:.08em;color:var(--blue)}
+.auto-karte h3{font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.05rem;font-weight:700;line-height:1.25;letter-spacing:-.02em;margin:0}
+.auto-fluss{list-style:none;margin:0;padding:.75rem .8rem;display:grid;gap:.55rem;background:var(--grau);border-radius:14px;position:relative}
+.auto-fluss li{display:flex;align-items:center;gap:.6rem;position:relative;font-size:.8rem;line-height:1.3;color:var(--ink)}
+.auto-fluss li i{display:block;font-style:normal;font-size:.64rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.auto-fluss li + li::before{content:'';position:absolute;left:13px;top:-.55rem;width:2px;height:.55rem;background:var(--blue-20)}
+.af-ic{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#ebebff;color:#0000cc}
+.af-ergebnis .af-ic{background:#0000cc;color:#fff}
+.auto-karte p{font-size:.88rem;line-height:1.5;color:var(--ink2);margin:0;flex:1}
+.auto-karte .way-go{font-size:.85rem}
+@media(max-width:1100px){.auto-karten{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.auto-karten{grid-template-columns:minmax(0,1fr)}}
+.u-beispiel{max-width:1180px;margin:clamp(3rem,6vw,4.5rem) auto 0}
+#beispiel .u-beispiel{margin-top:0}
+.u-beispiel h3,.u-arbeit-wrap h3{font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:clamp(1.3rem,2.2vw,1.65rem);font-weight:800;letter-spacing:-.03em;text-align:center;margin-bottom:1.25rem}
+.u-arbeit-wrap{max-width:1180px;margin:clamp(3rem,6vw,4.5rem) auto 0}
+.u-arbeit{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;max-width:1180px;margin:0 auto;padding:0}
+.u-arbeit li{background:#fff;border:1px solid var(--rand);border-radius:18px;padding:1.2rem}
+.u-arbeit-nr{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#ebebff;color:#0000cc;font-weight:700;font-size:.85rem;margin-bottom:.7rem}
+.u-arbeit h3,.u-arbeit h4{font-size:1rem;font-weight:700;color:var(--ink);margin:0 0 .3rem}
+.u-arbeit p{font-size:.88rem;line-height:1.5;color:var(--ink2);margin:0}
+@media(max-width:900px){.u-arbeit{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.u-arbeit{grid-template-columns:minmax(0,1fr)}}
+.u-streifen{max-width:1180px;margin:clamp(2.5rem,5vw,3.5rem) auto 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.6rem 1.5rem;background:#fff;border:1px solid var(--rand);border-left:4px solid var(--blue);border-radius:14px;padding:1rem 1.25rem;font-size:.95rem;color:var(--ink2)}
+.u-streifen b{color:var(--ink)}
+.u-streifen a{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--blue);font-weight:600;text-decoration:none}
+.u-streifen a:hover{text-decoration:underline;text-underline-offset:3px}
+.u-hinweis{max-width:1180px;margin:1rem auto 0;text-align:center;font-size:.9rem;color:var(--ink2)}
+.u-hinweis a{color:var(--blue);font-weight:500;text-underline-offset:3px;display:inline-block;padding:.6rem 0}
+.u-branchen{max-width:1180px;margin:clamp(2rem,4vw,3rem) auto 0;text-align:center}
+.u-branchen p{font-size:.95rem;line-height:1.9;color:var(--ink2)}
+.u-branchen p a{color:var(--blue);text-underline-offset:3px;white-space:nowrap}
+.u-branchen .held-knoepfe{margin-top:1.25rem}
+.u-mehr{max-width:1180px;margin:1.25rem auto 0;background:#fff;border:1px solid var(--rand);border-radius:16px;padding:0 1.25rem}
+.u-mehr summary{cursor:pointer;min-height:52px;display:flex;align-items:center;font-weight:600;color:var(--ink)}
+.u-mehr summary:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:8px}
+.u-mehr[open]{padding-bottom:1.25rem}
+.u-mehr-text{font-size:.9rem;color:var(--ink2);margin:0 0 1rem}
+.u-mehr .auto-gruppe{background:var(--grau);border-color:var(--rand)}
+.u-mehr .auto-gruppe h3 a{color:var(--ink);text-decoration:none}
+.u-mehr .auto-gruppe h3 a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:4px}
+.u-mehr .auto-gruppe li{border-top-color:var(--rand)}
+.u-mehr .auto-gruppe li a{color:var(--blue)}
+#branchen .branch-list{max-width:1180px;margin:0 auto}
+@media(max-width:420px){.u-hero-lead{font-size:1rem!important}}
+.auto-karte p{flex:none}
+.auto-karte .way-go{margin-top:auto}
+.u-streifen > span{flex:1 1 22rem}
+.u-streifen a{flex:none}

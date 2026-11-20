@@ -214,9 +214,9 @@ def ablaeufe_abschnitt(daten, schnipsel):
             % (x["id"], i, html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["automatisch"]),
                html.escape(x["mensch"]), ablauf_geraet(x["geraet"], buehne, "abl-" + x["id"], x["beschreibung"])))
     return ('<section id="ablaeufe" class="ablaeufe">\n  <div class="kopf-mitte r">\n    <span class="s-label">Automatisierung</span>\n'
-            '    <h2>Automatisierungen und Schnittstellen</h2>\n'
-            '    <p class="s-lead">Sechs Bausteine, die wiederkehrende Büroarbeit vorbereiten. Entwürfe ja, automatischer Versand nein: '
-            'Was Ihren Betrieb verlässt, gibt ein Mensch frei. Alle Beispiele zeigen erfundene Daten.</p>\n  </div>\n'
+            '    <h2>Die acht Abläufe im Detail</h2>\n'
+            '    <p class="s-lead">Jeder Ablauf bereitet Büroarbeit als Entwurf vor. Was Ihren Betrieb verlässt, geben Sie frei. '
+            'Alle Beispiele zeigen erfundene Daten.</p>\n  </div>\n'
             '  <div class="abl-liste">\n%s\n  </div>\n'
             '  <div class="abl-start r">\n    <div>\n      <h3>So starten Sie</h3>\n      <ol class="abl-schritte">\n'
             '        <li><strong>%s.</strong> Sie zeigen uns einen Ablauf, wir sagen Ihnen offen, was sich automatisieren lässt und was nicht.</li>\n'
@@ -230,6 +230,73 @@ def ablaeufe_abschnitt(daten, schnipsel):
             'wenn wir die Schnittstelle geprüft haben.</p>\n'
             '      <p class="abl-klein-text">Allgemeine Information, keine Rechtsberatung.</p>\n    </div>\n  </div>\n'
             '</section>\n%s\n' % ("\n".join(bloecke), PROZESS_CHECK, PROZESS_CHECK, PFEIL, ABLAUF_SKRIPT))
+
+
+# Büroautomatisierung: acht Karten, grosses Beispiel, Arbeitsweise, Apps, QR-Hinweis und Branchen
+# (Startseite, Block "Für Unternehmen", und /unternehmen/). Texte aus ablaeufe.json, nichts vollautomatisch.
+SYMBOL_EINGANG = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+                  'stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg>')
+SYMBOL_ARBEIT = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+                 'stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>')
+SYMBOL_ERGEBNIS = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+                   'stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg>')
+ARBEITSWEISE = (("Gespräch", "Sie zeigen uns einen Ablauf, wir sagen offen, was sich automatisieren lässt und was nicht."),
+                ("Angebot", "Sie erhalten ein schriftliches Angebot für den vereinbarten Umfang."),
+                ("Umsetzung", "Wir richten den Ablauf ein und testen ihn gemeinsam mit Ihnen."),
+                ("Betrieb", "Wir betreuen den Ablauf weiter und passen ihn an, wenn sich bei Ihnen etwas ändert."))
+BRANCHEN_ZEILE = ("treuhaender", "elektro-handwerk", "bauunternehmen", "arztpraxen")
+GROSS_BESCHREIBUNG = ("Eine E-Mail der Beispiel Handels GmbH mit der Rechnung 2026-041 trifft ein. Der Beleg wird erkannt: Lieferant, "
+                      "Datum, Mehrwertsteuer und Total CHF 432.40. Daraus entsteht die Buchung 4000 Materialaufwand an 2000 Kreditoren "
+                      "als Entwurf. Gebucht wird erst, wenn Sie freigeben.")
+
+
+def auto_karten(daten, ziel=""):
+    # Acht Karten mit Ablauf in drei Schritten (Eingang, Verarbeitung, Ergebnis); ziel: "" auf /unternehmen/, sonst "/unternehmen/"
+    karten = []
+    for i, x in enumerate(daten["unternehmen"], 1):
+        eingang, arbeit, ergebnis = x["schritte"]
+        karten.append(
+            '    <a class="auto-karte r" href="%s#ablauf-%s">\n      <span class="auto-nr" aria-hidden="true">%02d</span>\n'
+            '      <h3>%s</h3>\n      <ol class="auto-fluss" aria-hidden="true">\n'
+            '        <li><span class="af-ic">%s</span><span><i>Eingang</i>%s</span></li>\n'
+            '        <li><span class="af-ic">%s</span><span><i>Verarbeitung</i>%s</span></li>\n'
+            '        <li class="af-ergebnis"><span class="af-ic">%s</span><span><i>Ergebnis</i>%s</span></li>\n'
+            '      </ol>\n      <p>%s</p>\n      <span class="way-go">Zum Ablauf %s</span>\n    </a>'
+            % (ziel, x["id"], i, html.escape(x["titel"]), SYMBOL_EINGANG, html.escape(eingang), SYMBOL_ARBEIT,
+               html.escape(arbeit), SYMBOL_ERGEBNIS, html.escape(ergebnis), html.escape(x["satz"]), PFEIL))
+    return '  <div class="auto-karten">\n%s\n  </div>' % "\n".join(karten)
+
+
+def gross_beispiel(schnipsel):
+    buehne = teil(schnipsel, "buehne-gross")
+    if not buehne:
+        raise SystemExit("ablaeufe.html: buehne-gross fehlt")
+    return ablauf_geraet("Vom Beleg zur Buchung", buehne, "abl-gross", GROSS_BESCHREIBUNG)
+
+
+def arbeitsweise(stufe):
+    return '  <ol class="u-arbeit">\n%s\n  </ol>' % "\n".join(
+        '    <li class="r"><span class="u-arbeit-nr" aria-hidden="true">%d</span><h%d>%s</h%d><p>%s</p></li>'
+        % (i, stufe, t, stufe, html.escape(p)) for i, (t, p) in enumerate(ARBEITSWEISE, 1))
+
+
+APPS_STREIFEN = ('  <p class="u-streifen r"><span><b>Brauchen Sie mehr?</b> Apps und Web-Anwendungen nach Mass (iPhone, Android, Web).</span> '
+                 '<a href="/unternehmen/#apps">Zu den Apps nach Mass %s</a></p>' % PFEIL)
+QR_HINWEIS = ('  <p class="u-hinweis r">Gratis-Werkzeug: <a href="/werkzeuge/qr-rechnung/">QR-Rechnung im Browser erstellen</a></p>')
+
+
+def startseite_unternehmen(daten, schnipsel, branchen_namen):
+    # Block "Für Unternehmen" der Startseite (zwischen auto:unternehmen)
+    links = " · ".join('<a href="/branchen/%s/">%s</a>' % (b, html.escape(branchen_namen[b])) for b in BRANCHEN_ZEILE)
+    return "\n".join([
+        auto_karten(daten, "/unternehmen/"),
+        '  <div class="u-beispiel r">\n    <h3>Ein Beispiel: vom Beleg zur Freigabe</h3>\n    %s\n  </div>' % gross_beispiel(schnipsel),
+        '  <div class="u-arbeit-wrap">\n    <h3 class="r">So arbeiten wir</h3>\n%s\n  </div>' % arbeitsweise(4),
+        APPS_STREIFEN, QR_HINWEIS,
+        '  <div class="u-branchen r">\n    <p>Nach Branche: %s</p>\n    <div class="held-knoepfe">\n'
+        '      <a href="/unternehmen/#kontakt" class="btn-p">Gespräch vereinbaren %s</a>\n'
+        '      <a href="tel:+41788643763" class="btn-s">+41 78 864 37 63</a>\n'
+        '      <a href="mailto:lionel@meyssens.ch" class="btn-s">lionel@meyssens.ch</a>\n    </div>\n  </div>' % (links, PFEIL)])
 
 
 def ablaeufe_ld(daten, url):
@@ -1738,11 +1805,14 @@ def main():
 
     vereins_links = [(u, info[u]["name"] if u.startswith("/ratgeber/") else "Branchenseite " + info[u]["name"]) for u in sorted(VEREINS_SEITEN - {"/produkte/%s/" % s for s in VEREINS_PRODUKTE},
                                                           key=lambda u: (not u.startswith("/ratgeber/"), info[u]["name"]))]
-    kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Digitale Werkzeuge für Schweizer KMU | Meyssens")
+    kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Büroautomatisierung für Schweizer KMU | Meyssens")
     werte = dict(gemeinsam, **kopf, **{
-        "titel": "Digitale Werkzeuge für Schweizer KMU | Meyssens",
-        "beschreibung": html.escape("Automatisierungen, Schnittstellen, Umfragen und Bausteine für Schweizer KMU. "
-                                    "Jetzt Gratis-Prozess-Check anfragen."),
+        "titel": "Büroautomatisierung für Schweizer KMU | Meyssens",
+        "beschreibung": html.escape("Belege erfassen, Posteingang sortieren, Rechnungen und Fristen vorbereiten: Abläufe als "
+                                    "Entwurf, Sie geben frei. Jetzt Gespräch anfragen."),
+        "auto_karten": auto_karten(ablaeufe),
+        "gross_beispiel": gross_beispiel(schnipsel_ablaeufe),
+        "arbeitsweise": arbeitsweise(3),
         "url": DOMAIN + "/unternehmen/",
         "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
         "produkte": scrolly(ansichten, [p for p in allgemein if "/produkte/%s/" % p["slug"] not in VEREINS_SEITEN], mehr=True),
@@ -1919,8 +1989,9 @@ def main():
     if neu_g != gemeinden:
         schreibe("gemeinden/index.html", neu_g)
 
-    # Startseite: von Hand gepflegt, build.py ergänzt nur beschreibende Linktexte
-    neu = start
+    # Startseite: von Hand gepflegt, build.py setzt den Block "Für Unternehmen" und ergänzt beschreibende Linktexte
+    branchen_namen = {b["slug"]: b["name"] for b in branchen + artikel_branchen}
+    neu = setze_auto(start, "unternehmen", startseite_unternehmen(ablaeufe, schnipsel_ablaeufe, branchen_namen))
     if beschreibend(neu) != start:
         schreibe("index.html", neu)
 

@@ -19,6 +19,7 @@
 <meta property="og:locale" content="de_CH">
 <meta property="og:site_name" content="Meyssens">
 <link rel="canonical" href="{{url}}">
+<script>if(location.hash==='#produkte')location.replace('/produkte/');else if(location.hash==='#wege')history.replaceState(null,'','#ueberblick')</script>
 {{seo_kopf}}
 <link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
 {{head}}
@@ -33,52 +34,40 @@
 <section class="page-hero">
 {{krumen}}
   <div class="chip"><span class="chip-dot"></span><span>Pilotpartner gesucht</span></div>
-  <h1>Weniger Büroarbeit für <span class="hl">KMU.</span></h1>
-  <p class="lead">Digitale Werkzeuge für Kommunikation und Organisation, schlank eingerichtet und persönlich begleitet.</p>
+  <h1>Wir automatisieren Ihre <span class="hl">Büroarbeit.</span></h1>
+  <p class="lead u-hero-lead">Belege, Posteingang, Rechnungen, Fristen: Wir bauen die Abläufe, die Ihnen Zeit zurückgeben. Sie geben frei, der Rest läuft.</p>
   <div class="held-knoepfe">
-    <a href="#anfrage" class="btn-p">Pilot anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a href="#produkte" class="btn-s">Produkte ansehen</a>
+    <a href="#kontakt" class="btn-p">Gespräch vereinbaren <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="#ueberblick" class="btn-s">Die acht Abläufe ansehen</a>
   </div>
 </section>
 
-<section id="wege" class="wege-u">
-  <h2 class="sr-only">Überblick</h2>
-  <div class="ways ways-drei r">
-    <a href="#produkte" class="way blue">
-      <svg class="way-ic" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8h18M8 21h8M12 18v3"/></svg>
-      <h3>Fertige Produkte</h3>
-      <p>Umfragen, Newsletter, Chatbot und Assistenten, jedes mit einer Beispielansicht.</p>
-      <span class="way-go">Zu den Produkten <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-    <a href="#automatisierungen" class="way">
-      <svg class="way-ic" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.5 6H15a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6.5"/></svg>
-      <h3>Automatisierung nach Branche</h3>
-      <p>Bausteine, die einzelne Abläufe vorbereiten. Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>
-      <span class="way-go">Zu den Bausteinen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-    <a href="#apps" class="way">
-      <svg class="way-ic" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>
-      <h3>Apps nach Mass</h3>
-      <p>Anwendungen für Handy und Browser, mit festem Preis und kostenloser Pilotphase.</p>
-      <span class="way-go">Zu den Apps <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </a>
-  </div>
-</section>
-
-<section id="produkte">
-  <h2 class="sr-only">Produkte</h2>
-{{produkte}}
-</section>
-
-{{ablaeufe}}<section id="automatisierungen" class="dunkel">
+<section id="ueberblick" class="flaeche">
   <div class="kopf-mitte r">
     <span class="s-label">Automatisierung</span>
-    <h2>Automatisierungen nach Branche</h2>
-    <p class="s-lead">Bausteine, die einzelne Abläufe vorbereiten, ausgewählt pro Branche. Entwürfe ja, automatischer Versand nein: Was Ihren Betrieb verlässt, gibt ein Mensch frei. Drei Bausteine sind in der Pilotphase, die übrigen richten wir individuell auf Anfrage ein.</p>
+    <h2>Acht Abläufe, die Büroarbeit vorbereiten</h2>
+    <p class="s-lead">Jede Karte zeigt Eingang, Verarbeitung und Ergebnis. Ein Klick führt zum ausführlichen Beispiel.</p>
   </div>
-  <div class="auto-gruppen">
-{{bausteine}}
+{{auto_karten}}
+</section>
+
+{{ablaeufe}}<section id="beispiel" class="flaeche">
+  <div class="kopf-mitte r">
+    <span class="s-label">Beispiel</span>
+    <h2>Vom Beleg zur Freigabe</h2>
+    <p class="s-lead">E-Mail mit Beleg, Beleg erkannt, Buchung als Entwurf. Gebucht wird erst, wenn Sie freigeben.</p>
   </div>
+  <div class="u-beispiel">
+{{gross_beispiel}}
+  </div>
+</section>
+
+<section id="so-arbeiten-wir">
+  <div class="kopf-mitte r">
+    <span class="s-label">Zusammenarbeit</span>
+    <h2>So arbeiten wir</h2>
+  </div>
+{{arbeitsweise}}
 </section>
 
 <section id="apps" class="apps">
@@ -109,7 +98,7 @@
           <div><h4>Kostenlose Pilotphase</h4><p>Wir starten mit einer Pilotphase, die für Sie kostenlos ist.</p></div>
         </li>
       </ol>
-      <p class="apps-cta r"><a class="btn-p" href="/ueber-uns/#kontakt">Zur Kontaktseite <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      <p class="apps-cta r"><a class="btn-p" href="#kontakt">Gespräch vereinbaren <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
     </div>
     <div class="apps-handy r" role="img" aria-label="Beispiel einer App-Oberfläche auf dem Handy: ein Arbeitsrapport mit Checkliste">
       <div class="handy" aria-hidden="true">
@@ -144,20 +133,34 @@
 </section>
 
 <section id="branchen" class="flaeche">
-  <div class="r">
+  <div class="kopf-mitte r">
     <span class="s-label">Branchen</span>
-    <h2>Nach Branche</h2>
-    <p class="s-lead">Typische Herausforderungen, Beispielszenarien und passende Produkte für einzelne Branchen.</p>
+    <h2>Abläufe für Ihre Branche</h2>
+    <p class="s-lead">Typische Abläufe, Beispielszenarien und passende Bausteine für einzelne Branchen.</p>
   </div>
   <div class="branch-list r">
 {{branchen}}
   </div>
+  <details class="u-mehr r" id="automatisierungen">
+    <summary>Alle Bausteine nach Branche</summary>
+    <div class="auto-gruppen">
+{{bausteine}}
+    </div>
+  </details>
+  <details class="u-mehr r" id="ratgeber">
+    <summary>Ratgeber mit Quellen</summary>
+    <p class="u-mehr-text">Hintergründe zu Recht und Praxis. Allgemeine Information, keine Rechtsberatung.</p>
+    <div class="branch-list">
+{{ratgeber}}
+    </div>
+  </details>
+  <p class="u-hinweis r"><a href="/produkte/">Alle Produkte und Bausteine</a></p>
 </section>
 
 <section id="vorlagen" class="u-vorlagen">
   <div class="r">
     <span class="s-label">Gratis</span>
-    <h2>Gratis-Vorlagen und Werkzeuge</h2>
+    <h2>Gratis-Werkzeug und Vorlagen</h2>
     <p class="s-lead">Zum Herunterladen und sofort Verwenden, ohne Anmeldung und ohne E-Mail-Adresse.</p>
   </div>
   <div class="feat-grid r">
@@ -176,16 +179,6 @@
       <p>Für Treuhandbüros: Checkliste für Mandanten als PDF und Word, Ablauf in fünf Schritten und Textvorlagen.</p>
       <span class="way-go">Zur Checkliste <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
-  </div>
-</section>
-<section id="ratgeber">
-  <div class="r">
-    <span class="s-label">Ratgeber</span>
-    <h2>Ratgeber</h2>
-    <p class="s-lead">Hintergründe zu Recht und Praxis, mit Quellen und Checklisten. Allgemeine Information, keine Rechtsberatung.</p>
-  </div>
-  <div class="branch-list r">
-{{ratgeber}}
   </div>
 </section>
 <section id="vereine" class="vereine-kurz">
