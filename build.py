@@ -121,12 +121,6 @@ def beschreibend(inhalt):
 def schreibe(pfad, inhalt):
     if not pfad.startswith("gemeinden/"):
         inhalt = beschreibend(inhalt)
-    if pfad.endswith(".html"):
-        bereich = bereich_von(pfad)
-        klassen = "bereich-%s mit-menue" % bereich if bereich else "bereich-neutral"
-        inhalt, n = re.subn(r'<body class="stil( gemeinden)?[^"]*"', lambda m: '<body class="stil%s %s"' % (m.group(1) or "", klassen), inhalt, count=1)
-        if not n:
-            raise SystemExit("%s: <body class=\"stil ...\"> fehlt" % pfad)
     ziel = ROOT / pfad
     ziel.parent.mkdir(parents=True, exist_ok=True)
     ziel.write_text(inhalt, encoding="utf-8")
@@ -1011,59 +1005,6 @@ def bild_objekt(bild):
     return {"@type": "ImageObject", "url": DOMAIN + pfad, "width": 1200, "height": 630, "caption": alt}
 
 
-# Kopf aller Seiten: Logo links, rechts der Umschalter Gemeinden | Unternehmen, darunter das Menü des aktuellen Bereichs.
-# Startseite, Über uns und 404 (neutral): nur Logo und Umschalter. data-i18n für die Sprachwahl der Gemeinden-Seite.
-KOPF_MENUE = {
-    "gemeinden": [("#funktionen", "Funktionen", "kopf.funktionen"), ("#ablauf", "Ablauf und Preis", "kopf.ablauf"),
-                  ("#vertrauen", "Datenschutz", "kopf.datenschutz"), ("#faq", "Fragen", "kopf.fragen"),
-                  ("#kontakt", "Kontakt", "kopf.kontakt"), ("/ueber-uns/", "Über uns", "nav.ueberuns")],
-    "unternehmen": [("/unternehmen/#ablaeufe", "Automatisierungen", None), ("/werkzeuge/qr-rechnung/", "QR-Rechnung", None),
-                    ("/unternehmen/#apps", "Apps nach Mass", None), ("/branchen/", "Branchen", None),
-                    ("/produkte/", "Produkte", None), ("/ratgeber/", "Ratgeber", None),
-                    ("/unternehmen/#kontakt", "Kontakt", None), ("/ueber-uns/", "Über uns", None)],
-}
-SPRACHEN = ("de", "fr", "it", "en")
-
-
-def kopf_html(bereich=None, sprachen=False):
-    def wahl(slug, name):
-        aktiv = ' aria-current="true"' if slug == bereich else ""
-        return '<a href="/%s/" class="bw-%s"%s data-i18n="kopf.%s">%s</a>' % (slug, slug, aktiv, slug, name)
-    def knoepfe(ident, klasse):
-        return '<div class="%s" id="%s">%s</div>' % (klasse, ident, "".join(
-            '<button class="lang-btn%s" type="button" data-lang="%s">%s</button>' % (" active" if l == "de" else "", l, l.upper())
-            for l in SPRACHEN))
-    def link(url, name, schluessel):
-        return '<a href="%s"%s>%s</a>' % (url, ' data-i18n="%s"' % schluessel if schluessel else "", html.escape(name))
-    menue = KOPF_MENUE.get(bereich)
-    zeile = ['<a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – zur Startseite"></a>',
-             '<nav class="bereich-wahl" aria-label="Bereich wählen">%s%s</nav>' % (wahl("gemeinden", "Gemeinden"), wahl("unternehmen", "Unternehmen"))]
-    if sprachen:
-        zeile.append(knoepfe("lang-switch-desktop", "lang-switch"))
-    if menue:
-        zeile.append('<button class="hamburger" id="hamburger" type="button" aria-label="Menü" aria-expanded="false" '
-                     'aria-controls="mobile-nav"><span></span><span></span><span></span></button>')
-    teile = ['<header id="nav" class="kopf">', '  <div class="kopf-zeile">'] + ['    ' + z for z in zeile] + ['  </div>']
-    if menue:
-        name = "Gemeinden" if bereich == "gemeinden" else "Unternehmen"
-        teile.append('  <nav class="kopf-menue" aria-label="Menü %s"><ul>\n%s\n  </ul></nav>' % (name, "\n".join(
-            '    <li>%s</li>' % link(*m) for m in menue)))
-        teile.append('  <div class="mobile-nav" id="mobile-nav">\n%s%s\n  </div>' % (
-            ('    ' + knoepfe("lang-switch-mobile", "mobile-lang-switch") + '\n') if sprachen else "",
-            "\n".join('    ' + link(*m) for m in menue)))
-    teile.append('</header>')
-    return "\n".join(teile)
-
-
-def bereich_von(pfad):
-    # Bereich einer Datei für Farbe und Kopf: Gemeinden, Unternehmen oder neutral (Startseite, Über uns, 404)
-    if pfad.startswith("gemeinden/"):
-        return "gemeinden"
-    if pfad in ("index.html", "404.html") or pfad.startswith("ueber-uns/"):
-        return None
-    return "unternehmen"
-
-
 def seitenkopf(stufen, titel, bild=OG_STANDARD):
     # Kopfwerte (Brotkrumen, Open-Graph-Bild) und JSON-LD (BreadcrumbList, WebPage mit Bild) einer Seite
     url = DOMAIN + stufen[-1][1]
@@ -1271,10 +1212,10 @@ def verwandte(netz, info, url, anzahl=3):
 AUTOR = "Lionel Nickelsen"
 # Langtext-Seiten: Ausgabeordner, Zurück-Link und Formularfeld je Art
 ARTEN = {
-    "branche": {"ordner": "branchen", "zurueck": ("/branchen/", "Alle Branchen"),
+    "branche": {"ordner": "branchen", "zurueck": ("/unternehmen/#branchen", "Alle Branchen"),
                 "anfrage": "Interesse für Ihren Betrieb?", "betreff": "Branchenanfrage über meyssens.ch: %s",
                 "feld": ("branche", "Branche")},
-    "ratgeber": {"ordner": "ratgeber", "zurueck": ("/ratgeber/", "Alle Ratgeber"),
+    "ratgeber": {"ordner": "ratgeber", "zurueck": ("/unternehmen/#ratgeber", "Alle Ratgeber"),
                  "anfrage": "Fragen zum Thema?", "betreff": "Anfrage zum Ratgeber über meyssens.ch: %s",
                  "feld": ("thema", "Thema")},
 }
@@ -1524,10 +1465,6 @@ def main():
     start = lies("index.html")
     gemeinden = lies("gemeinden/index.html")
     gemeinsam = {name: abschnitt(start, name) for name in ("head", "kopf", "fuss", "rechtliches", "skripte")}
-    # Kopf je Bereich: generierte Seiten gehören zu Unternehmen, Über uns und 404 sind neutral (nur Logo und Umschalter)
-    kopf_neutral = kopf_html(None)
-    start = re.sub(r"(<!-- kopf:start -->\n).*?(<!-- kopf:ende -->)", lambda m: m.group(1) + kopf_neutral + "\n" + m.group(2), start, count=1, flags=re.S)
-    gemeinsam["kopf"] = kopf_html("unternehmen")
 
     # Produkt-, Baustein- und Branchenformulare: Ziel und Einwilligung (FORMULAR_ZIEL, EINWILLIGUNG), Absende-Skript aus der Gemeinden-Seite
     formular_ziel = FORMULAR_ZIEL
@@ -1804,8 +1741,8 @@ def main():
     kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Digitale Werkzeuge für Schweizer KMU | Meyssens")
     werte = dict(gemeinsam, **kopf, **{
         "titel": "Digitale Werkzeuge für Schweizer KMU | Meyssens",
-        "beschreibung": html.escape("Belege, Posteingang, Rechnungen und Fristen automatisieren, QR-Rechnung gratis erstellen, "
-                                    "Apps nach Mass für Schweizer KMU. Jetzt Pilot anfragen."),
+        "beschreibung": html.escape("Automatisierungen, Schnittstellen, Umfragen und Bausteine für Schweizer KMU. "
+                                    "Jetzt Gratis-Prozess-Check anfragen."),
         "url": DOMAIN + "/unternehmen/",
         "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
         "produkte": scrolly(ansichten, [p for p in allgemein if "/produkte/%s/" % p["slug"] not in VEREINS_SEITEN], mehr=True),
@@ -1918,7 +1855,6 @@ def main():
         extra = [{"@type": "AboutPage", "@id": DOMAIN + pfad + "#ueber", "url": DOMAIN + pfad, "about": {"@id": DOMAIN + "/#org"},
                   "mainEntity": {"@id": DOMAIN + "/ueber-uns/#person"}}] if pfad == "/ueber-uns/" else []
         werte = dict(gemeinsam, **kopf, **{
-            "kopf": kopf_neutral if pfad == "/ueber-uns/" else gemeinsam["kopf"],
             "titel": html.escape(titel), "beschreibung": html.escape(beschreibung), "url": DOMAIN + pfad,
             "seo_kopf": seo_kopf(DOMAIN + pfad), "chip": chip, "h1": h1, "lead": html.escape(lead), "inhalt": inhalt,
             "ld": ld(*seitenld, *extra)})
@@ -1959,29 +1895,33 @@ def main():
 
     # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
     werte = dict(gemeinsam, **{
-        "kopf": kopf_neutral,
         "titel": "Seite nicht gefunden | Meyssens",
         "beschreibung": "Diese Seite gibt es nicht. Zu den Werkzeugen für Schweizer KMU, den Branchen oder zur Startseite.",
         "url": DOMAIN + "/404.html",
         "links": "\n".join('    <a class="feat tile" href="%s">\n      <h3>%s</h3>\n      <p>%s</p>\n      <span class="way-go">Öffnen %s</span>\n    </a>'
                            % (u, html.escape(t), html.escape(x), PFEIL) for u, t, x in (
                                ("/unternehmen/", "Für Unternehmen", "Werkzeuge und Bausteine für Schweizer KMU, Praxen und Verwaltungen."),
-                               ("/branchen/", "Branchen", "Zahnarztpraxen, Immobilienverwaltungen, Architekturbüros, Pflege und weitere."),
-                               ("/ratgeber/", "Ratgeber", "nDSG für KMU, Offertanfragen, Aufbewahrungsfristen, Website-Chatbot."),
+                               ("/unternehmen/#branchen", "Branchen", "Zahnarztpraxen, Immobilienverwaltungen, Architekturbüros, Pflege und weitere."),
+                               ("/unternehmen/#ratgeber", "Ratgeber", "nDSG für KMU, Offertanfragen, Aufbewahrungsfristen, Website-Chatbot."),
                                ("/", "Startseite", "Überblick über Meyssens."))),
     })
     schreibe("404.html", fuelle(lies("vorlage_404.html"), werte))
 
-    # Gemeinden-Seite: Kopf (mit Sprachwahl), Fuss wie auf allen Seiten, Anfrageformular
-    neu_g = setze_auto(gemeinden, "kopf", kopf_html("gemeinden", sprachen=True))
-    neu_g = setze_auto(neu_g, "fuss", gemeinsam["fuss"])
+    # Gemeinden-Seite: Bühne unter dem Hero und Ansichten im Sticky-Abschnitt "Ablauf"
+    neu_g = setze_auto(gemeinden, "buehne", '<div class="buehne" data-buehne>\n%s\n</div>' % geraet(
+        '<span data-i18n="g.demo.titel">Mitwirken in Beispielgemeinde</span>', teil(ansichten, "gemeinden-held"),
+        '<span data-i18n="g.beispiel">Beispiel</span>'))
+    for i in range(1, 4):
+        neu_g = setze_auto(neu_g, "ablauf-%d" % i, geraet(
+            '<span data-i18n="g.ablauf%d.titel">%s</span>' % (i, teil(ansichten, "gemeinden-ablauf-%d-titel" % i)),
+            teil(ansichten, "gemeinden-ablauf-%d" % i), '<span data-i18n="g.beispielansicht">Beispielansicht</span>'))
     neu_g = setze_auto(neu_g, "anfrage", anfrage_formular("Gemeinden", "Gemeinde / Organisation", True))
     if neu_g != gemeinden:
         schreibe("gemeinden/index.html", neu_g)
 
-    # Startseite (von Hand gepflegt): nur der Kopf kommt aus kopf_html()
+    # Startseite: von Hand gepflegt, build.py ergänzt nur beschreibende Linktexte
     neu = start
-    if beschreibend(neu) != lies("index.html"):
+    if beschreibend(neu) != start:
         schreibe("index.html", neu)
 
     # Verwaiste Ordner nur melden, nicht löschen

@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bürgerbeteiligung für Städte und Gemeinden – Meyssens</title>
 <meta name="keywords" content="digitale Bürgerbeteiligung Schweiz, digitale Bürgerbeteiligung Deutschland, digitale Bürgerbeteiligung Österreich, Bürgerbeteiligungsplattform Gemeinde, Decidim, Online Bürgerbeteiligung, partizipatives Budget Gemeinde, digitale Partizipation Städte und Gemeinden, E-Partizipation DACH, Baden-Württemberg">
-<meta name="description" content="Bürgerbeteiligung für Gemeinden in der Schweiz und in Deutschland: Ideen auf der Karte, Abstimmungen, Budget. Pilot 3 Monate kostenlos, Hosting in Zürich.">
+<meta name="description" content="Digitale Bürgerbeteiligung für Städte und Gemeinden in der Schweiz und in Deutschland – Plattform auf Basis von Decidim, Start in der Regel innerhalb weniger Wochen.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://meyssens.ch/og-image.png">
 <meta name="twitter:title" content="Bürgerbeteiligung für Städte und Gemeinden – Meyssens">
-<meta name="twitter:description" content="Bürgerbeteiligung für Gemeinden in der Schweiz und in Deutschland: Ideen auf der Karte, Abstimmungen, Budget. Pilot 3 Monate kostenlos, Hosting in Zürich.">
+<meta name="twitter:description" content="Fertig eingerichtete Bürgerbeteiligungs-Plattform für die Schweiz und Deutschland. Start in der Regel innerhalb weniger Wochen.">
 <meta property="og:title" content="Bürgerbeteiligung für Städte und Gemeinden – Meyssens">
-<meta property="og:description" content="Bürgerbeteiligung für Gemeinden in der Schweiz und in Deutschland: Ideen auf der Karte, Abstimmungen, Budget. Pilot 3 Monate kostenlos, Hosting in Zürich.">
+<meta property="og:description" content="Fertig eingerichtete Bürgerbeteiligungs-Plattform für Städte und Gemeinden in der Schweiz und in Deutschland. Start in der Regel innerhalb weniger Wochen.">
 <meta property="og:url" content="https://meyssens.ch/gemeinden/">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" sizes="16x16 32x32 48x48">
@@ -22,10 +22,9 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=2">
 <link rel="manifest" href="/site.webmanifest?v=2">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0000ff">
 <script>document.documentElement.classList.add("js")</script>
 <link rel="canonical" href="https://meyssens.ch/gemeinden/">
-<script>(function(){var h=location.hash;if(h==='#ueber-uns'){location.replace('/ueber-uns/');return}var n={'#pilot':'#schritt-pilot','#plattform':'#funktionen','#referenzen':'#vertrauen','#preise':'#preis'}[h];if(n)history.replaceState(null,'',n)})()</script>
 <link rel="alternate" hreflang="de" href="https://meyssens.ch/gemeinden/">
 <link rel="alternate" hreflang="x-default" href="https://meyssens.ch/gemeinden/">
 <link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
@@ -176,7 +175,7 @@
       "name": "Wie sicher sind die Daten unserer Einwohnerinnen und Einwohner?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Das Hosting erfolgt ausschliesslich in der Schweiz. Datenschutz nach DSGVO-Anforderungen, Auftragsverarbeitungsvertrag auf Wunsch. Die Plattform entspricht dem Schweizer Datenschutzgesetz (DSG). Daten werden nie an Dritte weitergegeben oder für Werbezwecke genutzt."
+        "text": "Das Hosting erfolgt ausschliesslich in der Schweiz, in einem Rechenzentrum in Zürich. Datenschutz nach DSGVO-Anforderungen, Auftragsverarbeitungsvertrag auf Wunsch. Die Plattform entspricht dem Schweizer Datenschutzgesetz (DSG). Daten werden nie an Dritte weitergegeben oder für Werbezwecke genutzt."
       }
     },
     {
@@ -215,58 +214,175 @@
 }
 </script>
 </head>
-<body class="stil gemeinden bereich-gemeinden mit-menue">
-<a class="skip-link" href="#main" data-i18n="g.skip">Zum Inhalt springen</a>
-<!-- auto:kopf:start -->
-<header id="nav" class="kopf">
-  <div class="kopf-zeile">
-    <a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – zur Startseite"></a>
-    <nav class="bereich-wahl" aria-label="Bereich wählen"><a href="/gemeinden/" class="bw-gemeinden" aria-current="true" data-i18n="kopf.gemeinden">Gemeinden</a><a href="/unternehmen/" class="bw-unternehmen" data-i18n="kopf.unternehmen">Unternehmen</a></nav>
-    <div class="lang-switch" id="lang-switch-desktop"><button class="lang-btn active" type="button" data-lang="de">DE</button><button class="lang-btn" type="button" data-lang="fr">FR</button><button class="lang-btn" type="button" data-lang="it">IT</button><button class="lang-btn" type="button" data-lang="en">EN</button></div>
-    <button class="hamburger" id="hamburger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
-  </div>
-  <nav class="kopf-menue" aria-label="Menü Gemeinden"><ul>
-    <li><a href="#funktionen" data-i18n="kopf.funktionen">Funktionen</a></li>
-    <li><a href="#ablauf" data-i18n="kopf.ablauf">Ablauf und Preis</a></li>
-    <li><a href="#vertrauen" data-i18n="kopf.datenschutz">Datenschutz</a></li>
-    <li><a href="#faq" data-i18n="kopf.fragen">Fragen</a></li>
-    <li><a href="#kontakt" data-i18n="kopf.kontakt">Kontakt</a></li>
+<body class="stil gemeinden">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<nav id="nav" aria-label="Hauptnavigation">
+  <a href="/" class="logo"><img src="/logo-web.png" width="701" height="96" alt="Meyssens – zur Startseite"></a>
+  <ul class="nav-items">
+    <li><a href="/gemeinden/" class="active" aria-current="page" data-i18n="nav.gemeinden">Für Gemeinden</a></li>
+    <li><a href="/unternehmen/" data-i18n="nav.unternehmen">Für Unternehmen</a></li>
     <li><a href="/ueber-uns/" data-i18n="nav.ueberuns">Über uns</a></li>
-  </ul></nav>
-  <div class="mobile-nav" id="mobile-nav">
-    <div class="mobile-lang-switch" id="lang-switch-mobile"><button class="lang-btn active" type="button" data-lang="de">DE</button><button class="lang-btn" type="button" data-lang="fr">FR</button><button class="lang-btn" type="button" data-lang="it">IT</button><button class="lang-btn" type="button" data-lang="en">EN</button></div>
-    <a href="#funktionen" data-i18n="kopf.funktionen">Funktionen</a>
-    <a href="#ablauf" data-i18n="kopf.ablauf">Ablauf und Preis</a>
-    <a href="#vertrauen" data-i18n="kopf.datenschutz">Datenschutz</a>
-    <a href="#faq" data-i18n="kopf.fragen">Fragen</a>
-    <a href="#kontakt" data-i18n="kopf.kontakt">Kontakt</a>
-    <a href="/ueber-uns/" data-i18n="nav.ueberuns">Über uns</a>
+  </ul>
+  <div class="lang-switch" id="lang-switch-desktop">
+    <button class="lang-btn active" data-lang="de">DE</button>
+    <button class="lang-btn" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="it">IT</button>
+    <button class="lang-btn" data-lang="en">EN</button>
   </div>
-</header>
-<!-- auto:kopf:ende -->
+  <a href="#kontakt" class="nav-btn nav-kontakt" data-i18n="nav.kontakt">Kontakt</a>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-lang-switch" id="lang-switch-mobile">
+    <button class="lang-btn active" data-lang="de">DE</button>
+    <button class="lang-btn" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="it">IT</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+  </div>
+  <a href="/gemeinden/" class="active" aria-current="page" data-i18n="nav.gemeinden">Für Gemeinden</a>
+  <a href="/unternehmen/" data-i18n="nav.unternehmen.lang">Für Unternehmen</a>
+  <a href="/ueber-uns/" data-i18n="nav.ueberuns">Über uns</a>
+</div>
 
 <main id="main">
 <section class="hero">
   <div class="hero-l">
     <div class="chip"><span class="chip-dot"></span><span data-i18n="hero.chip2">Pilot: 3 Monate kostenlos, jederzeit kündbar</span></div>
     <h1 data-i18n-html="hero.title">Digitale Beteiligung<br>für <span class="hl">Ihre Gemeinde.</span></h1>
-    <p class="lead" data-i18n="g.hero.lead">Eine fertig eingerichtete Plattform für Bürgerbeteiligung: Ideen auf der Karte, Abstimmungen und Bürgerbudget. Persönlich begleitet, gehostet in Zürich.</p>
+    <p class="lead" data-i18n="hero.lead">Meyssens bringt Städten und Gemeinden eine fertig eingerichtete Bürgerbeteiligungs-Plattform — Start in der Regel innerhalb weniger Wochen, persönlich begleitet, Festpreis von 4.900 € pro Jahr für Gemeinden bis 5.000 Einwohner, ohne Aufbaukosten.</p>
     <div class="btns">
       <a href="#anfrage" class="btn-p"><span data-i18n="pilot.cta">Pilot anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a href="https://demo.meyssens.ch" target="_blank" rel="noopener" class="btn-s"><span data-i18n="hero.btn1">Live-Demo ansehen</span><span class="sr-only" data-i18n="g.neues.fenster"> (öffnet in neuem Fenster)</span></a>
+      <a href="https://demo.meyssens.ch" target="_blank" rel="noopener" class="btn-s"><span data-i18n="hero.btn1">Live-Demo ansehen</span><span class="sr-only"> (öffnet in neuem Fenster)</span></a>
     </div>
   </div>
-  <figure class="g-hero-bild">
-    <div class="sg-geraete">
-    <div class="geraet sg-browser">
-      <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel"></span><span class="g-marke" data-i18n="g.beispielplattform">Beispielplattform</span></div>
-      <img src="/assets/beispiel/demo-desktop.webp" srcset="/assets/beispiel/demo-desktop-960.webp 960w, /assets/beispiel/demo-desktop.webp 1800w" sizes="(max-width: 1100px) 92vw, 1000px" width="1800" height="1125" decoding="async" fetchpriority="high" alt="Startseite der Beispielplattform am Computer, mit Menü für Beteiligungsprozesse, Konsultationen, Partizipatives Budget und Schaden melden." data-i18n-alt="g.bild.desktop">
+  <div class="buehne-wrap">
+<!-- auto:buehne:start -->
+<div class="buehne" data-buehne>
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel"><span data-i18n="g.demo.titel">Mitwirken in Beispielgemeinde</span></span><span class="beispiel"><span data-i18n="g.beispiel">Beispiel</span></span></div>
+  <div class="geraet-inhalt">
+<div class="beteiligung" data-beteiligung>
+  <div class="bt-kopf">
+    <p class="held-titel" data-i18n="g.demo.prozess">Beteiligungsprozess</p>
+    <p class="bt-frage" data-i18n="g.demo.frage">Wie soll der Dorfplatz neu gestaltet werden?</p>
+    <ol class="bt-phasen"><li class="fertig" data-i18n="g.demo.ph1">Ideen sammeln</li><li class="jetzt" data-i18n="g.demo.ph2">Abstimmung</li><li data-i18n="g.demo.ph3">Umsetzung</li></ol>
+  </div>
+  <div class="bt-raster">
+  <div class="plan-rahmen bt-plan">
+    <svg class="plan" viewBox="0 0 320 200" aria-hidden="true" focusable="false"><rect width="320" height="200" class="plan-land"/><path class="plan-wald" d="M0 128H128Q134 165 124 200H0Z"/><g class="plan-baeume"><circle cx="24" cy="150" r="7"/><circle cx="52" cy="172" r="8"/><circle cx="88" cy="146" r="6"/><circle cx="100" cy="182" r="7"/><circle cx="18" cy="186" r="6"/></g><g class="plan-strasse"><path d="M0 110H320"/><path d="M160 0V110"/></g><rect class="plan-platz" x="182" y="124" width="74" height="50" rx="4"/><circle class="plan-brunnen" cx="219" cy="149" r="6"/><rect class="plan-halt" x="96" y="116" width="22" height="6" rx="1.5"/><rect class="haus" x="62" y="40" width="64" height="36" rx="2"/><g class="plan-haeuser"><rect class="haus" x="178" y="40" width="22" height="16" rx="1.5"/><rect class="haus" x="208" y="40" width="22" height="16" rx="1.5"/><rect class="haus" x="244" y="44" width="20" height="16" rx="1.5"/><rect class="haus" x="274" y="40" width="24" height="18" rx="1.5"/><rect class="haus" x="184" y="72" width="20" height="16" rx="1.5"/><rect class="haus" x="240" y="72" width="24" height="18" rx="1.5"/><rect class="haus" x="278" y="76" width="22" height="16" rx="1.5"/><rect class="haus" x="20" y="46" width="22" height="18" rx="1.5"/><rect class="haus" x="20" y="78" width="24" height="16" rx="1.5"/><rect class="haus" x="140" y="128" width="24" height="18" rx="1.5"/><rect class="haus" x="268" y="128" width="22" height="18" rx="1.5"/><rect class="haus" x="268" y="156" width="22" height="18" rx="1.5"/><rect class="haus" x="294" y="128" width="18" height="16" rx="1.5"/></g><g class="plan-name"><text x="94" y="33" text-anchor="middle" data-i18n="g.plan.schule">Schulhaus</text><text x="219" y="187" text-anchor="middle" data-i18n="g.plan.platz">Dorfplatz</text><text x="232" y="113" data-i18n="g.plan.strasse">Dorfstrasse</text></g></svg>
+    <button type="button" class="pin" data-vorschlag="0" style="left:68.44%;top:71.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v0">Mehr Sitzbänke beim Brunnen</span></button>
+    <button type="button" class="pin" data-vorschlag="1" style="left:29.38%;top:28.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v1">Veloständer beim Schulhaus</span></button>
+    <button type="button" class="pin" data-vorschlag="2" style="left:33.44%;top:59.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v2">Wartehäuschen an der Bushaltestelle</span></button>
+  </div>
+  <ul class="bt-liste">
+    <li data-vorschlag="0"><span class="bt-text"><strong data-i18n="g.demo.v0">Mehr Sitzbänke beim Brunnen</strong><span data-i18n="g.demo.o0">Dorfplatz</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="24"><span class="bt-zahl">24</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+    <li data-vorschlag="1"><span class="bt-text"><strong data-i18n="g.demo.v1">Veloständer beim Schulhaus</strong><span data-i18n="g.demo.o1">Schulhaus</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="17"><span class="bt-zahl">17</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+    <li data-vorschlag="2"><span class="bt-text"><strong data-i18n="g.demo.v2">Wartehäuschen an der Bushaltestelle</strong><span data-i18n="g.demo.o2">Bushaltestelle</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="31"><span class="bt-zahl">31</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+  </ul>
+  </div>
+  <p class="demo-hinweis" data-i18n="g.demo.hinweis">Beispiel mit erfundenen Inhalten. Klicken Sie auf einen Pin oder unterstützen Sie einen Vorschlag. Nichts wird gespeichert.</p>
+</div>
+  </div>
+</figure>
+</div>
+<!-- auto:buehne:ende -->
+  </div>
+  <div class="hero-r">
+    <div class="hero-cards">
+      <div class="hcard-row">
+        <div class="hcard blue">
+          <div class="hcard-label" data-i18n="hero.card1.label">Open Source</div>
+          <div class="hcard-val" data-i18n="hero.card1.val">Offen</div>
+          <div class="hcard-sub" data-i18n="hero.card1.sub">Kein Lock-in, Datenexport jederzeit</div>
+          <div class="hcard-bar"><div class="hcard-bar-fill"></div></div>
+        </div>
+        <div class="hcard">
+          <div class="hcard-label" data-i18n="hero.card2.label">Einrichtung</div>
+          <div class="hcard-val hcard-val-text" style="color:var(--blue)" data-i18n="hero.card2.val">Wenige Wochen</div>
+          <div class="hcard-sub" data-i18n="hero.card2.sub">bis zum Start, in der Regel</div>
+        </div>
+      </div>
+      <div class="hcard">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div><div class="hcard-label" data-i18n="hero.hosting.label">Hosting</div><div style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);line-height:1">100%</div><div class="hcard-sub" data-i18n="hero.hosting.sub">Schweiz</div></div>
+          <div><div class="hcard-label" data-i18n="hero.cancel.label">Pilot</div><div style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);line-height:1.1;font-size:clamp(.95rem,4vw,1.1rem)" data-i18n="hero.cancel.val">Jederzeit kündbar</div><div class="hcard-sub" data-i18n="hero.cancel.sub">3 Monate kostenlos</div></div>
+          <div><div class="hcard-label" data-i18n="hero.support.label">Support</div><div style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);line-height:1" data-i18n="hero.support.val">Persönlich</div><div class="hcard-sub" data-i18n="hero.support.sub">direkter Kontakt</div></div>
+          <div><div class="hcard-label" data-i18n="hero.langs.label">Sprachen</div><div style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);line-height:1">DE/FR/IT</div><div class="hcard-sub" data-i18n="hero.langs.sub">mehrsprachig</div></div>
+        </div>
+      </div>
     </div>
-    <div class="sg-handy">
-      <img src="/assets/beispiel/demo-handy.webp" width="780" height="1688" loading="lazy" decoding="async" alt="Dieselbe Beispielplattform auf dem Handy: Karten-Umfrage mit farbigen Pins für Lieblingsorte, Problemstellen und Ideenorte." data-i18n-alt="g.bild.handy">
-    </div>
-    </div>
-  </figure>
+  </div>
+</section>
+
+<section id="plattform">
+  <div class="kopf-mitte r">
+    <span class="s-label" data-i18n="pf.label">Die Plattform</span>
+    <h2 data-i18n="pf.title">So sieht Mitwirkung aus.</h2>
+    <p class="s-lead" data-i18n="pf.lead">Vier Bausteine, die Gemeinden häufig nutzen. Die Ansichten sind vereinfachte Beispiele mit erfundenen Inhalten.</p>
+  </div>
+  <div class="pf-raster">
+  <article class="pf-item r">
+    <div class="pf-text"><span class="pf-nr" aria-hidden="true">01</span><h3 data-i18n="pf.k.h">Ideen auf der Karte</h3><p data-i18n="pf.k.p">Einwohnerinnen und Einwohner setzen Pins dort, wo ihnen etwas gefällt, stört oder fehlt. Die Verwaltung sieht auf einen Blick, wo Handlungsbedarf besteht.</p></div>
+<div class="geraet pf-geraet" role="img" aria-label="Beispielansicht: Karte mit farbigen Pins für Ideen, Probleme und Orte, die gefallen">
+  <div class="geraet-leiste"><i></i><i></i><i></i><span class="geraet-titel" data-i18n="pf.k.titel">Karten-Umfrage</span><span class="beispiel" data-i18n="g.beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<div class="pf-karte">
+  <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="200" height="120" class="plan-land"/><path class="plan-wald" d="M0 0H50Q44 26 52 46Q26 50 0 44Z"/><path class="plan-feld" d="M172 0H200V120H174Q168 60 172 0Z"/><path class="plan-bach" d="M0 106Q40 94 70 106T140 108T200 100"/><g class="plan-strasse"><path d="M0 70H200"/><path d="M110 0V120"/></g><g class="plan-haeuser"><rect class="haus" x="70" y="54" width="12" height="10" rx="1"/><rect class="haus" x="88" y="54" width="12" height="10" rx="1"/><rect class="haus" x="122" y="54" width="12" height="10" rx="1"/><rect class="haus" x="140" y="54" width="12" height="10" rx="1"/><rect class="haus" x="72" y="77" width="14" height="10" rx="1"/><rect class="haus" x="124" y="77" width="12" height="10" rx="1"/><rect class="haus" x="142" y="77" width="14" height="10" rx="1"/><rect class="haus" x="94" y="20" width="10" height="10" rx="1"/><rect class="haus" x="122" y="18" width="10" height="10" rx="1"/></g><g><g class="pf-pin idee" style="--i:0" transform="translate(78 44)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g><g class="pf-pin problem" style="--i:1" transform="translate(132 30)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g><g class="pf-pin gut" style="--i:2" transform="translate(150 86)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g><g class="pf-pin idee" style="--i:3" transform="translate(92 84)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g><g class="pf-pin problem" style="--i:4" transform="translate(120 60)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g><g class="pf-pin gut" style="--i:5" transform="translate(60 70)"><g><path d="M0 0c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4c0 4-5.4 9-5.4 9s-5.4-5-5.4-9z"/></g></g></g></svg>
+  <p class="pf-blase"><b data-i18n="pf.k.blase">Spielplatz beschatten</b><span data-i18n="pf.k.blase2">Idee · 18 Unterstützungen</span></p>
+</div>
+<ul class="pf-legende"><li class="idee" data-i18n="pf.k.l1">Idee</li><li class="problem" data-i18n="pf.k.l2">Problem</li><li class="gut" data-i18n="pf.k.l3">Gefällt mir</li></ul>
+  </div>
+</div>
+  </article>
+  <article class="pf-item r">
+    <div class="pf-text"><span class="pf-nr" aria-hidden="true">02</span><h3 data-i18n="pf.a.h">Abstimmungen und Umfragen</h3><p data-i18n="pf.a.p">Fragen stellen, Varianten zur Wahl geben und das Ergebnis transparent zeigen.</p></div>
+<div class="geraet pf-geraet" role="img" aria-label="Beispielansicht: Abstimmung über zwei Varianten mit Ergebnis in Prozent">
+  <div class="geraet-leiste"><i></i><i></i><i></i><span class="geraet-titel" data-i18n="pf.a.titel">Abstimmung</span><span class="beispiel" data-i18n="g.beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<p class="held-frage" data-i18n="pf.a.frage">Welche Variante für den Pausenplatz?</p>
+<div class="held-balken pf-balken" style="--w:58;--i:0"><span data-i18n="pf.a.o1">Variante A: mehr Grün</span><b>58 %</b></div>
+<div class="held-balken pf-balken" style="--w:34;--i:1"><span data-i18n="pf.a.o2">Variante B: Spielgeräte</span><b>34 %</b></div>
+<div class="held-balken pf-balken" style="--w:8;--i:2"><span data-i18n="pf.a.o3">Enthaltung</span><b>8 %</b></div>
+<p class="pf-fuss" data-i18n="pf.a.fuss">Ergebnis für alle sichtbar</p>
+  </div>
+</div>
+  </article>
+  <article class="pf-item r">
+    <div class="pf-text"><span class="pf-nr" aria-hidden="true">03</span><h3 data-i18n="pf.m.h">Mängelmelder</h3><p data-i18n="pf.m.p">Schäden im öffentlichen Raum mit Foto und Standort melden. Der Bearbeitungsstand ist für alle sichtbar.</p></div>
+<div class="geraet pf-geraet" role="img" aria-label="Beispielansicht: Meldung einer defekten Strassenlampe mit Status eingegangen, in Bearbeitung, erledigt">
+  <div class="geraet-leiste"><i></i><i></i><i></i><span class="geraet-titel" data-i18n="pf.m.titel0">Schaden melden</span><span class="beispiel" data-i18n="g.beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<div class="pf-meldung">
+  <svg class="pf-foto" viewBox="0 0 80 64" aria-hidden="true" focusable="false"><rect width="80" height="64" rx="8" fill="#e7eaf3"/><path d="M0 50h80v14H0z" fill="#cfd5e3"/><path d="M40 50V14" stroke="#7a7f99" stroke-width="3"/><path d="M40 14q0-6 8-6h6" stroke="#7a7f99" stroke-width="3" fill="none"/><path d="M50 8h10v5H50z" fill="#7a7f99"/><path d="M53 16l-3 6M57 16l3 6" stroke="#f0b400" stroke-width="2" stroke-linecap="round" class="pf-flacker"/></svg>
+  <div><b data-i18n="pf.m.titel">Strassenlampe defekt</b><span data-i18n="pf.m.kat">Kategorie: Beleuchtung</span><span class="pf-ort" data-i18n="pf.m.ort">Standort auf der Karte gesetzt</span></div>
+</div>
+<ol class="pf-status">
+  <li style="--i:0"><span class="pf-punkt"></span><span data-i18n="pf.m.s1">Eingegangen</span></li>
+  <li style="--i:1"><span class="pf-punkt"></span><span data-i18n="pf.m.s2">In Bearbeitung</span></li>
+  <li style="--i:2"><span class="pf-punkt"></span><span data-i18n="pf.m.s3">Erledigt</span></li>
+</ol>
+  </div>
+</div>
+  </article>
+  <article class="pf-item r">
+    <div class="pf-text"><span class="pf-nr" aria-hidden="true">04</span><h3 data-i18n="pf.b.h">Bürgerbudget</h3><p data-i18n="pf.b.p">Die Bevölkerung verteilt einen festen Betrag auf Projekte. Das Budget darf dabei nicht überschritten werden.</p></div>
+<div class="geraet pf-geraet" role="img" aria-label="Beispielansicht: Bürgerbudget mit vier Projekten, drei davon ausgewählt, 39 000 von 50 000 Franken verteilt">
+  <div class="geraet-leiste"><i></i><i></i><i></i><span class="geraet-titel" data-i18n="pf.b.titel">Partizipatives Budget</span><span class="beispiel" data-i18n="g.beispiel">Beispiel</span></div>
+  <div class="geraet-inhalt">
+<div class="pf-budget-kopf"><span data-i18n="pf.b.verfuegbar">Verfügbar</span><b>CHF 50 000</b></div>
+<ul class="pf-projekte">
+  <li class="gewaehlt" style="--i:0"><span class="pf-box"></span><span data-i18n="pf.b.p1">Trinkbrunnen beim Schulhaus</span><b>12 000</b></li>
+  <li class="gewaehlt" style="--i:1"><span class="pf-box"></span><span data-i18n="pf.b.p2">Velo-Abstellplätze</span><b>18 000</b></li>
+  <li class="gewaehlt" style="--i:2"><span class="pf-box"></span><span data-i18n="pf.b.p3">Sitzbänke am Weiher</span><b>9 000</b></li>
+  <li><span class="pf-box"></span><span data-i18n="pf.b.p4">Bühne für das Dorffest</span><b>25 000</b></li>
+</ul>
+<div class="pf-meter"><i></i></div>
+<p class="pf-fuss"><span data-i18n="pf.b.fuss">Ausgewählt: CHF 39 000 von 50 000</span></p>
+  </div>
+</div>
+  </article>
+  </div>
+  <div class="mitte-knopf r"><a href="https://demo.meyssens.ch" target="_blank" rel="noopener" class="btn-s"><span data-i18n="pf.demo">Ganze Demo-Plattform ansehen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="sr-only"> (öffnet in neuem Fenster)</span></a></div>
 </section>
 
 <section id="funktionen" class="flaeche" style="overflow:hidden">
@@ -346,75 +462,110 @@
   </div>
 </section>
 
-<section id="ablauf">
+<section id="ablauf" class="dunkel">
   <div class="kopf-mitte r">
-    <span class="s-label" data-i18n="g.ablauf.label">Ablauf und Preis</span>
-    <h2 data-i18n="g.ablauf.titel">In drei Schritten zur eigenen Plattform</h2>
-    <p class="s-lead" data-i18n="g.ablauf.lead">Sie entscheiden erst, wenn Sie die Plattform im Einsatz gesehen haben.</p>
+    <span class="s-label" data-i18n="ablauf.label">Ablauf</span>
+    <h2 data-i18n="ablauf.title3">In 3 Schritten live</h2>
+    <p class="s-lead" data-i18n="ablauf.lead">Von der ersten Kontaktaufnahme bis zum Launch — schnell, unkompliziert, persönlich begleitet.</p>
   </div>
-  <ol class="sg-schritte">
-    <li class="sg-schritt r" id="schritt-gespraech">
-      <div class="sg-mock" aria-hidden="true">
-        <div class="sg-mock-zeile"><span class="sg-punkt">1</span><b data-i18n="g.s1.kurz">Gespräch</b><span class="sg-tag" data-i18n="g.s1.tag">kostenlos</span></div>
-        <div class="sg-blase" data-i18n="g.s1.blase1">Wir möchten Ideen für den Dorfplatz sammeln.</div>
-        <div class="sg-blase sg-blase-ich" data-i18n="g.s1.blase2">Gut, dafür richten wir eine Karte mit Abstimmung ein.</div>
+  <div class="scrolly" data-scrolly style="--n:3">
+    <div class="schritt aktiv">
+      <div class="schritt-text">
+        <span class="schritt-nr">01 / 03</span>
+        <h3 data-i18n="ablauf3.s1.h">Gespräch und Demo</h3>
+        <p data-i18n="ablauf3.s1.p">Wir klären die Bedürfnisse Ihrer Gemeinde und zeigen Ihnen die Plattform live.</p>
+        <span class="step-tag" data-i18n="ablauf.s1.tag">Kostenlos</span>
       </div>
-      <h3 data-i18n="g.s1.titel">Ein Gespräch</h3>
-      <p data-i18n="g.s1.text">Sie schildern Ihr Vorhaben am Telefon oder per E-Mail. Wir zeigen die Demo und klären, was nötig ist.</p>
-    </li>
-    <li class="sg-schritt r" id="schritt-pilot">
-      <div class="sg-mock" aria-hidden="true">
-        <div class="sg-mock-zeile"><span class="sg-punkt">2</span><b data-i18n="g.s2.kurz">Pilot</b><span class="sg-tag">0 €</span></div>
-        <div class="sg-monate"><span data-i18n="g.s2.m1">Monat 1</span><span data-i18n="g.s2.m2">Monat 2</span><span data-i18n="g.s2.m3">Monat 3</span></div>
-        <div class="sg-leiste"><i></i></div>
-        <p class="sg-klein" data-i18n="g.s2.klein">Einrichtung und Begleitung inklusive</p>
-      </div>
-      <h3 data-i18n="g.s2.titel">Pilot: 3 Monate kostenlos und unverbindlich</h3>
-      <p data-i18n="g.s2.text">Wir richten die Plattform ein und begleiten Ihr erstes Verfahren persönlich. Jederzeit kündbar.</p>
-    </li>
-    <li class="sg-schritt r" id="preis">
-      <div class="sg-mock" aria-hidden="true">
-        <div class="sg-mock-zeile"><span class="sg-punkt">3</span><b data-i18n="g.s3.kurz">Weiterführen</b><span class="sg-tag" data-i18n="g.s3.tag">Festpreis</span></div>
-        <div class="sg-betrag"><b>4.900 €</b><span data-i18n="g.s3.jahr">pro Jahr</span></div>
-        <p class="sg-klein" data-i18n="g.s3.klein">Bis 5.000 Einwohner. Oder beenden, ohne Kosten</p>
-      </div>
-      <h3 data-i18n="g.s3.titel">Danach 4.900 € pro Jahr als Festpreis</h3>
-      <p data-i18n="g.s3.text">Für Gemeinden bis 5.000 Einwohner, ohne Aufbaukosten, nicht mehrwertsteuerpflichtig. Oder ohne Kosten beenden.</p>
-    </li>
-  </ol>
-  <ul class="g-preis-info r">
-    <li><b data-i18n="g.p1.titel">Schweizer Gemeinden</b><span data-i18n="g.p1.text">4'900 CHF pro Jahr, bis 5'000 Einwohner</span></li>
-    <li><b data-i18n="g.p2.titel">Grössere Gemeinden</b><span data-i18n="g.p2.text">Angebot auf Anfrage</span></li>
-    <li><b data-i18n="g.p3.titel">Inbegriffen</b><span data-i18n="g.p3.text">Einrichtung, Hosting in Zürich, Updates, Backups, persönlicher Support</span></li>
+      <div class="schritt-bild" style="--z:1">
+<!-- auto:ablauf-1:start -->
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel"><span data-i18n="g.ablauf1.titel">Gesprächsnotiz</span></span><span class="beispiel"><span data-i18n="g.beispielansicht">Beispielansicht</span></span></div>
+  <div class="geraet-inhalt">
+<div class="mock">
+  <p class="mock-titel" data-i18n="g.a1.kopf">Erstgespräch</p>
+  <ul class="mock-liste mock-check">
+    <li><b data-i18n="g.a1.p1">Bedürfnisse der Gemeinde</b><span class="mock-ok" aria-hidden="true">✓</span></li>
+    <li><b data-i18n="g.a1.p2">Demo live ansehen</b><span class="mock-ok" aria-hidden="true">✓</span></li>
+    <li><b data-i18n="g.a1.p3">Nächste Schritte festlegen</b><span class="mock-offen" aria-hidden="true"></span></li>
   </ul>
-  <div class="mitte-knopf r"><a href="#anfrage" class="btn-p"><span data-i18n="pilot.cta">Pilot anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+  <p class="mock-klein" data-i18n="g.a1.fuss">Kostenlos und unverbindlich</p>
+</div>
+  </div>
+</figure>
+<!-- auto:ablauf-1:ende -->
+      </div>
+    </div>
+    <div class="schritt">
+      <div class="schritt-text">
+        <span class="schritt-nr">02 / 03</span>
+        <h3 data-i18n="ablauf3.s2.h">Einrichtung und Schulung</h3>
+        <p data-i18n="ablauf3.s2.p">Wir richten die Plattform mit Ihrem Logo, Ihren Themen und einem ersten Projekt ein und schulen Ihr Team.</p>
+        <span class="step-tag" data-i18n="ablauf.s2.tag">Wenige Wochen</span>
+      </div>
+      <div class="schritt-bild" style="--z:2">
+<!-- auto:ablauf-2:start -->
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel"><span data-i18n="g.ablauf2.titel">Einrichtung</span></span><span class="beispiel"><span data-i18n="g.beispielansicht">Beispielansicht</span></span></div>
+  <div class="geraet-inhalt">
+<div class="mock">
+  <div class="mock-gemeinde"><span class="mock-wappen" aria-hidden="true"></span><b data-i18n="g.a2.name">Beispielgemeinde</b></div>
+  <p class="mock-titel" data-i18n="g.a2.themen">Themen</p>
+  <div class="mock-chips"><span data-i18n="g.a2.t1">Mobilität</span><span data-i18n="g.a2.t2">Wohnen</span><span data-i18n="g.a2.t3">Freiraum</span></div>
+  <p class="mock-titel" data-i18n="g.a2.inhalte">Inhalte</p>
+  <i class="mock-zeile"></i><i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
+  <p class="mock-klein" data-i18n="g.a2.fuss">Logo, Themen und Inhalte Ihrer Gemeinde</p>
+</div>
+  </div>
+</figure>
+<!-- auto:ablauf-2:ende -->
+      </div>
+    </div>
+    <div class="schritt">
+      <div class="schritt-text">
+        <span class="schritt-nr">03 / 03</span>
+        <h3 data-i18n="ablauf3.s3.h">Start und Pilot</h3>
+        <p data-i18n="ablauf3.s3.p">Die Plattform geht online. Wir begleiten das erste Verfahren drei Monate persönlich und übernehmen Hosting, Updates und Support.</p>
+        <span class="step-tag" data-i18n="ablauf3.s3.tag">3 Monate kostenlos</span>
+      </div>
+      <div class="schritt-bild" style="--z:3">
+<!-- auto:ablauf-3:start -->
+<figure class="geraet">
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel"><span data-i18n="g.ablauf3.titel">Startseite der Plattform</span></span><span class="beispiel"><span data-i18n="g.beispielansicht">Beispielansicht</span></span></div>
+  <div class="geraet-inhalt">
+<div class="mock">
+  <div class="mock-banner"><p class="mock-h" data-i18n="g.demo.titel">Mitwirken in Beispielgemeinde</p><i class="mock-zeile hell"></i></div>
+  <ul class="mock-liste">
+    <li><b data-i18n="g.a3.p1">Neugestaltung Dorfplatz</b><span class="mock-tag" data-i18n="g.a3.offen">Offen</span></li>
+    <li><b data-i18n="g.a3.p2">Partizipatives Budget</b><span class="mock-tag" data-i18n="g.a3.bald">Demnächst</span></li>
+  </ul>
+  <p class="mock-klein" data-i18n="g.a3.fuss">Plattform freigeschaltet</p>
+</div>
+  </div>
+</figure>
+<!-- auto:ablauf-3:ende -->
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="vertrauen" class="sg-vertrauen flaeche">
-  <div class="sg-zwei">
-    <div class="sg-text r">
-      <span class="s-label" data-i18n="g.v.label">Datenschutz und Unabhängigkeit</span>
-      <h2 data-i18n="g.v.titel">Ihre Daten bleiben geschützt, Sie bleiben unabhängig.</h2>
-      <ul class="sg-punkte">
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><h3 data-i18n="g.v1.titel">Datenschutz nach DSGVO-Anforderungen</h3><p data-i18n="g.v1.text">Auftragsverarbeitungsvertrag auf Wunsch. Die EU erkennt den Schweizer Datenschutz als gleichwertig an.</p></div></li>
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/></svg><div><h3 data-i18n="g.v2.titel">Hosting in der Schweiz</h3><p data-i18n="g.v2.text">Die Plattform läuft auf Servern in einem Rechenzentrum in Zürich.</p></div></li>
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><div><h3 data-i18n="g.v3.titel">Open Source auf Decidim</h3><p data-i18n="g.v3.text">Der Quellcode ist offen. Decidim stammt aus Barcelona und wird von Städten weltweit eingesetzt.</p></div></li>
-        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.6-1.7"/></svg><div><h3 data-i18n="g.v4.titel">Keine Bindung</h3><p data-i18n="g.v4.text">Sie können den Pilot jederzeit beenden. Ihre Daten lassen sich jederzeit exportieren.</p></div></li>
-      </ul>
+<section id="pilot">
+  <div class="pilot-raster">
+    <div class="r">
+      <span class="s-label" data-i18n="pilot.label">Pilot</span>
+      <h2 data-i18n="pilot.title">Unverbindlicher Pilot für Ihre Gemeinde</h2>
+      <p class="s-lead" data-i18n="pilot.lead">Wir richten die Plattform kostenlos ein und begleiten das erste Verfahren drei Monate persönlich, ohne Vertrag und ohne Verpflichtung.</p>
+      <p class="pilot-danach" data-i18n="pilot.after">Danach kostet die Plattform für Gemeinden bis 5.000 Einwohner 4.900 € pro Jahr, als Festpreis ohne Aufbaukosten, nicht mehrwertsteuerpflichtig. Schweizer Gemeinden: 4'900 CHF pro Jahr, bis 5'000 Einwohner. Für grössere Gemeinden erstellen wir ein Angebot auf Anfrage.</p>
     </div>
-    <figure class="sg-karte-wrap r" aria-hidden="true">
-      <div class="sg-datenblatt">
-        <p class="held-titel" data-i18n="g.d.titel">Ihre Plattform · Übersicht</p>
-        <dl>
-          <div><dt data-i18n="g.d1.dt">Standort der Daten</dt><dd><span class="sg-ok"></span><span data-i18n="g.d1.dd">Zürich, Schweiz</span></dd></div>
-          <div><dt data-i18n="g.d2.dt">Datenschutz</dt><dd><span class="sg-ok"></span><span data-i18n="g.d2.dd">nach DSGVO-Anforderungen</span></dd></div>
-          <div><dt data-i18n="g.d3.dt">Auftragsverarbeitungsvertrag</dt><dd><span class="sg-ok"></span><span data-i18n="g.d3.dd">auf Wunsch</span></dd></div>
-          <div><dt data-i18n="g.d4.dt">Software</dt><dd><span class="sg-ok"></span><span data-i18n="g.d4.dd">Decidim, Open Source</span></dd></div>
-          <div><dt data-i18n="g.d5.dt">Datenexport</dt><dd><span class="sg-ok"></span><span data-i18n="g.d5.dd">jederzeit möglich</span></dd></div>
-          <div><dt data-i18n="g.d6.dt">Bindung</dt><dd><span class="sg-ok"></span><span data-i18n="g.d6.dd">keine</span></dd></div>
-        </dl>
-      </div>
-    </figure>
+    <div class="pilot-karte r">
+      <p class="pk-gross"><span class="pk-zahl">3</span><span data-i18n-html="pilot.k.gross">Monate<br>kostenlos</span></p>
+      <p class="pk-zusatz" data-i18n="pilot.k.zusatz">Jederzeit kündbar</p>
+      <ul class="pk-liste">
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="currentColor" opacity=".15"/><path d="M5.5 9.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b data-i18n="pilot.f1.h">Kostenlose Einrichtung</b> <span data-i18n="pilot.f1.p">Wir richten die Plattform für Ihre Gemeinde kostenlos ein.</span></span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="currentColor" opacity=".15"/><path d="M5.5 9.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b data-i18n="pilot.f2.h">Drei Monate persönliche Begleitung</b> <span data-i18n="pilot.f2.p">Wir begleiten Ihr erstes Verfahren drei Monate persönlich.</span></span></li>
+        <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="currentColor" opacity=".15"/><path d="M5.5 9.2l2.3 2.3 4.7-4.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b data-i18n="pilot.f3.h">Ohne Vertrag, ohne Verpflichtung</b> <span data-i18n="pilot.f3.p">Der Pilot ist unverbindlich. Sie entscheiden danach, ob Sie weitermachen.</span></span></li>
+      </ul>
+      <a href="#anfrage" class="btn-p pk-knopf"><span data-i18n="pilot.cta">Pilot anfragen</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </div>
 </section>
 
@@ -446,6 +597,13 @@
   </div>
 </section>
 
+<section id="referenzen" class="flaeche" style="padding-top:3.5rem;padding-bottom:3.5rem">
+  <div class="r" style="text-align:center">
+    <span class="s-label" style="justify-content:center" data-i18n="ref.label">Technologie</span>
+    <p style="font-size:1.05rem;color:var(--ink2);margin:.75rem auto 0;max-width:40rem" data-i18n="ref.lead">Meyssens basiert auf Decidim, einer Open-Source-Plattform, die Städte weltweit einsetzen.</p>
+  </div>
+</section>
+
 <section id="faq">
   <div class="s-label r" data-i18n="faq.label">FAQ</div>
   <h2 class="r d1" data-i18n="faq.title">Häufige Fragen</h2>
@@ -457,11 +615,58 @@
     <div class="faq-item r d3"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q3">Was ist Decidim und warum setzt Meyssens darauf?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a3">Meyssens basiert auf Decidim, einer Open-Source-Plattform, die Städte weltweit einsetzen. Der Quellcode ist offen, es gibt keine Bindung an einen Hersteller, und Ihre Daten lassen sich jederzeit exportieren.</p></div></div>
     <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q4">Wie lange dauert die Einrichtung?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a4">Der Start erfolgt in der Regel innerhalb weniger Wochen. Nach einem Beratungsgespräch richten wir die Plattform mit Ihrem Logo, Ihren Farben und Inhalten ein. Anschliessend schulen wir Ihr Team und begleiten Sie beim offiziellen Start.</p></div></div>
     <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q5">Welche Sprachen werden unterstützt?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a5">Die Plattform unterstützt Deutsch, Französisch und Italienisch. Mehrsprachige Gemeinden können die Plattform vollständig in mehreren Sprachen betreiben.</p></div></div>
-    <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q6">Wie sicher sind die Daten unserer Einwohnerinnen und Einwohner?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a6">Das Hosting erfolgt ausschliesslich in der Schweiz. Datenschutz nach DSGVO-Anforderungen, Auftragsverarbeitungsvertrag auf Wunsch. Die Plattform entspricht dem Schweizer Datenschutzgesetz (DSG). Daten werden nie an Dritte weitergegeben oder für Werbezwecke genutzt.</p></div></div>
+    <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q6">Wie sicher sind die Daten unserer Einwohnerinnen und Einwohner?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a6">Das Hosting erfolgt ausschliesslich in der Schweiz, in einem Rechenzentrum in Zürich. Datenschutz nach DSGVO-Anforderungen, Auftragsverarbeitungsvertrag auf Wunsch. Die Plattform entspricht dem Schweizer Datenschutzgesetz (DSG). Daten werden nie an Dritte weitergegeben oder für Werbezwecke genutzt.</p></div></div>
     <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q7">Was passiert mit unseren Daten bei einer Kündigung?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a7">Sie erhalten alle Ihre Daten in einem standardisierten Format (Export). Da Decidim Open Source ist, können Sie die Plattform jederzeit selbst weiterbetreiben oder zu einem anderen Anbieter wechseln. Es gibt keinen Lock-in.</p></div></div>
     <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q8">Für wie viele Einwohnerinnen und Einwohner ist die Plattform geeignet?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a8">Meyssens ist für Gemeinden jeder Grösse geeignet – von kleinen Gemeinden mit unter 5'000 Einwohnern bis hin zu Städten und Kantonen.</p></div></div>
     <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q9">Arbeiten Sie auch mit Städten und Gemeinden in Deutschland?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a9">Ja. Meyssens wurde in der Schweiz entwickelt und steht Städten und Gemeinden in Deutschland offen, aktuell besonders in Baden-Württemberg. Die Abrechnung erfolgt in Euro.</p></div></div>
     <div class="faq-item r"><button class="faq-q" aria-expanded="false"><span data-i18n="faq.q10">Gilt für Gemeinden in Deutschland die DSGVO, und ist ein Hosting in der Schweiz zulässig?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="var(--blue)" stroke-width="2" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></button><div class="faq-a" role="region"><p class="faq-a-inner" data-i18n="faq.a10">Datenschutz nach DSGVO-Anforderungen, Auftragsverarbeitungsvertrag auf Wunsch. Die EU-Kommission hat der Schweiz ein angemessenes Datenschutzniveau bestätigt, sodass Daten ohne zusätzliche Garantien in die Schweiz übermittelt werden dürfen. Details klären wir gerne im Gespräch.</p></div></div>
+  </div>
+</section>
+
+<section id="ueber-uns">
+  <div class="about-grid">
+    <div class="r">
+      <span class="s-label" data-i18n="about.label">Über uns</span>
+      <h2 data-i18n="about.title">Ihr Schweizer Partner für digitale Partizipation</h2>
+      <div style="background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:1.5rem;margin-bottom:1.5rem;">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:1rem;">
+          <div style="width:52px;height:52px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:.75rem;font-weight:800;color:white;flex-shrink:0;">LN</div>
+          <div>
+            <p style="font-size:.95rem;font-weight:500;color:var(--ink);margin:0;">Lionel Nickelsen</p>
+            <p style="font-size:.8rem;color:var(--ink3);margin:0;" data-i18n="about.role">Gründer, Meyssens</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid var(--line);padding-top:1rem;">
+          <p style="font-size:.875rem;color:var(--ink3);line-height:1.8;margin:0;" data-i18n="about.card">Meyssens wurde mit einer klaren Mission gegründet: Städten und Gemeinden den Zugang zu moderner, digitaler Bürgerbeteiligung zu ermöglichen — ohne grossen technischen Aufwand und zu einem Festpreis von 4.900 € pro Jahr für Gemeinden bis 5.000 Einwohner, ohne Aufbaukosten.</p>
+        </div>
+      </div>
+      <p style="color:var(--ink3);line-height:1.8;margin-bottom:1.25rem;font-size:.975rem" data-i18n-html="about.body">Wir setzen auf <a href="https://decidim.org" target="_blank" style="color:var(--blue);text-decoration:none;font-weight:500">Decidim</a>, eine Open-Source-Plattform, die Städte weltweit einsetzen. Als Schweizer Anbieter kennen wir die Besonderheiten kommunaler Verwaltungen im deutschsprachigen Raum.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:1.5rem;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1.5C5.51 1.5 3.5 3.51 3.5 6c0 3.75 4.5 8.5 4.5 8.5S12.5 9.75 12.5 6c0-2.49-2.01-4.5-4.5-4.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
+          <span style="font-size:.85rem;color:var(--ink3);">Lausen, Basel-Landschaft, Schweiz</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 5.5l7 4.5 7-4.5"/></svg>
+          <span style="font-size:.85rem;color:var(--blue);">lionel@meyssens.ch</span>
+        </div>
+      </div>
+    </div>
+    <div class="r d1">
+      <div class="acard">
+        <div class="acard-top">
+          <div><div class="astat-label" data-i18n="about.stat1.label">Einrichtung</div><div class="astat-val" data-i18n="about.stat1.val">Wenige Wochen</div><div class="astat-sub" data-i18n="about.stat1.sub">bis zum Start</div></div>
+          <div><div class="astat-label" data-i18n="about.stat2.label">Hosting</div><div class="astat-val">100%</div><div class="astat-sub" data-i18n="about.stat2.sub">Schweiz</div></div>
+        </div>
+        <div class="acard-body">
+          <div class="tech-row"><span class="tech-name"><a href="https://decidim.org" target="_blank" style="color:var(--ink);text-decoration:none">Decidim (Open-Source)</a></span><span class="tech-pill" data-i18n="about.tech.decidim.pill">Basis</span></div>
+          <div class="tech-row"><span class="tech-name" data-i18n="about.tech.dsgvo">Datenschutz nach DSGVO-Anforderungen, Auftragsverarbeitungsvertrag auf Wunsch</span><span class="tech-pill" data-i18n="about.tech.dsgvo.pill">Datenschutz</span></div>
+          <div class="tech-row"><span class="tech-name"><a href="https://digital.swiss/de/" target="_blank" style="color:var(--ink);text-decoration:none">Strategie Digitale CH 2026</a></span><span class="tech-pill" data-i18n="about.tech.strategie.pill">Konform</span></div>
+          <div class="tech-row"><span class="tech-name" data-i18n="about.tech.hosting">Hosting in der Schweiz (Rechenzentrum Zürich)</span><span class="tech-pill" data-i18n="about.tech.hosting.pill">Infrastruktur</span></div>
+          <div class="tech-row"><span class="tech-name" data-i18n="about.tech.langs">Mehrsprachig DE / FR / IT</span><span class="tech-pill" data-i18n="about.tech.langs.pill">Sprachen</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -473,11 +678,11 @@
       <p style="color:var(--ink3);margin-bottom:3rem;line-height:1.8;font-size:.975rem" data-i18n="contact.lead">Schreiben Sie uns oder vereinbaren Sie direkt eine kostenlose Demo-Präsentation für Ihre Gemeinde.</p>
       <div class="cinfo-item">
         <div class="cicon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></div>
-        <div><div class="clabel" data-i18n="g.k.telefon">Telefon</div><div class="cval kontakt-telefon"><a href="tel:+41788643763">+41 78 864 37 63</a></div></div>
+        <div><div class="clabel" data-i18n="g.k.telefon">Telefon</div><div class="cval"><a href="tel:+41788643763" style="color:var(--blue);text-decoration:none;font-weight:500">+41 78 864 37 63</a></div></div>
       </div>
       <div class="cinfo-item">
-        <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="3.5" width="14" height="10" rx="2"/><path d="M1.5 6l7 4.5 7-4.5"/></svg></div>
-        <div><div class="clabel" data-i18n="contact.email.label">E-Mail</div><div class="cval kontakt-telefon"><a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></div></div>
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="3.5" width="14" height="10" rx="2"/><path d="M1.5 6l7 4.5 7-4.5"/></svg></div>
+        <div><div class="clabel" data-i18n="contact.email.label">E-Mail</div><div class="cval"><span style="color:var(--blue);font-weight:500">lionel@meyssens.ch</span></div></div>
       </div>
       <div class="cinfo-item">
         <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="7"/><path d="M8.5 5v4l2.5 2"/></svg></div>
@@ -514,50 +719,45 @@
 
 </main>
 
-<!-- auto:fuss:start -->
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – zur Startseite"></a>
-      <p data-i18n="fuss.claim">Digitale Werkzeuge für Gemeinden und Unternehmen, persönlich begleitet.</p>
-      <p class="fuss-kontakt"><a href="tel:+41788643763">+41 78 864 37 63</a><br><a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></p>
+      <a href="/" class="flogo"><img src="/logo-web.png" width="701" height="96" alt="Bürgerbeteiligung für Städte und Gemeinden – Meyssens"></a>
+      <p data-i18n="hero.lead">Digitale Bürgerbeteiligung für Städte und Gemeinden — persönlich begleitet, Festpreis von 4.900 € pro Jahr für Gemeinden bis 5.000 Einwohner, ohne Aufbaukosten, Start in der Regel innerhalb weniger Wochen.</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:.85rem;margin-top:.5rem">lionel@meyssens.ch</p>
     </div>
-    <div class="footer-col fuss-gemeinden">
-      <h3 data-i18n="fuss.gemeinden">Gemeinden</h3>
-      <a href="/gemeinden/" data-i18n="fuss.g.start">Bürgerbeteiligung</a>
-      <a href="/gemeinden/#ablauf" data-i18n="fuss.g.ablauf">Ablauf und Preis</a>
-      <a href="/gemeinden/#vertrauen" data-i18n="fuss.g.datenschutz">Datenschutz und Hosting</a>
-      <a href="/gemeinden/#faq" data-i18n="fuss.g.fragen">Häufige Fragen</a>
-      <a href="https://demo.meyssens.ch" target="_blank" rel="noopener" data-i18n="fuss.g.demo">Live-Demo ansehen</a>
+    <div class="footer-col">
+      <h3 data-i18n="footer.platform">Plattform</h3>
+      <a href="#funktionen" data-i18n="nav.funktionen">Funktionen</a>
+      <a href="#ablauf" data-i18n="nav.ablauf">Ablauf</a>
+      <a href="#pilot" data-i18n="nav.pilot">Pilot</a>
+      <a href="#ueber-uns" data-i18n="nav.ueberuns">Über uns</a>
+      <a href="#kontakt" data-i18n="footer.kontakt">Kontakt</a>
     </div>
-    <div class="footer-col fuss-unternehmen">
-      <h3 data-i18n="fuss.unternehmen">Unternehmen</h3>
-      <a href="/unternehmen/" data-i18n="fuss.u.start">Weniger Büroarbeit</a>
-      <a href="/unternehmen/#ablaeufe" data-i18n="fuss.u.auto">Automatisierungen</a>
-      <a href="/werkzeuge/qr-rechnung/" data-i18n="fuss.u.qr">QR-Rechnung erstellen</a>
-      <a href="/unternehmen/#apps" data-i18n="fuss.u.apps">Apps nach Mass</a>
-      <a href="/branchen/" data-i18n="fuss.u.branchen">Branchen</a>
-      <a href="/produkte/" data-i18n="fuss.u.produkte">Produkte</a>
-      <a href="/ratgeber/" data-i18n="fuss.u.ratgeber">Ratgeber</a>
-      <a href="/unternehmen/#vereine" data-i18n="fuss.u.vereine">Auch für Vereine</a>
+    <div class="footer-col">
+      <h3 data-i18n="footer.links">Links</h3>
+      <a href="https://demo.meyssens.ch" target="_blank" data-i18n="footer.demo">Live-Demo ansehen →</a>
+      <a href="https://decidim.org" target="_blank">Decidim Open-Source</a>
+      <a href="https://digital.swiss/de/" target="_blank" data-i18n="footer.strategie">Strategie Digitale CH</a>
+      <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'" data-i18n="footer.impressum">Impressum</a>
+      <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" data-i18n="footer.datenschutz">Datenschutz</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="fcopy">© 2026 Meyssens · Lausen, Basel-Landschaft · <span data-i18n="fuss.schweiz">Schweiz</span></p>
+    <a href="/" class="flogo"><img src="/logo-web.png" width="701" height="96" alt="Bürgerbeteiligung für Städte und Gemeinden – Meyssens"></a>
+    <p class="fcopy" data-i18n="footer.copy">© 2026 Meyssens · Lausen, Basel-Landschaft · Schweiz</p>
     <div class="footer-legal">
-      <a href="/ueber-uns/" data-i18n="nav.ueberuns">Über uns</a>
       <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'" data-i18n="footer.impressum">Impressum</a>
       <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'" data-i18n="footer.datenschutz">Datenschutz</a>
     </div>
   </div>
 </footer>
-<!-- auto:fuss:ende -->
 
 <script>
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',scrollY>40)
-  const sections=['funktionen','ablauf','vertrauen','faq','kontakt']
-  const links=document.querySelectorAll('.kopf-menue a')
+  const sections=['funktionen','ablauf','preise','faq','ueber-uns','kontakt']
+  const links=document.querySelectorAll('.nav-items a:not(.nav-btn)')
   let current=''
   sections.forEach(id=>{const el=document.getElementById(id);if(el&&scrollY>=el.offsetTop-100)current=id})
   links.forEach(a=>{a.classList.remove('active');if(a.getAttribute('href')==='#'+current)a.classList.add('active')})

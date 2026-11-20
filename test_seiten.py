@@ -31,7 +31,7 @@
 - Technik (alle Seiten ausser /gemeinden/): sichtbare Brotkrumen gleich BreadcrumbList, WebPage mit ImageObject,
   og:image und twitter:image auf vorhandene Datei, keine generischen Linktexte ohne Ziel, Bilder mit Massen und
   lazy loading ausser dem ersten Bild, "Das könnte Sie auch interessieren" mit 3 Links auf Branchen-, Baustein- und
-  Ratgeberseiten, Umschalter Gemeinden | Unternehmen im Kopf, Über uns im Fuss und im Kopfmenü mit Person im JSON-LD, Article mit datePublished und dateModified,
+  Ratgeberseiten, Über uns in Kopf und Fuss mit Person im JSON-LD, Article mit datePublished und dateModified,
   keine SearchAction ohne Suche, jede Seite von der Startseite in höchstens 3 Klicks erreichbar, keine verwaiste
   Seite, Sitemap mit lastmod (Prüfdatum, wo vorhanden)
 - /branchen/: Liste aller Branchen (Link, Symbol, Name, Kurztext aus den Daten), pro Branche eine Vorschau mit Nutzen,
@@ -537,13 +537,9 @@ for url, (text, parser) in sorted(seiten.items()):
             fehler.append("%s: Bild %d ohne loading=lazy" % (url, i + 1))
         if i == 0 and 'loading="lazy"' in b:
             fehler.append("%s: erstes Bild darf nicht lazy sein" % url)
-    # Über uns im Fuss jeder Seite und im Kopf, wo der Kopf ein Menü hat (Startseite und Über uns: nur Logo und Umschalter)
-    kopfteil = zwischen(text, "<body", "<main")
-    if ('class="kopf-menue"' in kopfteil and 'href="/ueber-uns/"' not in kopfteil) or \
-            ('href="/ueber-uns/"' not in text[text.index("<footer"):] if "<footer" in text else True):
-        fehler.append("%s: Über uns nicht in Kopf (Menü) und Fuss verlinkt" % url)
-    if 'class="bereich-wahl"' not in kopfteil or 'href="/gemeinden/"' not in kopfteil or 'href="/unternehmen/"' not in kopfteil:
-        fehler.append("%s: Umschalter Gemeinden | Unternehmen fehlt im Kopf" % url)
+    if 'href="/ueber-uns/"' not in zwischen(text, "<body", "<main") or \
+            'href="/ueber-uns/"' not in text[text.index("<footer"):] if "<footer" in text else True:
+        fehler.append("%s: Über uns nicht in Kopf und Fuss verlinkt" % url)
     if url not in lastmod or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod.get(url, "")):
         fehler.append("%s: lastmod fehlt in der Sitemap" % url)
 

@@ -8,7 +8,6 @@ Braucht Playwright mit Chromium (pip install playwright, playwright install chro
 Schreibt nach assets/beispiel/:
   demo-desktop.webp (1800 px), demo-desktop-960.webp   Startseite der Demo am Computer (1440 x 900, scharf mit 2x)
   demo-handy.webp (780 px)                             Karten-Umfrage auf der Demo-Startseite am Handy (390 x 844, 3x)
-  karlsruhe-karte.webp (1756 px), -1300, -900          Ausschnitt der Karte mit Pins (2x)
 
 Hinweise:
 - Das Cookie-Fenster der Demo wird per Skript geschlossen («Alle akzeptieren»), es erscheint nicht im Bild.
@@ -94,18 +93,6 @@ async def main():
         speichere(bild, "demo-desktop.webp", 1800, 74)
         speichere(bild, "demo-desktop-960.webp", 960, 78)
 
-        # 3. Karte mit Pins (doppelte Auflösung, ohne Zoom-Knöpfe, damit niemand auf ein Standbild klickt)
-        await s.set_viewport_size({"width": 920, "height": 900})
-        if await s.locator("#md-map").count():
-            await karte_bereit(s, "#md-map")
-            await s.add_style_tag(content=".leaflet-control-zoom{display:none!important}")
-            await s.wait_for_timeout(300)
-            bild = Image.open(BytesIO(await s.locator("#md-map").screenshot()))
-            speichere(bild, "karlsruhe-karte.webp", bild.width, 68)
-            speichere(bild, "karlsruhe-karte-1300.webp", 1300, 70)
-            speichere(bild, "karlsruhe-karte-900.webp", 900, 74)
-        else:
-            print("Hinweis: Karte #md-map nicht gefunden, karlsruhe-karte*.webp nicht erneuert")
         await k.close()
 
         # 2. Handy: Abschnitt Karten-Umfrage der Startseite, 390 x 844, dreifache Auflösung
