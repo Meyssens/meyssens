@@ -244,7 +244,8 @@ ARBEITSWEISE = (("Gespräch", "Sie zeigen uns einen Ablauf, wir sagen offen, was
                 ("Angebot", "Sie erhalten ein schriftliches Angebot für den vereinbarten Umfang."),
                 ("Umsetzung", "Wir richten den Ablauf ein und testen ihn gemeinsam mit Ihnen."),
                 ("Betrieb", "Wir betreuen den Ablauf weiter und passen ihn an, wenn sich bei Ihnen etwas ändert."))
-BRANCHEN_ZEILE = ("treuhaender", "elektro-handwerk", "bauunternehmen", "arztpraxen")
+BRANCHEN_ZEILE = ("treuhaender", "elektro-handwerk", "bauunternehmen", "arztpraxen", "immobilienverwaltungen",
+                  "hotels-gastronomie", "garagen", "transport-logistik", "detailhandel")
 GROSS_BESCHREIBUNG = ("Eine E-Mail der Beispiel Handels GmbH mit der Rechnung 2026-041 trifft ein. Der Beleg wird erkannt: Lieferant, "
                       "Datum, Mehrwertsteuer und Total CHF 432.40. Daraus entsteht die Buchung 4000 Materialaufwand an 2000 Kreditoren "
                       "als Entwurf. Gebucht wird erst, wenn Sie freigeben.")
@@ -287,16 +288,64 @@ QR_HINWEIS = ('  <p class="u-hinweis r">Gratis-Werkzeug: <a href="/werkzeuge/qr-
 
 def startseite_unternehmen(daten, schnipsel, branchen_namen):
     # Block "Für Unternehmen" der Startseite (zwischen auto:unternehmen)
-    links = " · ".join('<a href="/branchen/%s/">%s</a>' % (b, html.escape(branchen_namen[b])) for b in BRANCHEN_ZEILE)
+    links = "".join('<li><a href="/branchen/%s/">%s</a></li>' % (b, html.escape(branchen_namen[b])) for b in BRANCHEN_ZEILE)
     return "\n".join([
         auto_karten(daten, "/unternehmen/"),
         '  <div class="u-beispiel r">\n    <h3>Ein Beispiel: vom Beleg zur Freigabe</h3>\n    %s\n  </div>' % gross_beispiel(schnipsel),
         '  <div class="u-arbeit-wrap">\n    <h3 class="r">So arbeiten wir</h3>\n%s\n  </div>' % arbeitsweise(4),
         APPS_STREIFEN, QR_HINWEIS,
-        '  <div class="u-branchen r">\n    <p>Nach Branche: %s</p>\n    <div class="held-knoepfe">\n'
+        '  <div class="u-branchen r">\n    <p>Abläufe nach Branche:</p>\n    <ul class="u-branchen-liste">%s</ul>\n    <div class="held-knoepfe">\n'
         '      <a href="/unternehmen/#kontakt" class="btn-p">Gespräch vereinbaren %s</a>\n'
         '      <a href="tel:+41788643763" class="btn-s">+41 78 864 37 63</a>\n'
         '      <a href="mailto:lionel@meyssens.ch" class="btn-s">lionel@meyssens.ch</a>\n    </div>\n  </div>' % (links, PFEIL)])
+
+
+# Abschnitt "Abläufe, die für Ihre Branche zählen" (branchen_ablaeufe.json, Grundlage: ~/ms/unternehmen/recherche_branchen.md):
+# nur Abläufe mit belegtem Bedarf und mindestens mittlerer Machbarkeit; Beispieldaten erfunden und als Beispiel markiert
+BA_FELDER = ("titel", "schritte", "satz", "beispiel", "daten", "freigabe")
+
+
+def branchen_ablaeufe_html(slug, daten):
+    eintrag = daten.get(slug)
+    if not eintrag:
+        return ""
+    karten = []
+    for x in eintrag["ablaeufe"]:
+        fehlt = [f for f in BA_FELDER if not x.get(f)]
+        if fehlt or len(x["schritte"]) != 3:
+            raise SystemExit("branchen_ablaeufe.json %s: %s" % (slug, ", ".join(fehlt) or "genau 3 Schritte"))
+        eingang, arbeit, ergebnis = x["schritte"]
+        fakten = [("Daten aus", x["daten"]), ("Sie geben frei", x["freigabe"])]
+        if x.get("datenschutz"):
+            fakten.append(("Datenschutz", x["datenschutz"]))
+        karten.append(
+            '    <article class="auto-karte ba-karte r">\n      <h3>%s</h3>\n      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">\n'
+            '        <li><span class="af-ic">%s</span><span><i>Eingang</i>%s</span></li>\n'
+            '        <li><span class="af-ic">%s</span><span><i>Verarbeitung</i>%s</span></li>\n'
+            '        <li class="af-ergebnis"><span class="af-ic">%s</span><span><i>Ergebnis</i>%s</span></li>\n'
+            '      </ol>\n      <p>%s</p>\n      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> %s</p>\n'
+            '      <dl class="ba-fakten">\n%s\n      </dl>\n    </article>'
+            % (html.escape(x["titel"]), SYMBOL_EINGANG, html.escape(eingang), SYMBOL_ARBEIT, html.escape(arbeit),
+               SYMBOL_ERGEBNIS, html.escape(ergebnis), html.escape(x["satz"]), html.escape(x["beispiel"]),
+               "\n".join('        <div><dt>%s</dt><dd>%s</dd></div>' % (t, html.escape(w)) for t, w in fakten)))
+    quellen = "\n".join('      <li><a href="%s" rel="noopener">%s</a></li>' % (html.escape(q["url"]), html.escape(q["titel"]))
+                        for q in eintrag["quellen"])
+    if not all(q["url"].startswith("https://") for q in eintrag["quellen"]):
+        raise SystemExit("branchen_ablaeufe.json %s: Quellen nur mit https" % slug)
+    return ('<section id="branchen-ablaeufe">\n  <div class="kopf-mitte r">\n    <span class="s-label">Automatisierung</span>\n'
+            '    <h2>Abläufe, die für Ihre Branche zählen</h2>\n'
+            '    <p class="s-lead">Mehrstufige Abläufe, die Büroarbeit als Entwurf vorbereiten. Sie geben frei. '
+            'Alle Beispiele zeigen erfundene Daten.</p>\n  </div>\n  <div class="ba-karten">\n%s\n  </div>\n'
+            '  <details class="u-mehr r ba-quellen">\n    <summary>Worauf diese Auswahl beruht</summary>\n'
+            '    <p class="u-mehr-text">Öffentliche Quellen zu wiederkehrenden Abläufen in Ihrer Branche, geprüft am %s. '
+            'Ob eine Anbindung möglich ist, hängt von Ihren Programmen ab; wir prüfen das vor einer Zusage.</p>\n'
+            '    <ul>\n%s\n    </ul>\n  </details>\n</section>\n'
+            % ("\n".join(karten), datum_ch(eintrag["geprueft"]), quellen))
+
+
+def datum_ch(iso):
+    j, m, t = iso.split("-")
+    return "%s.%s.%s" % (t, m, j)
 
 
 def ablaeufe_ld(daten, url):
@@ -574,7 +623,9 @@ def aufwand(p):
 
 
 def ohne_automatisierung(text):
-    # Langtext-Wortzahl ohne den Abschnitt "Was sich automatisieren lässt" (wird getrennt gezählt)
+    # Langtext-Wortzahl ohne die Abschnitte "Was sich automatisieren lässt" und "Abläufe, die für Ihre Branche zählen"
+    # (werden getrennt gezählt bzw. sind Karten, kein Langtext)
+    text = re.sub(r'<section id="branchen-ablaeufe".*?</section>', " ", text, flags=re.S)
     return re.sub(r'<section id="automatisierung".*?</section>', " ", text, flags=re.S)
 
 
@@ -1114,6 +1165,9 @@ SYMBOLE = {
     "immobilienverwaltungen": '<path d="M4 20.5V8l8-4.5L20 8v12.5"/><path d="M2.5 20.5h19"/><path d="M8.5 10h1.5M14 10h1.5M8.5 13.5h1.5M14 13.5h1.5"/><path d="M10 20.5v-3.5h4v3.5"/>',
     "kindergaerten-schulen": '<path d="M3 5.5c3-1.2 6-1 9 1 3-2 6-2.2 9-1v13c-3-1.2-6-1-9 1-3-2-6-2.2-9-1z"/><path d="M12 6.5v13"/>',
     "vereine": '<circle cx="9" cy="8" r="3"/><path d="M3 19.5a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5 5.3"/>',
+    "garagen": '<path d="M3.5 15.5v-3l2-4.5h13l2 4.5v3z"/><path d="M3.5 15.5v2.5h3v-2.5M17.5 15.5v2.5h3v-2.5"/><circle cx="7.5" cy="13" r="1"/><circle cx="16.5" cy="13" r="1"/>',
+    "transport-logistik": '<path d="M2.5 6.5h11v10h-11z"/><path d="M13.5 9.5h4l3 3.5v3.5h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
+    "detailhandel": '<path d="M5 8h14l-1.2 12.5H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
     "hotels-gastronomie": '<path d="M3 18.5v-11"/><path d="M3 14h18v4.5"/><path d="M21 14v-1.5a3.5 3.5 0 0 0-3.5-3.5H11v5"/><circle cx="7" cy="11" r="2"/>',
 }
 
@@ -1457,6 +1511,7 @@ def main():
     artikel_branchen = [a for a in artikel if a["art"] == "branche"]
     ablaeufe = json.loads(lies("ablaeufe.json"))
     schnipsel_ablaeufe = lies("ablaeufe.html")
+    branchen_ablaeufe = json.loads(lies("branchen_ablaeufe.json"))
     if set(ablaeufe["branchen"]) != bslugs | {a["slug"] for a in artikel_branchen}:
         raise SystemExit("ablaeufe.json: Mini-Beispiel nicht für genau alle Branchen")
     if "ß" in json.dumps(ablaeufe, ensure_ascii=False) + schnipsel_ablaeufe:
@@ -1586,6 +1641,7 @@ def main():
             "verwandt": branchen_ratgeber(b, ratgeber) + branchen_quellen(b) + verwandt_abschnitt(verwandte(netz, info, burl)),
             "ablauf_kopf": ABLAUF_KOPF,
             "ablauf_beispiel": ablauf_beispiel(b["slug"], ablaeufe, nach_slug),
+            "branchen_ablaeufe": branchen_ablaeufe_html(b["slug"], branchen_ablaeufe),
             "titel": html.escape(b.get("seo_titel") or titel_branche(b)),
             "beschreibung": html.escape(b.get("seo_beschreibung") or b["beschreibung"]),
             "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),
@@ -1657,6 +1713,7 @@ def main():
             "verwandt": verwandt_abschnitt(verwandte(netz, info, pfad)),
             "ablauf_kopf": ABLAUF_KOPF if a["art"] == "branche" else "",
             "ablauf_beispiel": ablauf_beispiel(a["slug"], ablaeufe, nach_slug) if a["art"] == "branche" else "",
+            "branchen_ablaeufe": branchen_ablaeufe_html(a["slug"], branchen_ablaeufe) if a["art"] == "branche" else "",
             "titel": html.escape(a["titel"]),
             "beschreibung": html.escape(a["beschreibung"]),
             "url": DOMAIN + pfad,

@@ -242,6 +242,39 @@
     {"label": "Automatisch", "titel": "Monatsübersicht", "zeilen": [["Abweichung", "markiert"]]},
     {"label": "Zur Freigabe", "titel": "Übersicht pro Person", "zeilen": [["Status", "bereit"]]}
    ]
+  },
+  "garagen": {
+   "titel": "Zusatzarbeit freigeben lassen",
+   "text": "Beim Service zeigt sich eine Zusatzarbeit über der vereinbarten Grenze. Eine Freigabeanfrage mit Foto und Betrag geht an den Kunden, die Antwort wird beim Auftrag gespeichert.",
+   "mensch": "Der Kunde stimmt zu, die Werkstatt führt die Arbeit aus",
+   "baustein": "",
+   "schritte": [
+    {"label": "Werkstatt", "titel": "Zusatzbefund", "zeilen": [["Befund", "Bremsscheiben vorne"], ["Betrag", "CHF 480"]]},
+    {"label": "Automatisch", "titel": "Freigabeanfrage", "zeilen": [["Grenze", "CHF 200"], ["An", "Kunde, per SMS"]]},
+    {"label": "Entwurf", "titel": "Auftrag erweitert", "zeilen": [["Zustimmung", "10.42 Uhr"]]}
+   ]
+  },
+  "transport-logistik": {
+   "titel": "Fehlenden Download melden",
+   "text": "Die Fristen für das Auslesen von Fahrerkarten und Fahrtschreibern werden überwacht. Fehlt ein Download, erhält die verantwortliche Person eine Nachricht.",
+   "mensch": "Die verantwortliche Person veranlasst das Auslesen",
+   "baustein": "",
+   "schritte": [
+    {"label": "Rohdaten", "titel": "Fahrerkarte", "zeilen": [["Fahrer", "04"], ["Letzter Download", "vor 9 Tagen"]]},
+    {"label": "Automatisch", "titel": "Fristprüfung", "zeilen": [["Vorgabe", "wöchentlich"], ["Status", "überfällig"]]},
+    {"label": "Entwurf", "titel": "Nachricht", "zeilen": [["An", "Disposition"]]}
+   ]
+  },
+  "detailhandel": {
+   "titel": "TWINT-Gutschrift zuordnen",
+   "text": "Die Bank schreibt eine Sammelgutschrift von TWINT gut. Sie wird den Tagesumsätzen zugeordnet, die Gebühren werden ausgewiesen, der Buchungsvorschlag liegt bereit.",
+   "mensch": "Sie prüfen den Vorschlag und übernehmen ihn in die Buchhaltung",
+   "baustein": "",
+   "schritte": [
+    {"label": "Bank", "titel": "Sammelgutschrift", "zeilen": [["TWINT", "CHF 2 296.10"]]},
+    {"label": "Automatisch", "titel": "Zuordnung", "zeilen": [["Umsätze", "CHF 2 314.50"], ["Gebühren", "CHF 18.40"]]},
+    {"label": "Entwurf", "titel": "Buchungsvorschlag", "zeilen": [["Status", "zur Prüfung"]]}
+   ]
   }
  }
 }

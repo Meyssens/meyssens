@@ -1593,5 +1593,196 @@
     "seo_beschreibung": "Gästefragen auf der Website beantworten, Bankettanfragen per E-Mail ordnen, Stammgäste informieren. Für Betriebe in der Schweiz. Jetzt anfragen.",
     "h1": "Hotel und Restaurant: Gästeanfragen digital beantworten",
     "schweiz": "Hotels und Restaurants in der Schweiz bearbeiten Gästedaten nach dem revidierten Datenschutzgesetz (nDSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "garagen",
+    "aktualisiert": "2026-11-20",
+    "name": "Garagen",
+    "fuer": "Garagen und Autowerkstätten",
+    "kurz": "Werkstattaufträge mit Freigabegrenzen, MFK-Termine und Reifenwechsel vorbereiten.",
+    "beschreibung": "Digitale Abläufe für Garagen: Zusatzarbeiten freigeben lassen, MFK-Termine koordinieren und den Reifenwechsel planen.",
+    "intro": "In der Garage hängt viel Büroarbeit am Werkstattauftrag: Zusatzarbeiten müssen je nach Betrag vom Kunden freigegeben werden, Kostenvoranschläge sind verbindlich, und bei Verzögerungen soll der Kunde rasch Bescheid erhalten. Dazu kommen MFK-Termine, die per Brief beim Halter eintreffen, und der Saisonwechsel im Reifenhotel. Eine Studie im Auftrag des AGVS beschreibt viele dieser Abläufe als manuell und papierbasiert.",
+    "probleme": [
+      {
+        "titel": "Zusatzarbeiten brauchen eine Freigabe",
+        "text": "Im Musterauftrag von AGVS und TCS wird festgehalten, bis zu welchem Betrag Zusatzarbeiten ohne Rückfrage erlaubt sind. Darüber braucht es das Einverständnis des Kunden, und das muss jemand einholen, während das Auto auf der Hebebühne steht."
+      },
+      {
+        "titel": "MFK-Termine kommen beim Halter an",
+        "text": "Das Strassenverkehrsamt schickt das Aufgebot per Brief an den Halter. Will die Garage das Fahrzeug vorbereiten und vorführen, muss sie den Termin erst erfahren und dann Vorbereitung und Vorführung koordinieren."
+      },
+      {
+        "titel": "Saisonwechsel im Reifenhotel",
+        "text": "Vor jeder Saison wollen viele Kunden gleichzeitig wechseln. Erinnerungen, Termine und die Suche nach den eingelagerten Rädern kosten in dieser Zeit viel Telefon und Laufwege."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Freigabe per SMS",
+        "text": "Beim Service zeigt sich, dass die Bremsscheiben ersetzt werden sollten. Der Betrag liegt über der vereinbarten Grenze. Der Kunde erhält eine Nachricht mit Foto und Betrag und stimmt zu. Die Zustimmung ist mit Uhrzeit beim Auftrag gespeichert."
+      },
+      {
+        "titel": "MFK-Aufgebot als Foto",
+        "text": "Eine Kundin schickt ein Foto ihres MFK-Aufgebots. Datum und Prüfstelle werden ausgelesen, ein Termin zur Vorbereitung wird vorgeschlagen. Den Vorführtermin bestätigt die Garage selbst im Portal des Kantons."
+      },
+      {
+        "titel": "Rüstliste für den Wechseltag",
+        "text": "Vor dem Saisonstart erhalten Kunden mit eingelagerten Rädern eine Erinnerung mit Link zur Terminbuchung. Am Vorabend liegt für jeden Tag eine Liste der Lagerplätze bereit. Ist das Profil knapp, entsteht ein Offertentwurf für neue Reifen."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Ihr Garagenprogramm bleibt",
+      "text": "Viele Garagen arbeiten mit einem Programm für Aufträge, Kunden und Teile. Die hier beschriebenen Abläufe ergänzen es, sie ersetzen es nicht. Ob eine Anbindung möglich ist, hängt vom Programm ab; wir prüfen das, bevor wir etwas zusagen. Kantonale Portale für MFK-Termine bedienen Sie weiterhin selbst."
+    },
+    "faq": [
+      {
+        "frage": "Werden Arbeiten ohne Zustimmung des Kunden ausgelöst?",
+        "antwort": "Nein. Liegt eine Zusatzarbeit über der vereinbarten Grenze, geht eine Anfrage an den Kunden. Erst nach seiner Zustimmung wird der Auftrag erweitert. Ob eine Arbeit nötig ist, beurteilt Ihr Fachpersonal."
+      },
+      {
+        "frage": "Können MFK-Termine automatisch gebucht werden?",
+        "antwort": "Nein. Für die kantonalen Portale haben wir keine offizielle Schnittstelle gefunden. Der Ablauf bereitet Termine und Erinnerungen vor, buchen oder verschieben tun Sie im Portal."
+      },
+      {
+        "frage": "Dürfen wir Kunden an den Reifenwechsel erinnern?",
+        "antwort": "Erinnerungen zu einem vereinbarten Service wie der Einlagerung sind üblich. Für Werbung braucht es eine passende Einwilligung. Wir richten die Nachrichten so ein, wie es mit Ihren Kunden vereinbart ist."
+      }
+    ],
+    "produkte": [
+      "mail-assistent",
+      "website-chatbot",
+      "newsletter"
+    ],
+    "seo_titel": "Garage: Werkstattauftrag, MFK und Reifen digital | Meyssens",
+    "seo_beschreibung": "Für Garagen in der Schweiz: Zusatzarbeiten freigeben lassen, MFK-Termine koordinieren, Reifenwechsel planen. Als Entwurf, Sie geben frei. Jetzt anfragen.",
+    "h1": "Garage: Werkstattauftrag, MFK und Reifenwechsel digital vorbereiten",
+    "schweiz": "Garagen in der Schweiz bearbeiten Kunden- und Fahrzeugdaten nach dem Datenschutzgesetz (DSG). Halterdaten gibt das ASTRA nicht heraus, deshalb arbeiten die Abläufe nur mit Daten, die Ihre Kunden Ihnen geben. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "transport-logistik",
+    "aktualisiert": "2026-11-20",
+    "name": "Transport und Logistik",
+    "fuer": "Transport- und Logistikbetriebe",
+    "kurz": "Fahrtschreiber-Daten auslesen, Fristen überwachen und die Aufstellung der Arbeits- und Ruhezeiten vorbereiten.",
+    "beschreibung": "Digitale Abläufe für Transportbetriebe: Downloads der Fahrtschreiber überwachen und die Aufstellung nach ARV vorbereiten.",
+    "intro": "Im Transportgewerbe entsteht viel Büroarbeit aus Pflichten rund um Fahrtschreiber und Arbeitszeiten. Fahrerkarten sind regelmässig auszulesen, Massenspeicher mindestens alle drei Monate, und die Aufzeichnungen sind drei Jahre aufzubewahren. Bei Betriebskontrollen stellt die Polizei laut einem Merkblatt des Kantons Zug immer wieder fest, dass die Aufstellung der Arbeits- und Ruhezeiten nur teilweise geführt wird.",
+    "probleme": [
+      {
+        "titel": "Downloads mit festen Fristen",
+        "text": "Laut ASTRA ist die Fahrerkarte wöchentlich herunterzuladen und der Massenspeicher des Fahrtschreibers mindestens alle drei Monate auszulesen. Wer viele Fahrzeuge und Fahrer hat, verliert leicht den Überblick, was noch fehlt."
+      },
+      {
+        "titel": "Aufstellung für die Betriebskontrolle",
+        "text": "Verlangt werden eine Aufstellung der Lenk-, Arbeits- und Ruhezeiten, die Rohdaten für drei Jahre sowie Fahrer- und Fahrzeuglisten. Die Daten nur zu sichern genügt nach dem Zuger Merkblatt nicht."
+      },
+      {
+        "titel": "Neue Pflichten für Lieferwagen",
+        "text": "Seit 1. Juli 2026 brauchen Lieferwagen über 2,5 Tonnen im grenzüberschreitenden Verkehr einen Fahrtschreiber. Die ASTAG Ostschweiz erwartet dadurch vor allem mehr administrativen Aufwand im regionalen Verkehr."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Fehlender Download fällt auf",
+        "text": "Eine Fahrerkarte wurde seit neun Tagen nicht ausgelesen. Die verantwortliche Person erhält eine Nachricht mit Namen und Datum des letzten Downloads und kann das Auslesen veranlassen."
+      },
+      {
+        "titel": "Monatliche Aufstellung",
+        "text": "Am Monatsende liegt die Aufstellung der Lenk-, Arbeits- und Ruhezeiten pro Person bereit. Mögliche Abweichungen sind markiert. Ob es sich um einen Verstoss handelt, beurteilt die verantwortliche Person."
+      },
+      {
+        "titel": "Kontrolle ohne Suchen",
+        "text": "Kündigt die Polizei eine Betriebskontrolle an, sind Rohdaten, Aufstellungen und Listen nach Monat geordnet abgelegt. Was fehlt, steht auf einer Liste."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Auswertung nur für den gesetzlichen Zweck",
+      "text": "Systeme, die das Verhalten von Mitarbeitenden überwachen, sind nach Art. 26 ArGV 3 grundsätzlich nicht zulässig. Die Abläufe werten die Fahrtschreiber-Daten deshalb nur für die vorgeschriebene Aufstellung aus, nicht für Ranglisten oder Leistungsvergleiche. Die Kontrollpflicht bleibt beim Betrieb."
+    },
+    "faq": [
+      {
+        "frage": "Liest Meyssens die Fahrtschreiber aus?",
+        "antwort": "Nein. Das Auslesen geschieht mit Ihrem Lesegerät, Ihrer Software oder Ihrer Telematik. Die Abläufe verarbeiten die Rohdaten im Format .ddd oder .xdt, die dabei entstehen."
+      },
+      {
+        "frage": "Entscheidet die Software über Verstösse?",
+        "antwort": "Nein. Sie markiert mögliche Abweichungen. Ob ein Verstoss vorliegt und was daraus folgt, beurteilt die verantwortliche Person im Betrieb."
+      },
+      {
+        "frage": "Was ist mit LSVA und Zoll?",
+        "antwort": "Die LSVA-Deklaration läuft heute über die zugelassenen Anbieter, die Zollanmeldung über eine Verzollungssoftware mit Zugang zu Passar. Beides bieten wir nicht an. Wir besprechen gern, ob ein vorgelagerter Schritt sinnvoll vorbereitet werden kann."
+      }
+    ],
+    "produkte": [
+      "mail-assistent",
+      "website-chatbot"
+    ],
+    "seo_titel": "Transport: Fahrtschreiber und ARV vorbereiten | Meyssens",
+    "seo_beschreibung": "Für Transportbetriebe in der Schweiz: Downloads der Fahrtschreiber überwachen, ARV-Aufstellung vorbereiten, Kontrollen ohne Suchen. Jetzt anfragen.",
+    "h1": "Transport und Logistik: Fahrtschreiber und Arbeitszeiten im Griff",
+    "schweiz": "Die Daten der Fahrerinnen und Fahrer sind Personendaten von Mitarbeitenden nach dem Datenschutzgesetz (DSG). Mitarbeitende haben Anspruch, über die Auswertung informiert zu werden. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "detailhandel",
+    "aktualisiert": "2026-11-20",
+    "name": "Detailhandel",
+    "fuer": "Läden und Onlineshops",
+    "kurz": "Tagesabschluss mit Kasse, TWINT und Karten abgleichen und Retouren im Onlineshop abwickeln.",
+    "beschreibung": "Digitale Abläufe für Läden und Onlineshops: Tagesabschluss über alle Zahlungsarten abgleichen und Retouren vorbereiten.",
+    "intro": "Im Laden kommt das Geld auf vielen Wegen: bar, mit Karte, mit TWINT oder über den Onlineshop. Jeder Weg hat eigene Abrechnungen, Perioden und Gebühren, und die Bank schreibt oft Sammelbeträge gut. Wer daneben einen Onlineshop betreibt, kennt zudem die Arbeit mit Retouren, die laut einer Befragung der Hochschule Luzern für viele Shops ein Kostenfaktor sind.",
+    "probleme": [
+      {
+        "titel": "Zahlungen auf vielen Wegen",
+        "text": "TWINT rechnet laut eigener Hilfe jeweils von 23 bis 23 Uhr ab und zahlt gesammelt aus. Karten laufen über den Kartenanbieter, Bargeld über die Kasse. Am Ende muss alles zum Kontoauszug passen."
+      },
+      {
+        "titel": "Sammelgutschriften auf der Bank",
+        "text": "Gutschriften der Zahlungsanbieter umfassen oft mehrere Tage und sind um Gebühren gekürzt. Werden sie wie ein Umsatz gebucht, entsteht leicht eine Doppelbuchung."
+      },
+      {
+        "titel": "Retouren im Onlineshop",
+        "text": "Jede Retoure braucht eine Prüfung, eine Rückzahlung, eine Korrektur im Bestand und in der Buchhaltung. Eine Befragung der Hochschule Luzern nennt rund 20 Franken Prozesskosten pro Retoure."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Abgleich am Montag",
+        "text": "Am Montag liegen die Exporte von Kasse, TWINT und Kartenanbieter sowie der Kontoauszug vor. Die Umsätze werden nach Zahlungsart getrennt, die Sammelgutschriften zugeordnet und die Gebühren ausgewiesen. Eine Differenz von wenigen Franken erscheint auf einer Liste."
+      },
+      {
+        "titel": "Retoure mit Rückzahlung",
+        "text": "Eine Kundin schickt eine Jacke zurück. Nach der Prüfung im Laden wird der Zustand erfasst, die Rückzahlung liegt als Entwurf bereit und der Bestand ist nachgeführt. Die Rückzahlung gibt die Inhaberin frei."
+      },
+      {
+        "titel": "Gründe für Retouren",
+        "text": "Am Monatsende zeigt eine Übersicht, welche Artikel aus welchen Gründen zurückkamen, etwa wegen der Grösse. So lässt sich zum Beispiel die Grössenangabe im Shop gezielt verbessern."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Kasse und Shop bleiben, wie sie sind",
+      "text": "Die Abläufe arbeiten mit den Exporten, die Ihre Kasse, das TWINT-Händlerportal und Ihr Kartenanbieter bereits anbieten. Eine offizielle Schnittstelle für Händler haben wir bei TWINT nicht gefunden, deshalb arbeiten wir mit den Dateien. Bargeld und Kassensturz bleiben bei Ihnen."
+    },
+    "faq": [
+      {
+        "frage": "Bucht der Ablauf direkt in die Buchhaltung?",
+        "antwort": "Er bereitet Buchungsvorschläge vor. Sie oder Ihre Treuhänderin prüfen und übernehmen sie. Die steuerliche Beurteilung bleibt in der Buchhaltung."
+      },
+      {
+        "frage": "Werden Rückzahlungen automatisch ausgelöst?",
+        "antwort": "Nein. Die Rückzahlung liegt als Entwurf bereit und wird erst nach Ihrer Freigabe ausgelöst."
+      },
+      {
+        "frage": "Gleicht der Ablauf auch Bestände zwischen Laden und Shop ab?",
+        "antwort": "Bei Retouren wird der Bestand nachgeführt. Einen laufenden Abgleich von Beständen und Preisen zwischen Kasse und Shop prüfen wir im Einzelfall, weil es dafür keinen gemeinsamen Standard gibt."
+      }
+    ],
+    "produkte": [
+      "website-chatbot",
+      "newsletter",
+      "mail-assistent"
+    ],
+    "seo_titel": "Detailhandel: Tagesabschluss und Retouren digital | Meyssens",
+    "seo_beschreibung": "Für Läden und Onlineshops in der Schweiz: Kasse, TWINT, Karten und Bank abgleichen, Retouren vorbereiten. Als Entwurf, Sie geben frei. Jetzt anfragen.",
+    "h1": "Detailhandel: Tagesabschluss und Retouren digital vorbereiten",
+    "schweiz": "Läden und Onlineshops in der Schweiz bearbeiten Kundendaten nach dem Datenschutzgesetz (DSG); für den Onlineshop braucht es eine Datenschutzerklärung. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   }
 ]
