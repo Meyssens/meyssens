@@ -275,6 +275,61 @@
     {"label": "Automatisch", "titel": "Zuordnung", "zeilen": [["Umsätze", "CHF 2 314.50"], ["Gebühren", "CHF 18.40"]]},
     {"label": "Entwurf", "titel": "Buchungsvorschlag", "zeilen": [["Status", "zur Prüfung"]]}
    ]
+  },
+  "gartenbau": {
+   "titel": "Schlechtwetter-Meldung vorbereiten",
+   "text": "Nach wetterbedingten Ausfalltagen ist die Meldung je Baustelle vorausgefüllt, eine Erinnerung kommt vor dem 5. des Folgemonats.",
+   "mensch": "Sie prüfen die Ausfalltage und reichen die Meldung ein",
+   "baustein": "",
+   "schritte": [
+    {"label": "Rapport", "titel": "Ausfall", "zeilen": [["Baustelle", "Beispielhof"], ["Tage", "2"]]},
+    {"label": "Automatisch", "titel": "Meldung", "zeilen": [["Frist", "5. Dezember"], ["Status", "vorausgefüllt"]]},
+    {"label": "Entwurf", "titel": "Formular", "zeilen": [["Unterschriften", "3 offen"]]}
+   ]
+  },
+  "reinigung-hauswartung": {
+   "titel": "Zeitkonto zum Monatsende",
+   "text": "Die Zeiten je Objekt werden nach den Regeln des GAV geprüft. Jede Person erhält ihren Auszug, die Lohnstunden liegen bereit.",
+   "mensch": "Sie prüfen Abweichungen und geben den Monatsabschluss frei",
+   "baustein": "",
+   "schritte": [
+    {"label": "Zeiterfassung", "titel": "November", "zeilen": [["Objekte", "6"], ["Stunden", "168"]]},
+    {"label": "Automatisch", "titel": "Prüfung GAV", "zeilen": [["Pause 14.11.", "fehlt"], ["Saldo", "plus 4 Stunden"]]},
+    {"label": "Entwurf", "titel": "Auszug", "zeilen": [["An", "Mitarbeiterin 11"]]}
+   ]
+  },
+  "schreinerei-holzbau": {
+   "titel": "Offerte mit Holzdeklaration",
+   "text": "Vor dem Versand wird geprüft, ob die Offerte Holzart und Herkunft enthält. Das Beiblatt aus den Einkäufen des Vorjahres wird angehängt.",
+   "mensch": "Sie prüfen die Offerte und versenden sie",
+   "baustein": "",
+   "schritte": [
+    {"label": "Offerte", "titel": "Esstisch Eiche", "zeilen": [["Massivholz", "ja"]]},
+    {"label": "Automatisch", "titel": "Deklaration", "zeilen": [["Beiblatt", "2026"], ["Herkunft", "Schweiz, Frankreich"]]},
+    {"label": "Entwurf", "titel": "Offerte", "zeilen": [["Status", "bereit"]]}
+   ]
+  },
+  "physiotherapie": {
+   "titel": "Beleg nach Tarif 595",
+   "text": "Für ein Trainingsabo entsteht der Beleg nach Tarif 595. Fehlende Angaben werden per Link angefragt.",
+   "mensch": "Die Praxis gibt den Beleg frei",
+   "baustein": "",
+   "schritte": [
+    {"label": "Abo", "titel": "Training", "zeilen": [["Preis", "CHF 480"]]},
+    {"label": "Automatisch", "titel": "Prüfung", "zeilen": [["Versichertennummer", "angefragt"]]},
+    {"label": "Entwurf", "titel": "Beleg", "zeilen": [["Format", "XML 5.0 und PDF"]]}
+   ]
+  },
+  "fitness-sport": {
+   "titel": "Krankenkassenbeleg nach Zahlung",
+   "text": "Nach der Zahlung eines Abos entsteht der Beleg nach Tarif 595. Fehlende Angaben werden beim Mitglied per Link angefragt.",
+   "mensch": "Das Studio gibt den Versand frei",
+   "baustein": "",
+   "schritte": [
+    {"label": "Zahlung", "titel": "Jahresabo", "zeilen": [["Betrag", "CHF 890"]]},
+    {"label": "Automatisch", "titel": "Tarif 595", "zeilen": [["Tarifcode", "freigegeben"], ["Angaben", "vollständig"]]},
+    {"label": "Entwurf", "titel": "Beleg", "zeilen": [["An", "Mitglied 1042"]]}
+   ]
   }
  }
 }

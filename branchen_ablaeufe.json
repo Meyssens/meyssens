@@ -3,6 +3,21 @@
   "geprueft": "2026-11-20",
   "ablaeufe": [
    {
+    "id": "transparenzregister",
+    "verkauf": "hoch",
+    "titel": "Transparenzregister für alle Mandanten",
+    "schritte": [
+     "Mandantenliste, Aktien- oder Anteilbuch, Mutationen im Handelsregister",
+     "Frist je Gesellschaft berechnen, wirtschaftlich Berechtigte per Link beim Mandanten abfragen",
+     "Vorlage für die Meldung in EasyGov und Fristenliste"
+    ],
+    "satz": "Für jede Gesellschaft ist klar, bis wann gemeldet werden muss und welche Angaben noch fehlen; Änderungen lösen eine neue Frist aus.",
+    "beispiel": "Beispiel AG, ohne ordentliche Revision: Meldung bis 1. März 2027, Angaben des Mandanten fehlen noch.",
+    "daten": "Ihre Mandantendaten und das Aktienbuch; eingereicht wird in EasyGov mit Ihrem Login.",
+    "freigabe": "Die Angaben gibt der Mandant frei, Zweifelsfälle beurteilen Sie. Die Meldung reichen Sie ein.",
+    "datenschutz": "Geburtsdatum, Adresse und Staatsangehörigkeit der Berechtigten: Zugriff nur je Mandant, Vertrag zur Auftragsbearbeitung."
+   },
+   {
     "titel": "Belegeingang mit Freigabe durch den Mandanten",
     "schritte": [
      "Rechnungen per E-Mail, Upload oder eBill",
@@ -18,6 +33,21 @@
     "verkauf": "mittel"
    },
    {
+    "id": "gwg",
+    "verkauf": "mittel",
+    "titel": "Kundendossier nach Geldwäschereigesetz",
+    "schritte": [
+     "Neues Mandat für Gründung, Domizil oder nicht operative Gesellschaft",
+     "Prüfen, ob das Mandat erfasst ist, Identifikation und Berechtigte per Link einholen, Wiedervorlage",
+     "Kundendossier für die Prüfung durch die Selbstregulierungsorganisation"
+    ],
+    "satz": "Seit 1. Oktober 2026 gelten für bestimmte Beratungsmandate Sorgfaltspflichten; das Dossier ist vollständig, bevor das Mandat startet.",
+    "beispiel": "Mandat Muster GmbH, Gründung: Ausweis erhalten, wirtschaftlich Berechtigte offen, Risikostufe zu bestimmen.",
+    "daten": "Ihre Mandatsliste und Uploads der Kunden.",
+    "freigabe": "Risikostufe und jede Meldung entscheidet die verantwortliche Person; nichts wird automatisch gemeldet.",
+    "datenschutz": "Ausweiskopien und Angaben zu Berechtigten sind heikel: enger Zugriffskreis und Löschfristen."
+   },
+   {
     "titel": "MWST-Abrechnung vorbereiten und abstimmen",
     "schritte": [
      "Buchungsjournal der Periode",
@@ -30,6 +60,20 @@
     "freigabe": "Steuerliche Beurteilung, Upload und Einreichen machen Sie. Einzelne Ziffern deckt der Standard nicht ab.",
     "id": "mwst",
     "verkauf": "mittel"
+   },
+   {
+    "id": "verrechnungssteuer",
+    "verkauf": "mittel",
+    "titel": "Dividende bis zur Meldung an die ESTV",
+    "schritte": [
+     "Jahresabschluss und Antrag zur Gewinnverwendung",
+     "Protokollvorlage, Beschluss per Link freigeben lassen, Frist von 30 Tagen überwachen",
+     "Formulare der ESTV vorbereitet und Erinnerungen"
+    ],
+    "satz": "Nach dem Beschluss der Generalversammlung läuft eine Frist von 30 Tagen; Unterlagen und Formular stehen rechtzeitig bereit.",
+    "beispiel": "Beispiel AG: Dividende fällig am 15.06., Formular 103 vorbereitet, Frist bis 15.07.",
+    "daten": "Daten aus Ihrer Buchhaltung; eingereicht wird bei der ESTV durch Sie.",
+    "freigabe": "Den Beschluss fassen die Organe der Gesellschaft, die Einreichung machen Sie."
    },
    {
     "titel": "Bankbewegungen je Mandant vorkontieren",
@@ -71,12 +115,42 @@
    {
     "url": "https://www.postfinance.ch/de/unternehmen/produkte/rechnungen/qrrechnung.html",
     "titel": "PostFinance: QR-Rechnung, QR-Referenz und Zahlungsavis camt.054"
+   },
+   {
+    "url": "https://www.bj.admin.ch/de/schweizerisches-transparenzregister",
+    "titel": "BJ: Schweizerisches Transparenzregister"
+   },
+   {
+    "url": "https://www.grantthornton.ch/globalassets/1.-member-firms/switzerland/insights/2026/08---transparenzregister/2608-transparenzregister-de.pdf",
+    "titel": "Grant Thornton: Transparenzregister, Fristen (2026)"
+   },
+   {
+    "url": "https://www.bdo.ch/de-ch/publikationen/beratung-neu-dem-geldwaschereigesetz-(gwg)-unterstellt-diese-pflichten-gelten-ab-1-oktober-2026",
+    "titel": "BDO: Beratung neu dem Geldwäschereigesetz unterstellt"
+   },
+   {
+    "url": "https://www.estv.admin.ch/de/deklarationspflicht-bei-der-verrechnungssteuer",
+    "titel": "ESTV: Deklarationspflicht bei der Verrechnungssteuer"
    }
   ]
  },
  "elektro-handwerk": {
   "geprueft": "2026-11-20",
   "ablaeufe": [
+   {
+    "id": "pfandrecht",
+    "verkauf": "hoch",
+    "titel": "Fristwächter Bauhandwerkerpfandrecht",
+    "schritte": [
+     "Offene Rechnungen je Bauobjekt und Datum der letzten Arbeit",
+     "Frist von vier Monaten berechnen, je Einheit und Parzelle, Belege sammeln",
+     "Wöchentliche Fristenliste und Belegdossier"
+    ],
+    "satz": "Unbezahlte Objekte mit nahender Frist erscheinen rechtzeitig auf der Liste, die Belege sind beisammen.",
+    "beispiel": "Objekt Beispielweg 7, Rechnung CHF 18 400 offen, letzte Arbeit 02.09., Frist läuft bald ab.",
+    "daten": "Offene Posten aus Ihrer Buchhaltung, Daten aus Rapport oder Abnahmeprotokoll.",
+    "freigabe": "Das Datum der Vollendung bestätigen Sie, über ein Gesuch entscheiden Sie mit Ihrer Rechtsberatung. Die Liste ist keine Rechtsauskunft."
+   },
    {
     "titel": "Meldewesen vom Auftrag bis zur Audit-Ablage",
     "schritte": [
@@ -90,6 +164,35 @@
     "freigabe": "Erstprüfungsprotokoll und Sicherheitsnachweis unterschreibt die berechtigte Person. Die Software prüft keine Technik.",
     "id": "meldewesen",
     "verkauf": "mittel"
+   },
+   {
+    "id": "kaeltemittel",
+    "verkauf": "mittel",
+    "titel": "Kältemittel-Wartungsheft und Kontrollfristen",
+    "schritte": [
+     "Inbetriebnahme oder Service an einer Anlage mit mehr als 3 kg Kältemittel",
+     "Eintrag ins Wartungsheft, nächste Dichtheitskontrolle berechnen, Meldefrist überwachen",
+     "Wartungsheft als PDF, Erinnerung mit Terminvorschlag, Entwurf der Meldung"
+    ],
+    "satz": "Kontrollen und Meldungen pro Anlage stehen auf einer Liste, das Wartungsheft ist nachgeführt.",
+    "beispiel": "Wärmepumpe Musterweg 4, R410A 4.2 kg: nächste Dichtheitskontrolle im Mai 2027.",
+    "daten": "Ihre Service-Rapporte; die Meldung an das BAFU machen Sie über cooling-reg.ch.",
+    "freigabe": "Einträge im Wartungsheft unterschreibt die Fachperson, die Meldung reichen Sie ein."
+   },
+   {
+    "id": "foerdergesuch",
+    "verkauf": "mittel",
+    "titel": "Förderdossier beim Heizungsersatz",
+    "schritte": [
+     "Unterschriebene Offerte für eine Wärmepumpe",
+     "Checkliste des Kantons, Sperre bis zur Eingangsbestätigung, Frist für den Abschluss",
+     "Gesuch vorbereitet, Erinnerungen, Abschlussdossier"
+    ],
+    "satz": "Das Gesuch geht vor Baubeginn ein, und die Frist für die Abschlussmeldung wird nicht vergessen.",
+    "beispiel": "Heizungsersatz Beispielstrasse 12, Kanton Zürich: Gesuch eingereicht, Montage erst nach Bestätigung.",
+    "daten": "Offerte und Projekt aus Ihrer Software; eingereicht wird auf der Plattform des Kantons.",
+    "freigabe": "Den Inhalt des Gesuchs prüfen Sie, die Kundin unterschreibt oder erteilt Vollmacht.",
+    "datenschutz": "Nur die Daten der Eigentümerschaft, die das Gesuch verlangt."
    },
    {
     "titel": "Fristen für Messgeräte und Baustromverteiler",
@@ -158,12 +261,57 @@
    {
     "url": "https://www.postfinance.ch/de/unternehmen/produkte/rechnungen/qrrechnung.html",
     "titel": "PostFinance: QR-Rechnung, QR-Referenz und Zahlungsavis camt.054"
+   },
+   {
+    "url": "https://www.mobiliar.ch/ratgeber/bauhandwerkerpfandrecht-schweiz",
+    "titel": "Mobiliar: Bauhandwerkerpfandrecht"
+   },
+   {
+    "url": "https://www.fr.ch/de/energie-landwirtschaft-und-umwelt/umwelt/gefaehrliche-stoffe/kaeltemittel",
+    "titel": "Kanton Freiburg: Kältemittel und Wartungsheft"
+   },
+   {
+    "url": "https://www.bafu.admin.ch/de/meldung-kw",
+    "titel": "BAFU: Meldung von Anlagen mit Kältemitteln"
+   },
+   {
+    "url": "https://zh.ch/content/dam/zhweb/bilder-dokumente/themen/umwelt-tiere/energie/energieberatung-und-energiefoerderung/ktzh_foerderprogramm_2025_heizung_ersetzen.pdf",
+    "titel": "Kanton Zürich: Förderprogramm Heizungsersatz 2025"
    }
   ]
  },
  "bauunternehmen": {
   "geprueft": "2026-11-20",
   "ablaeufe": [
+   {
+    "id": "swe",
+    "verkauf": "hoch",
+    "titel": "Schlechtwetterentschädigung Monat für Monat",
+    "schritte": [
+     "Ausfallstunden je Baustelle aus Zeiterfassung oder Rapport",
+     "Meldung bis zum 5. vorbereiten, Rapport je Arbeitsort vorausfüllen, Frist von 3 Monaten überwachen",
+     "Formulare zum Unterschreiben und Fristenkalender"
+    ],
+    "satz": "Meldung und Abrechnung liegen vorbereitet bereit, bevor die Fristen ablaufen.",
+    "beispiel": "Baustelle Beispielhof, November: 2 Tage Ausfall, Meldung fällig am 5.12., Abrechnung bis Ende Februar.",
+    "daten": "Ihre Zeiterfassung oder Lohnbuchhaltung; Ausgabe im Formular des SECO.",
+    "freigabe": "Welche Tage wetterbedingt sind, entscheiden Sie. Die Mitarbeitenden unterschreiben, Sie reichen ein.",
+    "datenschutz": "Arbeitszeiten und Löhne nur für die Lohnverantwortlichen sichtbar."
+   },
+   {
+    "id": "pfandrecht",
+    "verkauf": "hoch",
+    "titel": "Fristwächter Bauhandwerkerpfandrecht",
+    "schritte": [
+     "Offene Rechnungen je Bauobjekt und Datum der letzten Arbeit",
+     "Frist von vier Monaten berechnen, je Einheit und Parzelle, Belege sammeln",
+     "Wöchentliche Fristenliste und Belegdossier"
+    ],
+    "satz": "Unbezahlte Objekte mit nahender Frist erscheinen rechtzeitig auf der Liste, die Belege sind beisammen.",
+    "beispiel": "Objekt Beispielweg 7, Rechnung CHF 18 400 offen, letzte Arbeit 02.09., Frist läuft bald ab.",
+    "daten": "Offene Posten aus Ihrer Buchhaltung, Daten aus Rapport oder Abnahmeprotokoll.",
+    "freigabe": "Das Datum der Vollendung bestätigen Sie, über ein Gesuch entscheiden Sie mit Ihrer Rechtsberatung. Die Liste ist keine Rechtsauskunft."
+   },
    {
     "titel": "Regierapporte mit Fristen und Regierechnung",
     "schritte": [
@@ -246,6 +394,18 @@
    {
     "url": "https://www.postfinance.ch/de/unternehmen/produkte/rechnungen/qrrechnung.html",
     "titel": "PostFinance: QR-Rechnung, QR-Referenz und Zahlungsavis camt.054"
+   },
+   {
+    "url": "https://www.zh.ch/de/wirtschaft-arbeit/leistungen-fuer-arbeitgeber/versicherungsleistungen/schlechtwetterentschaedigung.html",
+    "titel": "Kanton Zürich: Schlechtwetterentschädigung"
+   },
+   {
+    "url": "https://www.mobiliar.ch/ratgeber/bauhandwerkerpfandrecht-schweiz",
+    "titel": "Mobiliar: Bauhandwerkerpfandrecht"
+   },
+   {
+    "url": "https://law.ch/lawinfo/bauhandwerkerpfandrecht/die-eintragungsfrist",
+    "titel": "law.ch: Eintragungsfrist beim Bauhandwerkerpfandrecht"
    }
   ]
  },
@@ -385,6 +545,21 @@
   "geprueft": "2026-11-20",
   "ablaeufe": [
    {
+    "id": "trinkgeld",
+    "verkauf": "hoch",
+    "titel": "Trinkgeld verteilen und nachweisen",
+    "schritte": [
+     "Trinkgeld aus Kasse und Terminal je Schicht, Stunden aus dem Plan",
+     "Verteilung nach Ihrem Schlüssel berechnen, Freigabe per Link",
+     "Lohnart für die Lohnbuchhaltung und Auszug je Person"
+    ],
+    "satz": "Die Verteilung zwischen Service und Küche ist nachvollziehbar, jede Person sieht ihren Anteil.",
+    "beispiel": "Oktober: CHF 4 280 Trinkgeld, Schlüssel 70 % Service und 30 % Küche, Anteil Mitarbeiterin 05: CHF 312.",
+    "daten": "Exporte Ihrer Kasse oder Ihres Terminals, Ihre Arbeitspläne.",
+    "freigabe": "Den Verteilschlüssel vereinbaren Sie mit dem Team, die Monatsverteilung geben Sie frei. Die steuerliche Behandlung ist politisch offen, wir passen den Ablauf an.",
+    "datenschutz": "Lohndaten: Jede Person sieht nur ihren eigenen Auszug."
+   },
+   {
     "titel": "Arbeitsplan, Zeiterfassung und Monatsabschluss",
     "schritte": [
      "Dienstplan, Zeiterfassung, Ferien und Absenzen",
@@ -464,6 +639,14 @@
    {
     "url": "https://www.bfh.ch/dam/jcr:3bf565ef-67b3-42de-aede-b7e29a7027b5/2020_aF%26E_Praxisleitfaden_Allergenkennzeichnung_v7_web.pdf",
     "titel": "BFH: Praxisleitfaden Allergenkennzeichnung (2020)"
+   },
+   {
+    "url": "https://www.zhaw.ch/de/sml/ueber-uns/news-und-medien/newsdetail/event-news/trinkgeld-wird-in-schweizer-betrieben-meist-geteilt-transparenz-schafft-vertrauen-bei-gaesten-und-mitarbeitenden",
+    "titel": "ZHAW: Trinkgeld wird in Schweizer Betrieben meist geteilt"
+   },
+   {
+    "url": "https://www.parlament.ch/de/services/news/Seiten/2026/20260914181257983194158159026_bsd113.aspx",
+    "titel": "Parlament: keine Steuern auf Trinkgelder (Motion, 2026)"
    }
   ]
  },
@@ -555,6 +738,35 @@
     "datenschutz": "Daten der Fahrerinnen und Fahrer werden nur für die gesetzliche Aufstellung ausgewertet, nicht zur Überwachung des Verhaltens.",
     "id": "fahrtschreiber",
     "verkauf": "mittel"
+   },
+   {
+    "id": "czv",
+    "verkauf": "mittel",
+    "titel": "Fähigkeitsausweise und Fahrerkarten im Blick",
+    "schritte": [
+     "Personalliste und Kursbestätigungen der Weiterbildung",
+     "Weiterbildungstage zählen, Ablaufdaten von Ausweis und Fahrerkarte berechnen",
+     "Ampel je Person, Erinnerung mit Link zum Hochladen"
+    ],
+    "satz": "Wer bald Weiterbildungstage oder eine neue Fahrerkarte braucht, erscheint rechtzeitig auf der Liste.",
+    "beispiel": "Fahrer 07: 3 von 5 Weiterbildungstagen, Fähigkeitsausweis gültig bis 30.06.2027.",
+    "daten": "Ihre Personaldaten und hochgeladene Kursbestätigungen.",
+    "freigabe": "Kursanmeldung und Bestellung der Fahrerkarte machen Sie.",
+    "datenschutz": "Nur Ablaufdaten und Kursnachweise, keine Gesundheitsdaten."
+   },
+   {
+    "id": "paletten",
+    "verkauf": "mittel",
+    "titel": "Palettenkonto mit Saldobestätigung",
+    "schritte": [
+     "Palettenscheine oder Lieferscheine je Kunde",
+     "Ein- und Ausgänge je Kunde und Ort saldieren, Differenzen markieren",
+     "Monatlicher Kontoauszug mit Link zum Bestätigen, Ausgleich als Entwurf"
+    ],
+    "satz": "Statt Excel-Listen ein laufendes Palettenkonto je Kunde, das der Kunde monatlich bestätigt.",
+    "beispiel": "Kunde Beispiel AG: 14 Paletten ausgegeben, 9 zurück, Saldo 5 zur Bestätigung.",
+    "daten": "Fotos der Palettenscheine oder Daten aus Ihrem Transportprogramm; Rechnungen über Ihre Buchhaltung.",
+    "freigabe": "Den Auszug und jede Ausgleichsrechnung geben Sie frei."
    }
   ],
   "quellen": [
@@ -577,6 +789,18 @@
    {
     "url": "https://www.weka.ch/themen/personal/arbeitsvertraege-und-reglemente/personalreglemente/article/technische-ueberwachung-am-arbeitsplatz-was-ist-erlaubt/",
     "titel": "WEKA: Technische Überwachung am Arbeitsplatz"
+   },
+   {
+    "url": "https://cambus.ch/faq/fragen-von-fahrer-innen/zum-fahigkeitsausweis/",
+    "titel": "cambus: Fragen zum Fähigkeitsausweis CZV"
+   },
+   {
+    "url": "https://www.astra.admin.ch/de/erneuerung-von-fahrtschreiberkarten",
+    "titel": "ASTRA: Erneuerung von Fahrtschreiberkarten"
+   },
+   {
+    "url": "https://cuvillier.de/uploads/preview/public_file/278/9783869554884.pdf",
+    "titel": "Palettenstudie Schweiz (Vorschau, Cuvillier)"
    }
   ]
  },
@@ -637,13 +861,295 @@
   ]
  },
  "startseite": [
+  "treuhaender:transparenzregister",
   "detailhandel:tagesabschluss",
+  "bauunternehmen:swe",
+  "fitness-sport:tarif595",
   "garagen:werkstattauftrag",
-  "treuhaender:belegeingang",
-  "transport-logistik:fahrtschreiber",
-  "elektro-handwerk:meldewesen",
-  "bauunternehmen:regierapporte",
-  "hotels-gastronomie:arbeitsplan",
-  "immobilienverwaltungen:schadenmeldung"
- ]
+  "hotels-gastronomie:trinkgeld",
+  "elektro-handwerk:pfandrecht",
+  "transport-logistik:fahrtschreiber"
+ ],
+ "architekturbueros": {
+  "geprueft": "2026-11-20",
+  "ablaeufe": [
+   {
+    "id": "maengelruege",
+    "verkauf": "mittel",
+    "titel": "Mängelmeldungen der Bauherrschaft mit Fristen",
+    "schritte": [
+     "Meldung der Bauherrschaft per Link mit Foto und Datum der Entdeckung",
+     "Projekt, Unternehmer und Vertragsdatum zuordnen, Frist berechnen, Rüge entwerfen",
+     "Register mit Ampel und versendete Rügen"
+    ],
+    "satz": "Seit dem 1. Januar 2026 gelten neue Regeln für Mängelrügen; jede Meldung ist datiert, zugeordnet und mit Frist versehen.",
+    "beispiel": "Projekt Beispielhof: Riss im Verputz, entdeckt am 03.11., Rüge an Muster Bau AG als Entwurf.",
+    "daten": "Projektliste und Unternehmerverträge aus Ihrer Software oder Excel.",
+    "freigabe": "Jede Rüge gibt die Bauleitung frei. Welche Frist gilt, beurteilen Sie; die Liste ist keine Rechtsauskunft."
+   }
+  ],
+  "quellen": [
+   {
+    "url": "https://www.bj.admin.ch/de/haftung-fuer-baumaengel",
+    "titel": "BJ: Haftung für Baumängel, Änderung per 1. Januar 2026"
+   },
+   {
+    "url": "https://www.weka.ch/themen/bau-immobilien/bau/bauschaeden-und-haftung/article/maengelruegen-gesetzliche-aenderungen-ab-1-januar-2026/",
+    "titel": "WEKA: Mängelrügen, Änderungen ab 1. Januar 2026"
+   },
+   {
+    "url": "https://www.messerli.ch/de/bauadministration",
+    "titel": "Messerli: Bauadministration (Funktionsübersicht)"
+   }
+  ]
+ },
+ "vereine": {
+  "geprueft": "2026-11-20",
+  "ablaeufe": [
+   {
+    "id": "js",
+    "verkauf": "mittel",
+    "titel": "J+S-Anwesenheiten und Fristen ohne Doppelerfassung",
+    "schritte": [
+     "Präsenzlisten und Trainingsplan aus Ihrer Vereinssoftware oder Excel",
+     "Importdateien für die NDS erstellen, Fristen für Anmeldung und Abschluss überwachen",
+     "Importdateien und Pendenzenliste für den J+S-Coach"
+    ],
+    "satz": "Anwesenheiten werden nur einmal erfasst, und kein Abschluss verpasst die Frist.",
+    "beispiel": "Angebot Fussball Junioren D: 38 Trainings erfasst, Abschluss spätestens 30 Tage nach dem letzten Training.",
+    "daten": "Exporte aus Ihrer Vereinssoftware; Import über die CSV-Vorlagen von J+S.",
+    "freigabe": "Den Abschluss in der NDS macht der J+S-Coach selbst.",
+    "datenschutz": "Daten von Kindern und Jugendlichen: nur die Felder, die J+S verlangt."
+   }
+  ],
+  "quellen": [
+   {
+    "url": "https://www.jugendundsport.ch/de/leitfaden-coach",
+    "titel": "Jugend+Sport: Leitfaden für J+S-Coaches"
+   },
+   {
+    "url": "https://www.jugendundsport.ch/de/datenimport",
+    "titel": "Jugend+Sport: Datenimport in die NDS"
+   },
+   {
+    "url": "https://www.jugendundsport.ch/de/leitereinsatz-ab-1-januar-2027",
+    "titel": "Jugend+Sport: Leitereinsatz ab 1. Januar 2027"
+   }
+  ]
+ },
+ "gartenbau": {
+  "geprueft": "2026-11-20",
+  "ablaeufe": [
+   {
+    "id": "swe",
+    "verkauf": "hoch",
+    "titel": "Schlechtwetterentschädigung Monat für Monat",
+    "schritte": [
+     "Ausfallstunden je Baustelle aus Zeiterfassung oder Rapport",
+     "Meldung bis zum 5. vorbereiten, Rapport je Arbeitsort vorausfüllen, Frist von 3 Monaten überwachen",
+     "Formulare zum Unterschreiben und Fristenkalender"
+    ],
+    "satz": "Meldung und Abrechnung liegen vorbereitet bereit, bevor die Fristen ablaufen.",
+    "beispiel": "Baustelle Beispielhof, November: 2 Tage Ausfall, Meldung fällig am 5.12., Abrechnung bis Ende Februar.",
+    "daten": "Ihre Zeiterfassung oder Lohnbuchhaltung; Ausgabe im Formular des SECO.",
+    "freigabe": "Welche Tage wetterbedingt sind, entscheiden Sie. Die Mitarbeitenden unterschreiben, Sie reichen ein.",
+    "datenschutz": "Arbeitszeiten und Löhne nur für die Lohnverantwortlichen sichtbar."
+   }
+  ],
+  "quellen": [
+   {
+    "url": "https://www.arbeit.swiss/secoalv/en/home/menue/unternehmen/versicherungsleistungen/schlechtwetter1.html",
+    "titel": "SECO: Schlechtwetterentschädigung für Arbeitgeber"
+   },
+   {
+    "url": "https://www.zh.ch/de/wirtschaft-arbeit/leistungen-fuer-arbeitgeber/versicherungsleistungen/schlechtwetterentschaedigung.html",
+    "titel": "Kanton Zürich: Schlechtwetterentschädigung"
+   },
+   {
+    "url": "https://www.bul.ch/custom/data/blog/652/documents/1/20260120_mmfabe.pdf",
+    "titel": "SBV und BUL: Fachbewilligung Pflanzenschutz ab 2027"
+   },
+   {
+    "url": "https://media.abacus.ch/abacus/produkte/gartenbau/flyer_ababau_gartenbau.pdf",
+    "titel": "Abacus: AbaBau Gartenbau (Funktionsübersicht)"
+   }
+  ]
+ },
+ "reinigung-hauswartung": {
+  "geprueft": "2026-11-20",
+  "ablaeufe": [
+   {
+    "id": "gav-monat",
+    "verkauf": "mittel",
+    "titel": "Monatsabschluss der Arbeitszeit nach GAV",
+    "schritte": [
+     "Zeiten je Objekt aus App oder Liste",
+     "Prüfung gegen die Regeln des GAV, Zeitkonto je Person, Stichtag für Überstunden",
+     "Zeitkonto-Auszug je Person und vorbereitete Lohnstunden"
+    ],
+    "satz": "Pausen, Zeitkonten und Überstunden sind vor dem Lohnlauf geprüft, jede Person erhält ihren monatlichen Auszug.",
+    "beispiel": "Mitarbeiterin 11: 168 Stunden auf 6 Objekten, Pause am 14.11. fehlt, Saldo plus 4 Stunden.",
+    "daten": "Ihre Zeiterfassung; Übergabe an die Lohnbuchhaltung, zum Beispiel bexio.",
+    "freigabe": "Korrekturen und den Monatsabschluss geben Sie vor der Lohnzahlung frei.",
+    "datenschutz": "Arbeitszeiten sind Personendaten: Einsicht für die Mitarbeitenden, Aufbewahrung nach den Fristen des GAV."
+   }
+  ],
+  "quellen": [
+   {
+    "url": "https://unia.ch/fileadmin/user_upload/Beruf-Branchen/Reinigung/gav_broschure_de_web-1763457929.pdf",
+    "titel": "GAV Reinigung Deutschschweiz 2026 bis 2029 (Broschüre)"
+   },
+   {
+    "url": "https://pfeffersack.ch/blog/buchhaltung-reinigungsfirma-schweiz",
+    "titel": "Pfeffersack: Buchhaltung für Reinigungsfirmen"
+   },
+   {
+    "url": "https://magicheidi.ch/reinigungsfirma",
+    "titel": "Magic Heidi: Angebot für Reinigungsfirmen"
+   }
+  ]
+ },
+ "schreinerei-holzbau": {
+  "geprueft": "2026-11-20",
+  "ablaeufe": [
+   {
+    "id": "swe",
+    "verkauf": "hoch",
+    "titel": "Schlechtwetterentschädigung Monat für Monat",
+    "schritte": [
+     "Ausfallstunden je Baustelle aus Zeiterfassung oder Rapport",
+     "Meldung bis zum 5. vorbereiten, Rapport je Arbeitsort vorausfüllen, Frist von 3 Monaten überwachen",
+     "Formulare zum Unterschreiben und Fristenkalender"
+    ],
+    "satz": "Meldung und Abrechnung liegen vorbereitet bereit, bevor die Fristen ablaufen.",
+    "beispiel": "Baustelle Beispielhof, November: 2 Tage Ausfall, Meldung fällig am 5.12., Abrechnung bis Ende Februar.",
+    "daten": "Ihre Zeiterfassung oder Lohnbuchhaltung; Ausgabe im Formular des SECO.",
+    "freigabe": "Welche Tage wetterbedingt sind, entscheiden Sie. Die Mitarbeitenden unterschreiben, Sie reichen ein.",
+    "datenschutz": "Arbeitszeiten und Löhne nur für die Lohnverantwortlichen sichtbar."
+   },
+   {
+    "id": "holzdeklaration",
+    "verkauf": "mittel",
+    "titel": "Holzdeklaration in jeder Offerte",
+    "schritte": [
+     "Lieferantenrechnungen und Artikel mit Holzart und Herkunft",
+     "Jährliches Beiblatt aus den Einkäufen erstellen, Offerten mit Massivholz prüfen",
+     "Aktuelles Beiblatt, geprüfte Offerten, Ablage für Kontrollen"
+    ],
+    "satz": "Jede Offerte an Privatkunden enthält Holzart und Herkunft, das Beiblatt wird jährlich nachgeführt.",
+    "beispiel": "Offerte 2026-188, Esstisch Eiche: Beiblatt 2026 angehängt, Herkunft Schweiz und Frankreich.",
+    "daten": "Einkaufsdaten und Offerten aus Ihrer Software oder bexio; Herkunft ergänzen Sie, wo sie auf der Rechnung fehlt.",
+    "freigabe": "Herkunftsangaben bestätigen Sie, das Beiblatt geben Sie frei."
+   }
+  ],
+  "quellen": [
+   {
+    "url": "https://www.newsd.admin.ch/newsd/message/attachments/92238.pdf",
+    "titel": "BFK: Ergebnisse der Holzdeklarationskontrollen 2024"
+   },
+   {
+    "url": "https://www.konsum.admin.ch/dam/de/sd-web/mEzkCeLePf2v/Wegleitung.pdf",
+    "titel": "BFK: Wegleitung zur Holzdeklaration"
+   },
+   {
+    "url": "https://www.jardinsuisse.ch/documents/4796/Holzdeklarationspflicht.pdf",
+    "titel": "BFK: Infoblatt Holzdeklarationspflicht"
+   },
+   {
+    "url": "https://www.arbeit.swiss/secoalv/en/home/menue/unternehmen/versicherungsleistungen/schlechtwetter1.html",
+    "titel": "SECO: Schlechtwetterentschädigung für Arbeitgeber"
+   }
+  ]
+ },
+ "physiotherapie": {
+  "geprueft": "2026-11-20",
+  "ablaeufe": [
+   {
+    "id": "tarif595",
+    "verkauf": "mittel",
+    "titel": "Krankenkassenbelege nach Tarif 595",
+    "schritte": [
+     "Abos und Zahlungen aus Ihrer Verwaltung oder bexio",
+     "Tarifcode zuordnen, fehlende Angaben per Link einholen, Beleg im Format XML 5.0 erstellen",
+     "Beleg als PDF und XML an die Kundschaft"
+    ],
+    "satz": "Ab 1. Januar 2027 ersetzt der Beleg nach Tarif 595 die bisherige Abonnementsbestätigung; die Angaben dafür werden gesammelt und geprüft.",
+    "beispiel": "Abo Jahreskarte, CHF 890, Mitglied 1042: Versichertennummer fehlt, Anfrage per Link verschickt.",
+    "daten": "Export Ihrer bisherigen Software oder bexio; Versand an die Krankenkasse nur mit den dafür nötigen Verträgen.",
+    "freigabe": "Die Zuordnung der Tarifcodes geben Sie einmal frei, den Versand der Belege ebenso.",
+    "datenschutz": "Versichertennummer und Geburtsdatum nur für den Beleg; für den elektronischen Versand braucht es die Einwilligung der Kundin oder des Kunden."
+   },
+   {
+    "titel": "Fristen für Verordnungen und Kostengutsprachen",
+    "schritte": [
+     "Verordnung als Scan oder PDF, Sitzungszähler",
+     "Pflichtangaben prüfen, Fristen und Schwellen überwachen",
+     "Pendenzenliste und Anfragen als Entwurf"
+    ],
+    "satz": "Für Physio- und Psychotherapie: Fehlende Angaben, auslaufende Fristen und nötige Gesuche erscheinen, bevor die Schwelle erreicht ist.",
+    "beispiel": "Patient 0412: Sitzung 33 von 36, Langzeitverordnung angefragt am 04.11., Kostengutsprache noch offen.",
+    "daten": "Sitzungsdaten aus Ihrem Praxisprogramm, sofern ein Export möglich ist; Verordnungen aus Scan oder E-Mail.",
+    "freigabe": "Das Gesuch stellt die Ärztin oder der Arzt, Berichte schreibt eine Fachperson. Jede Anfrage geben Sie frei.",
+    "datenschutz": "Gesundheitsdaten sind besonders schützenswert und unterstehen dem Berufsgeheimnis: Bearbeitung nur mit Vertrag zur Auftragsbearbeitung, Speicherort nennen wir vor dem Start.",
+    "id": "verordnungen",
+    "verkauf": "mittel"
+   }
+  ],
+  "quellen": [
+   {
+    "url": "https://www.helsana.ch/de/helsana-gruppe/fuer-leistungserbringer/gesundheitsfoerderung.html",
+    "titel": "Helsana: Gesundheitsförderung und Tarif 595 ab 2027"
+   },
+   {
+    "url": "https://physioswiss.ch/wp-content/uploads/sites/1/251022_d_kurzbericht_leda.pdf",
+    "titel": "physioswiss: Kurzbericht Leistungsdatenerhebung (LeDa)"
+   },
+   {
+    "url": "https://physioswiss.ch/wp-content/uploads/sites/1/240222_d_gut_zu_wissen_17_langzeitverordnung.pdf",
+    "titel": "physioswiss: Langzeitverordnung und Kostengutsprache"
+   },
+   {
+    "url": "https://physioswiss.ch/wp-content/uploads/sites/1/260319_de_gut-zu-wissen_nichterscheinen-patienten_final.pdf",
+    "titel": "physioswiss: Nichterscheinen von Patientinnen und Patienten"
+   }
+  ]
+ },
+ "fitness-sport": {
+  "geprueft": "2026-11-20",
+  "ablaeufe": [
+   {
+    "id": "tarif595",
+    "verkauf": "hoch",
+    "titel": "Krankenkassenbelege nach Tarif 595",
+    "schritte": [
+     "Abos und Zahlungen aus Ihrer Verwaltung oder bexio",
+     "Tarifcode zuordnen, fehlende Angaben per Link einholen, Beleg im Format XML 5.0 erstellen",
+     "Beleg als PDF und XML an Ihre Mitglieder"
+    ],
+    "satz": "Ab 1. Januar 2027 ersetzt der Beleg nach Tarif 595 die bisherige Abonnementsbestätigung; die Angaben dafür werden gesammelt und geprüft.",
+    "beispiel": "Abo Jahreskarte, CHF 890, Mitglied 1042: Versichertennummer fehlt, Anfrage per Link verschickt.",
+    "daten": "Export Ihrer bisherigen Software oder bexio; Versand an die Krankenkasse nur mit den dafür nötigen Verträgen.",
+    "freigabe": "Die Zuordnung der Tarifcodes geben Sie einmal frei, den Versand der Belege ebenso.",
+    "datenschutz": "Versichertennummer und Geburtsdatum nur für den Beleg; für den elektronischen Versand braucht es die Einwilligung der Kundin oder des Kunden."
+   }
+  ],
+  "quellen": [
+   {
+    "url": "https://www.helsana.ch/de/helsana-gruppe/fuer-leistungserbringer/gesundheitsfoerderung.html",
+    "titel": "Helsana: Gesundheitsförderung und Tarif 595 ab 2027"
+   },
+   {
+    "url": "https://www.helsana.ch/dam/de/pdf/helsana-gruppe/leistungserbringer/liste-softwareanbieter-gf.pdf",
+    "titel": "Helsana: Liste der Softwareanbieter für Tarif 595"
+   },
+   {
+    "url": "https://support.sportsnow.ch/en/support/solutions/articles/48001282053-does-sportsnow-support-tariff-595-for-health-insurance-",
+    "titel": "SportsNow: Tarif 595 und bexio"
+   },
+   {
+    "url": "https://www.six-group.com/de/blog/discontinuation-lsv-bdd.html",
+    "titel": "SIX: Ende des Lastschriftverfahrens LSV+/BDD"
+   }
+  ]
+ }
 }
