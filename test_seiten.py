@@ -678,10 +678,12 @@ else:
     if len(ablaeufe["unternehmen"]) != 8 or u_ab.count('<article class="abl-block"') != 8:
         fehler.append("/unternehmen/: nicht genau acht Abläufe")
     for x in ablaeufe["unternehmen"]:
-        for seite, ziel in (("/unternehmen/", '<a class="auto-karte r" href="#ablauf-%s">' % x["id"]),
-                            ("/", '<a class="auto-karte r" href="/unternehmen/#ablauf-%s">' % x["id"])):
-            if ziel not in seiten[seite][0]:
-                fehler.append("%s: Karte für Ablauf %s fehlt" % (seite, x["id"]))
+        if '<a class="auto-karte r" href="#ablauf-%s">' % x["id"] not in seiten["/unternehmen/"][0]:
+            fehler.append("/unternehmen/: Karte für Ablauf %s fehlt" % x["id"])
+# Startseite: acht Karten mit den besten Abläufen je Branche, jede auf einen Ablauf einer Branchenseite (#ba-...)
+start_karten = re.findall(r'<a class="auto-karte r" href="(/branchen/[a-z-]+/#ba-[a-z0-9-]+)">', seiten["/"][0])
+if len(start_karten) != 8 or len(set(start_karten)) != 8:
+    fehler.append("/: nicht genau acht verschiedene Karten mit Abläufen der Branchenseiten")
     for muss in ("Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.", "Vertrag zur Auftragsbearbeitung",
                  "Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.", "nach Absprache an, wenn eine Schnittstelle besteht",
                  "keine Rechtsberatung", "Sie entscheiden:"):

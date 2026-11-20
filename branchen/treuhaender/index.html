@@ -112,22 +112,7 @@
     <p class="s-lead">Mehrstufige Abläufe, die Büroarbeit als Entwurf vorbereiten. Sie geben frei. Alle Beispiele zeigen erfundene Daten.</p>
   </div>
   <div class="ba-karten">
-    <article class="auto-karte ba-karte r">
-      <h3>Bankbewegungen je Mandant vorkontieren</h3>
-      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
-        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Kontoauszüge camt.053/054 je Mandant und Bank</span></li>
-        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span><span><i>Verarbeitung</i>QR-Eingänge ausgleichen, übrige Buchungen nach Regeln vorschlagen</span></li>
-        <li class="af-ergebnis"><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg></span><span><i>Ergebnis</i>Buchungsvorschläge und Prüfliste</span></li>
-      </ol>
-      <p>Eingänge mit QR-Referenz werden den offenen Posten zugeordnet, Sammelbuchungen aufgelöst, der Rest als Vorschlag vorbereitet.</p>
-      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> Mandant Beispiel GmbH: 42 Bewegungen, 31 zugeordnet, 11 auf der Prüfliste.</p>
-      <dl class="ba-fakten">
-        <div><dt>Daten aus</dt><dd>camt-Dateien der Bank oder, wo angeschlossen, die Bankschnittstelle bLink; Import in Ihr Buchhaltungsprogramm, sofern es das zulässt.</dd></div>
-        <div><dt>Sie geben frei</dt><dd>Unklare Buchungen und MWST-Codes prüfen Sie. Die Regeln je Mandant pflegen wir mit Ihnen.</dd></div>
-        <div><dt>Datenschutz</dt><dd>Kontodaten enthalten Personendaten Dritter: Bearbeitung nur mit Vertrag zur Auftragsbearbeitung.</dd></div>
-      </dl>
-    </article>
-    <article class="auto-karte ba-karte r">
+    <article class="auto-karte ba-karte r" id="ba-belegeingang">
       <h3>Belegeingang mit Freigabe durch den Mandanten</h3>
       <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
         <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Rechnungen per E-Mail, Upload oder eBill</span></li>
@@ -142,7 +127,7 @@
         <div><dt>Datenschutz</dt><dd>Belege können Personendaten enthalten: Zugriff nur für das zuständige Team, Vertrag zur Auftragsbearbeitung.</dd></div>
       </dl>
     </article>
-    <article class="auto-karte ba-karte r">
+    <article class="auto-karte ba-karte r" id="ba-mwst">
       <h3>MWST-Abrechnung vorbereiten und abstimmen</h3>
       <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
         <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Buchungsjournal der Periode</span></li>
@@ -154,6 +139,21 @@
       <dl class="ba-fakten">
         <div><dt>Daten aus</dt><dd>Buchungsjournal aus Ihrem Programm; Format eCH-0217 für den manuellen Upload in «MWST-Abrechnung pro».</dd></div>
         <div><dt>Sie geben frei</dt><dd>Steuerliche Beurteilung, Upload und Einreichen machen Sie. Einzelne Ziffern deckt der Standard nicht ab.</dd></div>
+      </dl>
+    </article>
+    <article class="auto-karte ba-karte r" id="ba-bank">
+      <h3>Bankbewegungen je Mandant vorkontieren</h3>
+      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Kontoauszüge camt.053/054 je Mandant und Bank</span></li>
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span><span><i>Verarbeitung</i>QR-Eingänge ausgleichen, übrige Buchungen nach Regeln vorschlagen</span></li>
+        <li class="af-ergebnis"><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg></span><span><i>Ergebnis</i>Buchungsvorschläge und Prüfliste</span></li>
+      </ol>
+      <p>Eingänge mit QR-Referenz werden den offenen Posten zugeordnet, Sammelbuchungen aufgelöst, der Rest als Vorschlag vorbereitet.</p>
+      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> Mandant Beispiel GmbH: 42 Bewegungen, 31 zugeordnet, 11 auf der Prüfliste.</p>
+      <dl class="ba-fakten">
+        <div><dt>Daten aus</dt><dd>camt-Dateien der Bank oder, wo angeschlossen, die Bankschnittstelle bLink; Import in Ihr Buchhaltungsprogramm, sofern es das zulässt.</dd></div>
+        <div><dt>Sie geben frei</dt><dd>Unklare Buchungen und MWST-Codes prüfen Sie. Die Regeln je Mandant pflegen wir mit Ihnen.</dd></div>
+        <div><dt>Datenschutz</dt><dd>Kontodaten enthalten Personendaten Dritter: Bearbeitung nur mit Vertrag zur Auftragsbearbeitung.</dd></div>
       </dl>
     </article>
   </div>

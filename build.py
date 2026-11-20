@@ -286,11 +286,12 @@ APPS_STREIFEN = ('  <p class="u-streifen r"><span><b>Brauchen Sie mehr?</b> Apps
 QR_HINWEIS = ('  <p class="u-hinweis r">Gratis-Werkzeug: <a href="/werkzeuge/qr-rechnung/">QR-Rechnung im Browser erstellen</a></p>')
 
 
-def startseite_unternehmen(daten, schnipsel, branchen_namen):
-    # Block "Für Unternehmen" der Startseite (zwischen auto:unternehmen)
+def startseite_unternehmen(daten, schnipsel, branchen_namen, branchen_daten):
+    # Block "Für Unternehmen" der Startseite (zwischen auto:unternehmen): Karten mit den besten Abläufen je Branche
     links = "".join('<li><a href="/branchen/%s/">%s</a></li>' % (b, html.escape(branchen_namen[b])) for b in BRANCHEN_ZEILE)
     return "\n".join([
-        auto_karten(daten, "/unternehmen/"),
+        startseite_karten(branchen_daten, branchen_namen),
+        '  <p class="u-hinweis r"><a href="/unternehmen/#ueberblick">Die acht Grundabläufe für jedes Büro</a></p>',
         '  <div class="u-beispiel r">\n    <h3>Ein Beispiel: vom Beleg zur Freigabe</h3>\n    %s\n  </div>' % gross_beispiel(schnipsel),
         '  <div class="u-arbeit-wrap">\n    <h3 class="r">So arbeiten wir</h3>\n%s\n  </div>' % arbeitsweise(4),
         APPS_STREIFEN, QR_HINWEIS,
@@ -305,29 +306,40 @@ def startseite_unternehmen(daten, schnipsel, branchen_namen):
 BA_FELDER = ("titel", "schritte", "satz", "beispiel", "daten", "freigabe")
 
 
-def branchen_ablaeufe_html(slug, daten):
-    eintrag = daten.get(slug)
-    if not eintrag:
-        return ""
-    karten = []
-    for x in eintrag["ablaeufe"]:
-        fehlt = [f for f in BA_FELDER if not x.get(f)]
-        if fehlt or len(x["schritte"]) != 3:
-            raise SystemExit("branchen_ablaeufe.json %s: %s" % (slug, ", ".join(fehlt) or "genau 3 Schritte"))
-        eingang, arbeit, ergebnis = x["schritte"]
-        fakten = [("Daten aus", x["daten"]), ("Sie geben frei", x["freigabe"])]
-        if x.get("datenschutz"):
-            fakten.append(("Datenschutz", x["datenschutz"]))
-        karten.append(
-            '    <article class="auto-karte ba-karte r">\n      <h3>%s</h3>\n      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">\n'
+BA_VERKAUF = ("hoch", "mittel", "niedrig")
+
+
+def ba_karte(slug, x, ruhig=False):
+    fehlt = [f for f in BA_FELDER + ("id", "verkauf") if not x.get(f)]
+    if fehlt or len(x["schritte"]) != 3 or x["verkauf"] not in BA_VERKAUF:
+        raise SystemExit("branchen_ablaeufe.json %s: %s" % (slug, ", ".join(fehlt) or "Schritte oder verkauf ungültig"))
+    eingang, arbeit, ergebnis = x["schritte"]
+    fakten = [("Daten aus", x["daten"]), ("Sie geben frei", x["freigabe"])]
+    if x.get("datenschutz"):
+        fakten.append(("Datenschutz", x["datenschutz"]))
+    return ('    <article class="auto-karte ba-karte%s r" id="ba-%s">\n      <h3>%s</h3>\n      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">\n'
             '        <li><span class="af-ic">%s</span><span><i>Eingang</i>%s</span></li>\n'
             '        <li><span class="af-ic">%s</span><span><i>Verarbeitung</i>%s</span></li>\n'
             '        <li class="af-ergebnis"><span class="af-ic">%s</span><span><i>Ergebnis</i>%s</span></li>\n'
             '      </ol>\n      <p>%s</p>\n      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> %s</p>\n'
             '      <dl class="ba-fakten">\n%s\n      </dl>\n    </article>'
-            % (html.escape(x["titel"]), SYMBOL_EINGANG, html.escape(eingang), SYMBOL_ARBEIT, html.escape(arbeit),
-               SYMBOL_ERGEBNIS, html.escape(ergebnis), html.escape(x["satz"]), html.escape(x["beispiel"]),
+            % (" ba-ruhig" if ruhig else "", x["id"], html.escape(x["titel"]), SYMBOL_EINGANG, html.escape(eingang), SYMBOL_ARBEIT,
+               html.escape(arbeit), SYMBOL_ERGEBNIS, html.escape(ergebnis), html.escape(x["satz"]), html.escape(x["beispiel"]),
                "\n".join('        <div><dt>%s</dt><dd>%s</dd></div>' % (t, html.escape(w)) for t, w in fakten)))
+
+
+def branchen_ablaeufe_html(slug, daten):
+    # Reihenfolge wie in den Daten (beste Chancen zuerst); Abläufe mit niedriger Verkaufbarkeit weiter unten, ohne Hervorhebung
+    eintrag = daten.get(slug)
+    if not eintrag:
+        return ""
+    vorne = [x for x in eintrag["ablaeufe"] if x.get("verkauf") != "niedrig"]
+    hinten = [x for x in eintrag["ablaeufe"] if x.get("verkauf") == "niedrig"]
+    karten = "\n".join(ba_karte(slug, x) for x in vorne)
+    weitere = ""
+    if hinten:
+        weitere = ('  <div class="ba-weitere">\n    <h3 class="ba-weitere-titel r">Weitere Abläufe</h3>\n  <div class="ba-karten">\n%s\n  </div>\n  </div>\n'
+                   % "\n".join(ba_karte(slug, x, ruhig=True) for x in hinten))
     quellen = "\n".join('      <li><a href="%s" rel="noopener">%s</a></li>' % (html.escape(q["url"]), html.escape(q["titel"]))
                         for q in eintrag["quellen"])
     if not all(q["url"].startswith("https://") for q in eintrag["quellen"]):
@@ -335,12 +347,35 @@ def branchen_ablaeufe_html(slug, daten):
     return ('<section id="branchen-ablaeufe">\n  <div class="kopf-mitte r">\n    <span class="s-label">Automatisierung</span>\n'
             '    <h2>Abläufe, die für Ihre Branche zählen</h2>\n'
             '    <p class="s-lead">Mehrstufige Abläufe, die Büroarbeit als Entwurf vorbereiten. Sie geben frei. '
-            'Alle Beispiele zeigen erfundene Daten.</p>\n  </div>\n  <div class="ba-karten">\n%s\n  </div>\n'
+            'Alle Beispiele zeigen erfundene Daten.</p>\n  </div>\n  <div class="ba-karten">\n%s\n  </div>\n%s'
             '  <details class="u-mehr r ba-quellen">\n    <summary>Worauf diese Auswahl beruht</summary>\n'
             '    <p class="u-mehr-text">Öffentliche Quellen zu wiederkehrenden Abläufen in Ihrer Branche, geprüft am %s. '
             'Ob eine Anbindung möglich ist, hängt von Ihren Programmen ab; wir prüfen das vor einer Zusage.</p>\n'
             '    <ul>\n%s\n    </ul>\n  </details>\n</section>\n'
-            % ("\n".join(karten), datum_ch(eintrag["geprueft"]), quellen))
+            % (karten, weitere, datum_ch(eintrag["geprueft"]), quellen))
+
+
+def startseite_karten(daten, branchen_namen):
+    # Startseite: acht Karten mit den besten Abläufen je Branche (Liste "startseite" in branchen_ablaeufe.json)
+    karten = []
+    for eintrag in daten["startseite"]:
+        slug, ident = eintrag.split(":")
+        x = next((a for a in daten[slug]["ablaeufe"] if a["id"] == ident), None)
+        if not x:
+            raise SystemExit("branchen_ablaeufe.json startseite: %s fehlt" % eintrag)
+        eingang, arbeit, ergebnis = x["schritte"]
+        karten.append(
+            '    <a class="auto-karte r" href="/branchen/%s/#ba-%s">\n      <span class="auto-nr">%s</span>\n'
+            '      <h3>%s</h3>\n      <ol class="auto-fluss" aria-hidden="true">\n'
+            '        <li><span class="af-ic">%s</span><span><i>Eingang</i>%s</span></li>\n'
+            '        <li><span class="af-ic">%s</span><span><i>Verarbeitung</i>%s</span></li>\n'
+            '        <li class="af-ergebnis"><span class="af-ic">%s</span><span><i>Ergebnis</i>%s</span></li>\n'
+            '      </ol>\n      <span class="way-go">Zum Ablauf %s</span>\n    </a>'
+            % (slug, ident, html.escape(branchen_namen[slug]), html.escape(x["titel"]), SYMBOL_EINGANG, html.escape(eingang),
+               SYMBOL_ARBEIT, html.escape(arbeit), SYMBOL_ERGEBNIS, html.escape(ergebnis), PFEIL))
+    if len(karten) != 8:
+        raise SystemExit("branchen_ablaeufe.json startseite: genau 8 Einträge")
+    return '  <div class="auto-karten">\n%s\n  </div>' % "\n".join(karten)
 
 
 def datum_ch(iso):
@@ -2048,7 +2083,7 @@ def main():
 
     # Startseite: von Hand gepflegt, build.py setzt den Block "Für Unternehmen" und ergänzt beschreibende Linktexte
     branchen_namen = {b["slug"]: b["name"] for b in branchen + artikel_branchen}
-    neu = setze_auto(start, "unternehmen", startseite_unternehmen(ablaeufe, schnipsel_ablaeufe, branchen_namen))
+    neu = setze_auto(start, "unternehmen", startseite_unternehmen(ablaeufe, schnipsel_ablaeufe, branchen_namen, branchen_ablaeufe))
     if beschreibend(neu) != start:
         schreibe("index.html", neu)
 

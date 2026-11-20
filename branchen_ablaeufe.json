@@ -3,19 +3,6 @@
   "geprueft": "2026-11-20",
   "ablaeufe": [
    {
-    "titel": "Bankbewegungen je Mandant vorkontieren",
-    "schritte": [
-     "Kontoauszüge camt.053/054 je Mandant und Bank",
-     "QR-Eingänge ausgleichen, übrige Buchungen nach Regeln vorschlagen",
-     "Buchungsvorschläge und Prüfliste"
-    ],
-    "satz": "Eingänge mit QR-Referenz werden den offenen Posten zugeordnet, Sammelbuchungen aufgelöst, der Rest als Vorschlag vorbereitet.",
-    "beispiel": "Mandant Beispiel GmbH: 42 Bewegungen, 31 zugeordnet, 11 auf der Prüfliste.",
-    "daten": "camt-Dateien der Bank oder, wo angeschlossen, die Bankschnittstelle bLink; Import in Ihr Buchhaltungsprogramm, sofern es das zulässt.",
-    "freigabe": "Unklare Buchungen und MWST-Codes prüfen Sie. Die Regeln je Mandant pflegen wir mit Ihnen.",
-    "datenschutz": "Kontodaten enthalten Personendaten Dritter: Bearbeitung nur mit Vertrag zur Auftragsbearbeitung."
-   },
-   {
     "titel": "Belegeingang mit Freigabe durch den Mandanten",
     "schritte": [
      "Rechnungen per E-Mail, Upload oder eBill",
@@ -26,7 +13,9 @@
     "beispiel": "Rechnung Beispiel AG über CHF 1 180.00, Konto 4000 vorgeschlagen, wartet seit 2 Tagen auf Freigabe.",
     "daten": "QR-Rechnung und eBill (standardisiert); Belege ohne QR-Code über Texterkennung, mit Prüfung.",
     "freigabe": "Jede Zahlung gibt der Mandant frei. Papierbelege werden weiterhin gescannt.",
-    "datenschutz": "Belege können Personendaten enthalten: Zugriff nur für das zuständige Team, Vertrag zur Auftragsbearbeitung."
+    "datenschutz": "Belege können Personendaten enthalten: Zugriff nur für das zuständige Team, Vertrag zur Auftragsbearbeitung.",
+    "id": "belegeingang",
+    "verkauf": "mittel"
    },
    {
     "titel": "MWST-Abrechnung vorbereiten und abstimmen",
@@ -38,7 +27,24 @@
     "satz": "Die Abrechnung liegt als abgestimmter Entwurf bereit, die Datei für den Upload ins ESTV-Portal ebenso.",
     "beispiel": "Quartal 3: 2 Umsätze ohne MWST-Code, Ziffer 200 stimmt mit dem Hauptbuch überein.",
     "daten": "Buchungsjournal aus Ihrem Programm; Format eCH-0217 für den manuellen Upload in «MWST-Abrechnung pro».",
-    "freigabe": "Steuerliche Beurteilung, Upload und Einreichen machen Sie. Einzelne Ziffern deckt der Standard nicht ab."
+    "freigabe": "Steuerliche Beurteilung, Upload und Einreichen machen Sie. Einzelne Ziffern deckt der Standard nicht ab.",
+    "id": "mwst",
+    "verkauf": "mittel"
+   },
+   {
+    "titel": "Bankbewegungen je Mandant vorkontieren",
+    "schritte": [
+     "Kontoauszüge camt.053/054 je Mandant und Bank",
+     "QR-Eingänge ausgleichen, übrige Buchungen nach Regeln vorschlagen",
+     "Buchungsvorschläge und Prüfliste"
+    ],
+    "satz": "Eingänge mit QR-Referenz werden den offenen Posten zugeordnet, Sammelbuchungen aufgelöst, der Rest als Vorschlag vorbereitet.",
+    "beispiel": "Mandant Beispiel GmbH: 42 Bewegungen, 31 zugeordnet, 11 auf der Prüfliste.",
+    "daten": "camt-Dateien der Bank oder, wo angeschlossen, die Bankschnittstelle bLink; Import in Ihr Buchhaltungsprogramm, sofern es das zulässt.",
+    "freigabe": "Unklare Buchungen und MWST-Codes prüfen Sie. Die Regeln je Mandant pflegen wir mit Ihnen.",
+    "datenschutz": "Kontodaten enthalten Personendaten Dritter: Bearbeitung nur mit Vertrag zur Auftragsbearbeitung.",
+    "id": "bank",
+    "verkauf": "mittel"
    }
   ],
   "quellen": [
@@ -81,31 +87,9 @@
     "satz": "Welche Meldung nötig ist, wann eine Installationsanzeige verfällt und was ins Projektdossier gehört, steht auf einer Liste.",
     "beispiel": "Auftrag 2026-118, Musterweg 4: IA genehmigt am 02.11., läuft am 02.05. ab, SiNa offen.",
     "daten": "Ihre Auftragsdaten, Adressprüfung über map.geo.admin.ch; die Erfassung in ElektroForm bleibt bei Ihnen.",
-    "freigabe": "Erstprüfungsprotokoll und Sicherheitsnachweis unterschreibt die berechtigte Person. Die Software prüft keine Technik."
-   },
-   {
-    "titel": "Periodische Kontrolle bis zum Sicherheitsnachweis",
-    "schritte": [
-     "Aufforderung des Netzbetreibers als PDF oder Foto",
-     "Eigentümer, Objekt und Frist auslesen, Termin vorschlagen",
-     "SiNa oder Mängelliste, Wiedervorlage bis zum Eingang"
-    ],
-    "satz": "Aus der Aufforderung entsteht ein Termin, aus der Kontrolle der Bericht und, bei Mängeln, die Übergabe an den behebenden Betrieb.",
-    "beispiel": "Objekt Beispielstrasse 12, Kontrollperiode 20 Jahre, Frist 30.04.2027, Termin am 12.01. vorgeschlagen.",
-    "daten": "Dokumente aus E-Mail oder Scan, Ihr Kalender; keine Schnittstelle zum Netzbetreiber.",
-    "freigabe": "Kontrolle und Mängelbehebung bleiben bei verschiedenen Betrieben. Für die Frist bleibt der Eigentümer verantwortlich."
-   },
-   {
-    "titel": "Vom Regierapport zur Rechnung und zur Mahnung",
-    "schritte": [
-     "Rapport auf dem Handy mit Zeit, Material, Fotos, Unterschrift",
-     "Material zuordnen, Rechnung mit QR-Referenz erstellen, Zahlung abgleichen",
-     "Rechnungsentwurf, offene Posten, Mahnentwurf"
-    ],
-    "satz": "Der unterschriebene Rapport wird zur Rechnung, der Zahlungseingang schliesst den offenen Posten.",
-    "beispiel": "Rapport 2026-118: 2.5 h, 4 Steckdosen, Rechnung CHF 324.30, nach 30 Tagen offen, Erinnerung als Entwurf.",
-    "daten": "QR-Rechnung und camt.054 der Bank (standardisiert); Preislisten Ihrer Lieferanten; Ihre Buchhaltung.",
-    "freigabe": "Rechnung und Mahnung geben Sie frei. Strittige Rapporte bleiben bei Ihnen. Nettopreise Ihrer Lieferanten verarbeiten wir nur mit deren Zustimmung."
+    "freigabe": "Erstprüfungsprotokoll und Sicherheitsnachweis unterschreibt die berechtigte Person. Die Software prüft keine Technik.",
+    "id": "meldewesen",
+    "verkauf": "mittel"
    },
    {
     "titel": "Fristen für Messgeräte und Baustromverteiler",
@@ -117,7 +101,37 @@
     "satz": "Fällige Kalibrierungen und Kontrollen erscheinen rechtzeitig, das hochgeladene Protokoll schliesst den Punkt.",
     "beispiel": "Messgerät MG-03: Kalibrierung fällig am 15.01.2027. Baustromverteiler BV-2: Kontrolle in 3 Wochen.",
     "daten": "Ihre Inventarliste, Kalender und E-Mail.",
-    "freigabe": "Prüfen und kalibrieren tut eine befugte Person, die Liste erinnert nur."
+    "freigabe": "Prüfen und kalibrieren tut eine befugte Person, die Liste erinnert nur.",
+    "id": "messgeraete",
+    "verkauf": "mittel"
+   },
+   {
+    "titel": "Periodische Kontrolle bis zum Sicherheitsnachweis",
+    "schritte": [
+     "Aufforderung des Netzbetreibers als PDF oder Foto",
+     "Eigentümer, Objekt und Frist auslesen, Termin vorschlagen",
+     "SiNa oder Mängelliste, Wiedervorlage bis zum Eingang"
+    ],
+    "satz": "Aus der Aufforderung entsteht ein Termin, aus der Kontrolle der Bericht und, bei Mängeln, die Übergabe an den behebenden Betrieb.",
+    "beispiel": "Objekt Beispielstrasse 12, Kontrollperiode 20 Jahre, Frist 30.04.2027, Termin am 12.01. vorgeschlagen.",
+    "daten": "Dokumente aus E-Mail oder Scan, Ihr Kalender; keine Schnittstelle zum Netzbetreiber.",
+    "freigabe": "Kontrolle und Mängelbehebung bleiben bei verschiedenen Betrieben. Für die Frist bleibt der Eigentümer verantwortlich.",
+    "id": "periodische-kontrolle",
+    "verkauf": "niedrig"
+   },
+   {
+    "titel": "Vom Regierapport zur Rechnung und zur Mahnung",
+    "schritte": [
+     "Rapport auf dem Handy mit Zeit, Material, Fotos, Unterschrift",
+     "Material zuordnen, Rechnung mit QR-Referenz erstellen, Zahlung abgleichen",
+     "Rechnungsentwurf, offene Posten, Mahnentwurf"
+    ],
+    "satz": "Der unterschriebene Rapport wird zur Rechnung, der Zahlungseingang schliesst den offenen Posten.",
+    "beispiel": "Rapport 2026-118: 2.5 h, 4 Steckdosen, Rechnung CHF 324.30, nach 30 Tagen offen, Erinnerung als Entwurf.",
+    "daten": "QR-Rechnung und camt.054 der Bank (standardisiert); Preislisten Ihrer Lieferanten; Ihre Buchhaltung.",
+    "freigabe": "Rechnung und Mahnung geben Sie frei. Strittige Rapporte bleiben bei Ihnen. Nettopreise Ihrer Lieferanten verarbeiten wir nur mit deren Zustimmung.",
+    "id": "rapport-rechnung",
+    "verkauf": "niedrig"
    }
   ],
   "quellen": [
@@ -160,7 +174,9 @@
     "satz": "Welche Rapporte noch nicht zurück oder strittig sind, ist jederzeit sichtbar, die Monatsrechnung samt Beilagen vorbereitet.",
     "beispiel": "Baustelle Beispielhof: Rapport 14.11. seit 8 Arbeitstagen ohne Rücklauf, Regierechnung Oktober bereit.",
     "daten": "Rapporte vom Handy, E-Mail oder Portal der Bauleitung; QR-Rechnung und Zahlungsavis der Bank.",
-    "freigabe": "Rapporte unterschreiben Bauleitung und Unternehmer, über Differenzen entscheiden Sie. Die Fristen richten sich nach Ihrem Werkvertrag."
+    "freigabe": "Rapporte unterschreiben Bauleitung und Unternehmer, über Differenzen entscheiden Sie. Die Fristen richten sich nach Ihrem Werkvertrag.",
+    "id": "regierapporte",
+    "verkauf": "mittel"
    },
    {
     "titel": "Subunternehmer-Dossier für die Sorgfaltspflicht",
@@ -172,7 +188,9 @@
     "satz": "Fehlende Deklarationen und Bescheinigungen werden angefordert, bevor der Subunternehmer startet.",
     "beispiel": "Muster Bau AG: Deklaration Lohnbedingungen vorhanden, Bescheinigung der paritätischen Kommission fehlt.",
     "daten": "Musterdokumente des SECO, Ihre Rapporte; Handelsregister und Bescheinigungen werden von Hand geprüft.",
-    "freigabe": "Ob die Angaben glaubhaft sind, beurteilen Sie. Eine Checkliste allein erfüllt die Sorgfaltspflicht nicht."
+    "freigabe": "Ob die Angaben glaubhaft sind, beurteilen Sie. Eine Checkliste allein erfüllt die Sorgfaltspflicht nicht.",
+    "id": "subunternehmer",
+    "verkauf": "mittel"
    },
    {
     "titel": "Garantie- und Mängelregister ab Abnahme",
@@ -184,7 +202,9 @@
     "satz": "Jede Rüge ist datiert und zugeordnet, Nachbesserungen und auslaufende Fristen sind im Blick.",
     "beispiel": "Objekt Beispielweg 7: Rüge vom 03.11. zu Plattenarbeiten, an Muster Bau AG weitergeleitet, Termin am 18.11.",
     "daten": "E-Mail, Briefe als Scan, Ihr Kalender.",
-    "freigabe": "Ob ein Mangel vorliegt und welche Frist gilt, beurteilen Sie oder Ihre Rechtsberatung. Das Register zieht keine rechtlichen Schlüsse."
+    "freigabe": "Ob ein Mangel vorliegt und welche Frist gilt, beurteilen Sie oder Ihre Rechtsberatung. Das Register zieht keine rechtlichen Schlüsse.",
+    "id": "maengelregister",
+    "verkauf": "mittel"
    },
    {
     "titel": "Unfallmeldung von der Baustelle",
@@ -197,7 +217,9 @@
     "beispiel": "Ereignis 13.11., Baustelle Beispielhof, Funktion Maurer, Meldung wartet auf Freigabe durch die Geschäftsleitung.",
     "daten": "Ihre Personalstammdaten; Übermittlung über eine KLE-fähige Lohnsoftware, sonst im Online-Dienst der Suva.",
     "freigabe": "Melden tut der Arbeitgeber. Schwere Unfälle melden Sie wie bisher sofort telefonisch.",
-    "datenschutz": "Gesundheitsdaten von Mitarbeitenden sind besonders schützenswert: nur wenige Personen mit Zugriff, keine Weitergabe an Dritte."
+    "datenschutz": "Gesundheitsdaten von Mitarbeitenden sind besonders schützenswert: nur wenige Personen mit Zugriff, keine Weitergabe an Dritte.",
+    "id": "unfallmeldung",
+    "verkauf": "niedrig"
    }
   ],
   "quellen": [
@@ -241,7 +263,9 @@
     "beispiel": "Patient 0412: Sitzung 33 von 36, Langzeitverordnung angefragt am 04.11., Kostengutsprache noch offen.",
     "daten": "Sitzungsdaten aus Ihrem Praxisprogramm, sofern ein Export möglich ist; Verordnungen aus Scan oder E-Mail.",
     "freigabe": "Das Gesuch stellt die Ärztin oder der Arzt, Berichte schreibt eine Fachperson. Jede Anfrage geben Sie frei.",
-    "datenschutz": "Gesundheitsdaten sind besonders schützenswert und unterstehen dem Berufsgeheimnis: Bearbeitung nur mit Vertrag zur Auftragsbearbeitung, Speicherort nennen wir vor dem Start."
+    "datenschutz": "Gesundheitsdaten sind besonders schützenswert und unterstehen dem Berufsgeheimnis: Bearbeitung nur mit Vertrag zur Auftragsbearbeitung, Speicherort nennen wir vor dem Start.",
+    "id": "verordnungen",
+    "verkauf": "mittel"
    }
   ],
   "quellen": [
@@ -271,19 +295,6 @@
   "geprueft": "2026-11-20",
   "ablaeufe": [
    {
-    "titel": "Mietzinseingänge zuordnen und Mahnlauf vorbereiten",
-    "schritte": [
-     "Zahlungsavis der Bank mit QR-Referenz je Mieteinheit",
-     "Eingänge je Mietverhältnis abgleichen, Rückstände erkennen",
-     "Rückstandsliste und Mahnbriefe als Entwurf"
-    ],
-    "satz": "Wer im Rückstand ist, steht am Stichtag fest, die Mahnbriefe mit Frist sind vorbereitet.",
-    "beispiel": "Liegenschaft Beispielweg 12: 23 von 24 Mieten eingegangen, Wohnung 3.2 mit CHF 1 650.00 im Rückstand.",
-    "daten": "QR-Rechnung und camt.054 der Bank (standardisiert); Mieterdaten aus Ihrer Verwaltungssoftware.",
-    "freigabe": "Ob gemahnt und gekündigt wird, entscheiden Sie. Kündigungen auf dem amtlichen Formular und per Einschreiben bleiben bei Ihnen.",
-    "datenschutz": "Zahlungsrückstände sind heikle Personendaten: Zugriff nur für die Bewirtschaftung."
-   },
-   {
     "titel": "Schadenmeldung bis zur Handwerkerrechnung",
     "schritte": [
      "Meldung der Mieterin mit Fotos",
@@ -294,7 +305,9 @@
     "beispiel": "Wohnung 2.1: Wasserhahn tropft, Dringlichkeit normal, Sanitär Muster AG vorgeschlagen, Kostendach CHF 300.",
     "daten": "Formular oder E-Mail, QR-Rechnung und eBill der Handwerker, Ihre Verwaltungssoftware.",
     "freigabe": "Auftrag und Kostendach geben Sie frei. Versicherungsfälle melden Sie wie bisher.",
-    "datenschutz": "An Handwerker gehen nur die nötigen Angaben, nicht das ganze Mieterdossier."
+    "datenschutz": "An Handwerker gehen nur die nötigen Angaben, nicht das ganze Mieterdossier.",
+    "id": "schadenmeldung",
+    "verkauf": "mittel"
    },
    {
     "titel": "Mieterwechsel als geführter Ablauf",
@@ -307,7 +320,24 @@
     "beispiel": "Wohnung 3.2, Auszug 31.03.: 3 Besichtigungstermine, 9 Bewerbungen, Übergabe am 31.03. um 10 Uhr.",
     "daten": "Ihre Verwaltungssoftware, Formulare; das Mietzinsdepot läuft über die Formulare der Bank.",
     "freigabe": "Wer die Wohnung erhält, entscheiden Sie. Keine automatische Bewertung von Bewerberinnen und Bewerbern.",
-    "datenschutz": "Bewerbungsunterlagen nur im nötigen Umfang erfassen und nach Vertragsabschluss vernichten, wie es das EDÖB-Merkblatt beschreibt."
+    "datenschutz": "Bewerbungsunterlagen nur im nötigen Umfang erfassen und nach Vertragsabschluss vernichten, wie es das EDÖB-Merkblatt beschreibt.",
+    "id": "mieterwechsel",
+    "verkauf": "niedrig"
+   },
+   {
+    "titel": "Mietzinseingänge zuordnen und Mahnlauf vorbereiten",
+    "schritte": [
+     "Zahlungsavis der Bank mit QR-Referenz je Mieteinheit",
+     "Eingänge je Mietverhältnis abgleichen, Rückstände erkennen",
+     "Rückstandsliste und Mahnbriefe als Entwurf"
+    ],
+    "satz": "Wer im Rückstand ist, steht am Stichtag fest, die Mahnbriefe mit Frist sind vorbereitet.",
+    "beispiel": "Liegenschaft Beispielweg 12: 23 von 24 Mieten eingegangen, Wohnung 3.2 mit CHF 1 650.00 im Rückstand.",
+    "daten": "QR-Rechnung und camt.054 der Bank (standardisiert); Mieterdaten aus Ihrer Verwaltungssoftware.",
+    "freigabe": "Ob gemahnt und gekündigt wird, entscheiden Sie. Kündigungen auf dem amtlichen Formular und per Einschreiben bleiben bei Ihnen.",
+    "datenschutz": "Zahlungsrückstände sind heikle Personendaten: Zugriff nur für die Bewirtschaftung.",
+    "id": "mietzins",
+    "verkauf": "niedrig"
    },
    {
     "titel": "Mitteilungen bei Referenzzinssatz und Akontozahlungen",
@@ -319,7 +349,9 @@
     "satz": "Welche Verträge betroffen sind, steht auf einer Liste, die Mitteilungen liegen als Entwurf bereit.",
     "beispiel": "14 Verträge mit Mietzinsbasis 1.75 %, Entwürfe für die Anpassung zur Prüfung.",
     "daten": "Mietzinsbasis und Nebenkosten aus Ihrer Verwaltungssoftware.",
-    "freigabe": "Begründung, Termine und Versand per Einschreiben prüfen und machen Sie. Formfehler können eine Mitteilung ungültig machen."
+    "freigabe": "Begründung, Termine und Versand per Einschreiben prüfen und machen Sie. Formfehler können eine Mitteilung ungültig machen.",
+    "id": "referenzzins",
+    "verkauf": "niedrig"
    }
   ],
   "quellen": [
@@ -353,6 +385,21 @@
   "geprueft": "2026-11-20",
   "ablaeufe": [
    {
+    "titel": "Arbeitsplan, Zeiterfassung und Monatsabschluss",
+    "schritte": [
+     "Dienstplan, Zeiterfassung, Ferien und Absenzen",
+     "Planungsfristen und Ruhetage prüfen, Soll und Ist vergleichen",
+     "Monatsauszug zur Unterschrift und Hinweise vor dem Lohnlauf"
+    ],
+    "satz": "Abweichungen bei Ruhetagen und Überstunden erscheinen vor der Lohnabrechnung, der Monatsauszug liegt zur Unterschrift bereit.",
+    "beispiel": "Mitarbeiterin 07: 1 Ruhetag zu wenig in Woche 46, Saldo plus 6.5 Stunden, Auszug zur Unterschrift.",
+    "daten": "Ihre Zeiterfassung und Ihr Lohnprogramm.",
+    "freigabe": "Ausnahmen, Ausgleich und Auszahlung entscheiden Sie. Die Regeln halten wir mit Ihnen aktuell, eine Rechtsauskunft ist das nicht.",
+    "datenschutz": "Daten von Mitarbeitenden: Absenzen ohne Diagnose erfassen, Zugriff nur für die Leitung.",
+    "id": "arbeitsplan",
+    "verkauf": "mittel"
+   },
+   {
     "titel": "Meldeschein und Kurtaxe aus den Buchungen",
     "schritte": [
      "Buchung und Online-Check-in des Gastes",
@@ -363,7 +410,23 @@
     "beispiel": "November: 186 Meldescheine, 3 ohne Ausweisnummer, Kurtaxe-Abrechnung Quartal 4 vorbereitet.",
     "daten": "Ihr Hotel- oder Buchungsprogramm; Meldung über das Verfahren Ihres Kantons oder Ihrer Gemeinde, mit oder ohne Schnittstelle.",
     "freigabe": "Ausweise prüft Ihr Team, die Abrechnung geben Sie frei. Tarife und Befreiungen je Gemeinde pflegen wir mit Ihnen.",
-    "datenschutz": "Meldescheindaten dienen der Identifikation und werden nicht für Werbung verwendet; Löschung nach der Aufbewahrungsfrist."
+    "datenschutz": "Meldescheindaten dienen der Identifikation und werden nicht für Werbung verwendet; Löschung nach der Aufbewahrungsfrist.",
+    "id": "meldeschein",
+    "verkauf": "mittel"
+   },
+   {
+    "titel": "Allergenliste aus den Rezepten",
+    "schritte": [
+     "Rezepte, Zutatenlisten der Lieferanten, Tageskarte",
+     "Zutaten den 14 Allergenen zuordnen, Änderungen melden",
+     "Allergenhinweise für Karte und Personal als Entwurf"
+    ],
+    "satz": "Ändert ein Rezept oder ein Lieferant, wird die Allergenliste neu berechnet und die Küche darauf hingewiesen.",
+    "beispiel": "Tagesmenü Donnerstag: Sauce mit neuer Bouillon, enthält neu Sellerie, Hinweis an die Küche.",
+    "daten": "Ihre Rezepte und die Produktdaten Ihrer Lieferanten.",
+    "freigabe": "Rezepte und Allergenangaben bestätigt die Küche. Spuren und Kreuzkontamination kann Software nicht beurteilen.",
+    "id": "allergene",
+    "verkauf": "niedrig"
    },
    {
     "titel": "Reservationen mit Rückmeldung und Warteliste",
@@ -376,32 +439,9 @@
     "beispiel": "Samstag 19 Uhr: 4 Personen bestätigt, 1 Absage, Tisch an Familie Beispiel angeboten.",
     "daten": "Ihr Reservationsprogramm oder E-Mail, SMS.",
     "freigabe": "Ob eine Stornogebühr verlangt wird, entscheiden Sie. Belastet wird nichts automatisch.",
-    "datenschutz": "Kontaktdaten nur für die Reservation, nicht für Werbung ohne Einwilligung."
-   },
-   {
-    "titel": "Arbeitsplan, Zeiterfassung und Monatsabschluss",
-    "schritte": [
-     "Dienstplan, Zeiterfassung, Ferien und Absenzen",
-     "Planungsfristen und Ruhetage prüfen, Soll und Ist vergleichen",
-     "Monatsauszug zur Unterschrift und Hinweise vor dem Lohnlauf"
-    ],
-    "satz": "Abweichungen bei Ruhetagen und Überstunden erscheinen vor der Lohnabrechnung, der Monatsauszug liegt zur Unterschrift bereit.",
-    "beispiel": "Mitarbeiterin 07: 1 Ruhetag zu wenig in Woche 46, Saldo plus 6.5 Stunden, Auszug zur Unterschrift.",
-    "daten": "Ihre Zeiterfassung und Ihr Lohnprogramm.",
-    "freigabe": "Ausnahmen, Ausgleich und Auszahlung entscheiden Sie. Die Regeln halten wir mit Ihnen aktuell, eine Rechtsauskunft ist das nicht.",
-    "datenschutz": "Daten von Mitarbeitenden: Absenzen ohne Diagnose erfassen, Zugriff nur für die Leitung."
-   },
-   {
-    "titel": "Allergenliste aus den Rezepten",
-    "schritte": [
-     "Rezepte, Zutatenlisten der Lieferanten, Tageskarte",
-     "Zutaten den 14 Allergenen zuordnen, Änderungen melden",
-     "Allergenhinweise für Karte und Personal als Entwurf"
-    ],
-    "satz": "Ändert ein Rezept oder ein Lieferant, wird die Allergenliste neu berechnet und die Küche darauf hingewiesen.",
-    "beispiel": "Tagesmenü Donnerstag: Sauce mit neuer Bouillon, enthält neu Sellerie, Hinweis an die Küche.",
-    "daten": "Ihre Rezepte und die Produktdaten Ihrer Lieferanten.",
-    "freigabe": "Rezepte und Allergenangaben bestätigt die Küche. Spuren und Kreuzkontamination kann Software nicht beurteilen."
+    "datenschutz": "Kontaktdaten nur für die Reservation, nicht für Werbung ohne Einwilligung.",
+    "id": "reservationen",
+    "verkauf": "niedrig"
    }
   ],
   "quellen": [
@@ -441,7 +481,9 @@
     "beispiel": "Auftrag 2026-311, Grenze CHF 200: Bremsscheiben vorne CHF 480, Freigabe per SMS um 10.42 Uhr.",
     "daten": "Ihr Garagenprogramm, sofern es eine Anbindung zulässt; SMS, E-Mail, QR-Rechnung und Zahlungsavis der Bank.",
     "freigabe": "Ob eine Arbeit nötig ist, beurteilt Ihr Fachpersonal. Preise und Rechnung geben Sie frei.",
-    "datenschutz": "Kundendaten und Kontrollschild nur für den Auftrag."
+    "datenschutz": "Kundendaten und Kontrollschild nur für den Auftrag.",
+    "id": "werkstattauftrag",
+    "verkauf": "hoch"
    },
    {
     "titel": "MFK-Termine koordinieren",
@@ -453,7 +495,9 @@
     "satz": "Aus dem Aufgebot entstehen Vorbereitungstermin und Erinnerung, nach der Prüfung der Auftrag für die Mängel.",
     "beispiel": "Fahrzeug Beispiel, MFK am 09.12., Vorbereitung am 04.12. vorgeschlagen, Kunde hat bestätigt.",
     "daten": "Fotos oder Scans der Aufgebote, Ihr Kalender; den Vorführtermin buchen Sie im Portal Ihres Kantons.",
-    "freigabe": "Geprüft wird beim Strassenverkehrsamt. Termine buchen und verschieben Sie selbst."
+    "freigabe": "Geprüft wird beim Strassenverkehrsamt. Termine buchen und verschieben Sie selbst.",
+    "id": "mfk",
+    "verkauf": "mittel"
    },
    {
     "titel": "Reifenhotel und Saisonwechsel",
@@ -466,7 +510,9 @@
     "beispiel": "Lagerplatz R-114, Profil 3 mm, Wechsel am 28.10., Offertentwurf für neue Winterreifen.",
     "daten": "Ihre Lagerliste oder Ihr Garagenprogramm, Online-Terminbuchung, SMS und E-Mail.",
     "freigabe": "Den Zustand der Reifen beurteilt Ihr Fachpersonal, Offerten geben Sie frei.",
-    "datenschutz": "Erinnerungen zum vereinbarten Service, keine Werbung ohne passende Einwilligung."
+    "datenschutz": "Erinnerungen zum vereinbarten Service, keine Werbung ohne passende Einwilligung.",
+    "id": "reifenhotel",
+    "verkauf": "niedrig"
    }
   ],
   "quellen": [
@@ -506,7 +552,9 @@
     "beispiel": "Fahrer 04: Fahrerkarte seit 9 Tagen nicht ausgelesen. Fahrzeug ZH 0000: Massenspeicher fällig am 15.12.",
     "daten": "Rohdaten im Format .ddd oder .xdt aus Ihrem Lesegerät oder Ihrer Telematik.",
     "freigabe": "Ob eine Abweichung ein Verstoss ist und was daraus folgt, beurteilt die verantwortliche Person. Die Kontrollpflicht bleibt beim Betrieb.",
-    "datenschutz": "Daten der Fahrerinnen und Fahrer werden nur für die gesetzliche Aufstellung ausgewertet, nicht zur Überwachung des Verhaltens."
+    "datenschutz": "Daten der Fahrerinnen und Fahrer werden nur für die gesetzliche Aufstellung ausgewertet, nicht zur Überwachung des Verhaltens.",
+    "id": "fahrtschreiber",
+    "verkauf": "mittel"
    }
   ],
   "quellen": [
@@ -545,7 +593,9 @@
     "satz": "Sammelgutschriften werden den Tagesumsätzen zugeordnet statt doppelt gebucht, Differenzen fallen früh auf.",
     "beispiel": "Woche 46: TWINT CHF 2 314.50, Gutschrift CHF 2 296.10, Differenz Gebühren CHF 18.40.",
     "daten": "Datei-Exporte Ihrer Kasse, des TWINT-Händlerportals und Ihres Kartenanbieters; Kontoauszug camt.053.",
-    "freigabe": "Kassensturz und Bargeld bleiben bei Ihnen, die Buchungen geben Sie oder Ihre Treuhänderin frei."
+    "freigabe": "Kassensturz und Bargeld bleiben bei Ihnen, die Buchungen geben Sie oder Ihre Treuhänderin frei.",
+    "id": "tagesabschluss",
+    "verkauf": "hoch"
    },
    {
     "titel": "Retouren im Onlineshop",
@@ -558,7 +608,9 @@
     "beispiel": "Bestellung 10457: Jacke Grösse M, Zustand verkaufbar, Rückzahlung CHF 89.00 zur Freigabe.",
     "daten": "Ihr Shopsystem und Ihr Zahlungsanbieter, sofern sie eine Anbindung zulassen.",
     "freigabe": "Rückzahlungen geben Sie frei. Preisentscheide bleiben bei Ihnen.",
-    "datenschutz": "Kundendaten nur für die Abwicklung der Retoure, Vertrag zur Auftragsbearbeitung."
+    "datenschutz": "Kundendaten nur für die Abwicklung der Retoure, Vertrag zur Auftragsbearbeitung.",
+    "id": "retouren",
+    "verkauf": "niedrig"
    }
   ],
   "quellen": [
@@ -583,5 +635,15 @@
     "titel": "PostFinance: QR-Rechnung, QR-Referenz und Zahlungsavis camt.054"
    }
   ]
- }
+ },
+ "startseite": [
+  "detailhandel:tagesabschluss",
+  "garagen:werkstattauftrag",
+  "treuhaender:belegeingang",
+  "transport-logistik:fahrtschreiber",
+  "elektro-handwerk:meldewesen",
+  "bauunternehmen:regierapporte",
+  "hotels-gastronomie:arbeitsplan",
+  "immobilienverwaltungen:schadenmeldung"
+ ]
 }
