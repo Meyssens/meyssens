@@ -1187,3 +1187,28 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .sg-nutzen{flex-direction:column;align-items:flex-start;max-width:340px}
   #fuer-gemeinden .sg-handy{width:40%;margin-top:-22%}
 }
+
+/* Haken-Listen (20.11.2026): Inline-SVG, Strich 2 px, runde Enden, dunkleres Markenblau auf sehr hellem Kreis (24 px),
+   immer in einer festen Spalte links; Kontrast Haken zu Kreis 9.5:1 */
+.haken{flex:none;display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#ebebff;color:#0000cc}
+.haken svg{display:block;width:24px;height:24px}
+.haken-offen{background:#fff;border:2px solid #9a9ab8;box-sizing:border-box}
+/* Datenblatt: Haken links, Bezeichnung, Wert rechts; schmal: Wert unter der Bezeichnung */
+.sg-datenblatt dl > div{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.3rem 1rem}
+.sg-datenblatt dt{display:flex;align-items:center;gap:.7rem;min-width:0}
+.sg-datenblatt dd{display:block;text-align:right}
+@media(max-width:480px){
+  .sg-datenblatt dl > div{grid-template-columns:minmax(0,1fr)}
+  .sg-datenblatt dd{text-align:left;padding-left:calc(24px + .7rem)}
+}
+/* Nutzenlisten der Startseite */
+.sg-haken li{display:flex;align-items:flex-start;gap:.7rem;padding-left:0}
+.sg-haken li::before,.sg-haken li::after{content:none}
+.sg-haken .haken{margin-top:max(0px,calc((1.5em - 24px) / 2))}
+/* Pilot-Karte /gemeinden/ */
+.pk-liste .haken{margin-top:0}
+/* Beispielansichten: Erstgespräch, Rapport, App */
+.mock-check li{justify-content:flex-start;gap:.6rem}
+.mock-check li .haken{margin-right:0}
+.handy-liste li::before,.handy-liste li.ok::before{content:none}
+.sg-nutzen{display:grid;justify-content:center;gap:.6rem;max-width:none}
