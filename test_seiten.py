@@ -680,10 +680,6 @@ else:
     for x in ablaeufe["unternehmen"]:
         if '<a class="auto-karte r" href="#ablauf-%s">' % x["id"] not in seiten["/unternehmen/"][0]:
             fehler.append("/unternehmen/: Karte für Ablauf %s fehlt" % x["id"])
-# Startseite: acht Karten mit den besten Abläufen je Branche, jede auf einen Ablauf einer Branchenseite (#ba-...)
-start_karten = re.findall(r'<a class="auto-karte r" href="(/branchen/[a-z-]+/#ba-[a-z0-9-]+)">', seiten["/"][0])
-if len(start_karten) != 8 or len(set(start_karten)) != 8:
-    fehler.append("/: nicht genau acht verschiedene Karten mit Abläufen der Branchenseiten")
     for muss in ("Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.", "Vertrag zur Auftragsbearbeitung",
                  "Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.", "nach Absprache an, wenn eine Schnittstelle besteht",
                  "keine Rechtsberatung", "Sie entscheiden:"):
@@ -697,6 +693,24 @@ if len(start_karten) != 8 or len(set(start_karten)) != 8:
     if not liste or len(liste[0]["itemListElement"]) != 8 or any(e["item"].get("@type") != "Service" or "offers" in e["item"]
                                                                  for e in liste[0]["itemListElement"]):
         fehler.append("/unternehmen/: JSON-LD ItemList mit acht Service-Einträgen (ohne Preise) fehlt")
+# Startseite: vier bis sechs Karten mit den besten Abläufen je Branche und Link «Alle Branchen»;
+# alle acht Karten auf /unternehmen/ (jede auf einen Ablauf einer Branchenseite, #ba-...)
+KARTE_BA = r'<a class="auto-karte r" href="(/branchen/[a-z-]+/#ba-[a-z0-9-]+)">'
+start_karten = re.findall(KARTE_BA, seiten["/"][0])
+if not 4 <= len(start_karten) <= 6 or len(set(start_karten)) != len(start_karten):
+    fehler.append("/: nicht vier bis sechs verschiedene Karten mit Abläufen der Branchenseiten")
+if '<a href="/branchen/" data-i18n="s.br.alle">Alle Branchen</a>' not in seiten["/"][0]:
+    fehler.append("/: Link «Alle Branchen» fehlt")
+u_karten = re.findall(KARTE_BA, seiten["/unternehmen/"][0])
+if len(u_karten) != 8 or len(set(u_karten)) != 8 or not set(start_karten) <= set(u_karten):
+    fehler.append("/unternehmen/: nicht genau acht verschiedene Karten mit den besten Abläufen je Branche")
+# Startseite: Knopf «Gespräch vereinbaren» im Kopf, im Hero und am Seitenende; Übersetzungen FR/IT/EN vollständig
+if seiten["/"][0].count("Gespräch vereinbaren</") < 3:
+    fehler.append("/: Knopf «Gespräch vereinbaren» nicht in Kopf, Hero und Seitenende")
+sprachen = (ROOT / "assets" / "start-sprachen.js").read_text(encoding="utf-8")
+for key in set(re.findall(r'data-i18n(?:-html|-alt|-aria)?="([^"]+)"', seiten["/"][0])):
+    if not key.startswith("cookie.") and sprachen.count('"%s":' % key) != 3:
+        fehler.append("/: Übersetzung für %s nicht in allen drei Sprachen (FR/IT/EN)" % key)
 for slug in ablaeufe["branchen"]:
     url = "/branchen/%s/" % slug
     text = seiten.get(url, ("",))[0]

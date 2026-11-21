@@ -1293,3 +1293,45 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .ba-ruhig .af-ic,.ba-ruhig .af-ergebnis .af-ic{background:#fff;color:var(--ink3);border:1px solid var(--rand)}
 .auto-karte .auto-nr{text-transform:uppercase}
 .ba-karten > .ba-karte:only-child{max-width:560px;width:100%;justify-self:center}
+/* Startseite 21.11.2026: Hero, zwei Angebotskarten, Ablauf, Beispiele, Vertrauen (bestehende Farben und Schriften) */
+.start-held{padding-bottom:clamp(2rem,4vw,3rem)}
+.start-held .lead{max-width:720px;margin-left:auto;margin-right:auto}
+.st-angebot{padding-top:0}
+.st-karten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.5vw,1.75rem);max-width:1180px;margin:0 auto}
+.st-karte{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;background:var(--grau);border-radius:24px;padding:clamp(1.25rem,3vw,2rem);scroll-margin-top:96px}
+.st-karte h2{font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:clamp(1.5rem,2.6vw,2rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;color:var(--ink);margin:0}
+.st-karte > p{font-size:1rem;line-height:1.6;color:var(--ink2);margin:0;min-height:3.2em}
+.st-bild{width:100%;box-shadow:0 1px 2px rgba(10,10,60,.04),0 24px 50px -30px rgba(10,10,60,.35)}
+.st-bild img{display:block;width:100%;height:auto}
+.st-vn{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;aspect-ratio:16/10;padding:clamp(.75rem,2vw,1.25rem);background:#fff}
+.st-vn > div{border-radius:14px;padding:clamp(.7rem,1.6vw,1rem);display:flex;flex-direction:column;gap:.6rem}
+.st-vorher{background:var(--grau)}
+.st-nachher{background:var(--blue-8)}
+.st-vn b{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.st-nachher b{color:#0000cc}
+.st-vn ul{list-style:none;display:grid;gap:.45rem;margin:0;padding:0}
+.st-vn li{background:#fff;border-radius:10px;padding:.5rem .65rem;font-size:clamp(.78rem,1.3vw,.88rem);line-height:1.35;color:var(--ink2)}
+.st-nachher li{color:var(--ink);font-weight:500;box-shadow:inset 3px 0 0 var(--blue)}
+.st-karte .btn-p{margin-top:.25rem}
+.st-mehr{color:var(--blue);font-size:.92rem;font-weight:500;text-underline-offset:3px;padding:.35rem 0}
+.st-ic{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;border-radius:12px;background:var(--blue-8);color:#0000ff;margin:.25rem .25rem 0}
+.st-schritte .sg-schritt h3{display:flex;align-items:baseline;gap:.4rem}
+.st-nr{color:#0000cc}
+#beispiele .st-beispiel{max-width:1180px;margin:0 auto clamp(2.5rem,5vw,4rem)}
+#beispiele .st-beispiel:last-of-type{margin-bottom:0}
+.st-beispiel h3{font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:clamp(1.3rem,2.2vw,1.65rem);font-weight:800;letter-spacing:-.03em;line-height:1.15;color:var(--ink);margin:.5rem 0 .75rem}
+.st-beispiel .abl-text > p{color:var(--ink2);line-height:1.6;margin-bottom:.75rem}
+.st-link{color:var(--blue);font-weight:600;text-underline-offset:3px;display:inline-flex;align-items:center;gap:.4rem;padding:.4rem 0}
+.st-handy{margin:0;display:flex;justify-content:center}
+.st-handy .sg-handy{position:relative;right:auto;bottom:auto;width:min(260px,62vw)}
+.st-punkte{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1.5rem 2rem;max-width:1180px;margin:0 auto}
+.u-unter{font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:clamp(1.15rem,2vw,1.4rem);font-weight:800;letter-spacing:-.02em;text-align:center;color:var(--ink);margin:clamp(1.5rem,3vw,2.5rem) auto 1.25rem}
+@media(max-width:900px){.st-karten{grid-template-columns:1fr;max-width:640px}.st-karte > p{min-height:0}}
+@media(max-width:420px){.st-vn{aspect-ratio:auto;grid-template-columns:1fr}}
+@media(max-width:640px){.stil.start #lang-switch-desktop{display:none}}
+@media(min-width:641px) and (max-width:1100px){.stil.start .nav-items,.stil.start #lang-switch-desktop{display:none}.stil.start .hamburger{display:flex}.stil.start .mobile-nav{top:86px;left:14px;right:14px;border-radius:18px}}
+@media(min-width:641px){.stil .page-hero.start-held h1{max-width:15.22em;font-size:clamp(2.1rem,5.2vw,4.2rem)}}
+#beispiele .st-beispiel + .st-beispiel,#beispiele .st-beispiel:has(.abl-geraet){grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
+.stil .mobile-nav a.mobile-gespraech{display:none}
+@media(max-width:520px){.stil.start #nav .nav-kontakt{display:none}.stil.start .mobile-nav a.mobile-gespraech{display:flex;justify-content:center;color:#fff;font-weight:600;border-bottom:none;margin:.25rem 0 .75rem}}
+@media(max-width:900px){#beispiele .st-beispiel + .st-beispiel,#beispiele .st-beispiel:has(.abl-geraet){grid-template-columns:minmax(0,1fr)}}

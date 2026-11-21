@@ -7,7 +7,8 @@ Danach:                   python3 build.py && python3 test_seiten.py
 Braucht Playwright mit Chromium (pip install playwright, playwright install chromium) und Pillow.
 Schreibt nach assets/beispiel/:
   demo-desktop.webp (1800 px), demo-desktop-960.webp   Startseite der Demo am Computer (1440 x 900, scharf mit 2x)
-  demo-handy.webp (780 px)                             Karten-Umfrage auf der Demo-Startseite am Handy (390 x 844, 3x)
+  demo-handy.webp (780 px)                             Karten-Umfrage auf der Demo-Startseite am Handy (390 x 844, 3x),
+                                                       mit dem festen Kopf der Demo oberhalb des Abschnitts
 
 Hinweise:
 - Das Cookie-Fenster der Demo wird per Skript geschlossen («Alle akzeptieren»), es erscheint nicht im Bild.
@@ -103,11 +104,15 @@ async def main():
             raise SystemExit("Abbruch: keine Karte auf der Demo-Startseite gefunden")
         sel = "#md-map" if await s.locator("#md-map").count() else ".leaflet-container"
         await karte_bereit(s, sel)
-        # Erst etwas oberhalb, dann nach unten zum Abschnitt scrollen: Der Kopf der Demo blendet sich beim
-        # Hochscrollen ein und würde sonst den Titel verdecken
-        await s.evaluate("y => scrollTo(0, Math.max(0, y - 400))", abschnitt)
-        await s.wait_for_timeout(500)
+        # Zum Abschnitt scrollen und dabei die Höhe des festen Kopfs der Demo (Hinweisleiste und Menü) abziehen,
+        # damit der Kopf den Titel des Abschnitts nicht verdeckt
         await s.evaluate("y => scrollTo(0, y)", abschnitt)
+        await s.wait_for_timeout(900)
+        kopf = await s.evaluate("""() => Math.max(0, ...[...document.querySelectorAll('body *')].filter(e => {
+            const p = getComputedStyle(e).position; const r = e.getBoundingClientRect();
+            return (p == 'fixed' || p == 'sticky') && r.top <= 1 && r.height > 0 && r.height < innerHeight / 3 && r.width > innerWidth / 2
+          }).map(e => e.getBoundingClientRect().bottom))""")
+        await s.evaluate("y => scrollTo(0, y)", max(0, abschnitt - kopf - 8))
         await s.wait_for_timeout(900)
         await s.wait_for_function(KACHELN_FERTIG, arg=sel, timeout=45000)
         bild = Image.open(BytesIO(await s.screenshot()))
