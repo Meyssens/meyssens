@@ -1459,7 +1459,7 @@ def ehrlich(produkte):
         namen = [p["name"] for p in produkte if p["status"] == stufe]
         if namen:
             teile.append("%s %s" % (liste(namen), text))
-    return ("Meyssens ist ein Einzelunternehmen in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen. "
+    return ("Meyssens ist ein Einzelunternehmen. Wir haben noch keine Kunden und keine Referenzen. "
             "Stand der hier genannten Produkte: %s. "
             "Ein Werkzeug ersetzt keine rechtliche Prüfung, und am Ende entscheidet immer ein Mensch."
             % ", ".join(teile))
@@ -2015,8 +2015,8 @@ def main():
     ueber_inhalt = (
         abschnitt_html("wer", "Wer", "Wer hinter Meyssens steht",
             '  <div class="artikel-text r">\n'
-            '    <p>Meyssens ist ein Einzelunternehmen in Lausen im Kanton Basel-Landschaft, gegründet von Lionel Nickelsen. '
-            'Die Firma ist als Einzelfirma im Kanton Basel-Landschaft eingetragen. Wir haben noch keine Kunden und keine '
+            '    <p>Meyssens ist ein Einzelunternehmen, gegründet von Lionel Nickelsen. '
+            'Die Firma ist als Einzelfirma im Handelsregister eingetragen. Wir haben noch keine Kunden und keine '
             'Referenzen und sagen das auf unseren Seiten offen.</p>\n  </div>') + "\n" +
         abschnitt_html("angebot", "Angebot", "Was wir anbieten",
             '  <div class="artikel-text r">\n'
@@ -2049,11 +2049,11 @@ def main():
             '    <p>Meyssens, Lausen, Basel-Landschaft, Schweiz<br>E-Mail: <a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></p>\n'
             '    <p><a class="btn-p" href="mailto:lionel@meyssens.ch">E-Mail an Lionel Nickelsen %s</a></p>\n'
             '  </div>' % PFEIL))
-    uebersichten.append(((START, STUFE_UEBER), "Über uns: Meyssens aus Lausen BL | Meyssens",
-        "Wer hinter Meyssens steht: Einzelunternehmen von Lionel Nickelsen in Lausen BL, Arbeitsweise und "
+    uebersichten.append(((START, STUFE_UEBER), "Über uns: wer hinter Meyssens steht | Meyssens",
+        "Wer hinter Meyssens steht: Einzelunternehmen von Lionel Nickelsen, Arbeitsweise und "
         "Datenschutz-Prinzipien. Jetzt mehr lesen.",
         "Über uns", "Über <span class=\"hl\">Meyssens.</span>",
-        "Ein Einzelunternehmen aus Lausen im Kanton Basel-Landschaft: digitale Werkzeuge für Gemeinden und Unternehmen, "
+        "Ein Einzelunternehmen: digitale Werkzeuge für Gemeinden und Unternehmen, "
         "persönlich begleitet.", ueber_inhalt))
     for stufen, titel, beschreibung, chip, h1, lead, inhalt in uebersichten:
         pfad = stufen[-1][1]
