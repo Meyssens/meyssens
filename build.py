@@ -337,7 +337,7 @@ BA_FELDER = ("titel", "schritte", "satz", "beispiel", "daten", "freigabe")
 BA_VERKAUF = ("hoch", "mittel", "niedrig")
 
 
-def ba_karte(slug, x, ruhig=False):
+def ba_karte(slug, x, ruhig=False, bewegt=False):
     fehlt = [f for f in BA_FELDER + ("id", "verkauf") if not x.get(f)]
     if fehlt or len(x["schritte"]) != 3 or x["verkauf"] not in BA_VERKAUF:
         raise SystemExit("branchen_ablaeufe.json %s: %s" % (slug, ", ".join(fehlt) or "Schritte oder verkauf ungültig"))
@@ -345,13 +345,13 @@ def ba_karte(slug, x, ruhig=False):
     fakten = [("Daten aus", x["daten"]), ("Sie geben frei", x["freigabe"])]
     if x.get("datenschutz"):
         fakten.append(("Datenschutz", x["datenschutz"]))
-    return ('    <article class="auto-karte ba-karte%s r" id="ba-%s">\n      <h3>%s</h3>\n      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">\n'
+    return ('    <article class="auto-karte ba-karte%s r" id="ba-%s">\n      <h3>%s</h3>\n      <ol class="auto-fluss"%s aria-label="Ablauf in drei Schritten">\n'
             '        <li><span class="af-ic">%s</span><span><i>Eingang</i>%s</span></li>\n'
             '        <li><span class="af-ic">%s</span><span><i>Verarbeitung</i>%s</span></li>\n'
             '        <li class="af-ergebnis"><span class="af-ic">%s</span><span><i>Ergebnis</i>%s</span></li>\n'
             '      </ol>\n      <p>%s</p>\n      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> %s</p>\n'
             '      <dl class="ba-fakten">\n%s\n      </dl>\n    </article>'
-            % (" ba-ruhig" if ruhig else "", x["id"], html.escape(x["titel"]), SYMBOL_EINGANG, html.escape(eingang), SYMBOL_ARBEIT,
+            % (" ba-ruhig" if ruhig else "", x["id"], html.escape(x["titel"]), ' data-anim="fluss"' if bewegt else "", SYMBOL_EINGANG, html.escape(eingang), SYMBOL_ARBEIT,
                html.escape(arbeit), SYMBOL_ERGEBNIS, html.escape(ergebnis), html.escape(x["satz"]), html.escape(x["beispiel"]),
                "\n".join('        <div><dt>%s</dt><dd>%s</dd></div>' % (t, html.escape(w)) for t, w in fakten)))
 
@@ -363,7 +363,8 @@ def branchen_ablaeufe_html(slug, daten):
         return ""
     vorne = [x for x in eintrag["ablaeufe"] if x.get("verkauf") != "niedrig"]
     hinten = [x for x in eintrag["ablaeufe"] if x.get("verkauf") == "niedrig"]
-    karten = "\n".join(ba_karte(slug, x) for x in vorne)
+    # Der beste Ablauf (erste Karte) baut sich beim Scrollen Schritt für Schritt auf
+    karten = "\n".join(ba_karte(slug, x, bewegt=(i == 0)) for i, x in enumerate(vorne))
     weitere = ""
     if hinten:
         weitere = ('  <div class="ba-weitere">\n    <h3 class="ba-weitere-titel r">Weitere Abläufe</h3>\n  <div class="ba-karten">\n%s\n  </div>\n  </div>\n'

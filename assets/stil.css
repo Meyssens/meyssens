@@ -1383,3 +1383,97 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .zs-karte{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:.9rem;justify-items:start;align-items:start}
   .zs-karte .zs-buehne{justify-self:stretch;align-self:stretch;margin:.35rem 0 .4rem}
 }
+/* Erklärende Animationen 23.11.2026: Start einmal beim Sichtbarwerden (demos.js setzt .anim-los), keine Endlosschleifen.
+   Ohne JavaScript und bei reduzierter Bewegung ist sofort der Endzustand sichtbar. Nur opacity und transform, keine Layoutsprünge. */
+.anim-nochmal{display:inline-flex;align-items:center;gap:.4rem;min-height:36px;padding:.35rem .8rem;border-radius:999px;border:1px solid rgba(59,75,214,.35);background:#fff;color:#2E3AA8;font:500 .8rem 'Inter','Inter Ersatz',sans-serif;cursor:pointer;transition:background .2s,border-color .2s}
+.anim-nochmal:hover{background:#eef0fc;border-color:#3B4BD6}
+.anim-nochmal:focus-visible{outline:3px solid #3B4BD6;outline-offset:2px}
+.anim-nochmal[hidden]{display:none}
+.zs-buehne .anim-nochmal{position:absolute;top:10px;right:10px;z-index:2}
+.anim-fuss{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem 1rem;margin-top:1rem}
+.anim-fuss .demo-hinweis{margin:0;flex:1 1 260px}
+[data-zaehl]{font-variant-numeric:tabular-nums}
+/* Rechnung: Endzustand freigegeben */
+.sh-ablauf li.sh-frei{position:relative}
+.sh-offen{background:#3B4BD6;border:0;color:#fff}
+.zs-zeiger{position:absolute;right:14%;top:52%;opacity:0;pointer-events:none;line-height:0;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+/* So läuft es ab: Verbindungslinie zwischen den Symbolen */
+.st-schritte > li{position:relative}
+.st-schritte > li:not(:last-child)::after{content:'';position:absolute;z-index:1;left:calc(1.5rem + 50px);top:calc(1.5rem + 21px);width:calc(100% + 1.25rem - 56px);height:2px;border-radius:2px;background:var(--blue-20);transform-origin:left center}
+@media(max-width:900px){.st-schritte > li:not(:last-child)::after{left:calc(1.5rem + 21px);top:100%;width:2px;height:calc(1.25rem + 2px);transform-origin:center top}}
+@keyframes a-ein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes a-blende{from{opacity:0}to{opacity:1}}
+@keyframes a-pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+@keyframes a-strich{from{transform:scaleX(0)}to{transform:none}}
+@keyframes a-linie-x{from{transform:scaleX(0)}to{transform:none}}
+@keyframes a-linie-y{from{transform:scaleY(0)}to{transform:none}}
+@keyframes a-aufbau{from{opacity:.001;clip-path:inset(0 100% 0 0 round 10px)}to{opacity:1;clip-path:inset(0 0 0 0 round 10px)}}
+@keyframes a-klick{0%{transform:none}40%{transform:scale(.96)}100%{transform:none}}
+@keyframes a-freigabe{from{background:#fff;color:transparent;box-shadow:inset 0 0 0 1.5px #3B4BD6}to{background:#3B4BD6;color:#fff;box-shadow:none}}
+@keyframes a-zeiger-hin{from{opacity:0;transform:translate(34px,26px)}to{opacity:1;transform:none}}
+@keyframes a-zeiger-weg{from{opacity:1}to{opacity:0}}
+@keyframes a-pin{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:no-preference){
+  /* Ausgangszustand nur mit JavaScript und bevor die Animation startet */
+  .js [data-anim="rechnung"]:not(.anim-los) :is(.sh-beleg,.sh-ablauf li),
+  .js [data-anim="karte"]:not(.anim-los) :is(.pin svg,.bt-liste li),
+  .js [data-anim="schritte"]:not(.anim-los) > li,
+  .js [data-anim="fluss"]:not(.anim-los) > li{opacity:0}
+  .js [data-anim="schritte"]:not(.anim-los) > li::after{opacity:0}
+  .js [data-anim="fluss"]:not(.anim-los) > li + li::before{opacity:0}
+
+  /* 1) Rechnung: Beleg erscheint, wird erkannt, Entwurf baut sich auf, «Sie geben frei» wird angeklickt, Häkchen */
+  [data-anim="rechnung"].anim-los .sh-beleg{animation:a-ein .6s var(--weich) both}
+  [data-anim="rechnung"].anim-los .sh-beleg i{transform-origin:left center;animation:a-strich .5s var(--weich) both}
+  [data-anim="rechnung"].anim-los .sh-beleg i:nth-child(1){animation-delay:.3s}
+  [data-anim="rechnung"].anim-los .sh-beleg i:nth-child(2){animation-delay:.45s}
+  [data-anim="rechnung"].anim-los .sh-beleg i:nth-child(3){animation-delay:.6s}
+  [data-anim="rechnung"].anim-los .sh-beleg i:nth-child(4){animation-delay:.75s}
+  [data-anim="rechnung"].anim-los .sh-ablauf li:nth-child(1){animation:a-ein .5s var(--weich) .95s both}
+  [data-anim="rechnung"].anim-los .sh-ablauf li:nth-child(1) .sh-hk{animation:a-pop .4s var(--weich) 1.35s both}
+  [data-anim="rechnung"].anim-los .sh-ablauf li:nth-child(2){animation:a-aufbau 1s var(--weich) 1.75s both}
+  [data-anim="rechnung"].anim-los .sh-ablauf li:nth-child(2) .sh-hk{animation:a-pop .4s var(--weich) 2.7s both}
+  [data-anim="rechnung"].anim-los .sh-ablauf li:nth-child(3){animation:a-ein .5s var(--weich) 3.05s both,a-klick .4s ease-out 4.5s}
+  [data-anim="rechnung"].anim-los .sh-offen{animation:a-freigabe .45s var(--weich) 4.6s both}
+  [data-anim="rechnung"].anim-los .zs-zeiger{animation:a-zeiger-hin .9s var(--weich) 3.6s both,a-zeiger-weg .5s ease-out 5.1s forwards}
+
+  /* 2) Gemeinden-Karte: Pins setzen sich nacheinander, Vorschläge erscheinen, Zähler laufen hoch (demos.js) */
+  [data-anim="karte"].anim-los .pin svg{animation:a-pin .6s var(--weich) both}
+  [data-anim="karte"].anim-los .pin:nth-of-type(1) svg{animation-delay:.3s}
+  [data-anim="karte"].anim-los .pin:nth-of-type(2) svg{animation-delay:.6s}
+  [data-anim="karte"].anim-los .pin:nth-of-type(3) svg{animation-delay:.9s}
+  [data-anim="karte"].anim-los .bt-liste li{animation:a-ein .5s var(--weich) both}
+  [data-anim="karte"].anim-los .bt-liste li:nth-child(1){animation-delay:1.2s}
+  [data-anim="karte"].anim-los .bt-liste li:nth-child(2){animation-delay:1.45s}
+  [data-anim="karte"].anim-los .bt-liste li:nth-child(3){animation-delay:1.7s}
+
+  /* 3) So läuft es ab: Schritte nacheinander, Linie zieht sich zum nächsten Schritt */
+  [data-anim="schritte"].anim-los > li{animation:a-ein .6s var(--weich) both}
+  [data-anim="schritte"].anim-los > li:nth-child(2){animation-delay:.55s}
+  [data-anim="schritte"].anim-los > li:nth-child(3){animation-delay:1.1s}
+  [data-anim="schritte"].anim-los > li:not(:last-child)::after{animation:a-linie-x .6s var(--weich) both}
+  [data-anim="schritte"].anim-los > li:nth-child(1)::after{animation-delay:.35s}
+  [data-anim="schritte"].anim-los > li:nth-child(2)::after{animation-delay:.9s}
+
+  /* 5) Branchenseiten: bester Ablauf baut sich Schritt für Schritt auf */
+  [data-anim="fluss"].anim-los > li{animation:a-ein .5s var(--weich) both}
+  [data-anim="fluss"].anim-los > li:nth-child(2){animation-delay:.5s}
+  [data-anim="fluss"].anim-los > li:nth-child(3){animation-delay:1s}
+  [data-anim="fluss"].anim-los > li + li::before{transform-origin:center top;animation:a-linie-y .4s var(--weich) both}
+  [data-anim="fluss"].anim-los > li:nth-child(2)::before{animation-delay:.3s}
+  [data-anim="fluss"].anim-los > li:nth-child(3)::before{animation-delay:.8s}
+  [data-anim="fluss"].anim-los .af-ic{animation:a-pop .45s var(--weich) both}
+  [data-anim="fluss"].anim-los > li:nth-child(2) .af-ic{animation-delay:.5s}
+  [data-anim="fluss"].anim-los > li:nth-child(3) .af-ic{animation-delay:1s}
+}
+@media(max-width:900px) and (prefers-reduced-motion:no-preference){
+  [data-anim="schritte"].anim-los > li:not(:last-child)::after{animation-name:a-linie-y}
+}
+/* 6) Karten heben sich beim Überfahren leicht */
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  .stil :is(.st-karte,.zs-karte,.ba-karte:not(.ba-ruhig)){transition:opacity .9s var(--weich),transform .35s var(--weich),box-shadow .35s var(--weich)}
+  .stil :is(.st-karte,.zs-karte,.ba-karte:not(.ba-ruhig)):hover{transform:translateY(-3px);box-shadow:0 22px 44px -26px rgba(10,10,60,.35)}
+}
+@media print{[data-anim] *,[data-anim] *::before,[data-anim] *::after{opacity:1!important;animation:none!important}}
+@media(max-width:900px){.stil .about-grid,.stil .contact-grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:380px){#ueber-uns h2{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}}

@@ -53,7 +53,7 @@
 <link rel="preload" href="/assets/schriften/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=a180bec0ad">
 <!-- head:ende -->
-<link rel="stylesheet" href="/assets/stil.css?v=6020fe477f">
+<link rel="stylesheet" href="/assets/stil.css?v=c92d5f42fd">
 <link rel="stylesheet" href="/assets/ablaeufe.css?v=d522f5391b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@id": "https://meyssens.ch/ueber-uns/#person"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de-CH", "publisher": {"@id": "https://meyssens.ch/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}], "@id": "https://meyssens.ch/#brotkrumen"}, {"@type": "Person", "@id": "https://meyssens.ch/ueber-uns/#person", "name": "Lionel Nickelsen", "url": "https://meyssens.ch/ueber-uns/", "worksFor": {"@id": "https://meyssens.ch/#org"}}, {"@type": "WebPage", "@id": "https://meyssens.ch/", "url": "https://meyssens.ch/", "name": "Digitale Lösungen für Gemeinden und Unternehmen, Schweiz", "inLanguage": "de-CH", "isPartOf": {"@id": "https://meyssens.ch/#website"}, "breadcrumb": {"@id": "https://meyssens.ch/#brotkrumen"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://meyssens.ch/og-image.png", "width": 1200, "height": 630, "caption": "Meyssens – Digitale Infrastruktur für Organisationen"}}]}</script>
 </head>
@@ -167,7 +167,8 @@
       <span class="s-label" data-i18n="s.u.titel">Für Unternehmen</span>
       <h3 data-i18n="s.zs.u.titel">Rechnung eines Lieferanten: vom Beleg zur Freigabe</h3>
       <p data-i18n="s.zs.u.text">Der Beleg wird erkannt und ein Buchungsentwurf vorbereitet. Sie prüfen und geben frei.</p>
-      <div class="zs-buehne">
+      <div class="zs-buehne" data-anim="rechnung">
+        <button type="button" class="anim-nochmal" data-anim-nochmal hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><span data-i18n="s.anim.nochmal">Nochmal abspielen</span></button>
         <div class="geraet zs-rechnung">
           <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel" data-i18n="s.vn.titel">Rechnung eines Lieferanten</span><span class="beispiel" data-i18n="s.beispiel">Beispiel</span></div>
           <div class="sh-ablauf" role="img" aria-label="Beispiel: Rechnung eines Lieferanten. Beleg wird erkannt, Buchungsentwurf liegt bereit, Sie geben frei." data-i18n-aria="s.hm.aria">
@@ -175,7 +176,7 @@
             <ol aria-hidden="true">
               <li><span class="sh-hk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="s.nachher1">Beleg wird erkannt</span></li>
               <li><span class="sh-hk"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="s.nachher2">Buchungsentwurf liegt bereit</span></li>
-              <li class="sh-frei"><span class="sh-hk sh-offen"></span><span data-i18n="s.nachher3">Sie geben frei</span></li>
+              <li class="sh-frei"><span class="sh-hk sh-offen"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-i18n="s.nachher3">Sie geben frei</span><span class="zs-zeiger" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M5 3l14 8-6.2 1.6L10 19z" fill="#07071a" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg></span></li>
             </ol>
           </div>
         </div>
@@ -190,10 +191,10 @@
     <span class="s-label" data-i18n="s.ablauf.label">Ablauf</span>
     <h2 data-i18n="s.ablauf.titel">So läuft es ab</h2>
   </div>
-  <ol class="sg-schritte st-schritte">
-    <li class="sg-schritt r"><span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span><h3><span class="st-nr">1</span> <span data-i18n="s.schritt1.titel">Gespräch</span></h3><p data-i18n="s.schritt1.text">Sie schildern Ihr Anliegen am Telefon oder per E-Mail. Das erste Gespräch ist kostenlos.</p></li>
-    <li class="sg-schritt r d1"><span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h4"/></svg></span><h3><span class="st-nr">2</span> <span data-i18n="s.schritt2.titel">Vorschlag mit Festpreis</span></h3><p data-i18n="s.schritt2.text">Sie erhalten einen schriftlichen Vorschlag mit Festpreis. Gemeinden testen zuerst drei Monate kostenlos.</p></li>
-    <li class="sg-schritt r d2"><span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></span><h3><span class="st-nr">3</span> <span data-i18n="s.schritt3.titel">Umsetzung und Betrieb</span></h3><p data-i18n="s.schritt3.text">Wir richten alles ein, begleiten den Start und betreuen den Betrieb. Persönlich, vom ersten Gespräch an.</p></li>
+  <ol class="sg-schritte st-schritte" data-anim="schritte">
+    <li class="sg-schritt"><span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></span><h3><span class="st-nr">1</span> <span data-i18n="s.schritt1.titel">Gespräch</span></h3><p data-i18n="s.schritt1.text">Sie schildern Ihr Anliegen am Telefon oder per E-Mail. Das erste Gespräch ist kostenlos.</p></li>
+    <li class="sg-schritt"><span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h7M9 16h4"/></svg></span><h3><span class="st-nr">2</span> <span data-i18n="s.schritt2.titel">Vorschlag mit Festpreis</span></h3><p data-i18n="s.schritt2.text">Sie erhalten einen schriftlichen Vorschlag mit Festpreis. Gemeinden testen zuerst drei Monate kostenlos.</p></li>
+    <li class="sg-schritt"><span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg></span><h3><span class="st-nr">3</span> <span data-i18n="s.schritt3.titel">Umsetzung und Betrieb</span></h3><p data-i18n="s.schritt3.text">Wir richten alles ein, begleiten den Start und betreuen den Betrieb. Persönlich, vom ersten Gespräch an.</p></li>
   </ol>
 </section>
 
@@ -462,7 +463,7 @@ document.addEventListener('keydown', function(e){
 </script>
 <!-- skripte:ende -->
 <script src="/assets/ablaeufe.js?v=bab801aee3" defer></script>
-<script src="/assets/demos.js?v=0eac816a58" defer></script>
+<script src="/assets/demos.js?v=b65344dc21" defer></script>
 <script>
 // Sprachwahl der Startseite: Übersetzungen (FR/IT/EN) erst laden, wenn eine andere Sprache gewählt ist oder war
 (function(){
@@ -472,7 +473,7 @@ document.addEventListener('keydown', function(e){
     if(!warten){
       warten = [];
       var s = document.createElement('script');
-      s.src = '/assets/start-sprachen.js?v=fbd0cfa6dd';
+      s.src = '/assets/start-sprachen.js?v=58ce4b5390';
       s.onload = function(){ warten.forEach(function(f){ f(); }); };
       document.head.appendChild(s);
     }

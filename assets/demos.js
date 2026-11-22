@@ -428,4 +428,42 @@ if(bWahl){
   }
 }
 
+
+// --- Erklärende Animationen: starten einmal, sobald sie im Bild sind (CSS in stil.css, data-anim).
+//     Zähler [data-zaehl] laufen von 0 auf den Wert im HTML. Bei reduzierter Bewegung gilt sofort der Endzustand. ---
+function zaehler(el, warte){
+  if(el._ziel == null) el._ziel = +el.textContent;
+  var ziel = el._ziel, lauf = el._lauf = {};
+  // feste Breite des Endwerts, damit nichts daneben verrutscht
+  if(!el.style.minWidth){ el.style.display = 'inline-block'; el.style.textAlign = 'right'; el.style.minWidth = el.getBoundingClientRect().width + 'px'; }
+  el.textContent = '0';
+  setTimeout(function(){
+    var t0 = performance.now();
+    (function schritt(t){
+      if(el._lauf !== lauf) return;
+      var f = Math.min(1, (t - t0) / 800);
+      el.textContent = Math.round(ziel * (1 - Math.pow(1 - f, 3)));
+      if(f < 1) requestAnimationFrame(schritt); else el._ziel = null;
+    })(t0);
+  }, warte || 0);
+}
+function zaehlerStopp(el){ if(el._ziel != null){ el._lauf = null; el.textContent = el._ziel; el._ziel = null; } }
+var animBoxen = alle('[data-anim]').concat(alle('[data-zaehl]').filter(function(z){ return !z.closest('[data-anim]'); }));
+animBoxen.forEach(function(box){
+  var zahlen = box.hasAttribute('data-zaehl') ? [box] : alle('[data-zaehl]', box);
+  var knopf = box.querySelector('[data-anim-nochmal]');
+  function spiele(){
+    box.classList.remove('anim-los'); void box.offsetWidth; box.classList.add('anim-los');
+    zahlen.forEach(function(z){ zaehlerStopp(z); zaehler(z, +(z.getAttribute('data-zaehl-ab') || 0)); });
+  }
+  if(ruhig || !hatIO){ box.classList.add('anim-los'); return; }
+  if(knopf){ knopf.hidden = false; knopf.addEventListener('click', spiele); }
+  // Wer selbst klickt (z. B. «Unterstützen»), bekommt sofort die echten Zahlen
+  box.addEventListener('click', function(e){ if(!knopf || !knopf.contains(e.target)) zahlen.forEach(zaehlerStopp); }, true);
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); spiele(); } });
+  }, {threshold:.25});
+  io.observe(box);
+});
+
 })();

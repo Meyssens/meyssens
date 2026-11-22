@@ -50,7 +50,7 @@
 <link rel="preload" href="/assets/schriften/inter-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/schriften/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=a180bec0ad">
-<link rel="stylesheet" href="/assets/stil.css?v=6020fe477f">
+<link rel="stylesheet" href="/assets/stil.css?v=c92d5f42fd">
 <link rel="stylesheet" href="/assets/ablaeufe.css?v=d522f5391b">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@id": "https://meyssens.ch/ueber-uns/#person"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}, "areaServed": {"@type": "Country", "name": "Schweiz"}, "knowsLanguage": "de-CH", "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "lionel@meyssens.ch", "availableLanguage": "de"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de-CH", "publisher": {"@id": "https://meyssens.ch/#org"}}, {"@type": "Person", "@id": "https://meyssens.ch/ueber-uns/#person", "name": "Lionel Nickelsen", "url": "https://meyssens.ch/ueber-uns/", "worksFor": {"@id": "https://meyssens.ch/#org"}}, {"@type": "BreadcrumbList", "@id": "https://meyssens.ch/branchen/reinigung-hauswartung/#brotkrumen", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://meyssens.ch/branchen/"}, {"@type": "ListItem", "position": 3, "name": "Reinigung und Hauswartung", "item": "https://meyssens.ch/branchen/reinigung-hauswartung/"}]}, {"@type": "WebPage", "@id": "https://meyssens.ch/branchen/reinigung-hauswartung/", "url": "https://meyssens.ch/branchen/reinigung-hauswartung/", "name": "Reinigung: Arbeitszeit nach GAV prüfen | Meyssens", "inLanguage": "de-CH", "isPartOf": {"@id": "https://meyssens.ch/#website"}, "breadcrumb": {"@id": "https://meyssens.ch/branchen/reinigung-hauswartung/#brotkrumen"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://meyssens.ch/og-image.png", "width": 1200, "height": 630, "caption": "Meyssens – Digitale Infrastruktur für Organisationen"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ersetzt der Ablauf meine Zeiterfassung?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Er arbeitet mit den Daten Ihrer bestehenden Zeiterfassung und prüft sie nach den Regeln, die Sie mit uns festlegen."}}, {"@type": "Question", "name": "Ist das eine Rechtsauskunft zum GAV?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Die Regeln hinterlegen wir mit Ihnen. Massgebend ist der GAV in der jeweils gültigen Fassung."}}, {"@type": "Question", "name": "Wer sieht die Zeitkonten?", "acceptedAnswer": {"@type": "Answer", "text": "Jede Person ihren eigenen Auszug, die Leitung alle. Die Aufbewahrung richtet sich nach den Fristen des GAV."}}]}]}</script>
 </head>
@@ -114,7 +114,7 @@
   <div class="ba-karten">
     <article class="auto-karte ba-karte r" id="ba-gav-monat">
       <h3>Monatsabschluss der Arbeitszeit nach GAV</h3>
-      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
+      <ol class="auto-fluss" data-anim="fluss" aria-label="Ablauf in drei Schritten">
         <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Zeiten je Objekt aus App oder Liste</span></li>
         <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span><span><i>Verarbeitung</i>Prüfung gegen die Regeln des GAV, Zeitkonto je Person, Stichtag für Überstunden</span></li>
         <li class="af-ergebnis"><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg></span><span><i>Ergebnis</i>Zeitkonto-Auszug je Person und vorbereitete Lohnstunden</span></li>
@@ -492,7 +492,7 @@ document.addEventListener('keydown', function(e){
 });
 
 </script>
-<script src="/assets/demos.js?v=0eac816a58" defer></script>
+<script src="/assets/demos.js?v=b65344dc21" defer></script>
 <script>
 // --- Kontaktformular ohne Seitenwechsel absenden ---
 const FORM_MSG = {

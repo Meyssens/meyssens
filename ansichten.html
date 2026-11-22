@@ -169,7 +169,7 @@ Alle Inhalte sind Beispiele. Keine echten Kunden, keine echten Daten, kein Aufru
 <!-- ansicht-ausschreibungs-radar:ende -->
 
 <!-- gemeinden-held:start -->
-<div class="beteiligung" data-beteiligung>
+<div class="beteiligung" data-beteiligung data-anim="karte">
   <div class="bt-kopf">
     <p class="held-titel" data-i18n="g.demo.prozess">Beteiligungsprozess</p>
     <p class="bt-frage" data-i18n="g.demo.frage">Wie soll der Dorfplatz neu gestaltet werden?</p>
@@ -183,12 +183,15 @@ Alle Inhalte sind Beispiele. Keine echten Kunden, keine echten Daten, kein Aufru
     <button type="button" class="pin" data-vorschlag="2" style="left:33.44%;top:59.00%" aria-pressed="false"><svg viewBox="0 0 24 32" aria-hidden="true" focusable="false"><path d="M12 31s10-9.6 10-18A10 10 0 0 0 2 13c0 8.4 10 18 10 18z"/><circle cx="12" cy="12.5" r="3.6"/></svg><span class="sr-only" data-i18n="g.demo.v2">Wartehäuschen an der Bushaltestelle</span></button>
   </div>
   <ul class="bt-liste">
-    <li data-vorschlag="0"><span class="bt-text"><strong data-i18n="g.demo.v0">Mehr Sitzbänke beim Brunnen</strong><span data-i18n="g.demo.o0">Dorfplatz</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="24"><span class="bt-zahl">24</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
-    <li data-vorschlag="1"><span class="bt-text"><strong data-i18n="g.demo.v1">Veloständer beim Schulhaus</strong><span data-i18n="g.demo.o1">Schulhaus</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="17"><span class="bt-zahl">17</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
-    <li data-vorschlag="2"><span class="bt-text"><strong data-i18n="g.demo.v2">Wartehäuschen an der Bushaltestelle</strong><span data-i18n="g.demo.o2">Bushaltestelle</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="31"><span class="bt-zahl">31</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+    <li data-vorschlag="0"><span class="bt-text"><strong data-i18n="g.demo.v0">Mehr Sitzbänke beim Brunnen</strong><span data-i18n="g.demo.o0">Dorfplatz</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="24"><span class="bt-zahl" data-zaehl="24" data-zaehl-ab="1350">24</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+    <li data-vorschlag="1"><span class="bt-text"><strong data-i18n="g.demo.v1">Veloständer beim Schulhaus</strong><span data-i18n="g.demo.o1">Schulhaus</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="17"><span class="bt-zahl" data-zaehl="17" data-zaehl-ab="1600">17</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
+    <li data-vorschlag="2"><span class="bt-text"><strong data-i18n="g.demo.v2">Wartehäuschen an der Bushaltestelle</strong><span data-i18n="g.demo.o2">Bushaltestelle</span></span><button type="button" class="bt-stimme" aria-pressed="false" data-n="31"><span class="bt-zahl" data-zaehl="31" data-zaehl-ab="1850">31</span> <span data-i18n="g.demo.unterstuetzen">Unterstützen</span></button></li>
   </ul>
   </div>
-  <p class="demo-hinweis" data-i18n="g.demo.hinweis">Beispiel mit erfundenen Inhalten. Klicken Sie auf einen Pin oder unterstützen Sie einen Vorschlag. Nichts wird gespeichert.</p>
+  <div class="anim-fuss">
+    <p class="demo-hinweis" data-i18n="g.demo.hinweis">Beispiel mit erfundenen Inhalten. Klicken Sie auf einen Pin oder unterstützen Sie einen Vorschlag. Nichts wird gespeichert.</p>
+    <button type="button" class="anim-nochmal" data-anim-nochmal hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg><span data-i18n="g.anim.nochmal">Nochmal abspielen</span></button>
+  </div>
 </div>
 <!-- gemeinden-held:ende -->
 
