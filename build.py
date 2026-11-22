@@ -25,6 +25,7 @@ Quellen:
                            (Beispielansichten aus ansichten.html), alles andere bleibt von Hand gepflegt.
 """
 import datetime
+import hashlib
 import html
 import json
 import re
@@ -2155,5 +2156,34 @@ def main():
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(zeilen) + "\n</urlset>\n")
 
 
+# Zwischenspeicher: CSS- und JS-Dateien aus /assets/ mit Inhaltsprüfsumme verlinken (?v=…),
+# damit Browser nach einer Änderung nie alte Stile zu neuem HTML laden. Läuft zuletzt über alle Seiten.
+ASSET_REF = re.compile(r"/assets/([A-Za-z0-9_./-]+\.(?:css|js))(?:\?v=[0-9a-f]+)?")
+
+
+def versioniere_assets():
+    pruefsummen = {}
+
+    def ersetze(m):
+        name = m.group(1)
+        datei = ROOT / "assets" / name
+        if not datei.is_file():
+            return m.group(0)
+        if name not in pruefsummen:
+            pruefsummen[name] = hashlib.sha256(datei.read_bytes()).hexdigest()[:10]
+        return "/assets/%s?v=%s" % (name, pruefsummen[name])
+
+    for datei in sorted(ROOT.rglob("*.html")):
+        rel = datei.relative_to(ROOT).as_posix()
+        if rel.startswith((".git/", "node_modules/")):
+            continue
+        alt = datei.read_text(encoding="utf-8")
+        neu = ASSET_REF.sub(ersetze, alt)
+        if neu != alt:
+            datei.write_text(neu, encoding="utf-8")
+            print("versioniert:", rel)
+
+
 if __name__ == "__main__":
     main()
+    versioniere_assets()

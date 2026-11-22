@@ -1342,12 +1342,12 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .stil.start .btn-p:focus-visible,.stil.start .btn-s:focus-visible{outline:3px solid #3B4BD6;outline-offset:3px}
 .stil.start .schluss-karte .btn-hell:focus-visible{outline-color:#fff}
 .stil .start-held h1 .hl{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:#3B4BD6;color:#3B4BD6}
-.sh-raster{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2.5rem,6vw,3.5rem);max-width:1180px;margin:0 auto;align-items:center}
+.sh-raster{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2.5rem,6vw,4.5rem);max-width:1360px;margin:0 auto;align-items:center}
 .stil .start-held h1{max-width:13em;font-size:clamp(2.2rem,6vw,3.4rem);hyphens:manual;-webkit-hyphens:manual}
 .stil .start-held .lead{max-width:36em;margin-left:auto;margin-right:auto;color:var(--ink2);font-weight:400;font-size:clamp(1.02rem,1.3vw,1.15rem);line-height:1.6;margin-top:1.25rem}
 .start-held .held-knoepfe{margin-top:2rem}
-.sh-vertrauen{font-weight:400;margin:1.25rem auto 0;text-wrap:balance;font-size:.86rem;line-height:1.6;color:var(--ink3);max-width:36em}
-.sh-bild{position:relative;width:100%;max-width:min(560px,100%);margin:0 auto;display:flex;align-items:center}
+.sh-vertrauen{font-weight:400;margin:1.5rem auto 0;text-wrap:balance;font-size:14px;line-height:1.6;color:var(--ink3);max-width:36em}
+.sh-bild{position:relative;width:100%;max-width:min(600px,100%);margin:0 auto;display:flex;align-items:center}
 .sh-rechnung{flex:0 0 82%;width:82%;border-radius:20px;box-shadow:0 1px 2px rgba(10,10,60,.05),0 30px 70px -34px rgba(10,10,60,.4)}
 .sh-rechnung .geraet-leiste{padding-right:calc(25% + 6px)}
 .sh-ablauf{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(.75rem,2vw,1.1rem);padding:clamp(.85rem,2.2vw,1.25rem);padding-right:27%;align-items:start}
@@ -1388,3 +1388,4 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .stil .sh-handy{animation:sh-ein .8s var(--weich) both .3s}
 }
 @keyframes sh-ein{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.stil .page-hero.start-held{padding-left:max(5%,calc(50% - 680px));padding-right:max(5%,calc(50% - 680px))}
