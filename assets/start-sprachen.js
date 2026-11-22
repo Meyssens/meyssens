@@ -3,18 +3,22 @@
 const START_META = {
   de: null,
   fr: {title: "Solutions numériques pour communes et entreprises, Suisse",
-       desc: "Plateforme de participation pour les communes, automatisation des tâches répétitives pour les entreprises. D'un seul interlocuteur, basé à Lausen BL."},
+       desc: "Plateforme de participation pour les communes, automatisation des tâches répétitives pour les entreprises. D'un seul interlocuteur, basé à Lausen BL."},
   it: {title: "Soluzioni digitali per comuni e aziende in Svizzera",
-       desc: "Piattaforma di partecipazione per i comuni, automazione del lavoro di routine per le aziende. Un unico interlocutore, con sede a Lausen BL."},
+       desc: "Piattaforma di partecipazione per i comuni, automazione del lavoro di routine per le aziende. Un unico interlocutore, con sede a Lausen BL."},
   en: {title: "Digital solutions for municipalities and businesses, Switzerland",
-       desc: "A participation platform for municipalities, automation of routine work for businesses. From a single provider, based in Lausen BL."}
+       desc: "A participation platform for municipalities, automation of routine work for businesses. From a single provider, based in Lausen BL."}
 };
 const I18N = {
   fr: {
     "nav.gemeinden": "Pour les communes", "nav.unternehmen": "Pour les entreprises", "nav.ueberuns": "À propos",
     "s.gespraech": "Prendre rendez-vous",
-    "s.h1": 'Solutions numériques pour <span class="hl">communes et entreprises</span> en Suisse',
-    "s.lead": "Les communes impliquent leur population en ligne. Les entreprises gagnent du temps grâce à l'automatisation des tâches répétitives. D'un seul interlocuteur, basé à Lausen BL.",
+    "s.h1": 'Impliquer la population. <span class="hl">Automatiser les tâches répétitives.</span>',
+    "s.lead": "Nous rapprochons les communes de leur population grâce à une plateforme de participation et déchargeons les entreprises des tâches répétitives. Depuis Lausen BL.",
+    "s.held.g": "Pour les communes",
+    "s.held.u": "Pour les entreprises",
+    "s.held.vertrauen": "Prix fixe · Pilote gratuit pour les communes · Hébergement à Zurich · Lausen BL",
+    "s.hm.aria": "Exemple : facture d'un fournisseur. Le justificatif est reconnu, le projet d'écriture est prêt, vous validez.",
     "s.g.titel": "Pour les communes",
     "s.g.satz": "Votre propre plateforme de participation : sondages, idées sur la carte et votes au même endroit.",
     "s.beispielplattform": "Plateforme d'exemple", "s.beispiel": "Exemple",
@@ -69,8 +73,12 @@ const I18N = {
   it: {
     "nav.gemeinden": "Per i comuni", "nav.unternehmen": "Per le aziende", "nav.ueberuns": "Chi siamo",
     "s.gespraech": "Fissare un colloquio",
-    "s.h1": 'Soluzioni digitali per <span class="hl">comuni e aziende</span> in Svizzera',
-    "s.lead": "I comuni coinvolgono la popolazione online. Le aziende risparmiano lavoro di routine grazie all'automazione. Un unico interlocutore, con sede a Lausen BL.",
+    "s.h1": 'Coinvolgere la cittadinanza. <span class="hl">Automatizzare il lavoro di routine.</span>',
+    "s.lead": "Avviciniamo i comuni alla loro popolazione con una piattaforma di partecipazione e togliamo alle aziende il lavoro di routine. Da Lausen BL.",
+    "s.held.g": "Per i comuni",
+    "s.held.u": "Per le aziende",
+    "s.held.vertrauen": "Prezzo fisso · Pilota gratuito per i comuni · Hosting a Zurigo · Lausen BL",
+    "s.hm.aria": "Esempio: fattura di un fornitore. Il giustificativo viene riconosciuto, la bozza di registrazione è pronta, voi approvate.",
     "s.g.titel": "Per i comuni",
     "s.g.satz": "Una piattaforma di partecipazione propria: sondaggi, idee sulla mappa e votazioni in un unico posto.",
     "s.beispielplattform": "Piattaforma di esempio", "s.beispiel": "Esempio",
@@ -125,8 +133,12 @@ const I18N = {
   en: {
     "nav.gemeinden": "For municipalities", "nav.unternehmen": "For businesses", "nav.ueberuns": "About us",
     "s.gespraech": "Book a call",
-    "s.h1": 'Digital solutions for <span class="hl">municipalities and businesses</span> in Switzerland',
-    "s.lead": "Municipalities involve their residents online. Businesses save routine work through automation. From a single provider, based in Lausen BL.",
+    "s.h1": 'Engage citizens. <span class="hl">Automate routine work.</span>',
+    "s.lead": "We bring municipalities closer to their residents with a participation platform and take routine work off businesses' hands. From Lausen BL.",
+    "s.held.g": "For municipalities",
+    "s.held.u": "For businesses",
+    "s.held.vertrauen": "Fixed price · Free pilot for municipalities · Hosting in Zurich · Lausen BL",
+    "s.hm.aria": "Example: a supplier invoice. The document is recognised, a draft booking is ready, you approve.",
     "s.g.titel": "For municipalities",
     "s.g.satz": "Your own participation platform: surveys, ideas on the map and votes in one place.",
     "s.beispielplattform": "Example platform", "s.beispiel": "Example",

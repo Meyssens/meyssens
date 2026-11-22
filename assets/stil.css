@@ -1295,7 +1295,6 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .ba-karten > .ba-karte:only-child{max-width:560px;width:100%;justify-self:center}
 /* Startseite 21.11.2026: Hero, zwei Angebotskarten, Ablauf, Beispiele, Vertrauen (bestehende Farben und Schriften) */
 .start-held{padding-bottom:clamp(2rem,4vw,3rem)}
-.start-held .lead{max-width:720px;margin-left:auto;margin-right:auto}
 .st-angebot{padding-top:0}
 .st-karten{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.5vw,1.75rem);max-width:1180px;margin:0 auto}
 .st-karte{display:flex;flex-direction:column;align-items:flex-start;gap:1rem;background:var(--grau);border-radius:24px;padding:clamp(1.25rem,3vw,2rem);scroll-margin-top:96px}
@@ -1330,8 +1329,62 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 @media(max-width:420px){.st-vn{aspect-ratio:auto;grid-template-columns:1fr}}
 @media(max-width:640px){.stil.start #lang-switch-desktop{display:none}}
 @media(min-width:641px) and (max-width:1100px){.stil.start .nav-items,.stil.start #lang-switch-desktop{display:none}.stil.start .hamburger{display:flex}.stil.start .mobile-nav{top:86px;left:14px;right:14px;border-radius:18px}}
-@media(min-width:641px){.stil .page-hero.start-held h1{max-width:15.22em;font-size:clamp(2.1rem,5.2vw,4.2rem)}}
 #beispiele .st-beispiel + .st-beispiel,#beispiele .st-beispiel:has(.abl-geraet){grid-template-columns:minmax(0,4fr) minmax(0,8fr)}
 .stil .mobile-nav a.mobile-gespraech{display:none}
 @media(max-width:520px){.stil.start #nav .nav-kontakt{display:none}.stil.start .mobile-nav a.mobile-gespraech{display:flex;justify-content:center;color:#fff;font-weight:600;border-bottom:none;margin:.25rem 0 .75rem}}
 @media(max-width:900px){#beispiele .st-beispiel + .st-beispiel,#beispiele .st-beispiel:has(.abl-geraet){grid-template-columns:minmax(0,1fr)}}
+/* Startseite 22.11.2026: Hero zweispaltig (Text links, Bild rechts), Indigo #3B4BD6 für Betonung und alle Knöpfe der Startseite */
+.stil.start :is(.btn-p,.btn-s,.nav-btn,.cookie-btn,.lang-btn){--blue:#3B4BD6;--blue-h:#2E3AA8;--blue-20:rgba(59,75,214,.4)}
+.stil.start .btn-hell,.stil.start a.btn-hell:is(:link,:visited,:hover,:focus,:active){color:#3B4BD6}
+.stil.start .btn-hell:hover{background:#eef0fc}
+.stil.start .start-held .btn-s{background:#fff;color:#3B4BD6;border:1.5px solid #3B4BD6;font-weight:500}
+.stil.start .start-held .btn-s:hover{background:#eef0fc;color:#2E3AA8;border-color:#2E3AA8}
+.stil.start .btn-p:focus-visible,.stil.start .btn-s:focus-visible{outline:3px solid #3B4BD6;outline-offset:3px}
+.stil.start .schluss-karte .btn-hell:focus-visible{outline-color:#fff}
+.stil .start-held h1 .hl{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:#3B4BD6;color:#3B4BD6}
+.sh-raster{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(2.5rem,6vw,3.5rem);max-width:1180px;margin:0 auto;align-items:center}
+.stil .start-held h1{max-width:13em;font-size:clamp(2.2rem,6vw,3.4rem);hyphens:manual;-webkit-hyphens:manual}
+.stil .start-held .lead{max-width:36em;margin-left:auto;margin-right:auto;color:var(--ink2);font-weight:400;font-size:clamp(1.02rem,1.3vw,1.15rem);line-height:1.6;margin-top:1.25rem}
+.start-held .held-knoepfe{margin-top:2rem}
+.sh-vertrauen{font-weight:400;margin:1.25rem auto 0;text-wrap:balance;font-size:.86rem;line-height:1.6;color:var(--ink3);max-width:36em}
+.sh-bild{position:relative;width:100%;max-width:min(560px,100%);margin:0 auto;display:flex;align-items:center}
+.sh-rechnung{flex:0 0 82%;width:82%;border-radius:20px;box-shadow:0 1px 2px rgba(10,10,60,.05),0 30px 70px -34px rgba(10,10,60,.4)}
+.sh-rechnung .geraet-leiste{padding-right:calc(25% + 6px)}
+.sh-ablauf{display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(.75rem,2vw,1.1rem);padding:clamp(.85rem,2.2vw,1.25rem);padding-right:27%;align-items:start}
+.sh-beleg{background:var(--grau);border-radius:12px;padding:.8rem .7rem;display:grid;gap:.5rem;aspect-ratio:3/4}
+.sh-beleg i{display:block;height:7px;border-radius:4px;background:#d9d9e6}
+.sh-beleg i:first-child{width:60%;height:9px;background:#c4c4d6}
+.sh-beleg i.kurz{width:45%;margin-top:auto;background:rgba(59,75,214,.35)}
+.sh-ablauf ol{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.sh-ablauf li{min-width:0;overflow-wrap:anywhere;hyphens:auto;-webkit-hyphens:auto;display:flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--rand);border-radius:10px;padding:.5rem .6rem;font-size:clamp(.72rem,1.15vw,.82rem);line-height:1.3;color:var(--ink);font-weight:500}
+.sh-hk{flex:none;display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#e9ebfb;color:#2E3AA8}
+.sh-offen{background:#fff;border:1.5px dashed #3B4BD6}
+.sh-frei{border-color:#3B4BD6!important;box-shadow:0 8px 20px -12px rgba(59,75,214,.6)}
+.stil .sh-handy{position:relative;right:auto;bottom:auto;flex:0 0 38%;width:38%;margin:0 0 0 -20%;z-index:1;border-width:7px;border-radius:28px;box-shadow:0 30px 60px -22px rgba(10,10,60,.5)}
+.stil .sh-handy img{border-radius:21px}
+@media(min-width:960px){
+  .sh-raster{grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr)}
+  .stil .start-held .lead{max-width:none}
+  .stil .page-hero.start-held{text-align:left}
+  .stil .start-held h1{font-size:clamp(2.6rem,4.1vw,3.6rem);margin-left:0}
+  .stil .start-held .lead,.sh-vertrauen{margin-left:0}
+  .start-held .held-knoepfe{justify-content:flex-start}
+  .sh-bild{margin-right:0}
+}
+@media(max-width:959px){.sh-bild{max-width:480px}}
+@media(max-width:640px){
+  .stil .start-held h1{font-size:clamp(1.85rem,8.4vw,2.6rem)}
+  .start-held .held-knoepfe .btn-p,.start-held .held-knoepfe .btn-s{flex:1 1 220px;justify-content:center}
+  .sh-ablauf{grid-template-columns:minmax(0,1fr);padding-right:36%}
+  .sh-beleg{display:none}
+  .sh-rechnung .geraet-leiste{padding-right:calc(32% + 6px)}
+  .sh-rechnung .geraet-leiste i{display:none}
+  .sh-rechnung{flex-basis:88%;width:88%}
+  .stil .sh-handy{flex-basis:40%;width:40%;margin-left:-28%;border-width:5px;border-radius:22px}
+  .stil .sh-handy img{border-radius:17px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .sh-rechnung{animation:sh-ein .8s var(--weich) both .1s}
+  .stil .sh-handy{animation:sh-ein .8s var(--weich) both .3s}
+}
+@keyframes sh-ein{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
