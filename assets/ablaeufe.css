@@ -27,23 +27,23 @@
 .abl-datenschutz p+p{margin-top:.65rem}
 
 /* Gerät und Bühne */
-.abl-geraet{margin:0;min-width:0;background:#fff;border:1px solid var(--rand);border-radius:22px;overflow:hidden;box-shadow:0 1px 2px rgba(10,10,60,.04),0 32px 80px -40px rgba(10,10,60,.4)}
+.abl-geraet{margin:0;min-width:0;background:#fff;border:1px solid var(--rand);border-radius:22px;overflow:hidden;box-shadow:0 1px 2px rgba(6,18,36,.04),0 32px 80px -40px rgba(6,18,36,.4)}
 .abl-geraet .geraet-titel{text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.abl-knopf{flex:none;margin-left:.4rem;min-height:28px;padding:.3rem .75rem;border-radius:999px;border:1px solid rgba(7,7,26,.28);background:#fff;color:var(--ink);font:600 .72rem/1.2 'Inter','Inter Ersatz',sans-serif;cursor:pointer}
-.abl-knopf:hover{border-color:var(--blue);color:#0000c8}
+.abl-knopf{flex:none;margin-left:.4rem;min-height:28px;padding:.3rem .75rem;border-radius:999px;border:1px solid rgba(4,9,17,.28);background:#fff;color:var(--ink);font:600 .72rem/1.2 'Inter','Inter Ersatz',sans-serif;cursor:pointer}
+.abl-knopf:hover{border-color:var(--blue);color:var(--blue-h)}
 .abl-knopf:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
-.abl-buehne{padding:clamp(.9rem,2.4vw,1.5rem);background:linear-gradient(180deg,#fafaff,#f3f3fa)}
+.abl-buehne{padding:clamp(.9rem,2.4vw,1.5rem);background:linear-gradient(180deg,#f8fbff,#f0f4f9)}
 .abl-inhalt{display:grid;gap:.75rem;min-width:0}
 .abl-hinweis{font-size:.78rem;color:var(--ink3);padding:.6rem 1rem;border-top:1px solid var(--rand);background:#fff}
 .abl-geraet [data-ab]{transition:opacity .5s var(--weich),transform .5s var(--weich),clip-path .7s var(--weich)}
 .abl-geraet.spielt [data-ab]:not(.an){opacity:0;transform:translateY(10px)}
 .abl-klein{display:block;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:.35rem;line-height:1.3}
-.abl-karte{background:#fff;border:1px solid var(--rand);border-radius:14px;padding:.8rem .95rem;min-width:0;box-shadow:0 1px 2px rgba(10,10,60,.04)}
+.abl-karte{background:#fff;border:1px solid var(--rand);border-radius:14px;padding:.8rem .95rem;min-width:0;box-shadow:0 1px 2px rgba(6,18,36,.04)}
 .abl-karte>b{display:block;font-weight:600;font-size:.92rem;line-height:1.3;color:var(--ink);margin-bottom:.35rem;overflow-wrap:anywhere}
-.abl-zeile{display:flex;justify-content:space-between;gap:.75rem;font-size:.78rem;line-height:1.45;color:var(--ink2);padding:.22rem 0;border-top:1px dashed rgba(7,7,26,.1)}
+.abl-zeile{display:flex;justify-content:space-between;gap:.75rem;font-size:.78rem;line-height:1.45;color:var(--ink2);padding:.22rem 0;border-top:1px dashed rgba(4,9,17,.1)}
 .abl-zeile i{font-style:normal;min-width:0;overflow-wrap:anywhere}
 .abl-zeile i:last-child{text-align:right;color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
-.abl-total{font-weight:600;border-top:1px solid rgba(7,7,26,.3)}
+.abl-total{font-weight:600;border-top:1px solid rgba(4,9,17,.3)}
 .abl-total i:last-child{font-weight:700}
 .abl-freigabe{display:inline-flex;align-items:center;gap:.45rem;justify-self:start;align-self:start;max-width:100%;font-size:.8rem;font-weight:600;line-height:1.35;color:#14532d;background:#dcfce7;border:1px solid #9fdcb5;border-radius:999px;padding:.4rem .85rem}
 .abl-freigabe::before{content:"✓";font-weight:700}
@@ -54,10 +54,10 @@
 
 /* 1 Belege */
 .abl-belege .abl-inhalt{grid-template-columns:minmax(0,4fr) minmax(0,6fr);align-items:start}
-.abl-foto{position:relative;background:#e6e6f0;border-radius:14px;padding:1rem .9rem;overflow:hidden}
-.abl-papier{display:grid;gap:.3rem;background:#fff;border-radius:6px;padding:.9rem .85rem;font-size:.76rem;color:var(--ink2);box-shadow:0 10px 24px -12px rgba(10,10,60,.4);transform:rotate(-2deg)}
+.abl-foto{position:relative;background:#e3e7ee;border-radius:14px;padding:1rem .9rem;overflow:hidden}
+.abl-papier{display:grid;gap:.3rem;background:#fff;border-radius:6px;padding:.9rem .85rem;font-size:.76rem;color:var(--ink2);box-shadow:0 10px 24px -12px rgba(6,18,36,.4);transform:rotate(-2deg)}
 .abl-papier>b{font-size:.84rem;color:var(--ink)}
-.abl-scan{position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,#0000ff,transparent);box-shadow:0 0 14px 3px rgba(0,0,255,.35);opacity:0;pointer-events:none}
+.abl-scan{position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,transparent,var(--blue),transparent);box-shadow:0 0 14px 3px rgba(0,84,209,.35);opacity:0;pointer-events:none}
 .abl-geraet.spielt .abl-scan.an{opacity:1;animation:abl-scan 1.3s ease-in-out forwards}
 @keyframes abl-scan{from{top:0}90%{opacity:1}to{top:calc(100% - 3px);opacity:0}}
 .abl-felder{display:grid;gap:.4rem;min-width:0}
@@ -65,8 +65,8 @@
 .abl-feld i{font-style:normal;color:var(--ink3)}
 .abl-wert{font-weight:600;color:var(--ink);overflow-wrap:anywhere;clip-path:inset(0)}
 .abl-geraet.spielt .abl-wert:not(.an){transform:none;clip-path:inset(0 100% 0 0)}
-.abl-vorschlag{display:block;background:#ebebff;border:1px solid rgba(0,0,255,.22);border-radius:12px;padding:.6rem .75rem;font-size:.8rem;line-height:1.45;color:var(--ink)}
-.abl-vorschlag i{display:block;font-style:normal;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#0000c8;margin-bottom:.2rem}
+.abl-vorschlag{display:block;background:#e2eeff;border:1px solid rgba(0,84,209,.22);border-radius:12px;padding:.6rem .75rem;font-size:.8rem;line-height:1.45;color:var(--ink)}
+.abl-vorschlag i{display:block;font-style:normal;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-h);margin-bottom:.2rem}
 .abl-vorschlag b{font-weight:600}
 
 /* 2 Posteingang */
@@ -76,15 +76,15 @@
 .abl-mails span{grid-column:1;color:var(--ink2);min-width:0;overflow-wrap:anywhere}
 .abl-tag{grid-column:2;grid-row:1/3;align-self:center;font-style:normal;font-size:.7rem;font-weight:600;border-radius:999px;padding:.25rem .6rem;white-space:nowrap}
 .abl-geraet.spielt .abl-tag:not(.an){transform:scale(.6)}
-.t-offerte{color:#0000c8;background:#ebebff}
+.t-offerte{color:var(--blue-h);background:#e2eeff}
 .t-termin{color:#6b4100;background:#fff1cf}
 .t-rekla{color:#8a1c1c;background:#fde8e8}
-.abl-entwurf{display:grid;gap:.5rem;background:#fff;border:1px solid rgba(0,0,255,.25);border-radius:14px;padding:.8rem .9rem}
+.abl-entwurf{display:grid;gap:.5rem;background:#fff;border:1px solid rgba(0,84,209,.25);border-radius:14px;padding:.8rem .9rem}
 .abl-brief{font-size:.82rem;line-height:1.6;color:var(--ink2)}
 
 /* 3 Auftrag zur Rechnung */
 .abl-auftrag-rechnung .abl-inhalt{grid-template-columns:minmax(0,1fr) 26px minmax(0,1.15fr);grid-template-rows:auto auto auto auto}
-.abl-auftrag-rechnung .abl-handy{grid-column:1;grid-row:1/4;align-self:center;border-radius:20px;border-width:2px;border-color:#d4d4e2}
+.abl-auftrag-rechnung .abl-handy{grid-column:1;grid-row:1/4;align-self:center;border-radius:20px;border-width:2px;border-color:#cfd6df}
 .abl-auftrag-rechnung .abl-inhalt>.abl-pfeil:nth-of-type(1){grid-column:2;grid-row:1/4}
 .abl-auftrag-rechnung .abl-inhalt>.abl-karte:nth-of-type(2){grid-column:3;grid-row:1}
 .abl-auftrag-rechnung .abl-inhalt>.abl-pfeil:nth-of-type(2){grid-column:3;grid-row:2;width:2px;height:16px;max-width:none;transform-origin:center top}
@@ -92,11 +92,11 @@
 .abl-geraet.spielt .abl-auftrag-rechnung .abl-inhalt>.abl-pfeil:nth-of-type(2):not(.an){transform:scaleY(0)}
 .abl-auftrag-rechnung .abl-inhalt>.abl-karte:nth-of-type(3){grid-column:3;grid-row:3}
 .abl-check{display:flex;align-items:center;gap:.5rem;padding:.2rem 0;font-size:.8rem;line-height:1.4;color:var(--ink2)}
-.abl-balken{display:block;height:6px;width:var(--w);border-radius:3px;background:#e1e1ee;margin-top:.45rem}
+.abl-balken{display:block;height:6px;width:var(--w);border-radius:3px;background:#dde3ec;margin-top:.45rem}
 
 /* 4 Fristen */
 .abl-achse{position:relative;height:104px;margin:.25rem .5rem .75rem}
-.abl-linie{position:absolute;left:0;right:0;top:51px;height:3px;border-radius:2px;background:#d6d6e8}
+.abl-linie{position:absolute;left:0;right:0;top:51px;height:3px;border-radius:2px;background:#d0d8e5}
 .abl-ereignis{position:absolute;top:0;left:var(--x);width:7rem;margin-left:-3.5rem;display:flex;flex-direction:column;align-items:center;text-align:center}
 .abl-ereignis.rechts{margin-left:-5.25rem;align-items:flex-end;text-align:right}
 .abl-ereignis b{order:-1;height:34px;display:flex;align-items:flex-end;justify-content:center;font-size:.74rem;line-height:1.3;font-weight:600;color:var(--ink)}
@@ -113,7 +113,7 @@
 .abl-meldungen{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.6rem;align-items:start}
 .abl-meldung{display:grid;gap:.4rem;background:#fff;border:1px solid var(--rand);border-radius:12px;padding:.7rem .8rem;font-size:.8rem}
 .abl-meldung b{font-weight:500;line-height:1.5;color:var(--ink)}
-.abl-meldung.intern{border-color:rgba(0,0,255,.28)}
+.abl-meldung.intern{border-color:rgba(0,84,209,.28)}
 
 /* 5 Auswertung */
 .abl-kacheln{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}
@@ -122,24 +122,24 @@
 .abl-kacheln b{font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-weight:800;font-size:clamp(1.45rem,3vw,1.9rem);line-height:1;letter-spacing:-.03em;color:var(--ink)}
 .abl-diagramm{background:#fff;border:1px solid var(--rand);border-radius:12px;padding:.75rem .85rem}
 .abl-saeulen{display:flex;align-items:flex-end;gap:.7rem;height:76px;padding:0 .25rem}
-.abl-saeulen i{flex:1;height:var(--h);position:relative;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,#4d4dff,#0000ff);transform-origin:bottom;transition:transform .8s var(--weich)}
+.abl-saeulen i{flex:1;height:var(--h);position:relative;border-radius:6px 6px 2px 2px;background:linear-gradient(180deg,#005eec,var(--blue));transform-origin:bottom;transition:transform .8s var(--weich)}
 .abl-tage{display:flex;gap:.7rem;padding:.35rem .25rem 0}
 .abl-tage b{flex:1;text-align:center;font-size:.68rem;font-weight:500;color:var(--ink3)}
 .abl-geraet.spielt .abl-diagramm:not(.an) .abl-saeulen i{transform:scaleY(.05)}
-.abl-bericht{background:#ebebff;border-radius:12px;padding:.7rem .85rem;font-size:.8rem}
-.abl-bericht .abl-klein{color:#0000c8}
+.abl-bericht{background:#e2eeff;border-radius:12px;padding:.7rem .85rem;font-size:.8rem}
+.abl-bericht .abl-klein{color:var(--blue-h)}
 .abl-bericht b{font-weight:500;line-height:1.55;color:var(--ink)}
 
 /* 6 Schnittstellen */
 .abl-schnittstellen .abl-inhalt{grid-template-columns:minmax(0,1fr) 34px minmax(0,.8fr) 34px minmax(0,1fr);align-items:center}
 .abl-knoten{background:#fff;border:1px solid var(--rand);border-radius:14px;padding:.75rem .85rem;font-size:.8rem;min-width:0}
 .abl-knoten b{display:block;font-weight:600;line-height:1.4;color:var(--ink);overflow-wrap:anywhere}
-.abl-mitte{background:#0000ff;border-color:#0000ff;text-align:center}
+.abl-mitte{background:var(--blue);border-color:var(--blue);text-align:center}
 .abl-mitte b{color:#fff}
 .abl-mitte span{display:block;color:#fff;font-size:.72rem;margin-top:.15rem}
 .abl-ziele{display:grid;gap:.6rem;min-width:0}
-.abl-leitung{display:block;position:relative;height:2px;background:repeating-linear-gradient(90deg,#8f8fe0 0 6px,transparent 6px 10px)}
-.abl-leitung::after{content:"";position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:#0000ff;opacity:0}
+.abl-leitung{display:block;position:relative;height:2px;background:repeating-linear-gradient(90deg,#6f98d7 0 6px,transparent 6px 10px)}
+.abl-leitung::after{content:"";position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:var(--blue);opacity:0}
 .abl-geraet.spielt .abl-leitung.an::after{animation:abl-fluss 1.1s ease-in-out 2}
 @keyframes abl-fluss{from{left:0;opacity:1}to{left:calc(100% - 10px);opacity:1}}
 @keyframes abl-fluss-v{from{top:0;opacity:1}to{top:calc(100% - 10px);opacity:1}}
@@ -163,7 +163,7 @@
   .abl-pfeil{width:2px;height:18px;max-width:none;transform-origin:center top}
   .abl-pfeil::after{right:auto;top:auto;bottom:-2px;left:-4px;border:5px solid transparent;border-top:7px solid var(--blue);border-bottom:0}
   .abl-geraet.spielt .abl-pfeil:not(.an){transform:scaleY(0)}
-  .abl-leitung{justify-self:center;width:2px;height:26px;background:repeating-linear-gradient(180deg,#8f8fe0 0 6px,transparent 6px 10px)}
+  .abl-leitung{justify-self:center;width:2px;height:26px;background:repeating-linear-gradient(180deg,#6f98d7 0 6px,transparent 6px 10px)}
   .abl-leitung::after{left:-4px;top:0}
   .abl-geraet.spielt .abl-leitung.an::after{animation-name:abl-fluss-v}
   .abl-geraet .beispiel{display:none}
@@ -178,13 +178,13 @@
 /* Grosses Beispiel: vom Beleg zur Freigabe (Startseite und /unternehmen/#beispiel) */
 .t-ok{color:#14532d;background:#dcfce7}
 .gr-fluss{display:grid;grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr) 32px minmax(0,1fr) 32px minmax(0,1fr);align-items:stretch}
-.gr-stufe{display:flex;flex-direction:column;gap:.3rem;min-width:0;background:#fff;border:1px solid var(--rand);border-radius:16px;padding:1rem;font-size:.85rem;line-height:1.45;color:var(--ink2);box-shadow:0 1px 2px rgba(10,10,60,.04)}
+.gr-stufe{display:flex;flex-direction:column;gap:.3rem;min-width:0;background:#fff;border:1px solid var(--rand);border-radius:16px;padding:1rem;font-size:.85rem;line-height:1.45;color:var(--ink2);box-shadow:0 1px 2px rgba(6,18,36,.04)}
 .gr-stufe b{color:var(--ink);font-weight:600;line-height:1.35;overflow-wrap:anywhere}
-.gr-nr{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#ebebff;color:#0000cc;font-weight:700;font-size:.8rem;margin-bottom:.35rem}
+.gr-nr{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#e2eeff;color:var(--blue-h);font-weight:700;font-size:.8rem;margin-bottom:.35rem}
 .gr-anhang,.gr-entwurf{align-self:flex-start;margin-top:.35rem;font-size:.74rem;font-weight:600;border-radius:999px;padding:.22rem .65rem}
 .gr-anhang{background:var(--grau,#f5f5f7);color:var(--ink2)}
 .gr-entwurf{background:#fff1cf;color:#6b4100}
-.gr-frei{border-color:rgba(0,0,255,.25)}
+.gr-frei{border-color:rgba(0,84,209,.25)}
 .gr-frei .abl-freigabe{margin-top:.5rem}
 .gr-pfeil{align-self:center;justify-self:center;display:block;width:20px;height:2px;background:var(--blue);position:relative;transform-origin:left center}
 .gr-pfeil::after{content:"";position:absolute;right:-2px;top:-4px;border:5px solid transparent;border-left:7px solid var(--blue);border-right:0}

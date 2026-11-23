@@ -32,15 +32,15 @@ STIL = """
 @font-face{font-family:'Inter';font-weight:300 600;src:url(%s/inter-latin.woff2) format('woff2')}
 @page{size:A4;margin:12mm 12mm 11mm}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',Arial,sans-serif;font-size:8.6pt;color:#07071a;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:'Inter',Arial,sans-serif;font-size:8.6pt;color:#040911;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 h1{font-weight:800;font-size:20pt;letter-spacing:-.03em}
-h2{font-size:9.5pt;font-weight:600;margin:3.4mm 0 1.4mm;color:#0000c8;text-transform:uppercase;letter-spacing:.06em}
+h2{font-size:9.5pt;font-weight:600;margin:3.4mm 0 1.4mm;color:#0044aa;text-transform:uppercase;letter-spacing:.06em}
 table{width:100%%;border-collapse:collapse}
-td,th{border:0.6pt solid #9a9ab8;padding:1.2mm 1.6mm;vertical-align:top;text-align:left}
-th{background:#eeeeff;font-weight:600;font-size:7.6pt}
-.l{color:#50507a;font-size:7pt;display:block;margin-bottom:.6mm}
-.fuss{position:fixed;bottom:0;left:0;right:0;font-size:6.8pt;color:#6b6b8a;display:flex;justify-content:space-between}
-.kasten{display:inline-block;width:3.2mm;height:3.2mm;border:0.8pt solid #07071a;margin-right:1.4mm;vertical-align:-0.6mm}
+td,th{border:0.6pt solid #909eb1;padding:1.2mm 1.6mm;vertical-align:top;text-align:left}
+th{background:#e6f0ff;font-weight:600;font-size:7.6pt}
+.l{color:#46556b;font-size:7pt;display:block;margin-bottom:.6mm}
+.fuss{position:fixed;bottom:0;left:0;right:0;font-size:6.8pt;color:#636f80;display:flex;justify-content:space-between}
+.kasten{display:inline-block;width:3.2mm;height:3.2mm;border:0.8pt solid #040911;margin-right:1.4mm;vertical-align:-0.6mm}
 """ % (SCHRIFTEN, SCHRIFTEN)
 
 
@@ -50,13 +50,13 @@ def zeilen(n, spalten):
 
 REGIE = """<!doctype html><html lang="de-CH"><head><meta charset="utf-8"><style>%s
 .kopf{display:grid;grid-template-columns:1fr 62mm;gap:5mm;align-items:start}
-.logo{border:0.8pt dashed #9a9ab8;height:13mm;display:flex;align-items:center;justify-content:center;color:#6b6b8a;font-size:7.5pt}
+.logo{border:0.8pt dashed #909eb1;height:13mm;display:flex;align-items:center;justify-content:center;color:#636f80;font-size:7.5pt}
 .nr td{height:7.5mm}
 .zwei{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
 .summe td{height:5.4mm;padding-top:.8mm;padding-bottom:.8mm}
 .summe .w{width:36mm}
 .unterschrift td{height:12mm}
-.hinweis{font-size:7.2pt;color:#3c3c60;margin-top:1.6mm;line-height:1.4}
+.hinweis{font-size:7.2pt;color:#344053;margin-top:1.6mm;line-height:1.4}
 .fuss{position:static;margin-top:1.5mm}
 </style></head><body>
 <div class="kopf">
@@ -148,12 +148,12 @@ PUNKTE = [
 
 CHECKLISTE = """<!doctype html><html lang="de-CH"><head><meta charset="utf-8"><style>%s
 .kopf{display:grid;grid-template-columns:1fr 70mm;gap:6mm;align-items:start;margin-bottom:3mm}
-.logo{border:0.8pt dashed #9a9ab8;height:22mm;display:flex;align-items:center;justify-content:center;color:#6b6b8a;font-size:7.5pt;text-align:center;padding:2mm}
-.einleitung{font-size:9pt;line-height:1.5;margin:2mm 0 1mm;color:#3c3c60}
+.logo{border:0.8pt dashed #909eb1;height:22mm;display:flex;align-items:center;justify-content:center;color:#636f80;font-size:7.5pt;text-align:center;padding:2mm}
+.einleitung{font-size:9pt;line-height:1.5;margin:2mm 0 1mm;color:#344053}
 ul{list-style:none}
-li{display:grid;grid-template-columns:5mm 1fr 18mm;gap:1mm;padding:.85mm 0;border-bottom:0.5pt solid #d9d9e6;font-size:8.5pt;line-height:1.3}
-li .k{width:3.4mm;height:3.4mm;border:0.8pt solid #07071a;margin-top:.4mm}
-li .n{font-size:6.8pt;color:#6b6b8a;text-align:right}
+li{display:grid;grid-template-columns:5mm 1fr 18mm;gap:1mm;padding:.85mm 0;border-bottom:0.5pt solid #d5dbe3;font-size:8.5pt;line-height:1.3}
+li .k{width:3.4mm;height:3.4mm;border:0.8pt solid #040911;margin-top:.4mm}
+li .n{font-size:6.8pt;color:#636f80;text-align:right}
 .abschnitt{break-inside:avoid}
 .seite2{break-before:page}
 .felder td{height:9mm}
@@ -208,9 +208,9 @@ def regie_excel(ziel):
     wb = Workbook()
     ws = wb.active
     ws.title = "Regierapport"
-    duenn = Side(style="thin", color="9A9AB8")
+    duenn = Side(style="thin", color="909EB1")
     rahmen = Border(left=duenn, right=duenn, top=duenn, bottom=duenn)
-    kopf = PatternFill("solid", fgColor="EEEEFF")
+    kopf = PatternFill("solid", fgColor="E6F0FF")
     fett = Font(name="Arial", bold=True, size=10)
     normal = Font(name="Arial", size=10)
     breiten = {"A": 12, "B": 22, "C": 16, "D": 38, "E": 13, "F": 9, "G": 11, "H": 14}
@@ -235,21 +235,21 @@ def regie_excel(ziel):
     ws["F1"] = "Rapport-Nr."
     ws["F2"] = "Datum / Woche"
     for r in (1, 2):
-        ws["F%d" % r].font = Font(name="Arial", size=8, color="50507A")
+        ws["F%d" % r].font = Font(name="Arial", size=8, color="46556B")
         ws.merge_cells("G%d:H%d" % (r, r))
         zelle("G%d" % r)
     felder = [("Auftraggeber / Bauherrschaft", "Objekt, Adresse"), ("Offerte / Werkvertrag Nr.", "Bauleitung"),
               ("Regie angeordnet von", "angeordnet am")]
     r = 4
     for links, rechts in felder:
-        zelle("A%d" % r, links, Font(name="Arial", size=8, color="50507A"))
+        zelle("A%d" % r, links, Font(name="Arial", size=8, color="46556B"))
         ws.merge_cells("B%d:D%d" % (r, r))
         zelle("B%d" % r)
-        zelle("E%d" % r, rechts, Font(name="Arial", size=8, color="50507A"))
+        zelle("E%d" % r, rechts, Font(name="Arial", size=8, color="46556B"))
         ws.merge_cells("F%d:H%d" % (r, r))
         zelle("F%d" % r)
         r += 1
-    zelle("A%d" % r, "Was und warum in Regie?", Font(name="Arial", size=8, color="50507A"))
+    zelle("A%d" % r, "Was und warum in Regie?", Font(name="Arial", size=8, color="46556B"))
     ws.merge_cells("B%d:H%d" % (r, r))
     zelle("B%d" % r)
     ws.row_dimensions[r].height = 30
@@ -342,14 +342,14 @@ def regie_excel(ziel):
     ws.row_dimensions[r].height = 42
     r += 2
     ws.merge_cells("A%d:D%d" % (r, r))
-    zelle("A%d" % r, "Unternehmer: Name, Datum, Unterschrift", Font(name="Arial", size=8, color="50507A"))
+    zelle("A%d" % r, "Unternehmer: Name, Datum, Unterschrift", Font(name="Arial", size=8, color="46556B"))
     ws.merge_cells("E%d:H%d" % (r, r))
-    zelle("E%d" % r, "Auftraggeber oder Bauleitung: Name, Datum, Unterschrift", Font(name="Arial", size=8, color="50507A"))
+    zelle("E%d" % r, "Auftraggeber oder Bauleitung: Name, Datum, Unterschrift", Font(name="Arial", size=8, color="46556B"))
     ws.row_dimensions[r].height = 48
     r += 2
     ws["A%d" % r] = ("Vorlage: meyssens.ch/ratgeber/regierapport-vorlage, frei verwendbar. "
                      "Ansätze gemäss Offerte oder Werkvertrag. Ohne Gewähr, keine Rechtsberatung.")
-    ws["A%d" % r].font = Font(name="Arial", size=8, color="6B6B8A")
+    ws["A%d" % r].font = Font(name="Arial", size=8, color="636F80")
 
     ws.print_area = "A1:H%d" % r
     ws.page_setup.paperSize = ws.PAPERSIZE_A4
@@ -414,7 +414,7 @@ def vorschau(quelle, ziel):
         roh = Path(tmp) / "seite.png"
         subprocess.run(["gs", "-q", "-sDEVICE=png16m", "-r150", "-dFirstPage=1", "-dLastPage=1", "-o", str(roh), str(quelle)], check=True)
         bild = Image.open(roh).convert("RGB").resize((418, 592), Image.LANCZOS)
-    rahmen = Image.new("RGB", (420, 594), (217, 217, 230))
+    rahmen = Image.new("RGB", (420, 594), (213, 219, 227))
     rahmen.paste(bild, (1, 1))
     rahmen.quantize(colors=96, dither=Image.Dither.NONE).save(ziel, optimize=True)
     print("geschrieben:", ziel.relative_to(ROOT))
