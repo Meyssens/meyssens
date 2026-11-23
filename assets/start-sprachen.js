@@ -13,7 +13,7 @@ const I18N = {
   fr: {
     "nav.gemeinden": "Pour les communes", "nav.unternehmen": "Pour les entreprises", "nav.ueberuns": "À propos",
     "s.gespraech": "Prendre rendez-vous",
-    "s.h1": 'Impliquer la population. <span class="hl"><span class="sh-linie">Automatiser les tâches répétitives.</span></span>',
+    "s.h1": 'Impliquer la population. <span class="hl">Automatiser les tâches répétitives.</span>',
     "s.lead": "Nous rapprochons les communes de leur population grâce à une plateforme de participation et déchargeons les entreprises des tâches répétitives.",
     "s.held.g": "Pour les communes",
     "s.held.u": "Pour les entreprises",
@@ -80,7 +80,7 @@ const I18N = {
   it: {
     "nav.gemeinden": "Per i comuni", "nav.unternehmen": "Per le aziende", "nav.ueberuns": "Chi siamo",
     "s.gespraech": "Fissare un colloquio",
-    "s.h1": 'Coinvolgere la cittadinanza. <span class="hl"><span class="sh-linie">Automatizzare il lavoro di routine.</span></span>',
+    "s.h1": 'Coinvolgere la cittadinanza. <span class="hl">Automatizzare il lavoro di routine.</span>',
     "s.lead": "Avviciniamo i comuni alla loro popolazione con una piattaforma di partecipazione e togliamo alle aziende il lavoro di routine.",
     "s.held.g": "Per i comuni",
     "s.held.u": "Per le aziende",
@@ -147,7 +147,7 @@ const I18N = {
   en: {
     "nav.gemeinden": "For municipalities", "nav.unternehmen": "For businesses", "nav.ueberuns": "About us",
     "s.gespraech": "Book a call",
-    "s.h1": 'Engage citizens. <span class="hl"><span class="sh-linie">Automate routine work.</span></span>',
+    "s.h1": 'Engage citizens. <span class="hl">Automate routine work.</span>',
     "s.lead": "We bring municipalities closer to their residents with a participation platform and take routine work off businesses' hands.",
     "s.held.g": "For municipalities",
     "s.held.u": "For businesses",
