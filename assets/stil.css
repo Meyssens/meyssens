@@ -1346,7 +1346,6 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 .stil .start-held h1{font-size:clamp(2.2rem,5vw,4.2rem);hyphens:manual;-webkit-hyphens:manual}
 .stil .start-held .lead{max-width:40em;margin:1.5rem auto 0;color:var(--ink2);font-weight:400;font-size:clamp(1.05rem,1.4vw,1.2rem);line-height:1.6}
 .start-held .held-knoepfe{margin-top:2.25rem}
-.sh-vertrauen{font-weight:400;margin:1.5rem auto 0;text-wrap:balance;font-size:14px;line-height:1.6;color:var(--ink3);max-width:40em}
 @media(max-width:640px){
   .stil .start-held h1{font-size:clamp(1.85rem,8.4vw,2.6rem)}
   .start-held .held-knoepfe .btn-p,.start-held .held-knoepfe .btn-s{flex:1 1 220px;justify-content:center}
@@ -1477,3 +1476,40 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 @media print{[data-anim] *,[data-anim] *::before,[data-anim] *::after{opacity:1!important;animation:none!important}}
 @media(max-width:900px){.stil .about-grid,.stil .contact-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:380px){#ueber-uns h2{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}}
+/* Startseite 23.11.2026: Hero mit weichem Indigo-Schein, Punktraster, Etikett, Unterstreichung und Vertrauens-Pillen */
+.stil .page-hero.start-held{padding-top:calc(60px + clamp(2.25rem,5vw,4.25rem));padding-bottom:clamp(2rem,3.5vw,3rem);isolation:isolate}
+.start-held > :not(.sh-deko){position:relative;z-index:1}
+.sh-deko{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 55% at 50% 38%,rgba(59,75,214,.10),rgba(59,75,214,0) 70%)}
+.sh-deko::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(59,75,214,.16) 1px,transparent 1.3px);background-size:22px 22px;background-position:center top;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.55) 45%,transparent 92%);mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.55) 45%,transparent 92%)}
+.sh-etikett{display:flex;justify-content:center;margin:0 0 1.25rem}
+.sh-etikett span{display:inline-flex;align-items:center;min-height:30px;padding:.3rem .9rem;border-radius:999px;background:#fff;border:1px solid rgba(59,75,214,.28);color:#2E3AA8;font-size:.8rem;font-weight:600;letter-spacing:.02em;box-shadow:0 4px 14px -8px rgba(59,75,214,.45)}
+.stil .start-held h1{font-size:clamp(2.2rem,5.3vw,4.75rem)}
+.stil .start-held .lead{line-height:1.75;margin-top:1.4rem}
+.start-held .held-knoepfe{margin-top:2rem}
+.sh-linie{background-image:linear-gradient(rgba(59,75,214,.55),rgba(59,75,214,.55));background-repeat:no-repeat;background-position:0 94%;background-size:100% max(3px,.05em);padding-bottom:.04em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.sh-pillen{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem .6rem;margin:1.5rem auto 0;padding:0;max-width:44em}
+.sh-pillen li{display:inline-flex;align-items:center;gap:.4rem;min-height:32px;padding:.3rem .8rem .3rem .65rem;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid var(--rand);color:var(--ink3);font-size:14px;line-height:1.3}
+.sh-pillen svg{flex:none;color:#3B4BD6}
+/* Knöpfe: zarter Schatten, leichtes Anheben, Pfeil bewegt sich, Fokusring sichtbar */
+.stil.start .start-held :is(.btn-p,.btn-s){box-shadow:0 8px 20px -12px rgba(59,75,214,.7)}
+.stil.start .start-held .btn-s{box-shadow:0 6px 16px -12px rgba(59,75,214,.5)}
+.stil.start .start-held :is(.btn-p,.btn-s) svg{transition:transform .25s var(--weich)}
+.stil.start .start-held :is(.btn-p,.btn-s):focus-visible{outline:3px solid #3B4BD6;outline-offset:3px}
+@media (prefers-reduced-motion:no-preference){
+  .stil.start .start-held :is(.btn-p,.btn-s){transition:background .2s,color .2s,border-color .2s,transform .25s var(--weich),box-shadow .25s var(--weich)}
+  .stil.start .start-held :is(.btn-p,.btn-s):hover{transform:translateY(-2px);box-shadow:0 14px 28px -14px rgba(59,75,214,.75)}
+  .stil.start .start-held :is(.btn-p,.btn-s):hover svg{transform:translateX(3px)}
+  .sh-linie{animation:sh-linie 1.1s var(--weich) .35s both}
+}
+@media (prefers-reduced-motion:reduce){.stil.start .start-held :is(.btn-p,.btn-s),.stil.start .start-held :is(.btn-p,.btn-s):hover{transform:none}}
+@keyframes sh-linie{from{background-size:0% max(3px,.05em)}to{background-size:100% max(3px,.05em)}}
+@media(max-width:640px){
+  .stil .page-hero.start-held{padding-top:calc(60px + 1.75rem);padding-bottom:1.75rem}
+  .sh-etikett{margin-bottom:.9rem}
+  .stil .start-held .lead{margin-top:1rem;line-height:1.65}
+  .start-held .held-knoepfe{margin-top:1.4rem;gap:.6rem}
+  .sh-pillen{margin-top:1.1rem;gap:.4rem}
+  .sh-pillen li{font-size:13px;min-height:30px;padding:.25rem .7rem .25rem .55rem}
+}
