@@ -1526,7 +1526,6 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
 }
 /* Hero auf grossen Bildschirmen (ab 1440 px) etwas grösser; darunter unverändert */
 @media(min-width:1440px){
-  .stil .page-hero.start-held{padding-top:calc(60px + 6.5rem);padding-bottom:3.75rem}
   .sh-etikett{font-size:15px;margin-bottom:1.35rem}
   .stil .start-held h1{font-size:clamp(80px,calc(56px + 1.6667vw),88px)}
   .stil .start-held .lead{font-size:26px;max-width:38em;margin-top:1.75rem}
@@ -1537,12 +1536,37 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .sh-reihe li{gap:.5rem;padding:0 1.25rem}
   .sh-reihe svg{width:18px;height:18px}
 }
-/* Niedrige Fenster (Laptop, Windows-Skalierung, Browserleisten): Hero kompakter, damit die Zielgruppenkarten im ersten Bildschirm beginnen */
-@media(min-width:1200px) and (max-height:940px){
-  .stil .page-hero.start-held{padding-top:calc(60px + 2.75rem);padding-bottom:2rem}
-  .sh-etikett{margin-bottom:.9rem}
-  .stil .start-held .lead{margin-top:1.15rem}
-  .start-held .held-knoepfe{margin-top:1.6rem}
-  .sh-reihe{margin-top:1.25rem}
-  .stil.start .st-angebot{padding-top:1.5rem}
+/* Hero füllt die sichtbare Fensterhöhe (svh: ohne die ein- und ausfahrenden Leisten mobiler Browser).
+   Die Navigation schwebt über dem Hero; der Inhalt steht mittig im Bereich darunter, der Scroll-Hinweis am unteren Rand.
+   min-height statt height: reicht der Platz nicht (niedrige Fenster, lange Sprachen), wird der Hero höher statt abzuschneiden. */
+.stil .page-hero.start-held{display:flex;flex-direction:column;align-items:stretch;min-height:clamp(540px,100vh,1280px);min-height:clamp(540px,100svh,1280px);padding-top:calc(78px + clamp(1.5rem,5svh,4.5rem));padding-bottom:clamp(.75rem,2svh,1.5rem)}
+.start-held .sh-etikett{margin-top:auto}
+/* im Flex-Layout fallen Aussenabstände nicht zusammen: Abstand Überschrift–Untertitel wie bisher nur über den Untertitel */
+.stil .start-held h1{margin-bottom:0}
+.start-held .sh-reihe{margin-bottom:auto}
+.sh-weiter{align-self:center;flex:none;display:grid;place-items:center;width:48px;height:48px;margin-top:clamp(2rem,6svh,4.5rem);border-radius:999px;color:var(--blue);text-decoration:none;transition:background .2s}
+.sh-weiter:hover{background:var(--blue-5)}
+.sh-weiter:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+@keyframes sh-nicken{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+@media (prefers-reduced-motion:no-preference){.sh-weiter svg{animation:sh-nicken 2.4s ease-in-out 1.2s 5}}
+/* Karten erst unterhalb des ersten Bildschirms, mit grosszügigem Abstand */
+.stil.start .st-angebot{padding-top:clamp(4rem,9vw,7.5rem)}
+#karten{scroll-margin-top:96px}
+@media(max-width:640px){
+  .stil .page-hero.start-held{padding-top:calc(60px + clamp(1.25rem,4svh,2.5rem));padding-bottom:.5rem}
+  .sh-weiter{margin-top:clamp(1.25rem,4svh,2.5rem)}
+}
+/* Niedrige Desktop-Fenster: Überschrift, Untertitel und Knöpfe richten sich zusätzlich nach der Fensterhöhe,
+   damit Hero samt Scroll-Hinweis in den ersten Bildschirm passt (Breitenwerte oben bleiben die Obergrenze) */
+@media(min-width:1024px) and (max-height:820px){
+  .stil .page-hero.start-held{padding-top:calc(78px + clamp(1rem,4svh,3rem))}
+  .sh-weiter{margin-top:clamp(1.25rem,4svh,3rem)}
+  .stil .start-held h1{font-size:min(clamp(45px,calc(8.27vw - 39.1px),80px),10svh)}
+}
+@media(min-width:1440px) and (max-height:820px){
+  .stil .start-held h1{font-size:min(clamp(80px,calc(56px + 1.6667vw),88px),10svh)}
+  .stil .start-held .lead{font-size:clamp(20px,3.2svh,26px);margin-top:1.25rem}
+  .start-held .held-knoepfe{margin-top:1.75rem}
+  .stil.start .start-held :is(.btn-p,.btn-s){min-height:clamp(54px,7.8svh,64px);font-size:clamp(17px,2.35svh,19px)}
+  .sh-reihe{margin-top:1.4rem}
 }

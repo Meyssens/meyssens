@@ -53,7 +53,7 @@
 <link rel="preload" href="/assets/schriften/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=854e587087">
 <!-- head:ende -->
-<link rel="stylesheet" href="/assets/stil.css?v=504ca68adc">
+<link rel="stylesheet" href="/assets/stil.css?v=efe1441e60">
 <link rel="stylesheet" href="/assets/ablaeufe.css?v=c43ae335e6">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@id": "https://meyssens.ch/ueber-uns/#person"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de-CH", "publisher": {"@id": "https://meyssens.ch/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}], "@id": "https://meyssens.ch/#brotkrumen"}, {"@type": "Person", "@id": "https://meyssens.ch/ueber-uns/#person", "name": "Lionel Nickelsen", "url": "https://meyssens.ch/ueber-uns/", "worksFor": {"@id": "https://meyssens.ch/#org"}}, {"@type": "WebPage", "@id": "https://meyssens.ch/", "url": "https://meyssens.ch/", "name": "Digitale Lösungen für Gemeinden und Unternehmen, Schweiz", "inLanguage": "de-CH", "isPartOf": {"@id": "https://meyssens.ch/#website"}, "breadcrumb": {"@id": "https://meyssens.ch/#brotkrumen"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://meyssens.ch/og-image.png", "width": 1200, "height": 630, "caption": "Meyssens – Digitale Infrastruktur für Organisationen"}}]}</script>
 </head>
@@ -109,10 +109,11 @@
     <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.4l2.9 2.9 6.1-6.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="s.held.p2">Pilot für Gemeinden kostenlos</span></li>
     <li><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8.4l2.9 2.9 6.1-6.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="s.held.p3">Plattform-Hosting in Zürich</span></li>
   </ul>
+  <a class="sh-weiter" href="#karten" aria-label="Weiter zu den Angeboten" data-i18n-aria="s.held.weiter"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9.5l6 6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </section>
 
 <section id="angebot" class="st-angebot" aria-label="Angebot">
-  <div class="st-karten">
+  <div class="st-karten" id="karten">
     <article class="st-karte r" id="fuer-gemeinden">
       <h2 data-i18n="s.g.titel">Für Gemeinden</h2>
       <p data-i18n="s.g.satz">Eine eigene Beteiligungsplattform: Umfragen, Ideen auf der Karte und Abstimmungen an einem Ort.</p>
@@ -479,7 +480,7 @@ document.addEventListener('keydown', function(e){
     if(!warten){
       warten = [];
       var s = document.createElement('script');
-      s.src = '/assets/start-sprachen.js?v=18923cf42e';
+      s.src = '/assets/start-sprachen.js?v=c6ec033cdf';
       s.onload = function(){ warten.forEach(function(f){ f(); }); };
       document.head.appendChild(s);
     }
