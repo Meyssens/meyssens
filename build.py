@@ -1633,7 +1633,7 @@ BRIEF_SEITEN = [
                 'schlanke Abläufe ein. Sie empfehlen, wir setzen um, die Mandantenbeziehung bleibt bei Ihnen. Wir machen keine Buchhaltung, '
                 'keine Steuerberatung und keine Revision.</p>\n'
                 '    <p>Wir zahlen keine Provision, damit Ihre Empfehlung unabhängig bleibt. Mandanten, die über Ihr Büro kommen, erhalten '
-                'einen Einstiegsvorteil, den wir vor dem Pilot schriftlich festhalten. Ihr Büro erhält Material mit Ihrem Logo und einen '
+                '4 statt 3 Monate Pilot kostenlos; das halten wir vor dem Pilot schriftlich fest. Ihr Büro erhält Material mit Ihrem Logo und einen '
                 'Ablauf für das eigene Büro im Pilot.</p>\n  </div>\n</section>\n')},
     {"pfad": "/garage/", "branche": "garagen", "seite": "Brief Garage",
      "titel": "Für Garagen: Freigaben, MFK und Reifen | Meyssens",
