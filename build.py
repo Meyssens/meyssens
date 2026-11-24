@@ -1613,6 +1613,73 @@ def werkzeug_uebersicht(gemeinsam):
     schreibe(u["pfad"].strip("/") + "/index.html", fuelle(lies("vorlage_werkzeug.html"), werte))
 
 
+
+# Zielseiten für den Briefpost-Test (meyssens.ch/treuhand/, /garage/): nicht indexieren, nicht in der Sitemap, von keiner
+# Seite verlinkt; erreichbar über den QR-Code im Brief (utm_source=brief). Formular mit vorbelegter Quelle «Brief».
+BRIEF_SEITEN = [
+    {"pfad": "/treuhand/", "branche": "treuhaender", "seite": "Brief Treuhand",
+     "titel": "Für Treuhandbüros: Unterlagen früher | Meyssens",
+     "beschreibung": "Gratis-Hilfen und ein Beispiel für Treuhandbüros: Belege automatisch erfassen, Checkliste Steuerunterlagen. Jetzt ansehen.",
+     "h1": 'Für Treuhandbüros: <span class="hl">weniger nachfassen.</span>',
+     "lead": "Sie haben unseren Brief erhalten. Hier finden Sie die kostenlosen Hilfen und ein Beispiel, wie ein Ablauf für Ihre "
+             "KMU-Mandanten aussieht.",
+     "hilfen": [("/ratgeber/steuerunterlagen-einsammeln/", "Checkliste Steuerunterlagen", "Zwei Seiten für Ihre Mandanten, als Word-Datei; auf Wunsch mit Ihrem Logo."),
+                ("/werkzeuge/arbeitstage/", "Arbeitstage 2027", "Arbeitstage und Feiertage für BS, BL, SO, AG, BE und ZH, pro Monat."),
+                ("/werkzeuge/lohnfortzahlung/", "Lohnfortzahlung bei Krankheit", "Basler, Berner und Zürcher Skala nach Dienstjahr."),
+                ("/werkzeuge/", "Alle Gratis-Werkzeuge", "QR-Rechnung, Mahnung mit Verzugszins, MWST-Rechner und mehr.")],
+     "zusatz": ('<section id="partner" class="flaeche">\n  <div class="artikel-text r">\n    <span class="s-label">Partner</span>\n'
+                '    <h2>Für Treuhandbüros als Partner</h2>\n'
+                '    <p>Viele Ihrer KMU-Mandanten verlieren Zeit mit Belegen, Rapporten und Rechnungen. Meyssens richtet für diese Betriebe '
+                'schlanke Abläufe ein. Sie empfehlen, wir setzen um, die Mandantenbeziehung bleibt bei Ihnen. Wir machen keine Buchhaltung, '
+                'keine Steuerberatung und keine Revision.</p>\n'
+                '    <p>Wir zahlen keine Provision, damit Ihre Empfehlung unabhängig bleibt. Mandanten, die über Ihr Büro kommen, erhalten '
+                'einen Einstiegsvorteil, den wir vor dem Pilot schriftlich festhalten. Ihr Büro erhält Material mit Ihrem Logo und einen '
+                'Ablauf für das eigene Büro im Pilot.</p>\n  </div>\n</section>\n')},
+    {"pfad": "/garage/", "branche": "garagen", "seite": "Brief Garage",
+     "titel": "Für Garagen: Freigaben, MFK und Reifen | Meyssens",
+     "beschreibung": "Gratis-Hilfen und ein Beispiel für Garagen: Zusatzarbeiten freigeben lassen, MFK-Termine, Reifenhotel. Jetzt ansehen.",
+     "h1": 'Für Garagen: <span class="hl">weniger Büro.</span>',
+     "lead": "Sie haben unseren Brief erhalten. Hier finden Sie die kostenlosen Hilfen und ein Beispiel, wie eine Zusatzarbeit "
+             "mit Foto und Betrag zur Freigabe beim Kunden kommt.",
+     "hilfen": [("/werkzeuge/offerte/", "Offerte erstellen", "Positionen, MWST und Gültigkeitsfrist, als PDF."),
+                ("/werkzeuge/rechnung/", "Rechnung erstellen", "Mit MWST und QR-Zahlteil, als PDF."),
+                ("/werkzeuge/mahnung/", "Mahnung mit Verzugszins", "Zahlungserinnerung bis letzte Mahnung, Zins nach OR."),
+                ("/branchen/garagen/", "Abläufe für Garagen", "Werkstattauftrag mit Freigabegrenzen, MFK-Termine, Reifenhotel.")],
+     "zusatz": ""},
+]
+
+
+def brief_zielseiten(gemeinsam, vorlage_seite, ablaeufe, bekannte_seiten):
+    for b in BRIEF_SEITEN:
+        x = ablaeufe["branchen"][b["branche"]]
+        hilfen = "\n".join('    <a class="wz-karte ccard" href="%s"><h3>%s</h3><p>%s</p><span class="way-go">Öffnen %s</span></a>'
+                           % (u, html.escape(t), html.escape(k), PFEIL) for u, t, k in b["hilfen"])
+        for u, _, _ in b["hilfen"]:
+            if u not in bekannte_seiten:
+                raise SystemExit("Briefseite %s: unbekannter Link %s" % (b["pfad"], u))
+        inhalt = (
+            '<link rel="stylesheet" href="/assets/werkzeug.css">\n<link rel="stylesheet" href="/assets/ablaeufe.css">\n'
+            '<section id="hilfen">\n  <div class="kopf-mitte r">\n    <span class="s-label">Gratis</span>\n'
+            '    <h2>Sofort nutzbar, ohne Anmeldung</h2>\n  </div>\n  <div class="wz-raster r">\n%s\n  </div>\n</section>\n'
+            '<section id="beispiel" class="flaeche">\n  <div class="abl-block st-beispiel">\n    <div class="abl-text r">\n'
+            '      <span class="s-label">Beispiel</span>\n      <h2>%s</h2>\n      <p>%s</p>\n'
+            '      <p class="abl-mensch"><strong>Sie entscheiden:</strong> %s.</p>\n    </div>\n    %s\n  </div>\n%s\n</section>\n'
+            '%s'
+            '<section id="anfrage-bereich">\n  <div class="kopf-mitte r">\n    <span class="s-label">Gespräch</span>\n'
+            '    <h2>Gratis-Prozess-Check: 30 Minuten</h2>\n'
+            '    <p class="s-lead">Sie zeigen uns einen Ablauf, wir sagen Ihnen offen, was sich automatisieren lässt und was nicht. '
+            'Danach ist ein Pilot möglich: ein Ablauf, drei Monate kostenlos, jederzeit kündbar.</p>\n  </div>\n%s\n</section>\n'
+            '<script src="/assets/anfrage.js" defer></script>'
+            % (hilfen, html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["mensch"]), mini_geraet(x), ABLAUF_SKRIPT,
+               b["zusatz"], anfrage_formular(b["seite"], "Betrieb", False)))
+        kopf, seitenld = seitenkopf((START, (b["seite"], b["pfad"])), b["titel"])
+        werte = dict(gemeinsam, **kopf, **{
+            "titel": html.escape(b["titel"]), "beschreibung": html.escape(b["beschreibung"]), "url": DOMAIN + b["pfad"],
+            "seo_kopf": '<meta name="robots" content="noindex, follow">\n' + seo_kopf(DOMAIN + b["pfad"]), "chip": "Für Sie zusammengestellt", "h1": b["h1"],
+            "lead": html.escape(b["lead"]), "inhalt": inhalt, "ld": ld(*seitenld)})
+        schreibe(b["pfad"].strip("/") + "/index.html", fuelle(vorlage_seite, werte))
+
+
 def main():
     produkte = json.loads(lies("produkte.json"))
     slugs = set()
@@ -2159,6 +2226,7 @@ def main():
             inhalt = inhalt.replace(platzhalter, erzeuge())
         werkzeug_seite(w, inhalt, w["skripte"], gemeinsam, bekannte_seiten)
     werkzeug_uebersicht(gemeinsam)
+    brief_zielseiten(gemeinsam, vorlage_seite, ablaeufe, bekannte_seiten)
 
     # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
     werte = dict(gemeinsam, **{
