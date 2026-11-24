@@ -52,6 +52,9 @@ from build import (VEREINS_SEITEN, ARTEN, STUFEN, AUTO_WORTE, AUTOMATISIERUNGEN_
 ROOT = Path(__file__).resolve().parent
 
 
+# Felder des Ablauf-Formulars; quelle/quelle_detail/kampagne = freiwilliges Feld «Wie haben Sie von uns erfahren?»
+FORMFELDER = {"_subject", "branche", "ablauf", "name", "email", "nachricht", "datenschutz-gelesen", "quelle", "quelle_detail", "kampagne"}
+
 def datum(iso):
     # "2026-10-27" -> "27.10.2026", wie auf den Seiten angezeigt
     j, m, t = iso.split("-")
@@ -221,7 +224,7 @@ def pruefe_ablauf(a, teil):
         f.append("Abschluss, Knopf oder Formular fehlt")
     form = ablauf[ablauf.find('<form class="ablauf-form"'):ablauf.find("</form>")]
     felder = set(re.findall(r'name="([^"]+)"', form))
-    if felder != {"_subject", "branche", "ablauf", "name", "email", "nachricht", "datenschutz-gelesen"}:
+    if felder != FORMFELDER:
         f.append("Formularfelder %s" % sorted(felder))
     if 'name="branche" value="%s"' % html.escape(a["name"]) not in form or \
             not re.search(r'name="ablauf" value="%s \(%s\)" readonly' % (re.escape(html.escape(k["titel"])),
@@ -413,7 +416,6 @@ for b in (b for b in branchen_daten if b.get("bausteine") and not b.get("automat
             fehler.append("/branchen/%s/: Baustein %s fehlt im Abschnitt #bausteine" % (b["slug"], x))
 
 # --- Abschnitt "Automatisierungen" der Branchen ohne Langtext ---
-FORMFELDER = {"_subject", "branche", "ablauf", "name", "email", "nachricht", "datenschutz-gelesen"}
 for b in (b for b in branchen_daten if b.get("automatisierungen")):
     au, url = b["automatisierungen"], "/branchen/%s/" % b["slug"]
     text = seiten.get(url, ("",))[0]

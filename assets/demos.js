@@ -467,3 +467,26 @@ animBoxen.forEach(function(box){
 });
 
 })();
+
+// --- Formularfeld «Wie haben Sie von uns erfahren?» (freiwillig): Vorbelegung aus utm_source, das versteckte Feld
+// «kampagne» aus utm_source/utm_medium/utm_campaign der aktuellen Adresse. Nichts wird gespeichert oder gesendet,
+// bevor die Person das Formular selbst abschickt. Das Detailfeld erscheint nur bei Empfehlung, Anlass, Brief oder Andere.
+(function(){
+  var felder = document.querySelectorAll('[data-quelle]');
+  if(!felder.length) return;
+  var q = new URLSearchParams(location.search);
+  var src = (q.get('utm_source') || '').toLowerCase(), med = (q.get('utm_medium') || '').toLowerCase();
+  var vor = src === 'brief' ? 'Brief' : src === 'linkedin' ? 'LinkedIn' : (src === 'google' && med === 'cpc') ? 'Google-Anzeige'
+          : src === 'partner' ? 'Empfehlung (z. B. Treuhandbüro)' : src === 'verband' ? 'Anlass oder Verband' : '';
+  var kampagne = ['utm_source', 'utm_medium', 'utm_campaign'].map(function(k){ return (q.get(k) || '').replace(/[^\w.\-]/g, '').slice(0, 40); })
+                 .filter(Boolean).join(' / ');
+  Array.prototype.forEach.call(felder, function(f){
+    var s = f.querySelector('select'), d = f.querySelector('.quelle-detail'), l = f.querySelector('.quelle-detail-label');
+    var h = f.querySelector('input[name="kampagne"]');
+    if(vor && !s.value) s.value = vor;
+    if(h) h.value = kampagne;
+    function zeige(){ var an = /Empfehlung|Anlass|Andere|Brief/.test(s.value); d.hidden = !an; l.hidden = !an; }
+    s.addEventListener('change', zeige);
+    zeige();
+  });
+})();

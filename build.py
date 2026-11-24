@@ -1424,6 +1424,8 @@ WORTE = (1500, 2200)
 def worte(text):
     # Wörter im sichtbaren Text eines HTML-Fragments, ohne Navigation (Inhaltsverzeichnis)
     text = re.sub(r"<nav\b.*?</nav>", " ", text, flags=re.S)
+    # das freiwillige Formularfeld «Wie haben Sie von uns erfahren?» ist kein Seiteninhalt
+    text = re.sub(r"<!-- quelle -->.*?<!-- /quelle -->", " ", text, flags=re.S)
     return len(re.findall(r"\w[\w'’.-]*", html.unescape(re.sub(r"<[^>]+>", " ", text))))
 
 
@@ -2185,6 +2187,52 @@ def versioniere_assets():
             print("versioniert:", rel)
 
 
+# Formularfeld «Wie haben Sie von uns erfahren?» (freiwillig) in allen Anfrageformularen der Unternehmen-Seiten.
+# Läuft nach dem Bau über die fertigen Seiten: entfernt alte Felder (Marker) und setzt sie vor die Einwilligung.
+# Nicht auf /gemeinden/ (viersprachig) und nicht in Quelldateien (Vorlagen, Artikel). Vorbelegung aus utm_source
+# und das versteckte Feld «kampagne» setzt assets/demos.js (nur aus der aktuellen Adresse, ohne Speicherung).
+QUELLEN = ["Google-Suche", "Gratis-Werkzeug oder Vorlage", "Brief", "LinkedIn", "Empfehlung (z. B. Treuhandbüro)",
+           "Anlass oder Verband", "Google-Anzeige", "Andere"]
+QUELLE_MARKER = re.compile(r"<!-- quelle -->.*?<!-- /quelle -->\s*", re.S)
+FORM_RE = re.compile(r'<form\b[^>]*action="https://formspree\.io/[^"]*"[^>]*>.*?</form>', re.S)
+EINW_RE = re.compile(r'<div class="fgrp(?: anfrage-einw)?">(?=<label style="display:flex|<input type="checkbox" id="anf-einwilligung")')
+
+
+def quelle_feld(n):
+    optionen = "".join("<option>%s</option>" % html.escape(q) for q in QUELLEN)
+    return ('<!-- quelle --><div class="fgrp quelle-feld" data-quelle>'
+            '<label class="flabel" for="quelle-%d">Wie haben Sie von uns erfahren? (optional)</label>'
+            '<select class="fselect" id="quelle-%d" name="quelle"><option value="">Bitte wählen</option>%s</select>'
+            '<label class="flabel quelle-detail-label" for="quelle-%d-detail">Von wem oder wo? (optional)</label>'
+            '<input class="finput quelle-detail" id="quelle-%d-detail" name="quelle_detail" type="text" autocomplete="off" '
+            'placeholder="z. B. Name des Treuhandbüros oder des Anlasses">'
+            '<input type="hidden" name="kampagne" value=""></div><!-- /quelle -->\n' % (n, n, optionen, n, n))
+
+
+def quelle_felder():
+    for datei in sorted(ROOT.rglob("*.html")):
+        rel = datei.relative_to(ROOT).as_posix()
+        if (rel.startswith((".git/", "node_modules/", "artikel/", "vorlage_", "gemeinden/")) or "/" not in rel
+                and rel != "404.html" and not rel.startswith("index")):
+            continue
+        alt = datei.read_text(encoding="utf-8")
+        text = QUELLE_MARKER.sub("", alt)
+        zaehler = [0]
+
+        def formular(m):
+            f = m.group(0)
+            treffer = EINW_RE.search(f)
+            if not treffer:
+                return f
+            zaehler[0] += 1
+            return f[:treffer.start()] + quelle_feld(zaehler[0]) + f[treffer.start():]
+
+        neu = FORM_RE.sub(formular, text)
+        if neu != alt:
+            datei.write_text(neu, encoding="utf-8")
+
+
 if __name__ == "__main__":
     main()
+    quelle_felder()
     versioniere_assets()
