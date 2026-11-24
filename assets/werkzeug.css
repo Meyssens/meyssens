@@ -159,3 +159,16 @@
 .mw-liste dt{color:var(--ink2)}
 .mw-liste dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
 .mw-liste .mw-ziel{font-weight:700;color:var(--blue);font-size:1.3rem;border-top:2px solid var(--blue-20);padding-top:.5rem}
+/* W4 Arbeitszeit, W6 Lohnfortzahlung */
+.az-formular{padding:clamp(1.25rem,2.5vw,2rem);max-width:1440px;margin:0 auto}
+.az-kopf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:.25rem 1rem}
+.az-ergebnis-zeile{display:grid;gap:.75rem;margin:.5rem 0 1rem}
+.az-tabelle{min-width:640px}
+.az-tabelle td,.az-tabelle th{padding:.3rem .4rem;vertical-align:middle}
+.az-tabelle .finput{padding:.45rem .6rem;min-width:4.5rem;font-variant-numeric:tabular-nums}
+.az-tabelle tr.az-we th,.az-tabelle tr.az-we td{background:var(--surface);color:var(--ink3)}
+.az-tabelle tr.az-ft th,.az-tabelle tr.az-ft td{background:var(--blue-hell)}
+.az-summe{font-variant-numeric:tabular-nums;white-space:nowrap}
+.az-notiz{font-size:.82rem;color:var(--ink2)}
+.lf-achtung{color:#7a4b00!important;background:#fff6e0;border-radius:8px;padding:.5rem .7rem}
+.lf-tabelle td{white-space:nowrap}

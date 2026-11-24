@@ -1,0 +1,54 @@
+<section id="werkzeug" class="flaeche">
+  <h2 class="sr-only">Arbeitszeit erfassen</h2>
+  <form id="az-formular" class="ccard qr-formular az-formular" novalidate>
+    <noscript><p class="note">Das Werkzeug braucht JavaScript. Es rechnet alles in Ihrem Browser und sendet nichts.</p></noscript>
+    <p class="wz-beispielhinweis">Die Zeiten sind ein Beispiel mit erfundenen Daten. <button type="button" class="qr-klein" id="az-leeren">Zeiten leeren</button></p>
+    <div class="az-kopf">
+      <div class="fgrp"><label class="flabel" for="az-monat">Monat</label><input class="finput" type="month" id="az-monat" value="2027-03"></div>
+      <div class="fgrp"><label class="flabel" for="az-kanton">Kanton (Feiertage)</label><select class="fselect finput" id="az-kanton"><option value="BS">Basel-Stadt</option><option value="BL" selected>Basel-Landschaft</option><option value="SO">Solothurn</option><option value="AG">Aargau</option><option value="BE">Bern</option><option value="ZH">Zürich</option></select></div>
+      <div class="fgrp" id="az-region-grp" hidden><label class="flabel" for="az-region">Region</label><select class="fselect finput" id="az-region"></select></div>
+      <div class="fgrp"><label class="flabel" for="az-soll">Soll-Stunden pro Woche</label><input class="finput" type="text" inputmode="decimal" id="az-soll" value="42"></div>
+      <div class="fgrp"><label class="flabel" for="az-max">Höchstarbeitszeit (Art. 9 ArG)</label><select class="fselect finput" id="az-max"><option value="45" selected>45 Stunden (Büro, Industrie, Verkauf in Grossbetrieben)</option><option value="50">50 Stunden (alle übrigen, z. B. Bau, Gewerbe)</option></select></div>
+      <div class="fgrp"><label class="flabel" for="az-name">Name (nur für das PDF, optional)</label><input class="finput" type="text" id="az-name" maxlength="60"></div>
+    </div>
+    <div class="az-ergebnis-zeile">
+      <div class="ccard mg-rechnung" id="az-ergebnis" aria-live="polite"><p class="at-was">Das Werkzeug braucht JavaScript.</p></div>
+      <div class="qr-knoepfe"><button type="button" class="btn-p" id="az-pdf">Monatsblatt als PDF</button><button type="button" class="btn-s" id="az-pdf-leer">Leeres Blatt zum Ausdrucken</button><button type="button" class="btn-s" id="az-csv">Als Tabelle (CSV)</button></div>
+      <p class="at-meldung" id="az-meldung" role="alert"></p>
+    </div>
+    <div class="tabelle-scroll"><table class="qr-tabelle az-tabelle"><thead><tr><th scope="col">Tag</th><th scope="col">Beginn</th><th scope="col">Ende</th><th scope="col">Pause (Min.)</th><th scope="col">Arbeitszeit</th><th scope="col">Bemerkung</th></tr></thead><tbody id="az-tage"></tbody></table></div>
+    <script type="application/json" id="at-daten"><!-- at-daten --></script>
+    <script type="application/json" id="az-beispiel">{"standard": ["07:30", "17:00", "60"], "2027-03-10": ["07:00", "19:30", "45"]}</script>
+  </form>
+</section>
+
+<section id="beispiel">
+  <div class="artikel-text">
+    <span class="s-label">Beispiel</span>
+    <h2>März 2027 in Basel-Landschaft, 42-Stunden-Woche</h2>
+    <p>Der März 2027 hat 23 Werktage. Karfreitag (26. März) und Ostermontag (29. März) sind Feiertage, es bleiben 21 Arbeitstage. Bei 42 Stunden pro Woche sind das 21 × 8,4 = 176 Stunden 24 Minuten Soll.</p>
+  </div>
+  <figure class="geraet mg-beispiel" data-anim="zins">
+    <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Arbeitszeit März 2027</span><span class="beispiel">Beispiel</span></div>
+    <div class="mg-schritte" role="img" aria-label="Beispiel: Soll 176 Stunden 24 Minuten, gearbeitet 181 Stunden 45 Minuten, Saldo plus 5 Stunden 21 Minuten; in der Woche ab 8. März 45 Stunden 45 Minuten, also 45 Minuten über der Höchstarbeitszeit.">
+      <div class="mg-schritt" style="--i:0" aria-hidden="true"><span>Soll: 21 Arbeitstage × 8,4 h</span><b>176:24</b></div>
+      <div class="mg-schritt" style="--i:1" aria-hidden="true"><span>Gearbeitet</span><b>181:45</b></div>
+      <div class="mg-schritt" style="--i:2" aria-hidden="true"><span>Saldo (Überstunden)</span><b>+5:21</b></div>
+      <div class="mg-schritt mg-total" style="--i:3" aria-hidden="true"><span>Woche ab 08.03.: 45:45 h</span><b>0:45 Überzeit</b></div>
+    </div>
+    <figcaption class="anim-fuss"><span>Beispiel mit erfundenen Daten.</span> <button type="button" class="anim-nochmal" data-anim-nochmal hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Nochmal abspielen</button></figcaption>
+  </figure>
+</section>
+
+<section id="wissen" class="flaeche">
+  <div class="artikel-text">
+    <span class="s-label">Wissen</span>
+    <h2>Arbeitszeit erfassen: was gilt</h2>
+    <h3>Pflicht zur Erfassung</h3>
+    <p>Arbeitgeber müssen unter anderem die geleistete tägliche und wöchentliche Arbeitszeit mit Ausgleichs- und Überzeitarbeit, ihre Lage und die Pausen ab 30 Minuten erfassen und die Unterlagen mindestens fünf Jahre aufbewahren (Art. 73 ArGV 1). Für Mitarbeitende, die ihre Arbeitszeit zu einem namhaften Teil selbst bestimmen, genügt nach Vereinbarung die tägliche Arbeitszeit (Art. 73b ArGV 1); Betriebe mit weniger als 50 Mitarbeitenden können das auch einzeln schriftlich vereinbaren. Ganz verzichten lässt sich nur unter engen Voraussetzungen mit einem Gesamtarbeitsvertrag (Art. 73a ArGV 1).</p>
+    <h3>Überstunden und Überzeit</h3>
+    <p>Überstunden sind Stunden über der vertraglichen Arbeitszeit. Sie werden mit Freizeit gleicher Dauer ausgeglichen, wenn beide einverstanden sind, sonst mit dem Lohn und einem Zuschlag von mindestens einem Viertel, ausser es ist schriftlich etwas anderes vereinbart (Art. 321c OR).</p>
+    <p>Überzeit ist Arbeit über der gesetzlichen Höchstarbeitszeit von 45 Stunden pro Woche (Büro, Industrie, Verkauf in Grossbetrieben des Detailhandels) oder 50 Stunden (alle übrigen), Art. 9 ArG. Pro Kalenderjahr sind höchstens 170 beziehungsweise 140 Stunden Überzeit zulässig, in der Regel höchstens zwei Stunden pro Tag (Art. 12 ArG). Der Zuschlag beträgt mindestens 25 %, für Büropersonal sowie technische und andere Angestellte erst ab der 61. Stunde im Jahr (Art. 13 ArG).</p>
+    <p>Das Werkzeug prüft nur Kalenderwochen innerhalb des gewählten Monats. Ausgleichs- und Ruhezeitregeln, Nacht- und Sonntagsarbeit rechnet es nicht.</p>
+  </div>
+</section>

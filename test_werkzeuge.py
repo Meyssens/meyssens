@@ -231,6 +231,66 @@ def mwst_browser(seite_neu):
     pg.close()
 
 
+def ferien_lohn_arbeitszeit_browser(seite_neu):
+    import subprocess, tempfile
+    # W5 Ferien
+    pg, _, _ = seite_neu(1440)
+    pg.goto(BASIS + "/werkzeuge/ferien/", wait_until="load")
+    pg.wait_for_function("window.Ferien")
+    pruefe([pg.evaluate("Ferien.zuschlag(%d)" % w) for w in (4, 5, 6)] == [8.33, 10.64, 13.04], "Ferien: Zuschläge falsch")
+    r = pg.evaluate("Ferien.ferientage(5, 3, '2027-04-01', '2027-12-31', 365)")
+    pruefe(r["tage"] == 275 and r["ferientage"] == 11.3, "Ferien Beispiel: %s" % r)
+    pruefe("11,3" in pg.text_content("#fe-ergebnis"), "Ferien: Beispiel nicht angezeigt")
+    pg.fill("#fe-wochen", "3")
+    pruefe("Minimum: 4 Wochen" in pg.text_content("#fe-meldung"), "Ferien: Minimum nicht gemeldet")
+    pg.check("#fe-jung")
+    pruefe("Minimum: 5 Wochen" in pg.text_content("#fe-meldung"), "Ferien: Minimum unter 20 nicht gemeldet")
+    pg.close()
+    # W6 Lohnfortzahlung: Skalen wie in der Recherche (Basel AWA BS 2024, Bern Zivilgerichte BE, Zürich Gerichte ZH)
+    pg, _, _ = seite_neu(1440)
+    pg.goto(BASIS + "/werkzeuge/lohnfortzahlung/", wait_until="load")
+    pg.wait_for_function("window.Lohnfortzahlung")
+    erwartet = {"basel": {1: "3 Wochen", 2: "2 Monate", 3: "2 Monate", 4: "3 Monate", 10: "3 Monate", 11: "4 Monate", 15: "4 Monate", 16: "5 Monate", 20: "5 Monate", 21: "6 Monate", 30: "6 Monate"},
+                "bern": {1: "3 Wochen", 2: "1 Monat", 3: "2 Monate", 4: "2 Monate", 5: "3 Monate", 9: "3 Monate", 10: "4 Monate", 15: "5 Monate", 19: "5 Monate", 20: "6 Monate", 25: "6 Monate", 26: None},
+                "zuerich": {1: "3 Wochen", 2: "8 Wochen", 3: "9 Wochen", 6: "12 Wochen", 11: "17 Wochen", 25: "31 Wochen", 26: None}}
+    for skala, werte in erwartet.items():
+        for nr, w in werte.items():
+            ist = pg.evaluate("Lohnfortzahlung.anspruch('%s', %d)" % (skala, nr))
+            pruefe(ist == w, "Skala %s Dienstjahr %d: %s statt %s" % (skala, nr, ist, w))
+    d = pg.evaluate("Lohnfortzahlung.dienstjahr('2022-03-01', '2027-05-15')")
+    pruefe(d["nr"] == 6 and d["von"] == "2027-03-01" and d["bis"] == "2028-02-29" and not d["ersteDreiMonate"], "Dienstjahr Beispiel: %s" % d)
+    d = pg.evaluate("Lohnfortzahlung.dienstjahr('2027-01-15', '2027-03-01')")
+    pruefe(d["nr"] == 1 and d["ersteDreiMonate"], "Dienstjahr erste drei Monate: %s" % d)
+    pruefe("3 Monate" in pg.text_content("#lf-ergebnis"), "Lohnfortzahlung: Beispiel nicht angezeigt")
+    pg.check('input[name="lf-skala"][value="zuerich"]')
+    pruefe("12 Wochen" in pg.text_content("#lf-ergebnis"), "Lohnfortzahlung: Zürcher Skala in der Bedienung falsch")
+    pg.close()
+    # W4 Arbeitszeit: Beispiel März 2027 BL
+    pg, _, _ = seite_neu(1440)
+    pg.goto(BASIS + "/werkzeuge/arbeitszeit/", wait_until="load")
+    pg.wait_for_function("window.Arbeitszeit")
+    pruefe(pg.evaluate("Arbeitszeit.tagMinuten('07:30', '17:00', 60)") == 510, "Arbeitszeit: Tagesminuten falsch")
+    pruefe(pg.evaluate("Arbeitszeit.tagMinuten('22:00', '06:00', 30)") == 450, "Arbeitszeit: über Mitternacht falsch")
+    t = pg.text_content("#az-ergebnis")
+    for muss in ("181:45", "176:24", "5:21", "Woche ab 08.03.", "0:45"):
+        pruefe(muss in t, "Arbeitszeit Beispiel: «%s» fehlt in %s" % (muss, t))
+    pruefe(pg.locator("#az-tage tr").count() == 31 and pg.locator("#az-tage tr.az-ft").count() == 2, "Arbeitszeit: März-Tabelle oder Feiertage falsch")
+    for knopf, endung in (("#az-pdf", ".pdf"), ("#az-pdf-leer", ".pdf"), ("#az-csv", ".csv")):
+        with pg.expect_download() as dl:
+            pg.click(knopf)
+        with tempfile.TemporaryDirectory() as tmp:
+            ziel = Path(tmp) / ("a" + endung)
+            dl.value.save_as(ziel)
+            if endung == ".pdf":
+                text = subprocess.run(["pdftotext", "-layout", str(ziel), "-"], capture_output=True, text=True).stdout
+                pruefe("Arbeitszeiterfassung März 2027" in text and "Karfreitag" in text, "Arbeitszeit PDF %s: Inhalt fehlt" % knopf)
+                pruefe(("181:45" in text) == (knopf == "#az-pdf"), "Arbeitszeit PDF %s: Total falsch" % knopf)
+            else:
+                text = ziel.read_text(encoding="utf-8-sig")
+                pruefe(text.count("\n") == 31 and '"2027-03-26"' in text and "Karfreitag" in text, "Arbeitszeit CSV falsch")
+    pg.close()
+
+
 def main():
     with sync_playwright() as p:
         b = p.chromium.launch()
@@ -252,6 +312,7 @@ def main():
         beleg_browser(seite_neu, "rechnung")
         beleg_browser(seite_neu, "offerte")
         mwst_browser(seite_neu)
+        ferien_lohn_arbeitszeit_browser(seite_neu)
         b.close()
     print("%d Werkzeuge geprüft" % len(W.WERKZEUGE))
     if fehler:

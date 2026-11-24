@@ -563,3 +563,124 @@ WERKZEUGE.append({
     ],
     "quellen": MWST_QUELLEN + [("Mehrwertsteuergesetz, Art. 37 (Saldosteuersatz)", "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_37")],
 })
+
+ARG_QUELLEN = [
+    ("Arbeitsgesetz (ArG), Art. 9, 12, 13 und 46", "https://www.fedlex.admin.ch/eli/cc/1966/57_57_57/de"),
+    ("Verordnung 1 zum Arbeitsgesetz (ArGV 1), Art. 25, 73, 73a und 73b", "https://www.fedlex.admin.ch/eli/cc/2000/243/de"),
+    ("Obligationenrecht, Art. 321c (Überstunden)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_321_c"),
+    ("KMU-Portal des Bundes: Arbeitszeiterfassung", "https://www.kmu.admin.ch/de/arbeitszeiterfassung-pflicht-fuer-arbeitgebende"),
+]
+
+WERKZEUGE.append({
+    "slug": "arbeitszeit",
+    "pfad": "/werkzeuge/arbeitszeit/",
+    "name": "Arbeitszeit erfassen",
+    "kurz": "Monatsblatt mit Beginn, Ende und Pause, Feiertagen nach Kanton, Soll/Ist und Überzeit-Hinweis; als PDF oder CSV.",
+    "titel": "Arbeitszeiterfassung Vorlage 2027: Monatsblatt | Meyssens",
+    "beschreibung": "Arbeitszeiterfassung gratis: Monatsblatt mit Feiertagen nach Kanton, Soll, Überstunden und Überzeit, als PDF oder "
+                    "CSV. Jetzt ausprobieren.",
+    "h1": "Arbeitszeiterfassung: Monatsblatt mit Soll und Überstunden",
+    "lead": "Zeiten pro Tag erfassen, Soll und Überstunden berechnen und das Monatsblatt als PDF oder Tabelle herunterladen, "
+            "mit den Feiertagen Ihres Kantons. Ihre Eingaben bleiben in Ihrem Browser.",
+    "geprueft": "2026-11-24",
+    "veroeffentlicht": "2026-11-24",
+    "inhalt": "werkzeug_arbeitszeit.html",
+    "skripte": ["/assets/qrcode.js", "/assets/qr-rechnung.js", "/assets/arbeitstage.js", "/assets/arbeitszeit.js"],
+    "ersetzen": {"<!-- at-daten -->": feiertage_json},
+    "gespraech": {"titel": "Rapporte und Arbeitszeit ohne Abtippen",
+                  "text": "Ein Ablauf kann Zeiten aus Rapporten oder einer App übernehmen, Abweichungen markieren und die Monatsauswertung "
+                          "für die Lohnabrechnung vorbereiten. Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich in Ihrem "
+                          "Betrieb lohnt.",
+                  "knopf": "Gratis-Prozess-Check anfragen"},
+    "faq": [
+        {"frage": "Muss ich die Arbeitszeit erfassen?",
+         "antwort": "Ja, grundsätzlich für alle Mitarbeitenden, die dem Arbeitsgesetz unterstehen (Art. 46 ArG, Art. 73 ArGV 1). "
+                    "Vereinfachte Erfassung oder Verzicht sind nur unter den Voraussetzungen von Art. 73a und 73b ArGV 1 möglich."},
+        {"frage": "Was ist der Unterschied zwischen Überstunden und Überzeit?",
+         "antwort": "Überstunden gehen über die vertragliche Arbeitszeit hinaus (Art. 321c OR). Überzeit geht über die gesetzliche "
+                    "Höchstarbeitszeit von 45 oder 50 Stunden pro Woche hinaus (Art. 9 und 12 ArG)."},
+        {"frage": "Wie lange muss ich die Unterlagen aufbewahren?",
+         "antwort": "Mindestens fünf Jahre (Art. 73 Abs. 2 ArGV 1)."},
+        _DATENSCHUTZ_FAQ,
+    ],
+    "quellen": ARG_QUELLEN + [("Kantonale Feiertage: Quellen beim Werkzeug Arbeitstage berechnen", "https://meyssens.ch/werkzeuge/arbeitstage/")],
+})
+
+WERKZEUGE.append({
+    "slug": "ferien",
+    "pfad": "/werkzeuge/ferien/",
+    "name": "Ferienanspruch berechnen",
+    "kurz": "Ferientage bei Teilzeit, Eintritt oder Austritt und Ferienzuschlag bei Stundenlohn nach Art. 329a OR.",
+    "titel": "Ferienanspruch berechnen: Teilzeit und Austritt | Meyssens",
+    "beschreibung": "Ferienanspruch berechnen: Teilzeit, Eintritt oder Austritt im Jahr, Ferienzuschlag bei Stundenlohn (8,33 %, "
+                    "10,64 %, 13,04 %). Jetzt ausprobieren.",
+    "h1": "Ferienanspruch berechnen: Teilzeit, Eintritt und Austritt",
+    "lead": "Ferientage bei Teilzeit und für ein angebrochenes Dienstjahr berechnen, dazu den Ferienzuschlag bei Stundenlohn. "
+            "Ihre Eingaben bleiben in Ihrem Browser.",
+    "geprueft": "2026-11-24",
+    "veroeffentlicht": "2026-11-24",
+    "inhalt": "werkzeug_ferien.html",
+    "skripte": ["/assets/ferien.js"],
+    "gespraech": {"titel": "Ferien und Absenzen ohne Excel-Liste",
+                  "text": "Ein Ablauf kann Ferienanträge erfassen, Saldi nachführen und die Angaben für die Lohnabrechnung vorbereiten. "
+                          "Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich in Ihrem Betrieb lohnt.",
+                  "knopf": "Gratis-Prozess-Check anfragen"},
+    "faq": [
+        {"frage": "Wie viele Ferien sind gesetzlich vorgeschrieben?",
+         "antwort": "Mindestens vier Wochen pro Dienstjahr, bis zum vollendeten 20. Altersjahr mindestens fünf Wochen (Art. 329a OR)."},
+        {"frage": "Wie berechne ich Ferien bei Teilzeit?",
+         "antwort": "Die Ferienwochen bleiben gleich, die Tage richten sich nach den Arbeitstagen pro Woche: Bei 3 Tagen pro Woche "
+                    "sind 5 Wochen 15 Ferientage."},
+        {"frage": "Wie hoch ist der Ferienzuschlag bei Stundenlohn?",
+         "antwort": "Rechnerisch Ferienwochen geteilt durch die übrigen Wochen: 8,33 % bei 4, 10,64 % bei 5, 13,04 % bei 6 Wochen. "
+                    "Er ist nur ausnahmsweise zulässig und muss im Vertrag und in jeder Lohnabrechnung ausgewiesen sein (BGE 129 III 493)."},
+        _DATENSCHUTZ_FAQ,
+    ],
+    "quellen": [
+        ("Obligationenrecht, Art. 329a (Dauer der Ferien)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_329_a"),
+        ("Obligationenrecht, Art. 329b und 329d (Kürzung, Ferienlohn)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_329_d"),
+        ("BGE 129 III 493 (Ferienlohn im Stundenlohn)", "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F129-III-493%3Ade&lang=de&type=show_document"),
+        ("BGE 149 III 202 (Ferienlohn, Ausweis in der Lohnabrechnung)", "https://www.bger.ch/ext/eurospider/live/de/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F149-III-202%3Ade&lang=de&type=show_document"),
+    ],
+})
+
+WERKZEUGE.append({
+    "slug": "lohnfortzahlung",
+    "pfad": "/werkzeuge/lohnfortzahlung/",
+    "name": "Lohnfortzahlung bei Krankheit",
+    "kurz": "Dauer der Lohnfortzahlung nach Basler, Berner oder Zürcher Skala für das aktuelle Dienstjahr (Art. 324a OR).",
+    "titel": "Lohnfortzahlung Krankheit: Basler Skala Rechner | Meyssens",
+    "beschreibung": "Lohnfortzahlung bei Krankheit berechnen: Basler, Berner und Zürcher Skala nach Dienstjahr, mit Tabelle und "
+                    "Quellen. Gratis, im Browser. Jetzt ausprobieren.",
+    "h1": "Lohnfortzahlung bei Krankheit: Basler, Berner, Zürcher Skala",
+    "lead": "Wie lange der Lohn bei Krankheit weiterbezahlt wird, nach Dienstjahr und Skala, mit Tabelle und Quellen. "
+            "Ihre Eingaben bleiben in Ihrem Browser.",
+    "geprueft": "2026-11-24",
+    "veroeffentlicht": "2026-11-24",
+    "inhalt": "werkzeug_lohnfortzahlung.html",
+    "skripte": ["/assets/lohnfortzahlung.js"],
+    "gespraech": {"titel": "Absenzen und Fristen im Blick",
+                  "text": "Ein Ablauf kann Absenzen pro Dienstjahr zusammenzählen, an Meldefristen der Taggeldversicherung erinnern und "
+                          "Unterlagen für das Treuhandbüro vorbereiten. Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich "
+                          "in Ihrem Betrieb lohnt.",
+                  "knopf": "Gratis-Prozess-Check anfragen"},
+    "faq": [
+        {"frage": "Wie lange muss der Lohn bei Krankheit bezahlt werden?",
+         "antwort": "Im ersten Dienstjahr drei Wochen, danach für eine angemessene längere Zeit (Art. 324a OR). Wie lange, regeln "
+                    "die Skalen der Gerichte, zum Beispiel die Basler, Berner oder Zürcher Skala."},
+        {"frage": "Gilt die Dauer pro Krankheit oder pro Jahr?",
+         "antwort": "Pro Dienstjahr. Mehrere Absenzen im selben Dienstjahr werden zusammengezählt, mit dem neuen Dienstjahr entsteht "
+                    "der Anspruch neu."},
+        {"frage": "Was gilt mit einer Krankentaggeldversicherung?",
+         "antwort": "Vertrag oder Gesamtarbeitsvertrag können eine andere Regelung vorsehen, wenn sie mindestens gleichwertig ist "
+                    "(Art. 324a Abs. 4 OR). Dann gelten die Leistungen der Versicherung statt der Skala."},
+        _DATENSCHUTZ_FAQ,
+    ],
+    "quellen": [
+        ("Obligationenrecht, Art. 324a", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_324_a"),
+        ("Amt für Wirtschaft und Arbeit Basel-Stadt: Merkblatt Lohn (Basler Skala), Stand 1.1.2024", "https://media.bs.ch/original_file/e19d2e11d1e77cd9c999cc9d51ccc85cfbfa1439/06-merkblatt-lohn-0.pdf"),
+        ("Zivilgerichte des Kantons Bern: Krankheit (Berner Skala)", "https://www.zsg.justice.be.ch/de/start/themen/zivilrecht/arbeitsrecht/krankheit.html"),
+        ("Gerichte des Kantons Zürich: Arbeitsverhinderung (Skalen)", "https://www.gerichte-zh.ch/de/themen/arbeit/waehrend-arbeitsverhaeltnis/arbeitsverhinderung"),
+        ("Bericht des Bundesrates vom 19.8.2026 (Postulat 24.3465)", "https://www.bag.admin.ch/dam/de/sd-web/o28MVudm68Ve/Bericht%20des%20Bundesrates%20in%20Erf%C3%BCllung%20des%20Postulates%2024.3465.pdf"),
+    ],
+})
