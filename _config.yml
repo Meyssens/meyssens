@@ -20,3 +20,9 @@ exclude:
   - bilder.py
   - kontrast_buttons.py
   - pruefdaten.md
+  - branchen_ablaeufe.json
+  - demo_screenshots.py
+  - test_qr_rechnung.py
+  - vorlage_werkzeug.html
+  - vorlagen.py
+  - werkzeug_qr_rechnung.html
