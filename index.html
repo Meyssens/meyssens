@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>/* Gespeicherte Sprache FR/IT/EN: Inhalt bis zur Übersetzung verbergen (kein Layoutsprung) und Übersetzungen sofort vorladen */try{var l=localStorage.getItem('meyssens_lang');if(l==='fr'||l==='it'||l==='en'){document.documentElement.classList.add('sprache-laedt');var p=document.createElement('link');p.rel='preload';p.as='script';p.href='/assets/start-sprachen.js?v=c6ec033cdf';document.head.appendChild(p)}}catch(e){}</script>
 <title>Digitale Lösungen für Gemeinden und Unternehmen, Schweiz</title>
 <meta name="description" content="Beteiligungsplattform für Gemeinden, Automatisierung von Routinearbeit für Unternehmen. Aus einer Hand. Jetzt Beispiele ansehen.">
 <meta property="og:title" content="Digitale Lösungen für Gemeinden und Unternehmen, Schweiz">
@@ -53,7 +54,7 @@
 <link rel="preload" href="/assets/schriften/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=854e587087">
 <!-- head:ende -->
-<link rel="stylesheet" href="/assets/stil.css?v=efe1441e60">
+<link rel="stylesheet" href="/assets/stil.css?v=f61190199a">
 <link rel="stylesheet" href="/assets/ablaeufe.css?v=c43ae335e6">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@id": "https://meyssens.ch/ueber-uns/#person"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de-CH", "publisher": {"@id": "https://meyssens.ch/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}], "@id": "https://meyssens.ch/#brotkrumen"}, {"@type": "Person", "@id": "https://meyssens.ch/ueber-uns/#person", "name": "Lionel Nickelsen", "url": "https://meyssens.ch/ueber-uns/", "worksFor": {"@id": "https://meyssens.ch/#org"}}, {"@type": "WebPage", "@id": "https://meyssens.ch/", "url": "https://meyssens.ch/", "name": "Digitale Lösungen für Gemeinden und Unternehmen, Schweiz", "inLanguage": "de-CH", "isPartOf": {"@id": "https://meyssens.ch/#website"}, "breadcrumb": {"@id": "https://meyssens.ch/#brotkrumen"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://meyssens.ch/og-image.png", "width": 1200, "height": 630, "caption": "Meyssens – Digitale Infrastruktur für Organisationen"}}]}</script>
 </head>
@@ -475,6 +476,7 @@ document.addEventListener('keydown', function(e){
 // Sprachwahl der Startseite: Übersetzungen (FR/IT/EN) erst laden, wenn eine andere Sprache gewählt ist oder war
 (function(){
   var warten = null;
+  function fertigGeladen(){ document.documentElement.classList.remove('sprache-laedt'); }
   function lade(fertig){
     if(typeof window.applyLang === 'function'){ fertig(); return; }
     if(!warten){
@@ -482,6 +484,7 @@ document.addEventListener('keydown', function(e){
       var s = document.createElement('script');
       s.src = '/assets/start-sprachen.js?v=c6ec033cdf';
       s.onload = function(){ warten.forEach(function(f){ f(); }); };
+      s.onerror = fertigGeladen;
       document.head.appendChild(s);
     }
     warten.push(fertig);
@@ -490,7 +493,8 @@ document.addEventListener('keydown', function(e){
     btn.addEventListener('click', function(){ var l = btn.dataset.lang; lade(function(){ applyLang(l); }); });
   });
   var gespeichert = localStorage.getItem('meyssens_lang');
-  if(gespeichert && gespeichert !== 'de') lade(function(){ applyLang(gespeichert); });
+  if(gespeichert && gespeichert !== 'de') lade(function(){ applyLang(gespeichert); fertigGeladen(); });
+  else fertigGeladen();
 })();
 </script>
 </body>

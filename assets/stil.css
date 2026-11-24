@@ -1570,3 +1570,7 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
   .stil.start .start-held :is(.btn-p,.btn-s){min-height:clamp(54px,7.8svh,64px);font-size:clamp(17px,2.35svh,19px)}
   .sh-reihe{margin-top:1.4rem}
 }
+/* Gespeicherte Sprache FR/IT/EN (Startseite, /gemeinden/): Inhalt und Menütexte erst nach der Übersetzung zeigen,
+   damit die deutschen Texte nicht sichtbar ausgetauscht werden (Layoutsprung). Sicherung: nach 1.5 s immer sichtbar. */
+.sprache-laedt main,.sprache-laedt #nav .nav-items,.sprache-laedt #nav .nav-btn{visibility:hidden;animation:sprache-sicher 0s linear 1.5s forwards}
+@keyframes sprache-sicher{to{visibility:visible}}
