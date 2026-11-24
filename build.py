@@ -2152,7 +2152,12 @@ def main():
     qr_skripte = ['/assets/qrcode.js', '/assets/qr-rechnung.js']
     werkzeug_seite(dict(QR_WERKZEUG, slug="qr-rechnung"), qr_inhalt, qr_skripte, gemeinsam, bekannte_seiten)
     for w in WERKZEUGE:
-        werkzeug_seite(w, lies(w["inhalt"]).rstrip("\n"), w["skripte"], gemeinsam, bekannte_seiten)
+        inhalt = lies(w["inhalt"]).rstrip("\n")
+        for platzhalter, erzeuge in w.get("ersetzen", {}).items():
+            if platzhalter not in inhalt:
+                raise SystemExit("Werkzeug %s: Platzhalter %s fehlt" % (w["name"], platzhalter))
+            inhalt = inhalt.replace(platzhalter, erzeuge())
+        werkzeug_seite(w, inhalt, w["skripte"], gemeinsam, bekannte_seiten)
     werkzeug_uebersicht(gemeinsam)
 
     # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
