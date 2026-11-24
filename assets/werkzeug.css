@@ -116,3 +116,32 @@
   /* Rechner (ausser QR-Rechnung): zuerst die Eingaben, dann das Ergebnis */
   .wz-eingabe-zuerst .qr-seite{order:0}
 }
+/* Briefe (W1 Mahnung, W2 Rechnung, W3 Offerte) */
+.wz-beispielhinweis{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;font-size:.85rem;color:var(--ink3);margin:0 0 1rem;padding:.6rem .8rem;background:var(--surface);border-radius:10px}
+.mg-rechnung{padding:clamp(1.25rem,2.5vw,2rem)}
+.mg-total-zeile{margin:.8rem 0 0;font-weight:600;color:var(--ink)}
+#mg-meldungen ul,.wz-meldungen ul{margin:0;padding:.6rem 1rem .6rem 1.8rem;background:#fff7f6;border:1px solid #f1c7c3;border-radius:10px;color:#9c1f17;font-size:.88rem;line-height:1.5}
+#mg-meldungen:empty,.wz-meldungen:empty{display:none}
+.br-vorschau{background:#fff;padding:clamp(1rem,2.5vw,1.75rem);font-size:.8rem;line-height:1.55;color:#111;max-height:640px;overflow:auto}
+.br-vorschau p{margin:0 0 .6rem}
+.br-v-kopf{display:flex;flex-direction:column;margin-bottom:.8rem}
+.br-v-an{display:flex;flex-direction:column;margin:0 0 1rem auto;width:min(48%,16rem)}
+.br-v-datum{color:#333}
+.br-v-betreff{font-weight:700;font-size:.9rem}
+.br-v-tabelle{width:100%;border-collapse:collapse;margin:.4rem 0 .8rem}
+.br-v-tabelle td{border-bottom:1px solid #ddd;padding:.3rem 0;vertical-align:top}
+.br-v-tabelle td:last-child{text-align:right;white-space:nowrap;padding-left:.8rem;font-variant-numeric:tabular-nums}
+.br-v-total td{font-weight:700;border-bottom:0}
+.br-v-qr{margin-top:1rem!important;padding-top:.6rem;border-top:1px dashed #999;color:#555}
+.br-fenster{margin-top:.5rem}
+/* Beispiel Verzugszins (animiert) */
+.mg-beispiel{max-width:620px;margin:1.5rem auto 0}
+.mg-schritte{display:grid;gap:.5rem;padding:clamp(.9rem,2vw,1.4rem)}
+.mg-schritt{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;padding:.7rem .9rem;border-radius:10px;background:var(--blue-hell);font-size:.92rem;color:var(--ink2)}
+.mg-schritt b{color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mg-total{background:var(--blue);color:#fff}
+.mg-total b{color:#fff}
+@media (prefers-reduced-motion:no-preference){
+  .js [data-anim="zins"] .mg-schritt{opacity:0}
+  .js [data-anim="zins"].anim-los .mg-schritt{animation:a-ein .45s var(--weich) calc(var(--i) * 420ms) both}
+}

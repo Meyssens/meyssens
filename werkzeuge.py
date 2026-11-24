@@ -222,3 +222,127 @@ WERKZEUGE.append({
         ("Kanton Zürich: Feiertage", "https://zh.ch/de/wirtschaft-arbeit/arbeitsbedingungen/arbeitsssicherheit-gesundheitsschutz/arbeits-ruhezeiten/feiertage.html"),
     ],
 })
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Gemeinsame Formularteile für Briefe (W1 Mahnung, W2 Rechnung, W3 Offerte)
+def adress_felder(praefix, legende, beispiel, kontakt=False):
+    import html
+    b = beispiel
+
+    def feld(k, label, auto="off", breite="", wert=""):
+        return ('<div class="fgrp%s"><label class="flabel" for="%s-%s">%s</label><input class="finput" type="text" id="%s-%s" '
+                'autocomplete="%s" maxlength="70" value="%s"></div>' % (breite, praefix, k, label, praefix, k, auto, html.escape(wert)))
+    return ('<fieldset><legend>%s</legend>%s%s<div class="frow strasse">%s%s</div><div class="frow drei">%s%s%s</div>%s</fieldset>' % (
+        legende, feld("name", "Name oder Firma", "organization", wert=b.get("name", "")),
+        feld("zusatz", "Zusatz (optional, z. B. Abteilung oder Person)", wert=b.get("zusatz", "")),
+        feld("strasse", "Strasse", "address-line1", wert=b.get("strasse", "")), feld("nr", "Nr.", wert=b.get("nr", "")),
+        feld("plz", "PLZ", "postal-code", wert=b.get("plz", "")), feld("ort", "Ort", "address-level2", wert=b.get("ort", "")),
+        feld("land", "Land", "country", wert=b.get("land", "CH")),
+        feld("kontakt", "Kontakt für Rückfragen (optional, z. B. Telefon oder E-Mail)", wert=b.get("kontakt", "")) if kontakt else ""))
+
+
+FENSTER_FELDER = (
+    '<details class="qr-details br-fenster"><summary>Fenstercouvert und Druck</summary>'
+    '<p class="qr-hilfe">Die Empfängeradresse steht im Adressfeld für Couverts mit Fenster. Die Lage der Fenster ist nicht bei allen '
+    'Couverts gleich: Drucken Sie den ersten Brief zur Probe und passen Sie die Abstände bei Bedarf an.</p>'
+    '<label class="qr-wahl"><input type="radio" name="br-fenster" id="br-fenster-rechts" value="rechts" checked> Fenster rechts</label>'
+    '<label class="qr-wahl"><input type="radio" name="br-fenster" id="br-fenster-links" value="links"> Fenster links</label>'
+    '<div class="frow"><div class="fgrp"><label class="flabel" for="br-fenster-x">Abstand vom linken Rand (mm)</label>'
+    '<input class="finput" type="number" id="br-fenster-x" value="118" min="10" max="130" step="1"></div>'
+    '<div class="fgrp"><label class="flabel" for="br-fenster-y">Abstand vom oberen Rand (mm)</label>'
+    '<input class="finput" type="number" id="br-fenster-y" value="52" min="30" max="80" step="1"></div></div></details>')
+
+
+def qr_felder(praefix, beispiel_iban="CH44 3199 9123 0008 8901 2"):
+    return ('<fieldset><legend>QR-Zahlteil (optional)</legend>'
+            '<label class="qr-wahl"><input type="checkbox" id="%s-qr"> QR-Zahlteil unten auf dem Brief anfügen</label>'
+            '<div id="%s-qr-felder" hidden>'
+            '<div class="fgrp"><label class="flabel" for="%s-iban">IBAN oder QR-IBAN (CH oder LI)</label>'
+            '<input class="finput" type="text" id="%s-iban" autocomplete="off" spellcheck="false" placeholder="%s"></div>'
+            '<div class="fgrp"><label class="flabel" for="%s-referenz">Referenz (optional; mit QR-IBAN Pflicht)</label>'
+            '<input class="finput" type="text" id="%s-referenz" autocomplete="off" spellcheck="false"></div>'
+            '<p class="qr-hilfe">Der Zahlteil folgt den Vorgaben der SIX (Version 2.4). Empfänger ist der Absender oben, Zahlungspflichtiger '
+            'die Empfängeradresse. Mehr dazu beim Werkzeug <a href="/werkzeuge/qr-rechnung/">QR-Rechnung erstellen</a>.</p></div></fieldset>'
+            % (praefix, praefix, praefix, praefix, beispiel_iban, praefix, praefix))
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# W1 Mahnung mit Verzugszins
+BEISPIEL_ABSENDER = {"name": "Muster Elektro GmbH", "strasse": "Beispielweg", "nr": "12", "plz": "4410", "ort": "Liestal",
+                     "kontakt": "Tel. 061 000 00 00 · buero@muster-elektro.example"}
+BEISPIEL_EMPFAENGER = {"name": "Beispiel Immobilien AG", "zusatz": "Buchhaltung", "strasse": "Testgasse", "nr": "5",
+                       "plz": "4051", "ort": "Basel"}
+
+
+def mahnung_absender():
+    return adress_felder("ab", "Ihr Betrieb (Absender)", BEISPIEL_ABSENDER, kontakt=True)
+
+
+def mahnung_empfaenger():
+    return adress_felder("em", "Kunde (Empfänger)", BEISPIEL_EMPFAENGER)
+
+
+def mahnung_qr():
+    return qr_felder("mq")
+
+
+def fenster_felder():
+    return FENSTER_FELDER
+
+
+WERKZEUGE.append({
+    "slug": "mahnung",
+    "pfad": "/werkzeuge/mahnung/",
+    "name": "Mahnung mit Verzugszins",
+    "kurz": "Verzugszins nach Art. 104 OR berechnen und Zahlungserinnerung, Mahnung oder letzte Mahnung als PDF erstellen, auf Wunsch mit QR-Zahlteil.",
+    "titel": "Mahnung erstellen: Verzugszins-Rechner Schweiz | Meyssens",
+    "beschreibung": "Verzugszins nach OR berechnen und Mahnung als PDF erstellen, auf Wunsch mit QR-Zahlteil. Gratis, ohne Anmeldung, "
+                    "im Browser. Jetzt ausprobieren.",
+    "h1": "Mahnung erstellen: mit Verzugszins nach OR",
+    "lead": "Verzugszins berechnen und Zahlungserinnerung, Mahnung oder letzte Mahnung als PDF erstellen, auf Wunsch mit QR-Zahlteil. "
+            "Ihre Angaben bleiben in Ihrem Browser.",
+    "geprueft": "2026-11-24",
+    "veroeffentlicht": "2026-11-24",
+    "inhalt": "werkzeug_mahnung.html",
+    "skripte": ["/assets/qrcode.js", "/assets/qr-rechnung.js", "/assets/brief-pdf.js", "/assets/mahnung.js"],
+    "ersetzen": {"<!-- absender -->": mahnung_absender, "<!-- empfaenger -->": mahnung_empfaenger, "<!-- qr -->": mahnung_qr,
+                 "<!-- fenster -->": fenster_felder},
+    "gespraech": {"titel": "Offene Rechnungen im Blick, ohne Liste von Hand",
+                  "text": "Ein Ablauf kann fällige Rechnungen erkennen, Zahlungserinnerungen als Entwurf vorbereiten und Ihnen zur "
+                          "Freigabe vorlegen. Versendet wird nichts ohne Sie. Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, "
+                          "was sich in Ihrem Betrieb lohnt.",
+                  "knopf": "Gratis-Prozess-Check anfragen"},
+    "faq": [
+        {"frage": "Wie hoch ist der Verzugszins in der Schweiz?",
+         "antwort": "Fünf Prozent pro Jahr (Art. 104 Abs. 1 OR), auch wenn vertraglich ein tieferer Zins gilt. Ein höherer "
+                    "vertraglicher Zins gilt auch während des Verzugs (Abs. 2). Zinseszins ist ausgeschlossen (Art. 105 Abs. 3 OR)."},
+        {"frage": "Ab wann schuldet der Kunde Verzugszins?",
+         "antwort": "Ab Verzug. Mit einem vereinbarten Verfalltag (zum Beispiel «zahlbar bis 31. Januar») kommt der Kunde mit Ablauf "
+                    "dieses Tages in Verzug. Ohne festen Termin braucht es eine Mahnung (Art. 102 OR)."},
+        {"frage": "Wie rechnet das Werkzeug die Tage?",
+         "antwort": "Mit den effektiven Kalendertagen ab dem Verfalltag oder dem Eingang der Mahnung bis zum Stichtag, geteilt durch "
+                    "365. So rechnet zum Beispiel das Appellationsgericht Basel-Stadt. Das Gesetz selbst legt die Tageszählung nicht fest."},
+        {"frage": "Darf ich eine Mahngebühr verlangen?",
+         "antwort": "Das Gesetz kennt keine pauschale Mahngebühr. Sie ist in der Regel nur geschuldet, wenn sie vereinbart ist, etwa in "
+                    "Ihren AGB, oder als nachgewiesener Schaden nach Art. 106 OR. Das Werkzeug fügt sie nur auf ausdrücklichen Wunsch an."},
+        {"frage": "Was kommt nach der letzten Mahnung?",
+         "antwort": "Zahlt der Kunde nicht, ist eine Betreibung möglich. Das Betreibungsbegehren geht an das Betreibungsamt am Wohnsitz "
+                    "oder Sitz des Schuldners, auch online über EasyGov (Art. 67 SchKG)."},
+        {"frage": "Werden meine Angaben gespeichert?",
+         "antwort": "Nein. Berechnung und PDF entstehen in Ihrem Browser. Die Seite setzt keine Cookies und verbietet Verbindungen nach "
+                    "aussen technisch per Content Security Policy."},
+    ],
+    "quellen": [
+        ("Obligationenrecht, Art. 102 (Verzug)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_102"),
+        ("Obligationenrecht, Art. 104 (Verzugszins)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_104"),
+        ("Obligationenrecht, Art. 105 (kein Zinseszins)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_105"),
+        ("Obligationenrecht, Art. 106 (weiterer Schaden)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_106"),
+        ("Appellationsgericht Basel-Stadt, ZB.2018.5 vom 3.7.2018, E. 3.5 (Tageszählung effektive Tage/365)",
+         "https://entscheidsuche.ch/docs/BS_Omni/BS_APG_001_ZB-2018-5_nodate.html"),
+        ("SchKG, Art. 46 (Betreibungsort)", "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/de#art_46"),
+        ("SchKG, Art. 67 und 69 (Betreibungsbegehren, Zahlungsbefehl)", "https://www.fedlex.admin.ch/eli/cc/11/529_488_529/de#art_67"),
+        ("KMU-Portal des Bundes: Was tun bei Zahlungsverzug?", "https://www.kmu.admin.ch/de/was-tun-bei-zahlungsverzug-und-zahlungsausfaellen"),
+        ("SIX, Implementation Guidelines QR-Rechnung, Version 2.4", "https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.4-de.pdf"),
+    ],
+})

@@ -1,0 +1,87 @@
+<section id="werkzeug" class="flaeche">
+  <h2 class="sr-only">Verzugszins berechnen und Mahnung erstellen</h2>
+  <div class="qr-raster wz-eingabe-zuerst">
+    <form id="mg-formular" class="ccard qr-formular" novalidate>
+      <noscript><p class="note">Das Werkzeug braucht JavaScript. Es rechnet alles in Ihrem Browser und sendet nichts.</p></noscript>
+      <p class="wz-beispielhinweis">Die Felder enthalten ein Beispiel mit erfundenen Daten. <button type="button" class="qr-klein" id="mg-leeren">Felder leeren</button></p>
+      <fieldset>
+        <legend>Offene Rechnung</legend>
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="mg-nr">Rechnungsnummer</label><input class="finput" type="text" id="mg-nr" maxlength="30" value="2027-018"></div>
+          <div class="fgrp"><label class="flabel" for="mg-rdatum">Rechnungsdatum</label><input class="finput" type="date" id="mg-rdatum" value="2027-01-01"></div>
+        </div>
+        <div class="fgrp"><label class="flabel" for="mg-betrag">Offener Betrag in CHF</label><input class="finput" type="text" id="mg-betrag" inputmode="decimal" value="2400.00"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Verzug und Verzugszins</legend>
+        <label class="qr-wahl"><input type="radio" name="mg-art" value="frist" checked> Zahlungsfrist war vereinbart (Verfalltag)</label>
+        <label class="qr-wahl"><input type="radio" name="mg-art" value="mahnung"> Keine feste Frist: Eingang der ersten Mahnung beim Kunden</label>
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="mg-verzug" id="mg-verzug-label">Verfalltag (letzter Tag der Zahlungsfrist)</label><input class="finput" type="date" id="mg-verzug" value="2027-01-31"></div>
+          <div class="fgrp"><label class="flabel" for="mg-stichtag">Zins berechnen bis (Stichtag)</label><input class="finput" type="date" id="mg-stichtag" value="2027-04-15"></div>
+        </div>
+        <div class="fgrp"><label class="flabel" for="mg-satz">Zinssatz pro Jahr in %</label><input class="finput" type="text" id="mg-satz" inputmode="decimal" value="5" aria-describedby="mg-satz-hilfe">
+          <p class="qr-hilfe" id="mg-satz-hilfe">Gesetzlich 5 % (Art. 104 Abs. 1 OR). Einen höheren Satz nur eintragen, wenn er vertraglich vereinbart ist.</p></div>
+      </fieldset>
+      <fieldset>
+        <legend>Brief</legend>
+        <div class="fgrp"><label class="flabel" for="mg-stufe">Art des Schreibens</label>
+          <select class="fselect finput" id="mg-stufe"><option value="1">Zahlungserinnerung</option><option value="2" selected>Mahnung</option><option value="3">Letzte Mahnung</option></select></div>
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="mg-frist">Neue Zahlungsfrist bis</label><input class="finput" type="date" id="mg-frist" value="2027-04-25"></div>
+          <div class="fgrp"><label class="flabel" for="mg-ortdatum">Ort und Datum im Brief</label><input class="finput" type="text" id="mg-ortdatum" maxlength="60" value="Liestal, 15. April 2027"></div>
+        </div>
+        <label class="qr-wahl"><input type="checkbox" id="mg-zins-zeigen" checked> Verzugszins im Brief aufführen</label>
+        <label class="qr-wahl"><input type="checkbox" id="mg-gebuehr-ja"> Mahngebühr verlangen (nur wenn vertraglich vereinbart)</label>
+        <div class="fgrp" id="mg-gebuehr-grp" hidden><label class="flabel" for="mg-gebuehr">Mahngebühr in CHF</label><input class="finput" type="text" id="mg-gebuehr" inputmode="decimal"></div>
+        <div class="fgrp"><label class="flabel" for="mg-unterschrift">Name unter dem Brief</label><input class="finput" type="text" id="mg-unterschrift" maxlength="60" value="Anna Muster"></div>
+      </fieldset>
+      <!-- absender -->
+      <!-- empfaenger -->
+      <!-- qr -->
+      <!-- fenster -->
+    </form>
+    <div class="qr-seite">
+      <div class="ccard mg-rechnung" id="mg-ergebnis" aria-live="polite"><p class="at-was">Das Werkzeug braucht JavaScript.</p></div>
+      <div id="mg-meldungen" role="alert"></div>
+      <div class="qr-knoepfe"><button type="button" class="btn-p" id="mg-pdf">Brief als PDF herunterladen</button></div>
+      <figure class="geraet br-vorschau-geraet">
+        <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Vorschau</span></div>
+        <div class="br-vorschau" id="mg-vorschau"></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="beispiel">
+  <div class="artikel-text">
+    <span class="s-label">Beispiel</span>
+    <h2>So rechnet das Werkzeug den Verzugszins</h2>
+    <p>Eine Rechnung über CHF 2 400.00 war bis zum 31. Januar 2027 zahlbar. Mit Ablauf dieses Tages ist der Kunde im Verzug. Bis zum 15. April 2027 sind das 74 Tage. Bei 5 % pro Jahr ergibt das CHF 2 400.00 × 5 % × 74 / 365 = CHF 24.33.</p>
+  </div>
+  <figure class="geraet mg-beispiel" data-anim="zins">
+    <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Verzugszins · Rechnung 2027-018</span><span class="beispiel">Beispiel</span></div>
+    <div class="mg-schritte" role="img" aria-label="Beispiel: offener Betrag CHF 2400.00, Verzug ab 31. Januar 2027, 74 Tage bis 15. April 2027, 5 Prozent pro Jahr, Verzugszins CHF 24.33, total CHF 2424.33.">
+      <div class="mg-schritt" style="--i:0" aria-hidden="true"><span>Offener Betrag</span><b>CHF 2 400.00</b></div>
+      <div class="mg-schritt" style="--i:1" aria-hidden="true"><span>Verzug seit Ablauf des 31.01.2027</span><b><span data-zaehl="74" data-zaehl-ab="500">74</span> Tage</b></div>
+      <div class="mg-schritt" style="--i:2" aria-hidden="true"><span>5 % pro Jahr × 74 / 365</span><b>CHF 24.33</b></div>
+      <div class="mg-schritt mg-total" style="--i:3" aria-hidden="true"><span>Total am 15.04.2027</span><b>CHF 2 424.33</b></div>
+    </div>
+    <figcaption class="anim-fuss"><span>Beispiel mit erfundenen Daten.</span> <button type="button" class="anim-nochmal" data-anim-nochmal hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Nochmal abspielen</button></figcaption>
+  </figure>
+</section>
+
+<section id="wissen" class="flaeche">
+  <div class="artikel-text">
+    <span class="s-label">Wissen</span>
+    <h2>Verzug, Verzugszins und Mahnung in der Schweiz</h2>
+    <h3>Wann ist der Kunde im Verzug?</h3>
+    <p>Ist eine Rechnung fällig, setzt erst eine Mahnung den Schuldner in Verzug. War ein Verfalltag vereinbart, etwa «zahlbar bis 31. Januar», kommt er schon mit Ablauf dieses Tages in Verzug (Art. 102 OR). Eine Zahlungserinnerung ist deshalb bei einem vereinbarten Zahlungstermin keine Voraussetzung für den Verzugszins, aber üblich und freundlich.</p>
+    <h3>Wie hoch ist der Verzugszins?</h3>
+    <p>Fünf Prozent pro Jahr, auch wenn vertraglich ein tieferer Zins gilt (Art. 104 Abs. 1 OR). Ist vertraglich ein höherer Zins vereinbart, gilt er auch während des Verzugs (Abs. 2). Auf Verzugszinsen darf kein weiterer Verzugszins berechnet werden (Art. 105 Abs. 3 OR). Das Gesetz legt nicht fest, wie die Tage gezählt werden. Das Werkzeug rechnet mit den effektiven Tagen geteilt durch 365, wie zum Beispiel das Appellationsgericht Basel-Stadt.</p>
+    <h3>Mahngebühren</h3>
+    <p>Eine pauschale Mahngebühr sieht das Gesetz nicht vor. Sie ist in der Regel nur geschuldet, wenn sie vereinbart ist, zum Beispiel in Ihren AGB, oder als nachgewiesener zusätzlicher Schaden (Art. 106 OR). Das Werkzeug fügt sie deshalb nur an, wenn Sie das ausdrücklich wählen.</p>
+    <h3>Nach der letzten Mahnung</h3>
+    <p>Bleibt die Zahlung aus, ist eine Betreibung möglich. Das Betreibungsbegehren nennt die Forderung in Franken und bei Zinsen den Zinssatz und das Datum, ab dem der Zins läuft (Art. 67 SchKG). Es geht an das Betreibungsamt am Wohnsitz oder Sitz des Schuldners, auch online über EasyGov. Der Zahlungsbefehl gibt dem Schuldner 20 Tage für die Zahlung, Rechtsvorschlag ist innert 10 Tagen möglich (Art. 69 SchKG).</p>
+  </div>
+</section>

@@ -368,12 +368,27 @@
     }
     return aus;
   }
-  function pdf(entw, titel) {
+  // seitenOps (optional, für Briefe der anderen Werkzeuge): Text, Linien und Flächen mit y in mm ab der Oberkante der
+  // A4-Seite; entw darf null sein (Brief ohne Zahlteil)
+  function pdf(entw, titel, seitenOps) {
     var oben = 297 - HOEHE;                           // Zahlteil an der unteren Kante
     function X(x) { return zahl(x * MM); }
     function Y(y) { return zahl((297 - oben - y) * MM); }
+    function YA(y) { return zahl((297 - y) * MM); }
     var s = [];
-    entw.ops.forEach(function (o) {
+    (seitenOps || []).forEach(function (o) {
+      if (o.t === 'text') {
+        var x = o.x;
+        if (o.anker === 'end') x -= breite(o.text, o.pt, o.fett);
+        if (o.anker === 'middle') x -= breite(o.text, o.pt, o.fett) / 2;
+        s.push('BT /' + (o.fett ? 'F2' : 'F1') + ' ' + o.pt + ' Tf ' + X(x) + ' ' + YA(o.y) + ' Td (' + pdfText(o.text) + ') Tj ET');
+      } else if (o.t === 'linie') {
+        s.push(zahl(o.w) + ' w 0 J ' + X(o.x1) + ' ' + YA(o.y1) + ' m ' + X(o.x2) + ' ' + YA(o.y2) + ' l S');
+      } else if (o.t === 'flaeche') {
+        s.push(zahl(o.grau) + ' g ' + X(o.x) + ' ' + YA(o.y + o.h) + ' ' + zahl(o.w * MM) + ' ' + zahl(o.h * MM) + ' re f 0 g');
+      }
+    });
+    (entw ? entw.ops : []).forEach(function (o) {
       if (o.t === 'text') {
         var x = o.x;
         if (o.anker === 'end') x -= breite(o.text, o.pt, o.fett);
@@ -404,7 +419,7 @@
       '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>',
       '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>',
       '<< /Length ' + inhalt.length + ' >>\nstream\n' + inhalt + 'endstream',
-      '<< /Title (' + pdfText(titel || 'QR-Rechnung') + ') /Producer (meyssens.ch QR-Rechnung, im Browser erstellt) >>'
+      '<< /Title (' + pdfText(titel || 'QR-Rechnung') + ') /Producer (meyssens.ch, im Browser erstellt) >>'
     ];
     var aus = '%PDF-1.4\n%âãÏÓ\n', stellen = [];
     objekte.forEach(function (o, i) { stellen.push(aus.length); aus += (i + 1) + ' 0 obj\n' + o + '\nendobj\n'; });
@@ -439,7 +454,7 @@
 
   var QR = { pruefe: pruefe, nutzdaten: nutzdaten, qrMatrix: qrMatrix, entwurf: entwurf, svg: svg, pdf: pdf, erstelle: erstelle,
     qrReferenz: qrReferenz, scorReferenz: scorReferenz, mod10: mod10, ibanGueltig: ibanGueltig, istQrIban: istQrIban,
-    breite: breite, BEISPIEL: BEISPIEL };
+    breite: breite, umbrechen: umbrechen, pdfText: pdfText, bereinige: bereinige, BEISPIEL: BEISPIEL };
   global.QRRechnung = QR;
 
   // --- Bedienung im Browser ---

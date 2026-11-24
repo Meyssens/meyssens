@@ -77,7 +77,7 @@ def seite_statisch(w):
     typen = {g.get("@type") for x in lds for g in x.get("@graph", [x])}
     pruefe({"WebApplication", "FAQPage", "BreadcrumbList"} <= typen, "%s: JSON-LD unvollständig: %s" % (n, typen))
     pruefe("ß" not in re.sub(r"<script.*?</script>", "", t, flags=re.S), "%s: ß" % n)
-    pruefe("{{" not in t and "<!-- at-" not in t, "%s: Platzhalter übrig" % n)
+    pruefe("{{" not in t and not re.search(r"<!-- (at-|absender|empfaenger|qr --|fenster)", t), "%s: Platzhalter übrig" % n)
     for u in re.findall(r'<a href="(https?://[^"]+)"', t):
         pruefe(u.startswith("https://"), "%s: Quelle ohne https: %s" % (n, u))
 
@@ -121,6 +121,39 @@ def arbeitstage_browser(seite_neu):
     pg.close()
 
 
+def mahnung_browser(seite_neu):
+    import subprocess, tempfile
+    pg, _, _ = seite_neu(1440)
+    pg.goto(BASIS + "/werkzeuge/mahnung/", wait_until="load")
+    pg.wait_for_function("window.Mahnung && window.BriefPDF")
+    # Rechenbeispiele: Seite (74 Tage, CHF 24.33) und Appellationsgericht BS ZB.2018.5 (175 Tage, CHF 300'000, CHF 7'191.78)
+    r = pg.evaluate("Mahnung.verzugszins(2400, 5, '2027-01-31', '2027-04-15')")
+    pruefe(r == {"tage": 74, "zins": 24.33}, "Mahnung Beispiel: %s" % r)
+    r = pg.evaluate("Mahnung.verzugszins(300000, 5, '2018-01-01', '2018-06-25')")
+    pruefe(r == {"tage": 175, "zins": 7191.78}, "Mahnung Gerichtsbeispiel: %s" % r)
+    pruefe(pg.evaluate("Mahnung.verzugszins(1000, 5, '2027-05-01', '2027-04-01').zins") == 0, "Mahnung: negativer Zeitraum nicht 0")
+    pruefe("CHF 24.33" in pg.text_content("#mg-ergebnis"), "Mahnung: Ergebnis der Beispielwerte fehlt")
+    pruefe("2 424.33" in pg.text_content("#mg-ergebnis"), "Mahnung: Total der Beispielwerte fehlt")
+    for mit_qr in (False, True):
+        if mit_qr:
+            pg.check("#mq-qr")
+            pg.fill("#mq-iban", "CH93 0076 2011 6238 5295 7")
+        with pg.expect_download() as dl:
+            pg.click("#mg-pdf")
+        with tempfile.TemporaryDirectory() as tmp:
+            ziel = Path(tmp) / "m.pdf"
+            dl.value.save_as(ziel)
+            daten = ziel.read_bytes()
+            pruefe(daten.startswith(b"%PDF-1.4"), "Mahnung PDF: kein PDF")
+            text = subprocess.run(["pdftotext", "-layout", str(ziel), "-"], capture_output=True, text=True).stdout
+            for muss in ("Mahnung: Rechnung Nr. 2027-018", "Verzugszins 5 %", "24.33", "2 424.33", "Beispiel Immobilien AG", "Freundliche"):
+                pruefe(muss in text, "Mahnung PDF%s: «%s» fehlt" % (" mit QR" if mit_qr else "", muss))
+            pruefe(("Zahlteil" in text) == mit_qr, "Mahnung PDF: Zahlteil %s" % ("fehlt" if mit_qr else "ungewollt"))
+    pg.click("#mg-leeren")
+    pruefe(pg.is_disabled("#mg-pdf") and "Betrag" in pg.text_content("#mg-meldungen"), "Mahnung: leere Felder nicht gemeldet")
+    pg.close()
+
+
 def main():
     with sync_playwright() as p:
         b = p.chromium.launch()
@@ -138,6 +171,7 @@ def main():
             seite_statisch(w)
             seite_browser(seite_neu, w)
         arbeitstage_browser(seite_neu)
+        mahnung_browser(seite_neu)
         b.close()
     print("%d Werkzeuge geprüft" % len(W.WERKZEUGE))
     if fehler:
