@@ -145,3 +145,12 @@
   .js [data-anim="zins"] .mg-schritt{opacity:0}
   .js [data-anim="zins"].anim-los .mg-schritt{animation:a-ein .45s var(--weich) calc(var(--i) * 420ms) both}
 }
+/* Positionen (W2 Rechnung, W3 Offerte) */
+.bl-positionen{display:grid;gap:.6rem;margin-bottom:.75rem}
+.bl-pos{display:grid;grid-template-columns:minmax(0,1fr) 4.5rem 4.5rem 6rem 5.5rem;gap:.4rem .5rem;align-items:end;padding:.7rem;border:1px solid var(--line);border-radius:12px;background:#fff}
+.bl-pos .bl-text{grid-column:1 / -1}
+.bl-pos .fgrp{margin:0}
+.bl-pos .bl-weg{grid-column:1 / -1;justify-self:end;min-height:40px}
+@media(max-width:520px){
+  .bl-pos{grid-template-columns:1fr 1fr}
+}

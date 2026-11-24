@@ -154,6 +154,63 @@ def mahnung_browser(seite_neu):
     pg.close()
 
 
+def beleg_browser(seite_neu, art):
+    import subprocess, tempfile
+    pg, _, _ = seite_neu(1440)
+    pg.goto(BASIS + "/werkzeuge/%s/" % art, wait_until="load")
+    pg.wait_for_function("window.Beleg && window.BriefPDF")
+    if art == "rechnung":
+        erwartet = ("936.69", "70.19", "866.50")
+    else:
+        erwartet = ("2 296.04", "172.04", "2 124.00")
+    pruefe(erwartet[0] in pg.text_content("#bl-ergebnis"), "%s: Total der Beispielwerte fehlt: %s" % (art, pg.text_content("#bl-ergebnis")))
+    # Rechenregeln: Steuer pro Satz auf der Nettosumme, auf Rappen gerundet; gemischte Sätze; 5-Rappen-Rundung nur auf Wunsch
+    r = pg.evaluate("Beleg.rechne([{menge:6.5,preis:98,satz:8.1},{menge:1,preis:184.5,satz:8.1},{menge:1,preis:45,satz:8.1}], true, false)")
+    pruefe((r["netto"], r["steuer"], r["total"]) == (866.5, 70.19, 936.69), "%s: Rechnung Beispiel %s" % (art, r))
+    r = pg.evaluate("Beleg.rechne([{menge:2,preis:10.05,satz:2.6},{menge:1,preis:100,satz:8.1},{menge:1,preis:20,satz:0}], true, true)")
+    pruefe(r["mwst"] == [{"satz": 8.1, "basis": 100, "steuer": 8.1}, {"satz": 2.6, "basis": 20.1, "steuer": 0.52}] and r["total"] == 148.72
+           and r["zuZahlen"] == 148.7 and r["rundung"] == -0.02, "%s: gemischte Sätze/Rundung %s" % (art, r))
+    r = pg.evaluate("Beleg.rechne([{menge:1,preis:100,satz:8.1}], false, false)")
+    pruefe(r["steuer"] == 0 and r["total"] == 100 and r["mwst"] == [], "%s: nicht pflichtig mit MWST %s" % (art, r))
+    for mit_qr in ((False, True) if art == "rechnung" else (False,)):
+        if mit_qr:
+            pg.check("#rq-qr")
+            pg.fill("#rq-iban", "CH93 0076 2011 6238 5295 7")
+        with pg.expect_download() as dl:
+            pg.click("#bl-pdf")
+        with tempfile.TemporaryDirectory() as tmp:
+            ziel = Path(tmp) / "b.pdf"
+            dl.value.save_as(ziel)
+            text = subprocess.run(["pdftotext", "-layout", str(ziel), "-"], capture_output=True, text=True).stdout
+            muss = ["CHE-123.456.789 MWST", "MWST 8,1 %", erwartet[0], erwartet[1], "Beispiel Immobilien AG", "Freundliche"]
+            muss += ["Rechnung Nr. 2027-024"] if art == "rechnung" else ["Offerte Nr. O-2027-007", "gebunden", "Offerte angenommen"]
+            for m in muss:
+                pruefe(m in text, "%s PDF%s: «%s» fehlt" % (art, " mit QR" if mit_qr else "", m))
+            pruefe(("Zahlteil" in text) == mit_qr, "%s PDF: Zahlteil %s" % (art, "fehlt" if mit_qr else "ungewollt"))
+    if art == "rechnung":
+        pg.uncheck("#rq-qr")
+    # ungültige MWST-Nummer, dann nicht pflichtig: keine MWST im PDF
+    pg.fill("#bl-uid", "123")
+    pruefe(pg.is_disabled("#bl-pdf") and "MWST-Nummer" in pg.text_content("#bl-meldungen"), "%s: ungültige MWST-Nummer nicht gemeldet" % art)
+    pg.uncheck("#bl-pflichtig")
+    with pg.expect_download() as dl:
+        pg.click("#bl-pdf")
+    with tempfile.TemporaryDirectory() as tmp:
+        ziel = Path(tmp) / "b.pdf"
+        dl.value.save_as(ziel)
+        text = subprocess.run(["pdftotext", "-layout", str(ziel), "-"], capture_output=True, text=True).stdout
+        pruefe("MWST 8,1" not in text and "Nicht MWST-pflichtig" in text and erwartet[2] in text, "%s: PDF ohne MWST falsch" % art)
+    pg.check("#bl-pflichtig")
+    pg.fill("#bl-uid", "CHE-123.456.789 MWST")
+    pg.fill("#bl-datum", "2028-01-10")
+    pruefe("ab 2028" in pg.text_content("#bl-meldungen"), "%s: Hinweis Sätze ab 2028 fehlt" % art)
+    for _ in range(15):
+        if pg.is_enabled("#bl-neu"):
+            pg.click("#bl-neu")
+    pruefe(pg.locator(".bl-pos").count() == 12, "%s: mehr als 12 Positionen möglich" % art)
+    pg.close()
+
+
 def main():
     with sync_playwright() as p:
         b = p.chromium.launch()
@@ -172,6 +229,8 @@ def main():
             seite_browser(seite_neu, w)
         arbeitstage_browser(seite_neu)
         mahnung_browser(seite_neu)
+        beleg_browser(seite_neu, "rechnung")
+        beleg_browser(seite_neu, "offerte")
         b.close()
     print("%d Werkzeuge geprüft" % len(W.WERKZEUGE))
     if fehler:

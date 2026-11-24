@@ -346,3 +346,185 @@ WERKZEUGE.append({
         ("SIX, Implementation Guidelines QR-Rechnung, Version 2.4", "https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.4-de.pdf"),
     ],
 })
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# W2 Rechnung und W3 Offerte (gemeinsames Formular, Logik in assets/beleg.js)
+BEISPIEL_RECHNUNG = [
+    {"text": "Arbeit Elektromonteur gemäss Rapport", "menge": "6.5", "einheit": "h", "preis": "98.00", "satz": 8.1},
+    {"text": "Material gemäss Rapport (Kabel, Dosen, Schalter)", "menge": "1", "einheit": "Psch.", "preis": "184.50", "satz": 8.1},
+    {"text": "Kleinmaterial und Fahrzeug", "menge": "1", "einheit": "Psch.", "preis": "45.00", "satz": 8.1},
+]
+BEISPIEL_OFFERTE = [
+    {"text": "Demontage der bestehenden Unterverteilung", "menge": "3", "einheit": "h", "preis": "98.00", "satz": 8.1},
+    {"text": "Neue Unterverteilung inkl. Montage", "menge": "1", "einheit": "Stk.", "preis": "1450.00", "satz": 8.1},
+    {"text": "Inbetriebnahme, Mess- und Prüfprotokoll", "menge": "1", "einheit": "Psch.", "preis": "380.00", "satz": 8.1},
+]
+
+
+def beleg_formular(art):
+    import html
+    import json
+    rechnung = art == "rechnung"
+    if rechnung:
+        meta = ('<div class="frow"><div class="fgrp"><label class="flabel" for="bl-nr">Rechnungsnummer</label><input class="finput" type="text" id="bl-nr" maxlength="30" value="2027-024"></div>'
+                '<div class="fgrp"><label class="flabel" for="bl-datum">Rechnungsdatum</label><input class="finput" type="date" id="bl-datum" value="2027-02-15"></div></div>'
+                '<div class="frow"><div class="fgrp"><label class="flabel" for="bl-leistungsjahr">Leistungsdatum oder -zeitraum (falls anders als das Rechnungsdatum)</label><input class="finput" type="text" id="bl-leistungsjahr" maxlength="40" value="08.02.2027"></div>'
+                '<div class="fgrp"><label class="flabel" for="bl-frist">Zahlbar innert Tagen</label><input class="finput" type="text" inputmode="numeric" id="bl-frist" value="30"></div></div>'
+                '<div class="fgrp"><label class="flabel" for="bl-referenz">Ihre Referenz oder Auftrag (optional)</label><input class="finput" type="text" id="bl-referenz" maxlength="60" value="Auftrag vom 01.02.2027"></div>')
+        einleitung, schluss = "", "Vielen Dank für Ihren Auftrag."
+    else:
+        meta = ('<div class="frow"><div class="fgrp"><label class="flabel" for="bl-nr">Offertnummer</label><input class="finput" type="text" id="bl-nr" maxlength="30" value="O-2027-007"></div>'
+                '<div class="fgrp"><label class="flabel" for="bl-datum">Datum</label><input class="finput" type="date" id="bl-datum" value="2027-02-15"></div></div>'
+                '<div class="frow"><div class="fgrp"><label class="flabel" for="bl-gueltig">Gültig bis</label><input class="finput" type="date" id="bl-gueltig" value="2027-03-31"></div>'
+                '<div class="fgrp"><label class="flabel" for="bl-referenz">Objekt oder Projekt (optional)</label><input class="finput" type="text" id="bl-referenz" maxlength="60" value="Ersatz Unterverteilung, Testgasse 5"></div></div>'
+                '<label class="qr-wahl"><input type="checkbox" id="bl-ungefaehr"> Preise sind ungefähre Angaben (Kostenschätzung)</label>'
+                '<label class="qr-wahl"><input type="checkbox" id="bl-unverbindlich"> Offerte als «unverbindlich» kennzeichnen</label>'
+                '<label class="qr-wahl"><input type="checkbox" id="bl-annahme" checked> Zeile für die Annahme mit Unterschrift</label>')
+        einleitung, schluss = "Gerne offerieren wir Ihnen die folgenden Arbeiten:", "Bei Fragen sind wir gerne für Sie da."
+    titel = "Rechnung" if rechnung else "Offerte"
+    beispiel = BEISPIEL_RECHNUNG if rechnung else BEISPIEL_OFFERTE
+    return (
+        '<section id="werkzeug" class="flaeche">\n  <h2 class="sr-only">%s erstellen</h2>\n'
+        '  <div class="qr-raster wz-eingabe-zuerst">\n'
+        '    <form id="bl-formular" class="ccard qr-formular" data-art="%s" novalidate>\n'
+        '      <noscript><p class="note">Das Werkzeug braucht JavaScript. Es rechnet alles in Ihrem Browser und sendet nichts.</p></noscript>\n'
+        '      <p class="wz-beispielhinweis">Die Felder enthalten ein Beispiel mit erfundenen Daten. <button type="button" class="qr-klein" id="bl-leeren">Felder leeren</button></p>\n'
+        '      <fieldset><legend>%s</legend>%s</fieldset>\n'
+        '      <fieldset><legend>Mehrwertsteuer</legend>'
+        '<label class="qr-wahl"><input type="checkbox" id="bl-pflichtig" checked> Mein Betrieb ist MWST-pflichtig</label>'
+        '<div class="fgrp" id="bl-uid-grp"><label class="flabel" for="bl-uid">MWST-Nummer</label><input class="finput" type="text" id="bl-uid" '
+        'maxlength="24" placeholder="CHE-123.456.789 MWST" value="CHE-123.456.789 MWST"></div>'
+        '<div id="bl-ohne-grp" hidden><label class="qr-wahl"><input type="checkbox" id="bl-hinweis-ohne" checked> Hinweis «Nicht MWST-pflichtig» anfügen</label>'
+        '<p class="qr-hilfe">Wer nicht im MWST-Register eingetragen ist, darf keine MWST ausweisen (Art. 27 MWSTG).</p></div>'
+        '%s</fieldset>\n'
+        '      <fieldset><legend>Positionen</legend><div id="bl-positionen" class="bl-positionen"></div>'
+        '<button type="button" class="qr-klein" id="bl-neu">Position hinzufügen</button>'
+        '<p class="qr-hilfe">Preise ohne MWST. Höchstens 12 Positionen auf einer Seite.</p></fieldset>\n'
+        '      <fieldset><legend>Texte</legend>'
+        '<div class="fgrp"><label class="flabel" for="bl-ort">Ort und Datum im Brief</label><input class="finput" type="text" id="bl-ort" maxlength="60" value="Liestal, 15. Februar 2027"></div>'
+        '<div class="fgrp"><label class="flabel" for="bl-einleitung">Einleitung (optional)</label><textarea class="ftextarea" id="bl-einleitung" maxlength="400">%s</textarea></div>'
+        '<div class="fgrp"><label class="flabel" for="bl-schluss">Schlusssatz (optional)</label><textarea class="ftextarea" id="bl-schluss" maxlength="400">%s</textarea></div>'
+        '<div class="fgrp"><label class="flabel" for="bl-unterschrift">Name unter dem Brief</label><input class="finput" type="text" id="bl-unterschrift" maxlength="60" value="Anna Muster"></div>'
+        '</fieldset>\n      %s\n      %s\n      %s\n      %s\n'
+        '      <script type="application/json" id="bl-beispiel">%s</script>\n'
+        '    </form>\n'
+        '    <div class="qr-seite">\n'
+        '      <div class="ccard mg-rechnung" id="bl-ergebnis" aria-live="polite"><p class="at-was">Das Werkzeug braucht JavaScript.</p></div>\n'
+        '      <div id="bl-meldungen" class="wz-meldungen" role="alert"></div>\n'
+        '      <div class="qr-knoepfe"><button type="button" class="btn-p" id="bl-pdf">%s als PDF herunterladen</button></div>\n'
+        '      <figure class="geraet br-vorschau-geraet"><div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>'
+        '<span class="geraet-titel">Vorschau</span></div><div class="br-vorschau" id="bl-vorschau"></div></figure>\n'
+        '    </div>\n  </div>\n</section>' % (
+            titel, art, titel, meta,
+            '<label class="qr-wahl"><input type="checkbox" id="bl-fuenfer"> Total auf 5 Rappen runden (Praxis, keine gesetzliche Pflicht)</label>',
+            html.escape(einleitung), html.escape(schluss),
+            adress_felder("ab", "Ihr Betrieb (Absender)", BEISPIEL_ABSENDER, kontakt=True),
+            adress_felder("em", "Kunde (Empfänger)", BEISPIEL_EMPFAENGER),
+            qr_felder("rq") if rechnung else "", FENSTER_FELDER,
+            json.dumps(beispiel, ensure_ascii=False).replace("</", "<\\/"), titel))
+
+
+def rechnung_formular():
+    return beleg_formular("rechnung")
+
+
+def offerte_formular():
+    return beleg_formular("offerte")
+
+
+MWST_QUELLEN = [
+    ("Mehrwertsteuergesetz, Art. 25 (Steuersätze)", "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_25"),
+    ("Mehrwertsteuergesetz, Art. 26 (Rechnung)", "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_26"),
+    ("Mehrwertsteuergesetz, Art. 27 (unrichtiger oder unberechtigter Steuerausweis)", "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_27"),
+    ("ESTV: MWST-Steuersätze", "https://www.estv.admin.ch/de/mwst-steuersaetze-schweiz"),
+    ("ESTV: MWST-Info 16 Buchführung und Rechnungsstellung", "https://www.gate.estv.admin.ch/mwst-webpublikationen/public/pages/taxInfos/tableOfContent.xhtml"),
+    ("Bundesrat: Zusatzfinanzierung der AHV (Abstimmung vom 29.11.2026)", "https://www.admin.ch/de/ahv-zusatzfinanzierung"),
+]
+
+_DATENSCHUTZ_FAQ = {"frage": "Werden meine Angaben gespeichert?",
+                    "antwort": "Nein. Berechnung und PDF entstehen in Ihrem Browser. Die Seite setzt keine Cookies und verbietet "
+                               "Verbindungen nach aussen technisch per Content Security Policy."}
+
+WERKZEUGE.append({
+    "slug": "rechnung",
+    "pfad": "/werkzeuge/rechnung/",
+    "name": "Rechnung erstellen",
+    "kurz": "Rechnung mit Positionen und MWST als PDF, auf Wunsch mit QR-Zahlteil. Ohne Anmeldung, im Browser.",
+    "titel": "Rechnung erstellen: gratis mit MWST und QR | Meyssens",
+    "beschreibung": "Rechnung gratis erstellen: Positionen, MWST 8,1 %, 2,6 % oder 3,8 %, PDF mit QR-Zahlteil. Ohne Anmeldung, Daten "
+                    "bleiben im Browser. Jetzt ausprobieren.",
+    "h1": "Rechnung erstellen: gratis, mit MWST und QR-Zahlteil",
+    "lead": "Positionen erfassen, Mehrwertsteuer berechnen und die Rechnung als PDF herunterladen, auf Wunsch mit QR-Zahlteil. "
+            "Ihre Angaben bleiben in Ihrem Browser.",
+    "geprueft": "2026-11-24",
+    "veroeffentlicht": "2026-11-24",
+    "inhalt": "werkzeug_rechnung.html",
+    "skripte": ["/assets/qrcode.js", "/assets/qr-rechnung.js", "/assets/brief-pdf.js", "/assets/beleg.js"],
+    "ersetzen": {"<!-- beleg-formular -->": rechnung_formular},
+    "gespraech": {"titel": "Rechnungen direkt aus dem Rapport",
+                  "text": "Wer jede Woche Rechnungen schreibt, verliert die Zeit beim Abtippen von Stunden und Material. Ein Ablauf kann "
+                          "aus erfassten Rapporten Rechnungsentwürfe vorbereiten, die Sie prüfen und freigeben. Im Gratis-Prozess-Check "
+                          "(30 Minuten) sagen wir offen, was sich in Ihrem Betrieb lohnt.",
+                  "knopf": "Gratis-Prozess-Check anfragen"},
+    "faq": [
+        {"frage": "Welche MWST-Sätze gelten?",
+         "antwort": "Seit dem 1. Januar 2024 gelten 8,1 % (Normalsatz), 2,6 % (reduzierter Satz) und 3,8 % (Beherbergung), "
+                    "Art. 25 MWSTG. Für 2026 und 2027 ist keine Änderung beschlossen."},
+        {"frage": "Was muss auf einer Rechnung stehen?",
+         "antwort": "Für MWST-pflichtige Betriebe nennt Art. 26 MWSTG unter anderem Name und Ort beider Seiten, die MWST-Nummer, "
+                    "Datum, Art und Umfang der Leistung, das Entgelt sowie Steuersatz und Steuerbetrag."},
+        {"frage": "Darf ich ohne MWST-Nummer Mehrwertsteuer verrechnen?",
+         "antwort": "Nein. Wer nicht im MWST-Register eingetragen ist, darf keine Steuer ausweisen; eine trotzdem ausgewiesene Steuer "
+                    "ist geschuldet (Art. 27 MWSTG). Schalten Sie im Werkzeug «MWST-pflichtig» aus."},
+        {"frage": "Muss ich auf 5 Rappen runden?",
+         "antwort": "Nein. Das Gesetz schreibt keine Rundung vor, die Musterrechnung der ESTV zeigt Rappenbeträge. Das Runden auf "
+                    "5 Rappen ist eine verbreitete Praxis und im Werkzeug eine Option."},
+        _DATENSCHUTZ_FAQ,
+    ],
+    "quellen": MWST_QUELLEN + [
+        ("Mehrwertsteuergesetz, Art. 10 (Befreiung von der Steuerpflicht)", "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_10"),
+        ("Mehrwertsteuerverordnung, Art. 57 (Kassenzettel)", "https://www.fedlex.admin.ch/eli/cc/2009/828/de#art_57"),
+        ("Swissmint: Häufige Fragen (kleinste Münze)", "https://www.swissmint.ch/de/haeufige-fragen"),
+        ("SIX, Implementation Guidelines QR-Rechnung, Version 2.4", "https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.4-de.pdf"),
+    ],
+})
+
+WERKZEUGE.append({
+    "slug": "offerte",
+    "pfad": "/werkzeuge/offerte/",
+    "name": "Offerte erstellen",
+    "kurz": "Offerte mit Positionen, MWST und Gültigkeitsfrist als PDF, mit Zeile für die Annahme. Ohne Anmeldung, im Browser.",
+    "titel": "Offerte erstellen: gratis Vorlage mit MWST | Meyssens",
+    "beschreibung": "Offerte gratis erstellen: Positionen, MWST, Gültigkeitsfrist und Annahmezeile, als PDF. Ohne Anmeldung, Daten bleiben "
+                    "im Browser. Jetzt ausprobieren.",
+    "h1": "Offerte erstellen: gratis, mit MWST und Gültigkeitsfrist",
+    "lead": "Positionen erfassen, Mehrwertsteuer berechnen und die Offerte als PDF herunterladen, mit Gültigkeitsfrist und Zeile für "
+            "die Annahme. Ihre Angaben bleiben in Ihrem Browser.",
+    "geprueft": "2026-11-24",
+    "veroeffentlicht": "2026-11-24",
+    "inhalt": "werkzeug_offerte.html",
+    "skripte": ["/assets/qrcode.js", "/assets/qr-rechnung.js", "/assets/brief-pdf.js", "/assets/beleg.js"],
+    "ersetzen": {"<!-- beleg-formular -->": offerte_formular},
+    "gespraech": {"titel": "Offertanfragen schneller beantworten",
+                  "text": "Ein Ablauf kann Anfragen sortieren, die nötigen Angaben nachfragen und einen Offertentwurf aus Ihren Ansätzen "
+                          "vorbereiten. Sie prüfen und senden selbst. Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich "
+                          "in Ihrem Betrieb lohnt.",
+                  "knopf": "Gratis-Prozess-Check anfragen"},
+    "faq": [
+        {"frage": "Wie lange bin ich an eine Offerte gebunden?",
+         "antwort": "Mit einer Frist bis zu deren Ablauf (Art. 3 OR). Ohne Frist, bis Sie bei normalem Postlauf eine Antwort erwarten "
+                    "dürfen (Art. 5 OR). Mit dem Zusatz «unverbindlich» entsteht keine Bindung (Art. 7 OR)."},
+        {"frage": "Was gilt bei einer Kostenschätzung?",
+         "antwort": "Wird ein ungefährer Ansatz ohne Zutun der Kundschaft unverhältnismässig überschritten, kann sie vom Vertrag "
+                    "zurücktreten oder bei Bauten eine Herabsetzung verlangen (Art. 375 OR). Eine feste Prozentgrenze nennt das Gesetz nicht."},
+        {"frage": "Gehört die MWST in die Offerte?",
+         "antwort": "Für MWST-pflichtige Betriebe ist es üblich und klar, die Preise ohne MWST, die Steuer pro Satz und das Total "
+                    "zu zeigen. Nicht MWST-pflichtige Betriebe dürfen keine Steuer ausweisen (Art. 27 MWSTG)."},
+        _DATENSCHUTZ_FAQ,
+    ],
+    "quellen": MWST_QUELLEN + [
+        ("Obligationenrecht, Art. 3 bis 7 (Antrag und Bindung)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_3"),
+        ("Obligationenrecht, Art. 374 und 375 (Preis beim Werkvertrag, Kostenansatz)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_375"),
+    ],
+})
