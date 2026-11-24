@@ -528,3 +528,38 @@ WERKZEUGE.append({
         ("Obligationenrecht, Art. 374 und 375 (Preis beim Werkvertrag, Kostenansatz)", "https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de#art_375"),
     ],
 })
+
+WERKZEUGE.append({
+    "slug": "mwst-rechner",
+    "pfad": "/werkzeuge/mwst-rechner/",
+    "name": "MWST-Rechner",
+    "kurz": "Mehrwertsteuer zu einem Betrag dazurechnen oder herausrechnen, mit 8,1 %, 2,6 % und 3,8 %.",
+    "titel": "MWST-Rechner Schweiz 2026: 8,1 %, 2,6 %, 3,8 % | Meyssens",
+    "beschreibung": "MWST-Rechner für die Schweiz: Mehrwertsteuer dazurechnen oder herausrechnen, mit 8,1 %, 2,6 % und 3,8 %. Gratis, "
+                    "ohne Anmeldung. Jetzt ausprobieren.",
+    "h1": "MWST-Rechner Schweiz: dazurechnen und herausrechnen",
+    "lead": "Mehrwertsteuer zu einem Betrag dazurechnen oder aus einem Betrag herausrechnen, mit den Sätzen seit 2024. "
+            "Ihre Eingaben bleiben in Ihrem Browser.",
+    "geprueft": "2026-11-24",
+    "veroeffentlicht": "2026-11-24",
+    "inhalt": "werkzeug_mwst.html",
+    "skripte": ["/assets/mwst.js"],
+    "gespraech": {"titel": "Belege automatisch erfassen",
+                  "text": "Wer viele Belege von Hand abtippt, rechnet die Mehrwertsteuer immer wieder nach. Ein Ablauf kann Lieferant, "
+                          "Betrag und MWST aus Belegen auslesen und einen Buchungsvorschlag vorbereiten, den Sie prüfen. Im "
+                          "Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich in Ihrem Betrieb lohnt.",
+                  "knopf": "Gratis-Prozess-Check anfragen"},
+    "faq": [
+        {"frage": "Wie rechne ich die MWST aus einem Betrag heraus?",
+         "antwort": "Betrag mit MWST × Satz / (100 + Satz). Bei 8,1 % also × 8,1 / 108,1. In CHF 1 081.00 stecken so CHF 81.00 "
+                    "Mehrwertsteuer."},
+        {"frage": "Welche Sätze gelten 2026 und 2027?",
+         "antwort": "8,1 % (Normalsatz), 2,6 % (reduzierter Satz) und 3,8 % (Beherbergung), seit dem 1. Januar 2024 (Art. 25 MWSTG). "
+                    "Für 2026 und 2027 ist keine Änderung beschlossen."},
+        {"frage": "Wird auf 5 Rappen gerundet?",
+         "antwort": "Nein, der Rechner rundet auf den Rappen. Das Gesetz schreibt keine Rundung vor; die Rundung auf 5 Rappen ist "
+                    "eine Praxis beim Bargeld."},
+        _DATENSCHUTZ_FAQ,
+    ],
+    "quellen": MWST_QUELLEN + [("Mehrwertsteuergesetz, Art. 37 (Saldosteuersatz)", "https://www.fedlex.admin.ch/eli/cc/2009/615/de#art_37")],
+})

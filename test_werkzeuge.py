@@ -211,6 +211,26 @@ def beleg_browser(seite_neu, art):
     pg.close()
 
 
+def mwst_browser(seite_neu):
+    pg, _, _ = seite_neu(1440)
+    pg.goto(BASIS + "/werkzeuge/mwst-rechner/", wait_until="load")
+    pg.wait_for_function("window.MwstRechner")
+    for args, erwartet in (([1000, 8.1, "netto"], {"netto": 1000, "mwst": 81, "brutto": 1081}),
+                           ([1081, 8.1, "brutto"], {"netto": 1000, "mwst": 81, "brutto": 1081}),
+                           ([100, 8.1, "brutto"], {"netto": 92.51, "mwst": 7.49, "brutto": 100}),
+                           ([250, 2.6, "netto"], {"netto": 250, "mwst": 6.5, "brutto": 256.5}),
+                           ([138, 3.8, "brutto"], {"netto": 132.95, "mwst": 5.05, "brutto": 138})):
+        r = pg.evaluate("a => MwstRechner.rechne(...a)", args)
+        pruefe(r == erwartet, "MWST-Rechner %s: %s statt %s" % (args, r, erwartet))
+    pruefe("1 081.00" in pg.text_content("#mw-ergebnis"), "MWST-Rechner: Beispiel 1081 fehlt")
+    pg.check('input[name="mw-richtung"][value="brutto"]')
+    pg.fill("#mw-betrag", "1081")
+    pruefe("1 000.00" in pg.text_content("#mw-ergebnis"), "MWST-Rechner: herausrechnen in der Bedienung falsch")
+    pg.fill("#mw-betrag", "abc")
+    pruefe("Bitte einen Betrag" in pg.text_content("#mw-ergebnis"), "MWST-Rechner: ungültige Eingabe nicht gemeldet")
+    pg.close()
+
+
 def main():
     with sync_playwright() as p:
         b = p.chromium.launch()
@@ -231,6 +251,7 @@ def main():
         mahnung_browser(seite_neu)
         beleg_browser(seite_neu, "rechnung")
         beleg_browser(seite_neu, "offerte")
+        mwst_browser(seite_neu)
         b.close()
     print("%d Werkzeuge geprüft" % len(W.WERKZEUGE))
     if fehler:
