@@ -477,7 +477,8 @@ animBoxen.forEach(function(box){
   var q = new URLSearchParams(location.search);
   var src = (q.get('utm_source') || '').toLowerCase(), med = (q.get('utm_medium') || '').toLowerCase();
   var vor = src === 'brief' ? 'Brief' : src === 'linkedin' ? 'LinkedIn' : (src === 'google' && med === 'cpc') ? 'Google-Anzeige'
-          : src === 'partner' ? 'Empfehlung (z. B. Treuhandbüro)' : src === 'verband' ? 'Anlass oder Verband' : '';
+          : src === 'partner' ? 'Empfehlung (z. B. Treuhandbüro)' : src === 'verband' ? 'Anlass oder Verband'
+          : src === 'werkzeug' ? 'Gratis-Werkzeug oder Vorlage' : '';
   var kampagne = ['utm_source', 'utm_medium', 'utm_campaign'].map(function(k){ return (q.get(k) || '').replace(/[^\w.\-]/g, '').slice(0, 40); })
                  .filter(Boolean).join(' / ');
   Array.prototype.forEach.call(felder, function(f){

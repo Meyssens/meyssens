@@ -26,3 +26,13 @@ exclude:
   - vorlage_werkzeug.html
   - vorlagen.py
   - werkzeug_qr_rechnung.html
+  - werkzeuge.py
+  - test_werkzeuge.py
+  - werkzeug_arbeitstage.html
+  - werkzeug_mahnung.html
+  - werkzeug_rechnung.html
+  - werkzeug_offerte.html
+  - werkzeug_mwst.html
+  - werkzeug_arbeitszeit.html
+  - werkzeug_ferien.html
+  - werkzeug_lohnfortzahlung.html

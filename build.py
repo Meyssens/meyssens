@@ -31,6 +31,8 @@ import json
 import re
 from pathlib import Path
 
+from werkzeuge import WERKZEUGE, WERKZEUGE_UEBERSICHT
+
 ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://meyssens.ch"
 FELDER = ("slug", "name", "kurzbeschreibung", "problem", "loesung", "fuer_wen", "status")
@@ -1539,6 +1541,78 @@ def werkzeug_quellen(quellen, geprueft):
                          for n, u in quellen)))
 
 
+
+def ohne_cookie_teile(gemeinsam):
+    # Werkzeugseiten ohne Cookie-Banner, Einwilligungs-Skript und Google-Analytics-Lader (keine Cookies, keine Übertragung)
+    ohne = dict(gemeinsam)
+    ohne["head"] = re.sub(r"<script>\s*window\.dataLayer.*?</script>\n", "", gemeinsam["head"], count=1, flags=re.S)
+    ohne["rechtliches"] = re.sub(r'<div class="cookie-banner[^"]*" id="cookie-banner">.*?\n</div>\n\n', "", gemeinsam["rechtliches"], count=1, flags=re.S)
+    ohne["skripte"] = re.sub(r"// --- Cookie consent.*?(?=// --- Dialoge)", "", gemeinsam["skripte"], count=1, flags=re.S)
+    for name, merkmal in (("head", "googletagmanager"), ("rechtliches", "cookie-banner"), ("skripte", "meyssens_cookie_consent")):
+        if merkmal in ohne[name] or ohne[name] == gemeinsam[name]:
+            raise SystemExit("Werkzeugseite: Cookie-Teil %s nicht entfernt" % name)
+    return ohne
+
+
+WERKZEUG_HINWEIS = ('<div class="wz-hinweis" role="note"><strong>Keine Rechts- oder Steuerberatung.</strong> '
+                    'Das Werkzeug liefert eine allgemeine Berechnung nach den genannten Quellen (Stand siehe unten). '
+                    'Verträge, Gesamtarbeitsverträge und die Praxis von Behörden und Gerichten können abweichen. '
+                    'Ihre Eingaben bleiben in Ihrem Browser: keine Übertragung, keine Cookies.</div>')
+
+
+def werkzeug_gespraech(w):
+    g = w.get("gespraech")
+    if not g:
+        return ""
+    ziel = "/unternehmen/?utm_source=werkzeug&utm_medium=werkzeug&utm_campaign=%s#anfrage" % w["slug"]
+    return ('<section id="naechster-schritt">\n  <div class="artikel-text wz-gespraech">\n    <span class="s-label">Weiter</span>\n'
+            '    <h2>%s</h2>\n    <p>%s</p>\n    <p><a class="btn-p" href="%s">%s %s</a></p>\n  </div>\n</section>'
+            % (html.escape(g["titel"]), html.escape(g["text"]), html.escape(ziel), html.escape(g.get("knopf", "Gespräch vereinbaren")), PFEIL))
+
+
+def werkzeug_seite(w, inhalt, skripte, gemeinsam, bekannte_seiten):
+    bild = og_eigen("werkzeug", w["slug"], "Gratis-Werkzeug von Meyssens: %s" % w["name"], OG_STANDARD)
+    kopf, seitenld = seitenkopf((START, UNTERNEHMEN, ("Gratis-Werkzeuge", WERKZEUGE_UEBERSICHT["pfad"]), (w["name"], w["pfad"])),
+                                w["titel"], bild)
+    werte = dict(ohne_cookie_teile(gemeinsam), **kopf, **{
+        "titel": html.escape(w["titel"]), "beschreibung": html.escape(w["beschreibung"]), "url": DOMAIN + w["pfad"],
+        "seo_kopf": seo_kopf(DOMAIN + w["pfad"]), "chip": "Gratis-Werkzeug", "h1": html.escape(w["h1"]),
+        "lead": html.escape(w["lead"]), "hinweis": WERKZEUG_HINWEIS, "inhalt": inhalt,
+        "gespraech": werkzeug_gespraech(w),
+        "werkzeug_skripte": "\n".join('<script src="%s" defer></script>' % u for u in skripte),
+        "fragen": werkzeug_fragen(w["faq"]), "quellen": werkzeug_quellen(w["quellen"], w["geprueft"]),
+        "ld": ld(*seitenld,
+                 {"@type": "WebApplication", "@id": DOMAIN + w["pfad"] + "#werkzeug", "name": w["name"], "url": DOMAIN + w["pfad"],
+                  "description": w["beschreibung"], "applicationCategory": "BusinessApplication", "operatingSystem": "Browser",
+                  "inLanguage": "de-CH", "isAccessibleForFree": True, "browserRequirements": "JavaScript",
+                  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CHF"},
+                  "provider": {"@id": DOMAIN + "/#org"}, "datePublished": w["veroeffentlicht"], "dateModified": w["geprueft"]},
+                 {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
+                  "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in w["faq"]]})})
+    for ziel in re.findall(r'href="(/[^"#?]*)', inhalt + werte["gespraech"]):
+        if ziel not in bekannte_seiten and not (ziel.startswith(("/downloads/", "/assets/")) and (ROOT / ziel.lstrip("/")).is_file()):
+            raise SystemExit("Werkzeug %s: interner Link auf unbekannte Seite %s" % (w["name"], ziel))
+    schreibe(w["pfad"].strip("/") + "/index.html", fuelle(lies("vorlage_werkzeug.html"), werte))
+
+
+def werkzeug_uebersicht(gemeinsam):
+    u = WERKZEUGE_UEBERSICHT
+    alle = [dict(QR_WERKZEUG, slug="qr-rechnung", kurz="Zahlteil mit Empfangsschein nach SIX-Standard als PDF, im Browser.")] + WERKZEUGE
+    karten = "\n".join(
+        '    <a class="wz-karte ccard" href="%s"><h2>%s</h2><p>%s</p><span class="way-go">Werkzeug öffnen %s</span></a>'
+        % (w["pfad"], html.escape(w["name"]), html.escape(w["kurz"]), PFEIL) for w in alle)
+    kopf, seitenld = seitenkopf((START, UNTERNEHMEN, ("Gratis-Werkzeuge", u["pfad"])), u["titel"])
+    werte = dict(ohne_cookie_teile(gemeinsam), **kopf, **{
+        "titel": html.escape(u["titel"]), "beschreibung": html.escape(u["beschreibung"]), "url": DOMAIN + u["pfad"],
+        "seo_kopf": seo_kopf(DOMAIN + u["pfad"]), "chip": "Gratis-Werkzeuge", "h1": html.escape(u["h1"]),
+        "lead": html.escape(u["lead"]), "hinweis": WERKZEUG_HINWEIS,
+        "inhalt": '<section id="werkzeuge" class="flaeche">\n  <div class="wz-raster">\n%s\n  </div>\n</section>' % karten,
+        "gespraech": "", "werkzeug_skripte": "", "fragen": "", "quellen": "",
+        "ld": ld(*seitenld, {"@type": "ItemList", "itemListElement": [
+            {"@type": "ListItem", "position": i + 1, "url": DOMAIN + w["pfad"], "name": w["name"]} for i, w in enumerate(alle)]})})
+    schreibe(u["pfad"].strip("/") + "/index.html", fuelle(lies("vorlage_werkzeug.html"), werte))
+
+
 def main():
     produkte = json.loads(lies("produkte.json"))
     slugs = set()
@@ -1767,7 +1841,8 @@ def main():
         schreibe("branchen/%s/index.html" % b["slug"], seite)
 
     # Alle Seiten, auf die Langtext-Seiten intern verlinken dürfen
-    bekannte_seiten = {"/", "/gemeinden/", "/unternehmen/", QR_WERKZEUG["pfad"]}
+    bekannte_seiten = {"/", "/gemeinden/", "/unternehmen/", QR_WERKZEUG["pfad"], WERKZEUGE_UEBERSICHT["pfad"]}
+    bekannte_seiten |= {w["pfad"] for w in WERKZEUGE}
     bekannte_seiten |= {"/produkte/%s/" % s for s in slugs} | {"/branchen/%s/" % s for s in bslugs}
     bekannte_seiten |= {"/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]) for a in artikel}
 
@@ -2069,38 +2144,16 @@ def main():
             "ld": ld(*seitenld, *extra)})
         schreibe(pfad.strip("/") + "/index.html", fuelle(vorlage_seite, werte))
 
-    # Gratis-Werkzeug QR-Rechnung
-    w = QR_WERKZEUG
-    bild_w = og_eigen("werkzeug", "qr-rechnung", "Gratis-Werkzeug von Meyssens: QR-Rechnung erstellen", OG_STANDARD)
-    kopf, seitenld = seitenkopf((START, UNTERNEHMEN, (w["name"], w["pfad"])), w["titel"], bild_w)
-    # Werkzeugseite ohne Cookie-Banner, Einwilligungs-Skript und Google-Analytics-Lader (keine Cookies, keine Übertragung)
-    ohne_cookies = dict(gemeinsam)
-    ohne_cookies["head"] = re.sub(r"<script>\s*window\.dataLayer.*?</script>\n", "", gemeinsam["head"], count=1, flags=re.S)
-    ohne_cookies["rechtliches"] = re.sub(r'<div class="cookie-banner[^"]*" id="cookie-banner">.*?\n</div>\n\n', "", gemeinsam["rechtliches"], count=1, flags=re.S)
-    ohne_cookies["skripte"] = re.sub(r"// --- Cookie consent.*?(?=// --- Dialoge)", "", gemeinsam["skripte"], count=1, flags=re.S)
-    for name, merkmal in (("head", "googletagmanager"), ("rechtliches", "cookie-banner"), ("skripte", "meyssens_cookie_consent")):
-        if merkmal in ohne_cookies[name] or ohne_cookies[name] == gemeinsam[name]:
-            raise SystemExit("Werkzeug QR-Rechnung: Cookie-Teil %s nicht entfernt" % name)
-    werte = dict(ohne_cookies, **kopf, **{
-        "titel": html.escape(w["titel"]), "beschreibung": html.escape(w["beschreibung"]), "url": DOMAIN + w["pfad"],
-        "seo_kopf": seo_kopf(DOMAIN + w["pfad"]), "chip": "Gratis-Werkzeug", "h1": html.escape(w["h1"]),
-        "lead": html.escape(w["lead"]), "inhalt": lies("werkzeug_qr_rechnung.html").rstrip("\n").replace(
-            "<!-- qr-beispiel -->", re.sub(r"^<\?xml[^>]*>\s*", "", lies("assets/qr-beispiel.svg").strip()).replace(
-                ' width="210mm" height="111mm"', ' role="img" aria-label="Beispiel einer QR-Rechnung mit erfundenen Daten: '
-                'Empfangsschein links, Zahlteil mit Swiss QR Code rechts"', 1)),
-        "fragen": werkzeug_fragen(w["faq"]), "quellen": werkzeug_quellen(w["quellen"], w["geprueft"]),
-        "ld": ld(*seitenld,
-                 {"@type": "WebApplication", "@id": DOMAIN + w["pfad"] + "#werkzeug", "name": w["name"], "url": DOMAIN + w["pfad"],
-                  "description": w["beschreibung"], "applicationCategory": "BusinessApplication", "operatingSystem": "Browser",
-                  "inLanguage": "de-CH", "isAccessibleForFree": True, "browserRequirements": "JavaScript",
-                  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CHF"},
-                  "provider": {"@id": DOMAIN + "/#org"}, "datePublished": w["veroeffentlicht"], "dateModified": w["geprueft"]},
-                 {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
-                  "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in w["faq"]]})})
-    for ziel in re.findall(r'href="(/[^"#]*)', werte["inhalt"]):
-        if ziel not in bekannte_seiten:
-            raise SystemExit("Werkzeug QR-Rechnung: interner Link auf unbekannte Seite %s" % ziel)
-    schreibe(w["pfad"].strip("/") + "/index.html", fuelle(lies("vorlage_werkzeug.html"), werte))
+    # Gratis-Werkzeuge: QR-Rechnung (Inhalt mit Beispiel-SVG) und die Werkzeuge aus werkzeuge.py, dazu die Übersicht
+    qr_inhalt = lies("werkzeug_qr_rechnung.html").rstrip("\n").replace(
+        "<!-- qr-beispiel -->", re.sub(r"^<\?xml[^>]*>\s*", "", lies("assets/qr-beispiel.svg").strip()).replace(
+            ' width="210mm" height="111mm"', ' role="img" aria-label="Beispiel einer QR-Rechnung mit erfundenen Daten: '
+            'Empfangsschein links, Zahlteil mit Swiss QR Code rechts"', 1))
+    qr_skripte = ['/assets/qrcode.js', '/assets/qr-rechnung.js']
+    werkzeug_seite(dict(QR_WERKZEUG, slug="qr-rechnung"), qr_inhalt, qr_skripte, gemeinsam, bekannte_seiten)
+    for w in WERKZEUGE:
+        werkzeug_seite(w, lies(w["inhalt"]).rstrip("\n"), w["skripte"], gemeinsam, bekannte_seiten)
+    werkzeug_uebersicht(gemeinsam)
 
     # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
     werte = dict(gemeinsam, **{
@@ -2153,6 +2206,8 @@ def main():
     seiten += [("/branchen/%s/" % b["slug"], "0.6", stand(b, b.get("automatisierungen", {}).get("geprueft", SEITEN_STAND))) for b in branchen]
     seiten += [("/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]), "0.6", stand(a, a["geprueft"])) for a in artikel]
     seiten.append((QR_WERKZEUG["pfad"], "0.7", QR_WERKZEUG["geprueft"]))
+    seiten.append((WERKZEUGE_UEBERSICHT["pfad"], "0.7", max([QR_WERKZEUG["geprueft"]] + [w["geprueft"] for w in WERKZEUGE])))
+    seiten += [(w["pfad"], "0.7", w["geprueft"]) for w in WERKZEUGE]
     zeilen = ["  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>"
               % (DOMAIN, pfad, stand, prio) for pfad, prio, stand in seiten]
     schreibe("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
