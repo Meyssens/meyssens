@@ -1593,5 +1593,513 @@
     "seo_beschreibung": "Gästefragen auf der Website beantworten, Bankettanfragen per E-Mail ordnen, Stammgäste informieren. Für Betriebe in der Schweiz. Jetzt anfragen.",
     "h1": "Hotel und Restaurant: Gästeanfragen digital beantworten",
     "schweiz": "Hotels und Restaurants in der Schweiz bearbeiten Gästedaten nach dem revidierten Datenschutzgesetz (nDSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "garagen",
+    "aktualisiert": "2026-11-20",
+    "name": "Garagen",
+    "fuer": "Garagen und Autowerkstätten",
+    "kurz": "Werkstattaufträge mit Freigabegrenzen, MFK-Termine und Reifenwechsel vorbereiten.",
+    "beschreibung": "Digitale Abläufe für Garagen: Zusatzarbeiten freigeben lassen, MFK-Termine koordinieren und den Reifenwechsel planen.",
+    "intro": "In der Garage hängt viel Büroarbeit am Werkstattauftrag: Zusatzarbeiten müssen je nach Betrag vom Kunden freigegeben werden, Kostenvoranschläge sind verbindlich, und bei Verzögerungen soll der Kunde rasch Bescheid erhalten. Dazu kommen MFK-Termine, die per Brief beim Halter eintreffen, und der Saisonwechsel im Reifenhotel. Eine Studie im Auftrag des AGVS beschreibt viele dieser Abläufe als manuell und papierbasiert.",
+    "probleme": [
+      {
+        "titel": "Zusatzarbeiten brauchen eine Freigabe",
+        "text": "Im Musterauftrag von AGVS und TCS wird festgehalten, bis zu welchem Betrag Zusatzarbeiten ohne Rückfrage erlaubt sind. Darüber braucht es das Einverständnis des Kunden, und das muss jemand einholen, während das Auto auf der Hebebühne steht."
+      },
+      {
+        "titel": "MFK-Termine kommen beim Halter an",
+        "text": "Das Strassenverkehrsamt schickt das Aufgebot per Brief an den Halter. Will die Garage das Fahrzeug vorbereiten und vorführen, muss sie den Termin erst erfahren und dann Vorbereitung und Vorführung koordinieren."
+      },
+      {
+        "titel": "Saisonwechsel im Reifenhotel",
+        "text": "Vor jeder Saison wollen viele Kunden gleichzeitig wechseln. Erinnerungen, Termine und die Suche nach den eingelagerten Rädern kosten in dieser Zeit viel Telefon und Laufwege."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Freigabe per SMS",
+        "text": "Beim Service zeigt sich, dass die Bremsscheiben ersetzt werden sollten. Der Betrag liegt über der vereinbarten Grenze. Der Kunde erhält eine Nachricht mit Foto und Betrag und stimmt zu. Die Zustimmung ist mit Uhrzeit beim Auftrag gespeichert."
+      },
+      {
+        "titel": "MFK-Aufgebot als Foto",
+        "text": "Eine Kundin schickt ein Foto ihres MFK-Aufgebots. Datum und Prüfstelle werden ausgelesen, ein Termin zur Vorbereitung wird vorgeschlagen. Den Vorführtermin bestätigt die Garage selbst im Portal des Kantons."
+      },
+      {
+        "titel": "Rüstliste für den Wechseltag",
+        "text": "Vor dem Saisonstart erhalten Kunden mit eingelagerten Rädern eine Erinnerung mit Link zur Terminbuchung. Am Vorabend liegt für jeden Tag eine Liste der Lagerplätze bereit. Ist das Profil knapp, entsteht ein Offertentwurf für neue Reifen."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Ihr Garagenprogramm bleibt",
+      "text": "Viele Garagen arbeiten mit einem Programm für Aufträge, Kunden und Teile. Die hier beschriebenen Abläufe ergänzen es, sie ersetzen es nicht. Ob eine Anbindung möglich ist, hängt vom Programm ab; wir prüfen das, bevor wir etwas zusagen. Kantonale Portale für MFK-Termine bedienen Sie weiterhin selbst."
+    },
+    "faq": [
+      {
+        "frage": "Werden Arbeiten ohne Zustimmung des Kunden ausgelöst?",
+        "antwort": "Nein. Liegt eine Zusatzarbeit über der vereinbarten Grenze, geht eine Anfrage an den Kunden. Erst nach seiner Zustimmung wird der Auftrag erweitert. Ob eine Arbeit nötig ist, beurteilt Ihr Fachpersonal."
+      },
+      {
+        "frage": "Können MFK-Termine automatisch gebucht werden?",
+        "antwort": "Nein. Für die kantonalen Portale haben wir keine offizielle Schnittstelle gefunden. Der Ablauf bereitet Termine und Erinnerungen vor, buchen oder verschieben tun Sie im Portal."
+      },
+      {
+        "frage": "Dürfen wir Kunden an den Reifenwechsel erinnern?",
+        "antwort": "Erinnerungen zu einem vereinbarten Service wie der Einlagerung sind üblich. Für Werbung braucht es eine passende Einwilligung. Wir richten die Nachrichten so ein, wie es mit Ihren Kunden vereinbart ist."
+      }
+    ],
+    "produkte": [
+      "mail-assistent",
+      "website-chatbot",
+      "newsletter"
+    ],
+    "seo_titel": "Garage: Werkstattauftrag, MFK und Reifen digital | Meyssens",
+    "seo_beschreibung": "Für Garagen in der Schweiz: Zusatzarbeiten freigeben lassen, MFK-Termine koordinieren, Reifenwechsel planen. Als Entwurf, Sie geben frei. Jetzt anfragen.",
+    "h1": "Garage: Werkstattauftrag, MFK und Reifenwechsel digital vorbereiten",
+    "schweiz": "Garagen in der Schweiz bearbeiten Kunden- und Fahrzeugdaten nach dem Datenschutzgesetz (DSG). Halterdaten gibt das ASTRA nicht heraus, deshalb arbeiten die Abläufe nur mit Daten, die Ihre Kunden Ihnen geben. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "transport-logistik",
+    "aktualisiert": "2026-11-20",
+    "name": "Transport und Logistik",
+    "fuer": "Transport- und Logistikbetriebe",
+    "kurz": "Fahrtschreiber-Daten auslesen, Fristen überwachen und die Aufstellung der Arbeits- und Ruhezeiten vorbereiten.",
+    "beschreibung": "Digitale Abläufe für Transportbetriebe: Downloads der Fahrtschreiber überwachen und die Aufstellung nach ARV vorbereiten.",
+    "intro": "Im Transportgewerbe entsteht viel Büroarbeit aus Pflichten rund um Fahrtschreiber und Arbeitszeiten. Fahrerkarten sind regelmässig auszulesen, Massenspeicher mindestens alle drei Monate, und die Aufzeichnungen sind drei Jahre aufzubewahren. Bei Betriebskontrollen stellt die Polizei laut einem Merkblatt des Kantons Zug immer wieder fest, dass die Aufstellung der Arbeits- und Ruhezeiten nur teilweise geführt wird.",
+    "probleme": [
+      {
+        "titel": "Downloads mit festen Fristen",
+        "text": "Laut ASTRA ist die Fahrerkarte wöchentlich herunterzuladen und der Massenspeicher des Fahrtschreibers mindestens alle drei Monate auszulesen. Wer viele Fahrzeuge und Fahrer hat, verliert leicht den Überblick, was noch fehlt."
+      },
+      {
+        "titel": "Aufstellung für die Betriebskontrolle",
+        "text": "Verlangt werden eine Aufstellung der Lenk-, Arbeits- und Ruhezeiten, die Rohdaten für drei Jahre sowie Fahrer- und Fahrzeuglisten. Die Daten nur zu sichern genügt nach dem Zuger Merkblatt nicht."
+      },
+      {
+        "titel": "Neue Pflichten für Lieferwagen",
+        "text": "Seit 1. Juli 2026 brauchen Lieferwagen über 2,5 Tonnen im grenzüberschreitenden Verkehr einen Fahrtschreiber. Die ASTAG Ostschweiz erwartet dadurch vor allem mehr administrativen Aufwand im regionalen Verkehr."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Fehlender Download fällt auf",
+        "text": "Eine Fahrerkarte wurde seit neun Tagen nicht ausgelesen. Die verantwortliche Person erhält eine Nachricht mit Namen und Datum des letzten Downloads und kann das Auslesen veranlassen."
+      },
+      {
+        "titel": "Monatliche Aufstellung",
+        "text": "Am Monatsende liegt die Aufstellung der Lenk-, Arbeits- und Ruhezeiten pro Person bereit. Mögliche Abweichungen sind markiert. Ob es sich um einen Verstoss handelt, beurteilt die verantwortliche Person."
+      },
+      {
+        "titel": "Kontrolle ohne Suchen",
+        "text": "Kündigt die Polizei eine Betriebskontrolle an, sind Rohdaten, Aufstellungen und Listen nach Monat geordnet abgelegt. Was fehlt, steht auf einer Liste."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Auswertung nur für den gesetzlichen Zweck",
+      "text": "Systeme, die das Verhalten von Mitarbeitenden überwachen, sind nach Art. 26 ArGV 3 grundsätzlich nicht zulässig. Die Abläufe werten die Fahrtschreiber-Daten deshalb nur für die vorgeschriebene Aufstellung aus, nicht für Ranglisten oder Leistungsvergleiche. Die Kontrollpflicht bleibt beim Betrieb."
+    },
+    "faq": [
+      {
+        "frage": "Liest Meyssens die Fahrtschreiber aus?",
+        "antwort": "Nein. Das Auslesen geschieht mit Ihrem Lesegerät, Ihrer Software oder Ihrer Telematik. Die Abläufe verarbeiten die Rohdaten im Format .ddd oder .xdt, die dabei entstehen."
+      },
+      {
+        "frage": "Entscheidet die Software über Verstösse?",
+        "antwort": "Nein. Sie markiert mögliche Abweichungen. Ob ein Verstoss vorliegt und was daraus folgt, beurteilt die verantwortliche Person im Betrieb."
+      },
+      {
+        "frage": "Was ist mit LSVA und Zoll?",
+        "antwort": "Die LSVA-Deklaration läuft heute über die zugelassenen Anbieter, die Zollanmeldung über eine Verzollungssoftware mit Zugang zu Passar. Beides bieten wir nicht an. Wir besprechen gern, ob ein vorgelagerter Schritt sinnvoll vorbereitet werden kann."
+      }
+    ],
+    "produkte": [
+      "mail-assistent",
+      "website-chatbot"
+    ],
+    "seo_titel": "Transport: Fahrtschreiber und ARV vorbereiten | Meyssens",
+    "seo_beschreibung": "Für Transportbetriebe in der Schweiz: Downloads der Fahrtschreiber überwachen, ARV-Aufstellung vorbereiten, Kontrollen ohne Suchen. Jetzt anfragen.",
+    "h1": "Transport und Logistik: Fahrtschreiber und Arbeitszeiten im Griff",
+    "schweiz": "Die Daten der Fahrerinnen und Fahrer sind Personendaten von Mitarbeitenden nach dem Datenschutzgesetz (DSG). Mitarbeitende haben Anspruch, über die Auswertung informiert zu werden. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "detailhandel",
+    "aktualisiert": "2026-11-20",
+    "name": "Detailhandel",
+    "fuer": "Läden und Onlineshops",
+    "kurz": "Tagesabschluss mit Kasse, TWINT und Karten abgleichen und Retouren im Onlineshop abwickeln.",
+    "beschreibung": "Digitale Abläufe für Läden und Onlineshops: Tagesabschluss über alle Zahlungsarten abgleichen und Retouren vorbereiten.",
+    "intro": "Im Laden kommt das Geld auf vielen Wegen: bar, mit Karte, mit TWINT oder über den Onlineshop. Jeder Weg hat eigene Abrechnungen, Perioden und Gebühren, und die Bank schreibt oft Sammelbeträge gut. Wer daneben einen Onlineshop betreibt, kennt zudem die Arbeit mit Retouren, die laut einer Befragung der Hochschule Luzern für viele Shops ein Kostenfaktor sind.",
+    "probleme": [
+      {
+        "titel": "Zahlungen auf vielen Wegen",
+        "text": "TWINT rechnet laut eigener Hilfe jeweils von 23 bis 23 Uhr ab und zahlt gesammelt aus. Karten laufen über den Kartenanbieter, Bargeld über die Kasse. Am Ende muss alles zum Kontoauszug passen."
+      },
+      {
+        "titel": "Sammelgutschriften auf der Bank",
+        "text": "Gutschriften der Zahlungsanbieter umfassen oft mehrere Tage und sind um Gebühren gekürzt. Werden sie wie ein Umsatz gebucht, entsteht leicht eine Doppelbuchung."
+      },
+      {
+        "titel": "Retouren im Onlineshop",
+        "text": "Jede Retoure braucht eine Prüfung, eine Rückzahlung, eine Korrektur im Bestand und in der Buchhaltung. Eine Befragung der Hochschule Luzern nennt rund 20 Franken Prozesskosten pro Retoure."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Abgleich am Montag",
+        "text": "Am Montag liegen die Exporte von Kasse, TWINT und Kartenanbieter sowie der Kontoauszug vor. Die Umsätze werden nach Zahlungsart getrennt, die Sammelgutschriften zugeordnet und die Gebühren ausgewiesen. Eine Differenz von wenigen Franken erscheint auf einer Liste."
+      },
+      {
+        "titel": "Retoure mit Rückzahlung",
+        "text": "Eine Kundin schickt eine Jacke zurück. Nach der Prüfung im Laden wird der Zustand erfasst, die Rückzahlung liegt als Entwurf bereit und der Bestand ist nachgeführt. Die Rückzahlung gibt die Inhaberin frei."
+      },
+      {
+        "titel": "Gründe für Retouren",
+        "text": "Am Monatsende zeigt eine Übersicht, welche Artikel aus welchen Gründen zurückkamen, etwa wegen der Grösse. So lässt sich zum Beispiel die Grössenangabe im Shop gezielt verbessern."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Kasse und Shop bleiben, wie sie sind",
+      "text": "Die Abläufe arbeiten mit den Exporten, die Ihre Kasse, das TWINT-Händlerportal und Ihr Kartenanbieter bereits anbieten. Eine offizielle Schnittstelle für Händler haben wir bei TWINT nicht gefunden, deshalb arbeiten wir mit den Dateien. Bargeld und Kassensturz bleiben bei Ihnen."
+    },
+    "faq": [
+      {
+        "frage": "Bucht der Ablauf direkt in die Buchhaltung?",
+        "antwort": "Er bereitet Buchungsvorschläge vor. Sie oder Ihre Treuhänderin prüfen und übernehmen sie. Die steuerliche Beurteilung bleibt in der Buchhaltung."
+      },
+      {
+        "frage": "Werden Rückzahlungen automatisch ausgelöst?",
+        "antwort": "Nein. Die Rückzahlung liegt als Entwurf bereit und wird erst nach Ihrer Freigabe ausgelöst."
+      },
+      {
+        "frage": "Gleicht der Ablauf auch Bestände zwischen Laden und Shop ab?",
+        "antwort": "Bei Retouren wird der Bestand nachgeführt. Einen laufenden Abgleich von Beständen und Preisen zwischen Kasse und Shop prüfen wir im Einzelfall, weil es dafür keinen gemeinsamen Standard gibt."
+      }
+    ],
+    "produkte": [
+      "website-chatbot",
+      "newsletter",
+      "mail-assistent"
+    ],
+    "seo_titel": "Detailhandel: Tagesabschluss und Retouren digital | Meyssens",
+    "seo_beschreibung": "Für Läden und Onlineshops in der Schweiz: Kasse, TWINT, Karten und Bank abgleichen, Retouren vorbereiten. Als Entwurf, Sie geben frei. Jetzt anfragen.",
+    "h1": "Detailhandel: Tagesabschluss und Retouren digital vorbereiten",
+    "schweiz": "Läden und Onlineshops in der Schweiz bearbeiten Kundendaten nach dem Datenschutzgesetz (DSG); für den Onlineshop braucht es eine Datenschutzerklärung. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "gartenbau",
+    "aktualisiert": "2026-11-20",
+    "name": "Gartenbau",
+    "fuer": "Gartenbau- und Landschaftsbaubetriebe",
+    "kurz": "Schlechtwetterentschädigung mit Fristen vorbereiten und Nachweise im Team im Blick behalten.",
+    "beschreibung": "Digitale Abläufe für Gartenbau und Landschaftsbau: Schlechtwetterentschädigung vorbereiten, Fristen und Nachweise im Blick.",
+    "intro": "Im Garten- und Landschaftsbau hängt viel am Wetter, und damit auch die Büroarbeit. Fällt Arbeit wetterbedingt aus, kann der Betrieb Schlechtwetterentschädigung beantragen, mit Meldung bis zum 5. des Folgemonats und einem unterschriebenen Rapport je Arbeitsort. Dazu kommen Nachweise wie die Fachbewilligung für Pflanzenschutzmittel, die ab 2027 für Kauf und Anwendung nötig ist.",
+    "probleme": [
+      {
+        "titel": "Schlechtwetter ist Papierarbeit",
+        "text": "Die Meldung erfolgt spätestens am 5. Tag des Folgemonats, der Rapport braucht Originalunterschriften der Mitarbeitenden je Arbeitsort und Periode. Wer die Abrechnung nicht innert drei Monaten einreicht, verliert den Anspruch."
+      },
+      {
+        "titel": "Fachbewilligung Pflanzenschutz",
+        "text": "Ab 1. Januar 2027 dürfen Pflanzenschutzmittel nur mit gültiger Fachbewilligung gekauft und ausgebracht werden. Die Bewilligung gilt fünf Jahre und verlangt Weiterbildung."
+      },
+      {
+        "titel": "Holzdeklaration auch im Gartencenter",
+        "text": "Bei den Kontrollen 2024 des Büros für Konsumentenfragen haben sich die Ergebnisse unter anderem bei Gartencentern und Gärtnereien verschlechtert, mehrere Firmen wurden gebüsst."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Meldung am Monatsende",
+        "text": "Ende November zeigt die Übersicht zwei wetterbedingte Ausfalltage auf einer Baustelle. Die Meldung ist vorausgefüllt, eine Erinnerung kommt rechtzeitig vor dem 5. Dezember."
+      },
+      {
+        "titel": "Rapport zum Unterschreiben",
+        "text": "Für jede Baustelle liegt der Rapport mit den Ausfallstunden bereit, dazu eine Liste, wer noch unterschreiben muss."
+      },
+      {
+        "titel": "Frist für die Abrechnung",
+        "text": "Drei Monate nach der Abrechnungsperiode läuft die Frist ab. Die Übersicht zeigt, welche Perioden noch offen sind."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Die Behörde entscheidet",
+      "text": "Ob ein Ausfall wetterbedingt ist, prüft die Arbeitslosenkasse. Der Ablauf bereitet die Unterlagen vor und erinnert an Fristen, er beurteilt nicht, ob Anspruch besteht."
+    },
+    "faq": [
+      {
+        "frage": "Reicht Meyssens die Schlechtwetterentschädigung ein?",
+        "antwort": "Nein. Der Ablauf füllt Meldung und Rapport vor und erinnert an die Fristen. Unterschreiben und einreichen tun Sie, die Mitarbeitenden unterschreiben den Rapport im Original."
+      },
+      {
+        "frage": "Kann die Fachbewilligung meiner Mitarbeitenden automatisch geprüft werden?",
+        "antwort": "Nein. Das Register ist für Arbeitgeber nicht zugänglich. Eine Liste mit Ablaufdaten führen wir nur mit den Angaben, die Ihre Mitarbeitenden Ihnen geben."
+      },
+      {
+        "frage": "Welche Daten braucht der Ablauf?",
+        "antwort": "Die Ausfallstunden je Baustelle und Mitarbeitenden aus Ihrer Zeiterfassung oder Ihren Rapporten, dazu die Lohnangaben, die das Formular verlangt."
+      }
+    ],
+    "produkte": [
+      "mail-assistent",
+      "website-chatbot"
+    ],
+    "seo_titel": "Gartenbau: Schlechtwetter und Fristen vorbereiten | Meyssens",
+    "seo_beschreibung": "Für Gartenbaubetriebe in der Schweiz: Schlechtwetterentschädigung mit Fristen vorbereiten, Rapporte vorausfüllen. Sie geben frei. Jetzt anfragen.",
+    "h1": "Gartenbau: Schlechtwetterentschädigung und Fristen im Griff",
+    "schweiz": "Arbeitszeiten und Löhne sind Personendaten von Mitarbeitenden nach dem Datenschutzgesetz (DSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "reinigung-hauswartung",
+    "aktualisiert": "2026-11-20",
+    "name": "Reinigung und Hauswartung",
+    "fuer": "Reinigungsfirmen und Hauswartungen",
+    "kurz": "Arbeitszeiten je Objekt nach GAV prüfen, Zeitkonten monatlich ausweisen und Lohnstunden vorbereiten.",
+    "beschreibung": "Digitale Abläufe für Reinigung und Hauswartung: Arbeitszeit je Objekt nach GAV prüfen und den Monatsabschluss vorbereiten.",
+    "intro": "In der Reinigung arbeiten viele Mitarbeitende im Stundenlohn an wechselnden Objekten. Der Gesamtarbeitsvertrag 2026 bis 2029 verlangt eine genaue Erfassung der Arbeitszeit je Tag und Person, mit Einsatzort, Beginn, Ende und Pausen, und eine monatliche Bekanntgabe des Zeitkontos. Bei Verstössen drohen Konventionalstrafen.",
+    "probleme": [
+      {
+        "titel": "Erfassung nach GAV",
+        "text": "Der GAV Reinigung Deutschschweiz verlangt je Tag und Person Einsatzort, Beginn und Ende sowie Pausen und eine monatliche Mitteilung des Zeitkontos. Die Aufzeichnungen sind fünf Jahre aufzubewahren."
+      },
+      {
+        "titel": "Überstunden mit Stichtag",
+        "text": "Überstunden, die bis zum 30. April des Folgejahres nicht kompensiert sind, müssen ausbezahlt werden, über dem Höchstmass mit Zuschlag."
+      },
+      {
+        "titel": "Viele Objekte, schwankende Stunden",
+        "text": "Viele Mitarbeitende arbeiten im Stundenlohn mit monatlich schwankenden Stunden an mehreren Einsatzorten. Das macht den Monatsabschluss aufwendig."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Fehlende Pause",
+        "text": "Beim Monatsabschluss fällt auf, dass an einem Tag keine Pause erfasst ist. Die Teamleitung klärt das, bevor die Stunden in den Lohn gehen."
+      },
+      {
+        "titel": "Zeitkonto für alle",
+        "text": "Jede Mitarbeiterin erhält Ende Monat ihren Zeitkonto-Auszug. Fragen kommen früh statt bei einer Kontrolle."
+      },
+      {
+        "titel": "Stichtag für Überstunden",
+        "text": "Im März zeigt die Übersicht, wer noch Überstunden hat, die bis Ende April kompensiert werden sollten."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Ihre Zeiterfassung bleibt",
+      "text": "Es gibt viele Apps für die Zeiterfassung. Der Ablauf ergänzt sie um die Prüfung nach GAV, den monatlichen Auszug und die Übergabe an den Lohn. Ob eine Anbindung möglich ist, prüfen wir vor einer Zusage."
+    },
+    "faq": [
+      {
+        "frage": "Ersetzt der Ablauf meine Zeiterfassung?",
+        "antwort": "Nein. Er arbeitet mit den Daten Ihrer bestehenden Zeiterfassung und prüft sie nach den Regeln, die Sie mit uns festlegen."
+      },
+      {
+        "frage": "Ist das eine Rechtsauskunft zum GAV?",
+        "antwort": "Nein. Die Regeln hinterlegen wir mit Ihnen. Massgebend ist der GAV in der jeweils gültigen Fassung."
+      },
+      {
+        "frage": "Wer sieht die Zeitkonten?",
+        "antwort": "Jede Person ihren eigenen Auszug, die Leitung alle. Die Aufbewahrung richtet sich nach den Fristen des GAV."
+      }
+    ],
+    "produkte": [
+      "mail-assistent",
+      "website-chatbot"
+    ],
+    "seo_titel": "Reinigung: Arbeitszeit nach GAV prüfen | Meyssens",
+    "seo_beschreibung": "Für Reinigungsfirmen in der Schweiz: Arbeitszeiten je Objekt nach GAV prüfen, Zeitkonten monatlich ausweisen, Lohn vorbereiten. Jetzt anfragen.",
+    "h1": "Reinigung und Hauswartung: Arbeitszeit nach GAV im Griff",
+    "schweiz": "Arbeitszeiten sind Personendaten von Mitarbeitenden nach dem Datenschutzgesetz (DSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "schreinerei-holzbau",
+    "aktualisiert": "2026-11-20",
+    "name": "Schreinerei und Holzbau",
+    "fuer": "Schreinereien, Zimmereien und Holzbaubetriebe",
+    "kurz": "Holzdeklaration in jeder Offerte sicherstellen und Schlechtwetterentschädigung im Holzbau vorbereiten.",
+    "beschreibung": "Digitale Abläufe für Schreinerei und Holzbau: Holzdeklaration in Offerten und Schlechtwetterentschädigung vorbereiten.",
+    "intro": "Wer Holzprodukte an Privatkunden verkauft, muss Holzart und Herkunft spätestens beim Kaufentscheid schriftlich angeben. Bei den Kontrollen 2024 hatte nur rund ein Viertel der kontrollierten Firmen alles korrekt deklariert, und Schreinereien und Zimmereien schnitten schlechter ab als im Vorjahr. Zimmereien haben zudem Anspruch auf Schlechtwetterentschädigung, mit Fristen und Formularen.",
+    "probleme": [
+      {
+        "titel": "Holzdeklaration in der Offerte",
+        "text": "Holzart und Herkunft müssen spätestens beim Kaufentscheid schriftlich vorliegen. Für Einzelanfertigungen ist ein jährlich nachgeführtes Beiblatt mit den Herkunftsländern aus den Einkäufen möglich."
+      },
+      {
+        "titel": "Kontrollen mit Bussen",
+        "text": "Bei den Kontrollen 2024 wurden bei rund zwei Dritteln der beanstandeten Firmen Bussen verhängt. Betriebe ohne Verkaufsfläche müssen Offerten auf Verlangen per E-Mail einreichen."
+      },
+      {
+        "titel": "Schlechtwetter in der Zimmerei",
+        "text": "Zimmereien sind für die Schlechtwetterentschädigung ausdrücklich berechtigt. Meldung, Rapport mit Unterschriften und Abrechnung haben feste Fristen."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Beiblatt zum Jahresbeginn",
+        "text": "Im Januar entsteht aus den Einkäufen des Vorjahres das neue Beiblatt mit Holzarten und Herkunftsländern. Die Werkstattleitung prüft und gibt es frei."
+      },
+      {
+        "titel": "Offerte mit Massivholz",
+        "text": "Eine Offerte für einen Esstisch aus Eiche wird vor dem Versand geprüft: Das Beiblatt ist angehängt, die Holzart genannt."
+      },
+      {
+        "titel": "Ausfall auf der Baustelle",
+        "text": "Nach zwei wetterbedingten Ausfalltagen auf einer Holzbau-Baustelle liegt die Meldung vorausgefüllt bereit, mit Erinnerung vor dem 5. des Folgemonats."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Herkunft muss jemand bestätigen",
+      "text": "Lieferantenrechnungen enthalten die Herkunft nicht immer. Der Ablauf zeigt, wo sie fehlt, und Sie ergänzen sie. Die Prüfung ersetzt keine Beurteilung durch das Büro für Konsumentenfragen."
+    },
+    "faq": [
+      {
+        "frage": "Muss ich jede Offerte deklarieren?",
+        "antwort": "Die Pflicht gilt beim Verkauf an Konsumentinnen und Konsumenten. Welche Offerten betroffen sind, legen Sie mit uns fest; massgebend sind die Vorgaben des Büros für Konsumentenfragen."
+      },
+      {
+        "frage": "Woher kommen die Herkunftsangaben?",
+        "antwort": "Aus Ihren Einkaufsdaten, sofern sie dort stehen. Fehlt die Herkunft, ergänzen Sie sie einmal je Artikel."
+      },
+      {
+        "frage": "Reicht Meyssens die Schlechtwetterentschädigung ein?",
+        "antwort": "Nein. Der Ablauf füllt Meldung und Rapport vor und erinnert an die Fristen. Unterschreiben und einreichen tun Sie, die Mitarbeitenden unterschreiben den Rapport im Original."
+      }
+    ],
+    "produkte": [
+      "mail-assistent",
+      "website-chatbot",
+      "newsletter"
+    ],
+    "seo_titel": "Schreinerei und Holzbau: Holzdeklaration digital | Meyssens",
+    "seo_beschreibung": "Für Schreinereien und Holzbau in der Schweiz: Holzdeklaration in Offerten prüfen, Beiblatt nachführen, Schlechtwetter vorbereiten. Jetzt anfragen.",
+    "h1": "Schreinerei und Holzbau: Holzdeklaration und Schlechtwetter vorbereiten",
+    "schweiz": "Offerten und Einkaufsdaten enthalten kaum Personendaten, ausser bei Kundenofferten und Lohndaten nach dem Datenschutzgesetz (DSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "physiotherapie",
+    "aktualisiert": "2026-11-20",
+    "name": "Physiotherapie",
+    "fuer": "Physiotherapiepraxen",
+    "kurz": "Krankenkassenbelege nach Tarif 595 vorbereiten und Fristen für Verordnungen und Kostengutsprachen überwachen.",
+    "beschreibung": "Digitale Abläufe für Physiotherapiepraxen: Belege nach Tarif 595 und Fristen für Verordnungen und Kostengutsprachen vorbereiten.",
+    "intro": "In der Physiotherapie entsteht viel Arbeit, die nicht abgerechnet werden kann: Kostengutsprachen, Rechnungskontrolle, Kommunikation mit Versicherern und Terminplanung. Eine Leistungsdatenerhebung zeigt, dass Physiotherapeutinnen und Physiotherapeuten für rund 15 Prozent ihrer Arbeitszeit mit dem heutigen Tarif nicht entschädigt werden. Ab 2027 kommt für Präventions- und Trainingsangebote der neue Tarif 595 dazu.",
+    "probleme": [
+      {
+        "titel": "Viel Arbeit ohne Vergütung",
+        "text": "Laut der Leistungsdatenerhebung LeDa gehören Kostengutsprachen, Rechnungsstellung und Kommunikation mit Versicherern zu den Tätigkeiten, die nicht abgerechnet werden können."
+      },
+      {
+        "titel": "Tarif 595 ab 2027",
+        "text": "Für Präventions- und Trainingsangebote ist die bisherige Abonnementsbestätigung ab 1. Januar 2027 nicht mehr zulässig. Verlangt wird ein Beleg nach Tarif 595 im Format XML 5.0."
+      },
+      {
+        "titel": "Fristen bei Verordnungen",
+        "text": "Eine Verordnung gilt für höchstens neun Sitzungen, ab der 37. Sitzung braucht es eine Kostengutsprache. Fehlt sie, kann der Versicherer die Zahlung verweigern."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Trainingsabo nach der Therapie",
+        "text": "Ein Patient trainiert nach der medizinischen Trainingstherapie als Selbstzahler weiter. Für sein Abo entsteht ein Beleg nach Tarif 595, fehlende Angaben werden per Link angefragt."
+      },
+      {
+        "titel": "Schwelle in Sicht",
+        "text": "Bei Sitzung 33 von 36 erscheint eine Aufgabe: Langzeitverordnung beim Arzt anfragen, Kostengutsprache nachverfolgen."
+      },
+      {
+        "titel": "Nachfrage bei der Kasse",
+        "text": "Drei Wochen nach dem Gesuch fehlt die Kostengutsprache noch. Eine Erinnerung zur Nachfrage liegt bereit."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Patientendaten bleiben geschützt",
+      "text": "Gesundheitsdaten sind besonders schützenswert und unterstehen dem Berufsgeheimnis. Die Abläufe arbeiten nur mit Vertrag zur Auftragsbearbeitung, den Speicherort nennen wir vor dem Start. Tarifpositionen wählt die Praxis, nicht die Software."
+    },
+    "faq": [
+      {
+        "frage": "Wählt der Ablauf Tarifpositionen aus?",
+        "antwort": "Nein. Die Zuordnung der Tarifcodes für Ihre Angebote legen Sie einmal fest und geben sie frei. Den Inhalt der Behandlung und ihre Abrechnung verantwortet die Praxis."
+      },
+      {
+        "frage": "Funktioniert das mit meinem Praxisprogramm?",
+        "antwort": "Das hängt von den Exporten Ihres Programms ab. Wir prüfen das, bevor wir etwas zusagen."
+      },
+      {
+        "frage": "Wer stellt das Gesuch um Kostengutsprache?",
+        "antwort": "Die verordnende Ärztin oder der verordnende Arzt. Der Ablauf erinnert Ihre Praxis rechtzeitig daran, das Gesuch anzufragen."
+      }
+    ],
+    "produkte": [
+      "website-chatbot",
+      "mail-assistent"
+    ],
+    "seo_titel": "Physiotherapie: Tarif 595 und Fristen vorbereiten | Meyssens",
+    "seo_beschreibung": "Für Physiopraxen in der Schweiz: Belege nach Tarif 595 vorbereiten, Fristen für Verordnungen und Kostengutsprachen überwachen. Jetzt anfragen.",
+    "h1": "Physiotherapie: Tarif 595 und Fristen für Verordnungen im Griff",
+    "schweiz": "Gesundheitsdaten sind nach dem Datenschutzgesetz (DSG) besonders schützenswert und unterstehen dem Berufsgeheimnis. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
+  },
+  {
+    "slug": "fitness-sport",
+    "aktualisiert": "2026-11-20",
+    "name": "Fitness und Sport",
+    "fuer": "Fitnesscenter, Kurs- und Sportschulen",
+    "kurz": "Krankenkassenbelege nach Tarif 595 aus der bestehenden Mitgliederverwaltung erstellen.",
+    "beschreibung": "Digitale Abläufe für Fitnesscenter und Sportschulen: Krankenkassenbelege nach Tarif 595 aus Ihrer Verwaltung vorbereiten.",
+    "intro": "Viele Mitglieder lassen sich einen Teil ihres Abos von der Zusatzversicherung vergüten. Bisher genügte dafür eine Abonnementsbestätigung auf Papier. Ab 1. Januar 2027 ist sie nicht mehr zulässig, verlangt wird ein Beleg nach Tarif 595 im Format XML 5.0. Wer dafür nicht gleich die ganze Software wechseln will, braucht eine Brücke von der bestehenden Verwaltung zum neuen Beleg.",
+    "probleme": [
+      {
+        "titel": "Neuer Beleg ab 2027",
+        "text": "Die bisherige Abonnementsbestätigung ist ab 1. Januar 2027 nicht mehr zulässig. Verlangt werden ein Beleg nach Tarif 595 im Format XML 5.0 sowie Angaben wie GLN und Versichertennummer."
+      },
+      {
+        "titel": "bexio-Rechnungen genügen nicht",
+        "text": "Laut einem Anbieter von Studio-Software erfüllen Rechnungen aus bexio den Standard XML 5.0 noch nicht. Wer seine Abos dort verrechnet, braucht einen zusätzlichen Schritt."
+      },
+      {
+        "titel": "Lastschrift läuft aus",
+        "text": "Das Lastschriftverfahren LSV+ und BDD endet am 30. September 2028. Mitgliederbeiträge, die heute so eingezogen werden, müssen auf eine andere Zahlart umgestellt werden."
+      }
+    ],
+    "szenarien": [
+      {
+        "titel": "Beleg nach Zahlung",
+        "text": "Ein Mitglied bezahlt sein Jahresabo. Der Beleg nach Tarif 595 entsteht und geht per E-Mail an das Mitglied, sobald das Studio den Versand freigegeben hat."
+      },
+      {
+        "titel": "Fehlende Versichertennummer",
+        "text": "Bei einem Mitglied fehlt die Versichertennummer. Es erhält einen Link, um die Angabe zu ergänzen, statt dass das Team nachtelefoniert."
+      },
+      {
+        "titel": "Tarifcodes einmal festlegen",
+        "text": "Für jede Abo-Art legt das Studio einmal den passenden Tarifcode fest und gibt die Zuordnung frei. Danach entstehen die Belege nach dieser Vorgabe."
+      }
+    ],
+    "besonderheit": {
+      "titel": "Keine neue Studio-Software",
+      "text": "Der Ablauf arbeitet mit dem Export Ihrer bestehenden Mitgliederverwaltung oder mit bexio. Ob der elektronische Versand an die Krankenkasse möglich ist, hängt von den nötigen Verträgen ab."
+    },
+    "faq": [
+      {
+        "frage": "Muss ich meine Studio-Software wechseln?",
+        "antwort": "Nein. Der Ablauf erstellt die Belege aus Ihren bestehenden Daten. Es gibt auch Fertiglösungen; wir prüfen mit Ihnen, was günstiger ist."
+      },
+      {
+        "frage": "Wer entscheidet, welcher Tarifcode gilt?",
+        "antwort": "Sie. Die Zuordnung je Abo-Art geben Sie einmal frei. Massgebend sind die Vorgaben der Krankenversicherer."
+      },
+      {
+        "frage": "Was passiert mit den Daten der Mitglieder?",
+        "antwort": "Versichertennummer und Geburtsdatum werden nur für den Beleg verwendet. Für den elektronischen Versand an die Kasse braucht es die Einwilligung des Mitglieds."
+      }
+    ],
+    "produkte": [
+      "newsletter",
+      "umfragen-abstimmungen",
+      "website-chatbot"
+    ],
+    "seo_titel": "Fitness: Krankenkassenbelege nach Tarif 595 | Meyssens",
+    "seo_beschreibung": "Für Fitnesscenter und Sportschulen in der Schweiz: Belege nach Tarif 595 aus Ihrer Mitgliederverwaltung vorbereiten. Sie geben frei. Jetzt anfragen.",
+    "h1": "Fitness und Sport: Krankenkassenbelege nach Tarif 595 vorbereiten",
+    "schweiz": "Mitgliederdaten sind Personendaten nach dem Datenschutzgesetz (DSG); die AHV-Nummer darf nur verwendet werden, wo es das Gesetz erlaubt. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   }
 ]

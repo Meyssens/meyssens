@@ -41,10 +41,10 @@ und bei reduzierter Bewegung ist der Endzustand sichtbar.
 <!-- buehne-auftrag-rechnung:start -->
 <div class="abl-karte abl-handy" data-ab="1">
   <span class="abl-klein">Rapport auf dem Handy</span>
-  <span class="abl-check">Steckdosen ersetzt</span>
-  <span class="abl-check">Arbeit 2.5 h</span>
-  <span class="abl-check">Material: 4 Steckdosen</span>
-  <span class="abl-check" data-ab="2">Foto und Unterschrift</span>
+  <span class="abl-check"><span class="haken" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false"><path d="M7.5 12.4l3 3 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Steckdosen ersetzt</span></span>
+  <span class="abl-check"><span class="haken" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false"><path d="M7.5 12.4l3 3 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Arbeit 2.5 h</span></span>
+  <span class="abl-check"><span class="haken" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false"><path d="M7.5 12.4l3 3 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Material: 4 Steckdosen</span></span>
+  <span class="abl-check" data-ab="2"><span class="haken" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false"><path d="M7.5 12.4l3 3 6-6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Foto und Unterschrift</span></span>
 </div>
 <i class="abl-pfeil" data-ab="3"></i>
 <div class="abl-karte" data-ab="3">
@@ -101,3 +101,59 @@ und bei reduzierter Bewegung ist der Endzustand sichtbar.
 </div>
 <span class="abl-freigabe abl-breit" data-ab="5">Nichts doppelt getippt</span>
 <!-- buehne-schnittstellen:ende -->
+<!-- buehne-mahnwesen:start -->
+<ul class="abl-mails">
+  <li data-ab="1"><b>Rechnung 2026-031</b><span>Beispiel AG, CHF 1 180.00, fällig 30.10.2026</span><em class="abl-tag t-ok" data-ab="3">Bezahlt</em></li>
+  <li data-ab="1"><b>Rechnung 2026-034</b><span>Herr Muster, CHF 324.30, fällig 05.11.2026</span><em class="abl-tag t-rekla" data-ab="4">Überfällig</em></li>
+  <li data-ab="2"><b>Rechnung 2026-038</b><span>Frau Beispiel, CHF 860.00, fällig 28.11.2026</span><em class="abl-tag t-termin" data-ab="4">Offen</em></li>
+</ul>
+<div class="abl-entwurf" data-ab="5">
+  <span class="abl-klein">Zahlungserinnerung an Herrn Muster, Entwurf</span>
+  <span class="abl-brief">Guten Tag Herr Muster, unsere Rechnung 2026-034 über CHF 324.30 war am 5. November fällig. Falls Sie bereits bezahlt haben, betrachten Sie diese Nachricht bitte als gegenstandslos. Freundliche Grüsse</span>
+  <span class="abl-freigabe" data-ab="6">Von Ihnen freigegeben</span>
+</div>
+<!-- buehne-mahnwesen:ende -->
+<!-- buehne-offerten:start -->
+<ul class="abl-mails">
+  <li data-ab="1"><b>Frau Beispiel</b><span>Anfrage: drei zusätzliche Steckdosen im Wohnzimmer</span><em class="abl-tag t-offerte" data-ab="2">Offerte</em></li>
+</ul>
+<div class="abl-karte" data-ab="3">
+  <span class="abl-klein">Offerte 2026-052, Entwurf</span>
+  <span class="abl-zeile"><i>Arbeit 2 h × 100.00</i><i>200.00</i></span>
+  <span class="abl-zeile"><i>3 Steckdosen × 12.50</i><i>37.50</i></span>
+  <span class="abl-zeile"><i>MwSt 8.1 %</i><i>19.24</i></span>
+  <span class="abl-zeile abl-total" data-ab="4"><i>Total CHF</i><i>256.74</i></span>
+</div>
+<span class="abl-freigabe abl-breit" data-ab="5">Von Ihnen geprüft und freigegeben</span>
+<!-- buehne-offerten:ende -->
+<!-- buehne-gross:start -->
+<div class="gr-fluss">
+  <div class="gr-stufe" data-ab="1">
+    <span class="gr-nr">1</span><span class="abl-klein">E-Mail kommt an</span>
+    <b>Beispiel Handels GmbH</b>
+    <span class="gr-text">Rechnung 2026-041</span>
+    <span class="gr-anhang">rechnung-2026-041.pdf</span>
+  </div>
+  <i class="gr-pfeil" data-ab="2"></i>
+  <div class="gr-stufe" data-ab="2">
+    <span class="gr-nr">2</span><span class="abl-klein">Beleg erkannt</span>
+    <span class="abl-zeile"><i>Lieferant</i><i>Beispiel Handels GmbH</i></span>
+    <span class="abl-zeile"><i>Datum</i><i>12.11.2026</i></span>
+    <span class="abl-zeile"><i>MwSt 8.1 %</i><i>32.40</i></span>
+    <span class="abl-zeile abl-total"><i>Total CHF</i><i>432.40</i></span>
+  </div>
+  <i class="gr-pfeil" data-ab="3"></i>
+  <div class="gr-stufe" data-ab="3">
+    <span class="gr-nr">3</span><span class="abl-klein">Buchung als Entwurf</span>
+    <b>4000 Materialaufwand an 2000 Kreditoren</b>
+    <span class="gr-text">CHF 432.40</span>
+    <span class="gr-entwurf">Entwurf</span>
+  </div>
+  <i class="gr-pfeil" data-ab="4"></i>
+  <div class="gr-stufe gr-frei" data-ab="4">
+    <span class="gr-nr">4</span><span class="abl-klein">Sie geben frei</span>
+    <span class="gr-text">Ohne Ihre Freigabe wird nichts gebucht.</span>
+    <span class="abl-freigabe" data-ab="5">Von Ihnen freigegeben</span>
+  </div>
+</div>
+<!-- buehne-gross:ende -->

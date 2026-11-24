@@ -1,0 +1,140 @@
+<section id="werkzeug" class="flaeche">
+  <h2 class="sr-only">Angaben erfassen und Vorschau</h2>
+  <div class="qr-raster">
+    <form id="qr-formular" class="ccard qr-formular" novalidate aria-describedby="qr-datenschutz">
+      <noscript><p class="note">Das Werkzeug braucht JavaScript. Es rechnet alles in Ihrem Browser und sendet nichts.</p></noscript>
+      <fieldset>
+        <legend>Konto und Zahlungsempfänger</legend>
+        <div class="fgrp">
+          <label class="flabel" for="qr-konto">IBAN oder QR-IBAN (CH oder LI)</label>
+          <input class="finput" type="text" id="qr-konto" autocomplete="off" spellcheck="false" inputmode="text" placeholder="CH00 0000 0000 0000 0000 0" aria-describedby="qr-konto-hilfe">
+          <p class="qr-hilfe" id="qr-konto-hilfe">Die Angaben müssen zum Inhaber des Kontos passen, so wie es bei der Bank geführt wird.</p>
+        </div>
+        <div class="fgrp">
+          <label class="flabel" for="qr-ze-name">Name oder Firma</label>
+          <input class="finput" type="text" id="qr-ze-name" autocomplete="organization" maxlength="70">
+        </div>
+        <div class="frow strasse">
+          <div class="fgrp"><label class="flabel" for="qr-ze-strasse">Strasse</label><input class="finput" type="text" id="qr-ze-strasse" autocomplete="address-line1" maxlength="70"></div>
+          <div class="fgrp"><label class="flabel" for="qr-ze-nr">Nr.</label><input class="finput" type="text" id="qr-ze-nr" maxlength="16"></div>
+        </div>
+        <div class="frow drei">
+          <div class="fgrp"><label class="flabel" for="qr-ze-plz">PLZ</label><input class="finput" type="text" id="qr-ze-plz" autocomplete="postal-code" maxlength="16"></div>
+          <div class="fgrp"><label class="flabel" for="qr-ze-ort">Ort</label><input class="finput" type="text" id="qr-ze-ort" autocomplete="address-level2" maxlength="35"></div>
+          <div class="fgrp"><label class="flabel" for="qr-ze-land">Land</label><input class="finput" type="text" id="qr-ze-land" value="CH" maxlength="2" autocomplete="country"></div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Betrag und Referenz</legend>
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="qr-waehrung">Währung</label><select class="fselect finput" id="qr-waehrung"><option value="CHF">CHF</option><option value="EUR">EUR</option></select></div>
+          <div class="fgrp"><label class="flabel" for="qr-betrag">Betrag (leer lassen für ein Feld zum Ausfüllen)</label><input class="finput" type="text" id="qr-betrag" inputmode="decimal" placeholder="1590.00"></div>
+        </div>
+        <div class="fgrp">
+          <label class="flabel" for="qr-referenz">Referenz (optional)</label>
+          <div class="qr-ref-zeile">
+            <input class="finput" type="text" id="qr-referenz" autocomplete="off" spellcheck="false" aria-describedby="qr-ref-hinweis">
+            <button type="button" class="qr-klein" id="qr-pruefziffer">Prüfziffer ergänzen</button>
+          </div>
+          <p class="qr-hilfe" id="qr-ref-hinweis" aria-live="polite">Mit normaler IBAN: RF-Referenz oder leer lassen.</p>
+        </div>
+        <div class="fgrp">
+          <label class="flabel" for="qr-mitteilung">Zusätzliche Informationen (höchstens 140 Zeichen)</label>
+          <textarea class="ftextarea" id="qr-mitteilung" maxlength="140" placeholder="Rechnung 2026-117 vom 20.11.2026"></textarea>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Zahlungspflichtiger</legend>
+        <label class="qr-wahl" for="qr-mit-zahler"><input type="checkbox" id="qr-mit-zahler"> Adresse des Zahlungspflichtigen aufdrucken</label>
+        <div id="qr-zahler-felder" hidden>
+          <div class="fgrp"><label class="flabel" for="qr-zp-name">Name oder Firma</label><input class="finput" type="text" id="qr-zp-name" maxlength="70"></div>
+          <div class="frow strasse">
+            <div class="fgrp"><label class="flabel" for="qr-zp-strasse">Strasse</label><input class="finput" type="text" id="qr-zp-strasse" maxlength="70"></div>
+            <div class="fgrp"><label class="flabel" for="qr-zp-nr">Nr.</label><input class="finput" type="text" id="qr-zp-nr" maxlength="16"></div>
+          </div>
+          <div class="frow drei">
+            <div class="fgrp"><label class="flabel" for="qr-zp-plz">PLZ</label><input class="finput" type="text" id="qr-zp-plz" maxlength="16"></div>
+            <div class="fgrp"><label class="flabel" for="qr-zp-ort">Ort</label><input class="finput" type="text" id="qr-zp-ort" maxlength="35"></div>
+            <div class="fgrp"><label class="flabel" for="qr-zp-land">Land</label><input class="finput" type="text" id="qr-zp-land" value="CH" maxlength="2"></div>
+          </div>
+        </div>
+      </fieldset>
+      <div id="qr-meldungen" role="status" aria-live="polite"></div>
+      <div class="qr-knoepfe">
+        <button type="button" class="btn-p" data-qr-download="pdf" disabled>PDF herunterladen</button>
+        <button type="button" class="btn-s" data-qr-download="svg" disabled>SVG herunterladen</button>
+        <button type="button" class="qr-klein" id="qr-beispiel">Beispiel ausfüllen</button>
+        <button type="button" class="qr-klein" id="qr-leeren">Alles leeren</button>
+      </div>
+    </form>
+    <div class="qr-seite">
+      <figure class="geraet qr-geraet">
+        <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Zahlteil mit Empfangsschein</span><span class="beispiel" id="qr-marke">Beispiel</span></div>
+        <div class="geraet-inhalt"><div id="qr-vorschau" class="qr-vorschau"><!-- qr-beispiel --></div></div>
+      </figure>
+      <details class="qr-details"><summary>Inhalt des QR-Codes anzeigen</summary><pre id="qr-inhalt"></pre></details>
+      <div class="note" id="qr-datenschutz"><strong>Ihre Eingaben bleiben auf Ihrem Gerät.</strong> Das Werkzeug rechnet vollständig in Ihrem Browser. Es sendet keine Eingaben an einen Server und speichert nichts. Die Seite sperrt Verbindungen nach aussen technisch (Content Security Policy), auch die Statistik ist hier abgeschaltet. Die Seite verwendet keine Cookies. Nach dem Schliessen des Tabs sind die Angaben weg.</div>
+      <div class="note qr-haftung"><strong>Haftungshinweis.</strong> Dieses Werkzeug erstellt QR-Rechnungen nach den Vorgaben der SIX (QR-bill Implementation Guidelines 2.4). Bitte prüfen Sie den Zahlteil vor dem Versand, zum Beispiel durch einen Scan mit Ihrer Bank-App. Für die Richtigkeit der Angaben und die Verarbeitung durch Banken übernehmen wir keine Haftung.</div>
+    </div>
+  </div>
+</section>
+
+<section id="aufbau">
+  <div class="artikel-text">
+    <span class="s-label">Aufbau</span>
+    <h2>So ist der Zahlteil aufgebaut</h2>
+    <p>Seit dem 1. Oktober 2022 gibt es in der Schweiz nur noch die QR-Rechnung, die roten und orangen Einzahlungsscheine sind abgeschafft. Der Zahlteil ist 148 x 105 mm gross, links daneben steht der Empfangsschein mit 62 x 105 mm. Zusammen ergeben sie einen Streifen von 210 x 105 mm am unteren Rand einer A4-Seite.</p>
+    <figure class="qr-schema">
+      <svg viewBox="0 0 420 210" role="img" aria-label="Schema der QR-Rechnung: Empfangsschein mit Titel, Angaben, Betrag und Annahmestelle; Zahlteil mit Titel, Swiss QR Code, Betrag, Angaben und weiteren Informationen">
+        <rect x="1" y="1" width="418" height="208" fill="#fff" stroke="#040911" stroke-width="1.5"/>
+        <line x1="124" y1="1" x2="124" y2="209" stroke="#040911" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <g font-family="Inter, Arial, sans-serif" font-size="11" fill="#040911">
+          <rect x="10" y="10" width="104" height="14" rx="3" fill="#dbe9ff"/><text x="16" y="21">1 Titel</text>
+          <rect x="10" y="30" width="104" height="104" rx="3" fill="#dbe9ff"/><text x="16" y="46">2 Angaben</text>
+          <rect x="10" y="140" width="104" height="26" rx="3" fill="#dbe9ff"/><text x="16" y="157">3 Betrag</text>
+          <rect x="10" y="172" width="104" height="28" rx="3" fill="#dbe9ff"/><text x="16" y="189">4 Annahmestelle</text>
+          <rect x="134" y="10" width="92" height="14" rx="3" fill="#ffe9c2"/><text x="140" y="21">1 Titel</text>
+          <rect x="134" y="34" width="92" height="92" rx="3" fill="#ffe9c2"/><text x="140" y="50">2 Swiss QR Code</text>
+          <rect x="167" y="67" width="26" height="26" fill="#040911"/><rect x="177" y="72" width="6" height="16" fill="#fff"/><rect x="172" y="77" width="16" height="6" fill="#fff"/>
+          <rect x="134" y="136" width="92" height="40" rx="3" fill="#ffe9c2"/><text x="140" y="153">3 Betrag</text>
+          <rect x="236" y="10" width="174" height="166" rx="3" fill="#ffe9c2"/><text x="242" y="26">4 Angaben</text>
+          <rect x="134" y="182" width="276" height="18" rx="3" fill="#ffe9c2"/><text x="140" y="195">5 Weitere Informationen</text>
+        </g>
+      </svg>
+      <figcaption>Schema, nicht massstabsgetreu. Links der Empfangsschein (4 Bereiche), rechts der Zahlteil (5 Bereiche). Der QR-Code misst immer 46 x 46 mm, das Schweizer Kreuz in der Mitte 7 x 7 mm.</figcaption>
+    </figure>
+    <ul>
+      <li><strong>Angaben:</strong> Konto, Name und Adresse des Zahlungsempfängers, Referenz, zusätzliche Informationen und der Zahlungspflichtige. Ohne Zahlungspflichtigen steht dort ein leeres Feld mit Eckmarken zum Ausfüllen.</li>
+      <li><strong>Betrag:</strong> Währung CHF oder EUR und Betrag mit Leerzeichen als Tausendertrennzeichen, zum Beispiel CHF 1 590.00. Ohne Betrag bleibt ein Feld zum Ausfüllen frei, etwa für Spenden.</li>
+      <li><strong>Schriften:</strong> nur Arial, Frutiger, Helvetica oder Liberation Sans, schwarz, nicht kursiv. Überschriften 8 Punkt fett, Werte 10 Punkt, auf dem Empfangsschein 6 und 8 Punkt.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="referenz" class="flaeche">
+  <div class="artikel-text">
+    <span class="s-label">Referenz</span>
+    <h2>QR-IBAN oder IBAN: welche Referenz passt?</h2>
+    <p>Welche Referenz Sie verwenden dürfen, hängt vom Konto ab. Die QR-IBAN erkennen Sie an der Instituts-Identifikation an Stelle 5 bis 9: Sie liegt zwischen 30000 und 31999. Ihre Bank teilt Ihnen die QR-IBAN mit, wenn Sie das Verfahren mit QR-Referenz nutzen.</p>
+    <div class="tabelle-scroll"><table class="qr-tabelle">
+      <thead><tr><th scope="col">Konto</th><th scope="col">Referenz</th><th scope="col">Währung</th><th scope="col">Typisch für</th></tr></thead>
+      <tbody>
+        <tr><td>QR-IBAN</td><td>QR-Referenz, 27 Ziffern mit Prüfziffer</td><td>nur CHF</td><td>Betriebe mit Buchhaltungssoftware, die Zahlungen automatisch zuordnet</td></tr>
+        <tr><td>IBAN</td><td>Creditor Reference (beginnt mit RF)</td><td>CHF und EUR</td><td>automatischer Abgleich ohne QR-IBAN</td></tr>
+        <tr><td>IBAN</td><td>keine Referenz, nur Mitteilung</td><td>CHF und EUR</td><td>kleine Betriebe, Spenden</td></tr>
+      </tbody>
+    </table></div>
+    <p>Die Schaltfläche «Prüfziffer ergänzen» bildet aus einer Nummer die passende Referenz. Bei einer QR-IBAN entsteht aus bis zu 26 Ziffern, zum Beispiel Kunden- und Rechnungsnummer, eine QR-Referenz mit Prüfziffer nach Modulo 10 rekursiv. Bei einer normalen IBAN entsteht aus Buchstaben und Ziffern eine RF-Referenz nach ISO 11649. Manche Banken geben für die QR-Referenz eine feste Kundennummer am Anfang vor. Fragen Sie im Zweifel Ihre Bank.</p>
+    <h3>Was sich 2025 und 2026 geändert hat</h3>
+    <p>Seit dem 21. November 2025 (Version 2.3 der Vorgaben) sind im QR-Code nur noch strukturierte Adressen zulässig: Strasse und Hausnummer, Postleitzahl und Ort stehen in eigenen Zeilen. Seit dem 14. November 2026 gilt Version 2.4. Für Rechnungen in CHF ändert sich technisch nichts, für Rechnungen in EUR sind nur noch IBAN mit RF-Referenz oder IBAN ohne Referenz möglich. Das Werkzeug setzt beides um.</p>
+  </div>
+</section>
+
+<section id="naechster-schritt">
+  <div class="artikel-text">
+    <span class="s-label">Weiter</span>
+    <h2>Rechnungen nicht mehr von Hand schreiben</h2>
+    <p>Eine einzelne QR-Rechnung ist mit diesem Werkzeug in zwei Minuten erstellt. Wer jede Woche Rechnungen aus Rapporten schreibt, verliert die Zeit an anderer Stelle: beim Abtippen von Stunden und Material. Wie ein Regierapport aussehen sollte und wie daraus ein Rechnungsentwurf wird, steht im Ratgeber <a href="/ratgeber/regierapport-vorlage/">Regierapport-Vorlage für Handwerksbetriebe</a>. Das animierte Beispiel «Vom Auftrag zur Rechnung» finden Sie auf der Seite <a href="/unternehmen/#ablaeufe">Automatisierungen für Unternehmen</a>.</p>
+    <p><a class="btn-p" href="/unternehmen/#kontakt">Gratis-Prozess-Check anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </div>
+</section>

@@ -46,7 +46,7 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
-from build import (ARTEN, STUFEN, AUTO_WORTE, AUTOMATISIERUNGEN_WORTE, MEIN, KETTE_ART, BAUSTEIN_WORTE, BEDINGUNGEN, REGEL, WORTE, ist_baustein, ohne_automatisierung,
+from build import (VEREINS_SEITEN, ARTEN, STUFEN, AUTO_WORTE, AUTOMATISIERUNGEN_WORTE, MEIN, KETTE_ART, BAUSTEIN_WORTE, BEDINGUNGEN, REGEL, WORTE, ist_baustein, ohne_automatisierung,
                    worte, zwischen)
 
 ROOT = Path(__file__).resolve().parent
@@ -233,6 +233,9 @@ def pruefe_ablauf(a, teil):
 
 
 uebersicht = seiten.get("/unternehmen/", ("", None))[0]
+# Abschnitt "Auch für Vereine" auf /unternehmen/; der Rest der Seite ist die Unternehmen-Übersicht ohne Vereinsseiten
+vereine_start = zwischen(uebersicht, '<section id="vereine"', "</section>") if '<section id="vereine"' in uebersicht else ""
+uebersicht_ohne_vereine = uebersicht.replace(vereine_start, "")
 for a in artikel:
     au = a.get("automatisierung")
     if not au:
@@ -391,7 +394,13 @@ for a in (a for a in artikel if a["art"] == "ratgeber"):
     url = "/ratgeber/%s/" % a["slug"]
     if 'href="%s"' % url not in branchen_seiten:
         fehler.append("%s: von keiner Branchenseite verlinkt" % url)
-    if 'href="%s"' % url not in uebersicht:
+    if url in VEREINS_SEITEN:
+        # Vereins-Ratgeber: nur im Abschnitt "Auch für Vereine" auf /unternehmen/, nicht in der übrigen Übersicht
+        if 'href="%s"' % url in uebersicht_ohne_vereine:
+            fehler.append("%s: Vereinsseite in der Unternehmen-Übersicht" % url)
+        if 'href="%s"' % url not in vereine_start:
+            fehler.append("%s: nicht im Abschnitt Auch für Vereine verlinkt" % url)
+    elif 'href="%s"' % url not in uebersicht:
         fehler.append("%s: nicht von der Übersicht verlinkt" % url)
 for p in (p for p in produkte if ist_baustein(p) and p.get("faq")):
     if len(p["faq"]) < 3 or '<section id="fragen"' not in seiten.get("/produkte/%s/" % p["slug"], ("",))[0]:
@@ -574,6 +583,7 @@ for b in json.loads((ROOT / "branchen.json").read_text(encoding="utf-8")):
 for a in artikel:
     if a["art"] == "branche":
         alle_b.append((a["slug"], a["name"], a["kurz"], a["automatisierung"]["bausteine"][:3], a["automatisierung"]["kette"]))
+alle_b = [x for x in alle_b if "/branchen/%s/" % x[0] not in VEREINS_SEITEN]
 alle_b.sort(key=lambda x: x[1])
 zeilen = re.findall(r'<a class="bliste-link" id="bl-([^"]+)" href="/branchen/([^/]+)/" data-branche="\1">'
                     r'<span class="bliste-icon" aria-hidden="true"><svg [^>]+>.*?</svg></span><span class="bliste-text">'
@@ -636,7 +646,7 @@ for url in ["/branchen/"] + ["/branchen/%s/" % b["slug"] for b in welle2] + w2_b
                 if wort.lower() not in html.unescape(inhalt).lower():
                     fehler.append("%s: Suchbegriff %s fehlt in %s" % (url, wort, wo))
 
-# Automatisierungen und Schnittstellen: sechs Beispiele auf /unternehmen/, je ein Mini-Beispiel auf jeder Branchenseite.
+# Automatisierungen und Schnittstellen: acht Beispiele auf /unternehmen/ (mit Karten auf /unternehmen/ und der Startseite), je ein Mini-Beispiel auf jeder Branchenseite.
 # Jedes Beispiel als "Beispiel mit erfundenen Daten" gekennzeichnet, mit Beschreibung für Screenreader und Knopf;
 # Pilot, Gratis-Prozess-Check, Auftragsbearbeitung, Hosting-Ort und Schnittstellen nur nach Absprache; keine Programmnamen
 ablaeufe = json.loads((ROOT / "ablaeufe.json").read_text(encoding="utf-8"))
@@ -663,10 +673,13 @@ u_text = seiten["/unternehmen/"][0]
 if '<section id="ablaeufe"' not in u_text:
     fehler.append("/unternehmen/: Abschnitt #ablaeufe fehlt")
 else:
-    u_ab = zwischen(u_text, '<section id="ablaeufe"', '<section id="automatisierungen"')
+    u_ab = zwischen(u_text, '<section id="ablaeufe"', '</section>')
     pruefe_beispiele("/unternehmen/", u_ab, len(ablaeufe["unternehmen"]))
-    if len(ablaeufe["unternehmen"]) != 6 or u_ab.count('<article class="abl-block"') != 6:
-        fehler.append("/unternehmen/: nicht genau sechs Bausteine")
+    if len(ablaeufe["unternehmen"]) != 8 or u_ab.count('<article class="abl-block"') != 8:
+        fehler.append("/unternehmen/: nicht genau acht Abläufe")
+    for x in ablaeufe["unternehmen"]:
+        if '<a class="auto-karte r" href="#ablauf-%s">' % x["id"] not in seiten["/unternehmen/"][0]:
+            fehler.append("/unternehmen/: Karte für Ablauf %s fehlt" % x["id"])
     for muss in ("Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.", "Vertrag zur Auftragsbearbeitung",
                  "Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.", "nach Absprache an, wenn eine Schnittstelle besteht",
                  "keine Rechtsberatung", "Sie entscheiden:"):
@@ -677,9 +690,27 @@ else:
             fehler.append("/unternehmen/: Baustein #ablauf-%s fehlt" % x["id"])
     ld_u = [json.loads(m) for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', u_text, re.S)]
     liste = [g for d in ld_u for g in d.get("@graph", []) if g.get("@type") == "ItemList" and g.get("@id", "").endswith("#ablaeufe")]
-    if not liste or len(liste[0]["itemListElement"]) != 6 or any(e["item"].get("@type") != "Service" or "offers" in e["item"]
+    if not liste or len(liste[0]["itemListElement"]) != 8 or any(e["item"].get("@type") != "Service" or "offers" in e["item"]
                                                                  for e in liste[0]["itemListElement"]):
-        fehler.append("/unternehmen/: JSON-LD ItemList mit sechs Service-Einträgen (ohne Preise) fehlt")
+        fehler.append("/unternehmen/: JSON-LD ItemList mit acht Service-Einträgen (ohne Preise) fehlt")
+# Startseite: vier bis sechs Karten mit den besten Abläufen je Branche und Link «Alle Branchen»;
+# alle acht Karten auf /unternehmen/ (jede auf einen Ablauf einer Branchenseite, #ba-...)
+KARTE_BA = r'<a class="auto-karte r" href="(/branchen/[a-z-]+/#ba-[a-z0-9-]+)">'
+start_karten = re.findall(KARTE_BA, seiten["/"][0])
+if not 4 <= len(start_karten) <= 6 or len(set(start_karten)) != len(start_karten):
+    fehler.append("/: nicht vier bis sechs verschiedene Karten mit Abläufen der Branchenseiten")
+if '<a href="/branchen/" data-i18n="s.br.alle">Alle Branchen</a>' not in seiten["/"][0]:
+    fehler.append("/: Link «Alle Branchen» fehlt")
+u_karten = re.findall(KARTE_BA, seiten["/unternehmen/"][0])
+if len(u_karten) != 8 or len(set(u_karten)) != 8 or not set(start_karten) <= set(u_karten):
+    fehler.append("/unternehmen/: nicht genau acht verschiedene Karten mit den besten Abläufen je Branche")
+# Startseite: Knopf «Gespräch vereinbaren» im Kopf, im Hero und am Seitenende; Übersetzungen FR/IT/EN vollständig
+if seiten["/"][0].count("Gespräch vereinbaren</") < 3:
+    fehler.append("/: Knopf «Gespräch vereinbaren» nicht in Kopf, Hero und Seitenende")
+sprachen = (ROOT / "assets" / "start-sprachen.js").read_text(encoding="utf-8")
+for key in set(re.findall(r'data-i18n(?:-html|-alt|-aria)?="([^"]+)"', seiten["/"][0])):
+    if not key.startswith("cookie.") and sprachen.count('"%s":' % key) != 3:
+        fehler.append("/: Übersetzung für %s nicht in allen drei Sprachen (FR/IT/EN)" % key)
 for slug in ablaeufe["branchen"]:
     url = "/branchen/%s/" % slug
     text = seiten.get(url, ("",))[0]

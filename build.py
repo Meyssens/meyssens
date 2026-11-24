@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Erzeugt die Produktseiten, die Übersicht für Unternehmen und Vereine und die sitemap.xml.
+"""Erzeugt die Produktseiten, die Übersicht für Unternehmen und die sitemap.xml.
 
 Aufruf im Projektordner: python3 build.py
 Nur Python-Standardbibliothek.
@@ -25,6 +25,7 @@ Quellen:
                            (Beispielansichten aus ansichten.html), alles andere bleibt von Hand gepflegt.
 """
 import datetime
+import hashlib
 import html
 import json
 import re
@@ -49,8 +50,9 @@ STUFEN = {
 }
 # Pilot-Angebot auf jeder Produktseite. Der Preis steht nur hier und ausdrücklich als "ab".
 PILOT_ANGEBOT = ("Wir richten diesen Ablauf für Ihren Betrieb ein und betreuen ihn im Pilot drei Monate persönlich, "
-                 "kostenlos und unverbindlich. Danach ab CHF 79 pro Monat und Ablauf, jederzeit kündbar.")
-ANGEBOT_GEPRUEFT = "2026-11-07"
+                 "kostenlos und unverbindlich. Danach ab CHF 79 (Endpreis, nicht MWST-pflichtig) pro Monat und Ablauf, "
+                 "jederzeit kündbar.")
+ANGEBOT_GEPRUEFT = "2026-11-16"
 
 
 def pilot_angebot():
@@ -213,9 +215,9 @@ def ablaeufe_abschnitt(daten, schnipsel):
             % (x["id"], i, html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["automatisch"]),
                html.escape(x["mensch"]), ablauf_geraet(x["geraet"], buehne, "abl-" + x["id"], x["beschreibung"])))
     return ('<section id="ablaeufe" class="ablaeufe">\n  <div class="kopf-mitte r">\n    <span class="s-label">Automatisierung</span>\n'
-            '    <h2>Automatisierungen und Schnittstellen</h2>\n'
-            '    <p class="s-lead">Sechs Bausteine, die wiederkehrende Büroarbeit vorbereiten. Entwürfe ja, automatischer Versand nein: '
-            'Was Ihren Betrieb verlässt, gibt ein Mensch frei. Alle Beispiele zeigen erfundene Daten.</p>\n  </div>\n'
+            '    <h2>Die acht Abläufe im Detail</h2>\n'
+            '    <p class="s-lead">Jeder Ablauf bereitet Büroarbeit als Entwurf vor. Was Ihren Betrieb verlässt, geben Sie frei. '
+            'Alle Beispiele zeigen erfundene Daten.</p>\n  </div>\n'
             '  <div class="abl-liste">\n%s\n  </div>\n'
             '  <div class="abl-start r">\n    <div>\n      <h3>So starten Sie</h3>\n      <ol class="abl-schritte">\n'
             '        <li><strong>%s.</strong> Sie zeigen uns einen Ablauf, wir sagen Ihnen offen, was sich automatisieren lässt und was nicht.</li>\n'
@@ -229,6 +231,190 @@ def ablaeufe_abschnitt(daten, schnipsel):
             'wenn wir die Schnittstelle geprüft haben.</p>\n'
             '      <p class="abl-klein-text">Allgemeine Information, keine Rechtsberatung.</p>\n    </div>\n  </div>\n'
             '</section>\n%s\n' % ("\n".join(bloecke), PROZESS_CHECK, PROZESS_CHECK, PFEIL, ABLAUF_SKRIPT))
+
+
+# Büroautomatisierung: acht Karten, grosses Beispiel, Arbeitsweise, Apps, QR-Hinweis und Branchen
+# (Startseite, Block "Für Unternehmen", und /unternehmen/). Texte aus ablaeufe.json, nichts vollautomatisch.
+SYMBOL_EINGANG = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+                  'stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg>')
+SYMBOL_ARBEIT = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+                 'stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>')
+SYMBOL_ERGEBNIS = ('<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+                   'stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg>')
+ARBEITSWEISE = (("Gespräch", "Sie zeigen uns einen Ablauf, wir sagen offen, was sich automatisieren lässt und was nicht."),
+                ("Angebot", "Sie erhalten ein schriftliches Angebot für den vereinbarten Umfang."),
+                ("Umsetzung", "Wir richten den Ablauf ein und testen ihn gemeinsam mit Ihnen."),
+                ("Betrieb", "Wir betreuen den Ablauf weiter und passen ihn an, wenn sich bei Ihnen etwas ändert."))
+BRANCHEN_ZEILE = ("treuhaender", "elektro-handwerk", "bauunternehmen", "arztpraxen", "immobilienverwaltungen",
+                  "hotels-gastronomie", "garagen", "transport-logistik", "detailhandel", "gartenbau", "reinigung-hauswartung",
+                  "schreinerei-holzbau", "physiotherapie", "fitness-sport")
+GROSS_BESCHREIBUNG = ("Eine E-Mail der Beispiel Handels GmbH mit der Rechnung 2026-041 trifft ein. Der Beleg wird erkannt: Lieferant, "
+                      "Datum, Mehrwertsteuer und Total CHF 432.40. Daraus entsteht die Buchung 4000 Materialaufwand an 2000 Kreditoren "
+                      "als Entwurf. Gebucht wird erst, wenn Sie freigeben.")
+
+
+def auto_karten(daten, ziel=""):
+    # Acht Karten mit Ablauf in drei Schritten (Eingang, Verarbeitung, Ergebnis); ziel: "" auf /unternehmen/, sonst "/unternehmen/"
+    karten = []
+    for i, x in enumerate(daten["unternehmen"], 1):
+        eingang, arbeit, ergebnis = x["schritte"]
+        karten.append(
+            '    <a class="auto-karte r" href="%s#ablauf-%s">\n      <span class="auto-nr" aria-hidden="true">%02d</span>\n'
+            '      <h3>%s</h3>\n      <ol class="auto-fluss" aria-hidden="true">\n'
+            '        <li><span class="af-ic">%s</span><span><i>Eingang</i>%s</span></li>\n'
+            '        <li><span class="af-ic">%s</span><span><i>Verarbeitung</i>%s</span></li>\n'
+            '        <li class="af-ergebnis"><span class="af-ic">%s</span><span><i>Ergebnis</i>%s</span></li>\n'
+            '      </ol>\n      <p>%s</p>\n      <span class="way-go">Zum Ablauf %s</span>\n    </a>'
+            % (ziel, x["id"], i, html.escape(x["titel"]), SYMBOL_EINGANG, html.escape(eingang), SYMBOL_ARBEIT,
+               html.escape(arbeit), SYMBOL_ERGEBNIS, html.escape(ergebnis), html.escape(x["satz"]), PFEIL))
+    return '  <div class="auto-karten">\n%s\n  </div>' % "\n".join(karten)
+
+
+def gross_beispiel(schnipsel):
+    buehne = teil(schnipsel, "buehne-gross")
+    if not buehne:
+        raise SystemExit("ablaeufe.html: buehne-gross fehlt")
+    return ablauf_geraet("Vom Beleg zur Buchung", buehne, "abl-gross", GROSS_BESCHREIBUNG)
+
+
+def arbeitsweise(stufe):
+    return '  <ol class="u-arbeit">\n%s\n  </ol>' % "\n".join(
+        '    <li class="r"><span class="u-arbeit-nr" aria-hidden="true">%d</span><h%d>%s</h%d><p>%s</p></li>'
+        % (i, stufe, t, stufe, html.escape(p)) for i, (t, p) in enumerate(ARBEITSWEISE, 1))
+
+
+APPS_STREIFEN = ('  <p class="u-streifen r"><span><b>Brauchen Sie mehr?</b> Apps und Web-Anwendungen nach Mass (iPhone, Android, Web).</span> '
+                 '<a href="/unternehmen/#apps">Zu den Apps nach Mass %s</a></p>' % PFEIL)
+QR_HINWEIS = ('  <p class="u-hinweis r">Gratis-Werkzeug: <a href="/werkzeuge/qr-rechnung/">QR-Rechnung im Browser erstellen</a></p>')
+
+
+# Kopf: index.html enthält für die Startseite Sprachwahl und den Knopf «Gespräch vereinbaren» (zwischen nur-start-Markern);
+# alle anderen Seiten behalten den Knopf «Kontakt»
+KONTAKT_KNOPF = '  <a href="mailto:lionel@meyssens.ch" class="nav-btn nav-kontakt">Kontakt</a>'
+
+
+def kopf_allgemein(kopf):
+    for marke, ersatz in (("nur-start", KONTAKT_KNOPF), ("nur-start-mobil", None)):
+        a, b = "<!-- %s:start -->" % marke, "<!-- %s:ende -->" % marke
+        if a not in kopf or b not in kopf:
+            raise SystemExit("index.html: Marke %s im Kopf fehlt" % marke)
+        i, j = kopf.index(a), kopf.index(b) + len(b)
+        kopf = kopf[:i] + ersatz + kopf[j:] if ersatz else kopf[:i] + kopf[j:].lstrip("\n")
+    return re.sub(r' data-i18n="nav\.[a-z]+"', "", kopf)
+
+
+START_ANZAHL = 4  # Startseite: so viele Branchenkarten (die ersten der Liste "startseite"), alle acht auf /unternehmen/
+
+
+def startseite_unternehmen(branchen_namen, branchen_daten):
+    # Block "Abläufe für Ihre Branche" der Startseite (zwischen auto:unternehmen): vier Karten und Link zu allen Branchen
+    return "\n".join([
+        startseite_karten(branchen_daten, branchen_namen, START_ANZAHL, i18n=True),
+        '  <p class="u-hinweis r"><a href="/branchen/" data-i18n="s.br.alle">Alle Branchen</a> · '
+        '<a href="/unternehmen/#branchen" data-i18n="s.br.unternehmen">Die besten Abläufe je Branche</a></p>'])
+
+
+START_BEISPIEL = "detailhandel"  # Startseite: Beispiel für Unternehmen (Mini-Beispiel aus ablaeufe.json "branchen")
+
+
+def start_beispiel(daten):
+    x = daten["branchen"][START_BEISPIEL]
+    return ('  <div class="abl-block st-beispiel">\n    <div class="abl-text r">\n'
+            '      <span class="s-label" data-i18n="s.u.titel">Für Unternehmen</span>\n'
+            '      <h3 data-i18n="s.bsp.u.titel">%s</h3>\n      <p data-i18n="s.bsp.u.text">%s</p>\n'
+            '      <p class="abl-mensch"><strong data-i18n="s.bsp.u.sie">Sie entscheiden:</strong> <span data-i18n="s.bsp.u.mensch">%s.</span></p>\n'
+            '      <p><a href="/branchen/%s/#ablauf-beispiel" class="st-link"><span data-i18n="s.u.knopf">Beispiele ansehen</span> %s</a></p>\n'
+            '    </div>\n    %s\n  </div>\n%s'
+            % (html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["mensch"]), START_BEISPIEL, PFEIL,
+               mini_geraet(x), ABLAUF_SKRIPT))
+
+
+# Abschnitt "Abläufe, die für Ihre Branche zählen" (branchen_ablaeufe.json, Grundlage: ~/ms/unternehmen/recherche_branchen.md):
+# nur Abläufe mit belegtem Bedarf und mindestens mittlerer Machbarkeit; Beispieldaten erfunden und als Beispiel markiert
+BA_FELDER = ("titel", "schritte", "satz", "beispiel", "daten", "freigabe")
+
+
+BA_VERKAUF = ("hoch", "mittel", "niedrig")
+
+
+def ba_karte(slug, x, ruhig=False, bewegt=False):
+    fehlt = [f for f in BA_FELDER + ("id", "verkauf") if not x.get(f)]
+    if fehlt or len(x["schritte"]) != 3 or x["verkauf"] not in BA_VERKAUF:
+        raise SystemExit("branchen_ablaeufe.json %s: %s" % (slug, ", ".join(fehlt) or "Schritte oder verkauf ungültig"))
+    eingang, arbeit, ergebnis = x["schritte"]
+    fakten = [("Daten aus", x["daten"]), ("Sie geben frei", x["freigabe"])]
+    if x.get("datenschutz"):
+        fakten.append(("Datenschutz", x["datenschutz"]))
+    return ('    <article class="auto-karte ba-karte%s r" id="ba-%s">\n      <h3>%s</h3>\n      <ol class="auto-fluss"%s aria-label="Ablauf in drei Schritten">\n'
+            '        <li><span class="af-ic">%s</span><span><i>Eingang</i>%s</span></li>\n'
+            '        <li><span class="af-ic">%s</span><span><i>Verarbeitung</i>%s</span></li>\n'
+            '        <li class="af-ergebnis"><span class="af-ic">%s</span><span><i>Ergebnis</i>%s</span></li>\n'
+            '      </ol>\n      <p>%s</p>\n      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> %s</p>\n'
+            '      <dl class="ba-fakten">\n%s\n      </dl>\n    </article>'
+            % (" ba-ruhig" if ruhig else "", x["id"], html.escape(x["titel"]), ' data-anim="fluss"' if bewegt else "", SYMBOL_EINGANG, html.escape(eingang), SYMBOL_ARBEIT,
+               html.escape(arbeit), SYMBOL_ERGEBNIS, html.escape(ergebnis), html.escape(x["satz"]), html.escape(x["beispiel"]),
+               "\n".join('        <div><dt>%s</dt><dd>%s</dd></div>' % (t, html.escape(w)) for t, w in fakten)))
+
+
+def branchen_ablaeufe_html(slug, daten):
+    # Reihenfolge wie in den Daten (beste Chancen zuerst); Abläufe mit niedriger Verkaufbarkeit weiter unten, ohne Hervorhebung
+    eintrag = daten.get(slug)
+    if not eintrag:
+        return ""
+    vorne = [x for x in eintrag["ablaeufe"] if x.get("verkauf") != "niedrig"]
+    hinten = [x for x in eintrag["ablaeufe"] if x.get("verkauf") == "niedrig"]
+    # Der beste Ablauf (erste Karte) baut sich beim Scrollen Schritt für Schritt auf
+    karten = "\n".join(ba_karte(slug, x, bewegt=(i == 0)) for i, x in enumerate(vorne))
+    weitere = ""
+    if hinten:
+        weitere = ('  <div class="ba-weitere">\n    <h3 class="ba-weitere-titel r">Weitere Abläufe</h3>\n  <div class="ba-karten">\n%s\n  </div>\n  </div>\n'
+                   % "\n".join(ba_karte(slug, x, ruhig=True) for x in hinten))
+    quellen = "\n".join('      <li><a href="%s" rel="noopener">%s</a></li>' % (html.escape(q["url"]), html.escape(q["titel"]))
+                        for q in eintrag["quellen"])
+    if not all(q["url"].startswith("https://") for q in eintrag["quellen"]):
+        raise SystemExit("branchen_ablaeufe.json %s: Quellen nur mit https" % slug)
+    return ('<section id="branchen-ablaeufe">\n  <div class="kopf-mitte r">\n    <span class="s-label">Automatisierung</span>\n'
+            '    <h2>Abläufe, die für Ihre Branche zählen</h2>\n'
+            '    <p class="s-lead">Mehrstufige Abläufe, die Büroarbeit als Entwurf vorbereiten. Sie geben frei. '
+            'Alle Beispiele zeigen erfundene Daten.</p>\n  </div>\n  <div class="ba-karten">\n%s\n  </div>\n%s'
+            '  <details class="u-mehr r ba-quellen">\n    <summary>Worauf diese Auswahl beruht</summary>\n'
+            '    <p class="u-mehr-text">Öffentliche Quellen zu wiederkehrenden Abläufen in Ihrer Branche, geprüft am %s. '
+            'Ob eine Anbindung möglich ist, hängt von Ihren Programmen ab; wir prüfen das vor einer Zusage.</p>\n'
+            '    <ul>\n%s\n    </ul>\n  </details>\n</section>\n'
+            % (karten, weitere, datum_ch(eintrag["geprueft"]), quellen))
+
+
+def startseite_karten(daten, branchen_namen, anzahl=8, i18n=False):
+    # Karten mit den besten Abläufen je Branche (Liste "startseite" in branchen_ablaeufe.json, genau acht Einträge):
+    # alle acht auf /unternehmen/, die ersten vier auf der Startseite (dort mit Übersetzungsschlüsseln für FR/IT/EN)
+    if len(daten["startseite"]) != 8:
+        raise SystemExit("branchen_ablaeufe.json startseite: genau 8 Einträge")
+    karten = []
+    for eintrag in daten["startseite"][:anzahl]:
+        slug, ident = eintrag.split(":")
+        x = next((a for a in daten[slug]["ablaeufe"] if a["id"] == ident), None)
+        if not x:
+            raise SystemExit("branchen_ablaeufe.json startseite: %s fehlt" % eintrag)
+        eingang, arbeit, ergebnis = x["schritte"]
+        k = (lambda teil: ' data-i18n="k.%s.%s"' % (slug, teil)) if i18n else (lambda teil: "")
+        karten.append(
+            '    <a class="auto-karte r" href="/branchen/%s/#ba-%s">\n      <span class="auto-nr"%s>%s</span>\n'
+            '      <h3%s>%s</h3>\n      <ol class="auto-fluss" aria-hidden="true">\n'
+            '        <li><span class="af-ic">%s</span><span><i%s>Eingang</i><span%s>%s</span></span></li>\n'
+            '        <li><span class="af-ic">%s</span><span><i%s>Verarbeitung</i><span%s>%s</span></span></li>\n'
+            '        <li class="af-ergebnis"><span class="af-ic">%s</span><span><i%s>Ergebnis</i><span%s>%s</span></span></li>\n'
+            '      </ol>\n      <span class="way-go"><span%s>Zum Ablauf</span> %s</span>\n    </a>'
+            % (slug, ident, k("branche"), html.escape(branchen_namen[slug]), k("titel"), html.escape(x["titel"]),
+               SYMBOL_EINGANG, (' data-i18n="k.eingang"' if i18n else ""), k("s1"), html.escape(eingang),
+               SYMBOL_ARBEIT, (' data-i18n="k.verarbeitung"' if i18n else ""), k("s2"), html.escape(arbeit),
+               SYMBOL_ERGEBNIS, (' data-i18n="k.ergebnis"' if i18n else ""), k("s3"), html.escape(ergebnis),
+               (' data-i18n="k.zum"' if i18n else ""), PFEIL))
+    return '  <div class="auto-karten">\n%s\n  </div>' % "\n".join(karten)
+
+
+def datum_ch(iso):
+    j, m, t = iso.split("-")
+    return "%s.%s.%s" % (t, m, j)
 
 
 def ablaeufe_ld(daten, url):
@@ -246,6 +432,22 @@ def ablauf_beispiel(slug, daten, nach_slug):
     x = daten["branchen"].get(slug)
     if not x:
         return ""
+    links = ['<li><a href="/unternehmen/#ablaeufe">Alle Automatisierungen und Schnittstellen %s</a></li>' % PFEIL]
+    if x.get("baustein"):
+        p = nach_slug[x["baustein"]]
+        links.append('<li><a href="/produkte/%s/">Zum Baustein %s %s</a></li>' % (p["slug"], html.escape(p["name"]), PFEIL))
+    return ('<section id="ablauf-beispiel" class="abl-mini-abschnitt">\n  <div class="abl-block">\n    <div class="abl-text r">\n'
+            '      <span class="s-label">Automatisierung</span>\n      <h2>Beispiel: %s</h2>\n      <p>%s</p>\n'
+            '      <p class="abl-mensch"><strong>Sie entscheiden:</strong> %s.</p>\n'
+            '      <p class="abl-aktion"><a class="btn-p" href="#anfrage" data-thema="%s: %s">Gratis-Prozess-Check anfragen %s</a></p>\n'
+            '      <p class="abl-klein-text">%s</p>\n      <ul class="abl-links">\n        %s\n      </ul>\n    </div>\n'
+            '    %s\n  </div>\n</section>\n%s\n'
+            % (html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["mensch"]), PROZESS_CHECK, html.escape(x["titel"]),
+               PFEIL, PILOT_ABLAUF, "\n        ".join(links), mini_geraet(x), ABLAUF_SKRIPT))
+
+
+def mini_geraet(x):
+    # Animiertes Mini-Beispiel: drei Schritte und die Freigabe durch einen Menschen
     teile, text = [], []
     for i, s in enumerate(x["schritte"], 1):
         if i > 1:
@@ -258,19 +460,7 @@ def ablauf_beispiel(slug, daten, nach_slug):
     n = len(x["schritte"]) + 1
     teile.append('<span class="abl-freigabe abl-breit" data-ab="%d">%s</span>' % (n, html.escape(x["mensch"])))
     text.append("%d. %s." % (n, x["mensch"]))
-    links = ['<li><a href="/unternehmen/#ablaeufe">Alle Automatisierungen und Schnittstellen %s</a></li>' % PFEIL]
-    if x.get("baustein"):
-        p = nach_slug[x["baustein"]]
-        links.append('<li><a href="/produkte/%s/">Zum Baustein %s %s</a></li>' % (p["slug"], html.escape(p["name"]), PFEIL))
-    return ('<section id="ablauf-beispiel" class="abl-mini-abschnitt">\n  <div class="abl-block">\n    <div class="abl-text r">\n'
-            '      <span class="s-label">Automatisierung</span>\n      <h2>Beispiel: %s</h2>\n      <p>%s</p>\n'
-            '      <p class="abl-mensch"><strong>Sie entscheiden:</strong> %s.</p>\n'
-            '      <p class="abl-aktion"><a class="btn-p" href="#anfrage" data-thema="%s: %s">Gratis-Prozess-Check anfragen %s</a></p>\n'
-            '      <p class="abl-klein-text">%s</p>\n      <ul class="abl-links">\n        %s\n      </ul>\n    </div>\n'
-            '    %s\n  </div>\n</section>\n%s\n'
-            % (html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["mensch"]), PROZESS_CHECK, html.escape(x["titel"]),
-               PFEIL, PILOT_ABLAUF, "\n        ".join(links),
-               ablauf_geraet(x["titel"], "\n".join(teile), "abl-mini", " ".join(text)), ABLAUF_SKRIPT))
+    return ablauf_geraet(x["titel"], "\n".join(teile), "abl-mini", " ".join(text))
 
 
 def ansicht(ansichten, p):
@@ -282,36 +472,28 @@ def ansicht(ansichten, p):
     return geraet(html.escape(p["name"]), inhalt, "Beispiel" if demo_teil else "Beispielansicht"), bool(demo_teil)
 
 
-def startseite(start, ansichten, produkte, anzahl_branchen, anzahl_ratgeber):
-    # Automatisch erzeugte Bereiche der Startseite aus produkte.json und ansichten.html
-    held = '<div class="buehne" data-buehne>\n%s\n</div>' % geraet("Meyssens", teil(ansichten, "held"))
-    demos = []
-    for p in (p for p in produkte if p["status"] == "Pilotphase"):
-        bild, _ = ansicht(ansichten, p)
-        demos.append('<article class="demo r">\n'
-                     '  <div class="demo-text">\n'
-                     '    <span class="status-chip">%s</span>\n'
-                     '    <h3>%s</h3>\n'
-                     '    <p>%s</p>\n'
-                     '    <a class="mehr" href="/produkte/%s/">Mehr erfahren %s</a>\n'
-                     '  </div>\n'
-                     '  <div class="demo-bild">\n%s\n  </div>\n'
-                     '</article>' % (html.escape(STUFEN[p["status"]]["badge"]), html.escape(p["name"]),
-                                     html.escape(p["kurzbeschreibung"]), p["slug"], PFEIL, bild))
-    geplant = [p for p in produkte if p["status"] == "Individuell auf Anfrage"]
-    planung = scrolly(ansichten, geplant)
-    zahlen = [(len(produkte), "Produkte"),
-              (sum(p["status"] == "Pilotphase" for p in produkte), "in der Pilotphase"),
-              (len(geplant), "individuell auf Anfrage"),
-              (anzahl_branchen, "Branchenseiten"),
-              (anzahl_ratgeber, "Ratgeber")]
-    zahlen = ('<div class="zahlen r">\n%s\n</div>\n'
-              '<p class="zahlen-hinweis">Gezählt aus den Angaben dieser Website. Meyssens ist ein Einzelunternehmen '
-              'in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen.</p>'
-              % "\n".join('  <div class="zahl"><strong data-zaehler="%d">%d</strong><span>%s</span></div>' % (z[0], z[0], z[1]) for z in zahlen))
-    for name, inhalt in (("held", held), ("demos", "\n".join(demos)), ("planung", planung), ("zahlen", zahlen)):
-        start = setze_auto(start, name, inhalt)
-    return start
+# Startseite, Abschnitt "Auch für Vereine": allgemeine Produkte mit kurzem Vereinstext (Name, Status und Link aus produkte.json)
+VEREINE_START = [
+    ("umfragen-abstimmungen", "Mitgliederbefragung, Terminabfrage oder Abstimmung zwischen zwei Versammlungen, per Link."),
+    ("newsletter", "Mitglieder und Gönner informieren, mit Anmeldung über einen Bestätigungslink."),
+    ("website-fuer-vereine", "Vereinswebsite mit Anlässen, Neuigkeiten und Kontakt, die der Vorstand selbst pflegt."),
+    ("website-chatbot", "Beantwortet häufige Fragen auf Ihrer Website anhand Ihrer eigenen Inhalte."),
+]
+
+
+def start_vereine(produkte, vereins_links=()):
+    nach = {p["slug"]: p for p in produkte}
+    karten = []
+    for slug, text in VEREINE_START:
+        p = nach[slug]
+        karten.append('    <a href="/produkte/%s/" class="feat tile">\n      <span class="status-chip">%s</span>\n      <h3>%s</h3>\n      <p>%s</p>\n'
+                      '      <span class="way-go">Zum Produkt %s</span>\n    </a>'
+                      % (slug, html.escape(STUFEN[p["status"]]["badge"]), html.escape(p["name"]), html.escape(text), PFEIL))
+    links = ""
+    if vereins_links:
+        links = ('\n<p class="vereine-links r">Ratgeber für Vereine: %s</p>'
+                 % " · ".join('<a href="%s">%s</a>' % (u, html.escape(n)) for u, n in vereins_links))
+    return '<div class="feat-grid vier r">\n%s\n</div>%s' % ("\n".join(karten), links)
 
 
 def scrolly(ansichten, liste, mehr=False):
@@ -514,7 +696,9 @@ def aufwand(p):
 
 
 def ohne_automatisierung(text):
-    # Langtext-Wortzahl ohne den Abschnitt "Was sich automatisieren lässt" (wird getrennt gezählt)
+    # Langtext-Wortzahl ohne die Abschnitte "Was sich automatisieren lässt" und "Abläufe, die für Ihre Branche zählen"
+    # (werden getrennt gezählt bzw. sind Karten, kein Langtext)
+    text = re.sub(r'<section id="branchen-ablaeufe".*?</section>', " ", text, flags=re.S)
     return re.sub(r'<section id="automatisierung".*?</section>', " ", text, flags=re.S)
 
 
@@ -954,7 +1138,8 @@ def dienst(p, url, branche=None):
     # Service für Produkt- und Bausteinseiten; keine Preise, keine Bewertungen
     d = {"@type": "Service", "@id": url + "#dienst", "name": p["name"], "description": p["kurzbeschreibung"], "url": url,
          "provider": {"@id": DOMAIN + "/#org"}, "areaServed": SCHWEIZ, "availableLanguage": "de-CH",
-         "audience": {"@type": "BusinessAudience", "audienceType": branche or "Unternehmen und Vereine in der Schweiz"}}
+         "audience": {"@type": "BusinessAudience", "audienceType": branche or ("Vereine und Unternehmen in der Schweiz" if p.get("slug") in VEREINS_PRODUKTE
+                                                                           else "Unternehmen in der Schweiz")}}
     if p.get("status"):
         d["additionalProperty"] = {"@type": "PropertyValue", "name": "Status", "value": p["status"]}
     return d
@@ -992,7 +1177,7 @@ EINWILLIGUNG = '<div class="fgrp"><label style="display:flex;gap:.6rem;align-ite
 
 SEITEN_STAND = "2026-11-13"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/": "2026-11-13", "/gemeinden/": "2026-11-13", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-14"}
+SEITEN_GEAENDERT = {"/": "2026-11-20", "/gemeinden/": "2026-11-20", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-20"}
 
 
 def stand(eintrag, pruef):
@@ -1053,6 +1238,14 @@ SYMBOLE = {
     "immobilienverwaltungen": '<path d="M4 20.5V8l8-4.5L20 8v12.5"/><path d="M2.5 20.5h19"/><path d="M8.5 10h1.5M14 10h1.5M8.5 13.5h1.5M14 13.5h1.5"/><path d="M10 20.5v-3.5h4v3.5"/>',
     "kindergaerten-schulen": '<path d="M3 5.5c3-1.2 6-1 9 1 3-2 6-2.2 9-1v13c-3-1.2-6-1-9 1-3-2-6-2.2-9-1z"/><path d="M12 6.5v13"/>',
     "vereine": '<circle cx="9" cy="8" r="3"/><path d="M3 19.5a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5 5.3"/>',
+    "gartenbau": '<path d="M12 21v-8"/><path d="M12 13c-4 0-6.5-2.5-6.5-6.5C9.5 6.5 12 9 12 13z"/><path d="M12 15c3.5 0 6-2.2 6-6-3.5 0-6 2.2-6 6z"/><path d="M5 21h14"/>',
+    "reinigung-hauswartung": '<path d="M14.5 3.5l6 6"/><path d="M13 5l6 6-7.5 7.5a3 3 0 0 1-4.2 0L5.5 16.7a3 3 0 0 1 0-4.2z"/><path d="M3 21l4-4"/>',
+    "schreinerei-holzbau": '<path d="M3 17l11-11 4 4L7 21H3z"/><path d="M14 6l2-2 4 4-2 2"/><path d="M6 14l4 4"/>',
+    "physiotherapie": '<circle cx="12" cy="4.5" r="2"/><path d="M12 7v7l-4 7M12 14l4 7"/><path d="M6 10.5h12"/>',
+    "fitness-sport": '<path d="M2.5 9v6M5.5 7v10M18.5 7v10M21.5 9v6"/><path d="M5.5 12h13"/>',
+    "garagen": '<path d="M3.5 15.5v-3l2-4.5h13l2 4.5v3z"/><path d="M3.5 15.5v2.5h3v-2.5M17.5 15.5v2.5h3v-2.5"/><circle cx="7.5" cy="13" r="1"/><circle cx="16.5" cy="13" r="1"/>',
+    "transport-logistik": '<path d="M2.5 6.5h11v10h-11z"/><path d="M13.5 9.5h4l3 3.5v3.5h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
+    "detailhandel": '<path d="M5 8h14l-1.2 12.5H6.2z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>',
     "hotels-gastronomie": '<path d="M3 18.5v-11"/><path d="M3 14h18v4.5"/><path d="M21 14v-1.5a3.5 3.5 0 0 0-3.5-3.5H11v5"/><circle cx="7" cy="11" r="2"/>',
 }
 
@@ -1141,7 +1334,8 @@ def branchen_liste(branchen, artikel_branchen, nach_slug):
 
 def ratgeber_abschnitt(slug, ratgeber, flaeche=False):
     # Rückverweis von Produkt- und Bausteinseiten auf alle Ratgeber, die das Produkt im Feld "produkte" nennen
-    passend = [r for r in ratgeber if slug in r["produkte"]]
+    passend = [r for r in ratgeber if slug in r["produkte"]
+               and (slug in VEREINS_PRODUKTE or r["slug"] not in VEREINS_RATGEBER)]
     if not passend:
         return ""
     return ('<section id="ratgeber"%s>\n  <div class="r">\n    <span class="s-label">Ratgeber</span>\n'
@@ -1156,6 +1350,8 @@ def branchen_ratgeber(b, ratgeber):
     url = "/branchen/%s/" % b["slug"]
     passend = [r for r in ratgeber if set(r["produkte"]) & eigene or any(l["url"] == url for l in r["weiterlesen"])
                or b.get("automatisierungen", {}).get("ratgeber") == r["slug"]]
+    if url not in VEREINS_SEITEN:
+        passend = [r for r in passend if r["slug"] not in VEREINS_RATGEBER]
     if not passend:
         return ""
     return ('<section id="ratgeber-branche">\n  <div class="r">\n    <span class="s-label">Ratgeber</span>\n'
@@ -1191,12 +1387,13 @@ def verwandte(netz, info, url, anzahl=3):
     wunsch = {"branche": ("baustein", "ratgeber", "produkt", "branche"), "baustein": ("branche", "ratgeber", "baustein", "produkt"),
               "ratgeber": ("branche", "baustein", "produkt", "ratgeber")}[info[url]["typ"]]
     eigene = set(netz.get(url, []))
+    ausser = set() if url in VEREINS_SEITEN else VEREINS_SEITEN
     # Ähnlichste Nachbarn zuerst: Anteil gemeinsamer Verknüpfungen (Jaccard), bei Gleichstand Reihenfolge der Daten
     def aehnlich(n):
         andere = set(netz.get(n, []))
         return len(eigene & andere) / max(1, len(eigene | andere))
-    nachbarn = sorted((n for n in netz.get(url, []) if n != url), key=lambda n: -aehnlich(n))
-    zweite = [m for n in nachbarn for m in netz.get(n, []) if m != url and m not in nachbarn]
+    nachbarn = sorted((n for n in netz.get(url, []) if n != url and n not in ausser), key=lambda n: -aehnlich(n))
+    zweite = [m for n in nachbarn for m in netz.get(n, []) if m != url and m not in nachbarn and m not in ausser]
     wahl = []
     for typ in wunsch:
         for n in nachbarn:
@@ -1263,14 +1460,81 @@ def ehrlich(produkte):
         namen = [p["name"] for p in produkte if p["status"] == stufe]
         if namen:
             teile.append("%s %s" % (liste(namen), text))
-    return ("Meyssens ist ein Einzelunternehmen in Lausen (BL). Wir haben noch keine Kunden und keine Referenzen. "
+    return ("Meyssens ist ein Einzelunternehmen. Wir haben noch keine Kunden und keine Referenzen. "
             "Stand der hier genannten Produkte: %s. "
             "Ein Werkzeug ersetzt keine rechtliche Prüfung, und am Ende entscheidet immer ein Mensch."
             % ", ".join(teile))
 
 
 START = ("Startseite", "/")
-UNTERNEHMEN = ("Unternehmen und Vereine", "/unternehmen/")
+UNTERNEHMEN = ("Unternehmen", "/unternehmen/")
+# Vereine nur im Abschnitt "Auch für Vereine" (Startseite) und auf diesen eigenen Seiten; Übersichten und
+# automatische Verweise im Bereich Unternehmen lassen sie weg (Seiten und URLs bleiben bestehen)
+VEREINS_RATGEBER = {"online-abstimmung-verein", "website-verein-erstellen", "generalversammlung-verein", "newsletter-verein-datenschutz"}
+VEREINS_PRODUKTE = {"website-fuer-vereine", "umfragen-abstimmungen", "newsletter"}
+VEREINS_SEITEN = ({"/branchen/vereine/", "/produkte/website-fuer-vereine/"} |
+                  {"/ratgeber/%s/" % s for s in VEREINS_RATGEBER})
+VEREINS_ZURUECK = ("/unternehmen/#vereine", "Zurück zu «Auch für Vereine»")
+
+# Gratis-Werkzeug QR-Rechnung (/werkzeuge/qr-rechnung/): Inhalt in werkzeug_qr_rechnung.html, Vorlage vorlage_werkzeug.html
+# (strenge Content Security Policy: keine Verbindungen nach aussen), Logik in assets/qr-rechnung.js und assets/qrcode.js
+QR_WERKZEUG = {
+    "pfad": "/werkzeuge/qr-rechnung/",
+    "name": "QR-Rechnung erstellen",
+    "titel": "QR-Rechnung erstellen: gratis und im Browser | Meyssens",
+    "beschreibung": "QR-Rechnung nach SIX-Standard 2.4 gratis erstellen: Zahlteil als PDF, Prüfung von IBAN und Referenz, Daten bleiben im Browser. Jetzt ausprobieren.",
+    "h1": "QR-Rechnung erstellen: gratis, direkt im Browser",
+    "lead": "Zahlteil mit Empfangsschein nach den Vorgaben der SIX (Version 2.4) als PDF oder SVG. Das Werkzeug prüft IBAN, "
+            "Referenz und Zeichen und läuft vollständig auf Ihrem Gerät: Ihre Angaben werden nicht übertragen.",
+    "geprueft": "2026-11-16",
+    "veroeffentlicht": "2026-11-16",
+    "faq": [
+        {"frage": "Ist das Werkzeug wirklich kostenlos?",
+         "antwort": "Ja. Es gibt keine Anmeldung, keine Begrenzung und keine Werbung auf dem Zahlteil. Meyssens bietet daneben "
+                    "Automatisierungen für Betriebe an, die viele Rechnungen schreiben."},
+        {"frage": "Werden meine Angaben gespeichert oder übertragen?",
+         "antwort": "Nein. Prüfung, QR-Code und PDF entstehen in Ihrem Browser. Die Seite verbietet Verbindungen nach aussen "
+                    "technisch per Content Security Policy, auch die Statistik ist auf dieser Seite abgeschaltet."},
+        {"frage": "Nach welchem Standard wird die QR-Rechnung erstellt?",
+         "antwort": "Nach den Schweizer Implementation Guidelines QR-Rechnung der SIX, Version 2.4, gültig ab 14. November 2026: "
+                    "strukturierte Adresse, Fehlerkorrekturstufe M, QR-Code 46 x 46 mm mit Schweizer Kreuz, Schriften Helvetica."},
+        {"frage": "Kann ich das PDF per E-Mail verschicken?",
+         "antwort": "Ja. Laut SIX eignen sich QR-Rechnungen als PDF für das E- und M-Banking. Damit Zahlende sie auch auf Papier "
+                    "nutzen können, enthält das PDF Trennlinien und den Hinweis «Vor der Einzahlung abzutrennen»."},
+        {"frage": "Kann ich eine QR-Referenz mit einer normalen IBAN verwenden?",
+         "antwort": "Nein. Die QR-Referenz ist nur mit einer QR-IBAN zulässig, und seit Version 2.4 nur in CHF. Mit einer normalen "
+                    "IBAN verwenden Sie eine RF-Referenz oder keine Referenz."},
+        {"frage": "Warum werden manche Zeichen abgelehnt?",
+         "antwort": "Die SIX lässt nur einen Teil des Unicode-Zeichensatzes zu. Typografische Anführungszeichen und Striche ersetzt "
+                    "das Werkzeug automatisch, seltene Buchstaben aus osteuropäischen Sprachen kann es im PDF nicht darstellen."},
+    ],
+    "quellen": [
+        ("SIX, Schweizer Implementation Guidelines QR-Rechnung, Version 2.4 (gültig ab 14. November 2026)",
+         "https://www.six-group.com/dam/download/banking-services/standardization/qr-bill/ig-qr-bill-v2.4-de.pdf"),
+        ("SIX, QR-Rechnung: Informationen und Download Center",
+         "https://www.six-group.com/de/products-services/banking-services/payment-standardization/standards/qr-bill.html"),
+        ("SIX, Swiss QR-bill Validation Portal",
+         "https://validation.iso-payments.ch/gp/qrrechnung/validation"),
+        ("qrcode-generator von Kazuhiko Arase (MIT-Lizenz), für den QR-Code verwendet",
+         "https://github.com/kazuhikoarase/qrcode-generator"),
+    ],
+}
+
+
+def werkzeug_fragen(faq):
+    return ('<section id="fragen" class="flaeche">\n  <div class="r">\n    <span class="s-label">Fragen</span>\n'
+            '    <h2>Häufige Fragen</h2>\n  </div>\n  <div class="qa-list r">\n%s\n  </div>\n</section>'
+            % "\n".join('    <div class="qa">\n      <h3>%s</h3>\n      <p>%s</p>\n    </div>'
+                        % (html.escape(q["frage"]), html.escape(q["antwort"])) for q in faq))
+
+
+def werkzeug_quellen(quellen, geprueft):
+    return ('<section id="quellen">\n  <div class="artikel-text">\n    <span class="s-label">Quellen</span>\n'
+            '    <h2>Quellen und Stand</h2>\n    <p>Zuletzt geprüft am %s von %s, Meyssens. Allgemeine Information, keine Rechtsberatung.</p>\n'
+            '    <ul class="quellen">\n%s\n    </ul>\n  </div>\n</section>'
+            % (datetime.date.fromisoformat(geprueft).strftime("%d.%m.%Y"), AUTOR,
+               "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>' % (html.escape(u), html.escape(n))
+                         for n, u in quellen)))
 
 
 def main():
@@ -1325,6 +1589,7 @@ def main():
     artikel_branchen = [a for a in artikel if a["art"] == "branche"]
     ablaeufe = json.loads(lies("ablaeufe.json"))
     schnipsel_ablaeufe = lies("ablaeufe.html")
+    branchen_ablaeufe = json.loads(lies("branchen_ablaeufe.json"))
     if set(ablaeufe["branchen"]) != bslugs | {a["slug"] for a in artikel_branchen}:
         raise SystemExit("ablaeufe.json: Mini-Beispiel nicht für genau alle Branchen")
     if "ß" in json.dumps(ablaeufe, ensure_ascii=False) + schnipsel_ablaeufe:
@@ -1400,6 +1665,7 @@ def main():
     start = lies("index.html")
     gemeinden = lies("gemeinden/index.html")
     gemeinsam = {name: abschnitt(start, name) for name in ("head", "kopf", "fuss", "rechtliches", "skripte")}
+    gemeinsam["kopf"] = kopf_allgemein(gemeinsam["kopf"])
 
     # Produkt-, Baustein- und Branchenformulare: Ziel und Einwilligung (FORMULAR_ZIEL, EINWILLIGUNG), Absende-Skript aus der Gemeinden-Seite
     formular_ziel = FORMULAR_ZIEL
@@ -1454,6 +1720,7 @@ def main():
             "verwandt": branchen_ratgeber(b, ratgeber) + branchen_quellen(b) + verwandt_abschnitt(verwandte(netz, info, burl)),
             "ablauf_kopf": ABLAUF_KOPF,
             "ablauf_beispiel": ablauf_beispiel(b["slug"], ablaeufe, nach_slug),
+            "branchen_ablaeufe": branchen_ablaeufe_html(b["slug"], branchen_ablaeufe),
             "titel": html.escape(b.get("seo_titel") or titel_branche(b)),
             "beschreibung": html.escape(b.get("seo_beschreibung") or b["beschreibung"]),
             "url": "%s/branchen/%s/" % (DOMAIN, b["slug"]),
@@ -1486,6 +1753,11 @@ def main():
             "formular_skript": formular_skript,
         })
         seite = fuelle(vorlage_branche, werte)
+        if "/branchen/%s/" % b["slug"] in VEREINS_SEITEN:
+            alt = '<a href="/unternehmen/" class="back-link">← Zurück zu Unternehmen</a>'
+            if seite.count(alt) != 1:
+                raise SystemExit("Branche %s: Zurück-Link nicht gefunden" % b["slug"])
+            seite = seite.replace(alt, '<a href="%s" class="back-link">← %s</a>' % VEREINS_ZURUECK)
         if b.get("automatisierungen"):
             n = worte(zwischen(seite, '<section id="automatisierung"', "</section>"))
             hinweis = "" if AUTOMATISIERUNGEN_WORTE[0] <= n <= AUTOMATISIERUNGEN_WORTE[1] else "  ACHTUNG: ausserhalb %d bis %d" % AUTOMATISIERUNGEN_WORTE
@@ -1493,7 +1765,7 @@ def main():
         schreibe("branchen/%s/index.html" % b["slug"], seite)
 
     # Alle Seiten, auf die Langtext-Seiten intern verlinken dürfen
-    bekannte_seiten = {"/", "/gemeinden/", "/unternehmen/"}
+    bekannte_seiten = {"/", "/gemeinden/", "/unternehmen/", QR_WERKZEUG["pfad"]}
     bekannte_seiten |= {"/produkte/%s/" % s for s in slugs} | {"/branchen/%s/" % s for s in bslugs}
     bekannte_seiten |= {"/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]) for a in artikel}
 
@@ -1506,7 +1778,7 @@ def main():
             if link["url"] not in bekannte_seiten:
                 raise SystemExit("Artikel %s: Weiterlesen auf unbekannte Seite %s" % (a["slug"], link["url"]))
         for ziel in re.findall(r'href="(/[^"#]*)', inhalt):
-            if ziel not in bekannte_seiten:
+            if ziel not in bekannte_seiten and not (ziel.startswith("/downloads/") and (ROOT / ziel.lstrip("/")).is_file()):
                 raise SystemExit("Artikel %s: interner Link auf unbekannte Seite %s" % (a["slug"], ziel))
         roh = inhalt + json.dumps(a, ensure_ascii=False)
         if "[Status" in roh or "ß" in roh:
@@ -1520,6 +1792,7 @@ def main():
             "verwandt": verwandt_abschnitt(verwandte(netz, info, pfad)),
             "ablauf_kopf": ABLAUF_KOPF if a["art"] == "branche" else "",
             "ablauf_beispiel": ablauf_beispiel(a["slug"], ablaeufe, nach_slug) if a["art"] == "branche" else "",
+            "branchen_ablaeufe": branchen_ablaeufe_html(a["slug"], branchen_ablaeufe) if a["art"] == "branche" else "",
             "titel": html.escape(a["titel"]),
             "beschreibung": html.escape(a["beschreibung"]),
             "url": DOMAIN + pfad,
@@ -1543,8 +1816,8 @@ def main():
             "produkte": "\n".join(angebot(nach_slug[s]) for s in a["produkte"]),
             "quellen": "\n".join('      <li><a href="%s" target="_blank" rel="noopener">%s</a></li>'
                                  % (html.escape(q["url"]), html.escape(q["titel"])) for q in a["quellen"]),
-            "zurueck_url": art["zurueck"][0],
-            "zurueck_text": art["zurueck"][1],
+            "zurueck_url": (VEREINS_ZURUECK if a["slug"] in VEREINS_RATGEBER else art["zurueck"])[0],
+            "zurueck_text": (VEREINS_ZURUECK if a["slug"] in VEREINS_RATGEBER else art["zurueck"])[1],
             "anfrage_titel": art["anfrage"],
             "betreff": html.escape(art["betreff"] % a["name"]),
             "feld": art["feld"][0],
@@ -1661,29 +1934,37 @@ def main():
             if mit_ratgeber:
                 zeilen += ['        <li><a href="/ratgeber/%s/">%s %s</a><span class="status-chip">Ratgeber</span></li>'
                            % (r["slug"], html.escape(r["name"]), PFEIL)
-                           for r in ratgeber if set(r.get("produkte", [])) & set(liste)]
+                           for r in ratgeber if set(r.get("produkte", [])) & set(liste) and r["slug"] not in VEREINS_RATGEBER]
             gruppen.append('    <div class="auto-gruppe r">\n      <h3><a href="/branchen/%s/%s">%s</a></h3>\n      <ul>\n%s\n      </ul>\n    </div>'
                            % (a["slug"], anker, html.escape(a["name"]), "\n".join(zeilen)))
         return "\n".join(gruppen)
 
-    kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens")
+    vereins_links = [(u, info[u]["name"] if u.startswith("/ratgeber/") else "Branchenseite " + info[u]["name"]) for u in sorted(VEREINS_SEITEN - {"/produkte/%s/" % s for s in VEREINS_PRODUKTE},
+                                                          key=lambda u: (not u.startswith("/ratgeber/"), info[u]["name"]))]
+    kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Büroautomatisierung für Schweizer KMU | Meyssens")
     werte = dict(gemeinsam, **kopf, **{
-        "titel": "Digitale Werkzeuge für Schweizer KMU und Vereine | Meyssens",
-        "beschreibung": html.escape("Automatisierungen, Schnittstellen, Umfragen und Newsletter für Schweizer KMU und Vereine. "
-                                    "Jetzt Gratis-Prozess-Check anfragen."),
+        "titel": "Büroautomatisierung für Schweizer KMU | Meyssens",
+        "beschreibung": html.escape("Belege erfassen, Posteingang sortieren, Rechnungen und Fristen vorbereiten: Abläufe als "
+                                    "Entwurf, Sie geben frei. Jetzt Gespräch anfragen."),
+        "auto_karten": auto_karten(ablaeufe),
+        "branchen_karten": startseite_karten(branchen_ablaeufe, {b["slug"]: b["name"] for b in branchen + artikel_branchen}),
+        "gross_beispiel": gross_beispiel(schnipsel_ablaeufe),
+        "arbeitsweise": arbeitsweise(3),
         "url": DOMAIN + "/unternehmen/",
         "seo_kopf": seo_kopf(DOMAIN + "/unternehmen/"),
-        "produkte": scrolly(ansichten, allgemein, mehr=True),
+        "produkte": scrolly(ansichten, [p for p in allgemein if "/produkte/%s/" % p["slug"] not in VEREINS_SEITEN], mehr=True),
         "bausteine": bausteine_gruppen(),
+        "vereine": start_vereine(allgemein, vereins_links),
         "ablauf_kopf": ABLAUF_KOPF,
         "ablaeufe": ablaeufe_abschnitt(ablaeufe, schnipsel_ablaeufe),
         "anfrage": anfrage_formular("Unternehmen", "Unternehmen / Organisation", False,
                                     "Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an."),
         "ld": ld(*seitenld, ablaeufe_ld(ablaeufe, DOMAIN + "/unternehmen/")),
         "branchen": "\n".join('    <a href="/branchen/%s/">%s %s</a>' % (b["slug"], html.escape(b["name"]), PFEIL)
-                               for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])),
+                               for b in sorted(branchen + artikel_branchen, key=lambda b: b["name"])
+                               if "/branchen/%s/" % b["slug"] not in VEREINS_SEITEN),
         "ratgeber": "\n".join('    <a href="/ratgeber/%s/">%s %s</a>' % (a["slug"], html.escape(a["name"]), PFEIL)
-                               for a in ratgeber),
+                               for a in ratgeber if a["slug"] not in VEREINS_RATGEBER),
     })
     schreibe("unternehmen/index.html", fuelle(lies("vorlage_unternehmen.html"), werte))
 
@@ -1706,7 +1987,7 @@ def main():
          "Branchen", "Werkzeuge für <span class=\"hl\">Ihre Branche.</span>",
          "Für jede Branche zeigen wir, wo digitale Werkzeuge im Alltag entlasten können, was rechtlich gilt und welche "
          "Bausteine wir planen. Alle Angaben beziehen sich auf die Schweiz.",
-         abschnitt_html("alle", "Branchen", "Alle Branchen", branchen_liste(branchen, artikel_branchen, nach_slug)) + "\n" +
+         abschnitt_html("alle", "Branchen", "Alle Branchen", branchen_liste([b for b in branchen if "/branchen/%s/" % b["slug"] not in VEREINS_SEITEN], artikel_branchen, nach_slug)) + "\n" +
          '<section id="bausteine" class="dunkel">\n  <div class="kopf-mitte r">\n    <span class="s-label">Bausteine und Ratgeber</span>\n'
          '    <h2>Bausteine und Ratgeber nach Branche</h2>\n    <p class="s-lead">Alle Bausteinseiten und die passenden Ratgeber auf '
          'einen Blick. Entwürfe ja, automatischer Versand nein: Was Ihren Betrieb verlässt, gibt ein Mensch frei.</p>\n  </div>\n'
@@ -1715,18 +1996,19 @@ def main():
          "Ratgeber mit Quellen und Prüfdatum: nDSG, Aufbewahrungsfristen, Mängelrüge 2026, Patientenformulare, "
          "Sicherheitsnachweis, Spitex und mehr. Jetzt lesen.",
          "Ratgeber", "Ratgeber mit <span class=\"hl\">Quellen.</span>",
-         "Kurze Leitfäden zu Fragen aus dem Alltag Schweizer KMU, Praxen, Verwaltungen und Vereine. Jeder Ratgeber nennt "
+         "Kurze Leitfäden zu Fragen aus dem Alltag Schweizer KMU, Praxen und Verwaltungen. Jeder Ratgeber nennt "
          "seine Quellen und das Datum der letzten Prüfung. Allgemeine Information, keine Rechtsberatung.",
          abschnitt_html("alle", "Ratgeber", "Alle Ratgeber", raster(
-             [eintrag("/ratgeber/%s/" % a["slug"]) for a in ratgeber]))),
+             [eintrag("/ratgeber/%s/" % a["slug"]) for a in ratgeber if a["slug"] not in VEREINS_RATGEBER]))),
         ((START, STUFE_PRODUKTE), "Produkte und Bausteine für Schweizer KMU | Meyssens",
          "Umfragen, Newsletter, Website-Chatbot und Bausteine für Praxen, Verwaltungen, Büros und Spitex. Status ehrlich "
          "angegeben. Jetzt ansehen und anfragen.",
          "Produkte", "Produkte und <span class=\"hl\">Bausteine.</span>",
          "%d Produkte und Bausteine sind in der Pilotphase, alle weiteren richten wir individuell auf Anfrage ein. Den Stand "
          "nennen wir auf jeder Seite." % (pilot + pilot_b),
-         abschnitt_html("produkte", "Produkte", "Werkzeuge für Unternehmen und Vereine",
-                        raster([eintrag("/produkte/%s/" % p["slug"]) for p in allgemein])) + "\n" +
+         abschnitt_html("produkte", "Produkte", "Werkzeuge für Unternehmen",
+                        raster([eintrag("/produkte/%s/" % p["slug"]) for p in allgemein
+                                if "/produkte/%s/" % p["slug"] not in VEREINS_SEITEN])) + "\n" +
          abschnitt_html("bausteine", "Bausteine", "Bausteine nach Branche",
                         raster([eintrag("/produkte/%s/" % p["slug"]) for p in produkte if ist_baustein(p)]), "flaeche")),
     ]
@@ -1734,15 +2016,15 @@ def main():
     ueber_inhalt = (
         abschnitt_html("wer", "Wer", "Wer hinter Meyssens steht",
             '  <div class="artikel-text r">\n'
-            '    <p>Meyssens ist ein Einzelunternehmen in Lausen im Kanton Basel-Landschaft, gegründet von Lionel Nickelsen. '
-            'Die Firma ist als Einzelfirma im Kanton Basel-Landschaft eingetragen. Wir haben noch keine Kunden und keine '
+            '    <p>Meyssens ist ein Einzelunternehmen, gegründet von Lionel Nickelsen. '
+            'Die Firma ist als Einzelfirma im Handelsregister eingetragen. Wir haben noch keine Kunden und keine '
             'Referenzen und sagen das auf unseren Seiten offen.</p>\n  </div>') + "\n" +
         abschnitt_html("angebot", "Angebot", "Was wir anbieten",
             '  <div class="artikel-text r">\n'
             '    <p>Für Gemeinden betreiben wir eine Beteiligungsplattform auf Basis der Open-Source-Software Decidim, als '
             'verwalteten Dienst mit Hosting, Updates, Backups und Sicherheit. Mehr dazu auf der Seite '
             '<a href="/gemeinden/">Für Gemeinden</a>.</p>\n'
-            '    <p>Für Unternehmen und Vereine entwickeln wir schlanke Werkzeuge. Stand heute sind %d von %d Produkten und %d von %d '
+            '    <p>Für Unternehmen entwickeln wir schlanke Werkzeuge. Stand heute sind %d von %d Produkten und %d von %d '
             'Bausteinen in der Pilotphase, die übrigen richten wir individuell auf Anfrage ein. Die Übersicht steht unter '
             '<a href="/produkte/">Produkte und Bausteine</a>, die Branchen unter <a href="/branchen/">Branchen</a>.</p>\n'
             '  </div>' % (pilot, len(allgemein), pilot_b, len(bausteine_alle)), "flaeche") + "\n" +
@@ -1768,12 +2050,12 @@ def main():
             '    <p>Meyssens, Lausen, Basel-Landschaft, Schweiz<br>E-Mail: <a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></p>\n'
             '    <p><a class="btn-p" href="mailto:lionel@meyssens.ch">E-Mail an Lionel Nickelsen %s</a></p>\n'
             '  </div>' % PFEIL))
-    uebersichten.append(((START, STUFE_UEBER), "Über uns: Meyssens aus Lausen BL | Meyssens",
-        "Wer hinter Meyssens steht: Einzelunternehmen von Lionel Nickelsen in Lausen BL, Arbeitsweise und "
+    uebersichten.append(((START, STUFE_UEBER), "Über uns: wer hinter Meyssens steht | Meyssens",
+        "Wer hinter Meyssens steht: Einzelunternehmen von Lionel Nickelsen, Arbeitsweise und "
         "Datenschutz-Prinzipien. Jetzt mehr lesen.",
         "Über uns", "Über <span class=\"hl\">Meyssens.</span>",
-        "Ein Einzelunternehmen aus Lausen im Kanton Basel-Landschaft: digitale Werkzeuge für Gemeinden, Unternehmen und "
-        "Vereine, persönlich begleitet.", ueber_inhalt))
+        "Ein Einzelunternehmen: digitale Werkzeuge für Gemeinden und Unternehmen, "
+        "persönlich begleitet.", ueber_inhalt))
     for stufen, titel, beschreibung, chip, h1, lead, inhalt in uebersichten:
         pfad = stufen[-1][1]
         kopf, seitenld = seitenkopf(stufen, titel)
@@ -1785,16 +2067,49 @@ def main():
             "ld": ld(*seitenld, *extra)})
         schreibe(pfad.strip("/") + "/index.html", fuelle(vorlage_seite, werte))
 
+    # Gratis-Werkzeug QR-Rechnung
+    w = QR_WERKZEUG
+    bild_w = og_eigen("werkzeug", "qr-rechnung", "Gratis-Werkzeug von Meyssens: QR-Rechnung erstellen", OG_STANDARD)
+    kopf, seitenld = seitenkopf((START, UNTERNEHMEN, (w["name"], w["pfad"])), w["titel"], bild_w)
+    # Werkzeugseite ohne Cookie-Banner, Einwilligungs-Skript und Google-Analytics-Lader (keine Cookies, keine Übertragung)
+    ohne_cookies = dict(gemeinsam)
+    ohne_cookies["head"] = re.sub(r"<script>\s*window\.dataLayer.*?</script>\n", "", gemeinsam["head"], count=1, flags=re.S)
+    ohne_cookies["rechtliches"] = re.sub(r'<div class="cookie-banner[^"]*" id="cookie-banner">.*?\n</div>\n\n', "", gemeinsam["rechtliches"], count=1, flags=re.S)
+    ohne_cookies["skripte"] = re.sub(r"// --- Cookie consent.*?(?=// --- Dialoge)", "", gemeinsam["skripte"], count=1, flags=re.S)
+    for name, merkmal in (("head", "googletagmanager"), ("rechtliches", "cookie-banner"), ("skripte", "meyssens_cookie_consent")):
+        if merkmal in ohne_cookies[name] or ohne_cookies[name] == gemeinsam[name]:
+            raise SystemExit("Werkzeug QR-Rechnung: Cookie-Teil %s nicht entfernt" % name)
+    werte = dict(ohne_cookies, **kopf, **{
+        "titel": html.escape(w["titel"]), "beschreibung": html.escape(w["beschreibung"]), "url": DOMAIN + w["pfad"],
+        "seo_kopf": seo_kopf(DOMAIN + w["pfad"]), "chip": "Gratis-Werkzeug", "h1": html.escape(w["h1"]),
+        "lead": html.escape(w["lead"]), "inhalt": lies("werkzeug_qr_rechnung.html").rstrip("\n").replace(
+            "<!-- qr-beispiel -->", re.sub(r"^<\?xml[^>]*>\s*", "", lies("assets/qr-beispiel.svg").strip()).replace(
+                ' width="210mm" height="111mm"', ' role="img" aria-label="Beispiel einer QR-Rechnung mit erfundenen Daten: '
+                'Empfangsschein links, Zahlteil mit Swiss QR Code rechts"', 1)),
+        "fragen": werkzeug_fragen(w["faq"]), "quellen": werkzeug_quellen(w["quellen"], w["geprueft"]),
+        "ld": ld(*seitenld,
+                 {"@type": "WebApplication", "@id": DOMAIN + w["pfad"] + "#werkzeug", "name": w["name"], "url": DOMAIN + w["pfad"],
+                  "description": w["beschreibung"], "applicationCategory": "BusinessApplication", "operatingSystem": "Browser",
+                  "inLanguage": "de-CH", "isAccessibleForFree": True, "browserRequirements": "JavaScript",
+                  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CHF"},
+                  "provider": {"@id": DOMAIN + "/#org"}, "datePublished": w["veroeffentlicht"], "dateModified": w["geprueft"]},
+                 {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q["frage"],
+                  "acceptedAnswer": {"@type": "Answer", "text": q["antwort"]}} for q in w["faq"]]})})
+    for ziel in re.findall(r'href="(/[^"#]*)', werte["inhalt"]):
+        if ziel not in bekannte_seiten:
+            raise SystemExit("Werkzeug QR-Rechnung: interner Link auf unbekannte Seite %s" % ziel)
+    schreibe(w["pfad"].strip("/") + "/index.html", fuelle(lies("vorlage_werkzeug.html"), werte))
+
     # 404-Seite (GitHub Pages liefert /404.html mit Status 404 aus): nicht indexieren, nicht in der Sitemap
     werte = dict(gemeinsam, **{
         "titel": "Seite nicht gefunden | Meyssens",
-        "beschreibung": "Diese Seite gibt es nicht. Zu den Werkzeugen für Schweizer KMU und Vereine, den Branchen oder zur Startseite.",
+        "beschreibung": "Diese Seite gibt es nicht. Zu den Werkzeugen für Schweizer KMU, den Branchen oder zur Startseite.",
         "url": DOMAIN + "/404.html",
         "links": "\n".join('    <a class="feat tile" href="%s">\n      <h3>%s</h3>\n      <p>%s</p>\n      <span class="way-go">Öffnen %s</span>\n    </a>'
                            % (u, html.escape(t), html.escape(x), PFEIL) for u, t, x in (
-                               ("/unternehmen/", "Für Unternehmen und Vereine", "Werkzeuge und Bausteine für Schweizer KMU, Praxen, Verwaltungen und Vereine."),
+                               ("/unternehmen/", "Für Unternehmen", "Werkzeuge und Bausteine für Schweizer KMU, Praxen und Verwaltungen."),
                                ("/unternehmen/#branchen", "Branchen", "Zahnarztpraxen, Immobilienverwaltungen, Architekturbüros, Pflege und weitere."),
-                               ("/unternehmen/#ratgeber", "Ratgeber", "nDSG für KMU, Offertanfragen, Online-Abstimmung im Verein, Website-Chatbot."),
+                               ("/unternehmen/#ratgeber", "Ratgeber", "nDSG für KMU, Offertanfragen, Aufbewahrungsfristen, Website-Chatbot."),
                                ("/", "Startseite", "Überblick über Meyssens."))),
     })
     schreibe("404.html", fuelle(lies("vorlage_404.html"), werte))
@@ -1811,7 +2126,10 @@ def main():
     if neu_g != gemeinden:
         schreibe("gemeinden/index.html", neu_g)
 
-    neu = startseite(start, ansichten, allgemein, len(branchen) + len(artikel_branchen), len(ratgeber))
+    # Startseite: von Hand gepflegt, build.py setzt den Block "Für Unternehmen" und ergänzt beschreibende Linktexte
+    branchen_namen = {b["slug"]: b["name"] for b in branchen + artikel_branchen}
+    neu = setze_auto(start, "unternehmen", startseite_unternehmen(branchen_namen, branchen_ablaeufe))
+    neu = setze_auto(neu, "beispiel", start_beispiel(ablaeufe))
     if beschreibend(neu) != start:
         schreibe("index.html", neu)
 
@@ -1832,11 +2150,41 @@ def main():
     seiten += [("/produkte/%s/" % p["slug"], "0.6", stand(p, p.get("geprueft", SEITEN_STAND))) for p in produkte]
     seiten += [("/branchen/%s/" % b["slug"], "0.6", stand(b, b.get("automatisierungen", {}).get("geprueft", SEITEN_STAND))) for b in branchen]
     seiten += [("/%s/%s/" % (ARTEN[a["art"]]["ordner"], a["slug"]), "0.6", stand(a, a["geprueft"])) for a in artikel]
+    seiten.append((QR_WERKZEUG["pfad"], "0.7", QR_WERKZEUG["geprueft"]))
     zeilen = ["  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>"
               % (DOMAIN, pfad, stand, prio) for pfad, prio, stand in seiten]
     schreibe("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(zeilen) + "\n</urlset>\n")
 
 
+# Zwischenspeicher: CSS- und JS-Dateien aus /assets/ mit Inhaltsprüfsumme verlinken (?v=…),
+# damit Browser nach einer Änderung nie alte Stile zu neuem HTML laden. Läuft zuletzt über alle Seiten.
+ASSET_REF = re.compile(r"/assets/([A-Za-z0-9_./-]+\.(?:css|js))(?:\?v=[0-9a-f]+)?")
+
+
+def versioniere_assets():
+    pruefsummen = {}
+
+    def ersetze(m):
+        name = m.group(1)
+        datei = ROOT / "assets" / name
+        if not datei.is_file():
+            return m.group(0)
+        if name not in pruefsummen:
+            pruefsummen[name] = hashlib.sha256(datei.read_bytes()).hexdigest()[:10]
+        return "/assets/%s?v=%s" % (name, pruefsummen[name])
+
+    for datei in sorted(ROOT.rglob("*.html")):
+        rel = datei.relative_to(ROOT).as_posix()
+        if rel.startswith((".git/", "node_modules/")):
+            continue
+        alt = datei.read_text(encoding="utf-8")
+        neu = ASSET_REF.sub(ersetze, alt)
+        if neu != alt:
+            datei.write_text(neu, encoding="utf-8")
+            print("versioniert:", rel)
+
+
 if __name__ == "__main__":
     main()
+    versioniere_assets()

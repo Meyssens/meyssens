@@ -1,0 +1,252 @@
+/* Sprachumschaltung der Startseite (DE steht im HTML, FR/IT/EN hier). Wird erst geladen, wenn eine andere Sprache
+   gewählt ist oder war. Die animierten Beispiele (Mockups) bleiben auf Deutsch und sind als Beispiel markiert. */
+const START_META = {
+  de: null,
+  fr: {title: "Solutions numériques pour communes et entreprises, Suisse",
+       desc: "Plateforme de participation pour les communes, automatisation des tâches répétitives pour les entreprises. D'un seul interlocuteur."},
+  it: {title: "Soluzioni digitali per comuni e aziende in Svizzera",
+       desc: "Piattaforma di partecipazione per i comuni, automazione del lavoro di routine per le aziende. Un unico interlocutore."},
+  en: {title: "Digital solutions for municipalities and businesses, Switzerland",
+       desc: "A participation platform for municipalities, automation of routine work for businesses. From a single provider."}
+};
+const I18N = {
+  fr: {
+    "nav.gemeinden": "Pour les communes", "nav.unternehmen": "Pour les entreprises", "nav.ueberuns": "À propos",
+    "s.gespraech": "Prendre rendez-vous",
+    "s.h1": 'Impliquer la population. <span class="hl">Automatiser les tâches répétitives.</span>',
+    "s.lead": "Nous rapprochons les communes de leur population grâce à une plateforme de participation et déchargeons les entreprises des tâches répétitives.",
+    "s.held.g": "Pour les communes",
+    "s.held.u": "Pour les entreprises",
+    "s.held.etikett": "Participation · Automatisation",
+    "s.held.p1": "Prix fixe",
+    "s.held.p2": "Pilote gratuit pour les communes",
+    "s.held.p3": "Hébergement de la plateforme à Zurich",
+    "s.held.weiter": "Continuer vers nos offres",
+    "s.anim.nochmal": "Rejouer",
+    "s.det.titel": "Un processus en détail",
+    "s.zs.u.titel": "Facture d'un fournisseur : du justificatif à la validation",
+    "s.zs.u.text": "Le justificatif est reconnu et un projet d'écriture est préparé. Vous vérifiez et validez.",
+    "s.hm.aria": "Exemple : facture d'un fournisseur. Le justificatif est reconnu, le projet d'écriture est prêt, vous validez.",
+    "s.g.titel": "Pour les communes",
+    "s.g.satz": "Votre propre plateforme de participation : sondages, idées sur la carte et votes au même endroit.",
+    "s.beispielplattform": "Plateforme d'exemple", "s.beispiel": "Exemple",
+    "s.g.alt": "Page d'accueil de la plateforme d'exemple pour les communes sur ordinateur (en allemand).",
+    "s.g.knopf": "Voir la démo", "s.g.mehr": "Tout pour les communes",
+    "s.u.titel": "Pour les entreprises",
+    "s.u.satz": "Nous automatisons le travail de bureau répétitif : justificatifs, factures, délais. Vous validez.",
+    "s.vn.titel": "Facture d'un fournisseur",
+    "s.vn.aria": "Avant : ouvrir la facture, saisir le montant et le fournisseur, classer le justificatif. Après : le justificatif est reconnu, le projet d'écriture est prêt, vous validez.",
+    "s.vorher": "Avant", "s.vorher1": "Ouvrir la facture dans la boîte de réception", "s.vorher2": "Saisir le montant et le fournisseur", "s.vorher3": "Classer le justificatif, questions par téléphone",
+    "s.nachher": "Après", "s.nachher1": "Le justificatif est reconnu", "s.nachher2": "Le projet d'écriture est prêt", "s.nachher3": "Vous validez",
+    "s.u.knopf": "Voir des exemples", "s.u.mehr": "Tout pour les entreprises",
+    "s.ablauf.label": "Déroulement", "s.ablauf.titel": "Comment ça se passe",
+    "s.schritt1.titel": "Entretien", "s.schritt1.text": "Vous décrivez votre besoin par téléphone ou par e-mail. Le premier entretien est gratuit.",
+    "s.schritt2.titel": "Proposition à prix fixe", "s.schritt2.text": "Vous recevez une proposition écrite à prix fixe. Les communes testent d'abord gratuitement pendant trois mois.",
+    "s.schritt3.titel": "Mise en œuvre et exploitation", "s.schritt3.text": "Nous mettons tout en place, accompagnons le démarrage et assurons l'exploitation. Personnellement, dès le premier entretien.",
+    "s.bsp.label": "Exemples", "s.bsp.titel": "À quoi ça ressemble",
+    "s.bsp.g.titel": "Sondage sur carte : vos lieux en ville",
+    "s.bsp.g.text": "La population place des repères pour ses lieux préférés, les problèmes et les idées. La commune voit toutes les remarques sur une carte.",
+    "s.bsp.g.alt": "Plateforme d'exemple sur mobile : sondage sur carte avec des repères colorés (en allemand).",
+    "s.bsp.u.titel": "Attribuer un crédit TWINT",
+    "s.bsp.u.text": "La banque crédite un montant groupé de TWINT. Il est attribué aux ventes du jour, les frais sont indiqués, la proposition d'écriture est prête.",
+    "s.bsp.u.sie": "Vous décidez :", "s.bsp.u.mensch": "vous vérifiez la proposition et la reprenez dans la comptabilité.",
+    "s.br.label": "Branches", "s.br.titel": "Des processus pour votre branche",
+    "s.br.lead": "Quatre exemples. Vous trouverez d'autres branches et processus sur la page pour les entreprises (en allemand).",
+    "s.br.alle": "Toutes les branches", "s.br.unternehmen": "Les meilleurs processus par branche",
+    "k.eingang": "Entrée", "k.verarbeitung": "Traitement", "k.ergebnis": "Résultat", "k.zum": "Voir le processus",
+    "k.treuhaender.branche": "Fiduciaires", "k.treuhaender.titel": "Registre de transparence pour tous les mandants",
+    "k.treuhaender.s1": "Liste des mandants, registre des actions ou des parts, mutations au registre du commerce",
+    "k.treuhaender.s2": "Calculer le délai par société, demander les ayants droit économiques au mandant par lien",
+    "k.treuhaender.s3": "Modèle pour l'annonce dans EasyGov et liste des délais",
+    "k.detailhandel.branche": "Commerce de détail", "k.detailhandel.titel": "Clôture journalière avec caisse, TWINT, cartes et banque",
+    "k.detailhandel.s1": "Export de caisse, export TWINT, décompte des cartes, relevé de compte",
+    "k.detailhandel.s2": "Séparer par mode de paiement, tenir compte des périodes de décompte et des frais",
+    "k.detailhandel.s3": "Propositions d'écriture et liste des écarts",
+    "k.bauunternehmen.branche": "Entreprises de construction", "k.bauunternehmen.titel": "Indemnité en cas d'intempéries, mois après mois",
+    "k.bauunternehmen.s1": "Heures perdues par chantier, issues de la saisie du temps ou du rapport",
+    "k.bauunternehmen.s2": "Préparer l'annonce avant le 5, préremplir le rapport par lieu de travail, surveiller le délai de 3 mois",
+    "k.bauunternehmen.s3": "Formulaires à signer et calendrier des délais",
+    "k.fitness-sport.branche": "Fitness et sport", "k.fitness-sport.titel": "Justificatifs pour les caisses maladie selon le tarif 595",
+    "k.fitness-sport.s1": "Abonnements et paiements depuis votre gestion ou bexio",
+    "k.fitness-sport.s2": "Attribuer le code tarifaire, demander les données manquantes par lien, créer le justificatif au format XML 5.0",
+    "k.fitness-sport.s3": "Justificatif en PDF et XML pour vos membres",
+    "s.v.label": "Confiance", "s.v.titel": "Un accompagnement personnel, un hébergement en Suisse",
+    "s.v1.titel": "Un interlocuteur direct", "s.v1.text": "Entreprise individuelle. Vous parlez directement avec Lionel Nickelsen.",
+    "s.v2.titel": "Hébergement à Zurich", "s.v2.text": "La plateforme de participation fonctionne sur des serveurs dans un centre de données à Zurich.",
+    "s.v3.titel": "Protection des données selon les exigences du RGPD", "s.v3.text": "L'UE reconnaît la protection des données suisse comme équivalente.",
+    "s.v4.titel": "Contrat de sous-traitance sur demande", "s.v4.text": "Nous réglons par écrit la manière dont nous traitons vos données.",
+    "s.v5.titel": "Pilote gratuit pendant trois mois", "s.v5.text": "Pour les communes : gratuit et sans engagement. Vous décidez ensuite.",
+    "s.ende.titel": "Parlons de votre projet.", "s.ende.text": "Appelez-nous ou écrivez-nous. Vous recevez une réponse personnelle de Lionel Nickelsen."
+  },
+  it: {
+    "nav.gemeinden": "Per i comuni", "nav.unternehmen": "Per le aziende", "nav.ueberuns": "Chi siamo",
+    "s.gespraech": "Fissare un colloquio",
+    "s.h1": 'Coinvolgere la cittadinanza. <span class="hl">Automatizzare il lavoro di routine.</span>',
+    "s.lead": "Avviciniamo i comuni alla loro popolazione con una piattaforma di partecipazione e togliamo alle aziende il lavoro di routine.",
+    "s.held.g": "Per i comuni",
+    "s.held.u": "Per le aziende",
+    "s.held.etikett": "Partecipazione · Automazione",
+    "s.held.p1": "Prezzo fisso",
+    "s.held.p2": "Pilota gratuito per i comuni",
+    "s.held.p3": "Hosting della piattaforma a Zurigo",
+    "s.held.weiter": "Continua verso le nostre offerte",
+    "s.anim.nochmal": "Riproduci di nuovo",
+    "s.det.titel": "Un processo nel dettaglio",
+    "s.zs.u.titel": "Fattura di un fornitore: dal giustificativo all'approvazione",
+    "s.zs.u.text": "Il giustificativo viene riconosciuto e viene preparata una bozza di registrazione. Voi verificate e approvate.",
+    "s.hm.aria": "Esempio: fattura di un fornitore. Il giustificativo viene riconosciuto, la bozza di registrazione è pronta, voi approvate.",
+    "s.g.titel": "Per i comuni",
+    "s.g.satz": "Una piattaforma di partecipazione propria: sondaggi, idee sulla mappa e votazioni in un unico posto.",
+    "s.beispielplattform": "Piattaforma di esempio", "s.beispiel": "Esempio",
+    "s.g.alt": "Pagina iniziale della piattaforma di esempio per i comuni al computer (in tedesco).",
+    "s.g.knopf": "Vedere la demo", "s.g.mehr": "Tutto per i comuni",
+    "s.u.titel": "Per le aziende",
+    "s.u.satz": "Automatizziamo il lavoro d'ufficio ricorrente: giustificativi, fatture, scadenze. Voi approvate.",
+    "s.vn.titel": "Fattura di un fornitore",
+    "s.vn.aria": "Prima: aprire la fattura, digitare importo e fornitore, archiviare il giustificativo. Dopo: il giustificativo viene riconosciuto, la bozza di registrazione è pronta, voi approvate.",
+    "s.vorher": "Prima", "s.vorher1": "Aprire la fattura nella posta in arrivo", "s.vorher2": "Digitare importo e fornitore", "s.vorher3": "Archiviare il giustificativo, domande per telefono",
+    "s.nachher": "Dopo", "s.nachher1": "Il giustificativo viene riconosciuto", "s.nachher2": "La bozza di registrazione è pronta", "s.nachher3": "Voi approvate",
+    "s.u.knopf": "Vedere gli esempi", "s.u.mehr": "Tutto per le aziende",
+    "s.ablauf.label": "Procedura", "s.ablauf.titel": "Come funziona",
+    "s.schritt1.titel": "Colloquio", "s.schritt1.text": "Ci descrivete la vostra esigenza per telefono o per e-mail. Il primo colloquio è gratuito.",
+    "s.schritt2.titel": "Proposta a prezzo fisso", "s.schritt2.text": "Ricevete una proposta scritta a prezzo fisso. I comuni provano prima gratuitamente per tre mesi.",
+    "s.schritt3.titel": "Realizzazione e gestione", "s.schritt3.text": "Configuriamo tutto, accompagniamo l'avvio e ci occupiamo della gestione. Personalmente, dal primo colloquio.",
+    "s.bsp.label": "Esempi", "s.bsp.titel": "Come si presenta",
+    "s.bsp.g.titel": "Sondaggio su mappa: i vostri luoghi in città",
+    "s.bsp.g.text": "La popolazione inserisce segnaposti per luoghi preferiti, punti problematici e idee. Il comune vede tutte le segnalazioni su una mappa.",
+    "s.bsp.g.alt": "Piattaforma di esempio sul cellulare: sondaggio su mappa con segnaposti colorati (in tedesco).",
+    "s.bsp.u.titel": "Attribuire un accredito TWINT",
+    "s.bsp.u.text": "La banca accredita un importo cumulativo di TWINT. Viene attribuito agli incassi del giorno, le commissioni sono indicate, la proposta di registrazione è pronta.",
+    "s.bsp.u.sie": "Decidete voi:", "s.bsp.u.mensch": "verificate la proposta e la riprendete nella contabilità.",
+    "s.br.label": "Settori", "s.br.titel": "Processi per il vostro settore",
+    "s.br.lead": "Quattro esempi. Altri settori e processi si trovano sulla pagina per le aziende (in tedesco).",
+    "s.br.alle": "Tutti i settori", "s.br.unternehmen": "I migliori processi per settore",
+    "k.eingang": "Entrata", "k.verarbeitung": "Elaborazione", "k.ergebnis": "Risultato", "k.zum": "Al processo",
+    "k.treuhaender.branche": "Fiduciarie", "k.treuhaender.titel": "Registro per la trasparenza per tutti i mandanti",
+    "k.treuhaender.s1": "Elenco dei mandanti, libro delle azioni o delle quote, mutazioni nel registro di commercio",
+    "k.treuhaender.s2": "Calcolare la scadenza per società, chiedere gli aventi economicamente diritto al mandante tramite link",
+    "k.treuhaender.s3": "Modello per la notifica in EasyGov ed elenco delle scadenze",
+    "k.detailhandel.branche": "Commercio al dettaglio", "k.detailhandel.titel": "Chiusura giornaliera con cassa, TWINT, carte e banca",
+    "k.detailhandel.s1": "Esportazione della cassa, esportazione TWINT, conteggio delle carte, estratto conto",
+    "k.detailhandel.s2": "Separare per modalità di pagamento, tenere conto dei periodi di conteggio e delle commissioni",
+    "k.detailhandel.s3": "Proposte di registrazione ed elenco delle differenze",
+    "k.bauunternehmen.branche": "Imprese di costruzione", "k.bauunternehmen.titel": "Indennità per intemperie, mese dopo mese",
+    "k.bauunternehmen.s1": "Ore perse per cantiere dalla registrazione del tempo o dal rapporto",
+    "k.bauunternehmen.s2": "Preparare la notifica entro il 5, precompilare il rapporto per luogo di lavoro, sorvegliare il termine di 3 mesi",
+    "k.bauunternehmen.s3": "Moduli da firmare e calendario delle scadenze",
+    "k.fitness-sport.branche": "Fitness e sport", "k.fitness-sport.titel": "Giustificativi per le casse malati secondo la tariffa 595",
+    "k.fitness-sport.s1": "Abbonamenti e pagamenti dalla vostra gestione o da bexio",
+    "k.fitness-sport.s2": "Attribuire il codice tariffale, chiedere i dati mancanti tramite link, creare il giustificativo in formato XML 5.0",
+    "k.fitness-sport.s3": "Giustificativo in PDF e XML per i vostri membri",
+    "s.v.label": "Fiducia", "s.v.titel": "Accompagnamento personale, hosting in Svizzera",
+    "s.v1.titel": "Un referente diretto", "s.v1.text": "Ditta individuale. Parlate direttamente con Lionel Nickelsen.",
+    "s.v2.titel": "Hosting a Zurigo", "s.v2.text": "La piattaforma di partecipazione funziona su server in un centro dati a Zurigo.",
+    "s.v3.titel": "Protezione dei dati secondo i requisiti del RGPD", "s.v3.text": "L'UE riconosce la protezione dei dati svizzera come equivalente.",
+    "s.v4.titel": "Contratto per il trattamento dei dati su richiesta", "s.v4.text": "Regoliamo per iscritto come trattiamo i vostri dati.",
+    "s.v5.titel": "Progetto pilota gratuito per tre mesi", "s.v5.text": "Per i comuni: gratuito e senza impegno. Decidete solo dopo.",
+    "s.ende.titel": "Parliamo del vostro progetto.", "s.ende.text": "Chiamateci o scriveteci. Riceverete una risposta personale da Lionel Nickelsen."
+  },
+  en: {
+    "nav.gemeinden": "For municipalities", "nav.unternehmen": "For businesses", "nav.ueberuns": "About us",
+    "s.gespraech": "Book a call",
+    "s.h1": 'Engage citizens. <span class="hl">Automate routine work.</span>',
+    "s.lead": "We bring municipalities closer to their residents with a participation platform and take routine work off businesses' hands.",
+    "s.held.g": "For municipalities",
+    "s.held.u": "For businesses",
+    "s.held.etikett": "Participation · Automation",
+    "s.held.p1": "Fixed price",
+    "s.held.p2": "Free pilot for municipalities",
+    "s.held.p3": "Platform hosting in Zurich",
+    "s.held.weiter": "Continue to our offers",
+    "s.anim.nochmal": "Play again",
+    "s.det.titel": "One workflow in detail",
+    "s.zs.u.titel": "Supplier invoice: from document to approval",
+    "s.zs.u.text": "The document is recognised and a draft booking is prepared. You check and approve.",
+    "s.hm.aria": "Example: a supplier invoice. The document is recognised, a draft booking is ready, you approve.",
+    "s.g.titel": "For municipalities",
+    "s.g.satz": "Your own participation platform: surveys, ideas on the map and votes in one place.",
+    "s.beispielplattform": "Example platform", "s.beispiel": "Example",
+    "s.g.alt": "Home page of the example platform for municipalities on a computer (in German).",
+    "s.g.knopf": "View the demo", "s.g.mehr": "Everything for municipalities",
+    "s.u.titel": "For businesses",
+    "s.u.satz": "We automate recurring office work such as receipts, invoices and deadlines. You approve.",
+    "s.vn.titel": "Invoice from a supplier",
+    "s.vn.aria": "Before: open the invoice, type in amount and supplier, file the receipt. After: the receipt is recognised, the draft booking is ready, you approve.",
+    "s.vorher": "Before", "s.vorher1": "Open the invoice in the inbox", "s.vorher2": "Type in amount and supplier", "s.vorher3": "File the receipt, questions by phone",
+    "s.nachher": "After", "s.nachher1": "The receipt is recognised", "s.nachher2": "The draft booking is ready", "s.nachher3": "You approve",
+    "s.u.knopf": "View examples", "s.u.mehr": "Everything for businesses",
+    "s.ablauf.label": "Process", "s.ablauf.titel": "How it works",
+    "s.schritt1.titel": "Conversation", "s.schritt1.text": "You describe what you need by phone or e-mail. The first conversation is free of charge.",
+    "s.schritt2.titel": "Proposal at a fixed price", "s.schritt2.text": "You receive a written proposal at a fixed price. Municipalities first test free of charge for three months.",
+    "s.schritt3.titel": "Implementation and operation", "s.schritt3.text": "We set everything up, support the start and look after operation. Personally, from the first conversation.",
+    "s.bsp.label": "Examples", "s.bsp.titel": "What it looks like",
+    "s.bsp.g.titel": "Map survey: your places in town",
+    "s.bsp.g.text": "Residents place pins for favourite places, problem spots and ideas. The municipality sees all comments on one map.",
+    "s.bsp.g.alt": "Example platform on a mobile phone: map survey with coloured pins (in German).",
+    "s.bsp.u.titel": "Matching a TWINT credit",
+    "s.bsp.u.text": "The bank credits a collective TWINT payment. It is matched to the day's sales, fees are shown and the booking proposal is ready.",
+    "s.bsp.u.sie": "You decide:", "s.bsp.u.mensch": "you check the proposal and transfer it to the accounts.",
+    "s.br.label": "Industries", "s.br.titel": "Processes for your industry",
+    "s.br.lead": "Four examples. You will find more industries and processes on the page for businesses (in German).",
+    "s.br.alle": "All industries", "s.br.unternehmen": "The best processes per industry",
+    "k.eingang": "Input", "k.verarbeitung": "Processing", "k.ergebnis": "Result", "k.zum": "View process",
+    "k.treuhaender.branche": "Fiduciaries", "k.treuhaender.titel": "Transparency register for all clients",
+    "k.treuhaender.s1": "Client list, share or quota register, changes in the commercial register",
+    "k.treuhaender.s2": "Calculate the deadline per company, ask clients for beneficial owners via a link",
+    "k.treuhaender.s3": "Template for the notification in EasyGov and list of deadlines",
+    "k.detailhandel.branche": "Retail", "k.detailhandel.titel": "Daily closing with till, TWINT, cards and bank",
+    "k.detailhandel.s1": "Till export, TWINT export, card statement, bank statement",
+    "k.detailhandel.s2": "Separate by payment method, take settlement periods and fees into account",
+    "k.detailhandel.s3": "Booking proposals and list of differences",
+    "k.bauunternehmen.branche": "Construction companies", "k.bauunternehmen.titel": "Bad-weather compensation, month by month",
+    "k.bauunternehmen.s1": "Lost hours per site from time recording or reports",
+    "k.bauunternehmen.s2": "Prepare the notification by the 5th, pre-fill the report per site, monitor the 3-month deadline",
+    "k.bauunternehmen.s3": "Forms to sign and a deadline calendar",
+    "k.fitness-sport.branche": "Fitness and sport", "k.fitness-sport.titel": "Health insurance receipts under tariff 595",
+    "k.fitness-sport.s1": "Memberships and payments from your management software or bexio",
+    "k.fitness-sport.s2": "Assign the tariff code, request missing details via a link, create the receipt in XML 5.0 format",
+    "k.fitness-sport.s3": "Receipt as PDF and XML for your members",
+    "s.v.label": "Trust", "s.v.titel": "Personal support, hosted in Switzerland",
+    "s.v1.titel": "A direct contact", "s.v1.text": "Sole proprietorship. You speak directly with Lionel Nickelsen.",
+    "s.v2.titel": "Hosting in Zurich", "s.v2.text": "The participation platform runs on servers in a data centre in Zurich.",
+    "s.v3.titel": "Data protection in line with GDPR requirements", "s.v3.text": "The EU recognises Swiss data protection as equivalent.",
+    "s.v4.titel": "Data processing agreement on request", "s.v4.text": "We set out in writing how we process your data.",
+    "s.v5.titel": "Three-month pilot free of charge", "s.v5.text": "For municipalities: free of charge and without obligation. You decide afterwards.",
+    "s.ende.titel": "Let's talk about your project.", "s.ende.text": "Call or write to us. You will receive a personal reply from Lionel Nickelsen."
+  }
+};
+
+function applyLang(lang){
+  if(lang !== 'de' && !I18N[lang]) return;
+  const dict = I18N[lang] || {};
+  document.documentElement.lang = lang === 'de' ? 'de-CH' : lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  // Texte (Cookie-Banner ausgenommen, den setzt updateCookieBannerLang)
+  document.querySelectorAll('[data-i18n],[data-i18n-html]').forEach(el => {
+    const html = el.hasAttribute('data-i18n-html');
+    const key = el.getAttribute(html ? 'data-i18n-html' : 'data-i18n');
+    if(key.indexOf('cookie.') === 0) return;
+    if(!el.hasAttribute('data-i18n-original')) el.setAttribute('data-i18n-original', html ? el.innerHTML : el.textContent);
+    const wert = dict[key] || el.getAttribute('data-i18n-original');
+    if(html) el.innerHTML = wert; else el.textContent = wert;
+  });
+  [['data-i18n-alt', 'alt'], ['data-i18n-aria', 'aria-label']].forEach(([attr, ziel]) => {
+    document.querySelectorAll('[' + attr + ']').forEach(el => {
+      const orig = attr + '-original';
+      if(!el.hasAttribute(orig)) el.setAttribute(orig, el.getAttribute(ziel) || '');
+      el.setAttribute(ziel, dict[el.getAttribute(attr)] || el.getAttribute(orig));
+    });
+  });
+  // Titel und Beschreibung
+  const meta = document.querySelector('meta[name="description"]');
+  if(!document.documentElement.hasAttribute('data-titel-original')){
+    document.documentElement.setAttribute('data-titel-original', document.title);
+    if(meta) document.documentElement.setAttribute('data-desc-original', meta.content);
+  }
+  const m = START_META[lang];
+  document.title = m ? m.title : document.documentElement.getAttribute('data-titel-original');
+  if(meta) meta.content = m ? m.desc : document.documentElement.getAttribute('data-desc-original');
+  try { localStorage.setItem('meyssens_lang', lang); } catch(e) {}
+  if(typeof updateCookieBannerLang === 'function') updateCookieBannerLang(lang);
+}
+window.applyLang = applyLang;

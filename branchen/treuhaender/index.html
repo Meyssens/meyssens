@@ -30,7 +30,7 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2">
 <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=2">
 <link rel="manifest" href="/site.webmanifest?v=2">
-<meta name="theme-color" content="#0000ff">
+<meta name="theme-color" content="#0054d1">
 <script>document.documentElement.classList.add("js")</script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -49,9 +49,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
 <link rel="preload" href="/assets/schriften/inter-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/schriften/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/stil.css">
-<link rel="stylesheet" href="/assets/ablaeufe.css">
+<link rel="stylesheet" href="/assets/site.css?v=854e587087">
+<link rel="stylesheet" href="/assets/stil.css?v=efe1441e60">
+<link rel="stylesheet" href="/assets/ablaeufe.css?v=c43ae335e6">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@id": "https://meyssens.ch/ueber-uns/#person"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}, "areaServed": {"@type": "Country", "name": "Schweiz"}, "knowsLanguage": "de-CH", "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "lionel@meyssens.ch", "availableLanguage": "de"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de-CH", "publisher": {"@id": "https://meyssens.ch/#org"}}, {"@type": "Person", "@id": "https://meyssens.ch/ueber-uns/#person", "name": "Lionel Nickelsen", "url": "https://meyssens.ch/ueber-uns/", "worksFor": {"@id": "https://meyssens.ch/#org"}}, {"@type": "BreadcrumbList", "@id": "https://meyssens.ch/branchen/treuhaender/#brotkrumen", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Branchen", "item": "https://meyssens.ch/branchen/"}, {"@type": "ListItem", "position": 3, "name": "Treuhandbüros", "item": "https://meyssens.ch/branchen/treuhaender/"}]}, {"@type": "WebPage", "@id": "https://meyssens.ch/branchen/treuhaender/", "url": "https://meyssens.ch/branchen/treuhaender/", "name": "Treuhandbüro digital: Mandantenanfragen ordnen | Meyssens", "inLanguage": "de-CH", "isPartOf": {"@id": "https://meyssens.ch/#website"}, "breadcrumb": {"@id": "https://meyssens.ch/branchen/treuhaender/#brotkrumen"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://meyssens.ch/assets/og/branche-treuhaender.png", "width": 1200, "height": 630, "caption": "Treuhandbüros: digitale Werkzeuge von Meyssens"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welche Daten sieht der Mail-Assistent?", "acceptedAnswer": {"@type": "Answer", "text": "Vorgesehen ist, dass er eingehende E-Mails liest, um sie zu ordnen und Entwürfe vorzuschlagen. Welche Postfächer angebunden werden und wo die Daten verarbeitet werden, sollte vor dem Einsatz gemeinsam festgelegt werden. Wir richten das Produkt individuell auf Anfrage ein."}}, {"@type": "Question", "name": "Ersetzt der Chatbot die persönliche Beratung?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Er ist für allgemeine Fragen zu Ihrem Angebot gedacht. Für Beratung verweist er auf Ihre Kontaktmöglichkeiten."}}, {"@type": "Question", "name": "Sehen wir, wer den Newsletter erhält?", "acceptedAnswer": {"@type": "Answer", "text": "Vorgesehen ist, dass sich Empfängerinnen und Empfänger über einen Bestätigungslink anmelden und Sie jederzeit sehen, wer den Newsletter erhält. Den Newsletter richten wir individuell auf Anfrage ein."}}]}]}</script>
 </head>
 <body class="stil lang">
@@ -68,7 +68,7 @@
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <a href="/gemeinden/">Für Gemeinden</a>
-  <a href="/unternehmen/">Für Unternehmen und Vereine</a>
+  <a href="/unternehmen/">Für Unternehmen</a>
   <a href="/ueber-uns/">Über uns</a>
 </div>
 
@@ -103,6 +103,120 @@
       <p>Änderungen bei Abläufen oder wichtige Termine werden einzelnen Mandanten mitgeteilt, aber nicht allen gleichzeitig. Ein regelmässiger Informationsweg fehlt. Rückfragen zu bereits erklärten Punkten sind die Folge.</p>
     </div>
   </div>
+</section>
+
+<section id="branchen-ablaeufe">
+  <div class="kopf-mitte r">
+    <span class="s-label">Automatisierung</span>
+    <h2>Abläufe, die für Ihre Branche zählen</h2>
+    <p class="s-lead">Mehrstufige Abläufe, die Büroarbeit als Entwurf vorbereiten. Sie geben frei. Alle Beispiele zeigen erfundene Daten.</p>
+  </div>
+  <div class="ba-karten">
+    <article class="auto-karte ba-karte r" id="ba-transparenzregister">
+      <h3>Transparenzregister für alle Mandanten</h3>
+      <ol class="auto-fluss" data-anim="fluss" aria-label="Ablauf in drei Schritten">
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Mandantenliste, Aktien- oder Anteilbuch, Mutationen im Handelsregister</span></li>
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span><span><i>Verarbeitung</i>Frist je Gesellschaft berechnen, wirtschaftlich Berechtigte per Link beim Mandanten abfragen</span></li>
+        <li class="af-ergebnis"><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg></span><span><i>Ergebnis</i>Vorlage für die Meldung in EasyGov und Fristenliste</span></li>
+      </ol>
+      <p>Für jede Gesellschaft ist klar, bis wann gemeldet werden muss und welche Angaben noch fehlen; Änderungen lösen eine neue Frist aus.</p>
+      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> Beispiel AG, ohne ordentliche Revision: Meldung bis 1. März 2027, Angaben des Mandanten fehlen noch.</p>
+      <dl class="ba-fakten">
+        <div><dt>Daten aus</dt><dd>Ihre Mandantendaten und das Aktienbuch; eingereicht wird in EasyGov mit Ihrem Login.</dd></div>
+        <div><dt>Sie geben frei</dt><dd>Die Angaben gibt der Mandant frei, Zweifelsfälle beurteilen Sie. Die Meldung reichen Sie ein.</dd></div>
+        <div><dt>Datenschutz</dt><dd>Geburtsdatum, Adresse und Staatsangehörigkeit der Berechtigten: Zugriff nur je Mandant, Vertrag zur Auftragsbearbeitung.</dd></div>
+      </dl>
+    </article>
+    <article class="auto-karte ba-karte r" id="ba-belegeingang">
+      <h3>Belegeingang mit Freigabe durch den Mandanten</h3>
+      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Rechnungen per E-Mail, Upload oder eBill</span></li>
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span><span><i>Verarbeitung</i>QR-Daten auslesen, Dubletten prüfen, Kontierung vorschlagen</span></li>
+        <li class="af-ergebnis"><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg></span><span><i>Ergebnis</i>Freigabe durch den Mandanten, danach Zahlungsentwurf</span></li>
+      </ol>
+      <p>Ein Eingang für alle Belege eines Mandanten, mit Erinnerung, bis der Mandant freigegeben hat.</p>
+      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> Rechnung Beispiel AG über CHF 1 180.00, Konto 4000 vorgeschlagen, wartet seit 2 Tagen auf Freigabe.</p>
+      <dl class="ba-fakten">
+        <div><dt>Daten aus</dt><dd>QR-Rechnung und eBill (standardisiert); Belege ohne QR-Code über Texterkennung, mit Prüfung.</dd></div>
+        <div><dt>Sie geben frei</dt><dd>Jede Zahlung gibt der Mandant frei. Papierbelege werden weiterhin gescannt.</dd></div>
+        <div><dt>Datenschutz</dt><dd>Belege können Personendaten enthalten: Zugriff nur für das zuständige Team, Vertrag zur Auftragsbearbeitung.</dd></div>
+      </dl>
+    </article>
+    <article class="auto-karte ba-karte r" id="ba-gwg">
+      <h3>Kundendossier nach Geldwäschereigesetz</h3>
+      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Neues Mandat für Gründung, Domizil oder nicht operative Gesellschaft</span></li>
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span><span><i>Verarbeitung</i>Prüfen, ob das Mandat erfasst ist, Identifikation und Berechtigte per Link einholen, Wiedervorlage</span></li>
+        <li class="af-ergebnis"><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg></span><span><i>Ergebnis</i>Kundendossier für die Prüfung durch die Selbstregulierungsorganisation</span></li>
+      </ol>
+      <p>Seit 1. Oktober 2026 gelten für bestimmte Beratungsmandate Sorgfaltspflichten; das Dossier ist vollständig, bevor das Mandat startet.</p>
+      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> Mandat Muster GmbH, Gründung: Ausweis erhalten, wirtschaftlich Berechtigte offen, Risikostufe zu bestimmen.</p>
+      <dl class="ba-fakten">
+        <div><dt>Daten aus</dt><dd>Ihre Mandatsliste und Uploads der Kunden.</dd></div>
+        <div><dt>Sie geben frei</dt><dd>Risikostufe und jede Meldung entscheidet die verantwortliche Person; nichts wird automatisch gemeldet.</dd></div>
+        <div><dt>Datenschutz</dt><dd>Ausweiskopien und Angaben zu Berechtigten sind heikel: enger Zugriffskreis und Löschfristen.</dd></div>
+      </dl>
+    </article>
+    <article class="auto-karte ba-karte r" id="ba-mwst">
+      <h3>MWST-Abrechnung vorbereiten und abstimmen</h3>
+      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Buchungsjournal der Periode</span></li>
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span><span><i>Verarbeitung</i>Fehlende MWST-Codes und unplausible Sätze finden, Ziffern mit dem Hauptbuch abgleichen</span></li>
+        <li class="af-ergebnis"><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg></span><span><i>Ergebnis</i>Abstimmungsbericht und XML-Datei nach eCH-0217</span></li>
+      </ol>
+      <p>Die Abrechnung liegt als abgestimmter Entwurf bereit, die Datei für den Upload ins ESTV-Portal ebenso.</p>
+      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> Quartal 3: 2 Umsätze ohne MWST-Code, Ziffer 200 stimmt mit dem Hauptbuch überein.</p>
+      <dl class="ba-fakten">
+        <div><dt>Daten aus</dt><dd>Buchungsjournal aus Ihrem Programm; Format eCH-0217 für den manuellen Upload in «MWST-Abrechnung pro».</dd></div>
+        <div><dt>Sie geben frei</dt><dd>Steuerliche Beurteilung, Upload und Einreichen machen Sie. Einzelne Ziffern deckt der Standard nicht ab.</dd></div>
+      </dl>
+    </article>
+    <article class="auto-karte ba-karte r" id="ba-verrechnungssteuer">
+      <h3>Dividende bis zur Meldung an die ESTV</h3>
+      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Jahresabschluss und Antrag zur Gewinnverwendung</span></li>
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span><span><i>Verarbeitung</i>Protokollvorlage, Beschluss per Link freigeben lassen, Frist von 30 Tagen überwachen</span></li>
+        <li class="af-ergebnis"><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg></span><span><i>Ergebnis</i>Formulare der ESTV vorbereitet und Erinnerungen</span></li>
+      </ol>
+      <p>Nach dem Beschluss der Generalversammlung läuft eine Frist von 30 Tagen; Unterlagen und Formular stehen rechtzeitig bereit.</p>
+      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> Beispiel AG: Dividende fällig am 15.06., Formular 103 vorbereitet, Frist bis 15.07.</p>
+      <dl class="ba-fakten">
+        <div><dt>Daten aus</dt><dd>Daten aus Ihrer Buchhaltung; eingereicht wird bei der ESTV durch Sie.</dd></div>
+        <div><dt>Sie geben frei</dt><dd>Den Beschluss fassen die Organe der Gesellschaft, die Einreichung machen Sie.</dd></div>
+      </dl>
+    </article>
+    <article class="auto-karte ba-karte r" id="ba-bank">
+      <h3>Bankbewegungen je Mandant vorkontieren</h3>
+      <ol class="auto-fluss" aria-label="Ablauf in drei Schritten">
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 6h14l2 7v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5z"/></svg></span><span><i>Eingang</i>Kontoauszüge camt.053/054 je Mandant und Bank</span></li>
+        <li><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></span><span><i>Verarbeitung</i>QR-Eingänge ausgleichen, übrige Buchungen nach Regeln vorschlagen</span></li>
+        <li class="af-ergebnis"><span class="af-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M9.5 14l2 2 3.5-3.5"/></svg></span><span><i>Ergebnis</i>Buchungsvorschläge und Prüfliste</span></li>
+      </ol>
+      <p>Eingänge mit QR-Referenz werden den offenen Posten zugeordnet, Sammelbuchungen aufgelöst, der Rest als Vorschlag vorbereitet.</p>
+      <p class="ba-beispiel"><span class="beispiel">Beispiel</span> Mandant Beispiel GmbH: 42 Bewegungen, 31 zugeordnet, 11 auf der Prüfliste.</p>
+      <dl class="ba-fakten">
+        <div><dt>Daten aus</dt><dd>camt-Dateien der Bank oder, wo angeschlossen, die Bankschnittstelle bLink; Import in Ihr Buchhaltungsprogramm, sofern es das zulässt.</dd></div>
+        <div><dt>Sie geben frei</dt><dd>Unklare Buchungen und MWST-Codes prüfen Sie. Die Regeln je Mandant pflegen wir mit Ihnen.</dd></div>
+        <div><dt>Datenschutz</dt><dd>Kontodaten enthalten Personendaten Dritter: Bearbeitung nur mit Vertrag zur Auftragsbearbeitung.</dd></div>
+      </dl>
+    </article>
+  </div>
+  <details class="u-mehr r ba-quellen">
+    <summary>Worauf diese Auswahl beruht</summary>
+    <p class="u-mehr-text">Öffentliche Quellen zu wiederkehrenden Abläufen in Ihrer Branche, geprüft am 20.11.2026. Ob eine Anbindung möglich ist, hängt von Ihren Programmen ab; wir prüfen das vor einer Zusage.</p>
+    <ul>
+      <li><a href="https://amnistreasury.com/wp-content/uploads/2026/04/Whitepaper_HSG_Treuhand-Praxis-im-Wandel_DACH.pdf" rel="noopener">HSG-Capstone-Befragung von Treuhandbüros (Whitepaper eines Zahlungsanbieters, 2026)</a></li>
+      <li><a href="https://www.six-group.com/de/site/pay-magazine/talk/without-fiduciaries-we-would-be-stuck.html" rel="noopener">SIX: Interview mit TREUHAND|SUISSE zu Auslastung und Papier</a></li>
+      <li><a href="https://www.six-group.com/de/newsroom/media-releases/2021/20211102-bexio-blink.html" rel="noopener">SIX: bLink, Kontodaten per Schnittstelle in die Buchhaltung</a></li>
+      <li><a href="https://www.estv.admin.ch/de/mehrwertsteuer-abrechnen" rel="noopener">ESTV: Mehrwertsteuer abrechnen</a></li>
+      <li><a href="https://www.ech.ch/sites/default/files/imce/eCH-Dossier/eCH-Dossier_PDF_Publikationen/Hauptdokument/STAN_d_REP_2024_02_09_eCH-0217_V1.0.1_E-MWST.pdf" rel="noopener">eCH-0217: elektronische MWST-Abrechnung</a></li>
+      <li><a href="https://www.postfinance.ch/de/unternehmen/produkte/rechnungen/qrrechnung.html" rel="noopener">PostFinance: QR-Rechnung, QR-Referenz und Zahlungsavis camt.054</a></li>
+      <li><a href="https://www.bj.admin.ch/de/schweizerisches-transparenzregister" rel="noopener">BJ: Schweizerisches Transparenzregister</a></li>
+      <li><a href="https://www.grantthornton.ch/globalassets/1.-member-firms/switzerland/insights/2026/08---transparenzregister/2608-transparenzregister-de.pdf" rel="noopener">Grant Thornton: Transparenzregister, Fristen (2026)</a></li>
+      <li><a href="https://www.bdo.ch/de-ch/publikationen/beratung-neu-dem-geldwaschereigesetz-(gwg)-unterstellt-diese-pflichten-gelten-ab-1-oktober-2026" rel="noopener">BDO: Beratung neu dem Geldwäschereigesetz unterstellt</a></li>
+      <li><a href="https://www.estv.admin.ch/de/deklarationspflicht-bei-der-verrechnungssteuer" rel="noopener">ESTV: Deklarationspflicht bei der Verrechnungssteuer</a></li>
+    </ul>
+  </details>
 </section>
 
 <section id="beispiele" class="flaeche">
@@ -579,7 +693,7 @@
   <ul class="mock-liste mock-posteingang">
     <li class="aktiv"><b>Frage zur Mitgliedschaft</b><span class="mock-tag">Mitglieder</span></li>
     <li><b>Rückfrage zu einer Rechnung</b><span class="mock-tag dringend">Dringend</span></li>
-    <li><b>Reservation Vereinslokal</b><span class="mock-tag">Termine</span></li>
+    <li><b>Reservation Firmenessen</b><span class="mock-tag">Termine</span></li>
   </ul>
   <div class="mock-entwurf">
     <p class="mock-titel">Antwortentwurf</p>
@@ -630,7 +744,7 @@
     <span class="mock-baustein">Text</span><span class="mock-baustein">Bild</span><span class="mock-baustein">Link</span>
   </div>
   <div class="mock-mail">
-    <p class="mock-klein">Betreff: Neuigkeiten aus dem Verein</p>
+    <p class="mock-klein">Betreff: Neuigkeiten aus dem Betrieb</p>
     <div class="mock-bildfeld"></div>
     <p class="mock-h">Rückblick und nächste Termine</p>
     <i class="mock-zeile"></i><i class="mock-zeile"></i><i class="mock-zeile kurz"></i>
@@ -679,7 +793,7 @@
 </figure>
   </div>
 </section>
-<script src="/assets/ablaeufe.js" defer></script>
+<script src="/assets/ablaeufe.js?v=bab801aee3" defer></script>
 <section id="ratgeber-branche">
   <div class="r">
     <span class="s-label">Ratgeber</span>
@@ -690,15 +804,13 @@
     <a href="/ratgeber/offertanfragen-beantworten/">Offertanfragen schneller beantworten <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="/ratgeber/website-chatbot-recht/">Website-Chatbot: was er darf und was nicht <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="/ratgeber/aufbewahrungsfristen-buchhaltung/">Aufbewahrungsfristen für Buchhaltung und Belege <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a href="/ratgeber/website-verein-erstellen/">Website für einen Verein erstellen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a href="/ratgeber/generalversammlung-verein/">Generalversammlung im Verein <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <a href="/ratgeber/newsletter-verein-datenschutz/">Newsletter im Verein versenden <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="/ratgeber/mwst-abrechnung-fristen/">MWST-Abrechnung: Perioden, Fristen und Verzugszins <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="/ratgeber/fristerstreckung-steuererklaerung/">Fristerstreckung für die Steuererklärung im Treuhandbüro <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="/ratgeber/jahresabschluss-unterlagen-checkliste/">Jahresabschluss: Unterlagen vom Kunden, Checkliste <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="/ratgeber/allergene-restaurant/">Allergene im Restaurant <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="/ratgeber/gaestemeldung-hotel/">Gästemeldung im Hotel <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     <a href="/ratgeber/reservation-no-show/">No-Show und Stornierung bei Reservationen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="/ratgeber/steuerunterlagen-einsammeln/">Steuerunterlagen einsammeln <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </section>
 
@@ -714,17 +826,17 @@
       <p>Ein Fristenkalender pro Mandat für MWST-Abrechnungen, Steuererklärungen und eigene Termine, dazu ein geordneter Belegeingang mit Checkliste.</p>
       <span class="way-go">Mehr zu Fristenkalender und Belegeingang für Treuhandbüros <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
-    <a href="/ratgeber/ndsg-kmu-checkliste/" class="feat tile">
+    <a href="/ratgeber/jahresabschluss-unterlagen-checkliste/" class="feat tile">
       <span class="status-chip">Ratgeber</span>
-      <h3>nDSG für KMU: Checkliste</h3>
-      <p>Was KMU nach dem Schweizer Datenschutzgesetz tun müssen: Datenschutzerklärung, Verzeichnis, Auftragsbearbeiter, Pannen.</p>
-      <span class="way-go">Mehr zu nDSG für KMU: Checkliste <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h3>Jahresabschluss: Unterlagen vom Kunden, Checkliste</h3>
+      <p>Bank, Debitoren, Inventar, Löhne, MWST: welche Unterlagen das Treuhandbüro für den Jahresabschluss braucht, mit Bezug zum OR.</p>
+      <span class="way-go">Mehr zu Jahresabschluss: Unterlagen vom Kunden, Checkliste <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
-    <a href="/produkte/website-chatbot/" class="feat tile">
+    <a href="/produkte/mail-assistent/" class="feat tile">
       <span class="status-chip">Produkt</span>
-      <h3>Website-Chatbot</h3>
-      <p>Ein Chatbot für Ihre Website, der Fragen auf Grundlage Ihrer eigenen Inhalte beantwortet.</p>
-      <span class="way-go">Mehr zu Website-Chatbot <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h3>Mail-Assistent</h3>
+      <p>Ein Assistent, der eingehende E-Mails sortiert und Antwortentwürfe vorbereitet.</p>
+      <span class="way-go">Mehr zu Mail-Assistent <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </a>
   </div>
 </section>
@@ -735,7 +847,7 @@
       <span class="s-label">Anfrage</span>
       <h2>Interesse für Ihren Betrieb?</h2>
       <p class="s-lead">Hinterlassen Sie uns Ihre Angaben. Die Anfrage ist unverbindlich und kostenlos.</p>
-      <a href="/unternehmen/" class="back-link">← Zurück zu Unternehmen und Vereine</a>
+      <a href="/unternehmen/" class="back-link">← Zurück zu Unternehmen</a>
     </div>
     <div class="ccard r">
       <form action="https://formspree.io/f/xlgpzzew" method="POST">
@@ -744,7 +856,7 @@
           <div class="fgrp"><label class="flabel" for="vorname">Vorname</label><input class="finput" type="text" id="vorname" name="vorname" required></div>
           <div class="fgrp"><label class="flabel" for="nachname">Nachname</label><input class="finput" type="text" id="nachname" name="nachname" required></div>
         </div>
-        <div class="fgrp"><label class="flabel" for="organisation">Unternehmen / Verein / Organisation</label><input class="finput" type="text" id="organisation" name="organisation" required></div>
+        <div class="fgrp"><label class="flabel" for="organisation">Unternehmen / Organisation</label><input class="finput" type="text" id="organisation" name="organisation" required></div>
         <div class="fgrp"><label class="flabel" for="email">E-Mail</label><input class="finput" type="email" id="email" name="email" required></div>
         <div class="fgrp"><label class="flabel" for="branche">Branche</label><input class="finput" type="text" id="branche" name="branche" value="Treuhandbüros" readonly></div>
         <div class="fgrp"><label class="flabel" for="nachricht">Nachricht (optional)</label><textarea class="ftextarea" id="nachricht" name="nachricht" placeholder="Ihre Fragen oder Wünsche..."></textarea></div>
@@ -764,30 +876,29 @@
   <div class="footer-top">
     <div class="footer-brand">
       <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
-      <p>Digitale Infrastruktur für Gemeinden, Unternehmen und Vereine.</p>
+      <p>Digitale Werkzeuge für Gemeinden und Unternehmen.</p>
       <p style="color:rgba(255,255,255,0.7);font-size:.85rem;margin-top:.5rem">lionel@meyssens.ch</p>
     </div>
     <div class="footer-col">
-      <h3>Bereiche</h3>
-      <a href="/gemeinden/">Für Gemeinden</a>
-      <a href="/unternehmen/">Für Unternehmen und Vereine</a>
-      <a href="/branchen/">Branchen</a>
-      <a href="/ratgeber/">Ratgeber</a>
-      <a href="/ueber-uns/">Über uns</a>
-      <a href="mailto:lionel@meyssens.ch">Kontakt</a>
-    </div>
-    <div class="footer-col">
-      <h3>Links</h3>
+      <h3>Für Gemeinden</h3>
+      <a href="/gemeinden/">Übersicht Gemeinden</a>
       <a href="https://demo.meyssens.ch" target="_blank">Live-Demo ansehen →</a>
       <a href="https://decidim.org" target="_blank">Decidim Open-Source</a>
-      <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'">Impressum</a>
-      <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Datenschutz</a>
+    </div>
+    <div class="footer-col">
+      <h3>Für Unternehmen</h3>
+      <a href="/unternehmen/">Übersicht Unternehmen</a>
+      <a href="/branchen/">Branchen</a>
+      <a href="/ratgeber/">Ratgeber</a>
+      <a href="/werkzeuge/qr-rechnung/">QR-Rechnung erstellen</a>
     </div>
   </div>
   <div class="footer-bottom">
     <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
     <p class="fcopy">© 2026 Meyssens · Lausen, Basel-Landschaft · Schweiz</p>
     <div class="footer-legal">
+      <a href="/ueber-uns/">Über uns</a>
+      <a href="mailto:lionel@meyssens.ch">Kontakt</a>
       <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'">Impressum</a>
       <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Datenschutz</a>
     </div>
@@ -807,26 +918,27 @@
 <div id="impressum-modal" role="dialog" aria-modal="true" aria-label="Impressum" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:1rem">
   <div style="background:white;border-radius:16px;padding:2.5rem;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;position:relative">
     <button onclick="document.getElementById('impressum-modal').style.display='none'" aria-label="Schliessen" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888">×</button>
-    <h3 style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#07071a">Impressum</h3>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Einzelunternehmen</strong><br>Meyssens<br>Lausen, Basel-Landschaft<br>Schweiz</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Kontakt</strong><br>E-Mail: lionel@meyssens.ch</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Handelsregister</strong><br>Einzelfirma, eingetragen im Kanton Basel-Landschaft</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8"><strong>Haftungsausschluss</strong><br>Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.</p>
+    <h3 style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#040911">Impressum</h3>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Einzelunternehmen</strong><br>Meyssens<br>Lausen, Basel-Landschaft<br>Schweiz</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Kontakt</strong><br>E-Mail: lionel@meyssens.ch</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Handelsregister</strong><br>Einzelfirma, eingetragen im Kanton Basel-Landschaft</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8"><strong>Haftungsausschluss</strong><br>Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.</p>
   </div>
 </div>
 
 <div id="datenschutz-modal" role="dialog" aria-modal="true" aria-label="Datenschutzerklärung" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:1rem">
   <div style="background:white;border-radius:16px;padding:2.5rem;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;position:relative">
     <button onclick="document.getElementById('datenschutz-modal').style.display='none'" aria-label="Schliessen" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888">×</button>
-    <h3 style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#07071a">Datenschutzerklärung</h3>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Verantwortliche Stelle</strong><br>Meyssens, Lausen, Schweiz<br>E-Mail: lionel@meyssens.ch</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Datenerhebung</strong><br>Wir erheben nur die Daten, die für den Betrieb der Website notwendig sind. Die Website wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Dabei wird Ihre IP-Adresse übermittelt.</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Schriftarten</strong><br>Die Website verwendet die Schriftart Inter. Sie wird zusammen mit der Website ausgeliefert; eine Verbindung zu Google Fonts oder anderen Drittanbietern findet dabei nicht statt.</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Google Analytics</strong><br>Wir setzen Google Analytics (Google Ireland Limited, ggf. Google LLC, USA) nur mit Ihrer Einwilligung über das Cookie-Banner ein. Verarbeitet werden pseudonymisierte Nutzungsdaten wie besuchte Seiten, ungefähre Herkunft und Gerätetyp. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können sie jederzeit widerrufen, indem Sie die Website-Daten Ihres Browsers löschen und das Banner erneut mit «Ablehnen» beantworten.</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformulare zu Branchen, Produkten und Ratgebern</strong><br>Wenn Sie eines dieser Formulare nutzen, verarbeiten wir Ihre Angaben (Vorname, Nachname, Organisation, E-Mail-Adresse, je nach Formular Branche, Produkt, Baustein oder Thema und, falls angegeben, Ihre Nachricht), um Ihre Anfrage zu beantworten. Beim Formular zu einem Ablauf sind es Name, E-Mail-Adresse, der gewählte Ablauf und, falls angegeben, Ihre Nachricht. Die Formulare werden über Formspree (Formspree, Inc., USA) als E-Mail an uns weitergeleitet. Rechtsgrundlage ist die Anbahnung eines Vertrags und unser berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO). Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformular «Pilot anfragen»</strong><br>Wenn Sie das Formular «Pilot anfragen» auf den Seiten für Gemeinden und für Unternehmen nutzen, verarbeiten wir Ihre Angaben (Gemeinde oder Organisation, Name, E-Mail-Adresse und, falls angegeben, Ihr Thema oder Anliegen), um Ihre Anfrage zu beantworten. Zum Versand des Formulars nutzen wir den Dienst Formspree der Formspree, Inc., USA. Ihre Angaben werden über die Server von Formspree an uns weitergeleitet und dabei in den USA verarbeitet. Formspree handelt dabei in unserem Auftrag. Wir verwenden die Angaben nur, um Ihre Anfrage zu beantworten. Wer keine Daten über Formspree senden möchte, schreibt uns direkt an lionel@meyssens.ch. Rechtsgrundlage ist Ihre Einwilligung und die Anbahnung eines Vertrags (Art. 6 Abs. 1 lit. a und b DSGVO). Sie können Ihre Einwilligung jederzeit per E-Mail an lionel@meyssens.ch widerrufen. Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8;margin-bottom:.75rem"><strong>Ihre Rechte</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Schreiben Sie uns dazu an lionel@meyssens.ch. Sie können sich ausserdem bei der zuständigen Datenschutzbehörde beschweren (in der Schweiz der EDÖB, in Deutschland die Aufsichtsbehörde Ihres Bundeslandes).</p>
-    <p style="font-size:.875rem;color:#3c3c60;line-height:1.8"><strong>Kontakt</strong><br>Bei Fragen zum Datenschutz: lionel@meyssens.ch</p>
+    <h3 style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#040911">Datenschutzerklärung</h3>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Verantwortliche Stelle</strong><br>Meyssens, Lausen, Schweiz<br>E-Mail: lionel@meyssens.ch</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Datenerhebung</strong><br>Wir erheben nur die Daten, die für den Betrieb der Website notwendig sind. Die Website wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Dabei wird Ihre IP-Adresse übermittelt.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Schriftarten</strong><br>Die Website verwendet die Schriftart Inter. Sie wird zusammen mit der Website ausgeliefert; eine Verbindung zu Google Fonts oder anderen Drittanbietern findet dabei nicht statt.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Google Analytics</strong><br>Wir setzen Google Analytics (Google Ireland Limited, ggf. Google LLC, USA) nur mit Ihrer Einwilligung über das Cookie-Banner ein. Verarbeitet werden pseudonymisierte Nutzungsdaten wie besuchte Seiten, ungefähre Herkunft und Gerätetyp. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können sie jederzeit widerrufen, indem Sie die Website-Daten Ihres Browsers löschen und das Banner erneut mit «Ablehnen» beantworten.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformulare zu Branchen, Produkten und Ratgebern</strong><br>Wenn Sie eines dieser Formulare nutzen, verarbeiten wir Ihre Angaben (Vorname, Nachname, Organisation, E-Mail-Adresse, je nach Formular Branche, Produkt, Baustein oder Thema und, falls angegeben, Ihre Nachricht), um Ihre Anfrage zu beantworten. Beim Formular zu einem Ablauf sind es Name, E-Mail-Adresse, der gewählte Ablauf und, falls angegeben, Ihre Nachricht. Die Formulare werden über Formspree (Formspree, Inc., USA) als E-Mail an uns weitergeleitet. Rechtsgrundlage ist die Anbahnung eines Vertrags und unser berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO). Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformular «Pilot anfragen»</strong><br>Wenn Sie das Formular «Pilot anfragen» auf den Seiten für Gemeinden und für Unternehmen nutzen, verarbeiten wir Ihre Angaben (Gemeinde oder Organisation, Name, E-Mail-Adresse und, falls angegeben, Ihr Thema oder Anliegen), um Ihre Anfrage zu beantworten. Zum Versand des Formulars nutzen wir den Dienst Formspree der Formspree, Inc., USA. Ihre Angaben werden über die Server von Formspree an uns weitergeleitet und dabei in den USA verarbeitet. Formspree handelt dabei in unserem Auftrag. Wir verwenden die Angaben nur, um Ihre Anfrage zu beantworten. Wer keine Daten über Formspree senden möchte, schreibt uns direkt an lionel@meyssens.ch. Rechtsgrundlage ist Ihre Einwilligung und die Anbahnung eines Vertrags (Art. 6 Abs. 1 lit. a und b DSGVO). Sie können Ihre Einwilligung jederzeit per E-Mail an lionel@meyssens.ch widerrufen. Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Gratis-Werkzeug «QR-Rechnung erstellen»</strong><br>Die Werkzeugseite verwendet keine Cookies und überträgt keine Eingaben. Die QR-Rechnung entsteht vollständig in Ihrem Browser; Google Analytics und das Cookie-Banner sind auf dieser Seite nicht eingebunden.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Ihre Rechte</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Schreiben Sie uns dazu an lionel@meyssens.ch. Sie können sich ausserdem bei der zuständigen Datenschutzbehörde beschweren (in der Schweiz der EDÖB, in Deutschland die Aufsichtsbehörde Ihres Bundeslandes).</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8"><strong>Kontakt</strong><br>Bei Fragen zum Datenschutz: lionel@meyssens.ch</p>
   </div>
 </div>
 
@@ -897,7 +1009,7 @@ document.addEventListener('keydown', function(e){
 });
 
 </script>
-<script src="/assets/demos.js" defer></script>
+<script src="/assets/demos.js?v=b65344dc21" defer></script>
 <script>
 // --- Kontaktformular ohne Seitenwechsel absenden ---
 const FORM_MSG = {
