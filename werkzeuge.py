@@ -188,8 +188,8 @@ WERKZEUGE.append({
     "gespraech": {"titel": "Fristen und Termine nicht von Hand nachführen",
                   "text": "Wer Fristen, Lohnläufe oder Termine plant, rechnet Arbeitstage nicht nur einmal. Ein Ablauf kann Fristen aus "
                           "Belegen und Verträgen auslesen, in einen Kalender eintragen und rechtzeitig eine Erinnerung als Entwurf "
-                          "vorbereiten. Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich in Ihrem Betrieb lohnt.",
-                  "knopf": "Gratis-Prozess-Check anfragen"},
+                          "vorbereiten. In 20 Minuten kostenlosem Gespräch sagen wir offen, was sich in Ihrem Betrieb lohnt.",
+                  "knopf": "Kostenloses Gespräch anfragen"},
     "faq": [
         {"frage": "Wie viele Arbeitstage hat 2027?",
          "antwort": "2027 hat 261 Werktage von Montag bis Freitag. In Basel-Stadt, Basel-Landschaft, Bern und Zürich fallen fünf "
@@ -310,9 +310,9 @@ WERKZEUGE.append({
                  "<!-- fenster -->": fenster_felder},
     "gespraech": {"titel": "Offene Rechnungen im Blick, ohne Liste von Hand",
                   "text": "Ein Ablauf kann fällige Rechnungen erkennen, Zahlungserinnerungen als Entwurf vorbereiten und Ihnen zur "
-                          "Freigabe vorlegen. Versendet wird nichts ohne Sie. Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, "
+                          "Freigabe vorlegen. Versendet wird nichts ohne Sie. In 20 Minuten kostenlosem Gespräch sagen wir offen, "
                           "was sich in Ihrem Betrieb lohnt.",
-                  "knopf": "Gratis-Prozess-Check anfragen"},
+                  "knopf": "Kostenloses Gespräch anfragen"},
     "faq": [
         {"frage": "Wie hoch ist der Verzugszins in der Schweiz?",
          "antwort": "Fünf Prozent pro Jahr (Art. 104 Abs. 1 OR), auch wenn vertraglich ein tieferer Zins gilt. Ein höherer "
@@ -464,9 +464,9 @@ WERKZEUGE.append({
     "ersetzen": {"<!-- beleg-formular -->": rechnung_formular},
     "gespraech": {"titel": "Rechnungen direkt aus dem Rapport",
                   "text": "Wer jede Woche Rechnungen schreibt, verliert die Zeit beim Abtippen von Stunden und Material. Ein Ablauf kann "
-                          "aus erfassten Rapporten Rechnungsentwürfe vorbereiten, die Sie prüfen und freigeben. Im Gratis-Prozess-Check "
-                          "(30 Minuten) sagen wir offen, was sich in Ihrem Betrieb lohnt.",
-                  "knopf": "Gratis-Prozess-Check anfragen"},
+                          "aus erfassten Rapporten Rechnungsentwürfe vorbereiten, die Sie prüfen und freigeben. In 20 Minuten kostenlosem Gespräch"
+                          " sagen wir offen, was sich in Ihrem Betrieb lohnt.",
+                  "knopf": "Kostenloses Gespräch anfragen"},
     "faq": [
         {"frage": "Welche MWST-Sätze gelten?",
          "antwort": "Seit dem 1. Januar 2024 gelten 8,1 % (Normalsatz), 2,6 % (reduzierter Satz) und 3,8 % (Beherbergung), "
@@ -508,9 +508,9 @@ WERKZEUGE.append({
     "ersetzen": {"<!-- beleg-formular -->": offerte_formular},
     "gespraech": {"titel": "Offertanfragen schneller beantworten",
                   "text": "Ein Ablauf kann Anfragen sortieren, die nötigen Angaben nachfragen und einen Offertentwurf aus Ihren Ansätzen "
-                          "vorbereiten. Sie prüfen und senden selbst. Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich "
+                          "vorbereiten. Sie prüfen und senden selbst. In 20 Minuten kostenlosem Gespräch sagen wir offen, was sich "
                           "in Ihrem Betrieb lohnt.",
-                  "knopf": "Gratis-Prozess-Check anfragen"},
+                  "knopf": "Kostenloses Gespräch anfragen"},
     "faq": [
         {"frage": "Wie lange bin ich an eine Offerte gebunden?",
          "antwort": "Mit einer Frist bis zu deren Ablauf (Art. 3 OR). Ohne Frist, bis Sie bei normalem Postlauf eine Antwort erwarten "
@@ -546,9 +546,9 @@ WERKZEUGE.append({
     "skripte": ["/assets/mwst.js"],
     "gespraech": {"titel": "Belege automatisch erfassen",
                   "text": "Wer viele Belege von Hand abtippt, rechnet die Mehrwertsteuer immer wieder nach. Ein Ablauf kann Lieferant, "
-                          "Betrag und MWST aus Belegen auslesen und einen Buchungsvorschlag vorbereiten, den Sie prüfen. Im "
-                          "Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich in Ihrem Betrieb lohnt.",
-                  "knopf": "Gratis-Prozess-Check anfragen"},
+                          "Betrag und MWST aus Belegen auslesen und einen Buchungsvorschlag vorbereiten, den Sie prüfen. In "
+                          "20 Minuten kostenlosem Gespräch sagen wir offen, was sich in Ihrem Betrieb lohnt.",
+                  "knopf": "Kostenloses Gespräch anfragen"},
     "faq": [
         {"frage": "Wie rechne ich die MWST aus einem Betrag heraus?",
          "antwort": "Betrag mit MWST × Satz / (100 + Satz). Bei 8,1 % also × 8,1 / 108,1. In CHF 1 081.00 stecken so CHF 81.00 "
@@ -589,9 +589,9 @@ WERKZEUGE.append({
     "ersetzen": {"<!-- at-daten -->": feiertage_json},
     "gespraech": {"titel": "Rapporte und Arbeitszeit ohne Abtippen",
                   "text": "Ein Ablauf kann Zeiten aus Rapporten oder einer App übernehmen, Abweichungen markieren und die Monatsauswertung "
-                          "für die Lohnabrechnung vorbereiten. Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich in Ihrem "
+                          "für die Lohnabrechnung vorbereiten. In 20 Minuten kostenlosem Gespräch sagen wir offen, was sich in Ihrem "
                           "Betrieb lohnt.",
-                  "knopf": "Gratis-Prozess-Check anfragen"},
+                  "knopf": "Kostenloses Gespräch anfragen"},
     "faq": [
         {"frage": "Muss ich die Arbeitszeit erfassen?",
          "antwort": "Ja, grundsätzlich für alle Mitarbeitenden, die dem Arbeitsgesetz unterstehen (Art. 46 ArG, Art. 73 ArGV 1). "
@@ -623,8 +623,8 @@ WERKZEUGE.append({
     "skripte": ["/assets/ferien.js"],
     "gespraech": {"titel": "Ferien und Absenzen ohne Excel-Liste",
                   "text": "Ein Ablauf kann Ferienanträge erfassen, Saldi nachführen und die Angaben für die Lohnabrechnung vorbereiten. "
-                          "Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich in Ihrem Betrieb lohnt.",
-                  "knopf": "Gratis-Prozess-Check anfragen"},
+                          "In 20 Minuten kostenlosem Gespräch sagen wir offen, was sich in Ihrem Betrieb lohnt.",
+                  "knopf": "Kostenloses Gespräch anfragen"},
     "faq": [
         {"frage": "Wie viele Ferien sind gesetzlich vorgeschrieben?",
          "antwort": "Mindestens vier Wochen pro Dienstjahr, bis zum vollendeten 20. Altersjahr mindestens fünf Wochen (Art. 329a OR)."},
@@ -661,9 +661,9 @@ WERKZEUGE.append({
     "skripte": ["/assets/lohnfortzahlung.js"],
     "gespraech": {"titel": "Absenzen und Fristen im Blick",
                   "text": "Ein Ablauf kann Absenzen pro Dienstjahr zusammenzählen, an Meldefristen der Taggeldversicherung erinnern und "
-                          "Unterlagen für das Treuhandbüro vorbereiten. Im Gratis-Prozess-Check (30 Minuten) sagen wir offen, was sich "
+                          "Unterlagen für das Treuhandbüro vorbereiten. In 20 Minuten kostenlosem Gespräch sagen wir offen, was sich "
                           "in Ihrem Betrieb lohnt.",
-                  "knopf": "Gratis-Prozess-Check anfragen"},
+                  "knopf": "Kostenloses Gespräch anfragen"},
     "faq": [
         {"frage": "Wie lange muss der Lohn bei Krankheit bezahlt werden?",
          "antwort": "Im ersten Dienstjahr drei Wochen, danach für eine angemessene längere Zeit (Art. 324a OR). Wie lange, regeln "

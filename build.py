@@ -186,6 +186,7 @@ def geraet(titel, inhalt, marke="Beispiel"):
 ABLAUF_KOPF = '\n<link rel="stylesheet" href="/assets/ablaeufe.css">'
 ABLAUF_SKRIPT = '<script src="/assets/ablaeufe.js" defer></script>'
 ERFUNDEN = "Beispiel mit erfundenen Daten"
+PILOT_BETRIEB = "Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot."
 PILOT_ABLAUF = "Pilot: ein Ablauf, drei Monate kostenlos, jederzeit kündbar."
 PROZESS_CHECK = "Gratis-Prozess-Check (30 Minuten)"
 
@@ -1566,8 +1567,8 @@ def werkzeug_gespraech(w):
         return ""
     ziel = "/unternehmen/?utm_source=werkzeug&utm_medium=werkzeug&utm_campaign=%s#anfrage" % w["slug"]
     return ('<section id="naechster-schritt">\n  <div class="artikel-text wz-gespraech">\n    <span class="s-label">Weiter</span>\n'
-            '    <h2>%s</h2>\n    <p>%s</p>\n    <p><a class="btn-p" href="%s">%s %s</a></p>\n  </div>\n</section>'
-            % (html.escape(g["titel"]), html.escape(g["text"]), html.escape(ziel), html.escape(g.get("knopf", "Gespräch vereinbaren")), PFEIL))
+            '    <h2>%s</h2>\n    <p>%s</p>\n    <p>%s</p>\n    <p><a class="btn-p" href="%s">%s %s</a></p>\n  </div>\n</section>'
+            % (html.escape(g["titel"]), html.escape(g["text"]), html.escape(PILOT_BETRIEB), html.escape(ziel), html.escape(g.get("knopf", "Gespräch vereinbaren")), PFEIL))
 
 
 def werkzeug_seite(w, inhalt, skripte, gemeinsam, bekannte_seiten):
@@ -1632,8 +1633,8 @@ BRIEF_SEITEN = [
                 '    <p>Viele Ihrer KMU-Mandanten verlieren Zeit mit Belegen, Rapporten und Rechnungen. Meyssens richtet für diese Betriebe '
                 'schlanke Abläufe ein. Sie empfehlen, wir setzen um, die Mandantenbeziehung bleibt bei Ihnen. Wir machen keine Buchhaltung, '
                 'keine Steuerberatung und keine Revision.</p>\n'
-                '    <p>Wir zahlen keine Provision, damit Ihre Empfehlung unabhängig bleibt. Mandanten, die über Ihr Büro kommen, erhalten '
-                '4 statt 3 Monate Pilot kostenlos; das halten wir vor dem Pilot schriftlich fest. Ihr Büro erhält Material mit Ihrem Logo und einen '
+                '    <p>Wir zahlen keine Provision, damit Ihre Empfehlung unabhängig bleibt. Pilotbetrieb für Mandanten, die über Ihr Büro '
+                'kommen: 4 statt 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot; das halten wir vor dem Pilot schriftlich fest. Ihr Büro erhält Material mit Ihrem Logo und einen '
                 'Ablauf für das eigene Büro im Pilot.</p>\n  </div>\n</section>\n')},
     {"pfad": "/garage/", "branche": "garagen", "seite": "Brief Garage",
      "titel": "Für Garagen: Freigaben, MFK und Reifen | Meyssens",
@@ -1666,9 +1667,9 @@ def brief_zielseiten(gemeinsam, vorlage_seite, ablaeufe, bekannte_seiten):
             '      <p class="abl-mensch"><strong>Sie entscheiden:</strong> %s.</p>\n    </div>\n    %s\n  </div>\n%s\n</section>\n'
             '%s'
             '<section id="anfrage-bereich">\n  <div class="kopf-mitte r">\n    <span class="s-label">Gespräch</span>\n'
-            '    <h2>Gratis-Prozess-Check: 30 Minuten</h2>\n'
+            '    <h2>20 Minuten kostenloses Gespräch</h2>\n'
             '    <p class="s-lead">Sie zeigen uns einen Ablauf, wir sagen Ihnen offen, was sich automatisieren lässt und was nicht. '
-            'Danach ist ein Pilot möglich: ein Ablauf, drei Monate kostenlos, jederzeit kündbar.</p>\n  </div>\n%s\n</section>\n'
+            'Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot.</p>\n  </div>\n%s\n</section>\n'
             '<script src="/assets/anfrage.js" defer></script>'
             % (hilfen, html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["mensch"]), mini_geraet(x), ABLAUF_SKRIPT,
                b["zusatz"], anfrage_formular(b["seite"], "Betrieb", False)))
