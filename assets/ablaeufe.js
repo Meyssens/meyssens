@@ -1,6 +1,6 @@
 /* Animierte Beispiele "Automatisierungen und Schnittstellen" (/unternehmen/#ablaeufe) und Mini-Beispiele der Branchenseiten.
    Ohne JavaScript ist der Endzustand sichtbar. Mit JavaScript läuft der Ablauf einmal, sobald das Beispiel im Bild ist
-   (Schritte über data-ab="n"). Knopf: Anhalten, Weiter, Nochmals abspielen. Bei reduzierter Bewegung startet nichts von
+   (Schritte über data-ab="n"). Knopf: Anhalten, Weiter, Von vorn. Bei reduzierter Bewegung startet nichts von
    selbst; der Knopf zeigt die Schritte ohne Übergänge.
    Knöpfe mit data-thema füllen das Freitextfeld des Anfrageformulars vor, wenn es noch leer ist. */
 (function () {
@@ -22,9 +22,9 @@
     function beschrifte(text) { knopf.textContent = text; }
     function halt() { clearInterval(uhr); uhr = null; }
     function weiter() {
-      if (schritt >= ende) { halt(); beschrifte("Nochmals abspielen"); return; }
+      if (schritt >= ende) { halt(); beschrifte("Von vorn"); return; }
       zeige(schritt + 1);
-      if (schritt >= ende) { halt(); beschrifte("Nochmals abspielen"); }
+      if (schritt >= ende) { halt(); beschrifte("Von vorn"); }
     }
     function spiele() {
       if (schritt >= ende) { fig.classList.add("spielt"); zeige(0); }

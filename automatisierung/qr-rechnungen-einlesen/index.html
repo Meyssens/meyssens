@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR-Rechnungen automatisch einlesen und zahlen | Meyssens</title>
+<meta name="description" content="QR-Code lesen, Konto, Betrag und Referenz prüfen, Zahlung als Entwurf fürs E-Banking: Kreditorenrechnungen ohne Abtippen. Jetzt Gespräch anfragen.">
+<meta property="og:title" content="QR-Rechnungen automatisch einlesen und zahlen | Meyssens">
+<meta property="og:description" content="QR-Code lesen, Konto, Betrag und Referenz prüfen, Zahlung als Entwurf fürs E-Banking: Kreditorenrechnungen ohne Abtippen. Jetzt Gespräch anfragen.">
+<meta property="og:url" content="https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://meyssens.ch/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Meyssens – Digitale Infrastruktur für Organisationen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://meyssens.ch/og-image.png">
+<meta name="twitter:image:alt" content="Meyssens – Digitale Infrastruktur für Organisationen">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Meyssens">
+<link rel="canonical" href="https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/">
+<link rel="alternate" hreflang="de-CH" href="https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/">
+<link rel="alternate" hreflang="x-default" href="https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/">
+<link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
+<link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png?v=2">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png?v=2">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png?v=2">
+<link rel="manifest" href="/site.webmanifest?v=2">
+<meta name="theme-color" content="#0054d1">
+<script>document.documentElement.classList.add("js")</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.meyssensEnableAnalytics = function(){
+    if(window.meyssensGaLoaded) return;
+    window.meyssensGaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-JNHXZ1TZ4K';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-JNHXZ1TZ4K');
+  };
+</script>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+<link rel="preload" href="/assets/schriften/inter-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/schriften/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=854e587087">
+<link rel="stylesheet" href="/assets/stil.css?v=68913fd075">
+<link rel="stylesheet" href="/assets/ablaeufe.css?v=d22c8253de">
+<link rel="stylesheet" href="/assets/loesungen.css?v=000f3667d1">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://meyssens.ch/#org", "name": "Meyssens", "url": "https://meyssens.ch/", "logo": "https://meyssens.ch/logo.png", "email": "lionel@meyssens.ch", "founder": {"@id": "https://meyssens.ch/ueber-uns/#person"}, "address": {"@type": "PostalAddress", "addressLocality": "Lausen", "addressRegion": "BL", "addressCountry": "CH"}, "areaServed": {"@type": "Country", "name": "Schweiz"}, "knowsLanguage": "de-CH", "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "lionel@meyssens.ch", "availableLanguage": "de"}}, {"@type": "WebSite", "@id": "https://meyssens.ch/#website", "name": "Meyssens", "url": "https://meyssens.ch/", "inLanguage": "de-CH", "publisher": {"@id": "https://meyssens.ch/#org"}}, {"@type": "Person", "@id": "https://meyssens.ch/ueber-uns/#person", "name": "Lionel Nickelsen", "url": "https://meyssens.ch/ueber-uns/", "worksFor": {"@id": "https://meyssens.ch/#org"}}, {"@type": "BreadcrumbList", "@id": "https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/#brotkrumen", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://meyssens.ch/"}, {"@type": "ListItem", "position": 2, "name": "Unternehmen", "item": "https://meyssens.ch/unternehmen/"}, {"@type": "ListItem", "position": 3, "name": "KI-Automatisierung", "item": "https://meyssens.ch/automatisierung/"}, {"@type": "ListItem", "position": 4, "name": "QR-Rechnungen einlesen", "item": "https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/"}]}, {"@type": "WebPage", "@id": "https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/", "url": "https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/", "name": "QR-Rechnungen automatisch einlesen und zahlen | Meyssens", "inLanguage": "de-CH", "isPartOf": {"@id": "https://meyssens.ch/#website"}, "breadcrumb": {"@id": "https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/#brotkrumen"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://meyssens.ch/og-image.png", "width": 1200, "height": 630, "caption": "Meyssens – Digitale Infrastruktur für Organisationen"}}, {"@type": "Service", "@id": "https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/#dienst", "name": "QR-Rechnungen einlesen", "description": "Jede QR-Rechnung trägt ihre Zahlungsdaten im QR-Code. Statt sie abzutippen, werden Konto, Betrag und Referenz gelesen, geprüft und als Zahlung für Ihr E-Banking vorbereitet. Sie geben frei.", "url": "https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/", "serviceType": "Büroautomatisierung", "provider": {"@id": "https://meyssens.ch/#org"}, "areaServed": {"@type": "Country", "name": "Schweiz"}, "availableLanguage": "de-CH", "audience": {"@type": "BusinessAudience", "audienceType": "Unternehmen in der Schweiz"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kann man QR-Rechnungen automatisch einlesen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Der Swiss QR Code enthält Konto, Empfänger, Betrag und Referenz als strukturierte Daten. Sie werden gelesen, geprüft und als Zahlung vorbereitet."}}, {"@type": "Question", "name": "Wird die Rechnung automatisch bezahlt?", "acceptedAnswer": {"@type": "Answer", "text": "Nein. Es entsteht ein Zahlungsauftrag als Entwurf. Freigeben tun Sie im E-Banking oder in Ihrer Buchhaltungssoftware."}}, {"@type": "Question", "name": "Funktioniert das auch mit Papierrechnungen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, wenn der QR-Code auf dem Foto oder Scan gut lesbar ist. Ist er es nicht, wird die Rechnung markiert."}}, {"@type": "Question", "name": "Wie werden Fehler verhindert?", "acceptedAnswer": {"@type": "Answer", "text": "Die Prüfziffern von IBAN und Referenz werden kontrolliert, bekannte Kreditoren abgeglichen und mögliche Doppelzahlungen markiert. Die Freigabe bleibt bei Ihnen."}}, {"@type": "Question", "name": "Was kostet das Einlesen von QR-Rechnungen?", "acceptedAnswer": {"@type": "Answer", "text": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach einem Gespräch von 20 Minuten; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."}}]}]}</script>
+</head>
+<body class="stil">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<nav id="nav" aria-label="Hauptnavigation">
+  <a href="/" class="logo"><img src="/logo-nav.png" width="350" height="48" alt="Meyssens – zur Startseite"></a>
+  <ul class="nav-items">
+    <li><a href="/gemeinden/">Für Gemeinden</a></li>
+    <li><a href="/unternehmen/">Für Unternehmen</a></li>
+    <li><a href="/automatisierung/">Pakete</a></li>
+    <li><a href="/ueber-uns/">Über uns</a></li>
+  </ul>
+  <a href="mailto:lionel@meyssens.ch" class="nav-btn nav-kontakt">Kontakt</a>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/gemeinden/">Für Gemeinden</a>
+  <a href="/unternehmen/">Für Unternehmen</a>
+  <a href="/automatisierung/">Pakete</a>
+  <a href="/ueber-uns/">Über uns</a>
+</div>
+
+<main id="main" class="lz-seite">
+<section class="page-hero">
+  <nav class="brotkrumen" aria-label="Brotkrumen"><ol><li><a href="/">Startseite</a></li><li><a href="/unternehmen/">Unternehmen</a></li><li><a href="/automatisierung/">KI-Automatisierung</a></li><li aria-current="page">QR-Rechnungen einlesen</li></ol></nav>
+  <div class="chip"><span class="chip-dot"></span><span>Kreditoren</span></div>
+  <h1>QR-Rechnungen automatisch einlesen: <span class="hl">Zahlung als Entwurf</span></h1>
+  <p class="lead u-hero-lead">Jede QR-Rechnung trägt ihre Zahlungsdaten im QR-Code. Statt sie abzutippen, werden Konto, Betrag und Referenz gelesen, geprüft und als Zahlung für Ihr E-Banking vorbereitet. Sie geben frei.</p>
+  <div class="held-knoepfe">
+    <a href="#kontakt" class="btn-p" data-thema="QR-Rechnungen automatisch einlesen">Gespräch vereinbaren <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="#beispiel" class="btn-s">Beispiel ansehen</a>
+  </div>
+</section>
+
+<section id="ablauf">
+  <div class="kopf-mitte r">
+    <span class="s-label">Ablauf</span>
+    <h2>Vom Zahlteil zur Zahlung</h2>
+  </div>
+  <ol class="lz-ablauf" data-lz>
+    <li class="lz-spur" aria-hidden="true"><i></i></li>
+    <li class="lz-schritt"><span class="lz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13h4l2 3h4l2-3h4"/><path d="M6 5h12l2 8v6H4v-6z"/></svg></span><div class="lz-text"><span class="lz-nr">Schritt 1</span><h3>Rechnung kommt an</h3><p>Als PDF per E-Mail oder auf Papier, fotografiert oder gescannt.</p></div></li>
+    <li class="lz-schritt"><span class="lz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2M20 14v6h-6v-2M17 17h0"/></svg></span><div class="lz-text"><span class="lz-nr">Schritt 2</span><h3>QR-Code lesen</h3><p>Konto oder QR-IBAN, Zahlungsempfänger, Betrag, Währung, Referenz und Mitteilung werden übernommen.</p></div></li>
+    <li class="lz-schritt"><span class="lz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div class="lz-text"><span class="lz-nr">Schritt 3</span><h3>Prüfen</h3><p>Prüfziffern von IBAN und Referenz, bekannter Kreditor, mögliche Doppelzahlung.</p></div></li>
+    <li class="lz-schritt"><span class="lz-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/></svg></span><div class="lz-text"><span class="lz-nr">Schritt 4</span><h3>Zahlung als Entwurf</h3><p>Als Zahlungsauftrag für Ihr E-Banking oder als Kreditorenbuchung in Ihrer Software. Freigeben tun Sie.</p></div></li>
+  </ol>
+</section>
+<section id="beispiel" class="flaeche">
+  <div class="kopf-mitte r">
+    <span class="s-label">Beispiel</span>
+    <h2>Beispiel: eine Stromrechnung</h2>
+    <p class="s-lead">Der QR-Code wird gescannt, die Zahlungsdaten erscheinen, die Zahlung wird als Entwurf vorbereitet.</p>
+  </div>
+  <div class="u-beispiel">
+<figure class="abl-geraet r" data-abl-beispiel>
+  <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">QR-Rechnung einlesen</span><span class="beispiel">Beispiel</span><button type="button" class="abl-knopf" hidden>Abspielen</button></div>
+  <div class="abl-buehne abl-belege abl-qrscan" role="img" aria-label="Beispiel mit erfundenen Daten: Der Zahlteil einer Rechnung der Beispiel Energie AG über CHF 1 189.10 wird gelesen: QR-IBAN, Zahlungsempfänger, Betrag und QR-Referenz. Die Prüfziffern stimmen, eine Doppelzahlung liegt nicht vor. Die Zahlung mit Fälligkeit 15.12.2026 liegt als Entwurf bereit und wird von Ihnen im E-Banking freigegeben.">
+<div class="abl-inhalt" aria-hidden="true">
+<div class="abl-foto abl-qr-foto">
+  <div class="abl-qr-rahmen" data-ab="1">
+    <div class="abl-qr-code"><img src="/assets/qr-beispiel.svg" alt="" width="640" height="338" loading="lazy" decoding="async"></div>
+    <i class="abl-ecke abl-ecke-1"></i><i class="abl-ecke abl-ecke-2"></i><i class="abl-ecke abl-ecke-3"></i><i class="abl-ecke abl-ecke-4"></i>
+    <i class="abl-scan" data-ab="1"></i>
+  </div>
+  <span class="abl-qr-status" data-ab="2">QR-Code erkannt</span>
+</div>
+<div class="abl-felder">
+  <span class="abl-klein">Zahlungsdaten aus dem QR-Code</span>
+  <span class="abl-feld"><i>Konto</i><b class="abl-wert" data-ab="3">QR-IBAN CH44 3199 9123 0008 8901 2</b></span>
+  <span class="abl-feld"><i>Zahlbar an</i><b class="abl-wert" data-ab="3">Beispiel Energie AG</b></span>
+  <span class="abl-feld"><i>Betrag</i><b class="abl-wert" data-ab="4">CHF 1 189.10</b></span>
+  <span class="abl-feld"><i>Referenz</i><b class="abl-wert" data-ab="4">21 00000 00003 13947 14300 09017</b></span>
+  <span class="abl-feld"><i>Prüfung</i><b class="abl-wert" data-ab="5">Prüfziffern korrekt, keine Doppelzahlung</b></span>
+  <span class="abl-vorschlag" data-ab="6"><i>Zahlung als Entwurf</i><b>Fällig am 15.12.2026, Kreditor 2000, bereit für Ihr E-Banking</b></span>
+  <span class="abl-freigabe" data-ab="7">Von Ihnen im E-Banking freigegeben</span>
+</div>
+</div>
+  </div>
+  <figcaption class="abl-hinweis">Beispiel mit erfundenen Daten</figcaption>
+</figure>
+  </div>
+  <p class="u-hinweis r"><a href="#kontakt" data-thema="QR-Rechnungen automatisch einlesen">Gratis-Prozess-Check anfragen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+</section>
+<script src="/assets/ablaeufe.js?v=8ec9a0312a" defer></script>
+<section id="vorher-nachher">
+  <div class="kopf-mitte r">
+    <span class="s-label">Vorher und nachher</span>
+    <h2>Was sich im Alltag ändert</h2>
+    <p class="s-lead">Ein typischer Ablauf, als Beispiel ohne Zahlenversprechen. Wie viel Zeit Sie sparen, zeigt erst der Pilot.</p>
+  </div>
+  <div class="vn r" data-vn>
+    <div class="vn-spalte vn-vorher">
+      <div class="vn-kopf"><h3>Vorher</h3><span class="beispiel">Beispiel</span></div>
+      <ul>
+        <li style="--i:0"><span class="vn-sym"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 7h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="vn-t">IBAN und Referenz abtippen</span></li>
+        <li style="--i:1"><span class="vn-sym"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 7h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="vn-t">Tippfehler fallen erst bei der Bank auf</span></li>
+        <li style="--i:2"><span class="vn-sym"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 7h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="vn-t">Doppelt erfasste Rechnungen bemerkt man spät</span></li>
+        <li style="--i:3"><span class="vn-sym"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 7h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span><span class="vn-t">Fälligkeiten im Kopf behalten</span></li>
+      </ul>
+    </div>
+    <span class="vn-pfeil" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <div class="vn-spalte vn-nachher">
+      <div class="vn-kopf"><h3>Nachher</h3><span class="beispiel">Beispiel</span></div>
+      <ul>
+        <li style="--i:0"><span class="vn-sym"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3.5 7.3l2.4 2.4L10.6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vn-t">Zahlungsdaten direkt aus dem QR-Code übernommen</span></li>
+        <li style="--i:1"><span class="vn-sym"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3.5 7.3l2.4 2.4L10.6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vn-t">Prüfziffern vor der Zahlung kontrolliert</span></li>
+        <li style="--i:2"><span class="vn-sym"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3.5 7.3l2.4 2.4L10.6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vn-t">Mögliche Doppelzahlungen sind markiert</span></li>
+        <li style="--i:3"><span class="vn-sym"><svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3.5 7.3l2.4 2.4L10.6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="vn-t">Zahlungen nach Fälligkeit geordnet, gesammelt freigeben</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="nutzen" class="flaeche">
+  <div class="kopf-mitte r">
+    <span class="s-label">Nutzen</span>
+    <h2>Warum sich das gerade bei QR-Rechnungen lohnt</h2>
+  </div>
+  <div class="feat-grid vier r">
+    <div class="feat">
+      <h3>Daten statt Bild</h3>
+      <p>Der QR-Code enthält Konto, Empfänger, Betrag und Referenz als strukturierte Daten. Nichts muss geraten werden.</p>
+    </div>
+    <div class="feat">
+      <h3>Keine Tippfehler</h3>
+      <p>IBAN und Referenz werden mit ihren Prüfziffern kontrolliert, bevor eine Zahlung entsteht.</p>
+    </div>
+    <div class="feat">
+      <h3>Keine Doppelzahlung</h3>
+      <p>Eine Rechnung, die schon bezahlt oder erfasst ist, wird erkannt und markiert.</p>
+    </div>
+    <div class="feat">
+      <h3>Fällig im Blick</h3>
+      <p>Zahlungen werden nach Fälligkeit geordnet. Sie geben gesammelt frei.</p>
+    </div>
+  </div>
+</section>
+<section id="hintergrund">
+  <div class="artikel-text r">
+    <span class="s-label">Hintergrund</span>
+    <h2>Was im QR-Code steht</h2>
+    <p>Die QR-Rechnung ist in der Schweiz der Standard für Einzahlungen. Ihr Zahlteil enthält einen Swiss QR Code mit den Zahlungsdaten: Konto (IBAN oder QR-IBAN), Zahlungsempfänger, Betrag und Währung, je nach Fall eine QR-Referenz oder Creditor Reference und eine Mitteilung.</p>
+    <p>Weil diese Angaben maschinenlesbar sind, ist das Einlesen zuverlässiger als das Auslesen eines gewöhnlichen Belegs. Die übrigen Angaben der Rechnung, etwa Positionen und Mehrwertsteuer, werden wie bei jedem Beleg ausgelesen und als Buchungsvorschlag vorbereitet.</p>
+  </div>
+</section>
+<section id="e-banking" class="flaeche">
+  <div class="artikel-text r">
+    <span class="s-label">Zahlung</span>
+    <h2>Ihr E-Banking bleibt der Ort der Freigabe</h2>
+    <p>Die Automatisierung löst keine Zahlung aus. Sie bereitet Zahlungsaufträge vor, die Sie in Ihr E-Banking übernehmen oder in Ihrer Buchhaltungssoftware freigeben. Welcher Weg für Ihre Bank und Ihre Software passt, klären wir im Prozess-Check.</p>
+    <p>Selbst eine QR-Rechnung erstellen? Dafür gibt es unser Gratis-Werkzeug, das im Browser läuft.</p>
+    <p><a class="btn-s" href="/werkzeuge/qr-rechnung/">Gratis-Werkzeug: QR-Rechnung erstellen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+  </div>
+</section>
+<section id="passend">
+  <div class="kopf-mitte r">
+    <span class="s-label">Weiterlesen</span>
+    <h2>Passend zum Thema</h2>
+  </div>
+  <div class="feat-grid r">
+    <a href="/produkte/fristenkalender-belegeingang-treuhand/" class="feat tile">
+      <span class="status-chip">Baustein</span>
+      <h3>Fristenkalender und Belegeingang für Treuhandbüros</h3>
+      <p>Ein Fristenkalender pro Mandat für MWST-Abrechnungen, Steuererklärungen und eigene Termine, dazu ein geordneter Belegeingang mit Checkliste.</p>
+      <span class="way-go">Mehr zu Fristenkalender und Belegeingang für Treuhandbüros <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+    <a href="/ratgeber/mwst-abrechnung-fristen/" class="feat tile">
+      <span class="status-chip">Ratgeber</span>
+      <h3>MWST-Abrechnung: Perioden, Fristen und Verzugszins</h3>
+      <p>60 Tage nach der Abrechnungsperiode, Quartal, Semester oder Jahr, Fristverlängerung und 4 Prozent Verzugszins: Überblick und Checkliste lesen.</p>
+      <span class="way-go">Ratgeber lesen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+    <a href="/ratgeber/aufbewahrungsfristen-buchhaltung/" class="feat tile">
+      <span class="status-chip">Ratgeber</span>
+      <h3>Aufbewahrungsfristen für Buchhaltung und Belege</h3>
+      <p>Zehn Jahre nach Art. 958f OR, 20 Jahre für MWST-Unterlagen zu Immobilien, digitale Ablage nach GeBüV: Überblick mit Quellen und Checkliste.</p>
+      <span class="way-go">Ratgeber lesen <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>
+  </div>
+  <p class="u-hinweis r">Ausserdem: <a href="/ratgeber/jahresabschluss-unterlagen-checkliste/">Jahresabschluss: Unterlagen vom Kunden, Checkliste</a></p>
+  <p class="u-hinweis r">Für Ihre Branche: <a href="/branchen/treuhaender/">Treuhandbüros</a> · <a href="/branchen/detailhandel/">Detailhandel</a> · <a href="/branchen/immobilienverwaltungen/">Immobilienverwaltungen</a></p>
+</section>
+<section id="fragen" class="flaeche">
+  <div class="r">
+    <span class="s-label">Fragen</span>
+    <h2>Häufige Fragen</h2>
+  </div>
+  <div class="qa-list r">
+    <div class="qa">
+      <h3>Kann man QR-Rechnungen automatisch einlesen?</h3>
+      <p>Ja. Der Swiss QR Code enthält Konto, Empfänger, Betrag und Referenz als strukturierte Daten. Sie werden gelesen, geprüft und als Zahlung vorbereitet.</p>
+    </div>
+    <div class="qa">
+      <h3>Wird die Rechnung automatisch bezahlt?</h3>
+      <p>Nein. Es entsteht ein Zahlungsauftrag als Entwurf. Freigeben tun Sie im E-Banking oder in Ihrer Buchhaltungssoftware.</p>
+    </div>
+    <div class="qa">
+      <h3>Funktioniert das auch mit Papierrechnungen?</h3>
+      <p>Ja, wenn der QR-Code auf dem Foto oder Scan gut lesbar ist. Ist er es nicht, wird die Rechnung markiert.</p>
+    </div>
+    <div class="qa">
+      <h3>Wie werden Fehler verhindert?</h3>
+      <p>Die Prüfziffern von IBAN und Referenz werden kontrolliert, bekannte Kreditoren abgeglichen und mögliche Doppelzahlungen markiert. Die Freigabe bleibt bei Ihnen.</p>
+    </div>
+    <div class="qa">
+      <h3>Was kostet das Einlesen von QR-Rechnungen?</h3>
+      <p>Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach einem Gespräch von 20 Minuten; die Pakete und ihre «ab»-Preise stehen auf der Preisseite.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" class="flaeche">
+  <div class="contact-grid">
+    <div class="r">
+      <span class="s-label">Kontakt</span>
+      <h2>QR-Rechnungen einlesen: Gespräch vereinbaren</h2>
+      <p class="kontakt-lead">Beschreiben Sie kurz Ihren Ablauf. Sie erhalten eine persönliche Antwort von Lionel Nickelsen. Das erste Gespräch ist kostenlos.</p>
+      <div class="cinfo-item">
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="3.5" width="14" height="10" rx="1.5"/><path d="M1.5 5l7 4.5 7-4.5"/></svg></div>
+        <div><div class="clabel">Lieber per E-Mail</div><div class="cval"><a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg></div>
+        <div><div class="clabel">Telefon</div><div class="cval"><a href="tel:+41788643763">+41 78 864 37 63</a></div></div>
+      </div>
+    </div>
+    <div class="ccard r d1">
+<div class="anfrage" id="anfrage">
+  <form class="anfrage-form" data-anfrage action="https://formspree.io/f/xlgpzzew" method="post" novalidate aria-labelledby="anfrage-titel">
+    <h3 class="anfrage-titel" id="anfrage-titel">Pilot anfragen</h3>
+    <p class="anfrage-hinweis">Felder mit * sind Pflichtfelder.</p>
+    <input type="hidden" name="_subject" value="Pilot anfragen über meyssens.ch (Unternehmen)">
+    <input type="hidden" name="seite" value="Unternehmen">
+    <div class="fgrp"><label class="flabel" for="anf-organisation"><span>Unternehmen / Organisation</span> <span class="anfrage-stern" aria-hidden="true">*</span></label><input class="finput" id="anf-organisation" name="organisation" data-leer="Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an." type="text" autocomplete="organization" required aria-describedby="anf-organisation-fehler"><p class="ffehler" id="anf-organisation-fehler" hidden></p></div>
+    <div class="fgrp"><label class="flabel" for="anf-name"><span>Name</span> <span class="anfrage-stern" aria-hidden="true">*</span></label><input class="finput" id="anf-name" name="name" type="text" autocomplete="name" required aria-describedby="anf-name-fehler"><p class="ffehler" id="anf-name-fehler" hidden></p></div>
+    <div class="fgrp"><label class="flabel" for="anf-email"><span>E-Mail</span> <span class="anfrage-stern" aria-hidden="true">*</span></label><input class="finput" id="anf-email" name="email" type="email" autocomplete="email" required aria-describedby="anf-email-fehler"><p class="ffehler" id="anf-email-fehler" hidden></p></div>
+    <div class="fgrp"><label class="flabel" for="anf-thema"><span>Thema oder Anliegen (optional)</span></label><textarea class="ftextarea" id="anf-thema" name="thema"></textarea></div>
+    <div class="anfrage-hp" aria-hidden="true"><label for="anf-hp">Dieses Feld bitte leer lassen</label><input id="anf-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+    <div class="fgrp anfrage-einw"><input type="checkbox" id="anf-einwilligung" name="einwilligung" value="ja" required aria-describedby="anf-einwilligung-fehler"><label for="anf-einwilligung">Ich bin einverstanden, dass Meyssens meine Angaben zur Bearbeitung dieser Anfrage verarbeitet. Mehr dazu in der <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Datenschutzerklärung</a>.</label><p class="ffehler" id="anf-einwilligung-fehler" hidden></p></div>
+    <button type="submit" class="btn-p anfrage-senden"><span>Anfrage senden</span> <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <p class="anfrage-status" role="status" aria-live="polite"></p>
+  </form>
+  <div class="anfrage-dank" tabindex="-1" hidden><h3></h3><p></p></div>
+</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
+      <p>Digitale Werkzeuge für Gemeinden und Unternehmen.</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:.85rem;margin-top:.5rem">lionel@meyssens.ch</p>
+    </div>
+    <div class="footer-col">
+      <h3>Für Gemeinden</h3>
+      <a href="/gemeinden/">Übersicht Gemeinden</a>
+      <a href="https://demo.meyssens.ch" target="_blank">Live-Demo ansehen →</a>
+      <a href="https://decidim.org" target="_blank">Decidim Open-Source</a>
+    </div>
+    <div class="footer-col">
+      <h3>Für Unternehmen</h3>
+      <a href="/unternehmen/">Übersicht Unternehmen</a>
+      <a href="/branchen/">Branchen</a>
+      <a href="/ratgeber/">Ratgeber</a>
+      <a href="/automatisierung/">KI-Automatisierung</a>
+      <a href="/werkzeuge/qr-rechnung/">QR-Rechnung erstellen</a>
+      <a href="/preise/">Preise</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <a href="/" class="flogo"><img src="/logo-nav.png" width="350" height="48" loading="lazy" decoding="async" alt="Meyssens – Digitale Infrastruktur für Organisationen"></a>
+    <p class="fcopy">© 2026 Meyssens · Schweiz</p>
+    <div class="footer-legal">
+      <a href="/ueber-uns/">Über uns</a>
+      <a href="mailto:lionel@meyssens.ch">Kontakt</a>
+      <a href="#impressum" onclick="document.getElementById('impressum-modal').style.display='flex'">Impressum</a>
+      <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner hidden" id="cookie-banner">
+  <div class="cookie-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="7"/><circle cx="6" cy="6.5" r=".6" fill="var(--blue)" stroke="none"/><circle cx="10.5" cy="6" r=".6" fill="var(--blue)" stroke="none"/><circle cx="6.5" cy="10.5" r=".6" fill="var(--blue)" stroke="none"/><circle cx="10" cy="10.5" r=".6" fill="var(--blue)" stroke="none"/></svg></div>
+  <div class="cookie-title" data-i18n="cookie.title">Ihre Privatsphäre ist uns wichtig</div>
+  <div class="cookie-text" data-i18n="cookie.text">Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById('datenschutz-modal').style.display='flex'">Mehr erfahren<span class="sr-only"> zur Datenschutzerklärung</span></a></div>
+  <div class="cookie-actions">
+    <button class="cookie-btn cookie-decline" id="cookie-decline" data-i18n="cookie.decline">Ablehnen</button>
+    <button class="cookie-btn cookie-accept" id="cookie-accept" data-i18n="cookie.accept">Akzeptieren</button>
+  </div>
+</div>
+
+<div id="impressum-modal" role="dialog" aria-modal="true" aria-label="Impressum" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:1rem">
+  <div style="background:white;border-radius:16px;padding:2.5rem;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;position:relative">
+    <button onclick="document.getElementById('impressum-modal').style.display='none'" aria-label="Schliessen" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888">×</button>
+    <h3 style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#040911">Impressum</h3>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Einzelunternehmen</strong><br>Meyssens<br>Lausen, Basel-Landschaft<br>Schweiz</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Kontakt</strong><br>E-Mail: lionel@meyssens.ch</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Handelsregister</strong><br>Einzelfirma, eingetragen im Kanton Basel-Landschaft</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8"><strong>Haftungsausschluss</strong><br>Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.</p>
+  </div>
+</div>
+
+<div id="datenschutz-modal" role="dialog" aria-modal="true" aria-label="Datenschutzerklärung" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center;padding:1rem">
+  <div style="background:white;border-radius:16px;padding:2.5rem;max-width:520px;width:100%;max-height:80vh;overflow-y:auto;position:relative">
+    <button onclick="document.getElementById('datenschutz-modal').style.display='none'" aria-label="Schliessen" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888">×</button>
+    <h3 style="font-family:'Inter Titel','Inter Titel Ersatz',sans-serif;font-size:1.25rem;font-weight:800;margin-bottom:1.5rem;color:#040911">Datenschutzerklärung</h3>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Verantwortliche Stelle</strong><br>Meyssens, Lausen, Schweiz<br>E-Mail: lionel@meyssens.ch</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Datenerhebung</strong><br>Wir erheben nur die Daten, die für den Betrieb der Website notwendig sind. Die Website wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Dabei wird Ihre IP-Adresse übermittelt.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Schriftarten</strong><br>Die Website verwendet die Schriftart Inter. Sie wird zusammen mit der Website ausgeliefert; eine Verbindung zu Google Fonts oder anderen Drittanbietern findet dabei nicht statt.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Google Analytics</strong><br>Wir setzen Google Analytics (Google Ireland Limited, ggf. Google LLC, USA) nur mit Ihrer Einwilligung über das Cookie-Banner ein. Verarbeitet werden pseudonymisierte Nutzungsdaten wie besuchte Seiten, ungefähre Herkunft und Gerätetyp. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können sie jederzeit widerrufen, indem Sie die Website-Daten Ihres Browsers löschen und das Banner erneut mit «Ablehnen» beantworten.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformulare zu Branchen, Produkten und Ratgebern</strong><br>Wenn Sie eines dieser Formulare nutzen, verarbeiten wir Ihre Angaben (Vorname, Nachname, Organisation, E-Mail-Adresse, je nach Formular Branche, Produkt, Baustein oder Thema und, falls angegeben, Ihre Nachricht), um Ihre Anfrage zu beantworten. Beim Formular zu einem Ablauf sind es Name, E-Mail-Adresse, der gewählte Ablauf und, falls angegeben, Ihre Nachricht. Die Formulare werden über Formspree (Formspree, Inc., USA) als E-Mail an uns weitergeleitet. Rechtsgrundlage ist die Anbahnung eines Vertrags und unser berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO). Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Anfrageformular «Pilot anfragen»</strong><br>Wenn Sie das Formular «Pilot anfragen» auf den Seiten für Gemeinden und für Unternehmen nutzen, verarbeiten wir Ihre Angaben (Gemeinde oder Organisation, Name, E-Mail-Adresse und, falls angegeben, Ihr Thema oder Anliegen), um Ihre Anfrage zu beantworten. Zum Versand des Formulars nutzen wir den Dienst Formspree der Formspree, Inc., USA. Ihre Angaben werden über die Server von Formspree an uns weitergeleitet und dabei in den USA verarbeitet. Formspree handelt dabei in unserem Auftrag. Wir verwenden die Angaben nur, um Ihre Anfrage zu beantworten. Wer keine Daten über Formspree senden möchte, schreibt uns direkt an lionel@meyssens.ch. Rechtsgrundlage ist Ihre Einwilligung und die Anbahnung eines Vertrags (Art. 6 Abs. 1 lit. a und b DSGVO). Sie können Ihre Einwilligung jederzeit per E-Mail an lionel@meyssens.ch widerrufen. Wir speichern die Angaben, solange es für die Bearbeitung nötig ist.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Gratis-Werkzeug «QR-Rechnung erstellen»</strong><br>Die Werkzeugseite verwendet keine Cookies und überträgt keine Eingaben. Die QR-Rechnung entsteht vollständig in Ihrem Browser; Google Analytics und das Cookie-Banner sind auf dieser Seite nicht eingebunden.</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8;margin-bottom:.75rem"><strong>Ihre Rechte</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Schreiben Sie uns dazu an lionel@meyssens.ch. Sie können sich ausserdem bei der zuständigen Datenschutzbehörde beschweren (in der Schweiz der EDÖB, in Deutschland die Aufsichtsbehörde Ihres Bundeslandes).</p>
+    <p style="font-size:.875rem;color:#344053;line-height:1.8"><strong>Kontakt</strong><br>Bei Fragen zum Datenschutz: lionel@meyssens.ch</p>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>40)})
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.08})
+document.querySelectorAll('.r').forEach(el=>io.observe(el))
+const hamburger=document.getElementById('hamburger')
+const mobileNav=document.getElementById('mobile-nav')
+function setMobileNav(auf){hamburger.classList.toggle('open',auf);mobileNav.classList.toggle('open',auf);hamburger.setAttribute('aria-expanded',auf?'true':'false')}
+function closeMobileNav(){setMobileNav(false)}
+hamburger.addEventListener('click',()=>{const auf=!mobileNav.classList.contains('open');setMobileNav(auf);if(auf){const a=mobileNav.querySelector('a');if(a)a.focus()}})
+document.addEventListener('click',(e)=>{if(!hamburger.contains(e.target)&&!mobileNav.contains(e.target))closeMobileNav()})
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape'&&mobileNav.classList.contains('open')){closeMobileNav();hamburger.focus()}})
+mobileNav.addEventListener('click',(e)=>{if(e.target.closest('a'))closeMobileNav()})
+// Aktuellen Bereich in der Navigation markieren
+document.querySelectorAll('#nav .nav-items a,#mobile-nav a').forEach(a=>{const h=a.getAttribute('href');if(h.charAt(0)==='/'&&h!=='/'&&location.pathname.indexOf(h)===0){a.classList.add('active');a.setAttribute('aria-current','page')}})
+// Zähler: nur echte Zahlen aus dem HTML, ohne reduzierte Bewegung von 0 hochzählen
+if(window.matchMedia&&!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){const zio=new IntersectionObserver(e=>e.forEach(x=>{if(!x.isIntersecting)return;zio.unobserve(x.target);const el=x.target,ziel=+el.getAttribute('data-zaehler'),t0=performance.now(),d=900;(function f(t){const k=Math.min(1,(t-t0)/d);el.textContent=Math.round(ziel*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});document.querySelectorAll('[data-zaehler]').forEach(el=>zio.observe(el))}
+
+// --- Cookie consent for Google Analytics ---
+const COOKIE_I18N = {
+  de: {title:"Ihre Privatsphäre ist uns wichtig", accept:"Akzeptieren", decline:"Ablehnen", text:'Diese Website verwendet Google Analytics zur anonymisierten Analyse des Nutzerverhaltens. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Mehr erfahren<span class="sr-only"> zur Datenschutzerklärung</span></a>'},
+  fr: {title:"Votre vie privée compte pour nous", accept:"Accepter", decline:"Refuser", text:'Ce site utilise Google Analytics pour analyser de manière anonyme le comportement des utilisateurs. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">En savoir plus</a>'},
+  it: {title:"La vostra privacy è importante per noi", accept:"Accetta", decline:"Rifiuta", text:'Questo sito utilizza Google Analytics per analizzare in forma anonima il comportamento degli utenti. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Maggiori informazioni</a>'},
+  en: {title:"Your privacy matters to us", accept:"Accept", decline:"Decline", text:'This website uses Google Analytics to anonymously analyse visitor behaviour. <a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">Learn more</a>'}
+};
+
+function updateCookieBannerLang(lang){
+  const t = COOKIE_I18N[lang] || COOKIE_I18N.de;
+  const banner = document.getElementById('cookie-banner');
+  if(!banner) return;
+  document.getElementById('cookie-accept').textContent = t.accept;
+  document.getElementById('cookie-decline').textContent = t.decline;
+  banner.querySelector('.cookie-title').textContent = t.title;
+  banner.querySelector('.cookie-text').innerHTML = t.text;
+}
+
+const cookieChoice = localStorage.getItem('meyssens_cookie_consent');
+if(cookieChoice === 'accepted' && typeof window.meyssensEnableAnalytics === 'function'){
+  window.meyssensEnableAnalytics();
+} else if(!cookieChoice){
+  const b = document.getElementById('cookie-banner');
+  if(b) b.classList.remove('hidden');
+}
+updateCookieBannerLang('de');
+
+const acceptBtn = document.getElementById('cookie-accept');
+const declineBtn = document.getElementById('cookie-decline');
+if(acceptBtn) acceptBtn.addEventListener('click', ()=>{
+  localStorage.setItem('meyssens_cookie_consent','accepted');
+  document.getElementById('cookie-banner').classList.add('hidden');
+  if(typeof window.meyssensEnableAnalytics === 'function') window.meyssensEnableAnalytics();
+});
+if(declineBtn) declineBtn.addEventListener('click', ()=>{
+  localStorage.setItem('meyssens_cookie_consent','declined');
+  document.getElementById('cookie-banner').classList.add('hidden');
+});
+
+// --- Dialoge mit Escape schliessen ---
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    ['impressum-modal','datenschutz-modal'].forEach(function(id){
+      var m = document.getElementById(id);
+      if(m) m.style.display = 'none';
+    });
+  }
+});
+
+</script>
+<script src="/assets/demos.js?v=b65344dc21" defer></script>
+<script src="/assets/anfrage.js?v=c913a66d90" defer></script>
+<script src="/assets/loesungen.js?v=178c3b1b81" defer></script>
+</body>
+</html>

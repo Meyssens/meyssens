@@ -89,6 +89,9 @@ for datei in sorted(ROOT.rglob("index.html")):
     parser.feed(text)
     seiten[url] = (text, parser)
 
+# noindex-Seiten (z. B. /garage/): absichtlich nicht in der Sitemap
+NOINDEX = {u for u, (t, _) in seiten.items() if '<meta name="robots" content="noindex' in t}
+
 geprueft = 0
 for url, (text, parser) in seiten.items():
     for link in parser.links:
@@ -540,7 +543,10 @@ for url, (text, parser) in sorted(seiten.items()):
     if 'href="/ueber-uns/"' not in zwischen(text, "<body", "<main") or \
             'href="/ueber-uns/"' not in text[text.index("<footer"):] if "<footer" in text else True:
         fehler.append("%s: Über uns nicht in Kopf und Fuss verlinkt" % url)
-    if url not in lastmod or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod.get(url, "")):
+    if url in NOINDEX:
+        if url in lastmod:
+            fehler.append("%s: noindex, aber in der Sitemap" % url)
+    elif url not in lastmod or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod.get(url, "")):
         fehler.append("%s: lastmod fehlt in der Sitemap" % url)
 
 typen_ueber = json.dumps(re.findall(r'<script type="application/ld\+json">(.*?)</script>', seiten.get("/ueber-uns/", ("",))[0], flags=re.S))

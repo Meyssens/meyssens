@@ -26,3 +26,6 @@ exclude:
   - vorlage_werkzeug.html
   - vorlagen.py
   - werkzeug_qr_rechnung.html
+  - loesungen.json
+  - vorlage_loesung.html
+  - pakete.py

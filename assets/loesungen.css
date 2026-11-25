@@ -1,0 +1,124 @@
+/* Kaufseiten /automatisierung/ und /preise/: Ablauf, der sich beim Scrollen zeichnet, Vorher-nachher, Preis-Faktoren,
+   Bühnen «Beleg zur Buchung» und «QR-Code scannen». Ohne JavaScript und bei reduzierter Bewegung ist alles im Endzustand
+   sichtbar. Animiert werden nur opacity und transform (kein Layoutsprung), keine Endlosschleifen. */
+
+/* --- Ablauf in Schritten: Linie wächst, Symbole füllen sich ------------------------------------------------- */
+.lz-ablauf{position:relative;list-style:none;margin:2.25rem auto 0;padding:0;max-width:1180px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
+.lz-ablauf.drei{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lz-spur{position:absolute;left:12.5%;right:12.5%;top:27px;height:3px;border-radius:3px;background:#dbe3f0;overflow:hidden;pointer-events:none}
+.lz-spur i{display:block;width:100%;height:100%;background:var(--blue);transform-origin:left center;transform:scaleX(1);transition:transform .25s linear}
+.js [data-lz] .lz-spur i{transform:scaleX(var(--p,0))}
+.lz-schritt{position:relative;text-align:center;padding:0 .4rem;margin:0}
+.lz-ic{position:relative;z-index:1;display:grid;place-items:center;width:56px;height:56px;margin:0 auto 1rem;border-radius:50%;
+  background:var(--blue);color:#fff;border:2px solid var(--blue);box-shadow:0 10px 22px -10px rgba(0,84,209,.6);
+  transition:background .55s var(--weich),color .55s var(--weich),transform .55s var(--weich),box-shadow .55s var(--weich)}
+.lz-ic svg{width:24px;height:24px}
+.js [data-lz] .lz-schritt:not(.an) .lz-ic{background:#fff;color:var(--blue);box-shadow:none;transform:scale(.92)}
+.lz-nr{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-dunkel,#00337F);margin-bottom:.3rem}
+.lz-schritt h3{font-size:1.08rem;font-weight:700;color:var(--ink);margin:0 0 .35rem}
+.lz-schritt p{font-size:.95rem;line-height:1.55;color:var(--ink2);margin:0}
+@media (max-width:760px){
+  .lz-ablauf,.lz-ablauf.drei{grid-template-columns:minmax(0,1fr);gap:1.6rem}
+  .lz-spur{left:26px;right:auto;top:28px;bottom:auto;width:3px;height:var(--lz-h,calc(100% - 56px))}
+  .lz-spur i{transform-origin:center top;transform:scaleY(1)}
+  .js [data-lz] .lz-spur i{transform:scaleY(var(--p,0))}
+  .lz-schritt{text-align:left;padding:0 0 0 76px;min-height:56px}
+  .lz-ic{position:absolute;left:0;top:0;margin:0}
+}
+
+/* --- Vorher-nachher ------------------------------------------------------------------------------------------ */
+.vn{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:1.25rem;align-items:center;max-width:1040px;margin:2rem auto 0}
+.vn-spalte{align-self:stretch;background:#fff;border:1px solid var(--rand);border-radius:20px;padding:1.4rem 1.5rem 1.5rem;
+  transition:transform .35s var(--weich),box-shadow .35s var(--weich)}
+.vn-nachher{border-color:rgba(0,84,209,.32);box-shadow:0 22px 44px -28px rgba(0,84,209,.5)}
+.vn-kopf{display:flex;align-items:center;justify-content:space-between;gap:.75rem;margin-bottom:1rem}
+.vn-kopf h3{font-size:1.1rem;font-weight:800;color:var(--ink);margin:0}
+.vn-nachher .vn-kopf h3{color:var(--blue-dunkel,#00337F)}
+.vn ul{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
+.vn li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:.65rem;align-items:start;font-size:1rem;line-height:1.5;color:var(--ink2);margin:0}
+.vn-sym{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;margin-top:.05rem}
+.vn-sym svg{width:14px;height:14px}
+.vn-vorher .vn-sym{background:#eef1f5;color:#5b6472}
+.vn-nachher .vn-sym{background:var(--blue);color:#fff}
+.vn-vorher .vn-t{text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(20,30,45,.4);transition:text-decoration-color .6s var(--weich) calc(var(--i,0) * .12s + .2s)}
+.js .vn:not(.an) .vn-vorher .vn-t{text-decoration-color:transparent}
+.vn-pfeil{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;box-shadow:0 10px 24px -10px rgba(0,84,209,.65);transition:transform .6s var(--weich) .35s}
+.vn-pfeil svg{width:20px;height:20px}
+.js .vn:not(.an) .vn-pfeil{transform:translateX(-10px) scale(.85)}
+.vn-nachher li{transition:opacity .5s var(--weich) calc(var(--i,0) * .15s + .55s),transform .5s var(--weich) calc(var(--i,0) * .15s + .55s)}
+.js .vn:not(.an) .vn-nachher li{opacity:0;transform:translateX(-10px)}
+.vn-hinweis{max-width:1040px;margin:.9rem auto 0;font-size:.85rem;color:var(--ink3);text-align:center}
+@media (max-width:760px){
+  .vn{grid-template-columns:minmax(0,1fr)}
+  .vn-pfeil{justify-self:center;transform:rotate(90deg)}
+  .js .vn:not(.an) .vn-pfeil{transform:rotate(90deg) translateX(-10px) scale(.85)}
+}
+
+/* --- Preis-Faktoren (vier Karten) ----------------------------------------------------------------------------- */
+.pzf-grid{list-style:none;margin:2rem auto 0;padding:0;max-width:1180px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.pzf-karte{margin:0;background:#fff;border:1px solid var(--rand);border-radius:20px;padding:1.4rem 1.3rem 1.5rem;
+  transition:opacity .6s var(--weich) calc(var(--i,0) * .12s),transform .6s var(--weich) calc(var(--i,0) * .12s),box-shadow .35s var(--weich)}
+.js [data-pzf]:not(.an) .pzf-karte{opacity:0;transform:translateY(16px)}
+.pzf-ic{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--blue-hell,#E8F0FC);color:var(--blue);margin-bottom:1rem}
+.pzf-ic svg{width:26px;height:26px}
+.stil .pzf-ic svg,.stil .lz-ic svg,.stil .vn-sym svg,.stil .vn-pfeil svg{position:static;inset:auto;margin:0;flex:none}
+.pzf-ic svg *{stroke-dasharray:80;stroke-dashoffset:0;transition:stroke-dashoffset 1.1s var(--weich) calc(var(--i,0) * .12s + .25s)}
+.js [data-pzf]:not(.an) .pzf-ic svg *{stroke-dashoffset:80}
+.pzf-karte h3{font-size:1.05rem;font-weight:700;color:var(--ink);margin:0 0 .35rem}
+.pzf-karte p{font-size:.95rem;line-height:1.55;color:var(--ink2);margin:0}
+@media (max-width:1099px){.pzf-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.pzf-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Preis-Hinweis und Gemeinden-Karte */
+.pz-ab{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem .9rem;max-width:1180px;margin:1.75rem auto 0;padding:1.1rem 1.4rem;border-radius:18px;background:var(--blue-hell,#E8F0FC);color:var(--ink)}
+.pz-ab b{font-size:1.35rem;font-weight:800;color:var(--blue-dunkel,#00337F)}
+.pz-ab span{font-size:.98rem;line-height:1.5;color:var(--ink2)}
+.pz-gemeinde{max-width:760px;margin:2rem auto 0;background:#fff;border:1px solid var(--rand);border-radius:22px;padding:1.6rem 1.7rem}
+.pz-gemeinde .pz-preis{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:800;color:var(--ink);margin:0 0 .2rem}
+.pz-gemeinde .pz-preis small{font-size:1rem;font-weight:600;color:var(--ink2)}
+.pz-gemeinde ul{margin:1rem 0 1.25rem;padding-left:1.2rem;display:grid;gap:.45rem;color:var(--ink2);line-height:1.55}
+
+/* --- Hover: Karten heben sich leicht ------------------------------------------------------------------------- */
+@media (hover:hover){
+  .lz-seite .feat:hover,.lz-seite .vn-spalte:hover,.lz-seite .pzf-karte:hover,.lz-seite .pz-gemeinde:hover{transform:translateY(-3px);box-shadow:0 22px 40px -24px rgba(6,18,36,.35)}
+  .lz-seite .feat{transition:transform .35s var(--weich),box-shadow .35s var(--weich)}
+  .lz-schritt:hover .lz-ic{transform:scale(1.06)}
+}
+
+/* --- Bühne «Beleg zur Buchung» ------------------------------------------------------------------------------- */
+.abl-journal{position:relative;display:grid;gap:.25rem;background:#fff;border:1px solid rgba(0,84,209,.28);border-left:4px solid var(--blue);border-radius:12px;padding:.65rem .8rem;font-size:.8rem;line-height:1.45;color:var(--ink)}
+.abl-journal>i{font-style:normal;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-h)}
+.abl-journal>b{font-weight:600}
+.abl-j-klein{font-size:.74rem;color:var(--ink3)}
+.abl-flug{justify-self:start;font-size:.7rem;font-weight:700;color:#fff;background:var(--blue);border-radius:999px;padding:.12rem .55rem;
+  transition:transform .8s var(--weich),opacity .5s var(--weich)}
+.abl-geraet.spielt .abl-journal:not(.an) .abl-flug{opacity:0;transform:translate(-120px,-70px) rotate(-8deg) scale(.9)}
+@media (max-width:760px){.abl-geraet.spielt .abl-journal:not(.an) .abl-flug{transform:translate(0,-90px) rotate(-6deg) scale(.9)}}
+.abl-geraet.spielt .abl-journal:not(.an){transform:none;opacity:1}
+.abl-geraet.spielt .abl-journal:not(.an)>*:not(.abl-flug){opacity:0}
+.abl-journal>*{transition:opacity .5s var(--weich) .45s}
+
+/* --- Bühne «QR-Code scannen» ---------------------------------------------------------------------------------- */
+.abl-qr-foto{display:grid;place-items:center;gap:.8rem;padding:1.3rem 1rem}
+.abl-qr-rahmen{position:relative;width:min(160px,70%);aspect-ratio:1;padding:10px;background:#fff;border-radius:10px;box-shadow:0 10px 24px -12px rgba(6,18,36,.4)}
+.abl-qr-code{width:100%;height:100%;overflow:hidden;position:relative}
+.abl-qr-code img{position:absolute;max-width:none;width:456.5%;height:auto;left:-145.65%;top:-50%}
+.abl-ecke{position:absolute;width:22px;height:22px;border:3px solid var(--blue);transition:border-color .4s,transform .4s var(--weich)}
+.abl-ecke-1{left:-4px;top:-4px;border-right:0;border-bottom:0;border-top-left-radius:8px}
+.abl-ecke-2{right:-4px;top:-4px;border-left:0;border-bottom:0;border-top-right-radius:8px}
+.abl-ecke-3{left:-4px;bottom:-4px;border-right:0;border-top:0;border-bottom-left-radius:8px}
+.abl-ecke-4{right:-4px;bottom:-4px;border-left:0;border-top:0;border-bottom-right-radius:8px}
+.abl-geraet.spielt .abl-qr-rahmen:not(.an) .abl-ecke{transform:scale(1.25)}
+.abl-qr-rahmen.an{opacity:1;transform:none}
+.abl-geraet.spielt .abl-qr-rahmen:not(.an){opacity:1;transform:none}
+.abl-qr-status{font-size:.78rem;font-weight:700;color:#14532d;background:#dcfce7;border-radius:999px;padding:.2rem .7rem}
+
+@media (prefers-reduced-motion:reduce){
+  .lz-spur i,.lz-ic,.vn-spalte,.vn-pfeil,.vn-nachher li,.vn-vorher .vn-t,.pzf-karte,.pzf-ic svg *,.abl-flug,.abl-journal>*,.abl-ecke,.lz-seite .feat{transition:none !important}
+  .js [data-lz] .lz-spur i{transform:none}
+  .js [data-lz] .lz-schritt:not(.an) .lz-ic{background:var(--blue);color:#fff;transform:none}
+  .js .vn:not(.an) .vn-vorher .vn-t{text-decoration-color:rgba(20,30,45,.4)}
+  .js .vn:not(.an) .vn-nachher li,.js [data-pzf]:not(.an) .pzf-karte{opacity:1;transform:none}
+  .js [data-pzf]:not(.an) .pzf-ic svg *{stroke-dashoffset:0}
+  .js .vn:not(.an) .vn-pfeil{transform:none}
+}
