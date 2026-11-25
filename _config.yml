@@ -29,3 +29,4 @@ exclude:
   - loesungen.json
   - vorlage_loesung.html
   - pakete.py
+  - MERGE_HINWEIS.md

@@ -51,8 +51,8 @@ STUFEN = {
     },
 }
 # Pilot-Angebot auf jeder Produktseite. Der Preis steht nur hier und ausdrücklich als "ab".
-PILOT_ANGEBOT = ("Wir richten diesen Ablauf für Ihren Betrieb ein und betreuen ihn im Pilot drei Monate persönlich, "
-                 "kostenlos und unverbindlich. Danach als Paket oder nach Aufwand, verbindlich nach 20 Minuten Gespräch.")
+PILOT_ANGEBOT = ("Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot. Danach als Paket oder nach Aufwand, "
+                 "verbindlich nach 20 Minuten kostenlosem Gespräch.")
 ANGEBOT_GEPRUEFT = "2026-11-24"
 
 
@@ -185,8 +185,8 @@ def geraet(titel, inhalt, marke="Beispiel"):
 ABLAUF_KOPF = '\n<link rel="stylesheet" href="/assets/ablaeufe.css">'
 ABLAUF_SKRIPT = '<script src="/assets/ablaeufe.js" defer></script>'
 ERFUNDEN = "Beispiel mit erfundenen Daten"
-PILOT_ABLAUF = "Pilot: ein Ablauf, drei Monate kostenlos, jederzeit kündbar."
-PROZESS_CHECK = "Gratis-Prozess-Check (30 Minuten)"
+PILOT_ABLAUF = "Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot."
+PROZESS_CHECK = "20 Minuten kostenloses Gespräch"
 
 
 def ablauf_geraet(titel, buehne, klasse, beschreibung):
@@ -222,9 +222,9 @@ def ablaeufe_abschnitt(daten, schnipsel):
             '  <div class="abl-liste">\n%s\n  </div>\n'
             '  <div class="abl-start r">\n    <div>\n      <h3>So starten Sie</h3>\n      <ol class="abl-schritte">\n'
             '        <li><strong>%s.</strong> Sie zeigen uns einen Ablauf, wir sagen Ihnen offen, was sich automatisieren lässt und was nicht.</li>\n'
-            '        <li><strong>Pilot.</strong> Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.</li>\n'
+            '        <li><strong>Pilotbetrieb.</strong> Die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot.</li>\n'
             '        <li><strong>Entscheid.</strong> Nach dem Pilot entscheiden Sie, ob der Ablauf bleibt.</li>\n      </ol>\n'
-            '      <a class="btn-p" href="#anfrage" data-thema="%s">Gratis-Prozess-Check anfragen %s</a>\n    </div>\n'
+            '      <a class="btn-p" href="#anfrage" data-thema="%s">Kostenloses Gespräch anfragen %s</a>\n    </div>\n'
             '    <div class="abl-datenschutz">\n      <h3>Datenschutz und Programme</h3>\n'
             '      <p>Personendaten bearbeiten wir nur mit einem Vertrag zur Auftragsbearbeitung (Auftragsverarbeitungsvertrag). '
             'Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.</p>\n'
@@ -442,7 +442,7 @@ def ablauf_beispiel(slug, daten, nach_slug):
     return ('<section id="ablauf-beispiel" class="abl-mini-abschnitt">\n  <div class="abl-block">\n    <div class="abl-text r">\n'
             '      <span class="s-label">Automatisierung</span>\n      <h2>Beispiel: %s</h2>\n      <p>%s</p>\n'
             '      <p class="abl-mensch"><strong>Sie entscheiden:</strong> %s.</p>\n'
-            '      <p class="abl-aktion"><a class="btn-p" href="#anfrage" data-thema="%s: %s">Gratis-Prozess-Check anfragen %s</a></p>\n'
+            '      <p class="abl-aktion"><a class="btn-p" href="#anfrage" data-thema="%s: %s">Kostenloses Gespräch anfragen %s</a></p>\n'
             '      <p class="abl-klein-text">%s</p>\n      <ul class="abl-links">\n        %s\n      </ul>\n    </div>\n'
             '    %s\n  </div>\n</section>\n%s\n'
             % (html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["mensch"]), PROZESS_CHECK, html.escape(x["titel"]),
@@ -1612,7 +1612,7 @@ def loesung_inhalt(x, schnipsel, info):
         raise SystemExit("ablaeufe.html: buehne-%s fehlt (%s)" % (b["buehne"], x["pfad"]))
     teile.append(kopf_mitte("beispiel", "Beispiel", b["h2"], b["lead"]) +
                  '  <div class="u-beispiel">\n%s\n  </div>\n  <p class="u-hinweis r"><a href="#kontakt" data-thema="%s">'
-                 'Gratis-Prozess-Check anfragen %s</a></p>\n</section>\n%s\n'
+                 'Kostenloses Gespräch anfragen %s</a></p>\n</section>\n%s\n'
                  % (ablauf_geraet(b["geraet"], buehne, b.get("klasse", "abl-" + b["buehne"]), b["beschreibung"]),
                     html.escape(x["thema"]), PFEIL, ABLAUF_SKRIPT))
     # Vorher und nachher
@@ -1669,16 +1669,18 @@ def preise_inhalt():
     stufen = "\n".join('      <tr><th scope="row">%s</th><td>%s</td></tr>' % (html.escape(a), html.escape(b)) for a, b in PK.GEMEINDE_STUFEN)
     return (pakete_karten("Unternehmen: drei Pakete") +
             kopf_mitte("weg", "Ablauf", "So kommen Sie zu Ihrem Preis") + lz_ablauf(PK.START_WEG) +
-            '  <p class="u-hinweis r">%s %s %s</p>\n'
+            '  <p class="u-hinweis r">%s %s %s %s %s</p>\n'
             '  <p class="u-hinweis r">Andere Abläufe sowie Apps und Web-Anwendungen nach Mass: verbindlicher Preis nach Aufwand. '
             '<a href="/unternehmen/#apps">Mehr zu Apps nach Mass</a></p>\n'
             '  <p class="u-hinweis r"><a class="btn-p" href="#kontakt" data-thema="Preise: verbindlicher Preis">Verbindlichen Preis anfragen %s</a></p>\n'
             '  <p class="u-hinweis r">Preise zuletzt geprüft am %s.</p>\n</section>\n'
-            % (html.escape(PK.PREIS_HINWEIS), html.escape(PK.LAUFZEIT), html.escape(PK.ANBINDUNG), PFEIL, datum_ch(PK.PAKETE_STAND)) +
+            % (html.escape(PK.PILOT), html.escape(PK.PREIS_HINWEIS), html.escape(PK.LAUFZEIT), html.escape(PK.ANBINDUNG), html.escape(PK.MWST), PFEIL, datum_ch(PK.PAKETE_STAND)) +
             kopf_mitte("gemeinden", "Gemeinden", "Bürgerbeteiligung für Gemeinden: Pilot gratis, danach nach Grösse", klasse="") +
             '  <div class="pz-gemeinde r">\n    <table class="pz-stufen"><tbody>\n%s\n    </tbody></table>\n'
             '    <ul>\n      <li>Pilot drei Monate kostenlos, ohne Vertrag, jederzeit kündbar</li>\n      <li>Einrichtung kostenlos, ohne Aufbaukosten</li>\n'
-            '      <li>Festpreis, nicht MWST-pflichtig</li>\n    </ul>\n    <p class="pz-ausbau">%s</p>\n'
+            '      <li>Festpreis, nicht MWST-pflichtig</li>\n'
+            '      <li>Laufzeit 12 Monate, danach automatische Verlängerung, Kündigung 3 Monate vor Ablauf</li>\n'
+            '    </ul>\n    <p class="pz-ausbau">%s</p>\n'
             '    <a class="btn-s" href="/gemeinden/">Mehr zur Plattform für Gemeinden %s</a>\n  </div>\n</section>\n'
             % (stufen, html.escape(PK.GEMEINDE_AUSBAU), PFEIL) +
             kopf_mitte("gratis", "Gratis", "Gratis-Werkzeug und Vorlagen") +
@@ -1689,12 +1691,32 @@ def preise_inhalt():
 
 
 PREISE_FAQ = [
-    {"frage": "Was kosten die Pakete für Unternehmen?", "antwort": "Mahnwesen: Einrichtung ab CHF 3'500, ab CHF 290 pro Monat. Anfragen: Einrichtung ab CHF 4'500, ab CHF 390 pro Monat. Service-Erinnerungen für Garagen: Einrichtung ab CHF 3'900, ab CHF 290 pro Monat. Den verbindlichen Preis nennen wir nach einem Gespräch von 20 Minuten, je nach Aufwand."},
+    {"frage": "Was kosten die Pakete für Unternehmen?", "antwort": "Mahnwesen: Einrichtung ab CHF 3'500, ab CHF 290 pro Monat. Anfragen: Einrichtung ab CHF 4'500, ab CHF 390 pro Monat. Service-Erinnerungen für Garagen: Einrichtung ab CHF 3'900, ab CHF 290 pro Monat. Alle Preise in CHF, Endpreise, nicht MWST-pflichtig. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch, je nach Aufwand."},
     {"frage": "Wie lange läuft der Vertrag?", "antwort": "Für den Monatsbetrag gilt eine Mindestlaufzeit von 12 Monaten. Die Einrichtung bezahlen Sie einmal."},
     {"frage": "Was kostet die Anbindung an meine Software?", "antwort": "Die Anbindung an andere Software richten wir nach Aufwand ein. Der Preis steht im Vorschlag, bevor etwas läuft."},
-    {"frage": "Was kostet das erste Gespräch?", "antwort": "Nichts. Das Gespräch dauert 20 Minuten und ist unverbindlich."},
-    {"frage": "Was kostet die Beteiligungsplattform für Gemeinden?", "antwort": "Der Pilot ist drei Monate kostenlos. Danach CHF 2'900 pro Jahr für Gemeinden unter 2'000 Einwohnern und CHF 4'900 pro Jahr bis 5'000 Einwohner. Für grössere Gemeinden richtet sich der Preis nach der Einwohnerzahl, auf Anfrage."},
+    {"frage": "Was kostet das erste Gespräch?", "antwort": "Nichts. Das Gespräch dauert 20 Minuten, ist kostenlos und unverbindlich."},
+    {"frage": "Was kostet die Beteiligungsplattform für Gemeinden?", "antwort": "Der Pilot ist drei Monate kostenlos. Danach CHF 2'900 pro Jahr für Gemeinden unter 2'000 Einwohnern und CHF 4'900 pro Jahr bis 5'000 Einwohner. Für grössere Gemeinden richtet sich der Preis nach der Einwohnerzahl, auf Anfrage. Laufzeit 12 Monate, danach automatische Verlängerung, Kündigung 3 Monate vor Ablauf."},
 ]
+
+
+# Formularfeld «Wie haben Sie von uns erfahren?» (Code wie im Branch werkzeuge; hier nur im Formular von /garage/,
+# siehe MERGE_HINWEIS.md). Vorbelegung aus utm_source und Feld «kampagne» setzt assets/demos.js.
+QUELLEN = ["Google-Suche", "Gratis-Werkzeug oder Vorlage", "Brief", "LinkedIn", "Empfehlung (z. B. Treuhandbüro)",
+           "Anlass oder Verband", "Google-Anzeige", "Andere"]
+QUELLE_MARKER = re.compile(r"<!-- quelle -->.*?<!-- /quelle -->\s*", re.S)
+FORM_RE = re.compile(r'<form\b[^>]*action="https://formspree\.io/[^"]*"[^>]*>.*?</form>', re.S)
+EINW_RE = re.compile(r'<div class="fgrp(?: anfrage-einw)?">(?=<label style="display:flex|<input type="checkbox" id="anf-einwilligung")')
+
+
+def quelle_feld(n):
+    optionen = "".join("<option>%s</option>" % html.escape(q) for q in QUELLEN)
+    return ('<!-- quelle --><div class="fgrp quelle-feld" data-quelle>'
+            '<label class="flabel" for="quelle-%d">Wie haben Sie von uns erfahren? (optional)</label>'
+            '<select class="fselect" id="quelle-%d" name="quelle"><option value="">Bitte wählen</option>%s</select>'
+            '<label class="flabel quelle-detail-label" for="quelle-%d-detail">Von wem oder wo? (optional)</label>'
+            '<input class="finput quelle-detail" id="quelle-%d-detail" name="quelle_detail" type="text" autocomplete="off" '
+            'placeholder="z. B. Name des Treuhandbüros oder des Anlasses">'
+            '<input type="hidden" name="kampagne" value=""></div><!-- /quelle -->\n' % (n, n, optionen, n, n))
 
 
 # --- Pakete für Unternehmen (pakete.py, Entscheid 24.11.2026): Paketseiten, Paketkarten, Preise ------------------------
@@ -1725,8 +1747,8 @@ def paket_ablauf(p, kompakt=False):
 def paket_preis(p, knopf=True):
     return ('    <div class="pk-preis">\n      <p class="pkt-zahl"><span>Einrichtung</span><b>ab %s</b></p>\n'
             '      <p class="pkt-zahl"><span>Betrieb</span><b>ab %s <small>pro Monat</small></b></p>\n'
-            '      <ul class="pk-bedingungen"><li>%s</li><li>%s</li><li>%s</li></ul>\n%s    </div>\n'
-            % (p["einrichtung"], p["monat"], html.escape(PK.PREIS_HINWEIS), html.escape(PK.LAUFZEIT), html.escape(PK.ANBINDUNG),
+            '      <ul class="pk-bedingungen"><li>%s</li><li>%s</li><li>%s</li><li>%s</li><li>%s</li></ul>\n%s    </div>\n'
+            % (p["einrichtung"], p["monat"], html.escape(PK.PILOT), html.escape(PK.PREIS_HINWEIS), html.escape(PK.LAUFZEIT), html.escape(PK.ANBINDUNG), html.escape(PK.MWST),
                '      <a class="btn-p" href="#kontakt" data-thema="%s">Verbindlichen Preis anfragen %s</a>\n' % (html.escape(p["thema"]), PFEIL) if knopf else ""))
 
 
@@ -1795,7 +1817,12 @@ def paket_seiten(gemeinsam, vorlage_loesung):
             "anfrage": anfrage_formular("Paket " + p["name"], "Unternehmen / Organisation", False, "Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an."),
             "ld": ld(*seitenld, paket_dienst(p, url), faq_ld(p["faq"])),
         })
-        schreibe(p["pfad"].strip("/") + "/index.html", fuelle(vorlage_loesung, werte))
+        seite = fuelle(vorlage_loesung, werte)
+        if p.get("quelle"):
+            seite = FORM_RE.sub(lambda m: m.group(0)[:EINW_RE.search(m.group(0)).start()] + quelle_feld(1) + m.group(0)[EINW_RE.search(m.group(0)).start():], seite, count=1)
+            if "data-quelle" not in seite:
+                raise SystemExit("Paket %s: Quelle-Feld nicht eingefügt" % p["pfad"])
+        schreibe(p["pfad"].strip("/") + "/index.html", seite)
 
 def main():
     produkte = json.loads(lies("produkte.json"))
@@ -2253,7 +2280,7 @@ def main():
             "chip": html.escape(x["chip"]), "h1": h1_html(x["h1"]), "lead": html.escape(x["lead"]), "thema": html.escape(x["thema"]),
             "haupt_knopf": "Gespräch vereinbaren", "zweit_url": "#pakete" if leit else "#beispiel", "zweit_text": "Pakete ansehen" if leit else "Beispiel ansehen",
             "inhalt": (pakete_karten() if leit else "") + loesung_inhalt(x, schnipsel_ablaeufe, info), "ablauf_kopf": PAKET_KOPF if leit else ABLAUF_KOPF,
-            "kontakt_titel": "Gratis-Prozess-Check anfragen" if leit else "%s: Gespräch vereinbaren" % x["name"],
+            "kontakt_titel": "Kostenloses Gespräch anfragen" if leit else "%s: Gespräch vereinbaren" % x["name"],
             "anfrage": anfrage_formular("Unternehmen", "Unternehmen / Organisation", False, "Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an."),
             "ld": ld(*seitenld, loesung_dienst(x, url), faq_ld(x["faq"])),
         })
@@ -2261,7 +2288,7 @@ def main():
     kopf, seitenld = seitenkopf((START, ("Preise", "/preise/")), "Preise: Pakete für KMU und Gemeinden | Meyssens")
     werte = dict(gemeinsam, **kopf, **{
         "titel": "Preise: Pakete für KMU und Gemeinden | Meyssens",
-        "beschreibung": html.escape("Drei Pakete für Unternehmen ab CHF 3'500 Einrichtung, verbindlicher Preis nach 20 Minuten Gespräch. "
+        "beschreibung": html.escape("Drei Pakete für KMU ab CHF 3'500 Einrichtung, verbindlich nach 20 Minuten kostenlosem Gespräch. "
                                     "Gemeinden ab CHF 2'900 pro Jahr. Preise ansehen."),
         "url": DOMAIN + "/preise/", "seo_kopf": seo_kopf(DOMAIN + "/preise/"), "chip": "Preise",
         "h1": h1_html("Preise: drei Pakete, verbindlich nach dem Gespräch"),

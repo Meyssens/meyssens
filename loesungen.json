@@ -8,7 +8,7 @@
     "chip": "Für Unternehmen",
     "h1": "KI-Automatisierung für KMU: Routinearbeit als Entwurf",
     "lead": "Künstliche Intelligenz liest, sortiert und schreibt vor, was in Ihrem Büro täglich anfällt: Belege, E-Mails, QR-Rechnungen, Fristen. Was Ihren Betrieb verlässt oder gebucht wird, geben Sie frei.",
-    "thema": "KI-Automatisierung: Gratis-Prozess-Check",
+    "thema": "KI-Automatisierung: kostenloses Gespräch",
     "nutzen_titel": "Was KI-Automatisierung in einem KMU leistet",
     "nutzen": [
       {
@@ -31,8 +31,8 @@
     "ablauf_titel": "So kommt die Automatisierung in Ihren Betrieb",
     "ablauf": [
       {
-        "titel": "Gratis-Prozess-Check",
-        "text": "In 30 Minuten zeigen Sie uns einen Ablauf. Wir sagen offen, was sich automatisieren lässt und was nicht.",
+        "titel": "Kostenloses Gespräch",
+        "text": "In 20 Minuten zeigen Sie uns einen Ablauf. Wir sagen offen, was sich automatisieren lässt und was nicht.",
         "symbol": "eingang"
       },
       {
@@ -42,12 +42,12 @@
       },
       {
         "titel": "Pilot",
-        "text": "Ein Ablauf, drei Monate kostenlos und persönlich betreut, jederzeit kündbar.",
+        "text": "Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot.",
         "symbol": "vorschlag"
       },
       {
         "titel": "Entscheid",
-        "text": "Nach dem Pilot entscheiden Sie, ob der Ablauf bleibt. Preise: drei Pakete oder nach Aufwand, verbindlich nach 20 Minuten Gespräch.",
+        "text": "Nach dem Pilot entscheiden Sie, ob der Ablauf bleibt. Preise: drei Pakete oder nach Aufwand, verbindlich nach 20 Minuten kostenlosem Gespräch.",
         "symbol": "freigabe"
       }
     ],
@@ -125,7 +125,7 @@
       },
       {
         "frage": "Was kostet KI-Automatisierung?",
-        "antwort": "Das erste Gespräch ist gratis. Für Mahnwesen, Anfragen und Service-Erinnerungen gibt es Pakete mit Einrichtung und Monatsbetrag (Einrichtung ab CHF 3'500), andere Abläufe nach Aufwand. Den verbindlichen Preis nennen wir nach 20 Minuten Gespräch."
+        "antwort": "Das erste Gespräch ist gratis. Für Mahnwesen, Anfragen und Service-Erinnerungen gibt es Pakete mit Einrichtung und Monatsbetrag (Einrichtung ab CHF 3'500), andere Abläufe nach Aufwand. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch."
       },
       {
         "frage": "Sendet die KI selbst E-Mails oder bucht sie selbst?",
@@ -262,7 +262,7 @@
       },
       {
         "frage": "Was kostet das?",
-        "antwort": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach einem Gespräch von 20 Minuten; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."
+        "antwort": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."
       },
       {
         "frage": "Wie lange muss ich Belege aufbewahren?",
@@ -408,7 +408,7 @@
       },
       {
         "frage": "Was kostet die digitale Belegablage?",
-        "antwort": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach einem Gespräch von 20 Minuten; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."
+        "antwort": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."
       }
     ],
     "vorher_nachher": {
@@ -501,7 +501,7 @@
         "label": "Zahlung",
         "h2": "Ihr E-Banking bleibt der Ort der Freigabe",
         "absaetze": [
-          "Die Automatisierung löst keine Zahlung aus. Sie bereitet Zahlungsaufträge vor, die Sie in Ihr E-Banking übernehmen oder in Ihrer Buchhaltungssoftware freigeben. Welcher Weg für Ihre Bank und Ihre Software passt, klären wir im Prozess-Check.",
+          "Die Automatisierung löst keine Zahlung aus. Sie bereitet Zahlungsaufträge vor, die Sie in Ihr E-Banking übernehmen oder in Ihrer Buchhaltungssoftware freigeben. Welcher Weg für Ihre Bank und Ihre Software passt, klären wir im kostenlosen Gespräch.",
           "Selbst eine QR-Rechnung erstellen? Dafür gibt es unser Gratis-Werkzeug, das im Browser läuft."
         ]
       }
@@ -539,7 +539,7 @@
       },
       {
         "frage": "Was kostet das Einlesen von QR-Rechnungen?",
-        "antwort": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach einem Gespräch von 20 Minuten; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."
+        "antwort": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."
       }
     ],
     "vorher_nachher": {

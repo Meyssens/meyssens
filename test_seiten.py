@@ -667,8 +667,8 @@ def pruefe_beispiele(url, abschnitt, anzahl):
         fehler.append("%s: Beschreibung der Beispiele für Screenreader fehlt" % url)
     if abschnitt.count('class="abl-knopf"') != anzahl:
         fehler.append("%s: Knopf zum Anhalten/Abspielen fehlt" % url)
-    if 'href="#anfrage" data-thema="Gratis-Prozess-Check (30 Minuten)' not in abschnitt:
-        fehler.append("%s: Knopf Gratis-Prozess-Check zum Anfrageformular fehlt" % url)
+    if 'href="#anfrage" data-thema="20 Minuten kostenloses Gespräch' not in abschnitt:
+        fehler.append("%s: Knopf «20 Minuten kostenloses Gespräch» zum Anfrageformular fehlt" % url)
     if PROGRAMME.search(abschnitt):
         fehler.append("%s: konkretes Programm genannt (%s)" % (url, PROGRAMME.search(abschnitt).group(0)))
     if "ß" in abschnitt:
@@ -686,7 +686,7 @@ else:
     for x in ablaeufe["unternehmen"]:
         if '<a class="auto-karte r" href="#ablauf-%s">' % x["id"] not in seiten["/unternehmen/"][0]:
             fehler.append("/unternehmen/: Karte für Ablauf %s fehlt" % x["id"])
-    for muss in ("Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.", "Vertrag zur Auftragsbearbeitung",
+    for muss in ("Die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot.", "Vertrag zur Auftragsbearbeitung",
                  "Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.", "nach Absprache an, wenn eine Schnittstelle besteht",
                  "keine Rechtsberatung", "Sie entscheiden:"):
         if muss not in u_ab:
@@ -727,7 +727,7 @@ for slug in ablaeufe["branchen"]:
     pruefe_beispiele(url, ab, 1)
     if 'href="/unternehmen/#ablaeufe"' not in ab:
         fehler.append("%s: Link auf /unternehmen/#ablaeufe fehlt" % url)
-    if "Pilot: ein Ablauf, drei Monate kostenlos, jederzeit kündbar." not in ab:
+    if "Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot." not in ab:
         fehler.append("%s: Pilot-Hinweis im Mini-Beispiel fehlt" % url)
 
 # Erreichbarkeit: Breitensuche ab der Startseite über interne Links, höchstens 3 Klicks, keine verwaiste Seite

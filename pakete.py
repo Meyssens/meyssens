@@ -1,12 +1,14 @@
 """Pakete für Unternehmen (Entscheid Lionel, 24.11.2026): Mahnwesen, Anfragen, Service-Erinnerungen (Garage).
 
-Preise nur als «ab»; verbindlicher Preis nach 20 Minuten Gespräch, je nach Aufwand. Mindestlaufzeit 12 Monate für den
+Preise nur als «ab»; verbindlicher Preis nach 20 Minuten kostenlosem Gespräch, je nach Aufwand. Mindestlaufzeit 12 Monate für den
 Monatsbetrag. Anbindung an andere Software: Einrichtung nach Aufwand. Vorher/Nachher sind Beispielrechnungen mit
 angenommenen Werten, keine Kundenergebnisse. Seiten baut build.py (paket_seite) mit vorlage_loesung.html.
 """
 
 PAKETE_STAND = "2026-11-24"
-PREIS_HINWEIS = "Verbindlicher Preis nach 20 Minuten Gespräch, je nach Aufwand."
+PREIS_HINWEIS = "Verbindlicher Preis nach 20 Minuten kostenlosem Gespräch, je nach Aufwand."
+PILOT = "Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot."
+MWST = "Alle Preise in CHF, Endpreise, nicht MWST-pflichtig."
 LAUFZEIT = "Mindestlaufzeit 12 Monate für den Monatsbetrag."
 ANBINDUNG = "Anbindung an andere Software: Einrichtung nach Aufwand."
 
@@ -44,7 +46,7 @@ PAKETE = [
             "nachher": [("Entwürfe prüfen und freigeben", "21 × 1 Min.", 21), ("Ausnahmen beim Abgleich klären", "8 × 3 Min.", 24)],
         },
         "faq": [
-            {"frage": "Was kostet das Paket Mahnwesen?", "antwort": "Einrichtung ab CHF 3'500, Betrieb ab CHF 290 pro Monat, Mindestlaufzeit 12 Monate für den Monatsbetrag. Den verbindlichen Preis nennen wir nach einem Gespräch von 20 Minuten, je nach Aufwand."},
+            {"frage": "Was kostet das Paket Mahnwesen?", "antwort": "Einrichtung ab CHF 3'500, Betrieb ab CHF 290 pro Monat, Mindestlaufzeit 12 Monate für den Monatsbetrag. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch, je nach Aufwand."},
             {"frage": "Werden Mahnungen ohne mich verschickt?", "antwort": "Nein, ausser Sie wünschen es ausdrücklich. Erinnerungen und Mahnungen entstehen als Entwurf, Sie geben frei."},
             {"frage": "Funktioniert das mit meiner Buchhaltungssoftware?", "antwort": "Das prüfen wir im Gespräch. Die Anbindung an andere Software richten wir nach Aufwand ein; der Preis steht im Vorschlag."},
             {"frage": "Wie hoch ist der Verzugszins?", "antwort": "Fünf Prozent pro Jahr nach Art. 104 OR, ausser vertraglich ist mehr vereinbart. Ob und ab welcher Stufe er erscheint, legen Sie fest."},
@@ -77,7 +79,7 @@ PAKETE = [
             "nachher": [("Antwortentwürfe prüfen und senden", "40 × 3 Min.", 120), ("Nachfassen freigeben", "20 × 1 Min.", 20), ("Gebuchte Termine bestätigen", "15 × 1 Min.", 15)],
         },
         "faq": [
-            {"frage": "Was kostet das Paket Anfragen?", "antwort": "Einrichtung ab CHF 4'500, Betrieb ab CHF 390 pro Monat, Mindestlaufzeit 12 Monate für den Monatsbetrag. Den verbindlichen Preis nennen wir nach einem Gespräch von 20 Minuten, je nach Aufwand."},
+            {"frage": "Was kostet das Paket Anfragen?", "antwort": "Einrichtung ab CHF 4'500, Betrieb ab CHF 390 pro Monat, Mindestlaufzeit 12 Monate für den Monatsbetrag. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch, je nach Aufwand."},
             {"frage": "Antwortet ein Programm an meiner Stelle?", "antwort": "Nein. Es bereitet die Antwort vor, Sie oder Ihr Team geben frei. Auf Wunsch können einfache Eingangsbestätigungen direkt gehen."},
             {"frage": "Welcher Kalender lässt sich anbinden?", "antwort": "Das prüfen wir im Gespräch. Die Anbindung an andere Software richten wir nach Aufwand ein; der Preis steht im Vorschlag."},
             {"frage": "Was passiert mit den Daten der Interessenten?", "antwort": "Wir bearbeiten sie in Ihrem Auftrag. Vor dem Start schliessen wir einen Vertrag zur Auftragsbearbeitung ab."},
@@ -85,7 +87,7 @@ PAKETE = [
         "thema": "Paket Anfragen: verbindlicher Preis",
     },
     {
-        "slug": "garage", "pfad": "/garage/", "name": "Service-Erinnerungen", "sitemap": False,
+        "slug": "garage", "pfad": "/garage/", "name": "Service-Erinnerungen", "sitemap": True, "quelle": True,
         "kurz": "Service, Reifenwechsel und MFK: Kundinnen und Kunden werden rechtzeitig erinnert und buchen den Termin.",
         "titel": "Service-Erinnerungen für Garagen: Paket | Meyssens",
         "beschreibung": "Erinnerungen an Service, Reifenwechsel und MFK für Garagen, mit Terminvorschlag. Einrichtung ab CHF 3'900. Jetzt Preis anfragen.",
@@ -110,7 +112,7 @@ PAKETE = [
             "nachher": [("Versand prüfen und freigeben", "4 × 10 Min.", 40), ("Rückfragen beantworten", "30 × 3 Min.", 90)],
         },
         "faq": [
-            {"frage": "Was kostet das Paket Service-Erinnerungen?", "antwort": "Einrichtung ab CHF 3'900, Betrieb ab CHF 290 pro Monat, Mindestlaufzeit 12 Monate für den Monatsbetrag. Den verbindlichen Preis nennen wir nach einem Gespräch von 20 Minuten, je nach Aufwand."},
+            {"frage": "Was kostet das Paket Service-Erinnerungen?", "antwort": "Einrichtung ab CHF 3'900, Betrieb ab CHF 290 pro Monat, Mindestlaufzeit 12 Monate für den Monatsbetrag. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch, je nach Aufwand."},
             {"frage": "Dürfen wir Kunden per SMS oder E-Mail erinnern?", "antwort": "An Kundinnen und Kunden, mit denen Sie in Kontakt stehen, mit Angabe des Absenders und einer einfachen Abmeldung. Wer sich abmeldet, erhält keine Erinnerungen mehr."},
             {"frage": "Funktioniert das mit unserem Garagenprogramm?", "antwort": "Das prüfen wir im Gespräch. Die Anbindung an andere Software richten wir nach Aufwand ein; der Preis steht im Vorschlag."},
             {"frage": "Bucht das System MFK-Termine beim Strassenverkehrsamt?", "antwort": "Nein. Das Aufgebot kommt vom Strassenverkehrsamt. Das Paket erinnert Ihre Kundschaft und bietet die Vorbereitung bei Ihnen an."},

@@ -88,6 +88,9 @@ var ANFRAGE_ZIEL = "https://formspree.io/f/xlgpzzew";
       tx.L.email + ": " + e.email.value.trim()
     ];
     if (e.thema.value.trim()) zeilen.push("", tx.L.thema + ":", e.thema.value.trim());
+    // Freiwilliges Feld «Wie haben Sie von uns erfahren?» (nur auf den deutschsprachigen Unternehmen-Seiten)
+    if (e.quelle && e.quelle.value) zeilen.push("", "Wie gefunden: " + e.quelle.value + (e.quelle_detail && e.quelle_detail.value.trim() ? " (" + e.quelle_detail.value.trim() + ")" : ""));
+    if (e.kampagne && e.kampagne.value) zeilen.push("Kampagne: " + e.kampagne.value);
     zeilen.push("", tx.L.seite + ": " + location.href.split("#")[0]);
     return "mailto:" + MAIL + "?subject=" + encodeURIComponent(tx.betreff + ": " + e.organisation.value.trim()) +
            "&body=" + encodeURIComponent(zeilen.join(nl));
