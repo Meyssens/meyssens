@@ -2,12 +2,13 @@
 
    ANFRAGE_ZIEL ist die einzige Einstellung: die Adresse, an die das Formular sendet,
    zum Beispiel ein Formspree-Endpoint wie "https://formspree.io/f/XXXXXXXX".
-   Solange sie leer ist oder das Senden fehlschlägt, öffnet das Skript ein vorbefülltes E-Mail an lionel@meyssens.ch
+   Solange sie leer ist oder das Senden fehlschlägt, öffnet das Skript ein vorbefülltes E-Mail an lionel@meyssens.ch (/gemeinden/) bzw. info@meyssens.ch (Unternehmen)
    (der mailto-Rückfall steht nur hier, nicht im action des Formulars). Muss mit FORMULAR_ZIEL in build.py übereinstimmen. */
 var ANFRAGE_ZIEL = "https://formspree.io/f/xlgpzzew";
 
 (function () {
-  var MAIL = "lionel@meyssens.ch";
+  // Rückfall-Adresse: /gemeinden/ lionel@, Seiten für Unternehmen info@ (Entscheid 26.11.2026)
+  var MAIL = /^\/gemeinden\//.test(location.pathname) ? "lionel@meyssens.ch" : "info@meyssens.ch";
   var T = {
     de: {
       leer: {organisation: "Bitte geben Sie Ihre Gemeinde oder Organisation an.", name: "Bitte geben Sie Ihren Namen an.", email: "Bitte geben Sie Ihre E-Mail-Adresse an."},

@@ -121,9 +121,34 @@ def beschreibend(inhalt):
     return GENERISCH.sub(ergaenze, inhalt)
 
 
+# Kontaktadresse für Unternehmen (Entscheid Lionel 26.11.2026): info@ statt lionel@ in Navigation, Kontaktkasten und Fusszeile.
+# Nicht betroffen: Startseite, /gemeinden/, /ueber-uns/, 404, Impressum, Datenschutz, JSON-LD und Formspree.
+# Der mailto-Rückfall des Formulars «Pilot anfragen» steht in assets/anfrage.js (gleiche Regel).
+KONTAKT_UNTERNEHMEN = "info@meyssens.ch"
+UNTERNEHMEN_ORDNER = ("unternehmen/", "branchen/", "produkte/", "ratgeber/", "automatisierung/", "mahnwesen/", "anfragen/",
+                      "garage/", "preise/", "werkzeuge/", "treuhand/")
+KONTAKT_STELLEN = ('<a href="mailto:%s" class="nav-btn nav-kontakt">Kontakt</a>',
+                   '<div class="cval"><a href="mailto:%s">%s</a></div>',
+                   'margin-top:.5rem">%s</p>',
+                   '<a href="mailto:%s">Kontakt</a>',
+                   # Meldung des Kontaktformulars bei Sendefehler (DE/FR/IT/EN)
+                   'Bitte schreiben Sie uns direkt an %s', 'Écrivez-nous directement à %s',
+                   'Scriveteci direttamente a %s', 'Please write to us directly at %s')
+
+
+def kontakt_unternehmen(pfad, inhalt):
+    if not pfad.startswith(UNTERNEHMEN_ORDNER):
+        return inhalt
+    for stelle in KONTAKT_STELLEN:
+        n = stelle.count("%s")
+        inhalt = inhalt.replace(stelle % (("lionel@meyssens.ch",) * n), stelle % ((KONTAKT_UNTERNEHMEN,) * n))
+    return inhalt
+
+
 def schreibe(pfad, inhalt):
     if not pfad.startswith("gemeinden/"):
         inhalt = beschreibend(inhalt)
+    inhalt = kontakt_unternehmen(pfad, inhalt)
     ziel = ROOT / pfad
     ziel.parent.mkdir(parents=True, exist_ok=True)
     ziel.write_text(inhalt, encoding="utf-8")
