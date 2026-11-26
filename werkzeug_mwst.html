@@ -1,0 +1,54 @@
+<section id="werkzeug" class="flaeche">
+  <h2 class="sr-only">Mehrwertsteuer berechnen</h2>
+  <div class="qr-raster wz-eingabe-zuerst">
+    <form id="mw-formular" class="ccard qr-formular" novalidate>
+      <noscript><p class="note">Der Rechner braucht JavaScript. Er rechnet alles in Ihrem Browser und sendet nichts.</p></noscript>
+      <fieldset>
+        <legend>Betrag</legend>
+        <div class="fgrp"><label class="flabel" for="mw-betrag">Betrag in CHF</label><input class="finput" type="text" id="mw-betrag" inputmode="decimal" value="1000.00"></div>
+        <label class="qr-wahl"><input type="radio" name="mw-richtung" value="netto" checked> Betrag ist ohne MWST (MWST dazurechnen)</label>
+        <label class="qr-wahl"><input type="radio" name="mw-richtung" value="brutto"> Betrag ist mit MWST (MWST herausrechnen)</label>
+      </fieldset>
+      <fieldset>
+        <legend>Steuersatz</legend>
+        <label class="qr-wahl"><input type="radio" name="mw-satz" value="8.1" checked> 8,1 % Normalsatz</label>
+        <label class="qr-wahl"><input type="radio" name="mw-satz" value="2.6"> 2,6 % reduzierter Satz (z. B. Lebensmittel, Bücher)</label>
+        <label class="qr-wahl"><input type="radio" name="mw-satz" value="3.8"> 3,8 % Beherbergung</label>
+      </fieldset>
+      <p class="qr-hilfe">Sätze seit 1. Januar 2024 (Art. 25 MWSTG). Beträge auf den Rappen gerundet. Mit Saldo- oder Pauschalsteuersätzen rechnet dieser Rechner nicht.</p>
+    </form>
+    <div class="qr-seite">
+      <div class="ccard mg-rechnung" id="mw-ergebnis" aria-live="polite"><p class="at-was">Der Rechner braucht JavaScript.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="beispiel">
+  <div class="artikel-text">
+    <span class="s-label">Beispiel</span>
+    <h2>Dazurechnen und herausrechnen</h2>
+    <p>Zu CHF 1 000.00 ohne MWST kommen 8,1 % dazu: CHF 81.00, zusammen CHF 1 081.00. Umgekehrt steckt in CHF 1 081.00 mit MWST eine Steuer von 1 081.00 × 8,1 / 108,1 = CHF 81.00. Wer vom Betrag mit MWST einfach 8,1 % abzieht, rechnet falsch: Das ergäbe CHF 87.56.</p>
+  </div>
+  <figure class="geraet mg-beispiel" data-anim="zins">
+    <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">MWST 8,1 %</span><span class="beispiel">Beispiel</span></div>
+    <div class="mg-schritte" role="img" aria-label="Beispiel: CHF 1000 ohne MWST plus 8,1 Prozent MWST von CHF 81 ergibt CHF 1081. Herausgerechnet: 1081 mal 8,1 durch 108,1 ergibt CHF 81.">
+      <div class="mg-schritt" style="--i:0" aria-hidden="true"><span>Betrag ohne MWST</span><b>CHF 1 000.00</b></div>
+      <div class="mg-schritt" style="--i:1" aria-hidden="true"><span>+ MWST 8,1 %</span><b>CHF 81.00</b></div>
+      <div class="mg-schritt" style="--i:2" aria-hidden="true"><span>Betrag mit MWST</span><b>CHF 1 081.00</b></div>
+      <div class="mg-schritt mg-total" style="--i:3" aria-hidden="true"><span>Herausgerechnet: 1 081.00 × 8,1 / 108,1</span><b>CHF 81.00</b></div>
+    </div>
+    <figcaption class="anim-fuss"><span>Beispiel mit erfundenen Daten.</span> <button type="button" class="anim-nochmal" data-anim-nochmal hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Nochmal abspielen</button></figcaption>
+  </figure>
+</section>
+
+<section id="wissen" class="flaeche">
+  <div class="artikel-text">
+    <span class="s-label">Wissen</span>
+    <h2>Mehrwertsteuer in der Schweiz: die Sätze</h2>
+    <p>Seit dem 1. Januar 2024 gelten 8,1 % (Normalsatz), 2,6 % (reduzierter Satz, unter anderem für Lebensmittel, Bücher und Medikamente) und 3,8 % (Beherbergung), Art. 25 MWSTG. Für 2026 und 2027 ist keine Änderung beschlossen. Am 29. November 2026 wird über eine Erhöhung ab frühestens 2028 zur Finanzierung der 13. AHV-Rente abgestimmt; weitere Vorlagen sind im Parlament hängig. Dieser Rechner wird angepasst, sobald neue Sätze feststehen.</p>
+    <h3>Steuer herausrechnen</h3>
+    <p>Die Steuer in einem Betrag mit MWST ist Betrag × Satz / (100 + Satz). Bei 8,1 % also Betrag × 8,1 / 108,1. Das Gesetz schreibt keine Rundungsregel vor; der Rechner rundet auf den Rappen, wie die Musterrechnung der ESTV.</p>
+    <h3>Saldosteuersatz</h3>
+    <p>Kleinere Betriebe können mit der ESTV über einen Saldosteuersatz abrechnen (Art. 37 MWSTG). Gegenüber der Kundschaft weisen sie trotzdem die normalen Sätze aus. Die Saldosteuersätze je Branche veröffentlicht die ESTV.</p>
+  </div>
+</section>

@@ -1,0 +1,123 @@
+<section id="werkzeug" class="flaeche">
+  <h2 class="sr-only">Arbeitstage berechnen</h2>
+  <div class="qr-raster wz-eingabe-zuerst">
+    <form id="at-formular" class="ccard qr-formular" novalidate>
+      <noscript><p class="note">Der Rechner braucht JavaScript. Er rechnet alles in Ihrem Browser und sendet nichts. Die Tabellen weiter unten funktionieren auch ohne.</p></noscript>
+      <fieldset>
+        <legend>Kanton und Zeitraum</legend>
+        <div class="fgrp"><label class="flabel" for="at-kanton">Kanton</label>
+          <select class="fselect finput" id="at-kanton"><option value="BS">Basel-Stadt</option><option value="BL" selected>Basel-Landschaft</option><option value="SO">Solothurn</option><option value="AG">Aargau</option><option value="BE">Bern</option><option value="ZH">Zürich</option></select></div>
+        <div class="fgrp" id="at-region-grp" hidden><label class="flabel" for="at-region">Region (die Feiertage sind im Kanton verschieden)</label>
+          <select class="fselect finput" id="at-region"></select></div>
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="at-von">Von</label><input class="finput" type="date" id="at-von" value="2027-01-01" min="2020-01-01" max="2035-12-31"></div>
+          <div class="fgrp"><label class="flabel" for="at-bis">Bis (inklusive)</label><input class="finput" type="date" id="at-bis" value="2027-12-31" min="2020-01-01" max="2035-12-31"></div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Arbeitstage in der Woche</legend>
+        <div class="at-tage">
+          <label><input type="checkbox" name="at-tag" value="1" checked> Mo</label>
+          <label><input type="checkbox" name="at-tag" value="2" checked> Di</label>
+          <label><input type="checkbox" name="at-tag" value="3" checked> Mi</label>
+          <label><input type="checkbox" name="at-tag" value="4" checked> Do</label>
+          <label><input type="checkbox" name="at-tag" value="5" checked> Fr</label>
+          <label><input type="checkbox" name="at-tag" value="6"> Sa</label>
+          <label><input type="checkbox" name="at-tag" value="0"> So</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Zusätzlich frei (nicht gesetzlich, nur wenn es in Ihrem Betrieb so gilt)</legend>
+        <label class="qr-wahl"><input type="checkbox" name="at-extra" value="1-2-1" data-name="2. Januar (Berchtoldstag)"> 2. Januar (Berchtoldstag)</label>
+        <label class="qr-wahl"><input type="checkbox" name="at-extra" value="12-24-0.5" data-name="Heiligabend, Nachmittag"> 24. Dezember, Nachmittag</label>
+        <label class="qr-wahl"><input type="checkbox" name="at-extra" value="12-31-0.5" data-name="Silvester, Nachmittag"> 31. Dezember, Nachmittag</label>
+      </fieldset>
+      <p class="qr-hilfe">Ein Feiertag auf einem Samstag oder Sonntag gibt keinen zusätzlichen freien Tag. Ferien, Brückentage und Betriebsferien zieht der Rechner nicht ab.</p>
+    </form>
+    <div class="qr-seite">
+      <div class="ccard at-ergebnis" id="at-ergebnis" aria-live="polite"><p class="at-was">Der Rechner braucht JavaScript.</p></div>
+      <p class="at-meldung" id="at-meldung" role="alert"></p>
+    </div>
+  </div>
+  <script type="application/json" id="at-daten"><!-- at-daten --></script>
+</section>
+
+<section id="beispiel">
+  <div class="artikel-text">
+    <span class="s-label">Beispiel</span>
+    <h2>So rechnet der Rechner: Mai 2027 in Basel-Landschaft</h2>
+    <p>Der Mai 2027 hat 21 Werktage von Montag bis Freitag. Der 1. Mai fällt auf einen Samstag und zählt deshalb nicht. Auffahrt (Donnerstag, 6. Mai) und Pfingstmontag (17. Mai) sind in Basel-Landschaft gesetzliche Feiertage. Bleiben 19 Arbeitstage.</p>
+  </div>
+  <figure class="geraet at-beispiel" data-anim="kalender">
+    <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Mai 2027 · Basel-Landschaft</span><span class="beispiel">Beispiel</span></div>
+    <div class="at-beispiel-inhalt">
+      <div class="at-kal" role="img" aria-label="Kalender Mai 2027: 21 Werktage, davon Auffahrt am 6. und Pfingstmontag am 17. Mai als Feiertage, ergibt 19 Arbeitstage.">
+        <span class="at-wt" aria-hidden="true">Mo</span><span class="at-wt" aria-hidden="true">Di</span><span class="at-wt" aria-hidden="true">Mi</span><span class="at-wt" aria-hidden="true">Do</span><span class="at-wt" aria-hidden="true">Fr</span><span class="at-wt" aria-hidden="true">Sa</span><span class="at-wt" aria-hidden="true">So</span>
+          <span class="at-k leer"></span>
+          <span class="at-k leer"></span>
+          <span class="at-k leer"></span>
+          <span class="at-k leer"></span>
+          <span class="at-k leer"></span>
+          <span class="at-k we" style="--i:1" title="Wochenende">1</span>
+          <span class="at-k we" style="--i:2" title="Wochenende">2</span>
+          <span class="at-k at" style="--i:3" title="Arbeitstag">3</span>
+          <span class="at-k at" style="--i:4" title="Arbeitstag">4</span>
+          <span class="at-k at" style="--i:5" title="Arbeitstag">5</span>
+          <span class="at-k ft" style="--i:6" title="Auffahrt">6</span>
+          <span class="at-k at" style="--i:7" title="Arbeitstag">7</span>
+          <span class="at-k we" style="--i:8" title="Wochenende">8</span>
+          <span class="at-k we" style="--i:9" title="Wochenende">9</span>
+          <span class="at-k at" style="--i:10" title="Arbeitstag">10</span>
+          <span class="at-k at" style="--i:11" title="Arbeitstag">11</span>
+          <span class="at-k at" style="--i:12" title="Arbeitstag">12</span>
+          <span class="at-k at" style="--i:13" title="Arbeitstag">13</span>
+          <span class="at-k at" style="--i:14" title="Arbeitstag">14</span>
+          <span class="at-k we" style="--i:15" title="Wochenende">15</span>
+          <span class="at-k we" style="--i:16" title="Wochenende">16</span>
+          <span class="at-k ft" style="--i:17" title="Pfingstmontag">17</span>
+          <span class="at-k at" style="--i:18" title="Arbeitstag">18</span>
+          <span class="at-k at" style="--i:19" title="Arbeitstag">19</span>
+          <span class="at-k at" style="--i:20" title="Arbeitstag">20</span>
+          <span class="at-k at" style="--i:21" title="Arbeitstag">21</span>
+          <span class="at-k we" style="--i:22" title="Wochenende">22</span>
+          <span class="at-k we" style="--i:23" title="Wochenende">23</span>
+          <span class="at-k at" style="--i:24" title="Arbeitstag">24</span>
+          <span class="at-k at" style="--i:25" title="Arbeitstag">25</span>
+          <span class="at-k at" style="--i:26" title="Arbeitstag">26</span>
+          <span class="at-k at" style="--i:27" title="Arbeitstag">27</span>
+          <span class="at-k at" style="--i:28" title="Arbeitstag">28</span>
+          <span class="at-k we" style="--i:29" title="Wochenende">29</span>
+          <span class="at-k we" style="--i:30" title="Wochenende">30</span>
+          <span class="at-k at" style="--i:31" title="Arbeitstag">31</span>
+      </div>
+      <div class="at-summe" aria-hidden="true">
+        <p><span class="at-leg at"></span> Arbeitstag</p>
+        <p><span class="at-leg ft"></span> Feiertag (Auffahrt, Pfingstmontag)</p>
+        <p><span class="at-leg we"></span> Wochenende</p>
+        <p class="at-gross"><strong data-zaehl="19" data-zaehl-ab="900">19</strong> Arbeitstage</p>
+      </div>
+    </div>
+    <figcaption class="anim-fuss"><span>Beispiel nach den gesetzlichen Feiertagen des Kantons Basel-Landschaft.</span> <button type="button" class="anim-nochmal" data-anim-nochmal hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Nochmal abspielen</button></figcaption>
+  </figure>
+</section>
+
+<section id="tabelle" class="flaeche">
+  <div class="artikel-text">
+    <span class="s-label">Übersicht</span>
+    <h2>Arbeitstage 2027 nach Monat und Kanton</h2>
+    <p>Montag bis Freitag, abzüglich der gesetzlichen Feiertage, die 2027 auf einen Werktag fallen. 2027 liegen der 1. Mai, der 1. August, der 15. August, der 25. und der 26. Dezember auf einem Wochenende.</p>
+    <!-- at-tabelle -->
+  </div>
+</section>
+
+<section id="feiertage">
+  <div class="artikel-text">
+    <span class="s-label">Feiertage</span>
+    <h2>Gesetzliche Feiertage 2027 je Kanton</h2>
+    <p>Als Feiertag zählt hier, was das Bundesrecht und das kantonale Recht den Sonntagen gleichstellen: der 1. August (Art. 110 Abs. 3 Bundesverfassung) und bis zu acht kantonale Feiertage (Art. 20a Arbeitsgesetz). Die Kantone dürfen sie nach Kantonsteilen verschieden festlegen, deshalb gibt es im Aargau sechs und in Solothurn zwei Regionen.</p>
+    <!-- at-liste -->
+    <h3>Was nicht als gesetzlicher Feiertag zählt</h3>
+    <p>Der Berchtoldstag (2. Januar) ist nur in Bern und in Teilen des Aargaus gesetzlich. In Basel-Stadt, Basel-Landschaft, Solothurn und Zürich ist er ein verbreiteter, aber nicht gesetzlicher freier Tag, ebenso die Nachmittage des 24. und 31. Dezember oder die Basler Fasnacht. Ob diese Tage frei sind, regeln Arbeitsvertrag, Gesamtarbeitsvertrag oder Betrieb. Gemeinden in Basel-Landschaft und Solothurn können eigene Ruhetage bezeichnen. Diese sind im Rechner nicht enthalten, weil es dazu keine amtliche Liste gibt.</p>
+    <p>In Solothurn ist der 1. Mai ab 12 Uhr den Sonntagen gleichgestellt. Fällt er auf einen Werktag, rechnet der Rechner einen halben Arbeitstag ab.</p>
+  </div>
+</section>

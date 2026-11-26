@@ -87,7 +87,7 @@ PAKETE = [
         "thema": "Paket Anfragen: verbindlicher Preis",
     },
     {
-        "slug": "garage", "pfad": "/garage/", "name": "Service-Erinnerungen", "sitemap": True, "quelle": True,
+        "slug": "garage", "pfad": "/garage/", "name": "Service-Erinnerungen", "sitemap": True,
         "kurz": "Service, Reifenwechsel und MFK: Kundinnen und Kunden werden rechtzeitig erinnert und buchen den Termin.",
         "titel": "Service-Erinnerungen für Garagen: Paket | Meyssens",
         "beschreibung": "Erinnerungen an Service, Reifenwechsel und MFK für Garagen, mit Terminvorschlag. Einrichtung ab CHF 3'900. Jetzt Preis anfragen.",

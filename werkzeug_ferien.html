@@ -1,0 +1,61 @@
+<section id="werkzeug" class="flaeche">
+  <h2 class="sr-only">Ferienanspruch berechnen</h2>
+  <div class="qr-raster wz-eingabe-zuerst">
+    <form id="fe-formular" class="ccard qr-formular" novalidate>
+      <noscript><p class="note">Der Rechner braucht JavaScript. Er rechnet alles in Ihrem Browser und sendet nichts.</p></noscript>
+      <fieldset>
+        <legend>Anspruch</legend>
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="fe-wochen">Ferienwochen pro Jahr (Vertrag)</label><input class="finput" type="text" inputmode="decimal" id="fe-wochen" value="5"></div>
+          <div class="fgrp"><label class="flabel" for="fe-tage">Arbeitstage pro Woche</label><input class="finput" type="text" inputmode="decimal" id="fe-tage" value="3"></div>
+        </div>
+        <label class="qr-wahl"><input type="checkbox" id="fe-jung"> Mitarbeiterin oder Mitarbeiter hat das 20. Altersjahr noch nicht vollendet</label>
+      </fieldset>
+      <fieldset>
+        <legend>Zeitraum</legend>
+        <label class="qr-wahl"><input type="checkbox" id="fe-voll"> Ganzes Dienstjahr</label>
+        <div class="frow" id="fe-zeitraum">
+          <div class="fgrp"><label class="flabel" for="fe-von">Beginn im Dienstjahr (z. B. Eintritt)</label><input class="finput" type="date" id="fe-von" value="2027-04-01"></div>
+          <div class="fgrp"><label class="flabel" for="fe-bis">Ende im Dienstjahr (z. B. Austritt)</label><input class="finput" type="date" id="fe-bis" value="2027-12-31"></div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Stundenlohn (optional)</legend>
+        <div class="fgrp"><label class="flabel" for="fe-lohn">Stundenlohn ohne Ferienzuschlag in CHF</label><input class="finput" type="text" inputmode="decimal" id="fe-lohn" value="32.00"></div>
+      </fieldset>
+      <p class="qr-hilfe">Teilzeit: Massgebend sind die Ferienwochen. Wer an 3 Tagen pro Woche arbeitet, hat bei 5 Wochen 15 Ferientage. Kürzungen wegen längerer Abwesenheit (Art. 329b OR) rechnet das Werkzeug nicht.</p>
+    </form>
+    <div class="qr-seite">
+      <div class="ccard mg-rechnung" id="fe-ergebnis" aria-live="polite"><p class="at-was">Der Rechner braucht JavaScript.</p></div>
+      <p class="at-meldung" id="fe-meldung" role="alert"></p>
+    </div>
+  </div>
+</section>
+
+<section id="beispiel">
+  <div class="artikel-text">
+    <span class="s-label">Beispiel</span>
+    <h2>Eintritt am 1. April, Teilzeit an 3 Tagen</h2>
+    <p>Fünf Ferienwochen bei drei Arbeitstagen pro Woche ergeben 15 Ferientage für ein ganzes Dienstjahr. Vom 1. April bis 31. Dezember 2027 sind es 275 von 365 Tagen, also 15 × 275 / 365 = 11,3 Ferientage.</p>
+  </div>
+  <figure class="geraet mg-beispiel" data-anim="zins">
+    <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">Ferienanspruch 2027</span><span class="beispiel">Beispiel</span></div>
+    <div class="mg-schritte" role="img" aria-label="Beispiel: 5 Ferienwochen mal 3 Arbeitstage pro Woche ergeben 15 Tage pro Jahr; 275 von 365 Tagen ergeben 11,3 Ferientage.">
+      <div class="mg-schritt" style="--i:0" aria-hidden="true"><span>5 Wochen × 3 Arbeitstage</span><b>15 Tage pro Jahr</b></div>
+      <div class="mg-schritt" style="--i:1" aria-hidden="true"><span>1. April bis 31. Dezember 2027</span><b>275 von 365 Tagen</b></div>
+      <div class="mg-schritt mg-total" style="--i:2" aria-hidden="true"><span>Anspruch</span><b>11,3 Ferientage</b></div>
+    </div>
+    <figcaption class="anim-fuss"><span>Beispiel mit erfundenen Daten.</span> <button type="button" class="anim-nochmal" data-anim-nochmal hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Nochmal abspielen</button></figcaption>
+  </figure>
+</section>
+
+<section id="wissen" class="flaeche">
+  <div class="artikel-text">
+    <span class="s-label">Wissen</span>
+    <h2>Ferienanspruch in der Schweiz</h2>
+    <p>Arbeitnehmende haben pro Dienstjahr mindestens vier Wochen Ferien, bis zum vollendeten 20. Altersjahr mindestens fünf Wochen (Art. 329a Abs. 1 OR). Für ein unvollständiges Dienstjahr gibt es Ferien entsprechend der Dauer des Arbeitsverhältnisses (Abs. 3). Verträge und Gesamtarbeitsverträge sehen oft mehr vor.</p>
+    <h3>Ferienzuschlag bei Stundenlohn</h3>
+    <p>Bei unregelmässiger Arbeit wird der Ferienlohn oft als Zuschlag zum Stundenlohn bezahlt. Der Prozentsatz ergibt sich rechnerisch aus Ferienwochen geteilt durch die übrigen Wochen des Jahres: 4 / 48 = 8,33 %, 5 / 47 = 10,64 %, 6 / 46 = 13,04 %. Das Gesetz selbst nennt keine Prozentsätze.</p>
+    <p>Wichtig: Während des Arbeitsverhältnisses dürfen Ferien grundsätzlich nicht mit Geld abgegolten werden (Art. 329d Abs. 2 OR). Das Bundesgericht lässt den Zuschlag nur ausnahmsweise zu: bei unregelmässiger Beschäftigung, wenn der Ferienlohnanteil im schriftlichen Vertrag und in jeder Lohnabrechnung als Betrag oder Prozentsatz ausgewiesen ist. «Ferienlohn inbegriffen» genügt nicht (BGE 129 III 493, BGE 149 III 202). Fehlen diese Voraussetzungen, ist der Ferienlohn unter Umständen nochmals geschuldet.</p>
+  </div>
+</section>

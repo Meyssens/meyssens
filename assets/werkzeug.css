@@ -51,3 +51,124 @@
   .qr-ref-zeile{flex-direction:column}
   .qr-knoepfe .btn-p,.qr-knoepfe .btn-s{width:100%;justify-content:center}
 }
+/* Gemeinsam für alle Gratis-Werkzeuge */
+.wz-hinweis{max-width:1440px;margin:0 auto clamp(1rem,2vw,1.5rem);padding:1rem 1.25rem;border:1px solid var(--blue-20);border-left:4px solid var(--blue);border-radius:12px;background:var(--blue-hell);color:var(--ink2);font-size:.92rem;line-height:1.6}
+.page-hero + .wz-hinweis{margin-top:0;width:min(1440px,calc(100% - 2*max(5%,16px)))}
+.wz-hinweis strong{color:var(--ink)}
+.wz-raster{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1rem;max-width:1440px;margin:0 auto}
+.wz-karte{display:flex;flex-direction:column;gap:.5rem;padding:1.4rem 1.5rem;text-decoration:none;color:var(--ink)}
+.wz-karte h2{font-size:1.15rem;margin:0}
+.wz-karte p{margin:0;color:var(--ink2);font-size:.95rem;line-height:1.6}
+.wz-karte .way-go{margin-top:auto;color:var(--blue);font-weight:500;display:inline-flex;gap:.4rem;align-items:center}
+.wz-karte:hover,.wz-karte:focus-visible{border-color:var(--blue)}
+/* W7 Arbeitstage */
+.at-tage{display:flex;flex-wrap:wrap;gap:.4rem .9rem}
+.at-tage label{display:inline-flex;align-items:center;gap:.4rem;min-height:44px;font-size:.92rem;color:var(--ink2)}
+.at-tage input{width:1.1rem;height:1.1rem;accent-color:var(--blue)}
+.at-ergebnis{padding:clamp(1.25rem,2.5vw,2rem)}
+.at-zahl{margin:0;font-size:1.1rem;color:var(--ink2)}
+.at-zahl strong{display:block;font-size:clamp(2.6rem,5vw,3.6rem);line-height:1.05;color:var(--blue);font-weight:700;letter-spacing:-.02em}
+.at-was{color:var(--ink3);font-size:.9rem;line-height:1.6;margin:.5rem 0 0}
+.at-ergebnis h3{font-size:1rem;margin:1.25rem 0 .4rem}
+.at-abzug{list-style:none;margin:0;padding:0;font-size:.92rem;line-height:1.5}
+.at-abzug li{padding:.35rem 0;border-bottom:1px solid var(--line)}
+.at-abzug span{display:inline-block;min-width:7.5rem;color:var(--ink);font-variant-numeric:tabular-nums}
+.at-monate{min-width:0;margin:1rem 0 0}
+.at-meldung{color:#9c1f17;font-size:.9rem;margin:.25rem 0 0}
+.at-meldung:empty{display:none}
+.at-tabelle td,.at-tabelle th{font-variant-numeric:tabular-nums}
+.at-tabelle td{text-align:right}
+.at-tabelle caption{text-align:left;font-size:.85rem;color:var(--ink3);caption-side:bottom;padding-top:.5rem}
+.at-total th,.at-total td{border-top:2px solid var(--ink3)}
+.at-fuss{list-style:none;padding:0;margin:.5rem 0 0;font-size:.85rem;color:var(--ink3)}
+.at-kanton{border-bottom:1px solid var(--line)}
+.at-kanton summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:500;color:var(--ink)}
+.at-kanton ul{list-style:none;padding:0 0 .5rem;margin:0;font-size:.92rem}
+.at-kanton li{padding:.2rem 0}
+.at-kanton li span{display:inline-block;min-width:6.5rem;font-variant-numeric:tabular-nums;color:var(--ink2)}
+.at-recht{font-size:.82rem;color:var(--ink3);margin:0 0 .75rem}
+/* Beispielkalender (animiert, data-anim="kalender") */
+.at-beispiel{max-width:760px;margin:1.5rem auto 0}
+.at-beispiel-inhalt{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:1.25rem;padding:clamp(.9rem,2vw,1.4rem);align-items:center}
+.at-kal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.at-wt{font-size:.72rem;color:var(--ink3);text-align:center;padding-bottom:2px}
+.at-k{aspect-ratio:1;display:grid;place-items:center;border-radius:8px;font-size:.82rem;font-variant-numeric:tabular-nums}
+.at-k.at{background:var(--blue-hell);color:var(--ink)}
+.at-k.ft{background:var(--blue);color:#fff;font-weight:600}
+.at-k.we{background:var(--surface);color:var(--ink3)}
+.at-summe p{margin:.3rem 0;font-size:.88rem;color:var(--ink2);display:flex;align-items:center;gap:.5rem}
+.at-leg{width:.9rem;height:.9rem;border-radius:4px;display:inline-block}
+.at-leg.at{background:var(--blue-hell);border:1px solid var(--blue-20)}
+.at-leg.ft{background:var(--blue)}
+.at-leg.we{background:var(--surface);border:1px solid var(--line)}
+.at-gross{margin-top:.9rem!important;font-size:1rem!important;color:var(--ink)!important}
+.at-gross strong{font-size:2rem;color:var(--blue);font-variant-numeric:tabular-nums}
+.anim-fuss{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.5rem;padding:.6rem clamp(.9rem,2vw,1.4rem) .9rem;font-size:.8rem;color:var(--ink3)}
+@media (prefers-reduced-motion:no-preference){
+  .js [data-anim="kalender"] .at-k:not(.leer){opacity:0}
+  .js [data-anim="kalender"].anim-los .at-k:not(.leer){animation:a-ein .35s var(--weich) calc(var(--i) * 28ms) both}
+  .js [data-anim="kalender"].anim-los .at-k.ft{animation:a-pop .45s var(--weich) calc(var(--i) * 28ms + 120ms) both}
+}
+@media(max-width:640px){
+  .at-beispiel-inhalt{grid-template-columns:1fr}
+}
+@media(max-width:960px){
+  /* Rechner (ausser QR-Rechnung): zuerst die Eingaben, dann das Ergebnis */
+  .wz-eingabe-zuerst .qr-seite{order:0}
+}
+/* Briefe (W1 Mahnung, W2 Rechnung, W3 Offerte) */
+.wz-beispielhinweis{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;font-size:.85rem;color:var(--ink3);margin:0 0 1rem;padding:.6rem .8rem;background:var(--surface);border-radius:10px}
+.mg-rechnung{padding:clamp(1.25rem,2.5vw,2rem)}
+.mg-total-zeile{margin:.8rem 0 0;font-weight:600;color:var(--ink)}
+#mg-meldungen ul,.wz-meldungen ul{margin:0;padding:.6rem 1rem .6rem 1.8rem;background:#fff7f6;border:1px solid #f1c7c3;border-radius:10px;color:#9c1f17;font-size:.88rem;line-height:1.5}
+#mg-meldungen:empty,.wz-meldungen:empty{display:none}
+.br-vorschau{background:#fff;padding:clamp(1rem,2.5vw,1.75rem);font-size:.8rem;line-height:1.55;color:#111;max-height:640px;overflow:auto}
+.br-vorschau p{margin:0 0 .6rem}
+.br-v-kopf{display:flex;flex-direction:column;margin-bottom:.8rem}
+.br-v-an{display:flex;flex-direction:column;margin:0 0 1rem auto;width:min(48%,16rem)}
+.br-v-datum{color:#333}
+.br-v-betreff{font-weight:700;font-size:.9rem}
+.br-v-tabelle{width:100%;border-collapse:collapse;margin:.4rem 0 .8rem}
+.br-v-tabelle td{border-bottom:1px solid #ddd;padding:.3rem 0;vertical-align:top}
+.br-v-tabelle td:last-child{text-align:right;white-space:nowrap;padding-left:.8rem;font-variant-numeric:tabular-nums}
+.br-v-total td{font-weight:700;border-bottom:0}
+.br-v-qr{margin-top:1rem!important;padding-top:.6rem;border-top:1px dashed #999;color:#555}
+.br-fenster{margin-top:.5rem}
+/* Beispiel Verzugszins (animiert) */
+.mg-beispiel{max-width:620px;margin:1.5rem auto 0}
+.mg-schritte{display:grid;gap:.5rem;padding:clamp(.9rem,2vw,1.4rem)}
+.mg-schritt{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;padding:.7rem .9rem;border-radius:10px;background:var(--blue-hell);font-size:.92rem;color:var(--ink2)}
+.mg-schritt b{color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mg-total{background:var(--blue);color:#fff}
+.mg-total b{color:#fff}
+@media (prefers-reduced-motion:no-preference){
+  .js [data-anim="zins"] .mg-schritt{opacity:0}
+  .js [data-anim="zins"].anim-los .mg-schritt{animation:a-ein .45s var(--weich) calc(var(--i) * 420ms) both}
+}
+/* Positionen (W2 Rechnung, W3 Offerte) */
+.bl-positionen{display:grid;gap:.6rem;margin-bottom:.75rem}
+.bl-pos{display:grid;grid-template-columns:minmax(0,1fr) 4.5rem 4.5rem 6rem 5.5rem;gap:.4rem .5rem;align-items:end;padding:.7rem;border:1px solid var(--line);border-radius:12px;background:#fff}
+.bl-pos .bl-text{grid-column:1 / -1}
+.bl-pos .fgrp{margin:0}
+.bl-pos .bl-weg{grid-column:1 / -1;justify-self:end;min-height:40px}
+@media(max-width:520px){
+  .bl-pos{grid-template-columns:1fr 1fr}
+}
+/* W8 MWST-Rechner */
+.mw-liste{display:grid;grid-template-columns:1fr auto;gap:.5rem 1rem;margin:0;font-size:1rem}
+.mw-liste dt{color:var(--ink2)}
+.mw-liste dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+.mw-liste .mw-ziel{font-weight:700;color:var(--blue);font-size:1.3rem;border-top:2px solid var(--blue-20);padding-top:.5rem}
+/* W4 Arbeitszeit, W6 Lohnfortzahlung */
+.az-formular{padding:clamp(1.25rem,2.5vw,2rem);max-width:1440px;margin:0 auto}
+.az-kopf{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));gap:.25rem 1rem}
+.az-ergebnis-zeile{display:grid;gap:.75rem;margin:.5rem 0 1rem}
+.az-tabelle{min-width:640px}
+.az-tabelle td,.az-tabelle th{padding:.3rem .4rem;vertical-align:middle}
+.az-tabelle .finput{padding:.45rem .6rem;min-width:4.5rem;font-variant-numeric:tabular-nums}
+.az-tabelle tr.az-we th,.az-tabelle tr.az-we td{background:var(--surface);color:var(--ink3)}
+.az-tabelle tr.az-ft th,.az-tabelle tr.az-ft td{background:var(--blue-hell)}
+.az-summe{font-variant-numeric:tabular-nums;white-space:nowrap}
+.az-notiz{font-size:.82rem;color:var(--ink2)}
+.lf-achtung{color:#7a4b00!important;background:#fff6e0;border-radius:8px;padding:.5rem .7rem}
+.lf-tabelle td{white-space:nowrap}

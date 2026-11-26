@@ -1,0 +1,67 @@
+<section id="werkzeug" class="flaeche">
+  <h2 class="sr-only">Lohnfortzahlung bei Krankheit berechnen</h2>
+  <div class="qr-raster wz-eingabe-zuerst">
+    <form id="lf-formular" class="ccard qr-formular" novalidate>
+      <noscript><p class="note">Der Rechner braucht JavaScript. Er rechnet alles in Ihrem Browser und sendet nichts. Die Tabelle weiter unten funktioniert auch ohne.</p></noscript>
+      <fieldset>
+        <legend>Skala</legend>
+        <label class="qr-wahl"><input type="radio" name="lf-skala" value="basel" checked> Basler Skala (Raum Basel)</label>
+        <label class="qr-wahl"><input type="radio" name="lf-skala" value="bern"> Berner Skala</label>
+        <label class="qr-wahl"><input type="radio" name="lf-skala" value="zuerich"> Zürcher Skala</label>
+        <p class="qr-hilfe">Welche Skala gilt, hängt vom Gerichtsstand und der Praxis im Kanton ab. Vertrag, Gesamtarbeitsvertrag oder eine Krankentaggeldversicherung können eine andere Regelung vorsehen.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Arbeitsverhältnis</legend>
+        <div class="frow">
+          <div class="fgrp"><label class="flabel" for="lf-eintritt">Eintritt</label><input class="finput" type="date" id="lf-eintritt" value="2022-03-01"></div>
+          <div class="fgrp"><label class="flabel" for="lf-beginn">Beginn der Arbeitsunfähigkeit</label><input class="finput" type="date" id="lf-beginn" value="2027-05-15"></div>
+        </div>
+        <label class="qr-wahl"><input type="checkbox" id="lf-kurz"> Arbeitsverhältnis auf höchstens drei Monate befristet</label>
+      </fieldset>
+    </form>
+    <div class="qr-seite">
+      <div class="ccard mg-rechnung" id="lf-ergebnis" aria-live="polite"><p class="at-was">Der Rechner braucht JavaScript.</p></div>
+      <p class="at-meldung" id="lf-meldung" role="alert"></p>
+    </div>
+  </div>
+</section>
+
+<section id="beispiel">
+  <div class="artikel-text">
+    <span class="s-label">Beispiel</span>
+    <h2>Eintritt 1. März 2022, krank ab 15. Mai 2027</h2>
+    <p>Am 15. Mai 2027 läuft das 6. Dienstjahr (1. März 2027 bis 29. Februar 2028). Je nach Skala sind das 3 Monate (Basel und Bern) oder 12 Wochen (Zürich).</p>
+  </div>
+  <figure class="geraet mg-beispiel" data-anim="zins">
+    <div class="geraet-leiste"><i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i><span class="geraet-titel">6. Dienstjahr</span><span class="beispiel">Beispiel</span></div>
+    <div class="mg-schritte" role="img" aria-label="Beispiel: im 6. Dienstjahr nach Basler und Berner Skala 3 Monate, nach Zürcher Skala 12 Wochen Lohnfortzahlung.">
+      <div class="mg-schritt" style="--i:0" aria-hidden="true"><span>Dienstjahr am 15.05.2027</span><b>6.</b></div>
+      <div class="mg-schritt" style="--i:1" aria-hidden="true"><span>Basler Skala</span><b>3 Monate</b></div>
+      <div class="mg-schritt" style="--i:2" aria-hidden="true"><span>Berner Skala</span><b>3 Monate</b></div>
+      <div class="mg-schritt mg-total" style="--i:3" aria-hidden="true"><span>Zürcher Skala</span><b>12 Wochen</b></div>
+    </div>
+    <figcaption class="anim-fuss"><span>Beispiel mit erfundenen Daten.</span> <button type="button" class="anim-nochmal" data-anim-nochmal hidden><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Nochmal abspielen</button></figcaption>
+  </figure>
+</section>
+
+<section id="tabelle" class="flaeche">
+  <div class="artikel-text">
+    <span class="s-label">Übersicht</span>
+    <h2>Basler, Berner und Zürcher Skala</h2>
+    <p>Das Gesetz nennt nur für das erste Dienstjahr eine feste Dauer: drei Wochen. Danach schuldet der Arbeitgeber den Lohn «für eine angemessene längere Zeit» (Art. 324a Abs. 2 OR). Die Gerichte haben dafür Skalen entwickelt. Sie sind nicht verbindlich, aber anerkannte Richtwerte.</p>
+    <div class="tabelle-scroll"><table class="qr-tabelle lf-tabelle"><caption>Dauer der Lohnfortzahlung pro Dienstjahr; «–» = keine amtliche Angabe gefunden.</caption><thead><tr><th scope="col">Dienstjahr</th><th scope="col">Basler Skala</th><th scope="col">Berner Skala</th><th scope="col">Zürcher Skala</th></tr></thead><tbody><tr><th scope="row">1.</th><td>3 Wochen</td><td>3 Wochen</td><td>3 Wochen</td></tr><tr><th scope="row">2.</th><td>2 Monate</td><td>1 Monat</td><td>8 Wochen</td></tr><tr><th scope="row">3.</th><td>2 Monate</td><td>2 Monate</td><td>9 Wochen</td></tr><tr><th scope="row">4.</th><td>3 Monate</td><td>2 Monate</td><td>10 Wochen</td></tr><tr><th scope="row">5.</th><td>3 Monate</td><td>3 Monate</td><td>11 Wochen</td></tr><tr><th scope="row">6.</th><td>3 Monate</td><td>3 Monate</td><td>12 Wochen</td></tr><tr><th scope="row">7.</th><td>3 Monate</td><td>3 Monate</td><td>13 Wochen</td></tr><tr><th scope="row">8.</th><td>3 Monate</td><td>3 Monate</td><td>14 Wochen</td></tr><tr><th scope="row">9.</th><td>3 Monate</td><td>3 Monate</td><td>15 Wochen</td></tr><tr><th scope="row">10.</th><td>3 Monate</td><td>4 Monate</td><td>16 Wochen</td></tr><tr><th scope="row">11.</th><td>4 Monate</td><td>4 Monate</td><td>17 Wochen</td></tr><tr><th scope="row">12.</th><td>4 Monate</td><td>4 Monate</td><td>18 Wochen</td></tr><tr><th scope="row">13.</th><td>4 Monate</td><td>4 Monate</td><td>19 Wochen</td></tr><tr><th scope="row">14.</th><td>4 Monate</td><td>4 Monate</td><td>20 Wochen</td></tr><tr><th scope="row">15.</th><td>4 Monate</td><td>5 Monate</td><td>21 Wochen</td></tr><tr><th scope="row">16.</th><td>5 Monate</td><td>5 Monate</td><td>22 Wochen</td></tr><tr><th scope="row">17.</th><td>5 Monate</td><td>5 Monate</td><td>23 Wochen</td></tr><tr><th scope="row">18.</th><td>5 Monate</td><td>5 Monate</td><td>24 Wochen</td></tr><tr><th scope="row">19.</th><td>5 Monate</td><td>5 Monate</td><td>25 Wochen</td></tr><tr><th scope="row">20.</th><td>5 Monate</td><td>6 Monate</td><td>26 Wochen</td></tr><tr><th scope="row">21.</th><td>6 Monate</td><td>6 Monate</td><td>27 Wochen</td></tr><tr><th scope="row">22.</th><td>6 Monate</td><td>6 Monate</td><td>28 Wochen</td></tr><tr><th scope="row">23.</th><td>6 Monate</td><td>6 Monate</td><td>29 Wochen</td></tr><tr><th scope="row">24.</th><td>6 Monate</td><td>6 Monate</td><td>30 Wochen</td></tr><tr><th scope="row">25.</th><td>6 Monate</td><td>6 Monate</td><td>31 Wochen</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<section id="wissen">
+  <div class="artikel-text">
+    <span class="s-label">Wissen</span>
+    <h2>So gilt die Lohnfortzahlung</h2>
+    <ul>
+      <li>Der Anspruch besteht, wenn das Arbeitsverhältnis mehr als drei Monate gedauert hat oder für mehr als drei Monate eingegangen ist (Art. 324a Abs. 1 OR).</li>
+      <li>Die Dauer gilt pro Dienstjahr, ab dem Eintritt gezählt. Mehrere Absenzen im selben Dienstjahr werden zusammengezählt. Mit dem nächsten Dienstjahr entsteht der Anspruch neu.</li>
+      <li>Geschuldet ist der volle Lohn. Eine andere Regelung ist schriftlich, durch Normalarbeitsvertrag oder Gesamtarbeitsvertrag möglich, wenn sie mindestens gleichwertig ist (Art. 324a Abs. 4 OR), zum Beispiel eine Krankentaggeldversicherung.</li>
+      <li>Basler Skala: Die Werte stammen aus dem Merkblatt «Lohn» des Amts für Wirtschaft und Arbeit Basel-Stadt (Stand 1. Januar 2024) und stimmen für die Dienstjahre 1 bis 11 mit dem Bericht des Bundesrates vom 19. August 2026 überein. Die Übersicht der Zürcher Gerichte führt für Basel teilweise andere Stufen.</li>
+    </ul>
+  </div>
+</section>

@@ -467,6 +467,7 @@ animBoxen.forEach(function(box){
 });
 
 })();
+
 // --- Formularfeld «Wie haben Sie von uns erfahren?» (freiwillig): Vorbelegung aus utm_source, das versteckte Feld
 // «kampagne» aus utm_source/utm_medium/utm_campaign der aktuellen Adresse. Nichts wird gespeichert oder gesendet,
 // bevor die Person das Formular selbst abschickt. Das Detailfeld erscheint nur bei Empfehlung, Anlass, Brief oder Andere.
