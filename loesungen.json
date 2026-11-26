@@ -1,0 +1,560 @@
+[
+  {
+    "pfad": "/automatisierung/",
+    "name": "KI-Automatisierung",
+    "eltern": null,
+    "titel": "KI-Automatisierung für KMU in der Schweiz | Meyssens",
+    "beschreibung": "KI liest Belege und E-Mails und bereitet Buchungen, Antworten und Zahlungen als Entwurf vor. Sie geben frei. Für Schweizer KMU. Gespräch anfragen.",
+    "chip": "Für Unternehmen",
+    "h1": "KI-Automatisierung für KMU: Routinearbeit als Entwurf",
+    "lead": "Künstliche Intelligenz liest, sortiert und schreibt vor, was in Ihrem Büro täglich anfällt: Belege, E-Mails, QR-Rechnungen, Fristen. Was Ihren Betrieb verlässt oder gebucht wird, geben Sie frei.",
+    "thema": "KI-Automatisierung: kostenloses Gespräch",
+    "nutzen_titel": "Was KI-Automatisierung in einem KMU leistet",
+    "nutzen": [
+      {
+        "titel": "Weniger abtippen",
+        "text": "Lieferant, Datum, Betrag und Mehrwertsteuer werden aus Belegen ausgelesen, Zahlungsdaten direkt aus dem QR-Code. Sie prüfen statt zu erfassen."
+      },
+      {
+        "titel": "Nichts geht unter",
+        "text": "E-Mails werden nach Offerte, Termin oder Reklamation markiert und nach Dringlichkeit geordnet. Fristen werden überwacht, bevor sie ablaufen."
+      },
+      {
+        "titel": "Entwürfe statt Leerlauf",
+        "text": "Antworten, Buchungen, Rechnungen und Zahlungen liegen als Entwurf bereit. Der letzte Schritt bleibt bei Ihnen."
+      },
+      {
+        "titel": "Schritt für Schritt",
+        "text": "Sie beginnen mit einem einzigen Ablauf. Erst wenn er im Alltag trägt, kommt der nächste dazu."
+      }
+    ],
+    "ablauf_titel": "So kommt die Automatisierung in Ihren Betrieb",
+    "ablauf": [
+      {
+        "titel": "Kostenloses Gespräch",
+        "text": "In 20 Minuten zeigen Sie uns einen Ablauf. Wir sagen offen, was sich automatisieren lässt und was nicht.",
+        "symbol": "eingang"
+      },
+      {
+        "titel": "Vorschlag",
+        "text": "Sie erhalten einen schriftlichen Vorschlag: welcher Ablauf, welche Daten, wo sie gespeichert werden, was Sie freigeben.",
+        "symbol": "lesen"
+      },
+      {
+        "titel": "Pilot",
+        "text": "Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot.",
+        "symbol": "vorschlag"
+      },
+      {
+        "titel": "Entscheid",
+        "text": "Nach dem Pilot entscheiden Sie, ob der Ablauf bleibt. Preise: drei Pakete oder nach Aufwand, verbindlich nach 20 Minuten kostenlosem Gespräch.",
+        "symbol": "freigabe"
+      }
+    ],
+    "beispiel": {
+      "buehne": "posteingang",
+      "geraet": "Posteingang",
+      "h2": "Beispiel: der Posteingang sortiert sich selbst",
+      "lead": "Drei E-Mails treffen ein. Die KI erkennt, worum es geht, und schreibt einen Antwortentwurf. Gesendet wird erst nach Ihrer Freigabe.",
+      "beschreibung": "Drei E-Mails treffen ein und werden als Offerte, Termin und Reklamation markiert. Für die Offertanfrage erscheint ein Antwortentwurf, der erst nach Ihrer Freigabe gesendet wird."
+    },
+    "karten_titel": "Die wichtigsten Abläufe",
+    "karten": [
+      {
+        "url": "/automatisierung/buchhaltung/",
+        "titel": "Buchhaltung automatisieren",
+        "text": "Belege auslesen, Konten vorschlagen, Zahlungen zuordnen. Die Buchung bleibt Ihr Entscheid."
+      },
+      {
+        "url": "/automatisierung/belege-digitalisieren/",
+        "titel": "Belege digitalisieren",
+        "text": "Quittungen und Rechnungen unveränderbar ablegen, mit Zeitpunkt, Frist und Suche."
+      },
+      {
+        "url": "/automatisierung/qr-rechnungen-einlesen/",
+        "titel": "QR-Rechnungen automatisch einlesen",
+        "text": "Zahlungsdaten aus dem QR-Code lesen, prüfen und als Zahlung für das E-Banking vorbereiten."
+      },
+      {
+        "url": "/produkte/mail-assistent/",
+        "titel": "E-Mails sortieren und beantworten",
+        "text": "Eingehende Nachrichten markieren und Antworten in Ihrem Ton vorbereiten."
+      }
+    ],
+    "abschnitte": [
+      {
+        "id": "grenzen",
+        "label": "Ehrlich gesagt",
+        "h2": "Was KI kann und was nicht",
+        "absaetze": [
+          "KI ist gut darin, Texte zu lesen, Angaben herauszuziehen, zu sortieren und Entwürfe zu schreiben. Sie macht dabei Fehler, vor allem bei schlecht lesbaren Belegen oder ungewöhnlichen Anfragen. Deshalb gilt bei uns eine einfache Regel: Entwürfe ja, automatischer Versand nein.",
+          "Was sich nicht sicher lesen lässt, wird markiert statt geraten. Sie sehen auf einen Blick, wo Sie genauer hinschauen müssen, und die Kontrolle bleibt bei Ihnen."
+        ]
+      },
+      {
+        "id": "datenschutz",
+        "label": "Datenschutz",
+        "h2": "Datenschutz und Ihre bestehenden Programme",
+        "absaetze": [
+          "Personendaten bearbeiten wir nur mit einem Vertrag zur Auftragsbearbeitung. Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start, und wir bearbeiten nur die Daten, die der Ablauf wirklich braucht.",
+          "Ihre Buchhaltungssoftware, Ihr E-Mail-Programm und Ihr E-Banking bleiben. Bestehende Programme binden wir nach Absprache an, wenn eine Schnittstelle besteht. Eine Anbindung sagen wir erst zu, wenn wir die Schnittstelle geprüft haben."
+        ]
+      }
+    ],
+    "branchen": [
+      "treuhaender",
+      "elektro-handwerk",
+      "bauunternehmen",
+      "arztpraxen",
+      "immobilienverwaltungen",
+      "architekturbueros"
+    ],
+    "ratgeber": [
+      "ndsg-kmu-checkliste",
+      "offertanfragen-beantworten",
+      "website-chatbot-recht"
+    ],
+    "faq": [
+      {
+        "frage": "Was ist KI-Automatisierung für ein KMU?",
+        "antwort": "Wiederkehrende Büroarbeit wird von Software mit künstlicher Intelligenz vorbereitet: Belege auslesen, E-Mails sortieren, Antworten, Buchungen oder Zahlungen entwerfen. Ein Mensch prüft und gibt frei."
+      },
+      {
+        "frage": "Brauche ich dafür neue Software?",
+        "antwort": "In der Regel nicht. Die Abläufe arbeiten mit Ihren bestehenden Programmen zusammen, wenn eine geprüfte Schnittstelle besteht. Wo keine besteht, entsteht ein Entwurf, den Sie übernehmen."
+      },
+      {
+        "frage": "Was kostet KI-Automatisierung?",
+        "antwort": "Das erste Gespräch ist gratis. Für Mahnwesen, Anfragen und Service-Erinnerungen gibt es Pakete mit Einrichtung und Monatsbetrag (Einrichtung ab CHF 3'500), andere Abläufe nach Aufwand. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch."
+      },
+      {
+        "frage": "Sendet die KI selbst E-Mails oder bucht sie selbst?",
+        "antwort": "Nein. Entwürfe ja, automatischer Versand nein. Was Ihren Betrieb verlässt oder gebucht wird, geben Sie frei."
+      },
+      {
+        "frage": "Wo werden meine Daten gespeichert?",
+        "antwort": "Das nennen wir Ihnen vor dem Start. Personendaten bearbeiten wir nur mit einem Vertrag zur Auftragsbearbeitung."
+      }
+    ],
+    "vorher_nachher": {
+      "vorher": [
+        "E-Mails einzeln lesen, weiterleiten und beantworten",
+        "Belege von Hand abtippen",
+        "Fristen im Kopf oder auf Zetteln",
+        "Antworten jedes Mal neu formulieren"
+      ],
+      "nachher": [
+        "Nachrichten sind markiert und nach Dringlichkeit geordnet",
+        "Belege sind ausgelesen, Sie prüfen nur noch",
+        "Fristen melden sich rechtzeitig",
+        "Antwortentwürfe liegen bereit, Sie geben frei"
+      ]
+    }
+  },
+  {
+    "pfad": "/automatisierung/buchhaltung/",
+    "name": "Buchhaltung automatisieren",
+    "eltern": "/automatisierung/",
+    "titel": "Buchhaltung automatisieren mit KI: KMU Schweiz | Meyssens",
+    "beschreibung": "Belege auslesen, Konten vorschlagen, Zahlungen zuordnen: Ihre Buchhaltung als Entwurf, Sie buchen. Für Schweizer KMU und Treuhandbüros. Jetzt anfragen.",
+    "chip": "Buchhaltung",
+    "h1": "Buchhaltung automatisieren: Belege rein, Buchung als Entwurf",
+    "lead": "Rechnungen kommen per E-Mail, Quittungen als Foto, Zahlungen über die Bank. Die Automatisierung liest alles aus, schlägt Konten vor und ordnet Zahlungen zu. Sie prüfen und buchen.",
+    "thema": "Buchhaltung automatisieren",
+    "nutzen_titel": "Was Sie davon haben",
+    "nutzen": [
+      {
+        "titel": "Keine Belege abtippen",
+        "text": "Lieferant, Datum, Betrag, Mehrwertsteuer und Konto werden ausgelesen und vorgeschlagen."
+      },
+      {
+        "titel": "Zahlungen zugeordnet",
+        "text": "Gutschriften und Lastschriften werden den offenen Posten zugeordnet, Unklares wird markiert."
+      },
+      {
+        "titel": "Monatsabschluss vorbereitet",
+        "text": "Fehlende Belege und offene Fragen stehen auf einer Liste, bevor die Treuhänderin fragt."
+      },
+      {
+        "titel": "Ihre Software bleibt",
+        "text": "Die Vorschläge landen dort, wo Sie heute buchen, sofern eine geprüfte Schnittstelle besteht."
+      }
+    ],
+    "ablauf_titel": "Der Ablauf in vier Schritten",
+    "ablauf": [
+      {
+        "titel": "Beleg kommt an",
+        "text": "Per E-Mail weitergeleitet, als Foto vom Handy oder als Upload.",
+        "symbol": "eingang"
+      },
+      {
+        "titel": "Auslesen",
+        "text": "Lieferant, Datum, Betrag, Mehrwertsteuersatz und Rechnungsnummer werden gelesen. Unsichere Felder werden markiert.",
+        "symbol": "lesen"
+      },
+      {
+        "titel": "Vorschlag",
+        "text": "Konto und Gegenkonto werden vorgeschlagen, zum Beispiel 4000 Materialaufwand an 2000 Kreditoren.",
+        "symbol": "vorschlag"
+      },
+      {
+        "titel": "Sie buchen",
+        "text": "Sie prüfen den Vorschlag, korrigieren wenn nötig und buchen. Ohne Ihre Freigabe wird nichts gebucht.",
+        "symbol": "freigabe"
+      }
+    ],
+    "beispiel": {
+      "buehne": "gross",
+      "geraet": "Vom Beleg zur Buchung",
+      "h2": "Beispiel: vom E-Mail zur Buchung",
+      "lead": "Eine Rechnung kommt per E-Mail. Der Beleg wird erkannt, die Buchung liegt als Entwurf bereit.",
+      "beschreibung": "Eine E-Mail der Beispiel Handels GmbH mit der Rechnung 2026-041 trifft ein. Der Beleg wird erkannt: Lieferant, Datum, Mehrwertsteuer und Total CHF 432.40. Daraus entsteht die Buchung 4000 Materialaufwand an 2000 Kreditoren als Entwurf. Gebucht wird erst, wenn Sie freigeben.",
+      "klasse": "abl-gross"
+    },
+    "abschnitte": [
+      {
+        "id": "was-automatisch",
+        "label": "Abgrenzung",
+        "h2": "Was automatisch läuft und was bei Ihnen bleibt",
+        "liste": [
+          "Automatisch: Belege einsammeln, auslesen, benennen und ablegen.",
+          "Automatisch: Konten und Mehrwertsteuer vorschlagen, Zahlungen offenen Posten zuordnen.",
+          "Automatisch: Liste mit fehlenden Belegen und offenen Fragen für den Monatsabschluss.",
+          "Bei Ihnen: jede Buchung prüfen und freigeben, Ausnahmen entscheiden, Abschluss und Steuererklärung."
+        ]
+      },
+      {
+        "id": "treuhand",
+        "label": "Treuhand",
+        "h2": "Für KMU und für Treuhandbüros",
+        "absaetze": [
+          "Ein KMU spart vor allem Erfassungszeit und sucht keine Belege mehr zusammen. Ein Treuhandbüro bekommt die Unterlagen seiner Mandanten geordnet und vollständig und kann sich auf Beratung und Kontrolle konzentrieren.",
+          "Wir ersetzen weder Ihre Buchhaltungssoftware noch Ihre Treuhänderin oder Ihren Treuhänder. Die Automatisierung bereitet vor, die fachliche Verantwortung bleibt, wo sie heute ist."
+        ]
+      }
+    ],
+    "bausteine": [
+      "fristenkalender-belegeingang-treuhand",
+      "unterlagen-erinnerung-treuhand"
+    ],
+    "branchen": [
+      "treuhaender",
+      "detailhandel",
+      "elektro-handwerk"
+    ],
+    "ratgeber": [
+      "aufbewahrungsfristen-buchhaltung",
+      "mwst-abrechnung-fristen",
+      "jahresabschluss-unterlagen-checkliste"
+    ],
+    "faq": [
+      {
+        "frage": "Kann man die Buchhaltung vollständig automatisieren?",
+        "antwort": "Das Erfassen und Vorschlagen ja, das Buchen sollte ein Mensch freigeben. KI liest nicht fehlerfrei, deshalb bleibt jede Buchung ein Entwurf, bis Sie sie prüfen."
+      },
+      {
+        "frage": "Funktioniert das mit meiner Buchhaltungssoftware?",
+        "antwort": "Wenn Ihre Software eine Schnittstelle hat, prüfen wir sie und binden sie nach Absprache an. Eine Anbindung sagen wir erst nach dieser Prüfung zu. Sonst entsteht ein Entwurf zum Übernehmen."
+      },
+      {
+        "frage": "Welche Belege werden erkannt?",
+        "antwort": "Rechnungen und Quittungen als PDF oder Foto. Was sich nicht sicher lesen lässt, wird markiert statt geraten."
+      },
+      {
+        "frage": "Was kostet das?",
+        "antwort": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."
+      },
+      {
+        "frage": "Wie lange muss ich Belege aufbewahren?",
+        "antwort": "Geschäftsbücher und Buchungsbelege zehn Jahre (Art. 958f OR), für die Mehrwertsteuer gelten eigene Regeln. Mehr dazu im Ratgeber zu den Aufbewahrungsfristen."
+      }
+    ],
+    "vorher_nachher": {
+      "vorher": [
+        "Belege aus E-Mails, Taschen und Ordnern zusammensuchen",
+        "Lieferant, Betrag und MWST abtippen",
+        "Zahlungen von Hand den Rechnungen zuordnen",
+        "Vor dem Abschluss fehlenden Belegen nachlaufen"
+      ],
+      "nachher": [
+        "Belege kommen an einem Ort an",
+        "Felder sind ausgelesen, das Konto ist vorgeschlagen",
+        "Zahlungen sind zugeordnet, Unklares ist markiert",
+        "Die Liste der fehlenden Belege liegt bereit"
+      ]
+    }
+  },
+  {
+    "pfad": "/automatisierung/belege-digitalisieren/",
+    "name": "Belege digitalisieren",
+    "eltern": "/automatisierung/",
+    "titel": "Belege digitalisieren in der Schweiz: so geht es | Meyssens",
+    "beschreibung": "Quittungen und Rechnungen digital ablegen, unveränderbar, mit Zeitpunkt und Aufbewahrungsfrist. Was OR und GeBüV verlangen. Jetzt Gespräch anfragen.",
+    "chip": "Belege",
+    "h1": "Belege digitalisieren: einmal ablegen, zehn Jahre wiederfinden",
+    "lead": "Foto oder Scan, automatisch benannt, unveränderbar abgelegt, mit Zeitpunkt und Frist. So sind Belege nach Schweizer Recht elektronisch aufbewahrt und in Sekunden gefunden.",
+    "thema": "Belege digitalisieren",
+    "nutzen_titel": "Was die digitale Ablage leistet",
+    "nutzen": [
+      {
+        "titel": "Schuhschachtel ade",
+        "text": "Jeder Beleg landet am selben Ort, mit einheitlichem Namen aus Datum, Lieferant und Betrag."
+      },
+      {
+        "titel": "Nachweisbar unverändert",
+        "text": "Prüfsumme und protokollierter Speicherzeitpunkt zeigen, dass der Beleg seit der Ablage nicht verändert wurde."
+      },
+      {
+        "titel": "Fristen hinterlegt",
+        "text": "Zu jedem Beleg ist die Aufbewahrungsfrist vermerkt. Was gelöscht werden darf, sehen Sie auf einer Liste."
+      },
+      {
+        "titel": "Sofort gefunden",
+        "text": "Suche nach Lieferant, Monat oder Betrag statt Ordner durchblättern."
+      }
+    ],
+    "ablauf_titel": "Vom Papier zum Archiv",
+    "ablauf": [
+      {
+        "titel": "Erfassen",
+        "text": "Foto mit dem Handy, Scan im Büro oder Weiterleiten per E-Mail.",
+        "symbol": "eingang"
+      },
+      {
+        "titel": "Benennen",
+        "text": "Datum, Lieferant und Betrag werden ausgelesen und als Dateiname verwendet.",
+        "symbol": "lesen"
+      },
+      {
+        "titel": "Ablegen",
+        "text": "Unveränderbar, mit Prüfsumme, Speicherzeitpunkt und Protokoll der Zugriffe.",
+        "symbol": "archiv"
+      },
+      {
+        "titel": "Aufbewahren",
+        "text": "Mit hinterlegter Frist. Vor dem Löschen prüfen Sie die Liste und entscheiden.",
+        "symbol": "freigabe"
+      }
+    ],
+    "beispiel": {
+      "buehne": "beleg-buchung",
+      "geraet": "Beleg einlesen",
+      "h2": "Beispiel: vom Beleg zur Buchung",
+      "klasse": "abl-belege abl-belegbuchung",
+      "lead": "Eine Quittung wird eingelesen. Datum, Betrag, MWST und Lieferant füllen sich nacheinander, dann landet der Beleg in der Buchung.",
+      "beschreibung": "Eine Quittung der Garage Beispiel AG wird eingelesen. Nacheinander füllen sich Datum 18.11.2026, Betrag CHF 648.60, MWST 8.1 Prozent mit CHF 48.60 und der Lieferant. Danach erscheint der Beleg im Buchungsjournal als Entwurf 6200 Fahrzeugaufwand an 2000 Kreditoren und wird unveränderbar archiviert. Gebucht wird nach Ihrer Prüfung."
+    },
+    "abschnitte": [
+      {
+        "id": "recht",
+        "label": "Recht",
+        "h2": "Was in der Schweiz gilt",
+        "absaetze": [
+          "Art. 958f Abs. 3 OR erlaubt die Aufbewahrung auf Papier, elektronisch oder in vergleichbarer Weise, soweit die Übereinstimmung mit den zugrunde liegenden Geschäftsvorfällen gewährleistet ist und die Unterlagen jederzeit wieder lesbar gemacht werden können. Geschäftsbücher und Buchungsbelege werden zehn Jahre aufbewahrt.",
+          "Die Einzelheiten regelt die Geschäftsbücherverordnung (GeBüV): Technische Verfahren müssen die Integrität gewährleisten, der Zeitpunkt der Speicherung muss unverfälschbar nachweisbar sein, und Protokolle oder Log-Dateien sind ebenfalls aufzubewahren. Für die Mehrwertsteuer gilt eine eigene Regel: Unterlagen sind bis zur absoluten Verjährung der Steuerforderung aufzubewahren, bei Immobilien 20 Jahre.",
+          "Unterschriebene Geschäfts- und Revisionsberichte bewahren Sie weiterhin auf Papier auf. Weitere Anforderungen der GeBüV, etwa zur Archivführung, prüfen Sie bitte in der geltenden Fassung oder mit einer Fachperson. Allgemeine Information, keine Rechtsberatung."
+        ]
+      },
+      {
+        "id": "papier",
+        "label": "Papier",
+        "h2": "Darf ich die Papierbelege danach wegwerfen?",
+        "absaetze": [
+          "Für die meisten Belege ist Papier keine Pflicht, wenn die elektronische Ablage die Anforderungen erfüllt. Die Ablage zeigt Ihnen deshalb nicht nur den Beleg, sondern auch Speicherzeitpunkt, Prüfsumme und Protokoll. Ob und wann Sie Papier entsorgen, entscheiden Sie, am besten nach Rücksprache mit Ihrer Treuhänderin oder Ihrem Treuhänder."
+        ]
+      }
+    ],
+    "bausteine": [
+      "aufbewahrungsregister-treuhand",
+      "fristenkalender-belegeingang-treuhand"
+    ],
+    "branchen": [
+      "treuhaender",
+      "architekturbueros",
+      "bauunternehmen"
+    ],
+    "ratgeber": [
+      "aufbewahrungsfristen-buchhaltung",
+      "steuerunterlagen-einsammeln",
+      "ndsg-kmu-checkliste"
+    ],
+    "quellen": [
+      {
+        "titel": "Art. 958f OR, Führung und Aufbewahrung der Geschäftsbücher (droit-bilingue.ch, nicht amtlich)",
+        "url": "https://droit-bilingue.ch/de-en/2/22/220-958f-1336.html"
+      },
+      {
+        "titel": "KMU-Portal des Bundes, Elektronische Aufbewahrung der Geschäftsbücher",
+        "url": "https://www.kmu.admin.ch/de/elektronische-aufbewahrung-der-geschaeftsbuecher"
+      }
+    ],
+    "geprueft": "2026-11-24",
+    "faq": [
+      {
+        "frage": "Darf man Belege in der Schweiz digital aufbewahren?",
+        "antwort": "Ja. Art. 958f OR erlaubt die elektronische Aufbewahrung, wenn die Übereinstimmung mit den Geschäftsvorfällen gewährleistet ist und die Unterlagen jederzeit lesbar gemacht werden können. Die Einzelheiten regelt die GeBüV."
+      },
+      {
+        "frage": "Wie lange müssen Belege aufbewahrt werden?",
+        "antwort": "Geschäftsbücher und Buchungsbelege zehn Jahre. Für die Mehrwertsteuer bis zur absoluten Verjährung der Steuerforderung, bei Immobilien 20 Jahre."
+      },
+      {
+        "frage": "Reicht ein Foto mit dem Handy?",
+        "antwort": "Wenn der Beleg vollständig lesbar ist und die Ablage Integrität, Speicherzeitpunkt und Protokoll nachweist. Unlesbare Fotos werden markiert, damit Sie sie neu aufnehmen."
+      },
+      {
+        "frage": "Was passiert mit den Papierbelegen?",
+        "antwort": "Das entscheiden Sie. Für die meisten Belege ist Papier keine Pflicht, unterschriebene Geschäfts- und Revisionsberichte bleiben auf Papier."
+      },
+      {
+        "frage": "Was kostet die digitale Belegablage?",
+        "antwort": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."
+      }
+    ],
+    "vorher_nachher": {
+      "vorher": [
+        "Quittungen in Schachtel oder Ordner",
+        "Dateien heissen «Scan_0042.pdf»",
+        "Suchen heisst blättern",
+        "Unklar, was wann entsorgt werden darf"
+      ],
+      "nachher": [
+        "Beleg fotografiert, ausgelesen und als Buchung vorbereitet",
+        "Einheitlicher Name aus Datum, Lieferant und Betrag",
+        "Suche nach Lieferant, Monat oder Betrag",
+        "Zu jedem Beleg ist die Frist hinterlegt"
+      ]
+    }
+  },
+  {
+    "pfad": "/automatisierung/qr-rechnungen-einlesen/",
+    "name": "QR-Rechnungen einlesen",
+    "eltern": "/automatisierung/",
+    "titel": "QR-Rechnungen automatisch einlesen und zahlen | Meyssens",
+    "beschreibung": "QR-Code lesen, Konto, Betrag und Referenz prüfen, Zahlung als Entwurf fürs E-Banking: Kreditorenrechnungen ohne Abtippen. Jetzt Gespräch anfragen.",
+    "chip": "Kreditoren",
+    "h1": "QR-Rechnungen automatisch einlesen: Zahlung als Entwurf",
+    "lead": "Jede QR-Rechnung trägt ihre Zahlungsdaten im QR-Code. Statt sie abzutippen, werden Konto, Betrag und Referenz gelesen, geprüft und als Zahlung für Ihr E-Banking vorbereitet. Sie geben frei.",
+    "thema": "QR-Rechnungen automatisch einlesen",
+    "nutzen_titel": "Warum sich das gerade bei QR-Rechnungen lohnt",
+    "nutzen": [
+      {
+        "titel": "Daten statt Bild",
+        "text": "Der QR-Code enthält Konto, Empfänger, Betrag und Referenz als strukturierte Daten. Nichts muss geraten werden."
+      },
+      {
+        "titel": "Keine Tippfehler",
+        "text": "IBAN und Referenz werden mit ihren Prüfziffern kontrolliert, bevor eine Zahlung entsteht."
+      },
+      {
+        "titel": "Keine Doppelzahlung",
+        "text": "Eine Rechnung, die schon bezahlt oder erfasst ist, wird erkannt und markiert."
+      },
+      {
+        "titel": "Fällig im Blick",
+        "text": "Zahlungen werden nach Fälligkeit geordnet. Sie geben gesammelt frei."
+      }
+    ],
+    "ablauf_titel": "Vom Zahlteil zur Zahlung",
+    "ablauf": [
+      {
+        "titel": "Rechnung kommt an",
+        "text": "Als PDF per E-Mail oder auf Papier, fotografiert oder gescannt.",
+        "symbol": "eingang"
+      },
+      {
+        "titel": "QR-Code lesen",
+        "text": "Konto oder QR-IBAN, Zahlungsempfänger, Betrag, Währung, Referenz und Mitteilung werden übernommen.",
+        "symbol": "qr"
+      },
+      {
+        "titel": "Prüfen",
+        "text": "Prüfziffern von IBAN und Referenz, bekannter Kreditor, mögliche Doppelzahlung.",
+        "symbol": "pruefen"
+      },
+      {
+        "titel": "Zahlung als Entwurf",
+        "text": "Als Zahlungsauftrag für Ihr E-Banking oder als Kreditorenbuchung in Ihrer Software. Freigeben tun Sie.",
+        "symbol": "zahlung"
+      }
+    ],
+    "beispiel": {
+      "buehne": "qr",
+      "geraet": "QR-Rechnung einlesen",
+      "h2": "Beispiel: eine Stromrechnung",
+      "lead": "Der QR-Code wird gescannt, die Zahlungsdaten erscheinen, die Zahlung wird als Entwurf vorbereitet.",
+      "beschreibung": "Der Zahlteil einer Rechnung der Beispiel Energie AG über CHF 1 189.10 wird gelesen: QR-IBAN, Zahlungsempfänger, Betrag und QR-Referenz. Die Prüfziffern stimmen, eine Doppelzahlung liegt nicht vor. Die Zahlung mit Fälligkeit 15.12.2026 liegt als Entwurf bereit und wird von Ihnen im E-Banking freigegeben.",
+      "klasse": "abl-belege abl-qrscan"
+    },
+    "abschnitte": [
+      {
+        "id": "hintergrund",
+        "label": "Hintergrund",
+        "h2": "Was im QR-Code steht",
+        "absaetze": [
+          "Die QR-Rechnung ist in der Schweiz der Standard für Einzahlungen. Ihr Zahlteil enthält einen Swiss QR Code mit den Zahlungsdaten: Konto (IBAN oder QR-IBAN), Zahlungsempfänger, Betrag und Währung, je nach Fall eine QR-Referenz oder Creditor Reference und eine Mitteilung.",
+          "Weil diese Angaben maschinenlesbar sind, ist das Einlesen zuverlässiger als das Auslesen eines gewöhnlichen Belegs. Die übrigen Angaben der Rechnung, etwa Positionen und Mehrwertsteuer, werden wie bei jedem Beleg ausgelesen und als Buchungsvorschlag vorbereitet."
+        ]
+      },
+      {
+        "id": "e-banking",
+        "label": "Zahlung",
+        "h2": "Ihr E-Banking bleibt der Ort der Freigabe",
+        "absaetze": [
+          "Die Automatisierung löst keine Zahlung aus. Sie bereitet Zahlungsaufträge vor, die Sie in Ihr E-Banking übernehmen oder in Ihrer Buchhaltungssoftware freigeben. Welcher Weg für Ihre Bank und Ihre Software passt, klären wir im kostenlosen Gespräch.",
+          "Selbst eine QR-Rechnung erstellen? Dafür gibt es unser Gratis-Werkzeug, das im Browser läuft."
+        ]
+      }
+    ],
+    "bausteine": [
+      "fristenkalender-belegeingang-treuhand"
+    ],
+    "branchen": [
+      "treuhaender",
+      "detailhandel",
+      "immobilienverwaltungen"
+    ],
+    "ratgeber": [
+      "mwst-abrechnung-fristen",
+      "aufbewahrungsfristen-buchhaltung",
+      "jahresabschluss-unterlagen-checkliste"
+    ],
+    "werkzeug": true,
+    "faq": [
+      {
+        "frage": "Kann man QR-Rechnungen automatisch einlesen?",
+        "antwort": "Ja. Der Swiss QR Code enthält Konto, Empfänger, Betrag und Referenz als strukturierte Daten. Sie werden gelesen, geprüft und als Zahlung vorbereitet."
+      },
+      {
+        "frage": "Wird die Rechnung automatisch bezahlt?",
+        "antwort": "Nein. Es entsteht ein Zahlungsauftrag als Entwurf. Freigeben tun Sie im E-Banking oder in Ihrer Buchhaltungssoftware."
+      },
+      {
+        "frage": "Funktioniert das auch mit Papierrechnungen?",
+        "antwort": "Ja, wenn der QR-Code auf dem Foto oder Scan gut lesbar ist. Ist er es nicht, wird die Rechnung markiert."
+      },
+      {
+        "frage": "Wie werden Fehler verhindert?",
+        "antwort": "Die Prüfziffern von IBAN und Referenz werden kontrolliert, bekannte Kreditoren abgeglichen und mögliche Doppelzahlungen markiert. Die Freigabe bleibt bei Ihnen."
+      },
+      {
+        "frage": "Was kostet das Einlesen von QR-Rechnungen?",
+        "antwort": "Der Preis richtet sich nach dem Aufwand. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch; die Pakete und ihre «ab»-Preise stehen auf der Preisseite."
+      }
+    ],
+    "vorher_nachher": {
+      "vorher": [
+        "IBAN und Referenz abtippen",
+        "Tippfehler fallen erst bei der Bank auf",
+        "Doppelt erfasste Rechnungen bemerkt man spät",
+        "Fälligkeiten im Kopf behalten"
+      ],
+      "nachher": [
+        "Zahlungsdaten direkt aus dem QR-Code übernommen",
+        "Prüfziffern vor der Zahlung kontrolliert",
+        "Mögliche Doppelzahlungen sind markiert",
+        "Zahlungen nach Fälligkeit geordnet, gesammelt freigeben"
+      ]
+    }
+  }
+]

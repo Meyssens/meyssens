@@ -89,6 +89,9 @@ for datei in sorted(ROOT.rglob("index.html")):
     parser.feed(text)
     seiten[url] = (text, parser)
 
+# noindex-Seiten (z. B. /garage/): absichtlich nicht in der Sitemap
+NOINDEX = {u for u, (t, _) in seiten.items() if '<meta name="robots" content="noindex' in t}
+
 geprueft = 0
 for url, (text, parser) in seiten.items():
     for link in parser.links:
@@ -540,7 +543,10 @@ for url, (text, parser) in sorted(seiten.items()):
     if 'href="/ueber-uns/"' not in zwischen(text, "<body", "<main") or \
             'href="/ueber-uns/"' not in text[text.index("<footer"):] if "<footer" in text else True:
         fehler.append("%s: Über uns nicht in Kopf und Fuss verlinkt" % url)
-    if url not in lastmod or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod.get(url, "")):
+    if url in NOINDEX:
+        if url in lastmod:
+            fehler.append("%s: noindex, aber in der Sitemap" % url)
+    elif url not in lastmod or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", lastmod.get(url, "")):
         fehler.append("%s: lastmod fehlt in der Sitemap" % url)
 
 typen_ueber = json.dumps(re.findall(r'<script type="application/ld\+json">(.*?)</script>', seiten.get("/ueber-uns/", ("",))[0], flags=re.S))
@@ -661,8 +667,8 @@ def pruefe_beispiele(url, abschnitt, anzahl):
         fehler.append("%s: Beschreibung der Beispiele für Screenreader fehlt" % url)
     if abschnitt.count('class="abl-knopf"') != anzahl:
         fehler.append("%s: Knopf zum Anhalten/Abspielen fehlt" % url)
-    if 'href="#anfrage" data-thema="Gratis-Prozess-Check (30 Minuten)' not in abschnitt:
-        fehler.append("%s: Knopf Gratis-Prozess-Check zum Anfrageformular fehlt" % url)
+    if 'href="#anfrage" data-thema="20 Minuten kostenloses Gespräch' not in abschnitt:
+        fehler.append("%s: Knopf «20 Minuten kostenloses Gespräch» zum Anfrageformular fehlt" % url)
     if PROGRAMME.search(abschnitt):
         fehler.append("%s: konkretes Programm genannt (%s)" % (url, PROGRAMME.search(abschnitt).group(0)))
     if "ß" in abschnitt:
@@ -680,7 +686,7 @@ else:
     for x in ablaeufe["unternehmen"]:
         if '<a class="auto-karte r" href="#ablauf-%s">' % x["id"] not in seiten["/unternehmen/"][0]:
             fehler.append("/unternehmen/: Karte für Ablauf %s fehlt" % x["id"])
-    for muss in ("Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.", "Vertrag zur Auftragsbearbeitung",
+    for muss in ("Die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot.", "Vertrag zur Auftragsbearbeitung",
                  "Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.", "nach Absprache an, wenn eine Schnittstelle besteht",
                  "keine Rechtsberatung", "Sie entscheiden:"):
         if muss not in u_ab:
@@ -721,7 +727,7 @@ for slug in ablaeufe["branchen"]:
     pruefe_beispiele(url, ab, 1)
     if 'href="/unternehmen/#ablaeufe"' not in ab:
         fehler.append("%s: Link auf /unternehmen/#ablaeufe fehlt" % url)
-    if "Pilot: ein Ablauf, drei Monate kostenlos, jederzeit kündbar." not in ab:
+    if "Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot." not in ab:
         fehler.append("%s: Pilot-Hinweis im Mini-Beispiel fehlt" % url)
 
 # Erreichbarkeit: Breitensuche ab der Startseite über interne Links, höchstens 3 Klicks, keine verwaiste Seite

@@ -64,9 +64,9 @@
     "loesung": "Der Chatbot greift auf die Inhalte Ihrer Website und auf Dokumente zurück, die Sie freigeben. Er beantwortet Fragen in natürlicher Sprache und nennt die Seite, auf der die Information steht. Kann er eine Frage nicht beantworten, sagt er das offen und verweist auf Ihre Kontaktmöglichkeiten.",
     "fuer_wen": "Für Unternehmen mit umfangreichen Websites und vielen wiederkehrenden Fragen. Für Organisationen, die auch ausserhalb der Bürozeiten Auskunft geben möchten. Für Teams, die Telefon und Postfach entlasten wollen.",
     "status": "Pilotphase",
-    "seo_titel": "Website-Chatbot für KMU in der Schweiz | Meyssens",
+    "seo_titel": "Website-Chatbot für KMU einrichten lassen | Meyssens",
     "seo_beschreibung": "Beantwortet Fragen aus Ihren eigenen Website-Inhalten, gekennzeichnet und mit Blick aufs nDSG. Beispiel ausprobieren und Pilotpartner werden.",
-    "h1": "Website-Chatbot für Schweizer KMU",
+    "h1": "Website-Chatbot für Ihre Firmenwebsite einrichten lassen",
     "schweiz": "Der Chatbot gibt sich als automatisches System zu erkennen, Eingaben fallen unter das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
@@ -517,8 +517,9 @@
     ],
     "status": "Individuell auf Anfrage",
     "geprueft": "2026-10-26",
-    "seo_titel": "Bausitzung protokollieren mit Pendenzenliste | Meyssens",
-    "seo_beschreibung": "Beschlüsse und Pendenzen mit Verantwortlichen und Termin festhalten, offene Punkte wandern ins nächste Protokoll. Jetzt unverbindlich anfragen."
+    "seo_titel": "Protokoll-Software für Bausitzungen | Meyssens",
+    "seo_beschreibung": "Beschlüsse und Pendenzen mit Verantwortlichen und Termin festhalten, offene Punkte wandern ins nächste Protokoll. Jetzt unverbindlich anfragen.",
+    "h1": "Protokoll-Software für Bausitzungen: Pendenzen automatisch nachführen"
   },
   {
     "slug": "arbeitszeit-pflege",
@@ -540,8 +541,9 @@
     ],
     "status": "Individuell auf Anfrage",
     "geprueft": "2026-10-26",
-    "seo_titel": "Arbeitszeiterfassung für Pflegeheim und Spitex | Meyssens",
-    "seo_beschreibung": "Zeiten und Pausen am Handy erfassen, Abgleich mit dem Dienstplan, Monatsabschluss als Entwurf. Für Heime und Spitex in der Schweiz. Jetzt anfragen."
+    "seo_titel": "Zeiterfassung-App für Pflegeheim und Spitex | Meyssens",
+    "seo_beschreibung": "Zeiten und Pausen am Handy erfassen, Abgleich mit dem Dienstplan, Monatsabschluss als Entwurf. Für Heime und Spitex in der Schweiz. Jetzt anfragen.",
+    "h1": "Zeiterfassung-App für Pflegeheim und Spitex: Monatsabschluss als Entwurf"
   },
   {
     "slug": "besichtigung-pflegeheim",
@@ -678,7 +680,7 @@
     ],
     "status": "Individuell auf Anfrage",
     "geprueft": "2026-11-13",
-    "seo_titel": "Honorarofferte nach SIA 102: Phasen und Honorar | Meyssens",
+    "seo_titel": "Honorarofferte SIA 102 als Entwurf erstellen | Meyssens",
     "seo_beschreibung": "Honorar nach SIA 102 berechnen: Phasen, KBOB-Kategorien, Nebenkosten und MWST als Offertentwurf. Die Projektleitung gibt frei. Jetzt anfragen.",
     "faq": [
       {
@@ -722,7 +724,8 @@
         "titel": "KBOB-Honorare und Stundenansätze",
         "grund": "Kategorien, Stufen und Nebenkosten nach den Empfehlungen 2026."
       }
-    ]
+    ],
+    "h1": "Honorarofferte nach SIA 102 automatisch vorbereiten"
   },
   {
     "slug": "online-terminanfrage-arztpraxis",
@@ -1267,7 +1270,7 @@
     "status": "Individuell auf Anfrage",
     "geprueft": "2026-10-28",
     "aktualisiert": "2026-11-01",
-    "seo_titel": "Subunternehmer-Dossier für die Solidarhaftung | Meyssens",
+    "seo_titel": "Subunternehmer-Dossier: Nachweise und Ablaufdaten | Meyssens",
     "seo_beschreibung": "Checkliste nach den Sorgfaltselementen des SECO, Ablaufdaten und Erinnerungsentwürfe pro Subunternehmer. Für Schweizer Baubetriebe. Jetzt anfragen.",
     "faq": [
       {
@@ -1289,7 +1292,8 @@
         "titel": "Mängelrüge und Abnahme ab 2026",
         "grund": "60 Tage Rügefrist, SIA-Norm 118 und welche Verträge betroffen sind."
       }
-    ]
+    ],
+    "h1": "Subunternehmer-Dossier: Nachweise sammeln, Ablaufdaten überwachen"
   },
   {
     "slug": "faelligkeitsliste-kontrollen-elektro",

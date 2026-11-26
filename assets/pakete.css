@@ -1,0 +1,99 @@
+/* Pakete für Unternehmen (/automatisierung/, /mahnwesen/, /anfragen/, /garage/, /preise/) */
+
+/* Ablauf als Kette: Schritte leuchten nacheinander auf (data-anim="paket", Start über demos.js) */
+.pk-buehne{max-width:1100px;margin:0 auto 1.5rem}
+.pk-ablauf{margin:0;background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(1.25rem,3vw,2.25rem) clamp(1rem,3vw,2rem) .5rem;box-shadow:0 20px 50px -30px rgba(6,18,36,.35)}
+.pk-ablauf ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;position:relative}
+.pk-spur{position:absolute;left:12.5%;right:12.5%;top:28px;height:3px;background:var(--surface3);border-radius:3px;overflow:hidden}
+.pk-spur i{position:absolute;inset:0;background:var(--blue);transform-origin:left center}
+.pk-knoten{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.6rem}
+.pk-ic{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;box-shadow:0 0 0 6px #fff}
+.pk-ic svg{width:26px;height:26px}
+.pk-ziel .pk-ic{background:#1f7a4a}
+.pk-t{display:flex;flex-direction:column;gap:.15rem;font-size:.95rem;color:var(--ink)}
+.pk-t small{font-size:.8rem;color:var(--ink3);font-variant-numeric:tabular-nums}
+.pk-ablauf .anim-fuss{padding:.9rem 0 .5rem}
+@media (prefers-reduced-motion:no-preference){
+  .js [data-anim="paket"] .pk-spur i{transform:scaleX(0)}
+  .js [data-anim="paket"] .pk-ic{background:var(--surface3);color:var(--ink3)}
+  .js [data-anim="paket"] .pk-t{opacity:.35}
+  .js [data-anim="paket"].anim-los .pk-spur i{animation:pk-spur 2.4s var(--weich) .2s both}
+  .js [data-anim="paket"].anim-los .pk-ic{animation:pk-an .45s var(--weich) calc(var(--i) * 700ms + .15s) both}
+  .js [data-anim="paket"].anim-los .pk-ziel .pk-ic{animation-name:pk-ziel}
+  .js [data-anim="paket"].anim-los .pk-t{animation:pk-text .45s var(--weich) calc(var(--i) * 700ms + .25s) both}
+}
+@keyframes pk-spur{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pk-an{0%{background:var(--surface3);color:var(--ink3);transform:scale(.85)}60%{transform:scale(1.12)}100%{background:var(--blue);color:#fff;transform:none}}
+@keyframes pk-ziel{0%{background:var(--surface3);color:var(--ink3);transform:scale(.85)}60%{transform:scale(1.15)}100%{background:#1f7a4a;color:#fff;transform:none}}
+@keyframes pk-text{from{opacity:.35;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+/* Paketkarten (Übersicht, Preise) */
+.pk-karten{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;max-width:1360px;margin:0 auto}
+.pk-karte{display:flex;flex-direction:column;gap:.9rem;background:#fff;border:1px solid var(--line);border-radius:24px;padding:clamp(1.25rem,2.5vw,1.9rem);box-shadow:0 24px 60px -40px rgba(6,18,36,.4)}
+.pk-karte h3{font-size:clamp(1.3rem,2vw,1.6rem);margin:0}
+.pk-karte h3 a{color:var(--ink);text-decoration:none}
+.pk-karte h3 a:hover{color:var(--blue)}
+.pk-karte > p{margin:0;color:var(--ink2);line-height:1.6}
+.pk-kompakt{padding:1rem .75rem .9rem;box-shadow:none;background:var(--blue-hell);border-color:transparent}
+.pk-kompakt .pk-spur{top:20px}
+.pk-kompakt .pk-ic{width:40px;height:40px;box-shadow:0 0 0 5px var(--blue-hell)}
+.pk-kompakt .pk-ic svg{width:19px;height:19px}
+.pk-kompakt .pk-t{font-size:.78rem}
+.pk-karte .pk-preis{margin-top:auto}
+.pk-karte .btn-p{justify-content:center}
+.pk-links{margin:0}
+.pk-links .btn-s{width:100%;justify-content:center;background:#fff}
+
+/* Preisblock */
+.pk-preis{display:flex;flex-direction:column;gap:.5rem}
+.pkt-zahl{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin:0;padding:.55rem 0;border-bottom:1px solid var(--line)}
+.pkt-zahl span{color:var(--ink2)}
+.pkt-zahl b{font-size:1.25rem;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pkt-zahl small{font-size:.8rem;font-weight:400;color:var(--ink3)}
+.pk-bedingungen{margin:.25rem 0 .5rem;padding-left:1.1rem;font-size:.88rem;color:var(--ink2);line-height:1.55}
+.pk-preis-raster{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(1.5rem,4vw,3rem);max-width:1200px;margin:0 auto;align-items:start}
+.pk-preis-raster > .pk-preis{background:#fff;border:1px solid var(--line);border-radius:20px;padding:clamp(1.25rem,2.5vw,1.75rem)}
+.pk-preis .btn-p{justify-content:center;margin-top:.25rem}
+
+/* Beispielrechnung vorher/nachher */
+.pk-br{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;max-width:1100px;margin:0 auto}
+.pk-br-schild{grid-column:1 / -1;margin:0;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;color:var(--ink2);font-size:.92rem}
+.pk-br-spalte{background:#fff;border:1px solid var(--line);border-radius:18px;padding:1.25rem 1.4rem}
+.pk-br-spalte h3{margin:0 0 .75rem;font-size:1.05rem}
+.pk-br-nachher{border-color:var(--blue-20);background:var(--blue-hell)}
+.pk-br table{width:100%;border-collapse:collapse;font-size:.9rem}
+.pk-br th,.pk-br td{padding:.45rem 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-weight:400;color:var(--ink2)}
+.pk-br td{text-align:right;white-space:nowrap;padding-left:.75rem;font-variant-numeric:tabular-nums}
+.pk-br .pk-br-summe th,.pk-br .pk-br-summe td{font-weight:700;color:var(--ink);border-bottom:0;padding-top:.7rem}
+
+/* Gemeinden: Stufen */
+.pz-stufen{width:100%;border-collapse:collapse;margin:0 0 1rem;font-size:1rem}
+.pz-stufen th,.pz-stufen td{padding:.6rem 0;border-bottom:1px solid var(--line);text-align:left;font-weight:400}
+.pz-stufen td{text-align:right;font-weight:600;color:var(--ink)}
+.pz-ausbau{font-size:.92rem;color:var(--ink2);margin:.75rem 0 1rem}
+
+@media(max-width:1000px){
+  .pk-karten{grid-template-columns:minmax(0,1fr);max-width:640px}
+  .pk-preis-raster{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:640px){
+  .pk-ablauf ol{grid-template-columns:minmax(0,1fr);gap:1.1rem}
+  .pk-spur{left:27px;right:auto;top:28px;bottom:28px;width:3px;height:auto}
+  .pk-spur i{transform-origin:center top}
+  .pk-knoten{flex-direction:row;text-align:left;align-items:center}
+  .pk-kompakt ol{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .pk-kompakt .pk-spur{left:12.5%;right:12.5%;top:20px;bottom:auto;width:auto;height:3px}
+  .pk-kompakt .pk-knoten{flex-direction:column;text-align:center}
+  .pk-br{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:640px) and (prefers-reduced-motion:no-preference){
+  .js [data-anim="paket"]:not(.pk-kompakt) .pk-spur i{transform:scaleY(0)}
+  .js [data-anim="paket"].anim-los:not(.pk-kompakt) .pk-spur i{animation-name:pk-spur-y}
+}
+@keyframes pk-spur-y{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@media(max-width:420px){
+  .pk-br-spalte{padding:1rem .9rem}
+  .pk-br table{font-size:.82rem}
+  .pk-br td{white-space:normal;padding-left:.5rem}
+  .pk-br td:last-child{white-space:nowrap}
+}
