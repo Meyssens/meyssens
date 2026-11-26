@@ -1574,6 +1574,19 @@ html:not(.js) [data-abstimmen],html:not(.js) [data-markieren]{display:none}
    damit die deutschen Texte nicht sichtbar ausgetauscht werden (Layoutsprung). Sicherung: nach 1.5 s immer sichtbar. */
 .sprache-laedt main,.sprache-laedt #nav .nav-items,.sprache-laedt #nav .nav-btn{visibility:hidden;animation:sprache-sicher 0s linear 1.5s forwards}
 @keyframes sprache-sicher{to{visibility:visible}}
+/* Preisseite (/preise/): Tabellen mit veröffentlichten Preisen */
+.stil .preis-tabelle{width:100%;max-width:46rem;border-collapse:separate;border-spacing:0;margin:1.75rem 0 1rem;background:#fff;border:1px solid var(--rand);border-radius:18px;overflow:hidden}
+.stil .preis-tabelle caption{caption-side:top;text-align:left;font-weight:700;font-size:1.05rem;color:var(--ink);padding:0 0 .7rem}
+.stil .preis-tabelle th,.stil .preis-tabelle td{text-align:left;vertical-align:top;padding:.95rem 1.1rem;border-top:1px solid var(--rand);font-size:1rem;line-height:1.55}
+.stil .preis-tabelle tr:first-child th,.stil .preis-tabelle tr:first-child td{border-top:0}
+.stil .preis-tabelle th{width:40%;font-weight:600;color:var(--ink)}
+.stil .preis-tabelle td{color:var(--ink2)}
+@media (max-width:600px){.stil .preis-tabelle th,.stil .preis-tabelle td{display:block;width:auto}.stil .preis-tabelle td{border-top:0;padding-top:0}}
+/* Kaufseiten /automatisierung/: vier Karten nebeneinander statt 3 + 1 */
+@media (min-width:1100px){.stil .feat-grid.vier{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:640px) and (max-width:1099px){.stil .feat-grid.vier{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Navigation mit vier Einträgen (Pakete): auf schmalen Tablets Menü-Knopf statt Umbruch (wie Startseite und /gemeinden/) */
+@media(min-width:641px) and (max-width:860px){.stil:not(.start):not(.gemeinden) .nav-items{display:none}.stil:not(.start):not(.gemeinden) .hamburger{display:flex}.stil:not(.start):not(.gemeinden) .mobile-nav{top:86px;left:14px;right:14px;border-radius:18px}}
 /* Formularfeld «Wie haben Sie von uns erfahren?» (freiwillig) */
 .quelle-feld .fselect{min-height:48px;padding-right:2.5rem;cursor:pointer;color:var(--ink);background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%230054d1' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 1rem center}
 .quelle-feld .quelle-detail-label{margin-top:.75rem}

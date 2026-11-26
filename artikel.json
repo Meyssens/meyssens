@@ -4,9 +4,9 @@
   "art": "branche",
   "name": "Zahnarztpraxen",
   "kurz": "Berufsgeheimnis, nDSG und digitale Assistenz in der Zahnarztpraxis.",
-  "titel": "Zahnarztpraxis digital: Terminanfrage und nDSG | Meyssens",
-  "beschreibung": "Berufsgeheimnis, nDSG und Online-Terminanfrage: was Zahnarztpraxen in der Schweiz beachten und wo Bausteine entlasten. Checkliste lesen.",
-  "h1": "Digitale Assistenz in der Zahnarztpraxis: was rechtlich gilt und was praktisch hilft",
+  "titel": "Zahnarztpraxis: Termine und Recall automatisieren | Meyssens",
+  "beschreibung": "Terminanfragen, Recall und Laboraufträge vorbereiten, nach nDSG und Berufsgeheimnis: Abläufe für Zahnarztpraxen in der Schweiz. Jetzt ansehen.",
+  "h1": "Zahnarztpraxis automatisieren: Terminanfrage, Recall und Laborauftrag",
   "lead": "Das Telefon klingelt, während am Stuhl behandelt wird. Im Postfach liegen Rechnungsfragen neben Laborpost und Werbung. Ein Chatbot oder ein Mail-Assistent klingt nach Entlastung, doch in der Zahnarztpraxis gelten Berufsgeheimnis und strenger Datenschutz. Dieser Text zeigt, was rechtlich gilt, wo digitale Bausteine sinnvoll sein könnten und wo ihre Grenzen liegen.",
   "geprueft": "2026-10-25",
   "veroeffentlicht": "2026-10-25",
@@ -169,16 +169,16 @@
    "demo": "online-terminanfrage-zahnarztpraxis",
    "geprueft": "2026-10-26"
   },
-  "aktualisiert": "2026-11-14"
+  "aktualisiert": "2026-11-24"
  },
  {
   "slug": "immobilienverwaltungen",
   "art": "branche",
   "name": "Immobilienverwaltungen",
   "kurz": "Mieteranfragen, Schadenmeldungen und nDSG in der Verwaltung.",
-  "titel": "Immobilienverwaltung digital: Mieteranfragen | Meyssens",
-  "beschreibung": "Schadenmeldungen, Besichtigungen und Übergaben digital, amtliche Formulare je Kanton und nDSG im Blick. Für Verwaltungen in der Schweiz. Jetzt lesen.",
-  "h1": "Digitale Unterstützung für Immobilienverwaltungen in der Schweiz",
+  "titel": "Immobilienverwaltung automatisieren | Meyssens",
+  "beschreibung": "Schadenmeldungen sortieren, Besichtigungen buchen, Übergabeprotokolle digital: Abläufe für Immobilienverwaltungen in der Schweiz. Jetzt ansehen.",
+  "h1": "Immobilienverwaltung automatisieren: Schadenmeldung, Besichtigung, Übergabe",
   "lead": "Ein Wasserschaden im dritten Stock, drei Anfragen zur Nebenkostenabrechnung, zwölf Bewerbungen für eine Wohnung und die Einladung zur Stockwerkeigentümerversammlung, alles in derselben Woche. In der Verwaltung kommt vieles gleichzeitig, und manches davon ist rechtlich streng geregelt. Dieser Text zeigt den rechtlichen Rahmen und wo digitale Bausteine entlasten könnten.",
   "geprueft": "2026-10-25",
   "veroeffentlicht": "2026-10-25",
@@ -330,16 +330,16 @@
    "demo": "schadenmeldung-triage",
    "geprueft": "2026-10-26"
   },
-  "aktualisiert": "2026-11-14"
+  "aktualisiert": "2026-11-24"
  },
  {
   "slug": "architekturbueros",
   "art": "branche",
   "name": "Architekturbüros",
   "kurz": "Ausschreibungen auf simap, Bauherrenfragen und nDSG im Architekturbüro.",
-  "titel": "Architekturbüro digital: simap und SIA-Stunden | Meyssens",
-  "beschreibung": "simap-Ausschreibungen finden, Stunden nach SIA-Phasen erfassen, Akontorechnungen vorbereiten: Überblick für Schweizer Architekturbüros. Jetzt lesen.",
-  "h1": "Digitale Unterstützung für Architekturbüros in der Schweiz",
+  "titel": "Architekturbüro: Stunden, Akonto automatisieren | Meyssens",
+  "beschreibung": "Stunden nach SIA-Phasen erfassen, Akontorechnungen vorbereiten, simap-Ausschreibungen finden: Abläufe für Architekturbüros. Jetzt ansehen.",
+  "h1": "Architekturbüro automatisieren: SIA-Stunden, Akonto und Ausschreibungen",
   "lead": "Eine Ausschreibung für ein Schulhaus erscheint auf simap, die Eingabefrist läuft, und gleichzeitig will die Bauherrschaft eines laufenden Projekts wissen, ob sich die Küche noch verschieben lässt. Im Architekturbüro konkurrieren Akquisition und Projektarbeit um dieselbe Zeit. Dieser Text zeigt den rechtlichen Rahmen bei öffentlichen Aufträgen und wo digitale Bausteine helfen könnten.",
   "geprueft": "2026-10-25",
   "veroeffentlicht": "2026-10-25",
@@ -474,16 +474,16 @@
    "demo": "zeiterfassung-sia-phasen",
    "geprueft": "2026-10-26"
   },
-  "aktualisiert": "2026-11-14"
+  "aktualisiert": "2026-11-24"
  },
  {
   "slug": "pflegeheime-spitex",
   "art": "branche",
   "name": "Pflegeheime und Spitex",
   "kurz": "Berufsgeheimnis, Angehörigenauskunft und nDSG in Heim und Spitex.",
-  "titel": "Pflegeheim und Spitex digital: Recht und Alltag | Meyssens",
-  "beschreibung": "Berufsgeheimnis, nDSG und elektronische Abrechnung ab 2026 in Basel-Stadt und Solothurn: was Heime und Spitex beachten. Checkliste lesen.",
-  "h1": "Digitale Kommunikation in Pflegeheim und Spitex: Recht, Alltag, Möglichkeiten",
+  "titel": "Spitex und Pflegeheim: Abrechnung digitalisieren | Meyssens",
+  "beschreibung": "Elektronische Abrechnung vorprüfen, Arbeitszeit erfassen, Besichtigungen buchen, nach nDSG: Abläufe für Pflegeheime und Spitex. Jetzt ansehen.",
+  "h1": "Pflegeheim und Spitex digitalisieren: Abrechnung, Zeiterfassung, Recht",
   "lead": "Eine Tochter ruft an und möchte wissen, wie es ihrer Mutter nach dem Sturz geht. Gleichzeitig fragt jemand per E-Mail nach freien Plätzen, und die Spitex-Tour beginnt in zehn Minuten. In der Langzeitpflege ist Kommunikation Alltag, und fast jede Auskunft berührt das Berufsgeheimnis. Dieser Text zeigt, was gilt und wo digitale Bausteine entlasten könnten, ohne Grenzen zu überschreiten.",
   "geprueft": "2026-10-25",
   "veroeffentlicht": "2026-10-25",
@@ -625,7 +625,7 @@
    "demo": "arbeitszeit-pflege",
    "geprueft": "2026-10-26"
   },
-  "aktualisiert": "2026-11-14"
+  "aktualisiert": "2026-11-24"
  },
  {
   "slug": "ndsg-kmu-checkliste",
@@ -929,9 +929,9 @@
   "slug": "website-chatbot-recht",
   "art": "ratgeber",
   "name": "Website-Chatbot: was er darf und was nicht",
-  "titel": "Website-Chatbot Schweiz: was er darf und was nicht",
+  "titel": "KI-Chatbot auf der Website: Recht und nDSG | Meyssens",
   "beschreibung": "KI-Chatbot auf der Firmenwebsite: Kennzeichnung, nDSG, US-Anbieter, Haftung und Grenzen. Mit Checkliste für den Start. Jetzt lesen.",
-  "h1": "Website-Chatbot in der Schweiz: Was er darf und was nicht",
+  "h1": "KI-Chatbot auf der Firmenwebsite: Was er rechtlich darf und was nicht",
   "lead": "Ein Chatbot auf der Website beantwortet Fragen auch am Sonntagabend und entlastet das Telefon. Doch was muss er offenlegen, was passiert mit den Eingaben, und wer haftet, wenn er Unsinn erzählt? Dieser Ratgeber fasst zusammen, was nach Schweizer Recht gilt, wo die Rechtslage offen ist und was Sie vor dem Start prüfen sollten.",
   "geprueft": "2026-10-25",
   "veroeffentlicht": "2026-10-25",
@@ -1015,7 +1015,8 @@
     "titel": "AI Act Service Desk, Art. 2",
     "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-2"
    }
-  ]
+  ],
+  "aktualisiert": "2026-11-24"
  },
  {
   "slug": "anmeldeformular-mietwohnung",
@@ -2056,12 +2057,12 @@
   "slug": "bausitzung-protokoll",
   "art": "ratgeber",
   "name": "Bausitzung und Bausitzungsprotokoll",
-  "titel": "Bausitzung und Bausitzungsprotokoll: Anleitung | Meyssens",
+  "titel": "Bausitzungsprotokoll schreiben: Anleitung nach OR | Meyssens",
   "beschreibung": "Bausitzung leiten, Bausitzungsprotokoll schreiben, offene Pendenzen nachführen: Traktanden, Inhalte und Verbindlichkeit nach OR. Anleitung lesen.",
   "h1": "Bausitzung und Bausitzungsprotokoll: wie führen Sie Protokoll und Pendenzenliste verbindlich?",
   "lead": "Eine gute Bausitzung endet mit einem Bausitzungsprotokoll, das Beschlüsse festhält, und einer Pendenzenliste, in der jede offene Pendenz eine verantwortliche Person und einen Termin hat. Diese Anleitung zeigt Traktanden und Inhalte nach den Vorgaben öffentlicher Bauherren und erklärt, was das Obligationenrecht zur Verbindlichkeit von Bauprotokollen sagt.",
   "geprueft": "2026-11-13",
-  "aktualisiert": "2026-11-13",
+  "aktualisiert": "2026-11-24",
   "veroeffentlicht": "2026-11-13",
   "produkte": [
    "protokoll-pendenzen",
@@ -2134,12 +2135,12 @@
   "slug": "subunternehmer-solidarhaftung",
   "art": "ratgeber",
   "name": "Subunternehmer und Solidarhaftung",
-  "titel": "Subunternehmer: Solidarhaftung und Sorgfalt | Meyssens",
+  "titel": "Solidarhaftung Bau: Sorgfaltspflicht nachweisen | Meyssens",
   "beschreibung": "Subunternehmer beauftragen: wann der Erstunternehmer nach Entsendegesetz haftet und welche Dokumente den Sorgfaltsnachweis stützen. Checkliste lesen.",
   "h1": "Subunternehmer beauftragen: wie weisen Sie die Sorgfalt bei der Solidarhaftung nach?",
   "lead": "Wer im Bauhaupt- oder Baunebengewerbe einen Subunternehmer beauftragt, kann als Erstunternehmer solidarisch haften, wenn dieser die minimalen Lohn- und Arbeitsbedingungen nicht einhält. Befreien kann er sich mit dem Nachweis der gebotenen Sorgfalt. Dieser Ratgeber zeigt nach Entsendegesetz, Entsendeverordnung und SECO, welche Dokumente und Vorkehrungen dazugehören.",
   "geprueft": "2026-11-13",
-  "aktualisiert": "2026-11-13",
+  "aktualisiert": "2026-11-24",
   "veroeffentlicht": "2026-11-13",
   "produkte": [
    "subunternehmer-dossier-bau"
@@ -2297,12 +2298,12 @@
   "slug": "arbeitszeiterfassung-pflege",
   "art": "ratgeber",
   "name": "Arbeitszeiterfassung in Pflegeheim und Spitex",
-  "titel": "Zeiterfassung Pflege und Spitex: was gilt? | Meyssens",
+  "titel": "Arbeitszeiterfassung Pflege: Pflichten nach ArG | Meyssens",
   "beschreibung": "Was Pflegeheime und Spitex nach Arbeitsgesetz erfassen müssen: Pausen, Sonderregeln, Wegzeit, mobile Erfassung, 5 Jahre Aufbewahrung. Jetzt lesen.",
   "h1": "Arbeitszeiterfassung in Pflegeheim und Spitex: was verlangt das Arbeitsgesetz?",
   "lead": "Pflegeheime und Spitex-Organisationen müssen die Arbeitszeit ihrer Mitarbeitenden so erfassen, dass Beginn, Pausen und Ende für jede Person nachvollziehbar sind. Dieser Ratgeber zeigt nach Arbeitsgesetz und den Wegleitungen des SECO, welche Angaben nötig sind, welche Sonderregeln für Heime und Spitex gelten und welche Formen der Zeiterfassung zulässig sind, auch mobil unterwegs.",
   "geprueft": "2026-11-13",
-  "aktualisiert": "2026-11-13",
+  "aktualisiert": "2026-11-24",
   "veroeffentlicht": "2026-11-13",
   "produkte": [
    "arbeitszeit-pflege",

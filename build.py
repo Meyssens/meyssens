@@ -32,6 +32,7 @@ import re
 from pathlib import Path
 
 from werkzeuge import WERKZEUGE, WERKZEUGE_UEBERSICHT
+import pakete as PK
 
 ROOT = Path(__file__).resolve().parent
 DOMAIN = "https://meyssens.ch"
@@ -51,10 +52,9 @@ STUFEN = {
     },
 }
 # Pilot-Angebot auf jeder Produktseite. Der Preis steht nur hier und ausdrücklich als "ab".
-PILOT_ANGEBOT = ("Wir richten diesen Ablauf für Ihren Betrieb ein und betreuen ihn im Pilot drei Monate persönlich, "
-                 "kostenlos und unverbindlich. Danach ab CHF 79 (Endpreis, nicht MWST-pflichtig) pro Monat und Ablauf, "
-                 "jederzeit kündbar.")
-ANGEBOT_GEPRUEFT = "2026-11-16"
+PILOT_ANGEBOT = ("Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot. Danach als Paket oder nach Aufwand, "
+                 "verbindlich nach 20 Minuten kostenlosem Gespräch.")
+ANGEBOT_GEPRUEFT = "2026-11-24"
 
 
 def pilot_angebot():
@@ -187,8 +187,8 @@ ABLAUF_KOPF = '\n<link rel="stylesheet" href="/assets/ablaeufe.css">'
 ABLAUF_SKRIPT = '<script src="/assets/ablaeufe.js" defer></script>'
 ERFUNDEN = "Beispiel mit erfundenen Daten"
 PILOT_BETRIEB = "Pilotbetrieb: die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot."
-PILOT_ABLAUF = "Pilot: ein Ablauf, drei Monate kostenlos, jederzeit kündbar."
-PROZESS_CHECK = "Gratis-Prozess-Check (30 Minuten)"
+PILOT_ABLAUF = PILOT_BETRIEB
+PROZESS_CHECK = "20 Minuten kostenloses Gespräch"
 
 
 def ablauf_geraet(titel, buehne, klasse, beschreibung):
@@ -224,9 +224,9 @@ def ablaeufe_abschnitt(daten, schnipsel):
             '  <div class="abl-liste">\n%s\n  </div>\n'
             '  <div class="abl-start r">\n    <div>\n      <h3>So starten Sie</h3>\n      <ol class="abl-schritte">\n'
             '        <li><strong>%s.</strong> Sie zeigen uns einen Ablauf, wir sagen Ihnen offen, was sich automatisieren lässt und was nicht.</li>\n'
-            '        <li><strong>Pilot.</strong> Ein Ablauf, drei Monate kostenlos, jederzeit kündbar.</li>\n'
+            '        <li><strong>Pilotbetrieb.</strong> Die ersten 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot.</li>\n'
             '        <li><strong>Entscheid.</strong> Nach dem Pilot entscheiden Sie, ob der Ablauf bleibt.</li>\n      </ol>\n'
-            '      <a class="btn-p" href="#anfrage" data-thema="%s">Gratis-Prozess-Check anfragen %s</a>\n    </div>\n'
+            '      <a class="btn-p" href="#anfrage" data-thema="%s">Kostenloses Gespräch anfragen %s</a>\n    </div>\n'
             '    <div class="abl-datenschutz">\n      <h3>Datenschutz und Programme</h3>\n'
             '      <p>Personendaten bearbeiten wir nur mit einem Vertrag zur Auftragsbearbeitung (Auftragsverarbeitungsvertrag). '
             'Wo die Daten gespeichert werden, nennen wir Ihnen vor dem Start.</p>\n'
@@ -314,7 +314,9 @@ def startseite_unternehmen(branchen_namen, branchen_daten):
     return "\n".join([
         startseite_karten(branchen_daten, branchen_namen, START_ANZAHL, i18n=True),
         '  <p class="u-hinweis r"><a href="/branchen/" data-i18n="s.br.alle">Alle Branchen</a> · '
-        '<a href="/unternehmen/#branchen" data-i18n="s.br.unternehmen">Die besten Abläufe je Branche</a></p>'])
+        '<a href="/unternehmen/#branchen" data-i18n="s.br.unternehmen">Die besten Abläufe je Branche</a> · '
+        '<a href="/automatisierung/" data-i18n="s.br.ki">KI-Automatisierung für KMU</a> · '
+        '<a href="/preise/" data-i18n="s.br.preise">Preise</a></p>'])
 
 
 START_BEISPIEL = "detailhandel"  # Startseite: Beispiel für Unternehmen (Mini-Beispiel aus ablaeufe.json "branchen")
@@ -442,7 +444,7 @@ def ablauf_beispiel(slug, daten, nach_slug):
     return ('<section id="ablauf-beispiel" class="abl-mini-abschnitt">\n  <div class="abl-block">\n    <div class="abl-text r">\n'
             '      <span class="s-label">Automatisierung</span>\n      <h2>Beispiel: %s</h2>\n      <p>%s</p>\n'
             '      <p class="abl-mensch"><strong>Sie entscheiden:</strong> %s.</p>\n'
-            '      <p class="abl-aktion"><a class="btn-p" href="#anfrage" data-thema="%s: %s">Gratis-Prozess-Check anfragen %s</a></p>\n'
+            '      <p class="abl-aktion"><a class="btn-p" href="#anfrage" data-thema="%s: %s">Kostenloses Gespräch anfragen %s</a></p>\n'
             '      <p class="abl-klein-text">%s</p>\n      <ul class="abl-links">\n        %s\n      </ul>\n    </div>\n'
             '    %s\n  </div>\n</section>\n%s\n'
             % (html.escape(x["titel"]), html.escape(x["text"]), html.escape(x["mensch"]), PROZESS_CHECK, html.escape(x["titel"]),
@@ -1180,7 +1182,7 @@ EINWILLIGUNG = '<div class="fgrp"><label style="display:flex;gap:.6rem;align-ite
 
 SEITEN_STAND = "2026-11-13"
 # Übersichten, die seither geändert wurden (lastmod in der Sitemap)
-SEITEN_GEAENDERT = {"/": "2026-11-20", "/gemeinden/": "2026-11-20", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-20"}
+SEITEN_GEAENDERT = {"/": "2026-11-24", "/gemeinden/": "2026-11-24", "/branchen/": "2026-11-13", "/unternehmen/": "2026-11-24"}
 
 
 def stand(eintrag, pruef):
@@ -1636,17 +1638,6 @@ BRIEF_SEITEN = [
                 '    <p>Wir zahlen keine Provision, damit Ihre Empfehlung unabhängig bleibt. Pilotbetrieb für Mandanten, die über Ihr Büro '
                 'kommen: 4 statt 3 Monate ohne Monatsbetrag, Einrichtung nach Angebot; das halten wir vor dem Pilot schriftlich fest. Ihr Büro erhält Material mit Ihrem Logo und einen '
                 'Ablauf für das eigene Büro im Pilot.</p>\n  </div>\n</section>\n')},
-    {"pfad": "/garage/", "branche": "garagen", "seite": "Brief Garage",
-     "titel": "Für Garagen: Freigaben, MFK und Reifen | Meyssens",
-     "beschreibung": "Gratis-Hilfen und ein Beispiel für Garagen: Zusatzarbeiten freigeben lassen, MFK-Termine, Reifenhotel. Jetzt ansehen.",
-     "h1": 'Für Garagen: <span class="hl">weniger Büro.</span>',
-     "lead": "Sie haben unseren Brief erhalten. Hier finden Sie die kostenlosen Hilfen und ein Beispiel, wie eine Zusatzarbeit "
-             "mit Foto und Betrag zur Freigabe beim Kunden kommt.",
-     "hilfen": [("/werkzeuge/offerte/", "Offerte erstellen", "Positionen, MWST und Gültigkeitsfrist, als PDF."),
-                ("/werkzeuge/rechnung/", "Rechnung erstellen", "Mit MWST und QR-Zahlteil, als PDF."),
-                ("/werkzeuge/mahnung/", "Mahnung mit Verzugszins", "Zahlungserinnerung bis letzte Mahnung, Zins nach OR."),
-                ("/branchen/garagen/", "Abläufe für Garagen", "Werkstattauftrag mit Freigabegrenzen, MFK-Termine, Reifenhotel.")],
-     "zusatz": ""},
 ]
 
 
@@ -1680,6 +1671,269 @@ def brief_zielseiten(gemeinsam, vorlage_seite, ablaeufe, bekannte_seiten):
             "lead": html.escape(b["lead"]), "inhalt": inhalt, "ld": ld(*seitenld)})
         schreibe(b["pfad"].strip("/") + "/index.html", fuelle(vorlage_seite, werte))
 
+
+
+# --- Kaufseiten «Automatisierung» (loesungen.json, SEO 24.11.2026) und Preisseite -------------------------------
+STUFE_AUTO = ("KI-Automatisierung", "/automatisierung/")
+LOESUNGEN_STAND = "2026-11-24"
+
+
+LZ_SYMBOLE = {
+    "eingang": '<path d="M4 13h4l2 3h4l2-3h4"/><path d="M6 5h12l2 8v6H4v-6z"/>',
+    "lesen": '<path d="M4 8V5h3M17 5h3v3M20 16v3h-3M7 19H4v-3"/><path d="M8 10h8M8 14h5"/>',
+    "vorschlag": '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h5"/>',
+    "freigabe": '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/>',
+    "archiv": '<rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v11h14V9M10 13h4"/>',
+    "qr": '<rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><path d="M14 14h2v2M20 14v6h-6v-2M17 17h0"/>',
+    "pruefen": '<path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/>',
+    "zahlung": '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M7 15h4"/>',
+    "gespraech": '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/>',
+    "angebot": '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9.5 14l2 2 3.5-4"/>',
+    "pilot": '<path d="M5 21V4h11l-2 4 2 4H5"/>',
+    "betrieb": '<path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/>',
+    "ablaeufe": '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+    "anbindung": '<path d="M9 15l6-6"/><path d="M11 6l1.5-1.5a4 4 0 0 1 5.7 5.7L16.5 12M13 18l-1.5 1.5a4 4 0 0 1-5.7-5.7L7.5 12"/>',
+    "daten": '<ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v14c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/>',
+    "wunsch": '<path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/>',
+}
+
+
+def lz_symbol(name):
+    return ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
+            'stroke-linejoin="round" aria-hidden="true" focusable="false">%s</svg>' % LZ_SYMBOLE[name])
+
+
+def lz_ablauf(schritte):
+    # Ablauf als Zeitleiste (assets/loesungen.js): Linie wächst beim Scrollen, Symbole füllen sich nacheinander
+    return ('  <ol class="lz-ablauf%s" data-lz>\n    <li class="lz-spur" aria-hidden="true"><i></i></li>\n%s\n  </ol>\n'
+            % (" drei" if len(schritte) == 3 else "", "\n".join(
+                '    <li class="lz-schritt"><span class="lz-ic">%s</span><div class="lz-text"><span class="lz-nr">Schritt %d</span>'
+                '<h3>%s</h3><p>%s</p></div></li>' % (lz_symbol(s["symbol"]), i, html.escape(s["titel"]), html.escape(s["text"]))
+                for i, s in enumerate(schritte, 1))))
+
+
+VN_KREUZ = '<svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 7h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>'
+VN_HAKEN = '<svg viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3.5 7.3l2.4 2.4L10.6 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+
+
+def vorher_nachher(vn):
+    # Vergleich ohne Zahlen, als Beispiel gekennzeichnet
+    def spalte(art, titel, punkte, sym):
+        return ('    <div class="vn-spalte vn-%s">\n      <div class="vn-kopf"><h3>%s</h3><span class="beispiel">Beispiel</span></div>\n      <ul>\n%s\n      </ul>\n    </div>'
+                % (art, titel, "\n".join('        <li style="--i:%d"><span class="vn-sym">%s</span><span class="vn-t">%s</span></li>' % (i, sym, html.escape(t))
+                                         for i, t in enumerate(punkte))))
+    return (kopf_mitte("vorher-nachher", "Vorher und nachher", "Was sich im Alltag ändert",
+                       "Ein typischer Ablauf, als Beispiel ohne Zahlenversprechen. Wie viel Zeit Sie sparen, zeigt erst der Pilot.", klasse="") +
+            '  <div class="vn r" data-vn>\n%s\n    <span class="vn-pfeil" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>\n%s\n  </div>\n</section>\n'
+            % (spalte("vorher", "Vorher", vn["vorher"], VN_KREUZ), spalte("nachher", "Nachher", vn["nachher"], VN_HAKEN)))
+
+
+def kopf_mitte(anker, label, titel, lead="", klasse="flaeche"):
+    return ('<section id="%s"%s>\n  <div class="kopf-mitte r">\n    <span class="s-label">%s</span>\n    <h2>%s</h2>\n%s  </div>\n'
+            % (anker, ' class="%s"' % klasse if klasse else "", label, html.escape(titel),
+               '    <p class="s-lead">%s</p>\n' % html.escape(lead) if lead else ""))
+
+
+def loesung_inhalt(x, schnipsel, info):
+    teile = []
+    # Ablauf als Zeitleiste
+    teile.append(kopf_mitte("ablauf", "Ablauf", x["ablauf_titel"], klasse="") + lz_ablauf(x["ablauf"]) + '</section>\n')
+    # Animiertes Beispiel (assets/ablaeufe.js), gleiche Bühnen-Technik wie auf /unternehmen/
+    b = x["beispiel"]
+    buehne = teil(schnipsel, "buehne-" + b["buehne"])
+    if not buehne:
+        raise SystemExit("ablaeufe.html: buehne-%s fehlt (%s)" % (b["buehne"], x["pfad"]))
+    teile.append(kopf_mitte("beispiel", "Beispiel", b["h2"], b["lead"]) +
+                 '  <div class="u-beispiel">\n%s\n  </div>\n  <p class="u-hinweis r"><a href="#kontakt" data-thema="%s">'
+                 'Kostenloses Gespräch anfragen %s</a></p>\n</section>\n%s\n'
+                 % (ablauf_geraet(b["geraet"], buehne, b.get("klasse", "abl-" + b["buehne"]), b["beschreibung"]),
+                    html.escape(x["thema"]), PFEIL, ABLAUF_SKRIPT))
+    # Vorher und nachher
+    teile.append(vorher_nachher(x["vorher_nachher"]))
+    # Nutzen
+    teile.append(kopf_mitte("nutzen", "Nutzen", x["nutzen_titel"]) +
+                 '  <div class="feat-grid vier r">\n%s\n  </div>\n</section>\n' % "\n".join(karte("", n["titel"], n["text"]) for n in x["nutzen"]))
+    # Weitere Abläufe (nur Leitseite)
+    if x.get("karten"):
+        teile.append(kopf_mitte("ablaeufe", "Abläufe", x["karten_titel"], klasse="") +
+                     '  <div class="feat-grid vier r">\n%s\n  </div>\n  <p class="u-hinweis r"><a href="/unternehmen/#ueberblick">Alle acht Abläufe im Überblick</a>'
+                     ' · <a href="/preise/">Preise</a></p>\n</section>\n'
+                     % "\n".join(link_kachel(k["url"], "", k["titel"], k["text"], "Mehr zu " + html.escape(k["titel"])) for k in x["karten"]))
+    # Textabschnitte
+    for i, a in enumerate(x.get("abschnitte", [])):
+        rumpf = "".join('    <p>%s</p>\n' % html.escape(p) for p in a.get("absaetze", []))
+        if a.get("liste"):
+            rumpf += '    <ul>\n%s    </ul>\n' % "".join('      <li>%s</li>\n' % html.escape(l) for l in a["liste"])
+        if a["id"] == "e-banking" and x.get("werkzeug"):
+            rumpf += '    <p><a class="btn-s" href="/werkzeuge/qr-rechnung/">Gratis-Werkzeug: QR-Rechnung erstellen %s</a></p>\n' % PFEIL
+        teile.append('<section id="%s"%s>\n  <div class="artikel-text r">\n    <span class="s-label">%s</span>\n    <h2>%s</h2>\n%s  </div>\n</section>\n'
+                     % (a["id"], ' class="flaeche"' if i % 2 else "", html.escape(a["label"]), html.escape(a["h2"]), rumpf))
+    # Passende Branchen, Bausteine und Ratgeber: drei Kacheln, weitere als Textlinks
+    ziele = [("/produkte/%s/" % s_, None) for s_ in x.get("bausteine", [])] + [("/ratgeber/%s/" % s_, "Ratgeber") for s_ in x["ratgeber"]]
+    links = [link_kachel(u, chip or info[u]["art"], info[u]["name"], info[u]["text"],
+                         "Ratgeber lesen" if chip else "Mehr zu " + html.escape(info[u]["name"])) for u, chip in ziele[:3]]
+    weitere = " · ".join('<a href="%s">%s</a>' % (u, html.escape(info[u]["name"])) for u, _ in ziele[3:])
+    branchen_links = " · ".join('<a href="/branchen/%s/">%s</a>' % (s_, html.escape(info["/branchen/%s/" % s_]["name"])) for s_ in x["branchen"])
+    teile.append('<section id="passend">\n  <div class="kopf-mitte r">\n    <span class="s-label">Weiterlesen</span>\n'
+                 '    <h2>Passend zum Thema</h2>\n  </div>\n  <div class="feat-grid r">\n%s\n  </div>\n%s'
+                 '  <p class="u-hinweis r">Für Ihre Branche: %s</p>\n</section>\n'
+                 % ("\n".join(links), '  <p class="u-hinweis r">Ausserdem: %s</p>\n' % weitere if weitere else "", branchen_links))
+    # Fragen
+    teile.append('<section id="fragen" class="flaeche">\n  <div class="r">\n    <span class="s-label">Fragen</span>\n    <h2>Häufige Fragen</h2>\n'
+                 '  </div>\n  <div class="qa-list r">\n%s\n  </div>\n</section>\n' % qa_liste(x["faq"]))
+    # Quellen (wo Rechtsaussagen)
+    if x.get("quellen"):
+        teile.append('<section id="quellen">\n  <div class="artikel-text">\n    <span class="s-label">Quellen</span>\n    <h2>Quellen und Hinweis</h2>\n'
+                     '    <div class="note"><strong>Allgemeine Information, keine Rechtsberatung.</strong> Zuletzt geprüft am %s.</div>\n'
+                     '    <ul class="quellen">\n%s\n    </ul>\n  </div>\n</section>\n'
+                     % (datum_ch(x["geprueft"]), "\n".join('      <li><a href="%s" rel="noopener" target="_blank">%s</a></li>'
+                                                           % (html.escape(q["url"]), html.escape(q["titel"])) for q in x["quellen"])))
+    return "".join(teile)
+
+
+def loesung_dienst(x, url):
+    return {"@type": "Service", "@id": url + "#dienst", "name": x["name"], "description": x["lead"], "url": url,
+            "serviceType": "Büroautomatisierung", "provider": {"@id": DOMAIN + "/#org"}, "areaServed": SCHWEIZ,
+            "availableLanguage": "de-CH", "audience": {"@type": "BusinessAudience", "audienceType": "Unternehmen in der Schweiz"}}
+
+
+def preise_inhalt():
+    # Unternehmen: drei Pakete mit «ab»-Preisen (pakete.py). Gemeinden: Pilot gratis, danach gestaffelt nach Einwohnern.
+    stufen = "\n".join('      <tr><th scope="row">%s</th><td>%s</td></tr>' % (html.escape(a), html.escape(b)) for a, b in PK.GEMEINDE_STUFEN)
+    return (pakete_karten("Unternehmen: drei Pakete") +
+            kopf_mitte("weg", "Ablauf", "So kommen Sie zu Ihrem Preis") + lz_ablauf(PK.START_WEG) +
+            '  <p class="u-hinweis r">%s %s %s %s %s</p>\n'
+            '  <p class="u-hinweis r">Andere Abläufe sowie Apps und Web-Anwendungen nach Mass: verbindlicher Preis nach Aufwand. '
+            '<a href="/unternehmen/#apps">Mehr zu Apps nach Mass</a></p>\n'
+            '  <p class="u-hinweis r"><a class="btn-p" href="#kontakt" data-thema="Preise: verbindlicher Preis">Verbindlichen Preis anfragen %s</a></p>\n'
+            '  <p class="u-hinweis r">Preise zuletzt geprüft am %s.</p>\n</section>\n'
+            % (html.escape(PK.PILOT), html.escape(PK.PREIS_HINWEIS), html.escape(PK.LAUFZEIT), html.escape(PK.ANBINDUNG), html.escape(PK.MWST), PFEIL, datum_ch(PK.PAKETE_STAND)) +
+            kopf_mitte("gemeinden", "Gemeinden", "Bürgerbeteiligung für Gemeinden: Pilot gratis, danach nach Grösse", klasse="") +
+            '  <div class="pz-gemeinde r">\n    <table class="pz-stufen"><tbody>\n%s\n    </tbody></table>\n'
+            '    <ul>\n      <li>Pilot drei Monate kostenlos, ohne Vertrag, jederzeit kündbar</li>\n      <li>Einrichtung kostenlos, ohne Aufbaukosten</li>\n'
+            '      <li>Festpreis, nicht MWST-pflichtig</li>\n'
+            '      <li>Laufzeit 12 Monate, danach automatische Verlängerung, Kündigung 3 Monate vor Ablauf</li>\n'
+            '    </ul>\n    <p class="pz-ausbau">%s</p>\n'
+            '    <a class="btn-s" href="/gemeinden/">Mehr zur Plattform für Gemeinden %s</a>\n  </div>\n</section>\n'
+            % (stufen, html.escape(PK.GEMEINDE_AUSBAU), PFEIL) +
+            kopf_mitte("gratis", "Gratis", "Gratis-Werkzeug und Vorlagen") +
+            '  <div class="feat-grid r">\n%s\n  </div>\n</section>\n' % "\n".join((
+                link_kachel("/werkzeuge/qr-rechnung/", "", "QR-Rechnung erstellen", "Gratis-Werkzeug im Browser, Ihre Angaben bleiben auf Ihrem Gerät.", "Werkzeug öffnen"),
+                link_kachel("/ratgeber/regierapport-vorlage/", "", "Regierapport-Vorlage", "Für Handwerk und Elektro, als PDF und Excel.", "Zur Vorlage"),
+                link_kachel("/ratgeber/steuerunterlagen-einsammeln/", "", "Checkliste Steuerunterlagen", "Für Treuhandbüros, als PDF und Word.", "Zur Checkliste"))))
+
+
+PREISE_FAQ = [
+    {"frage": "Was kosten die Pakete für Unternehmen?", "antwort": "Mahnwesen: Einrichtung ab CHF 3'500, ab CHF 290 pro Monat. Anfragen: Einrichtung ab CHF 4'500, ab CHF 390 pro Monat. Service-Erinnerungen für Garagen: Einrichtung ab CHF 3'900, ab CHF 290 pro Monat. Alle Preise in CHF, Endpreise, nicht MWST-pflichtig. Den verbindlichen Preis nennen wir nach 20 Minuten kostenlosem Gespräch, je nach Aufwand."},
+    {"frage": "Wie lange läuft der Vertrag?", "antwort": "Für den Monatsbetrag gilt eine Mindestlaufzeit von 12 Monaten. Die Einrichtung bezahlen Sie einmal."},
+    {"frage": "Was kostet die Anbindung an meine Software?", "antwort": "Die Anbindung an andere Software richten wir nach Aufwand ein. Der Preis steht im Vorschlag, bevor etwas läuft."},
+    {"frage": "Was kostet das erste Gespräch?", "antwort": "Nichts. Das Gespräch dauert 20 Minuten, ist kostenlos und unverbindlich."},
+    {"frage": "Was kostet die Beteiligungsplattform für Gemeinden?", "antwort": "Der Pilot ist drei Monate kostenlos. Danach CHF 2'900 pro Jahr für Gemeinden unter 2'000 Einwohnern und CHF 4'900 pro Jahr bis 5'000 Einwohner. Für grössere Gemeinden richtet sich der Preis nach der Einwohnerzahl, auf Anfrage. Laufzeit 12 Monate, danach automatische Verlängerung, Kündigung 3 Monate vor Ablauf."},
+]
+
+
+# Formularfeld «Wie haben Sie von uns erfahren?» (Code wie im Branch werkzeuge; hier nur im Formular von /garage/,
+# siehe MERGE_HINWEIS.md). Vorbelegung aus utm_source und Feld «kampagne» setzt assets/demos.js.
+# --- Pakete für Unternehmen (pakete.py, Entscheid 24.11.2026): Paketseiten, Paketkarten, Preise ------------------------
+ANIM_NOCHMAL = ('<button type="button" class="anim-nochmal" data-anim-nochmal hidden><svg width="14" height="14" viewBox="0 0 24 24" '
+                'fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                '<path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>Nochmal abspielen</button>')
+PAKET_KOPF = ABLAUF_KOPF + '\n<link rel="stylesheet" href="/assets/pakete.css">'
+
+
+def hm(minuten):
+    return "%d h %02d Min." % divmod(minuten, 60) if minuten >= 60 else "%d Min." % minuten
+
+
+def paket_ablauf(p, kompakt=False):
+    # Ablauf als animierte Kette (CSS, data-anim="paket" über demos.js): Schritte leuchten nacheinander auf, Linie wächst
+    knoten = "\n".join(
+        '      <li class="pk-knoten%s" style="--i:%d"><span class="pk-ic">%s</span><span class="pk-t"><b>%s</b>%s</span></li>'
+        % (" pk-ziel" if i == len(p["schritte"]) - 1 else "", i, lz_symbol(x["symbol"]), html.escape(x["titel"]),
+           "" if kompakt else '<small>%s</small>' % html.escape(x["zeile"]))
+        for i, x in enumerate(p["schritte"]))
+    aria = "Ablauf: " + ", dann ".join(x["titel"] for x in p["schritte"]) + "."
+    return ('    <figure class="pk-ablauf%s" data-anim="paket" role="img" aria-label="%s">\n      <ol aria-hidden="true">\n'
+            '      <li class="pk-spur"><i></i></li>\n%s\n      </ol>\n%s    </figure>\n'
+            % (" pk-kompakt" if kompakt else "", html.escape(aria), knoten,
+               "" if kompakt else '      <figcaption class="anim-fuss"><span>Beispiel mit erfundenen Daten</span> %s</figcaption>\n' % ANIM_NOCHMAL))
+
+
+def paket_preis(p, knopf=True):
+    return ('    <div class="pk-preis">\n      <p class="pkt-zahl"><span>Einrichtung</span><b>ab %s</b></p>\n'
+            '      <p class="pkt-zahl"><span>Betrieb</span><b>ab %s <small>pro Monat</small></b></p>\n'
+            '      <ul class="pk-bedingungen"><li>%s</li><li>%s</li><li>%s</li><li>%s</li><li>%s</li></ul>\n%s    </div>\n'
+            % (p["einrichtung"], p["monat"], html.escape(PK.PILOT), html.escape(PK.PREIS_HINWEIS), html.escape(PK.LAUFZEIT), html.escape(PK.ANBINDUNG), html.escape(PK.MWST),
+               '      <a class="btn-p" href="#kontakt" data-thema="%s">Verbindlichen Preis anfragen %s</a>\n' % (html.escape(p["thema"]), PFEIL) if knopf else ""))
+
+
+def paket_beispielrechnung(p):
+    b = p["beispiel"]
+
+    def spalte(art, titel, zeilen):
+        summe = sum(z[2] for z in zeilen)
+        return ('    <div class="pk-br-spalte pk-br-%s">\n      <h3>%s</h3>\n      <table><tbody>\n%s\n      <tr class="pk-br-summe"><th scope="row">'
+                'Pro Monat</th><td></td><td>%s</td></tr>\n      </tbody></table>\n    </div>\n'
+                % (art, titel, "\n".join('      <tr><th scope="row">%s</th><td>%s</td><td>%s</td></tr>' % (html.escape(t), html.escape(r), hm(m))
+                                       for t, r, m in zeilen), hm(summe)))
+    return (kopf_mitte("beispielrechnung", "Beispielrechnung", "Vorher und nachher: eine Beispielrechnung",
+                       "Mit angenommenen Werten, kein Ergebnis eines Kunden. Ihre eigenen Zahlen klären wir im Gespräch.") +
+            '  <div class="pk-br r">\n    <p class="pk-br-schild"><span class="beispiel">Beispielrechnung</span> %s</p>\n%s%s  </div>\n</section>\n'
+            % (html.escape(b["annahme"]), spalte("vorher", "Vorher, von Hand", b["vorher"]), spalte("nachher", "Nachher, mit dem Paket", b["nachher"])))
+
+
+def paket_inhalt(p):
+    schritte = "\n".join('    <div class="feat"><h3>%s</h3><p>%s</p></div>' % (html.escape(x["titel"]), html.escape(x["text"])) for x in p["schritte"])
+    return (kopf_mitte("ablauf", "Ablauf", "So läuft es ab", klasse="") +
+            '  <div class="pk-buehne r">\n%s  </div>\n  <div class="feat-grid vier r">\n%s\n  </div>\n</section>\n' % (paket_ablauf(p), schritte) +
+            kopf_mitte("leistungen", "Im Paket", "Was das Paket umfasst") +
+            '  <div class="feat-grid vier r">\n%s\n  </div>\n</section>\n' % "\n".join(karte("", t, x) for t, x in p["leistungen"]) +
+            paket_beispielrechnung(p) +
+            kopf_mitte("preis", "Preis", "Preis und Start", klasse="flaeche") +
+            '  <div class="pk-preis-raster r">\n%s    <div class="pk-weg">\n%s    </div>\n  </div>\n</section>\n'
+            % (paket_preis(p), lz_ablauf(PK.START_WEG)) +
+            '<section id="weitere">\n  <div class="kopf-mitte r">\n    <span class="s-label">Pakete</span>\n    <h2>Weitere Pakete</h2>\n  </div>\n'
+            '  <div class="feat-grid r">\n%s\n  </div>\n  <p class="u-hinweis r"><a href="/preise/">Alle Preise</a> · <a href="/automatisierung/">Übersicht Automatisierung</a></p>\n</section>\n'
+            % "\n".join(link_kachel(q["pfad"], "", q["name"], q["kurz"], "Mehr zum Paket") for q in PK.PAKETE if q is not p) +
+            '<section id="fragen" class="flaeche">\n  <div class="r">\n    <span class="s-label">Fragen</span>\n    <h2>Häufige Fragen</h2>\n'
+            '  </div>\n  <div class="qa-list r">\n%s\n  </div>\n</section>\n' % qa_liste(p["faq"]))
+
+
+def pakete_karten(titel="Drei Pakete, nach Ergebnis", lead=""):
+    karten = "\n".join(
+        '    <article class="pk-karte" style="--k:%d">\n      <span class="s-label">Paket</span>\n      <h3><a href="%s">%s</a></h3>\n'
+        '      <p>%s</p>\n%s%s      <p class="pk-links"><a class="btn-s" href="%s">Mehr zum Paket</a></p>\n    </article>'
+        % (i, q["pfad"], html.escape(q["name"]), html.escape(q["kurz"]), paket_ablauf(q, kompakt=True),
+           paket_preis(q, knopf=False).replace('<ul class="pk-bedingungen">', '<ul class="pk-bedingungen" hidden>') +
+           '      <a class="btn-p" href="%s#kontakt">Verbindlichen Preis anfragen %s</a>\n' % (q["pfad"], PFEIL), q["pfad"])
+        for i, q in enumerate(PK.PAKETE))
+    return (kopf_mitte("pakete", "Pakete", titel, lead or PK.PREIS_HINWEIS + " " + PK.LAUFZEIT, klasse="") +
+            '  <div class="pk-karten r">\n%s\n  </div>\n  <p class="u-hinweis r">%s</p>\n</section>\n' % (karten, html.escape(PK.ANBINDUNG)))
+
+
+def paket_dienst(p, url):
+    return {"@type": "Service", "@id": url + "#dienst", "name": "Paket " + p["name"], "description": p["lead"], "url": url,
+            "serviceType": "Büroautomatisierung", "provider": {"@id": DOMAIN + "/#org"}, "areaServed": SCHWEIZ,
+            "availableLanguage": "de-CH", "audience": {"@type": "BusinessAudience", "audienceType": "Unternehmen in der Schweiz"}}
+
+
+def paket_seiten(gemeinsam, vorlage_loesung):
+    for p in PK.PAKETE:
+        if len(p["titel"]) > 60 or len(p["beschreibung"]) > 155 or "ß" in json.dumps(p, ensure_ascii=False):
+            raise SystemExit("pakete.py %s: Titel/Beschreibung zu lang oder ß" % p["pfad"])
+        url = DOMAIN + p["pfad"]
+        kopf, seitenld = seitenkopf((START, UNTERNEHMEN, STUFE_AUTO, ("Paket " + p["name"], p["pfad"])), p["titel"])
+        werte = dict(gemeinsam, **kopf, **{
+            "titel": html.escape(p["titel"]), "beschreibung": html.escape(p["beschreibung"]), "url": url,
+            "seo_kopf": (seo_kopf(url) if p["sitemap"] else '<meta name="robots" content="noindex, follow">\n' + seo_kopf(url)),
+            "chip": "Paket " + html.escape(p["name"]), "h1": h1_html(p["h1"]), "lead": html.escape(p["lead"]), "thema": html.escape(p["thema"]),
+            "haupt_knopf": "Verbindlichen Preis anfragen", "zweit_url": "#ablauf", "zweit_text": "Ablauf ansehen",
+            "inhalt": paket_inhalt(p), "ablauf_kopf": PAKET_KOPF, "kontakt_titel": "Paket %s: verbindlichen Preis anfragen" % p["name"],
+            "anfrage": anfrage_formular("Paket " + p["name"], "Unternehmen / Organisation", False, "Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an."),
+            "ld": ld(*seitenld, paket_dienst(p, url), faq_ld(p["faq"])),
+        })
+        seite = fuelle(vorlage_loesung, werte)
+        schreibe(p["pfad"].strip("/") + "/index.html", seite)
 
 def main():
     produkte = json.loads(lies("produkte.json"))
@@ -2086,11 +2340,11 @@ def main():
 
     vereins_links = [(u, info[u]["name"] if u.startswith("/ratgeber/") else "Branchenseite " + info[u]["name"]) for u in sorted(VEREINS_SEITEN - {"/produkte/%s/" % s for s in VEREINS_PRODUKTE},
                                                           key=lambda u: (not u.startswith("/ratgeber/"), info[u]["name"]))]
-    kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Büroautomatisierung für Schweizer KMU | Meyssens")
+    kopf, seitenld = seitenkopf((START, UNTERNEHMEN), "Büroautomatisierung: acht Abläufe für KMU | Meyssens")
     werte = dict(gemeinsam, **kopf, **{
-        "titel": "Büroautomatisierung für Schweizer KMU | Meyssens",
-        "beschreibung": html.escape("Belege erfassen, Posteingang sortieren, Rechnungen und Fristen vorbereiten: Abläufe als "
-                                    "Entwurf, Sie geben frei. Jetzt Gespräch anfragen."),
+        "titel": "Büroautomatisierung: acht Abläufe für KMU | Meyssens",
+        "beschreibung": html.escape("Belege, Buchhaltung, Posteingang, Rechnungen und Fristen automatisieren: acht Abläufe als "
+                                    "Entwurf, Sie geben frei. Für Schweizer KMU. Gespräch anfragen."),
         "auto_karten": auto_karten(ablaeufe),
         "branchen_karten": startseite_karten(branchen_ablaeufe, {b["slug"]: b["name"] for b in branchen + artikel_branchen}),
         "gross_beispiel": gross_beispiel(schnipsel_ablaeufe),
@@ -2112,6 +2366,70 @@ def main():
                                for a in ratgeber if a["slug"] not in VEREINS_RATGEBER),
     })
     schreibe("unternehmen/index.html", fuelle(lies("vorlage_unternehmen.html"), werte))
+
+    # Kaufseiten «Automatisierung» (Leitseite und Unterseiten) und Preisseite
+    loesungen = json.loads(lies("loesungen.json"))
+    vorlage_loesung = lies("vorlage_loesung.html")
+    pfade_l = {x["pfad"] for x in loesungen}
+    for x in loesungen:
+        for s_ in x.get("bausteine", []):
+            if "/produkte/%s/" % s_ not in info:
+                raise SystemExit("loesungen.json %s: unbekannter Baustein %s" % (x["pfad"], s_))
+        for s_ in x["ratgeber"]:
+            if "/ratgeber/%s/" % s_ not in info:
+                raise SystemExit("loesungen.json %s: unbekannter Ratgeber %s" % (x["pfad"], s_))
+        for s_ in x["branchen"]:
+            if "/branchen/%s/" % s_ not in info:
+                raise SystemExit("loesungen.json %s: unbekannte Branche %s" % (x["pfad"], s_))
+        if len(x["titel"]) > 60 or len(x["beschreibung"]) > 155 or "ß" in json.dumps(x, ensure_ascii=False):
+            raise SystemExit("loesungen.json %s: Titel/Beschreibung zu lang oder ß" % x["pfad"])
+        stufen = (START, UNTERNEHMEN, STUFE_AUTO) if x["pfad"] == STUFE_AUTO[1] else (START, UNTERNEHMEN, STUFE_AUTO, (x["name"], x["pfad"]))
+        kopf, seitenld = seitenkopf(stufen, x["titel"])
+        url = DOMAIN + x["pfad"]
+        leit = x["pfad"] == STUFE_AUTO[1]
+        werte = dict(gemeinsam, **kopf, **{
+            "titel": html.escape(x["titel"]), "beschreibung": html.escape(x["beschreibung"]), "url": url, "seo_kopf": seo_kopf(url),
+            "chip": html.escape(x["chip"]), "h1": h1_html(x["h1"]), "lead": html.escape(x["lead"]), "thema": html.escape(x["thema"]),
+            "haupt_knopf": "Gespräch vereinbaren", "zweit_url": "#pakete" if leit else "#beispiel", "zweit_text": "Pakete ansehen" if leit else "Beispiel ansehen",
+            "inhalt": (pakete_karten() if leit else "") + loesung_inhalt(x, schnipsel_ablaeufe, info), "ablauf_kopf": PAKET_KOPF if leit else ABLAUF_KOPF,
+            "kontakt_titel": "Kostenloses Gespräch anfragen" if leit else "%s: Gespräch vereinbaren" % x["name"],
+            "anfrage": anfrage_formular("Unternehmen", "Unternehmen / Organisation", False, "Bitte geben Sie Ihr Unternehmen oder Ihre Organisation an."),
+            "ld": ld(*seitenld, loesung_dienst(x, url), faq_ld(x["faq"])),
+        })
+        schreibe(x["pfad"].strip("/") + "/index.html", fuelle(vorlage_loesung, werte))
+    kopf, seitenld = seitenkopf((START, ("Preise", "/preise/")), "Preise: Pakete für KMU und Gemeinden | Meyssens")
+    werte = dict(gemeinsam, **kopf, **{
+        "titel": "Preise: Pakete für KMU und Gemeinden | Meyssens",
+        "beschreibung": html.escape("Drei Pakete für KMU ab CHF 3'500 Einrichtung, verbindlich nach 20 Minuten kostenlosem Gespräch. "
+                                    "Gemeinden ab CHF 2'900 pro Jahr. Preise ansehen."),
+        "url": DOMAIN + "/preise/", "seo_kopf": seo_kopf(DOMAIN + "/preise/"), "chip": "Preise",
+        "h1": h1_html("Preise: drei Pakete, verbindlich nach dem Gespräch"),
+        "lead": "Für Unternehmen gibt es drei Pakete mit Einrichtung und Monatsbetrag, als «ab»-Preise. Den verbindlichen Preis nennen wir nach "
+                "20 Minuten Gespräch, je nach Aufwand. Für Gemeinden: Pilot gratis, danach nach Grösse.",
+        "thema": "Preise: verbindlicher Preis", "haupt_knopf": "Verbindlichen Preis anfragen", "zweit_url": "#pakete", "zweit_text": "Pakete ansehen",
+        "inhalt": preise_inhalt() + '<section id="fragen" class="flaeche">\n  <div class="r">\n    <span class="s-label">Fragen</span>\n    <h2>Häufige Fragen</h2>\n'
+                  '  </div>\n  <div class="qa-list r">\n%s\n  </div>\n</section>\n' % qa_liste(PREISE_FAQ),
+        "ablauf_kopf": PAKET_KOPF, "kontakt_titel": "Fragen zu den Preisen?",
+        "anfrage": anfrage_formular("Unternehmen", "Unternehmen / Gemeinde / Organisation", False, "Bitte geben Sie Ihr Unternehmen, Ihre Gemeinde oder Organisation an."),
+        "ld": ld(*seitenld, faq_ld(PREISE_FAQ)),
+    })
+    schreibe("preise/index.html", fuelle(vorlage_loesung, werte))
+    paket_seiten(gemeinsam, vorlage_loesung)
+    # Rückverweise: Branchen- und Ratgeberseiten, die eine Kaufseite empfiehlt, verlinken diese zurück (vor «Das könnte Sie auch interessieren»)
+    rueck = {}
+    for x in loesungen:
+        for s_ in x["branchen"]:
+            rueck.setdefault("branchen/%s/index.html" % s_, []).append(x)
+        for s_ in x["ratgeber"]:
+            rueck.setdefault("ratgeber/%s/index.html" % s_, []).append(x)
+    for datei, liste in sorted(rueck.items()):
+        text = lies(datei)
+        if 'id="automatisierung-links"' in text or '<section id="verwandt">' not in text:
+            continue
+        block = ('<section id="automatisierung-links" class="u-auto-links">\n  <p class="u-hinweis r">Automatisierung: %s</p>\n</section>\n\n'
+                 % " · ".join('<a href="%s">%s</a>' % (x["pfad"], html.escape(x["name"] if x["pfad"] != STUFE_AUTO[1] else "KI-Automatisierung für KMU"))
+                              for x in liste))
+        schreibe(datei, text.replace('<section id="verwandt">', block + '<section id="verwandt">', 1))
 
     # Übersichtsseiten (Brotkrumen-Stufen) und Über uns, alle aus vorlage_seite.html
     vorlage_seite = lies("vorlage_seite.html")
@@ -2190,9 +2508,9 @@ def main():
             '    <p>Diese Website selbst wird über GitHub Pages (GitHub, Inc., USA) ausgeliefert. Die Einzelheiten stehen in der '
             '<a href="#datenschutz" onclick="document.getElementById(\'datenschutz-modal\').style.display=\'flex\'">'
             'Datenschutzerklärung</a>.</p>\n  </div>' % ", ".join(BEDINGUNGEN), "flaeche") + "\n" +
-        abschnitt_html("kontakt", "Kontakt", "Kontakt und Standort",
+        abschnitt_html("kontakt", "Kontakt", "Kontakt",
             '  <div class="artikel-text r">\n'
-            '    <p>Meyssens, Lausen, Basel-Landschaft, Schweiz<br>E-Mail: <a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></p>\n'
+            '    <p>Meyssens, Schweiz<br>E-Mail: <a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></p>\n'
             '    <p><a class="btn-p" href="mailto:lionel@meyssens.ch">E-Mail an Lionel Nickelsen %s</a></p>\n'
             '  </div>' % PFEIL))
     uebersichten.append(((START, STUFE_UEBER), "Über uns: wer hinter Meyssens steht | Meyssens",
@@ -2282,6 +2600,9 @@ def main():
     seiten.append((QR_WERKZEUG["pfad"], "0.7", QR_WERKZEUG["geprueft"]))
     seiten.append((WERKZEUGE_UEBERSICHT["pfad"], "0.7", max([QR_WERKZEUG["geprueft"]] + [w["geprueft"] for w in WERKZEUGE])))
     seiten += [(w["pfad"], "0.7", w["geprueft"]) for w in WERKZEUGE]
+    seiten += [(x["pfad"], "0.8" if x["pfad"] == STUFE_AUTO[1] else "0.7", LOESUNGEN_STAND) for x in loesungen]
+    seiten.append(("/preise/", "0.6", LOESUNGEN_STAND))
+    seiten += [(q["pfad"], "0.7", PK.PAKETE_STAND) for q in PK.PAKETE if q["sitemap"]]
     zeilen = ["  <url><loc>%s%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>"
               % (DOMAIN, pfad, stand, prio) for pfad, prio, stand in seiten]
     schreibe("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n'

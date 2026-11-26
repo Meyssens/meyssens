@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{titel}}</title>
+<meta name="description" content="{{beschreibung}}">
+<meta property="og:title" content="{{titel}}">
+<meta property="og:description" content="{{beschreibung}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{og_bild}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{og_alt}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{og_bild}}">
+<meta name="twitter:image:alt" content="{{og_alt}}">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Meyssens">
+<link rel="canonical" href="{{url}}">
+{{seo_kopf}}
+<link rel="sitemap" type="application/xml" href="https://meyssens.ch/sitemap.xml">
+{{head}}
+<link rel="stylesheet" href="/assets/stil.css?v=6090f3689b">{{ablauf_kopf}}
+<link rel="stylesheet" href="/assets/loesungen.css?v=000f3667d1">
+{{ld}}
+</head>
+<body class="stil">
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+{{kopf}}
+
+<main id="main" class="lz-seite">
+<section class="page-hero">
+{{krumen}}
+  <div class="chip"><span class="chip-dot"></span><span>{{chip}}</span></div>
+  <h1>{{h1}}</h1>
+  <p class="lead u-hero-lead">{{lead}}</p>
+  <div class="held-knoepfe">
+    <a href="#kontakt" class="btn-p" data-thema="{{thema}}">{{haupt_knopf}} <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="{{zweit_url}}" class="btn-s">{{zweit_text}}</a>
+  </div>
+</section>
+
+{{inhalt}}
+<section id="kontakt" class="flaeche">
+  <div class="contact-grid">
+    <div class="r">
+      <span class="s-label">Kontakt</span>
+      <h2>{{kontakt_titel}}</h2>
+      <p class="kontakt-lead">Beschreiben Sie kurz Ihren Ablauf. Sie erhalten eine persönliche Antwort von Lionel Nickelsen. Das erste Gespräch ist kostenlos.</p>
+      <div class="cinfo-item">
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1.5" y="3.5" width="14" height="10" rx="1.5"/><path d="M1.5 5l7 4.5 7-4.5"/></svg></div>
+        <div><div class="clabel">Lieber per E-Mail</div><div class="cval"><a href="mailto:lionel@meyssens.ch">lionel@meyssens.ch</a></div></div>
+      </div>
+      <div class="cinfo-item">
+        <div class="cicon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg></div>
+        <div><div class="clabel">Telefon</div><div class="cval"><a href="tel:+41788643763">+41 78 864 37 63</a></div></div>
+      </div>
+    </div>
+    <div class="ccard r d1">
+{{anfrage}}
+    </div>
+  </div>
+</section>
+</main>
+
+{{fuss}}
+
+{{rechtliches}}
+
+{{skripte}}
+<script src="/assets/demos.js?v=f935d3d50e" defer></script>
+<script src="/assets/anfrage.js?v=eef1981f91" defer></script>
+<script src="/assets/loesungen.js?v=178c3b1b81" defer></script>
+</body>
+</html>

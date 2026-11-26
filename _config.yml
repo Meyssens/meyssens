@@ -36,3 +36,7 @@ exclude:
   - werkzeug_arbeitszeit.html
   - werkzeug_ferien.html
   - werkzeug_lohnfortzahlung.html
+  - loesungen.json
+  - vorlage_loesung.html
+  - pakete.py
+  - MERGE_HINWEIS.md

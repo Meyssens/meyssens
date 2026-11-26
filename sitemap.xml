@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://meyssens.ch/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://meyssens.ch/gemeinden/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://meyssens.ch/unternehmen/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://meyssens.ch/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://meyssens.ch/gemeinden/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://meyssens.ch/unternehmen/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://meyssens.ch/branchen/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://meyssens.ch/produkte/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -42,29 +42,29 @@
   <url><loc>https://meyssens.ch/produkte/faelligkeitsliste-kontrollen-elektro/</loc><lastmod>2026-11-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/produkte/materialliste-elektro/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/produkte/zeitabgleich-rapporte-handwerk/</loc><lastmod>2026-11-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/bauunternehmen/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/elektro-handwerk/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/bauunternehmen/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/elektro-handwerk/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/branchen/kindergaerten-schulen/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/branchen/vereine/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/arztpraxen/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/treuhaender/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/hotels-gastronomie/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/garagen/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/transport-logistik/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/detailhandel/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/gartenbau/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/reinigung-hauswartung/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/schreinerei-holzbau/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/physiotherapie/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/fitness-sport/</loc><lastmod>2026-11-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/zahnarztpraxen/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/immobilienverwaltungen/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/architekturbueros/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/branchen/pflegeheime-spitex/</loc><lastmod>2026-11-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/arztpraxen/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/treuhaender/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/hotels-gastronomie/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/garagen/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/transport-logistik/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/detailhandel/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/gartenbau/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/reinigung-hauswartung/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/schreinerei-holzbau/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/physiotherapie/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/fitness-sport/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/zahnarztpraxen/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/immobilienverwaltungen/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/architekturbueros/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/branchen/pflegeheime-spitex/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/ndsg-kmu-checkliste/</loc><lastmod>2026-10-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/offertanfragen-beantworten/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/online-abstimmung-verein/</loc><lastmod>2026-11-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/ratgeber/website-chatbot-recht/</loc><lastmod>2026-10-25</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/ratgeber/website-chatbot-recht/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/anmeldeformular-mietwohnung/</loc><lastmod>2026-11-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/spitex-abrechnung-2026/</loc><lastmod>2026-11-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/aufbewahrungsfristen-buchhaltung/</loc><lastmod>2026-11-08</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -77,10 +77,10 @@
   <url><loc>https://meyssens.ch/ratgeber/sia-phasen-102/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/honorar-sia-102-berechnen/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/kbob-honorare-stundenansaetze/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/ratgeber/bausitzung-protokoll/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/ratgeber/subunternehmer-solidarhaftung/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/ratgeber/bausitzung-protokoll/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/ratgeber/subunternehmer-solidarhaftung/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/leistungsverzeichnis-npk/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://meyssens.ch/ratgeber/arbeitszeiterfassung-pflege/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/ratgeber/arbeitszeiterfassung-pflege/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/datenschutz-pflege/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/pflegeheim-eintritt/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://meyssens.ch/ratgeber/praxistelefon-entlasten/</loc><lastmod>2026-11-13</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -116,4 +116,12 @@
   <url><loc>https://meyssens.ch/werkzeuge/arbeitszeit/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://meyssens.ch/werkzeuge/ferien/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://meyssens.ch/werkzeuge/lohnfortzahlung/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meyssens.ch/automatisierung/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://meyssens.ch/automatisierung/buchhaltung/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meyssens.ch/automatisierung/belege-digitalisieren/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meyssens.ch/automatisierung/qr-rechnungen-einlesen/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meyssens.ch/preise/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://meyssens.ch/mahnwesen/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meyssens.ch/anfragen/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://meyssens.ch/garage/</loc><lastmod>2026-11-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

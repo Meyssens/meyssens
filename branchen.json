@@ -1,7 +1,7 @@
 [
   {
     "slug": "bauunternehmen",
-    "aktualisiert": "2026-11-14",
+    "aktualisiert": "2026-11-24",
     "name": "Bauunternehmen",
     "fuer": "Bauunternehmen",
     "kurz": "Ausschreibungen im Blick behalten und Anfragen von Bauherrschaften schneller beantworten.",
@@ -57,9 +57,9 @@
       "ausschreibungs-radar",
       "mail-assistent"
     ],
-    "seo_titel": "Bauunternehmen: Ausschreibungen digital finden | Meyssens",
-    "seo_beschreibung": "Öffentliche Ausschreibungen von Bund und Kantonen im Blick, Anfragen von Bauherrschaften geordnet beantworten. Für Schweizer Baufirmen. Jetzt anfragen.",
-    "h1": "Bauunternehmen: Ausschreibungen und Anfragen digital im Griff",
+    "seo_titel": "Bau: Ausschreibungen und Offerten automatisieren | Meyssens",
+    "seo_beschreibung": "Ausschreibungen automatisch finden, Leistungsverzeichnisse übernehmen, Anfragen geordnet beantworten: Abläufe für Bauunternehmen. Jetzt ansehen.",
+    "h1": "Bauunternehmen automatisieren: Ausschreibungen, Offerten und Anfragen",
     "schweiz": "Öffentliche Aufträge von Bund, Kantonen und Gemeinden werden in der Schweiz grösstenteils auf simap.ch publiziert, die Regeln stehen im BöB und in der IVöB. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
     "bausteine": [
       "leistungsverzeichnis-import-bau",
@@ -343,7 +343,7 @@
   },
   {
     "slug": "elektro-handwerk",
-    "aktualisiert": "2026-11-14",
+    "aktualisiert": "2026-11-24",
     "name": "Elektro-Handwerk",
     "fuer": "das Elektro-Handwerk",
     "kurz": "Aufträge finden, Kundenanfragen ordnen und Offerten vorbereiten.",
@@ -400,9 +400,9 @@
       "mail-assistent",
       "ausschreibungs-radar"
     ],
-    "seo_titel": "Aufträge für Elektriker finden und offerieren | Meyssens",
-    "seo_beschreibung": "Aufträge für Elektroinstallationen finden: Ausschreibungen auf simap.ch, Anfragen ordnen, Offerten vorbereiten. Bausteine für Elektrobetriebe ansehen.",
-    "h1": "Elektro-Aufträge: Anfragen ordnen, Ausschreibungen finden, Offerten vorbereiten",
+    "seo_titel": "Elektro: Offerten und Rapporte automatisieren | Meyssens",
+    "seo_beschreibung": "Offerten vorbereiten, Rapporte in Rechnungen umwandeln, Ausschreibungen auf simap finden: Abläufe für Elektrobetriebe. Beispiele ansehen.",
+    "h1": "Elektrobetrieb automatisieren: Offerten, Rapporte und Ausschreibungen",
     "schweiz": "Wer elektrische Installationen erstellt, ändert oder instand stellt, braucht eine Bewilligung des Eidgenössischen Starkstrominspektorats ESTI, das auch elektronische Verzeichnisse der Installations- und Kontrollbewilligungen führt. Öffentliche Aufträge stehen auf simap.ch, der Beschaffungsplattform, die Bund und Kantone gemeinsam betreiben. Für Kundendaten gilt das nDSG. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
     "bausteine": [
       "faelligkeitsliste-kontrollen-elektro",
@@ -850,7 +850,7 @@
   },
   {
     "slug": "arztpraxen",
-    "aktualisiert": "2026-11-14",
+    "aktualisiert": "2026-11-24",
     "name": "Arztpraxen",
     "fuer": "Arztpraxen",
     "kurz": "Allgemeine Fragen beantworten und das Praxisteam entlasten, ohne Patientendaten preiszugeben.",
@@ -906,9 +906,9 @@
       "website-chatbot",
       "mail-assistent"
     ],
-    "seo_titel": "Arztpraxis digital entlasten in der Schweiz | Meyssens",
-    "seo_beschreibung": "Patientenfragen auf der Website beantworten, E-Mails ordnen, Schweigepflicht und nDSG wahren: Werkzeuge für Arztpraxen. Jetzt unverbindlich anfragen.",
-    "h1": "Arztpraxis digital entlasten: Werkzeuge für Praxen in der Schweiz",
+    "seo_titel": "Arztpraxis automatisieren: Termine und Mahnungen | Meyssens",
+    "seo_beschreibung": "Terminanfragen ordnen, Mahnungen als Entwurf, Praxistelefon entlasten, mit Blick aufs Berufsgeheimnis: Abläufe für Arztpraxen. Beispiele ansehen.",
+    "h1": "Arztpraxis automatisieren: Terminanfragen, Mahnungen und Telefon",
     "schweiz": "Für Arztpraxen in der ganzen Schweiz gelten das Berufsgeheimnis nach Art. 321 StGB und das revidierte Datenschutzgesetz (nDSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
     "bausteine": [
       "online-terminanfrage-arztpraxis",
@@ -1195,7 +1195,7 @@
   },
   {
     "slug": "treuhaender",
-    "aktualisiert": "2026-11-14",
+    "aktualisiert": "2026-11-24",
     "name": "Treuhandbüros",
     "fuer": "Treuhandbüros",
     "kurz": "Mandantenanfragen schneller beantworten und Mandanten regelmässig informieren.",
@@ -1252,9 +1252,9 @@
       "website-chatbot",
       "newsletter"
     ],
-    "seo_titel": "Treuhandbüro digital: Mandantenanfragen ordnen | Meyssens",
-    "seo_beschreibung": "Mandantenanfragen ordnen, wiederkehrende Fragen beantworten und Mandanten informieren, vertraulich und mit Blick aufs nDSG. Jetzt unverbindlich anfragen.",
-    "h1": "Treuhandbüro digital: Mandantenanfragen geordnet beantworten",
+    "seo_titel": "Treuhandbüro automatisieren: Belege und Fristen | Meyssens",
+    "seo_beschreibung": "Belege einsammeln, Fristen überwachen, Mandantenanfragen beantworten: Abläufe für Schweizer Treuhandbüros als Entwurf. Beispiele ansehen.",
+    "h1": "Treuhandbüro automatisieren: Belege, Fristen und Mandantenanfragen",
     "schweiz": "Treuhandbüros in der Schweiz bearbeiten Mandantendaten nach dem nDSG, oft zusätzlich unter vertraglicher Verschwiegenheit. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung.",
     "bausteine": [
       "fristenkalender-belegeingang-treuhand",
@@ -1532,7 +1532,7 @@
   },
   {
     "slug": "hotels-gastronomie",
-    "aktualisiert": "2026-11-14",
+    "aktualisiert": "2026-11-24",
     "name": "Hotels und Gastronomie",
     "fuer": "Hotels und Gastronomiebetriebe",
     "kurz": "Gästefragen auf der Website beantworten, Anfragen ordnen und Stammgäste informieren.",
@@ -1589,14 +1589,14 @@
       "mail-assistent",
       "newsletter"
     ],
-    "seo_titel": "Hotel und Restaurant: Gästeanfragen digital | Meyssens",
-    "seo_beschreibung": "Gästefragen auf der Website beantworten, Bankettanfragen per E-Mail ordnen, Stammgäste informieren. Für Betriebe in der Schweiz. Jetzt anfragen.",
-    "h1": "Hotel und Restaurant: Gästeanfragen digital beantworten",
+    "seo_titel": "Hotel und Restaurant: Anfragen automatisieren | Meyssens",
+    "seo_beschreibung": "Reservationen mit Warteliste, Meldeschein und Kurtaxe aus den Buchungen, Allergenliste: Abläufe für Hotels und Restaurants. Beispiele ansehen.",
+    "h1": "Hotel und Restaurant automatisieren: Reservationen, Meldeschein und Anfragen",
     "schweiz": "Hotels und Restaurants in der Schweiz bearbeiten Gästedaten nach dem revidierten Datenschutzgesetz (nDSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "garagen",
-    "aktualisiert": "2026-11-20",
+    "aktualisiert": "2026-11-24",
     "name": "Garagen",
     "fuer": "Garagen und Autowerkstätten",
     "kurz": "Werkstattaufträge mit Freigabegrenzen, MFK-Termine und Reifenwechsel vorbereiten.",
@@ -1653,14 +1653,14 @@
       "website-chatbot",
       "newsletter"
     ],
-    "seo_titel": "Garage: Werkstattauftrag, MFK und Reifen digital | Meyssens",
-    "seo_beschreibung": "Für Garagen in der Schweiz: Zusatzarbeiten freigeben lassen, MFK-Termine koordinieren, Reifenwechsel planen. Als Entwurf, Sie geben frei. Jetzt anfragen.",
-    "h1": "Garage: Werkstattauftrag, MFK und Reifenwechsel digital vorbereiten",
+    "seo_titel": "Garage digitalisieren: Werkstattauftrag und MFK | Meyssens",
+    "seo_beschreibung": "Werkstattaufträge mit Freigabegrenze, MFK-Termine und Reifenwechsel digital vorbereiten: Abläufe für Garagen in der Schweiz. Beispiele ansehen.",
+    "h1": "Garage digitalisieren: Werkstattauftrag, MFK und Reifenwechsel",
     "schweiz": "Garagen in der Schweiz bearbeiten Kunden- und Fahrzeugdaten nach dem Datenschutzgesetz (DSG). Halterdaten gibt das ASTRA nicht heraus, deshalb arbeiten die Abläufe nur mit Daten, die Ihre Kunden Ihnen geben. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "transport-logistik",
-    "aktualisiert": "2026-11-20",
+    "aktualisiert": "2026-11-24",
     "name": "Transport und Logistik",
     "fuer": "Transport- und Logistikbetriebe",
     "kurz": "Fahrtschreiber-Daten auslesen, Fristen überwachen und die Aufstellung der Arbeits- und Ruhezeiten vorbereiten.",
@@ -1716,14 +1716,14 @@
       "mail-assistent",
       "website-chatbot"
     ],
-    "seo_titel": "Transport: Fahrtschreiber und ARV vorbereiten | Meyssens",
-    "seo_beschreibung": "Für Transportbetriebe in der Schweiz: Downloads der Fahrtschreiber überwachen, ARV-Aufstellung vorbereiten, Kontrollen ohne Suchen. Jetzt anfragen.",
-    "h1": "Transport und Logistik: Fahrtschreiber und Arbeitszeiten im Griff",
+    "seo_titel": "Transport: Fahrtschreiber und ARV digital prüfen | Meyssens",
+    "seo_beschreibung": "Fahrtschreiber-Daten und Arbeitszeiten nach ARV digital prüfen, Fristen im Blick: Abläufe für Transportunternehmen. Beispiele ansehen.",
+    "h1": "Transport und Logistik digitalisieren: Fahrtschreiber und Arbeitszeiten",
     "schweiz": "Die Daten der Fahrerinnen und Fahrer sind Personendaten von Mitarbeitenden nach dem Datenschutzgesetz (DSG). Mitarbeitende haben Anspruch, über die Auswertung informiert zu werden. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "detailhandel",
-    "aktualisiert": "2026-11-20",
+    "aktualisiert": "2026-11-24",
     "name": "Detailhandel",
     "fuer": "Läden und Onlineshops",
     "kurz": "Tagesabschluss mit Kasse, TWINT und Karten abgleichen und Retouren im Onlineshop abwickeln.",
@@ -1780,14 +1780,14 @@
       "newsletter",
       "mail-assistent"
     ],
-    "seo_titel": "Detailhandel: Tagesabschluss und Retouren digital | Meyssens",
-    "seo_beschreibung": "Für Läden und Onlineshops in der Schweiz: Kasse, TWINT, Karten und Bank abgleichen, Retouren vorbereiten. Als Entwurf, Sie geben frei. Jetzt anfragen.",
-    "h1": "Detailhandel: Tagesabschluss und Retouren digital vorbereiten",
+    "seo_titel": "Detailhandel: Tagesabschluss automatisieren | Meyssens",
+    "seo_beschreibung": "Tagesabschluss vorbereiten, TWINT-Gutschriften zuordnen, Retouren erfassen: Abläufe für den Schweizer Detailhandel. Beispiele ansehen.",
+    "h1": "Detailhandel automatisieren: Tagesabschluss, TWINT und Retouren",
     "schweiz": "Läden und Onlineshops in der Schweiz bearbeiten Kundendaten nach dem Datenschutzgesetz (DSG); für den Onlineshop braucht es eine Datenschutzerklärung. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "gartenbau",
-    "aktualisiert": "2026-11-20",
+    "aktualisiert": "2026-11-24",
     "name": "Gartenbau",
     "fuer": "Gartenbau- und Landschaftsbaubetriebe",
     "kurz": "Schlechtwetterentschädigung mit Fristen vorbereiten und Nachweise im Team im Blick behalten.",
@@ -1843,14 +1843,14 @@
       "mail-assistent",
       "website-chatbot"
     ],
-    "seo_titel": "Gartenbau: Schlechtwetter und Fristen vorbereiten | Meyssens",
-    "seo_beschreibung": "Für Gartenbaubetriebe in der Schweiz: Schlechtwetterentschädigung mit Fristen vorbereiten, Rapporte vorausfüllen. Sie geben frei. Jetzt anfragen.",
-    "h1": "Gartenbau: Schlechtwetterentschädigung und Fristen im Griff",
+    "seo_titel": "Gartenbau digital: Schlechtwetter und Fristen | Meyssens",
+    "seo_beschreibung": "Schlechtwetterentschädigung Monat für Monat vorbereiten und Fristen im Blick behalten: Abläufe für Gartenbaubetriebe in der Schweiz. Beispiele ansehen.",
+    "h1": "Gartenbau digitalisieren: Schlechtwetterentschädigung und Fristen",
     "schweiz": "Arbeitszeiten und Löhne sind Personendaten von Mitarbeitenden nach dem Datenschutzgesetz (DSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "reinigung-hauswartung",
-    "aktualisiert": "2026-11-20",
+    "aktualisiert": "2026-11-24",
     "name": "Reinigung und Hauswartung",
     "fuer": "Reinigungsfirmen und Hauswartungen",
     "kurz": "Arbeitszeiten je Objekt nach GAV prüfen, Zeitkonten monatlich ausweisen und Lohnstunden vorbereiten.",
@@ -1906,14 +1906,14 @@
       "mail-assistent",
       "website-chatbot"
     ],
-    "seo_titel": "Reinigung: Arbeitszeit nach GAV prüfen | Meyssens",
-    "seo_beschreibung": "Für Reinigungsfirmen in der Schweiz: Arbeitszeiten je Objekt nach GAV prüfen, Zeitkonten monatlich ausweisen, Lohn vorbereiten. Jetzt anfragen.",
-    "h1": "Reinigung und Hauswartung: Arbeitszeit nach GAV im Griff",
+    "seo_titel": "Reinigung: GAV-Arbeitszeit automatisch prüfen | Meyssens",
+    "seo_beschreibung": "Arbeitszeiten nach GAV automatisch prüfen und den Monatsabschluss als Entwurf vorbereiten: Abläufe für Reinigung und Hauswartung. Jetzt ansehen.",
+    "h1": "Reinigung und Hauswartung digitalisieren: Arbeitszeit nach GAV",
     "schweiz": "Arbeitszeiten sind Personendaten von Mitarbeitenden nach dem Datenschutzgesetz (DSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "schreinerei-holzbau",
-    "aktualisiert": "2026-11-20",
+    "aktualisiert": "2026-11-24",
     "name": "Schreinerei und Holzbau",
     "fuer": "Schreinereien, Zimmereien und Holzbaubetriebe",
     "kurz": "Holzdeklaration in jeder Offerte sicherstellen und Schlechtwetterentschädigung im Holzbau vorbereiten.",
@@ -1970,14 +1970,14 @@
       "website-chatbot",
       "newsletter"
     ],
-    "seo_titel": "Schreinerei und Holzbau: Holzdeklaration digital | Meyssens",
-    "seo_beschreibung": "Für Schreinereien und Holzbau in der Schweiz: Holzdeklaration in Offerten prüfen, Beiblatt nachführen, Schlechtwetter vorbereiten. Jetzt anfragen.",
-    "h1": "Schreinerei und Holzbau: Holzdeklaration und Schlechtwetter vorbereiten",
+    "seo_titel": "Schreinerei: Holzdeklaration automatisieren | Meyssens",
+    "seo_beschreibung": "Holzdeklaration vorbereiten, Schlechtwetter und Fristen im Blick: Abläufe für Schreinereien und Holzbaubetriebe. Beispiele ansehen.",
+    "h1": "Schreinerei und Holzbau digitalisieren: Holzdeklaration und Schlechtwetter",
     "schweiz": "Offerten und Einkaufsdaten enthalten kaum Personendaten, ausser bei Kundenofferten und Lohndaten nach dem Datenschutzgesetz (DSG). Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "physiotherapie",
-    "aktualisiert": "2026-11-20",
+    "aktualisiert": "2026-11-24",
     "name": "Physiotherapie",
     "fuer": "Physiotherapiepraxen",
     "kurz": "Krankenkassenbelege nach Tarif 595 vorbereiten und Fristen für Verordnungen und Kostengutsprachen überwachen.",
@@ -2033,14 +2033,14 @@
       "website-chatbot",
       "mail-assistent"
     ],
-    "seo_titel": "Physiotherapie: Tarif 595 und Fristen vorbereiten | Meyssens",
-    "seo_beschreibung": "Für Physiopraxen in der Schweiz: Belege nach Tarif 595 vorbereiten, Fristen für Verordnungen und Kostengutsprachen überwachen. Jetzt anfragen.",
-    "h1": "Physiotherapie: Tarif 595 und Fristen für Verordnungen im Griff",
+    "seo_titel": "Physiotherapie: Tarif 595 und Fristen digital | Meyssens",
+    "seo_beschreibung": "Abrechnung nach Tarif 595 vorbereiten, Fristen für Verordnungen überwachen: Abläufe für Physiotherapie-Praxen. Beispiele ansehen.",
+    "h1": "Physiotherapie digitalisieren: Tarif 595 und Fristen für Verordnungen",
     "schweiz": "Gesundheitsdaten sind nach dem Datenschutzgesetz (DSG) besonders schützenswert und unterstehen dem Berufsgeheimnis. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   },
   {
     "slug": "fitness-sport",
-    "aktualisiert": "2026-11-20",
+    "aktualisiert": "2026-11-24",
     "name": "Fitness und Sport",
     "fuer": "Fitnesscenter, Kurs- und Sportschulen",
     "kurz": "Krankenkassenbelege nach Tarif 595 aus der bestehenden Mitgliederverwaltung erstellen.",
@@ -2097,9 +2097,9 @@
       "umfragen-abstimmungen",
       "website-chatbot"
     ],
-    "seo_titel": "Fitness: Krankenkassenbelege nach Tarif 595 | Meyssens",
-    "seo_beschreibung": "Für Fitnesscenter und Sportschulen in der Schweiz: Belege nach Tarif 595 aus Ihrer Mitgliederverwaltung vorbereiten. Sie geben frei. Jetzt anfragen.",
-    "h1": "Fitness und Sport: Krankenkassenbelege nach Tarif 595 vorbereiten",
+    "seo_titel": "Fitnesscenter: Krankenkassenbelege automatisieren | Meyssens",
+    "seo_beschreibung": "Krankenkassenbelege nach Tarif 595 aus Abos und Zahlungen vorbereiten, als PDF für Mitglieder: Abläufe für Fitnesscenter. Beispiele ansehen.",
+    "h1": "Fitness und Sport: Krankenkassenbelege automatisch vorbereiten",
     "schweiz": "Mitgliederdaten sind Personendaten nach dem Datenschutzgesetz (DSG); die AHV-Nummer darf nur verwendet werden, wo es das Gesetz erlaubt. Für Personendaten gelten bei uns drei Bedingungen: Vertrag zur Auftragsbearbeitung, Hosting in der Schweiz und Datenminimierung."
   }
 ]
